@@ -7,8 +7,27 @@ http:
       service: ielts
       tls:
         certResolver: letsencrypt
+
+    # www → apex redirect (permanent)
+    ielts-www:
+      rule: "Host(`www.ielts.huynhtheanh.com`)"
+      entryPoints:
+        - websecure
+      service: ielts
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - ielts-www-redirect
+
   services:
     ielts:
       loadBalancer:
         servers:
           - url: "http://ielts:80"
+
+  middlewares:
+    ielts-www-redirect:
+      redirectRegex:
+        regex: "^https://www\\.ielts\\.huynhtheanh\\.com/(.*)"
+        replacement: "https://ielts.huynhtheanh.com/${1}"
+        permanent: true
