@@ -1,0 +1,14 @@
+http:
+  routers:
+    ielts:
+      rule: "Host(`ielts.huynhtheanh.com`)"
+      entryPoints:
+        - websecure
+      service: ielts
+      tls:
+        certResolver: letsencrypt
+  services:
+    ielts:
+      loadBalancer:
+        servers:
+          - url: "http://ielts:80"
