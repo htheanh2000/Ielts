@@ -1,0 +1,1638 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 1 — Academic · Lesson 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ LESSON-02 ADDITIONS ═════════ */
+
+  /* Chart frames */
+  .chart-frame { background: var(--paper); border: 1px solid var(--rule-soft); padding: 32px 36px 24px; }
+  .chart-frame .chart-title { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0 0 6px; color: var(--ink); }
+  .chart-frame .chart-source { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
+
+  /* Sample essay */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
+  .essay p { margin: 0 0 14px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .hl-band { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  /* Annotation column */
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+
+  /* Key-phrase grid */
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 20px; color: var(--ink-soft); line-height: 1.4; }
+
+  /* Compact passage variant for text-heavy slides */
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 22px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  /* Band scoring grid */
+  .band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
+  .band-cell { border-top: 3px solid var(--accent); padding-top: 22px; }
+  .band-cell .k { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 10px; }
+  .band-cell .t { font-family: var(--display); font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .band-cell .d { font-size: 22px; line-height: 1.4; color: var(--ink-soft); }
+
+  /* Paraphrase pairs (reuse from Reading deck) */
+  .pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; margin-top: 8px; }
+  .pp-grid > div > .mono-label { margin-bottom: 6px; }
+  .pp-grid > div > p { font-family: var(--display); font-size: 26px; line-height: 1.4; margin: 6px 0 0; }
+
+  /* Lesson-02 table (for Practice 04) */
+  .data-table { width: 100%; border-collapse: collapse; background: var(--paper); }
+  .data-table th, .data-table td { padding: 14px 20px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 22px; }
+  .data-table thead th { font-family: var(--mono); font-size: 18px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 3px solid var(--accent); }
+  .data-table tbody td:first-child { font-family: var(--display); font-weight: 600; color: var(--ink); }
+  .data-table tbody td.num { font-family: var(--mono); font-weight: 600; color: var(--ink); text-align: right; }
+  .data-table tbody td.pct-up { color: var(--accent); }
+
+  /* Key-figures row for table/chart summaries */
+  .kf-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 3px solid var(--accent); padding-top: 28px; }
+  .kf-row .kf .k { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; }
+  .kf-row .kf .v { font-family: var(--display); font-size: 64px; font-weight: 800; line-height: 1; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 10px; }
+  .kf-row .kf .d { font-size: 20px; color: var(--ink-soft); line-height: 1.4; max-width: 420px; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · THEORY (01-10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 1 Academic</div>
+    <h1 class="main">Charts<br>&amp; <em>Trends.</em></h1>
+    <div class="mark">Lesson 02 · Bốn dạng biểu đồ · Bốn bài mẫu</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 4.5 → 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>8 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 biểu đồ</dd></div>
+      <div><dt>Từ vựng</dt><dd>32 từ · 20 collocations</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · 15 phút. Tổng quan Task 1 · 4 tiêu chí chấm · 4 loại biểu đồ · cấu trúc 4 đoạn · ngôn ngữ so sánh · ngôn ngữ xu hướng · trình tự 20 phút.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Line Graph — Population Growth.</span><span class="step-body">9 slide · 18 phút. Xu hướng theo thời gian · so sánh 3 nước · bài mẫu 170 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Bar Chart — University Majors.</span><span class="step-body">9 slide · 17 phút. So sánh 2 năm · 5 nhóm · bài mẫu 165 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · Pie Charts — Household Energy.</span><span class="step-body">9 slide · 16 phút. Hai biểu đồ · tỉ lệ 1990 vs 2020 · bài mẫu 160 từ · Band 6.0.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · Table — Tourist Arrivals.</span><span class="step-body">9 slide · 16 phút. Bảng số liệu · 4 thành phố · bài mẫu 165 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide · 8 phút. Pattern chung 4 bài · takeaways · lịch luyện tuần.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Mục tiêu</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Viết bài Task 1 150 từ trong 20 phút.</span><span class="step-body">Không thừa không thiếu — giữ đúng 4 đoạn: Intro / Overview / Body 1 / Body 2.</span></div></li>
+    <li><div><span class="step-title">Viết được overview đạt Band 6 trở lên.</span><span class="step-body">2 câu · 2 đặc điểm nổi bật · không có số liệu cụ thể — đây là câu quyết định band.</span></div></li>
+    <li><div><span class="step-title">Paraphrase câu đề bài không copy y nguyên.</span><span class="step-body">Đổi từ đồng nghĩa + đổi cấu trúc ngữ pháp — mất copy = mất điểm Task Achievement.</span></div></li>
+    <li><div><span class="step-title">Dùng đúng ngôn ngữ xu hướng (trend language).</span><span class="step-body">rose / fell / climbed / plummeted / levelled off — kèm adverb: sharply, gradually, steadily.</span></div></li>
+    <li><div><span class="step-title">Dùng đúng ngôn ngữ so sánh (comparison language).</span><span class="step-body">twice as high as / the highest / considerably more than — không lặp "more than" đến mòn.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TASK OVERVIEW -->
+<section data-label="Task Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan Task 1</span></div>
+  <p class="eyebrow">IELTS Writing · Task 1 Overview</p>
+  <h2 class="h-section">20 phút. <em class="hi">150 từ.</em> Một biểu đồ.</h2>
+
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Thời gian</div><div class="v">20′</div><div class="d">Trong tổng 60 phút Writing. Task 2 quan trọng gấp đôi — đừng tiêu quá 20′.</div></div>
+    <div class="stat"><div class="k">Độ dài</div><div class="v">≥150</div><div class="d">Viết dưới → trừ điểm Task Achievement. Viết quá 200 → hết giờ cho Task 2.</div></div>
+    <div class="stat"><div class="k">Trọng số</div><div class="v">33%</div><div class="d">Task 1 = 1/3 điểm Writing. Task 2 = 2/3. Nhưng mất Task 1 cũng mất 0.5 band tổng.</div></div>
+  </div>
+
+  <p class="fine">Bạn được đưa <em class="hi">1 biểu đồ</em> (line / bar / pie / table / map / process) và 1 câu đề bài. Không hỏi ý kiến — chỉ mô tả &amp; so sánh.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · SCORING CRITERIA -->
+<section data-label="Scoring" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>4 tiêu chí chấm</span></div>
+  <p class="eyebrow">Scoring Criteria · 4 band descriptors</p>
+  <h2 class="h-section">Bốn cột điểm. <em class="hi">Điểm cuối = trung bình.</em></h2>
+
+  <div class="band-grid">
+    <div class="band-cell">
+      <div class="k">TA · 25%</div>
+      <div class="t">Task Achievement</div>
+      <div class="d">Có đủ intro + overview + 2 body · chọn đúng key features · không bịa số liệu · không lẫn ý kiến cá nhân.</div>
+    </div>
+    <div class="band-cell">
+      <div class="k">CC · 25%</div>
+      <div class="t">Coherence &amp; Cohesion</div>
+      <div class="d">4 đoạn rõ ràng · liên kết câu bằng <em>However, In contrast, Overall</em> · không lặp linking words.</div>
+    </div>
+    <div class="band-cell">
+      <div class="k">LR · 25%</div>
+      <div class="t">Lexical Resource</div>
+      <div class="d">Từ vựng đa dạng · dùng đúng collocation · paraphrase câu đề · không lặp từ 3 lần trong 1 đoạn.</div>
+    </div>
+    <div class="band-cell">
+      <div class="k">GRA · 25%</div>
+      <div class="t">Grammatical Range &amp; Accuracy</div>
+      <div class="d">Dùng được 3+ cấu trúc: so sánh, câu phức, passive · ít nhất 60% câu không lỗi · không sai thì/số ít-số nhiều.</div>
+    </div>
+  </div>
+
+  <p class="fine">Band 6.0 = trung bình 4 cột ~6.0. Để đạt 6.0, overview phải đủ &amp; chuẩn; 60% câu không lỗi.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · 4 CHART TYPES -->
+<section data-label="Chart Types" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>4 dạng biểu đồ</span></div>
+  <p class="eyebrow">Four Chart Types · Academic Task 1</p>
+  <h2 class="h-section">Bốn dạng hay gặp — <em class="hi">mỗi dạng một chiến thuật.</em></h2>
+
+  <div class="kw-grid">
+    <div class="kw-tile">
+      <div class="k">01 · LINE</div>
+      <div class="ex">Thay đổi theo thời gian</div>
+      <div class="d">Focus: <em class="hi">xu hướng</em> (rise / fall / fluctuate). So sánh các đường với nhau và với chính nó qua thời gian.</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">02 · BAR</div>
+      <div class="ex">So sánh hạng mục</div>
+      <div class="d">Focus: <em class="hi">cao nhất — thấp nhất</em>. Nếu có 2 năm → so sánh sự thay đổi từng cột.</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">03 · PIE</div>
+      <div class="ex">Tỉ lệ phần trăm</div>
+      <div class="d">Focus: <em class="hi">phần lớn nhất</em> &amp; <em class="hi">phần nhỏ nhất</em>. Nếu có 2 pie → so sánh cái tăng, cái giảm.</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">04 · TABLE</div>
+      <div class="ex">Số liệu chi tiết</div>
+      <div class="d">Focus: <em class="hi">chọn 4–5 con số</em> tiêu biểu. Đừng đọc hết bảng — chọn lớn nhất, nhỏ nhất, tăng mạnh nhất.</div>
+    </div>
+  </div>
+
+  <p class="fine">Map &amp; Process ít gặp hơn — sẽ học ở Lesson 03. Hôm nay tập trung 4 dạng phổ biến chiếm ~85% đề thi.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · 4-PARAGRAPH STRUCTURE -->
+<section data-label="Structure" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cấu trúc 4 đoạn</span></div>
+  <p class="eyebrow">Four-paragraph structure · ~150 words</p>
+  <h2 class="h-section">Bốn đoạn cố định — <em class="hi">không đổi thứ tự.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">~25w</span>
+      <div class="n">ĐOẠN 01</div>
+      <div class="t">Introduction</div>
+      <div class="d">Paraphrase câu đề. 1 câu. Không copy &gt; 3 từ liên tục. Đổi synonym + cấu trúc.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~40w</span>
+      <div class="n">ĐOẠN 02</div>
+      <div class="t">Overview</div>
+      <div class="d">2 câu · 2 đặc điểm chung nhất · <em class="hi">không số liệu</em>. <em>Overall, ... / It is clear that ...</em></div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">ĐOẠN 03</div>
+      <div class="t">Body 1</div>
+      <div class="d">Chi tiết nhóm 1 (đường cao nhất · cột lớn nhất · phần to nhất). Kèm 2–3 số liệu cụ thể.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">ĐOẠN 04</div>
+      <div class="t">Body 2</div>
+      <div class="d">Chi tiết nhóm còn lại · so sánh với nhóm 1. Linking: <em>In contrast / Meanwhile / On the other hand</em>.</div>
+    </div>
+  </div>
+
+  <p class="fine">Overview là đoạn <em class="hi">quyết định band</em>. Thiếu overview = không vượt được Band 5. Viết 2 câu, đủ 2 đặc điểm.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · TREND LANGUAGE -->
+<section data-label="Trend Language" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ xu hướng</span></div>
+  <p class="eyebrow">Trend Language · Verbs + Adverbs</p>
+  <h2 class="h-section">Động từ xu hướng — <em class="hi">đi kèm trạng từ mức độ.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Tăng · Giảm · Không đổi</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Verbs</h3>
+      <ul>
+        <li><b>Tăng:</b> rose / increased / grew / climbed / surged</li>
+        <li><b>Giảm:</b> fell / decreased / declined / dropped / plummeted</li>
+        <li><b>Không đổi:</b> remained stable / stayed the same / levelled off</li>
+        <li><b>Biến động:</b> fluctuated / varied</li>
+        <li><b>Đỉnh / đáy:</b> peaked at / bottomed out at / reached a low of</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Mức độ · Tốc độ</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Adverbs</h3>
+      <ul>
+        <li><b>Mạnh:</b> sharply / dramatically / significantly / considerably</li>
+        <li><b>Nhẹ:</b> slightly / marginally / gradually</li>
+        <li><b>Đều đặn:</b> steadily / consistently</li>
+        <li><b>Nhanh:</b> rapidly / quickly</li>
+        <li><b>Chậm:</b> slowly / gently</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Công thức: [Subject] [verb trend] [adverb mức độ]. Ví dụ: <em class="hi">Sales rose sharply from 2010 to 2015.</em></p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · COMPARISON LANGUAGE -->
+<section data-label="Comparison Language" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ so sánh</span></div>
+  <p class="eyebrow">Comparison Language · Three patterns</p>
+  <h2 class="h-section">Ba cấu trúc — <em class="hi">đủ dùng cho mọi đề.</em></h2>
+
+  <div class="flow" style="grid-template-columns: repeat(3, 1fr); gap: 48px;">
+    <div class="flow-step">
+      <div class="n">PATTERN 01</div>
+      <div class="t">Comparative</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">higher than · lower than · more than · less than</em><br><br>
+        <em>Exports were <b>higher than</b> imports in 2020.</em>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="n">PATTERN 02</div>
+      <div class="t">Superlative</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">the highest · the lowest · the largest · the smallest</em><br><br>
+        <em>China had <b>the highest</b> population throughout the period.</em>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="n">PATTERN 03</div>
+      <div class="t">Multiples &amp; Fractions</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">twice as X as · half as X as · a third of</em><br><br>
+        <em>Tokyo received <b>twice as many</b> tourists <b>as</b> Paris.</em>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine">Đừng lặp 1 pattern 5 lần. Luân phiên 3 dạng trong 1 bài → điểm Grammatical Range tăng ngay 1 band.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 20 phút</span></div>
+  <p class="eyebrow">Exam Sequence · 20-minute budget</p>
+  <h2 class="h-section">20 phút — <em class="hi">chia làm 5 giai đoạn.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Phân tích đề + biểu đồ (2 phút).</span><span class="step-body">Xác định: loại biểu đồ · trục / nhãn / đơn vị · thời gian (quá khứ? hiện tại?) · 2–3 điểm nổi bật.</span></div></li>
+    <li><div><span class="step-title">Lên dàn bài 4 đoạn (2 phút).</span><span class="step-body">Ghi ra giấy nháp: Intro (paraphrase gì?) · Overview (2 feature nào?) · Body 1 (nhóm nào?) · Body 2 (nhóm còn lại?).</span></div></li>
+    <li><div><span class="step-title">Viết Intro + Overview (5 phút).</span><span class="step-body">~65 từ. Đây là 2 đoạn gây ấn tượng đầu — viết cẩn thận, không sai ngữ pháp cơ bản.</span></div></li>
+    <li><div><span class="step-title">Viết Body 1 + Body 2 (9 phút).</span><span class="step-body">~90 từ. Chọn 3–4 số liệu mỗi đoạn. Linking: <em>However / Meanwhile / In contrast</em>.</span></div></li>
+    <li><div><span class="step-title">Check lỗi (2 phút).</span><span class="step-body">Thì động từ · số ít/số nhiều · đếm từ (≥150) · dấu câu. Không viết thêm — chỉ sửa.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — LINE GRAPH (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 Practice 01 · Line Graph" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Line Graph · Trend</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 01 · Line Graph</p>
+    <h2><em>Population.</em><br>Three countries ·<br>1970 → 2020.</h2>
+    <div class="toc">
+      <div class="active">01 · Line Graph — xu hướng theo thời gian</div>
+      <div>02 · Bar Chart — so sánh hạng mục</div>
+      <div>03 · Pie Charts — tỉ lệ phần trăm</div>
+      <div>04 · Table — số liệu chi tiết</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · TASK + CHART -->
+<section data-label="12 Line Task" class="slide">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Đề bài + biểu đồ</span></div>
+  <p class="eyebrow">Task · Line Graph · Population growth</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 56px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">The graph below shows the population, in millions, of three countries between 1970 and 2020.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 24px;">Thời gian: <em class="hi">20 phút · 150+ từ</em>.</p>
+
+      <div class="kf-row" style="margin-top: 36px; grid-template-columns: repeat(2, 1fr);">
+        <div class="kf"><div class="k">Dạng</div><div class="v" style="font-size: 40px;">Line</div><div class="d">3 đường · 6 mốc thời gian</div></div>
+        <div class="kf"><div class="k">Đơn vị</div><div class="v" style="font-size: 40px;">M</div><div class="d">Triệu người (millions)</div></div>
+      </div>
+    </div>
+
+    <div class="chart-frame">
+      <p class="chart-title">Population of Countries A, B, C (millions)</p>
+      <p class="chart-source">Source · World Bank estimates · 1970–2020</p>
+      <svg viewBox="0 0 780 460" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y-axis -->
+        <line x1="90" y1="40" x2="90" y2="400" stroke="#1A1A1A" stroke-width="2"/>
+        <!-- X-axis -->
+        <line x1="90" y1="400" x2="740" y2="400" stroke="#1A1A1A" stroke-width="2"/>
+        <!-- Y grid + ticks (0, 10, 20, 30, 40, 50, 60) -->
+        <g stroke="rgba(26,26,26,0.12)" stroke-dasharray="3 4">
+          <line x1="90" y1="340" x2="740" y2="340"/>
+          <line x1="90" y1="280" x2="740" y2="280"/>
+          <line x1="90" y1="220" x2="740" y2="220"/>
+          <line x1="90" y1="160" x2="740" y2="160"/>
+          <line x1="90" y1="100" x2="740" y2="100"/>
+        </g>
+        <g font-family="Roboto Mono, monospace" font-size="14" fill="#8A8A8A" text-anchor="end">
+          <text x="82" y="405">0</text>
+          <text x="82" y="345">10</text>
+          <text x="82" y="285">20</text>
+          <text x="82" y="225">30</text>
+          <text x="82" y="165">40</text>
+          <text x="82" y="105">50</text>
+          <text x="82" y="45">60</text>
+        </g>
+        <!-- X labels: 1970 1980 1990 2000 2010 2020 at positions 130, 250, 370, 490, 610, 730 -->
+        <g font-family="Roboto Mono, monospace" font-size="15" fill="#8A8A8A" text-anchor="middle">
+          <text x="130" y="425">1970</text>
+          <text x="250" y="425">1980</text>
+          <text x="370" y="425">1990</text>
+          <text x="490" y="425">2000</text>
+          <text x="610" y="425">2010</text>
+          <text x="730" y="425">2020</text>
+        </g>
+        <!-- Country A: 20 → 25 → 30 → 36 → 42 → 48 (steady rise) -->
+        <!-- mapping: y = 400 - value*6 -->
+        <polyline points="130,280 250,250 370,220 490,184 610,148 730,112"
+                  fill="none" stroke="#C8202F" stroke-width="3.5"/>
+        <g fill="#C8202F">
+          <circle cx="130" cy="280" r="5"/>
+          <circle cx="250" cy="250" r="5"/>
+          <circle cx="370" cy="220" r="5"/>
+          <circle cx="490" cy="184" r="5"/>
+          <circle cx="610" cy="148" r="5"/>
+          <circle cx="730" cy="112" r="5"/>
+        </g>
+        <!-- Country B: 15 → 20 → 28 → 40 → 48 → 52 (fast rise then plateau) -->
+        <polyline points="130,310 250,280 370,232 490,160 610,112 730,88"
+                  fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-dasharray="10 4"/>
+        <g fill="#1A1A1A">
+          <circle cx="130" cy="310" r="5"/>
+          <circle cx="250" cy="280" r="5"/>
+          <circle cx="370" cy="232" r="5"/>
+          <circle cx="490" cy="160" r="5"/>
+          <circle cx="610" cy="112" r="5"/>
+          <circle cx="730" cy="88" r="5"/>
+        </g>
+        <!-- Country C: 25 → 26 → 28 → 29 → 30 → 32 (slow rise) -->
+        <polyline points="130,250 250,244 370,232 490,226 610,220 730,208"
+                  fill="none" stroke="#8A1621" stroke-width="3" stroke-dasharray="3 3"/>
+        <g fill="#8A1621">
+          <circle cx="130" cy="250" r="4"/>
+          <circle cx="250" cy="244" r="4"/>
+          <circle cx="370" cy="232" r="4"/>
+          <circle cx="490" cy="226" r="4"/>
+          <circle cx="610" cy="220" r="4"/>
+          <circle cx="730" cy="208" r="4"/>
+        </g>
+        <!-- Legend -->
+        <g font-family="Roboto, sans-serif" font-size="14" fill="#1A1A1A">
+          <line x1="520" y1="58" x2="555" y2="58" stroke="#C8202F" stroke-width="3.5"/>
+          <text x="562" y="62">Country A</text>
+          <line x1="630" y1="58" x2="665" y2="58" stroke="#1A1A1A" stroke-width="3.5" stroke-dasharray="10 4"/>
+          <text x="672" y="62">Country B</text>
+          <line x1="520" y1="78" x2="555" y2="78" stroke="#8A1621" stroke-width="3" stroke-dasharray="3 3"/>
+          <text x="562" y="82">Country C</text>
+        </g>
+        <!-- Y-axis label -->
+        <text x="20" y="220" font-family="Roboto Mono, monospace" font-size="14" fill="#C8202F" transform="rotate(-90 20 220)">POPULATION (MILLIONS)</text>
+        <!-- X-axis label -->
+        <text x="415" y="455" font-family="Roboto Mono, monospace" font-size="14" fill="#C8202F" text-anchor="middle">YEAR</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · STEP 1: ANALYSE + PLAN -->
+<section data-label="13 Line Step1 Analyse" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 4 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">bốn câu trả lời.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại biểu đồ?</div><div class="s">Line graph · xu hướng theo thời gian · so sánh 3 đường</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Thì động từ?</div><div class="s">Quá khứ (past simple) vì mốc 1970–2020 đã qua</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Đường cao nhất cuối kỳ?</div><div class="s">Country B · 52M (2020) · tăng gấp 3 lần từ 1970</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Đường nào ổn định?</div><div class="s">Country C · chỉ tăng 7M trong 50 năm · gần như phẳng</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 48px; font-size: 32px;">Dàn bài 4 đoạn</h2>
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">Intro</span><span class="vi">Paraphrase đề · "population, millions, three countries, 1970–2020" → đổi synonym &amp; cấu trúc</span></div>
+    <div class="kp-item"><span class="en">Overview</span><span class="vi">Feature 1: cả 3 nước tăng. Feature 2: B tăng mạnh nhất, C tăng chậm nhất</span></div>
+    <div class="kp-item"><span class="en">Body 1</span><span class="vi">Nhóm tăng mạnh: B (fast rise then plateau) + A (steady rise)</span></div>
+    <div class="kp-item"><span class="en">Body 2</span><span class="vi">Nhóm tăng chậm: C — nêu số liệu cụ thể để tương phản</span></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · STEP 2: WRITE INTRO + OVERVIEW -->
+<section data-label="14 Line Step2 Intro" class="slide">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Intro: đổi câu đề. Overview: <em class="hi">nói toàn cảnh.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The graph below <b>shows</b> the <b>population, in millions,</b> of three countries <b>between 1970 and 2020</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The line graph illustrates how the populations of three countries, measured in millions, changed over a fifty-year period from 1970 to 2020."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">all three countries experienced population growth</span> during the period shown. <span class="hl-band">Country B saw the most dramatic rise</span>, while Country C remained relatively stable throughout.</p>
+    </div>
+  </div>
+
+  <p class="fine">Lưu ý: <em class="hi">không</em> đưa số liệu vào overview. Chỉ nêu 2 xu hướng lớn nhất.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · STEP 3: BODY PARAGRAPHS -->
+<section data-label="15 Line Step3 Body" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Hai đoạn thân — <em class="hi">chọn 3 số liệu mỗi đoạn.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1</span>In 1970, Country B had the smallest population at approximately 15 million, but it <b>rose sharply</b> to reach around 40 million by 2000. The figure continued to climb, peaking at 52 million in 2020, which represented more than a threefold increase. Country A followed a similar upward trend, <b>growing steadily</b> from 20 million in 1970 to 48 million in 2020.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2</span><b>In contrast,</b> Country C showed only a marginal rise over the same period. Starting at 25 million in 1970, its population edged up slowly to 28 million by 1990, and ended at just 32 million in 2020. <b>This means</b> that while B and A more than doubled their populations, C gained fewer than 10 million people in five decades.</p>
+    </div>
+  </div>
+
+  <p class="fine">Body 1 = nhóm tăng mạnh. Body 2 = nhóm tăng chậm + liên kết so sánh bằng <em class="hi">In contrast</em>.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · FULL SAMPLE ESSAY -->
+<section data-label="16 Line Sample Essay" class="slide">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 172 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The line graph illustrates how the populations of three countries, measured in millions, changed over a fifty-year period from 1970 to 2020.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that all three countries experienced population growth during the period shown. Country B saw the most dramatic rise, while Country C remained relatively stable throughout.</p>
+    <p><span class="para-tag">Body 1</span>In 1970, Country B had the smallest population at approximately 15 million, but it rose sharply to reach around 40 million by 2000. The figure continued to climb, peaking at 52 million in 2020, which represented more than a threefold increase. Country A followed a similar upward trend, growing steadily from 20 million in 1970 to 48 million in 2020.</p>
+    <p><span class="para-tag">Body 2</span>In contrast, Country C showed only a marginal rise over the same period. Starting at 25 million in 1970, its population edged up slowly to 28 million by 1990, and ended at just 32 million in 2020. This means that while B and A more than doubled their populations, C gained fewer than 10 million people in five decades.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · LANGUAGE ANALYSIS -->
+<section data-label="17 Line Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Why this scores Band 6.5</p>
+  <h2 class="h-section">Bốn kỹ thuật ngôn ngữ — <em class="hi">tháo ra từ bài mẫu.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Paraphrase</span><b>"shows the population of three countries" → "illustrates how the populations of three countries changed"</b> — đổi <em>shows</em> thành <em>illustrates</em>, thêm <em>how … changed</em> để tránh copy.</li>
+    <li><span class="tag">Trend verb + adverb</span><b>"rose sharply", "growing steadily", "edged up slowly"</b> — ba verb trend khác nhau, kèm adverb mức độ khác nhau → điểm Lexical Resource.</li>
+    <li><span class="tag">Comparative</span><b>"Country B had the smallest population"</b> (superlative) · <b>"more than a threefold increase"</b> (multiple) · <b>"while B and A more than doubled"</b> (comparative) — dùng cả 3 pattern.</li>
+    <li><span class="tag">Cohesion</span><b>"In contrast, ... This means that ..."</b> — linking word mở Body 2 + connective <em>This means</em> gắn số liệu với kết luận.</li>
+  </ul>
+
+  <p class="fine">Nếu thiếu 1 trong 4 kỹ thuật này → khó đạt Band 6.5. Có cả 4 → Band 6.5 chắc chắn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · VOCAB -->
+<section data-label="18 Line Vocab" class="slide">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · bốn collocations — <em class="hi">ngôn ngữ xu hướng.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">illustrate <span class="pos">(v.)</span> <span class="ipa">/ˈɪləstreɪt/</span></div><div class="vocab-meaning">minh hoạ, cho thấy (thay cho <em>show</em>)</div></div>
+        <div class="vocab-item"><div class="vocab-word">approximately <span class="pos">(adv.)</span> <span class="ipa">/əˈprɒksɪmətli/</span></div><div class="vocab-meaning">xấp xỉ, khoảng (thay cho <em>about</em>)</div></div>
+        <div class="vocab-item"><div class="vocab-word">threefold <span class="pos">(adj.)</span> <span class="ipa">/ˈθriːfəʊld/</span></div><div class="vocab-meaning">gấp ba lần</div></div>
+        <div class="vocab-item"><div class="vocab-word">marginal <span class="pos">(adj.)</span> <span class="ipa">/ˈmɑːdʒɪnl/</span></div><div class="vocab-meaning">nhỏ, không đáng kể</div></div>
+        <div class="vocab-item"><div class="vocab-word">peak <span class="pos">(v.)</span> <span class="ipa">/piːk/</span></div><div class="vocab-meaning">đạt đỉnh, cực đại</div></div>
+        <div class="vocab-item"><div class="vocab-word">edge up <span class="pos">(phr.v.)</span> <span class="ipa">/edʒ ʌp/</span></div><div class="vocab-meaning">nhích lên từ từ</div></div>
+        <div class="vocab-item"><div class="vocab-word">decade <span class="pos">(n.)</span> <span class="ipa">/ˈdekeɪd/</span></div><div class="vocab-meaning">thập kỷ (10 năm)</div></div>
+        <div class="vocab-item"><div class="vocab-word">dramatic <span class="pos">(adj.)</span> <span class="ipa">/drəˈmætɪk/</span></div><div class="vocab-meaning">đáng kể, đột ngột</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (4)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">rose sharply</div><div class="vocab-meaning">tăng mạnh / tăng vọt</div></div>
+        <div class="vocab-item"><div class="vocab-word">grow steadily</div><div class="vocab-meaning">tăng đều đặn</div></div>
+        <div class="vocab-item"><div class="vocab-word">remain relatively stable</div><div class="vocab-meaning">giữ ở mức tương đối ổn định</div></div>
+        <div class="vocab-item"><div class="vocab-word">a threefold increase</div><div class="vocab-meaning">sự tăng gấp ba lần</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Rose/grew/climbed" có thể thay nhau. Luân phiên trong 1 bài → không lặp từ.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · COMMON MISTAKES -->
+<section data-label="19 Line Mistakes" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Line Graph</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
+  <p class="eyebrow">Common Mistakes · Line Graph</p>
+  <h2 class="h-section">Bốn lỗi <em class="hi">làm mất 1 band.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Copy câu đề</h4>
+        <p>Viết lại <em>"The graph below shows the population, in millions..."</em> không đổi. Task Achievement tụt xuống Band 5 ngay.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Thiếu overview</h4>
+        <p>Viết luôn vào số liệu, không có đoạn "Overall, ...". Mất hẳn 1 band — đây là đoạn quan trọng nhất.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Sai thì động từ</h4>
+        <p>Dữ liệu 1970–2020 đã qua → phải dùng <em>past simple</em>. Nhiều bạn viết <em>"the population rises"</em> (hiện tại) → lỗi ngữ pháp nặng.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>Bịa / thiếu số liệu</h4>
+        <p>Body mà không có số cụ thể → chấm Band 5. Viết sai số cũng mất điểm. Đọc lại biểu đồ để đúng con số.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Line Graph</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — BAR CHART (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · SECTION BREAK -->
+<section data-label="20 Practice 02 · Bar Chart" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Bar Chart · Compare</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Bar Chart</p>
+    <h2><em>Majors.</em><br>Five subjects ·<br>2015 vs 2025.</h2>
+    <div class="toc">
+      <div>01 · Line Graph — xu hướng theo thời gian</div>
+      <div class="active">02 · Bar Chart — so sánh hạng mục</div>
+      <div>03 · Pie Charts — tỉ lệ phần trăm</div>
+      <div>04 · Table — số liệu chi tiết</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · TASK + CHART -->
+<section data-label="21 Bar Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Đề bài + biểu đồ</span></div>
+  <p class="eyebrow">Task · Bar Chart · University majors</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 56px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">The chart below shows the percentage of university students choosing five major subjects in a UK university in 2015 and 2025.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+
+      <div class="kf-row" style="margin-top: 28px; grid-template-columns: repeat(2, 1fr);">
+        <div class="kf"><div class="k">Dạng</div><div class="v" style="font-size: 40px;">Bar</div><div class="d">5 nhóm · 2 năm · 10 cột</div></div>
+        <div class="kf"><div class="k">Đơn vị</div><div class="v" style="font-size: 40px;">%</div><div class="d">Phần trăm sinh viên</div></div>
+      </div>
+
+      <p class="small" style="margin-top: 20px;">Key features: <em class="hi">cao nhất</em>, <em class="hi">thấp nhất</em>, <em class="hi">thay đổi lớn nhất</em>.</p>
+    </div>
+
+    <div class="chart-frame">
+      <p class="chart-title">Students by major (% of total) · 2015 vs 2025</p>
+      <p class="chart-source">Source · University registry · n = 4,800</p>
+      <svg viewBox="0 0 780 460" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- axes -->
+        <line x1="80" y1="40" x2="80" y2="400" stroke="#1A1A1A" stroke-width="2"/>
+        <line x1="80" y1="400" x2="740" y2="400" stroke="#1A1A1A" stroke-width="2"/>
+        <!-- Y grid -->
+        <g stroke="rgba(26,26,26,0.12)" stroke-dasharray="3 4">
+          <line x1="80" y1="340" x2="740" y2="340"/>
+          <line x1="80" y1="280" x2="740" y2="280"/>
+          <line x1="80" y1="220" x2="740" y2="220"/>
+          <line x1="80" y1="160" x2="740" y2="160"/>
+          <line x1="80" y1="100" x2="740" y2="100"/>
+        </g>
+        <g font-family="Roboto Mono, monospace" font-size="14" fill="#8A8A8A" text-anchor="end">
+          <text x="72" y="405">0</text>
+          <text x="72" y="345">10</text>
+          <text x="72" y="285">20</text>
+          <text x="72" y="225">30</text>
+          <text x="72" y="165">40</text>
+          <text x="72" y="105">50</text>
+          <text x="72" y="45">60</text>
+        </g>
+        <!-- Bar groups: Engineering 30/35, Medicine 15/22, Business 38/28, Arts 10/8, Education 7/7 -->
+        <!-- Group width: (740-80)/5 = 132px; per group center: 146, 278, 410, 542, 674 -->
+        <!-- Bar width each: 40. Red bars (2015) at left, ink bars (2025) at right -->
+        <!-- mapping: y = 400 - value*6 -->
+
+        <!-- Engineering: 30 (red) → y=220, h=180 ; 35 (ink) → y=190, h=210 -->
+        <rect x="118" y="220" width="40" height="180" fill="#C8202F"/>
+        <rect x="160" y="190" width="40" height="210" fill="#1A1A1A"/>
+        <text x="138" y="214" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">30</text>
+        <text x="180" y="184" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">35</text>
+
+        <!-- Medicine: 15 → y=310 ; 22 → y=268 -->
+        <rect x="250" y="310" width="40" height="90" fill="#C8202F"/>
+        <rect x="292" y="268" width="40" height="132" fill="#1A1A1A"/>
+        <text x="270" y="304" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">15</text>
+        <text x="312" y="262" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">22</text>
+
+        <!-- Business: 38 → y=172 ; 28 → y=232 -->
+        <rect x="382" y="172" width="40" height="228" fill="#C8202F"/>
+        <rect x="424" y="232" width="40" height="168" fill="#1A1A1A"/>
+        <text x="402" y="166" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">38</text>
+        <text x="444" y="226" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">28</text>
+
+        <!-- Arts: 10 → y=340 ; 8 → y=352 -->
+        <rect x="514" y="340" width="40" height="60" fill="#C8202F"/>
+        <rect x="556" y="352" width="40" height="48" fill="#1A1A1A"/>
+        <text x="534" y="334" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">10</text>
+        <text x="576" y="346" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">8</text>
+
+        <!-- Education: 7 → y=358 ; 7 → y=358 -->
+        <rect x="646" y="358" width="40" height="42" fill="#C8202F"/>
+        <rect x="688" y="358" width="40" height="42" fill="#1A1A1A"/>
+        <text x="666" y="352" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">7</text>
+        <text x="708" y="352" font-family="Roboto Mono" font-size="13" fill="#1A1A1A" text-anchor="middle">7</text>
+
+        <!-- X labels -->
+        <g font-family="Roboto Mono, monospace" font-size="14" fill="#1A1A1A" text-anchor="middle">
+          <text x="158" y="425">Engineering</text>
+          <text x="290" y="425">Medicine</text>
+          <text x="422" y="425">Business</text>
+          <text x="554" y="425">Arts</text>
+          <text x="686" y="425">Education</text>
+        </g>
+        <!-- Legend -->
+        <g font-family="Roboto, sans-serif" font-size="14" fill="#1A1A1A">
+          <rect x="520" y="50" width="18" height="14" fill="#C8202F"/>
+          <text x="544" y="62">2015</text>
+          <rect x="600" y="50" width="18" height="14" fill="#1A1A1A"/>
+          <text x="624" y="62">2025</text>
+        </g>
+        <text x="20" y="220" font-family="Roboto Mono, monospace" font-size="14" fill="#C8202F" transform="rotate(-90 20 220)">% OF STUDENTS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · STEP 1: ANALYSE -->
+<section data-label="22 Bar Step1 Analyse" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 4 phút</p>
+  <h2 class="h-section">Bar chart — <em class="hi">soi 2 năm, soi 5 cột.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Cao nhất năm 2015?</div><div class="s">Business · 38% · đứng đầu 5 nhóm</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Cao nhất năm 2025?</div><div class="s">Engineering · 35% · vượt Business</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Thay đổi lớn nhất?</div><div class="s">Business <em>giảm</em> 10 điểm (38 → 28). Engineering tăng 5 điểm.</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Không đổi?</div><div class="s">Education · cả 2 năm đều 7%</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 32px;">Dàn bài 4 đoạn</h2>
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">Intro</span><span class="vi">Paraphrase "chart shows percentage of students choosing 5 majors in UK university in 2015 &amp; 2025"</span></div>
+    <div class="kp-item"><span class="en">Overview</span><span class="vi">Feature 1: Engineering &amp; Business chi phối. Feature 2: Business giảm, Engineering vượt lên dẫn đầu</span></div>
+    <div class="kp-item"><span class="en">Body 1</span><span class="vi">Nhóm dominant: Engineering (30 → 35), Business (38 → 28), Medicine (15 → 22)</span></div>
+    <div class="kp-item"><span class="en">Body 2</span><span class="vi">Nhóm nhỏ: Arts (10 → 8) và Education (7 → 7, không đổi)</span></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · STEP 2: INTRO + OVERVIEW -->
+<section data-label="23 Bar Step2 Intro" class="slide">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Bar chart — <em class="hi">overview nói "ai thắng ai thua".</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The chart below <b>shows</b> the <b>percentage of university students</b> choosing five major subjects in a UK university in <b>2015 and 2025</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The bar chart compares the proportion of undergraduates enrolled in five academic subjects at a British university in 2015 with the equivalent figures ten years later."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, <span class="hl-band">Engineering and Business were by far the most popular majors in both years</span>, accounting for more than half of all enrolments. However, <span class="hl-band">Business lost its leading position to Engineering</span> by 2025, while the remaining three subjects changed only slightly.</p>
+    </div>
+  </div>
+
+  <p class="fine">Mẹo: "by far" + "only slightly" là 2 phrase hay để nhấn mạnh tương phản trong 2 câu overview.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · STEP 3: BODY -->
+<section data-label="24 Bar Step3 Body" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Body 1 = 3 nhóm lớn. <em class="hi">Body 2 = 2 nhóm nhỏ.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1</span>In 2015, Business was the leading choice, selected by <b>38%</b> of students, followed closely by Engineering at <b>30%</b>. By 2025, this order had reversed: Engineering rose by five percentage points to <b>35%</b>, while Business fell to <b>28%</b>. Medicine also grew noticeably, from 15% to <b>22%</b>, becoming the third most popular subject.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2</span><b>In contrast,</b> the remaining two subjects attracted far fewer students. Arts declined marginally from 10% in 2015 to 8% a decade later, while Education <b>remained unchanged at 7%</b>. <b>Taken together,</b> these two subjects accounted for fewer than one in six students in both years.</p>
+    </div>
+  </div>
+
+  <p class="fine">"Accounting for" / "fewer than one in six" là cách diễn đạt gọn số liệu mà không lặp con số.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · FULL SAMPLE ESSAY -->
+<section data-label="25 Bar Sample Essay" class="slide">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 168 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The bar chart compares the proportion of undergraduates enrolled in five academic subjects at a British university in 2015 with the equivalent figures ten years later.</p>
+    <p><span class="para-tag">Overview</span>Overall, Engineering and Business were by far the most popular majors in both years, accounting for more than half of all enrolments. However, Business lost its leading position to Engineering by 2025, while the remaining three subjects changed only slightly.</p>
+    <p><span class="para-tag">Body 1</span>In 2015, Business was the leading choice, selected by 38% of students, followed closely by Engineering at 30%. By 2025, this order had reversed: Engineering rose by five percentage points to 35%, while Business fell to 28%. Medicine also grew noticeably, from 15% to 22%, becoming the third most popular subject.</p>
+    <p><span class="para-tag">Body 2</span>In contrast, the remaining two subjects attracted far fewer students. Arts declined marginally from 10% in 2015 to 8% a decade later, while Education remained unchanged at 7%. Taken together, these two subjects accounted for fewer than one in six students in both years.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · LANGUAGE ANALYSIS -->
+<section data-label="26 Bar Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Why this scores Band 6.5</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">luôn khác bài line graph.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Paraphrase</span><b>"percentage of students choosing" → "proportion of undergraduates enrolled in"</b> — đổi <em>percentage</em> → <em>proportion</em>, <em>students</em> → <em>undergraduates</em>, <em>choosing</em> → <em>enrolled in</em>. Ba đổi = an toàn.</li>
+    <li><span class="tag">Comparative tricks</span><b>"by far the most popular"</b> (superlative nhấn mạnh) · <b>"rose by five percentage points"</b> (percentage points, không phải percent) · <b>"far fewer"</b> (comparative nhấn mạnh).</li>
+    <li><span class="tag">Data grouping</span><b>"Taken together, these two subjects accounted for fewer than one in six students"</b> — gộp 2 nhóm nhỏ vào 1 câu thay vì kể riêng → điểm Cohesion.</li>
+    <li><span class="tag">Reversal language</span><b>"this order had reversed: Engineering rose ... while Business fell"</b> — dùng cấu trúc tương phản rõ ràng bằng <em>while</em> + <em>past perfect</em> (had reversed).</li>
+  </ul>
+
+  <p class="fine">"Percentage points" là lỗi ngữ pháp hay gặp — "Business giảm 10 percentage points" ≠ "Business giảm 10 percent".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · VOCAB -->
+<section data-label="27 Bar Vocab" class="slide">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · năm collocations — <em class="hi">so sánh &amp; tỉ lệ.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">undergraduate <span class="pos">(n.)</span> <span class="ipa">/ˌʌndəˈɡrædʒuət/</span></div><div class="vocab-meaning">sinh viên đại học (chưa tốt nghiệp)</div></div>
+        <div class="vocab-item"><div class="vocab-word">proportion <span class="pos">(n.)</span> <span class="ipa">/prəˈpɔːʃn/</span></div><div class="vocab-meaning">tỉ lệ (thay cho <em>percentage</em>)</div></div>
+        <div class="vocab-item"><div class="vocab-word">enrol <span class="pos">(v.)</span> <span class="ipa">/ɪnˈrəʊl/</span></div><div class="vocab-meaning">ghi danh, đăng ký học</div></div>
+        <div class="vocab-item"><div class="vocab-word">reverse <span class="pos">(v.)</span> <span class="ipa">/rɪˈvɜːs/</span></div><div class="vocab-meaning">đảo ngược</div></div>
+        <div class="vocab-item"><div class="vocab-word">noticeable <span class="pos">(adj.)</span> <span class="ipa">/ˈnəʊtɪsəbl/</span></div><div class="vocab-meaning">đáng chú ý</div></div>
+        <div class="vocab-item"><div class="vocab-word">enrolment <span class="pos">(n.)</span> <span class="ipa">/ɪnˈrəʊlmənt/</span></div><div class="vocab-meaning">sự ghi danh, tổng số ghi danh</div></div>
+        <div class="vocab-item"><div class="vocab-word">academic <span class="pos">(adj.)</span> <span class="ipa">/ˌækəˈdemɪk/</span></div><div class="vocab-meaning">thuộc học thuật</div></div>
+        <div class="vocab-item"><div class="vocab-word">taken together <span class="pos">(phr.)</span> <span class="ipa">/ˈteɪkən/</span></div><div class="vocab-meaning">gộp chung lại</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (5)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">by far the most popular</div><div class="vocab-meaning">phổ biến nhất, bỏ xa phần còn lại</div></div>
+        <div class="vocab-item"><div class="vocab-word">account for more than half</div><div class="vocab-meaning">chiếm hơn một nửa</div></div>
+        <div class="vocab-item"><div class="vocab-word">lose its leading position</div><div class="vocab-meaning">đánh mất vị trí dẫn đầu</div></div>
+        <div class="vocab-item"><div class="vocab-word">rose by five percentage points</div><div class="vocab-meaning">tăng 5 điểm phần trăm (không phải %)</div></div>
+        <div class="vocab-item"><div class="vocab-word">fewer than one in six</div><div class="vocab-meaning">chưa tới 1/6</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Percentage points" vs "percent": 30% → 35% = tăng 5 <em class="hi">percentage points</em>, <em>không</em> tăng 5%.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · COMMON MISTAKES -->
+<section data-label="28 Bar Mistakes" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Bar Chart</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
+  <p class="eyebrow">Common Mistakes · Bar Chart</p>
+  <h2 class="h-section">Bốn lỗi <em class="hi">đặc trưng của bar chart.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Kể hết 10 cột</h4>
+        <p>Mô tả từng cột một → bài lan man, không có key feature. Giám khảo chấm "không chọn lọc" → Task Achievement 5.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Nhầm % và percentage points</h4>
+        <p><em>"Business fell by 10%"</em> → SAI (thực tế 10 điểm). Đúng: <em>"fell by 10 percentage points"</em> hoặc <em>"fell from 38% to 28%"</em>.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Lặp từ "percent" / "students"</h4>
+        <p>Dùng 8 lần "percent of students" trong 150 từ → lỗi Lexical Resource. Luân phiên: percent / proportion / share / figure.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>Quên nhóm không đổi</h4>
+        <p>Education 7% → 7% là <em class="hi">đặc điểm đáng nhắc</em>. Bỏ qua = mất key feature. Một câu là đủ: <em>"Education remained unchanged"</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Bar Chart</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — PIE CHARTS (29–37) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 29 · SECTION BREAK -->
+<section data-label="29 Practice 03 · Pie Charts" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">Pie Charts · Proportion</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 03 · Two Pie Charts</p>
+    <h2><em>Energy.</em><br>Household use ·<br>1990 vs 2020.</h2>
+    <div class="toc">
+      <div>01 · Line Graph — xu hướng theo thời gian</div>
+      <div>02 · Bar Chart — so sánh hạng mục</div>
+      <div class="active">03 · Pie Charts — tỉ lệ phần trăm</div>
+      <div>04 · Table — số liệu chi tiết</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · TASK + 2 PIE CHARTS -->
+<section data-label="30 Pie Task" class="slide">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Đề bài + 2 biểu đồ</span></div>
+  <p class="eyebrow">Task · Pie Charts · Household energy</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The pie charts below show the main sources of household energy consumption in the UK in 1990 and 2020.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+
+      <div class="kf-row" style="margin-top: 24px; grid-template-columns: 1fr;">
+        <div class="kf"><div class="k">Dạng</div><div class="v" style="font-size: 36px;">2 Pie</div><div class="d">5 phần mỗi pie · so sánh 2 năm</div></div>
+      </div>
+
+      <p class="small" style="margin-top: 18px;">Key features: <em class="hi">phần lớn nhất</em>, <em class="hi">phần tăng / giảm nhiều nhất</em>.</p>
+    </div>
+
+    <div class="chart-frame">
+      <p class="chart-title">Household energy consumption (% of total) · UK</p>
+      <p class="chart-source">Source · UK Energy Statistics · 1990 &amp; 2020</p>
+      <svg viewBox="0 0 780 400" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- 1990 pie at (200,200), r=140
+             Heating 40%, Water 25%, Lighting 15%, Appliances 12%, Cooking 8%
+             Start at -90 (top). Angles: 144, 90, 54, 43.2, 28.8 -->
+        <!-- Cumulative: 0, 40, 65, 80, 92, 100 → angles -90, 54, 144, 198, 241.2, 270 -->
+        <!-- Using M cx,cy L (start point) A r r 0 largeArc 1 (end point) Z -->
+        <g transform="translate(180,210)">
+          <!-- Heating 40% (144deg) -->
+          <path d="M 0 0 L 0 -140 A 140 140 0 0 1 82.2 113.2 Z" fill="#C8202F"/>
+          <!-- Water 25% (90deg) from 144 to 234 -->
+          <path d="M 0 0 L 82.2 113.2 A 140 140 0 0 1 -82.2 113.2 Z" fill="#8A1621"/>
+          <!-- Lighting 15% (54deg) from 234 to 288 -->
+          <path d="M 0 0 L -82.2 113.2 A 140 140 0 0 1 -133.1 -43.3 Z" fill="#1A1A1A"/>
+          <!-- Appliances 12% (43.2deg) from 288 to 331.2 -->
+          <path d="M 0 0 L -133.1 -43.3 A 140 140 0 0 1 -67.4 -122.7 Z" fill="#4A4A4A"/>
+          <!-- Cooking 8% (28.8deg) from 331.2 to 360 -->
+          <path d="M 0 0 L -67.4 -122.7 A 140 140 0 0 1 0 -140 Z" fill="#8A8A8A"/>
+          <!-- Labels -->
+          <g font-family="Roboto Mono, monospace" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle">
+            <text x="40" y="-30">40%</text>
+            <text x="30" y="75">25%</text>
+            <text x="-75" y="55">15%</text>
+            <text x="-100" y="-45">12%</text>
+            <text x="-35" y="-95">8%</text>
+          </g>
+          <text x="0" y="180" font-family="Roboto Slab, serif" font-size="22" fill="#1A1A1A" font-weight="700" text-anchor="middle">1990</text>
+        </g>
+
+        <!-- 2020 pie at (560,210), r=140 -->
+        <!-- Heating 30%, Water 20%, Lighting 10%, Appliances 25%, Cooking 15% -->
+        <!-- Cumulative: 0, 30, 50, 60, 85, 100 → angles in deg from top: 108, 72, 36, 90, 54 -->
+        <g transform="translate(560,210)">
+          <!-- Heating 30% (108deg) -->
+          <path d="M 0 0 L 0 -140 A 140 140 0 0 1 133.1 -43.3 Z" fill="#C8202F"/>
+          <!-- Water 20% (72deg) -->
+          <path d="M 0 0 L 133.1 -43.3 A 140 140 0 0 1 133.1 43.3 Z" fill="#8A1621"/>
+          <!-- Lighting 10% (36deg) -->
+          <path d="M 0 0 L 133.1 43.3 A 140 140 0 0 1 82.2 113.2 Z" fill="#1A1A1A"/>
+          <!-- Appliances 25% (90deg) -->
+          <path d="M 0 0 L 82.2 113.2 A 140 140 0 0 1 -133.1 43.3 Z" fill="#4A4A4A"/>
+          <!-- Cooking 15% (54deg) -->
+          <path d="M 0 0 L -133.1 43.3 A 140 140 0 0 1 0 -140 Z" fill="#8A8A8A"/>
+          <g font-family="Roboto Mono, monospace" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle">
+            <text x="55" y="-55">30%</text>
+            <text x="100" y="5">20%</text>
+            <text x="75" y="70">10%</text>
+            <text x="-30" y="95">25%</text>
+            <text x="-95" y="-50">15%</text>
+          </g>
+          <text x="0" y="180" font-family="Roboto Slab, serif" font-size="22" fill="#1A1A1A" font-weight="700" text-anchor="middle">2020</text>
+        </g>
+
+        <!-- Shared legend below -->
+        <g font-family="Roboto, sans-serif" font-size="13" fill="#1A1A1A">
+          <rect x="140" y="375" width="14" height="12" fill="#C8202F"/>
+          <text x="160" y="385">Heating</text>
+          <rect x="240" y="375" width="14" height="12" fill="#8A1621"/>
+          <text x="260" y="385">Water heating</text>
+          <rect x="380" y="375" width="14" height="12" fill="#1A1A1A"/>
+          <text x="400" y="385">Lighting</text>
+          <rect x="470" y="375" width="14" height="12" fill="#4A4A4A"/>
+          <text x="490" y="385">Appliances</text>
+          <rect x="590" y="375" width="14" height="12" fill="#8A8A8A"/>
+          <text x="610" y="385">Cooking</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · STEP 1: ANALYSE -->
+<section data-label="31 Pie Step1 Analyse" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 4 phút</p>
+  <h2 class="h-section">Pie chart đôi — <em class="hi">nhóm cái tăng, nhóm cái giảm.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Phần lớn nhất 1990?</div><div class="s">Heating · 40% · chiếm gần một nửa</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Phần lớn nhất 2020?</div><div class="s">Heating · 30% · vẫn dẫn đầu nhưng nhỏ lại</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Tăng nhiều nhất?</div><div class="s">Appliances (12% → 25%) · gấp đôi · Cooking cũng tăng (8 → 15)</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Giảm nhiều nhất?</div><div class="s">Heating (−10), Water (−5), Lighting (−5)</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 32px;">Dàn bài 4 đoạn</h2>
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">Intro</span><span class="vi">Paraphrase "pie charts show main sources of household energy in UK in 1990 and 2020"</span></div>
+    <div class="kp-item"><span class="en">Overview</span><span class="vi">Feature 1: Heating &amp; Water vẫn dẫn đầu. Feature 2: Appliances tăng mạnh, các loại dùng trực tiếp giảm</span></div>
+    <div class="kp-item"><span class="en">Body 1</span><span class="vi">Nhóm giảm: Heating (40→30), Water (25→20), Lighting (15→10)</span></div>
+    <div class="kp-item"><span class="en">Body 2</span><span class="vi">Nhóm tăng: Appliances (12→25), Cooking (8→15)</span></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · STEP 2: INTRO + OVERVIEW -->
+<section data-label="32 Pie Step2 Intro" class="slide">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Pie charts — <em class="hi">dùng "shifted" cho sự thay đổi.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The pie charts below <b>show</b> the <b>main sources of household energy consumption</b> in the UK in <b>1990 and 2020</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.0</p>
+      <p><b>"The two pie charts show how British households used energy in 1990 and thirty years later in 2020, broken down into five main categories."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, <span class="hl-band">heating remained the single largest use of energy in both years</span>, though its share became smaller. <span class="hl-band">The biggest change was the sharp rise in appliance use</span>, which more than doubled its share over the period.</p>
+    </div>
+  </div>
+
+  <p class="fine">"Single largest" (lớn nhất) + "its share became smaller" (phần của nó nhỏ lại) — tách 2 ý trong 1 câu. Hay.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · STEP 3: BODY -->
+<section data-label="33 Pie Step3 Body" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Body 1 = giảm. <em class="hi">Body 2 = tăng.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1</span>In 1990, <b>heating alone accounted for 40%</b> of all household energy, and water heating contributed a further 25%, meaning that direct heating uses consumed nearly two-thirds of the total. By 2020, both had declined — heating to <b>30%</b> and water heating to <b>20%</b>. Lighting, which made up 15% in 1990, also fell to <b>10%</b> thirty years later.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2</span><b>In contrast,</b> the share of energy used by appliances rose sharply, from just 12% in 1990 to <b>25% in 2020</b> — more than doubling. Cooking followed a similar pattern, <b>almost doubling from 8% to 15%</b>. <b>Together,</b> these two categories accounted for 40% of household energy by 2020, up from 20% three decades earlier.</p>
+    </div>
+  </div>
+
+  <p class="fine">"Two-thirds of the total" / "more than doubling" / "accounted for" — 3 cách gọi số liệu khác nhau, không lặp.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · FULL SAMPLE ESSAY -->
+<section data-label="34 Pie Sample Essay" class="slide">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.0 · 160 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two pie charts show how British households used energy in 1990 and thirty years later in 2020, broken down into five main categories.</p>
+    <p><span class="para-tag">Overview</span>Overall, heating remained the single largest use of energy in both years, though its share became smaller. The biggest change was the sharp rise in appliance use, which more than doubled its share over the period.</p>
+    <p><span class="para-tag">Body 1</span>In 1990, heating alone accounted for 40% of all household energy, and water heating contributed a further 25%, meaning that direct heating uses consumed nearly two-thirds of the total. By 2020, both had declined — heating to 30% and water heating to 20%. Lighting, which made up 15% in 1990, also fell to 10% thirty years later.</p>
+    <p><span class="para-tag">Body 2</span>In contrast, the share of energy used by appliances rose sharply, from just 12% in 1990 to 25% in 2020 — more than doubling. Cooking followed a similar pattern, almost doubling from 8% to 15%. Together, these two categories accounted for 40% of household energy by 2020, up from 20% three decades earlier.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · LANGUAGE ANALYSIS -->
+<section data-label="35 Pie Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Why this scores Band 6.0</p>
+  <h2 class="h-section">Pie chart — <em class="hi">ngôn ngữ tỉ lệ &amp; so sánh share.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Proportion verbs</span><b>"accounted for" · "contributed" · "consumed" · "made up"</b> — bốn verb để nói phần trăm chiếm bao nhiêu, không chỉ dùng <em>is</em>.</li>
+    <li><span class="tag">Share language</span><b>"share became smaller" · "rise in appliance use" · "share of energy"</b> — dùng <em>share</em> thay cho <em>percentage</em> để đa dạng.</li>
+    <li><span class="tag">Fractions</span><b>"nearly two-thirds" · "more than doubling" · "almost doubling"</b> — phân số (two-thirds, half, a quarter) gọn hơn nhiều % liền nhau.</li>
+    <li><span class="tag">Time markers</span><b>"thirty years later" · "three decades earlier" · "over the period"</b> — đa dạng cách gọi mốc thời gian giữa 2 pies.</li>
+  </ul>
+
+  <p class="fine">Pie chart luôn có 1 rủi ro: liệt kê 10 % liền nhau. Dùng phân số để "gộp" (nearly half, two-thirds) → gọn hơn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · VOCAB -->
+<section data-label="36 Pie Vocab" class="slide">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · năm collocations — <em class="hi">tỉ lệ &amp; phân số.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">consumption <span class="pos">(n.)</span> <span class="ipa">/kənˈsʌmpʃn/</span></div><div class="vocab-meaning">sự tiêu thụ</div></div>
+        <div class="vocab-item"><div class="vocab-word">household <span class="pos">(n.)</span> <span class="ipa">/ˈhaʊshəʊld/</span></div><div class="vocab-meaning">hộ gia đình</div></div>
+        <div class="vocab-item"><div class="vocab-word">appliance <span class="pos">(n.)</span> <span class="ipa">/əˈplaɪəns/</span></div><div class="vocab-meaning">thiết bị gia dụng</div></div>
+        <div class="vocab-item"><div class="vocab-word">category <span class="pos">(n.)</span> <span class="ipa">/ˈkætəɡəri/</span></div><div class="vocab-meaning">hạng mục, nhóm</div></div>
+        <div class="vocab-item"><div class="vocab-word">contribute <span class="pos">(v.)</span> <span class="ipa">/kənˈtrɪbjuːt/</span></div><div class="vocab-meaning">đóng góp (vào tổng)</div></div>
+        <div class="vocab-item"><div class="vocab-word">break down <span class="pos">(phr.v.)</span> <span class="ipa">/breɪk daʊn/</span></div><div class="vocab-meaning">chia nhỏ, phân tách</div></div>
+        <div class="vocab-item"><div class="vocab-word">two-thirds <span class="pos">(n.)</span> <span class="ipa">/ˌtuː ˈθɜːdz/</span></div><div class="vocab-meaning">hai phần ba</div></div>
+        <div class="vocab-item"><div class="vocab-word">double <span class="pos">(v.)</span> <span class="ipa">/ˈdʌbl/</span></div><div class="vocab-meaning">tăng gấp đôi</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (5)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">account for 40% of the total</div><div class="vocab-meaning">chiếm 40% tổng số</div></div>
+        <div class="vocab-item"><div class="vocab-word">the single largest use / source</div><div class="vocab-meaning">nguồn / sử dụng lớn nhất (duy nhất)</div></div>
+        <div class="vocab-item"><div class="vocab-word">more than doubled its share</div><div class="vocab-meaning">tăng hơn gấp đôi tỉ lệ</div></div>
+        <div class="vocab-item"><div class="vocab-word">make up 15%</div><div class="vocab-meaning">chiếm 15%</div></div>
+        <div class="vocab-item"><div class="vocab-word">broken down into five categories</div><div class="vocab-meaning">được chia thành 5 nhóm</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Made up" (quá khứ của "make up") là verb tiện cho pie chart — dùng thay "was" được.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · COMMON MISTAKES -->
+<section data-label="37 Pie Mistakes" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Pie Charts</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
+  <p class="eyebrow">Common Mistakes · Pie Charts</p>
+  <h2 class="h-section">Bốn lỗi <em class="hi">đặc trưng của pie chart.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Kể 10 % liền nhau</h4>
+        <p>"40%, 25%, 15%, 12%, 8% ..." → bài khó đọc, không có cấu trúc. Gộp bằng phân số: "Heating and water together accounted for two-thirds".</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Không nhóm</h4>
+        <p>Pie chart có 5 phần → nhóm 2-3 phần tăng vào 1 body, 2-3 phần giảm vào body còn lại. Đừng tả 1 pie xong mới sang pie thứ 2.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Không nhắc %</h4>
+        <p>Một số bạn quên ký hiệu %, viết "heating was 40" → không rõ đơn vị. Luôn ghi <em>40%</em>, <em>40 per cent</em> hoặc <em>40 percent</em>.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>Nhầm so sánh</h4>
+        <p>"Appliances tripled" → SAI (12→25, chỉ tăng hơn gấp đôi). Đọc kỹ con số trước khi viết "doubled", "tripled", "quadrupled".</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Pie Charts</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — TABLE (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · SECTION BREAK -->
+<section data-label="38 Practice 04 · Table" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Table · Data</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 04 · Table</p>
+    <h2><em>Tourism.</em><br>Four cities ·<br>2015 vs 2025.</h2>
+    <div class="toc">
+      <div>01 · Line Graph — xu hướng theo thời gian</div>
+      <div>02 · Bar Chart — so sánh hạng mục</div>
+      <div>03 · Pie Charts — tỉ lệ phần trăm</div>
+      <div class="active">04 · Table — số liệu chi tiết</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · TASK + TABLE -->
+<section data-label="39 Table Task" class="slide">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Đề bài + bảng</span></div>
+  <p class="eyebrow">Task · Table · International tourist arrivals</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The table below shows the number of international tourist arrivals, in millions, to four cities in 2015 and 2025.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+
+      <div class="kf-row" style="margin-top: 24px; grid-template-columns: repeat(2, 1fr);">
+        <div class="kf"><div class="k">Dạng</div><div class="v" style="font-size: 40px;">Table</div><div class="d">4 thành phố · 2 năm</div></div>
+        <div class="kf"><div class="k">Đơn vị</div><div class="v" style="font-size: 40px;">M</div><div class="d">Triệu lượt khách</div></div>
+      </div>
+
+      <p class="small" style="margin-top: 18px;">Lời khuyên: <em class="hi">đừng đọc hết</em>. Chọn 4 số tiêu biểu (lớn nhất, nhỏ nhất, tăng nhiều nhất, tăng ít nhất).</p>
+    </div>
+
+    <div class="chart-frame">
+      <p class="chart-title">International tourist arrivals (millions)</p>
+      <p class="chart-source">Source · UN World Tourism Organisation · 2015 &amp; 2025</p>
+      <table class="data-table" style="margin-top: 8px;">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th style="text-align:right;">2015</th>
+            <th style="text-align:right;">2025</th>
+            <th style="text-align:right;">Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Paris</td><td class="num">18.2</td><td class="num">22.4</td><td class="num pct-up">+23%</td></tr>
+          <tr><td>Tokyo</td><td class="num">12.6</td><td class="num">28.5</td><td class="num pct-up">+126%</td></tr>
+          <tr><td>Bangkok</td><td class="num">20.1</td><td class="num">24.8</td><td class="num pct-up">+23%</td></tr>
+          <tr><td>Dubai</td><td class="num">14.3</td><td class="num">19.5</td><td class="num pct-up">+36%</td></tr>
+        </tbody>
+      </table>
+      <p class="fine" style="margin-top: 16px;">Bangkok đứng đầu 2015. Tokyo đứng đầu 2025 — đây là key change.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · STEP 1: ANALYSE -->
+<section data-label="40 Table Step1 Analyse" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 4 phút</p>
+  <h2 class="h-section">Table — <em class="hi">không đọc hết, chọn 4 số.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Cao nhất 2015?</div><div class="s">Bangkok · 20.1M · khách Thái</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Cao nhất 2025?</div><div class="s">Tokyo · 28.5M · vượt Bangkok</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Tăng nhiều nhất?</div><div class="s">Tokyo · +126% (12.6 → 28.5) · hơn gấp đôi</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Tăng ít nhất?</div><div class="s">Paris &amp; Bangkok cùng +23% · số tăng ~4M</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 32px;">Dàn bài 4 đoạn</h2>
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">Intro</span><span class="vi">Paraphrase "table shows international tourist arrivals to four cities in 2015 and 2025"</span></div>
+    <div class="kp-item"><span class="en">Overview</span><span class="vi">Feature 1: Cả 4 thành phố đều tăng. Feature 2: Tokyo vượt lên dẫn đầu, Bangkok mất vị trí số 1</span></div>
+    <div class="kp-item"><span class="en">Body 1</span><span class="vi">Tokyo (star) + Bangkok (cựu số 1) — key comparison</span></div>
+    <div class="kp-item"><span class="en">Body 2</span><span class="vi">Paris + Dubai — tăng vừa phải, khép lại bức tranh</span></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · STEP 2: INTRO + OVERVIEW -->
+<section data-label="41 Table Step2 Intro" class="slide">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Table — <em class="hi">overview nói "ai thay ai".</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The table below <b>shows</b> the <b>number of international tourist arrivals, in millions,</b> to four cities in <b>2015 and 2025</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The table presents how many international visitors (in millions) arrived at four major cities in 2015 and a decade later in 2025."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, <span class="hl-band">all four cities attracted more tourists in 2025 than a decade earlier</span>. The most striking change was in Tokyo, whose figures more than doubled, <span class="hl-band">overtaking Bangkok to become the most visited city by 2025</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">"Most striking change" = thay đổi ấn tượng nhất · "overtake" = vượt qua. Hai phrase quan trọng cho table.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · STEP 3: BODY -->
+<section data-label="42 Table Step3 Body" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Body 1 = Tokyo + Bangkok. <em class="hi">Body 2 = Paris + Dubai.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1</span>In 2015, Bangkok was the most popular destination with <b>20.1 million arrivals</b>, followed by Paris (18.2M) and Dubai. Tokyo, by comparison, received just <b>12.6 million</b>, the lowest of the four. By 2025, however, the situation had reversed: Tokyo surged to <b>28.5 million</b>, a rise of 126%, while Bangkok grew only modestly to <b>24.8 million</b>.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2</span>Paris and Dubai showed more moderate increases. Paris rose from 18.2 to <b>22.4 million</b> (+23%), mirroring Bangkok's growth rate almost exactly. Dubai climbed from 14.3 to <b>19.5 million</b>, a <b>36% rise</b> — higher than Paris but still far below Tokyo's surge. <b>By the end of the period, all four cities exceeded 19 million arrivals per year.</b></p>
+    </div>
+  </div>
+
+  <p class="fine">"Mirroring Bangkok's growth rate" / "surge" / "the situation had reversed" — ngôn ngữ so sánh đa dạng cho table.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · FULL SAMPLE ESSAY -->
+<section data-label="43 Table Sample Essay" class="slide">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 165 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The table presents how many international visitors (in millions) arrived at four major cities in 2015 and a decade later in 2025.</p>
+    <p><span class="para-tag">Overview</span>Overall, all four cities attracted more tourists in 2025 than a decade earlier. The most striking change was in Tokyo, whose figures more than doubled, overtaking Bangkok to become the most visited city by 2025.</p>
+    <p><span class="para-tag">Body 1</span>In 2015, Bangkok was the most popular destination with 20.1 million arrivals, followed by Paris (18.2M) and Dubai. Tokyo, by comparison, received just 12.6 million, the lowest of the four. By 2025, however, the situation had reversed: Tokyo surged to 28.5 million, a rise of 126%, while Bangkok grew only modestly to 24.8 million.</p>
+    <p><span class="para-tag">Body 2</span>Paris and Dubai showed more moderate increases. Paris rose from 18.2 to 22.4 million (+23%), mirroring Bangkok's growth rate almost exactly. Dubai climbed from 14.3 to 19.5 million, a 36% rise — higher than Paris but still far below Tokyo's surge. By the end of the period, all four cities exceeded 19 million arrivals per year.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · LANGUAGE ANALYSIS -->
+<section data-label="44 Table Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Why this scores Band 6.5</p>
+  <h2 class="h-section">Table — <em class="hi">dùng đa dạng ngôn ngữ tương phản.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Overtake language</span><b>"overtaking Bangkok to become the most visited city"</b> — verb <em>overtake</em> (vượt) + <em>to become</em> (để trở thành). Dành cho khi có thay đổi leader.</li>
+    <li><span class="tag">Reversal</span><b>"the situation had reversed: Tokyo surged ... while Bangkok grew only modestly"</b> — past perfect <em>had reversed</em> + contrast <em>while</em> + adverb đối lập <em>surged / modestly</em>.</li>
+    <li><span class="tag">Mirror language</span><b>"mirroring Bangkok's growth rate almost exactly"</b> — <em>mirror</em> (v.) = phản chiếu, dùng khi 2 nhóm tăng cùng tỉ lệ. Cao cấp hơn <em>similar to</em>.</li>
+    <li><span class="tag">Range clause</span><b>"By the end of the period, all four cities exceeded 19 million arrivals per year."</b> — câu kết gọn, nêu điểm chung cuối cùng → tạo closure cho Body 2.</li>
+  </ul>
+
+  <p class="fine">Câu cuối Body 2 nên là câu "đóng" (closing), không mở ý mới. Tổng hợp con số là cách đóng hay.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · VOCAB -->
+<section data-label="45 Table Vocab" class="slide">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">du lịch &amp; dữ liệu.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">arrival <span class="pos">(n.)</span> <span class="ipa">/əˈraɪvl/</span></div><div class="vocab-meaning">lượt đến (du lịch)</div></div>
+        <div class="vocab-item"><div class="vocab-word">destination <span class="pos">(n.)</span> <span class="ipa">/ˌdestɪˈneɪʃn/</span></div><div class="vocab-meaning">điểm đến</div></div>
+        <div class="vocab-item"><div class="vocab-word">overtake <span class="pos">(v.)</span> <span class="ipa">/ˌəʊvəˈteɪk/</span></div><div class="vocab-meaning">vượt qua</div></div>
+        <div class="vocab-item"><div class="vocab-word">surge <span class="pos">(v./n.)</span> <span class="ipa">/sɜːdʒ/</span></div><div class="vocab-meaning">tăng đột biến, tăng mạnh</div></div>
+        <div class="vocab-item"><div class="vocab-word">modest <span class="pos">(adj.)</span> <span class="ipa">/ˈmɒdɪst/</span></div><div class="vocab-meaning">vừa phải, không lớn</div></div>
+        <div class="vocab-item"><div class="vocab-word">mirror <span class="pos">(v.)</span> <span class="ipa">/ˈmɪrə/</span></div><div class="vocab-meaning">phản chiếu, theo sát</div></div>
+        <div class="vocab-item"><div class="vocab-word">exceed <span class="pos">(v.)</span> <span class="ipa">/ɪkˈsiːd/</span></div><div class="vocab-meaning">vượt quá</div></div>
+        <div class="vocab-item"><div class="vocab-word">figures <span class="pos">(n. pl.)</span> <span class="ipa">/ˈfɪɡəz/</span></div><div class="vocab-meaning">con số, số liệu</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">the most popular destination</div><div class="vocab-meaning">điểm đến phổ biến nhất</div></div>
+        <div class="vocab-item"><div class="vocab-word">more than doubled</div><div class="vocab-meaning">tăng hơn gấp đôi</div></div>
+        <div class="vocab-item"><div class="vocab-word">the situation had reversed</div><div class="vocab-meaning">tình hình đã đảo ngược</div></div>
+        <div class="vocab-item"><div class="vocab-word">international tourist arrivals</div><div class="vocab-meaning">lượt khách du lịch quốc tế</div></div>
+        <div class="vocab-item"><div class="vocab-word">a rise of 126%</div><div class="vocab-meaning">tăng 126%</div></div>
+        <div class="vocab-item"><div class="vocab-word">by the end of the period</div><div class="vocab-meaning">vào cuối giai đoạn / thời kỳ</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Figures" là danh từ số nhiều cho "số liệu" — dùng với động từ số nhiều: <em>figures were</em>, <em>figures rose</em>.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · COMMON MISTAKES -->
+<section data-label="46 Table Mistakes" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Table</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
+  <p class="eyebrow">Common Mistakes · Table</p>
+  <h2 class="h-section">Bốn lỗi <em class="hi">đặc trưng của table.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Đọc hết bảng</h4>
+        <p>Table có nhiều số → không thể nhắc hết. Chọn 4–5 con số: lớn nhất, nhỏ nhất, tăng nhiều nhất, tăng ít nhất. Bỏ qua phần giữa.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Quên đơn vị</h4>
+        <p>Viết "Tokyo 28.5" thay vì "Tokyo 28.5 million". Quên đơn vị = trừ Task Achievement. Kiểm tra kỹ ở intro + Body 1.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Không chọn leader / laggard</h4>
+        <p>Không nêu ai đứng đầu, ai đứng cuối → bài không có key feature. Luôn có ít nhất 1 superlative trong Body 1.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>So sánh sai thì</h4>
+        <p><em>"Tokyo is the most visited city"</em> → nếu dữ liệu 2025 (tương lai đã là quá khứ theo đề) → dùng <em>was</em> hoặc <em>became</em>, không dùng <em>is</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Table</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERNS ACROSS 4 TASKS -->
+<section data-label="47 Patterns Across" class="slide">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Pattern giữa 4 bài</span></div>
+  <p class="eyebrow">Patterns across four tasks</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 32px;">Cái gì <em class="hi">luôn đúng</em> — dù là line, bar, pie hay table.</h2>
+
+  <div class="patt-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 72px;">
+    <div class="patt" style="border-top: 3px solid var(--accent); padding-top: 22px;">
+      <div class="t" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px;">Structure</div>
+      <div class="d" style="font-family: var(--display); font-size: 28px; line-height: 1.35; font-weight: 500; color: var(--ink); margin-bottom: 10px;">Luôn 4 đoạn. Intro + Overview + 2 Body.</div>
+      <div class="ex" style="font-size: 22px; color: var(--ink-soft); line-height: 1.4; font-style: italic;">Không bao giờ đổi thứ tự. Không bỏ đoạn nào. Overview trước chi tiết.</div>
+    </div>
+    <div class="patt" style="border-top: 3px solid var(--accent); padding-top: 22px;">
+      <div class="t" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px;">Overview</div>
+      <div class="d" style="font-family: var(--display); font-size: 28px; line-height: 1.35; font-weight: 500; color: var(--ink); margin-bottom: 10px;">2 câu · 2 feature · KHÔNG số liệu.</div>
+      <div class="ex" style="font-size: 22px; color: var(--ink-soft); line-height: 1.4; font-style: italic;">"Overall, ... However / It is clear that ..."  Bắt đầu bằng <em>Overall</em>.</div>
+    </div>
+    <div class="patt" style="border-top: 3px solid var(--accent); padding-top: 22px;">
+      <div class="t" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px;">Grouping</div>
+      <div class="d" style="font-family: var(--display); font-size: 28px; line-height: 1.35; font-weight: 500; color: var(--ink); margin-bottom: 10px;">Nhóm dữ liệu theo xu hướng giống nhau vào 1 body.</div>
+      <div class="ex" style="font-size: 22px; color: var(--ink-soft); line-height: 1.4; font-style: italic;">Body 1 = tăng · Body 2 = giảm (hoặc: cao vs thấp, lớn vs nhỏ).</div>
+    </div>
+    <div class="patt" style="border-top: 3px solid var(--accent); padding-top: 22px;">
+      <div class="t" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px;">Paraphrase</div>
+      <div class="d" style="font-family: var(--display); font-size: 28px; line-height: 1.35; font-weight: 500; color: var(--ink); margin-bottom: 10px;">Đổi 3+ từ trong câu đề. Không copy &gt; 3 từ liên tục.</div>
+      <div class="ex" style="font-size: 22px; color: var(--ink-soft); line-height: 1.4; font-style: italic;">shows → illustrates / presents · percentage → proportion · students → undergraduates.</div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · KEY TAKEAWAYS -->
+<section data-label="48 Takeaways" class="slide slide--paper">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Takeaways</span></div>
+  <p class="eyebrow">Key Takeaways · 90 phút trong 8 điểm</p>
+  <h2 class="h-section">Tám điều <em class="hi">không được quên.</em></h2>
+
+  <div class="take">
+    <div class="item"><div class="k">01</div><div class="v">Luôn 4 đoạn. Intro → Overview → Body 1 → Body 2.</div></div>
+    <div class="item"><div class="k">02</div><div class="v">Overview quyết định band — viết 2 câu, 2 feature, không số.</div></div>
+    <div class="item"><div class="k">03</div><div class="v">Paraphrase đề 3+ từ — đừng copy nguyên câu mở bài.</div></div>
+    <div class="item"><div class="k">04</div><div class="v">Trend: verb + adverb. "Rose sharply", "grew steadily".</div></div>
+    <div class="item"><div class="k">05</div><div class="v">Comparison: xen kẽ 3 pattern — comparative, superlative, multiple.</div></div>
+    <div class="item"><div class="k">06</div><div class="v">Table &amp; pie: chọn 4–5 số, không đọc hết.</div></div>
+    <div class="item"><div class="k">07</div><div class="v">Đúng thì: quá khứ nếu data đã qua; hiện tại nếu data không có năm.</div></div>
+    <div class="item"><div class="k">08</div><div class="v">Dành 2 phút cuối để check spelling + đếm từ ≥150.</div></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · WEEKLY PLAN -->
+<section data-label="49 Weekly Plan" class="slide">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Lịch luyện tuần</span></div>
+  <p class="eyebrow">Weekly Practice Plan · 7 days</p>
+  <h2 class="h-section">Luyện 30 phút/ngày — <em class="hi">sau 1 tuần viết được ổn.</em></h2>
+
+  <div class="plan-grid">
+    <div class="hdr">Day</div><div class="hdr">Nhiệm vụ</div><div class="hdr">Nội dung</div><div class="hdr">Thời lượng</div>
+
+    <div class="day">Thứ 2</div>
+    <div>Học thuộc vocab + collocation</div>
+    <div>32 từ + 20 collocations từ slide 08, 18, 27, 36, 45. Học bằng flashcard.</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 3</div>
+    <div>Viết Intro + Overview · line graph</div>
+    <div>Tự tìm 1 line graph mới. Chỉ viết 2 đoạn đầu. Gửi thầy check.</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 4</div>
+    <div>Viết full bài · bar chart</div>
+    <div>20 phút viết · 10 phút so với bài mẫu slide 25.</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 5</div>
+    <div>Viết full bài · pie charts</div>
+    <div>Tìm đề 2 pie có "so sánh 2 năm". Viết + check lại.</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 6</div>
+    <div>Viết full bài · table</div>
+    <div>Chọn 4–5 số. Tránh kể hết. Viết đúng 20 phút.</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 7</div>
+    <div>Review lỗi + sửa</div>
+    <div>Đọc lại 4 bài đã viết tuần này. Gạch ra 10 lỗi hay lặp. Viết 1 bản sửa.</div>
+    <div class="time">45 phút</div>
+
+    <div class="day">CN</div>
+    <div>Thi thử · bài mới</div>
+    <div>1 đề bất kỳ · 20 phút · không nhìn slide. Kiểm tra từng tiêu chí.</div>
+    <div class="time">30 phút</div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · END -->
+<section data-label="50 End" class="slide end-slide">
+  <div>
+    <h1>Keep<br>writing.</h1>
+    <div class="hint">Lesson 02 · Writing Task 1 · Academic · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

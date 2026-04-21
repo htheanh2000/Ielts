@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELTS Academy · Lesson decks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --paper: #FDFAF7;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --ink-muted: #8A8A8A;
+    --accent: #C8202F;
+    --rule-soft: rgba(26,26,26,0.14);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Roboto', -apple-system, sans-serif; background: var(--bg); color: var(--ink); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 80px 32px 120px; }
+  .eyebrow { font-family: 'Roboto Mono', monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font-family: 'Roboto Slab', Georgia, serif; font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .lede { font-size: 22px; line-height: 1.55; color: var(--ink-soft); max-width: 680px; margin: 0 0 64px; }
+  .group { margin-bottom: 56px; }
+  .group-title { font-family: 'Roboto Mono', monospace; font-size: 16px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 20px; padding-bottom: 14px; border-bottom: 3px solid var(--accent); }
+  .lesson { display: grid; grid-template-columns: 80px 1fr auto; gap: 24px; padding: 24px 0; border-top: 1px solid var(--rule-soft); align-items: baseline; }
+  .lesson:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .lesson .n { font-family: 'Roboto Mono', monospace; font-size: 18px; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; }
+  .lesson .title { font-family: 'Roboto Slab', Georgia, serif; font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.3; text-decoration: none; }
+  .lesson .title:hover { color: var(--accent); }
+  .lesson .desc { display: block; font-family: 'Roboto', sans-serif; font-size: 15px; color: var(--ink-muted); margin-top: 4px; font-weight: 400; }
+  .lesson .variant { font-family: 'Roboto Mono', monospace; font-size: 13px; color: var(--ink-muted); margin-left: 14px; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  .lesson .variant:hover { color: var(--accent); }
+  .lesson .meta { font-family: 'Roboto Mono', monospace; font-size: 14px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  footer { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--rule-soft); font-family: 'Roboto Mono', monospace; font-size: 13px; color: var(--ink-muted); letter-spacing: 0.06em; }
+  footer a { color: var(--ink-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    h1 { font-size: 48px; }
+    .lesson { grid-template-columns: 1fr; gap: 6px; }
+    .lesson .meta { justify-self: end; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">IELTS · One-on-one decks</p>
+  <h1>Lesson <em>decks.</em></h1>
+  <p class="lede">Slide-deck bài giảng IELTS 1-1. Mỗi buổi học có một deck riêng, dạng slide full-screen — dùng phím <code>← →</code> để điều hướng, <code>Cmd+P</code> để xuất PDF.</p>
+
+  <div class="group">
+    <p class="group-title">Reading</p>
+    <div class="lesson">
+      <div class="n">L01</div>
+      <div>
+        <a class="title" href="/reading/lesson/1/">Skimming &amp; Scanning — Practice 4 Passages</a>
+        <span class="desc">4 bài đọc · 36 câu hỏi · 4 dạng · Band target 5.5 · 50 slides</span>
+        <a class="variant" href="/reading/lesson/1/no-answers/">→ Bản không đáp án P3–P4</a>
+      </div>
+      <div class="meta">50 slides</div>
+    </div>
+  </div>
+
+  <div class="group">
+    <p class="group-title">Writing</p>
+    <div class="lesson">
+      <div class="n">L02</div>
+      <div>
+        <a class="title" href="/writing/lesson/2/">Task 1 Academic — Charts &amp; Trends</a>
+        <span class="desc">4 loại biểu đồ (line / bar / pie / table) · Band target 6.0–6.5 · 50 slides</span>
+      </div>
+      <div class="meta">50 slides</div>
+    </div>
+  </div>
+
+  <footer>
+    <div>IELTS Academy · Static deck host · deployed via GitHub Pages</div>
+    <div style="margin-top: 8px;">source · <a href="https://github.com/htheanh2000/Ielts">github.com/htheanh2000/Ielts</a></div>
+  </footer>
+</div>
+</body>
+</html>

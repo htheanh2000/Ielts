@@ -1,0 +1,1794 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Reading — Skimming &amp; Scanning · Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ PRACTICE ADDITIONS ═════════ */
+  .pass-card { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; margin-top: 20px; }
+  .pass-meta-list { list-style: none; padding: 0; margin: 0; }
+  .pass-meta-list li { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--rule-soft); font-size: 26px; line-height: 1.4; }
+  .pass-meta-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .pass-meta-list .k { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+
+  .steps-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 8px; }
+  .steps-mini .step { border-top: 3px solid var(--accent); padding-top: 20px; }
+  .steps-mini .n { font-family: var(--mono); font-size: 22px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .steps-mini .t { font-family: var(--display); font-size: 30px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .steps-mini .d { font-size: 24px; line-height: 1.45; color: var(--ink-soft); }
+
+  /* Walkthrough card: Q + quote + paraphrase + why */
+  .walk { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+  .walk .w-item { background: var(--paper); border-left: 6px solid var(--accent); padding: 20px 28px; }
+  .walk .w-head { display: flex; gap: 18px; align-items: baseline; margin-bottom: 10px; }
+  .walk .w-num { font-family: var(--mono); font-size: 22px; color: var(--accent); font-weight: 700; letter-spacing: 0.04em; }
+  .walk .w-q { font-family: var(--display); font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .walk .w-ans { margin-left: auto; font-family: var(--mono); color: var(--accent); font-size: 22px; font-weight: 700; white-space: nowrap; }
+  .walk .w-quote { font-family: var(--display); font-size: 24px; line-height: 1.45; color: var(--ink-soft); font-style: italic; margin: 0 0 8px; }
+  .walk .w-quote .k { background: rgba(200,32,47,0.28); font-style: normal; font-weight: 700; color: var(--ink); padding: 1px 3px; }
+  .walk .w-why { font-size: 22px; line-height: 1.4; color: var(--ink); margin: 0; }
+  .walk .w-why b { color: var(--accent); font-weight: 700; }
+
+  /* MCQ block */
+  .mcq { list-style: none; padding: 0; margin: 0; }
+  .mcq > li { padding: 16px 0; border-top: 1px solid var(--rule-soft); }
+  .mcq > li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .mcq .q { font-family: var(--display); font-size: 26px; font-weight: 600; margin-bottom: 10px; color: var(--ink); line-height: 1.3; display: flex; gap: 18px; }
+  .mcq .q .n { font-family: var(--mono); color: var(--accent); font-size: 22px; font-weight: 700; flex-shrink: 0; }
+  .mcq .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; padding-left: 40px; }
+  .mcq .opts span { font-size: 23px; line-height: 1.4; color: var(--ink-soft); }
+  .mcq .opts span.correct { color: var(--accent); font-weight: 700; }
+  .mcq .opts .lbl { font-family: var(--mono); color: var(--accent); font-weight: 700; margin-right: 8px; font-size: 21px; }
+
+  /* Combined vocab+colloc dual grid */
+  .vc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; }
+  .vc-grid .col-title { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent); }
+
+  /* Answer key grid for MC / YNNG */
+  .key-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .key-grid .k { background: var(--paper); border: 1px solid var(--rule-soft); padding: 16px; text-align: center; }
+  .key-grid .k .q { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.1em; font-weight: 600; margin-bottom: 6px; }
+  .key-grid .k .a { font-family: var(--display); font-size: 32px; font-weight: 800; color: var(--accent); }
+
+  /* Patterns-across-passages grid */
+  .patt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 72px; }
+  .patt { border-top: 3px solid var(--accent); padding-top: 22px; }
+  .patt .t { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; }
+  .patt .d { font-family: var(--display); font-size: 28px; line-height: 1.35; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+  .patt .ex { font-size: 22px; color: var(--ink-soft); line-height: 1.4; font-style: italic; }
+
+  /* Skim vs Scan compare */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .compare .cc { border-top: 4px solid var(--accent); padding-top: 28px; }
+  .compare .cc .head { font-family: var(--display); font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 28px; }
+  .compare .cc .head em { font-style: italic; font-weight: 400; color: var(--ink); }
+  .compare .cc dl { margin: 0; display: grid; grid-template-columns: 180px 1fr; gap: 20px; row-gap: 24px; }
+  .compare .cc dt { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .compare .cc dd { margin: 0; font-size: 26px; line-height: 1.4; color: var(--ink); }
+  .compare .cc dd b { color: var(--accent); font-weight: 700; }
+
+  /* Small meta row for passage card */
+  .meta-row { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 12px; font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta-row span b { color: var(--accent); font-weight: 700; }
+
+  /* Fine-print footnote */
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+
+  /* Tight variants to avoid overflow on slides with 6-7 items */
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+
+  /* Compact vocab grid for slides with 7-8 items */
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 22px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  /* Compact passage variant for longer texts (P2/P3/P4) */
+  .passage.compact { padding: 32px 40px !important; font-size: 21px !important; line-height: 1.5 !important; }
+  .passage.compact h4 { font-size: 28px !important; }
+  .passage.compact .meta { font-size: 20px !important; margin-bottom: 14px !important; }
+  .passage.compact p { margin: 0 0 10px !important; break-inside: avoid; }
+  .passage.compact .para-num { font-size: 18px !important; margin-right: 8px !important; }
+
+  /* Tighter still — for densest passages (P3/P4) */
+  .passage.dense { padding: 26px 36px !important; font-size: 19.5px !important; line-height: 1.42 !important; column-fill: balance !important; }
+  .passage.dense h4 { font-size: 26px !important; margin-bottom: 4px !important; }
+  .passage.dense .meta { font-size: 18px !important; margin-bottom: 10px !important; }
+  .passage.dense p { margin: 0 0 8px !important; break-inside: avoid; }
+  .passage.dense .para-num { font-size: 17px !important; margin-right: 6px !important; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · INTRO + CORE THEORY (01–10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Reading · Practice Pack</div>
+    <h1 class="main">Skimming<br>&amp; <em>Scanning.</em></h1>
+    <div class="mark">Bài giảng 01 · Bốn bài đọc · Băm sáu câu hỏi</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ</dt><dd>Band 4.5 → 5.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>6 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 passages</dd></div>
+      <div><dt>Câu hỏi</dt><dd>36 câu · 4 dạng</dd></div>
+      <div><dt>Từ vựng</dt><dd>28 từ · 16 collocations</dd></div>
+    </dl>
+    <div class="mark">Giảng viên · IELTS Academy</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">6 slide · 10 phút. Skim vs Scan, 5 bước skim, 4 bước scan, topic sentence, paraphrase, exam sequence.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · A Short History of Tea.</span><span class="step-body">9 slide · 20 phút. Văn hoá &amp; lịch sử · 420 từ · 12 câu hỏi · 4 dạng.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · The Quiet Revolution of the Microchip.</span><span class="step-body">9 slide · 18 phút. Công nghệ · 430 từ · 12 câu hỏi · 4 dạng.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · How Octopuses Solve Puzzles.</span><span class="step-body">9 slide · 18 phút. Khoa học · 440 từ · 12 câu hỏi · 4 dạng.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · The Whistled Language of La Gomera.</span><span class="step-body">9 slide · 16 phút. Văn hoá ngôn ngữ · 430 từ · 12 câu hỏi · 4 dạng.</span></div></li>
+    <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide · 8 phút. Pattern giữa 4 bài, takeaways, lịch luyện tuần.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Mục tiêu</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Skim một đoạn 400–500 từ trong 90 giây.</span><span class="step-body">Nắm được chủ đề và ý chính mà không đọc từng chữ.</span></div></li>
+    <li><div><span class="step-title">Scan — tìm một thông tin cụ thể trong 10 giây.</span><span class="step-body">Tên riêng, số, năm, thuật ngữ — khoanh đúng mà không đọc lại đoạn.</span></div></li>
+    <li><div><span class="step-title">Nhận diện paraphrase giữa câu hỏi và bài đọc.</span><span class="step-body">Câu hỏi không bao giờ dùng nguyên văn — phải đoán từ đồng nghĩa.</span></div></li>
+    <li><div><span class="step-title">Làm chuẩn xác 4 dạng câu hỏi phổ biến.</span><span class="step-body">Matching Headings · Multiple Choice · Short Answer · Yes/No/Not Given.</span></div></li>
+    <li><div><span class="step-title">Hoàn thành một bài Reading đầy đủ trong 15 phút.</span><span class="step-body">Đúng mốc Band 5.5 của IELTS Academic — 13 câu / 20 phút / 1 passage.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TEST OVERVIEW -->
+<section data-label="Test Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan đề</span></div>
+  <p class="eyebrow">IELTS Reading · Test Overview</p>
+  <h2 class="h-section">Ba bài. <em class="hi">Bốn mươi câu.</em> Sáu mươi phút.</h2>
+
+  <div class="timing" style="margin-top: 8px;">
+    <div class="hdr">#</div><div class="hdr">Passage</div><div class="hdr">Questions</div><div class="hdr">Thời gian khuyên dùng</div>
+    <div><strong style="color:var(--accent); font-family:var(--mono);">01</strong></div>
+    <div class="passage-title">Passage 1 — dễ nhất · 700–900 từ</div>
+    <div class="minutes">13 câu</div>
+    <div>17 phút · để dành thời gian cho 2 &amp; 3</div>
+
+    <div><strong style="color:var(--accent); font-family:var(--mono);">02</strong></div>
+    <div class="passage-title">Passage 2 — trung bình · 800–950 từ</div>
+    <div class="minutes">13 câu</div>
+    <div>20 phút · chuẩn</div>
+
+    <div><strong style="color:var(--accent); font-family:var(--mono);">03</strong></div>
+    <div class="passage-title">Passage 3 — khó nhất · 900–1000 từ · học thuật</div>
+    <div class="minutes">14 câu</div>
+    <div>22 phút · có thể quay lại check lúc cuối</div>
+  </div>
+
+  <p class="fine">Không có thời gian chuyển đáp án cuối giờ — phải điền thẳng vào answer sheet.</p>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · SKIM vs SCAN -->
+<section data-label="Skim vs Scan" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>So sánh hai kỹ thuật</span></div>
+  <p class="eyebrow">Two techniques · One comparison</p>
+  <h2 class="h-section">Cùng đọc nhanh — <em class="hi">khác mục đích.</em></h2>
+
+  <div class="compare">
+    <div class="cc">
+      <div class="head"><em>Skimming.</em></div>
+      <dl>
+        <dt>Mục đích</dt><dd>Nắm <b>ý chính</b> cả đoạn / cả bài.</dd>
+        <dt>Thời điểm</dt><dd>Dùng <b>một lần duy nhất</b> ở đầu — trước khi đọc câu hỏi chi tiết.</dd>
+        <dt>Mắt đi</dt><dd>Câu đầu + cuối mỗi đoạn. Bỏ qua ví dụ, số liệu.</dd>
+        <dt>Tốc độ</dt><dd><b>~700 WPM</b> · 90 giây cho 1 bài 800 từ.</dd>
+        <dt>Dạng câu hỏi</dt><dd>Matching Headings · Main Idea · chọn tiêu đề cho cả bài.</dd>
+      </dl>
+    </div>
+    <div class="cc">
+      <div class="head"><em>Scanning.</em></div>
+      <dl>
+        <dt>Mục đích</dt><dd>Tìm <b>một thông tin cụ thể</b> — tên, số, năm, thuật ngữ.</dd>
+        <dt>Thời điểm</dt><dd>Dùng <b>nhiều lần</b> — mỗi câu hỏi một lần.</dd>
+        <dt>Mắt đi</dt><dd>Zigzag theo hình chữ Z — không theo dòng.</dd>
+        <dt>Tốc độ</dt><dd><b>~1500 WPM</b> · 10 giây cho 1 câu.</dd>
+        <dt>Dạng câu hỏi</dt><dd>Short Answer · T/F/NG · Summary · Sentence Completion.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · HOW TO SKIM -->
+<section data-label="How to Skim" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Skim · 5 bước</span></div>
+  <p class="eyebrow">How to Skim · 5 Steps</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">90 giây — mỗi bước 15–20 giây.</h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">10s</span>
+      <div class="n">STEP 01</div>
+      <div class="t">Đọc tiêu đề bài.</div>
+      <div class="d">Luôn bộc lộ chủ đề và thái độ tác giả.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">40s</span>
+      <div class="n">STEP 02</div>
+      <div class="t">Đọc câu đầu mỗi đoạn.</div>
+      <div class="d">Đây là <em class="hi">topic sentence</em> — chứa 90% ý chính.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">20s</span>
+      <div class="n">STEP 03</div>
+      <div class="t">Lướt phần còn lại.</div>
+      <div class="d">Bắt <em class="hi">signal words</em>: however, for example, in contrast.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">20s</span>
+      <div class="n">STEP 04</div>
+      <div class="t">Đọc câu cuối đoạn cuối.</div>
+      <div class="d">Thường là kết luận hoặc dự báo tương lai.</div>
+    </div>
+  </div>
+
+  <p class="fine">Sau 90 giây — bạn biết: chủ đề, số đoạn, mỗi đoạn nói gì, thái độ tác giả.</p>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · HOW TO SCAN -->
+<section data-label="How to Scan" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Scan · 4 bước</span></div>
+  <p class="eyebrow">How to Scan · 4 Steps</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">10 giây mỗi câu hỏi — đừng đọc, <em class="hi">hãy tìm.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">2s</span>
+      <div class="n">STEP 01</div>
+      <div class="t">Đọc câu hỏi · chọn keyword.</div>
+      <div class="d">Tên riêng, số, năm, thuật ngữ — càng "cụ thể" càng tốt.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">2s</span>
+      <div class="n">STEP 02</div>
+      <div class="t">Đoán paraphrase.</div>
+      <div class="d">Bài đọc sẽ dùng <em class="hi">từ đồng nghĩa</em> — "buy" → "purchase".</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">4s</span>
+      <div class="n">STEP 03</div>
+      <div class="t">Mắt zigzag xuống trang.</div>
+      <div class="d">Không đọc — chỉ dừng khi thấy <em class="hi">hình dạng từ</em> giống keyword.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">2s</span>
+      <div class="n">STEP 04</div>
+      <div class="t">Đọc câu có keyword — trả lời.</div>
+      <div class="d">Đọc thêm câu trước &amp; sau để chắc chắn.</div>
+    </div>
+  </div>
+
+  <p class="fine">Scan sai thường vì: (1) keyword quá chung, (2) dừng ở đáp án đầu tiên, (3) quên đoán paraphrase.</p>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · TOPIC SENTENCE DEMO -->
+<section data-label="Topic Sentence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Topic sentence</span></div>
+  <p class="eyebrow">Topic Sentence · Câu chủ đề</p>
+  <h2 class="h-section">Một câu — <em class="hi">cả đoạn văn.</em></h2>
+
+  <div class="eye-demo">
+    <div class="eye-col">
+      <p class="mono-label">Đọc bị động · đọc từng từ</p>
+      <div class="eye-viz">
+        Tea arrived in Japan in the 9th century, brought back by Buddhist monks who had travelled to China to study. Over the following centuries, the Japanese developed their own careful ceremony around the drink, known as chanoyu, which is still practised today and emphasises harmony, respect, purity and tranquillity.
+      </div>
+      <p class="small" style="margin-top: 18px;">Đọc hết đoạn · <em class="hi">45 giây</em>.</p>
+    </div>
+    <div class="eye-col">
+      <p class="mono-label">Đọc chủ động · chỉ topic sentence</p>
+      <div class="eye-viz">
+        <span class="hl-strong">Tea arrived in Japan in the 9th century</span>, <span class="dim">brought back by Buddhist monks who had travelled to China to study. Over the following centuries, the Japanese developed their own careful ceremony around the drink, known as chanoyu, which is still practised today and emphasises harmony, respect, purity and tranquillity.</span>
+      </div>
+      <p class="small" style="margin-top: 18px;">Đã nắm ý chính · <em class="hi">3 giây</em>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Topic sentence = đoạn này nói gì. Phần còn lại = chi tiết, ví dụ, trích dẫn — để sau khi cần scan.</p>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · PARAPHRASE -->
+<section data-label="Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Paraphrase</span></div>
+  <p class="eyebrow">Paraphrase Awareness</p>
+  <h2 class="h-section">Câu hỏi &amp; bài đọc <em class="hi">không dùng chung từ.</em></h2>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px 80px; margin-top: 8px;">
+    <div>
+      <p class="mono-label">Câu hỏi</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"Dutch traders <em class="hi">first brought</em> tea to Europe in…"</p>
+    </div>
+    <div>
+      <p class="mono-label">Bài đọc</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"Dutch traders <em class="hi">began importing</em> small, expensive quantities from the East in 1610."</p>
+    </div>
+
+    <div>
+      <p class="mono-label">Câu hỏi</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"Tea became a <em class="hi">common drink</em> during the Tang dynasty."</p>
+    </div>
+    <div>
+      <p class="mono-label">Bài đọc</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"Tea drinking became a <em class="hi">popular daily habit</em> across China."</p>
+    </div>
+
+    <div>
+      <p class="mono-label">Câu hỏi</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"The British imposed <em class="hi">high duties</em> on tea."</p>
+    </div>
+    <div>
+      <p class="mono-label">Bài đọc</p>
+      <p style="font-family: var(--display); font-size: 30px; line-height: 1.35; margin: 8px 0 0;">"The government imposed <em class="hi">heavy taxes</em> on tea."</p>
+    </div>
+  </div>
+
+  <p class="fine">Nguyên tắc: khi scan, tìm <em class="hi">ý</em>, không tìm <em class="hi">từ</em>. Tên riêng &amp; số là ngoại lệ.</p>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự phòng thi</span></div>
+  <p class="eyebrow">Exam Sequence · 7 steps per passage</p>
+  <h2 class="h-section">20 phút cho một bài — <em class="hi">đúng thứ tự.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Đọc tiêu đề bài (5s).</span><span class="step-body">Biết chủ đề — kích hoạt background knowledge.</span></div></li>
+    <li><div><span class="step-title">Skim toàn bài (90s).</span><span class="step-body">Câu đầu mỗi đoạn + câu cuối đoạn cuối.</span></div></li>
+    <li><div><span class="step-title">Đọc nhanh tất cả câu hỏi (60s).</span><span class="step-body">Gạch keyword — nhớ dạng câu hỏi nào đi với đoạn nào.</span></div></li>
+    <li><div><span class="step-title">Làm Matching Headings / Main Idea trước (3p).</span><span class="step-body">Dùng ngay ghi nhớ từ skim — đừng quay lại bài.</span></div></li>
+    <li><div><span class="step-title">Scan từng câu còn lại theo thứ tự bài đọc (10p).</span><span class="step-body">T/F/NG và Completion thường xuất hiện theo thứ tự đoạn.</span></div></li>
+    <li><div><span class="step-title">Câu khó — đoán &amp; move on (1 phút/câu tối đa).</span><span class="step-body">Điền tạm · đánh dấu · quay lại sau.</span></div></li>
+    <li><div><span class="step-title">Quay lại câu đã đánh dấu (3p cuối).</span><span class="step-body">Lúc này background đã đầy — câu khó dễ hơn.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — TEA (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · PRACTICE 01 SECTION BREAK -->
+<section data-label="11 Practice 01 · Tea" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Culture · History</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice Passage 01</p>
+    <h2><em>Tea.</em><br>420 từ ·<br>12 câu hỏi.</h2>
+    <div class="toc">
+      <div class="active">01 · Tea — lịch sử &amp; văn hoá</div>
+      <div>02 · Microchip — công nghệ</div>
+      <div>03 · Octopuses — khoa học</div>
+      <div>04 · Whistled Language — ngôn ngữ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · PASSAGE · TEA -->
+<section data-label="12 Tea Passage" class="slide">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Bài đọc</span></div>
+  <p class="eyebrow">Reading Passage 01 · A Short History of Tea</p>
+
+  <div class="passage" style="column-count: 2; column-gap: 56px; column-rule: 1px solid var(--rule-soft);">
+    <h4 style="column-span: all;">A Short History of Tea</h4>
+    <div class="meta" style="column-span: all;">~420 từ · Skim ≤ 90 giây · Highlight: đỏ đậm = scannable, đỏ nhạt = topic sentence</div>
+
+    <p><span class="para-num">A</span>The history of tea begins in ancient <span class="hl-scan">China</span>, where, according to legend, the emperor <span class="hl-scan">Shen Nong</span> discovered the drink around <span class="hl-scan">2737 BC</span>. While he was boiling water in his garden, leaves from a nearby wild tree blew into his pot. The emperor, a well-known herbalist, decided to taste the resulting brew and was pleasantly surprised by its refreshing flavour.</p>
+
+    <p><span class="para-num">B</span><span class="hl-skim">For centuries, tea remained a closely guarded Chinese secret</span>, used mainly as a traditional medicine. It was only during the Tang dynasty (618–907 AD) that tea drinking became a popular daily habit across China, and the first book devoted entirely to tea, <em>The Classic of Tea</em>, was written by a scholar named <span class="hl-scan">Lu Yu</span> around 760 AD.</p>
+
+    <p><span class="para-num">C</span><span class="hl-skim">Tea arrived in Japan in the 9th century</span>, brought back by Buddhist monks who had travelled to China to study. Over the following centuries, the Japanese developed their own careful ceremony around the drink, known as <em>chanoyu</em>, which is still practised today and emphasises harmony, respect, purity and tranquillity.</p>
+
+    <p><span class="para-num">D</span><span class="hl-skim">Europe did not taste tea until the early 17th century.</span> Dutch traders began importing small, expensive quantities from the East in <span class="hl-scan">1610</span>, and it quickly became a fashionable luxury in the royal courts of the Netherlands, France and Portugal. At this time, a single pound of tea could cost the equivalent of a worker's monthly wages.</p>
+
+    <p><span class="para-num">E</span>In <span class="hl-scan">1657</span>, a London coffee-house owner named <span class="hl-scan">Thomas Garraway</span> became the first person to sell tea to the British public. Within fifty years, tea had replaced ale as the country's most common everyday drink. The British government, noticing the profits, imposed heavy taxes on tea, which led to widespread smuggling and, indirectly, to the famous Boston Tea Party of 1773.</p>
+
+    <p><span class="para-num">F</span><span class="hl-skim">Today, tea is the second most consumed beverage in the world</span>, after water. Roughly <span class="hl-scan">three billion cups</span> are drunk every day, and the plant is now grown in more than <span class="hl-scan">50 countries</span>, from Kenya to Sri Lanka. Scientists continue to study its health benefits — recent research suggests that regular tea drinkers have a lower risk of heart disease and certain cancers.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · TEA · SKIM · MATCHING HEADINGS -->
+<section data-label="13 Tea Ex1 Matching Headings" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Bài tập 1 · Skim</span></div>
+  <p class="eyebrow">Exercise 1 · Skim — Matching Headings</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 12px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Match each paragraph A–F to a heading.</h2>
+      <p class="small">Thời gian: <em class="hi">90 giây</em>. Dùng topic sentence — không đọc lại.</p>
+
+      <div style="margin-top: 20px;">
+        <p class="mono-label" style="margin-bottom: 12px;">Danh sách tiêu đề</p>
+        <ul style="list-style:none; padding:0; margin:0; font-family: var(--display); font-size: 25px; line-height: 1.35;">
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">i</span>Tea today: a global drink</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">ii</span>The legendary origins of tea</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iii</span>The Japanese tea ceremony</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iv</span>Tea as a British daily drink</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">v</span>Tea becomes known in Europe</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">vi</span>From medicine to daily habit in China</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · đoạn → tiêu đề</p>
+      <ul class="q-list">
+        <li><span class="q-num">A</span><span>Truyền thuyết Thần Nông</span><span class="q-ans">ii</span></li>
+        <li><span class="q-num">B</span><span>Từ thuốc thành thói quen</span><span class="q-ans">vi</span></li>
+        <li><span class="q-num">C</span><span>Nghi lễ trà Nhật</span><span class="q-ans">iii</span></li>
+        <li><span class="q-num">D</span><span>Trà đến châu Âu</span><span class="q-ans">v</span></li>
+        <li><span class="q-num">E</span><span>Trà thành đồ uống Anh</span><span class="q-ans">iv</span></li>
+        <li><span class="q-num">F</span><span>Trà ngày nay</span><span class="q-ans">i</span></li>
+      </ul>
+      <p class="fine">Mẹo: mọi đáp án đều nằm ở <em class="hi">câu đầu tiên</em> của đoạn.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · TEA · SCAN · SHORT ANSWER -->
+<section data-label="14 Tea Ex2 Short Answer" class="slide">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Bài tập 2 · Scan</span></div>
+  <p class="eyebrow">Exercise 2 · Scan — Short-answer Questions</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 12px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Answer in <em class="hi">no more than 3 words</em>.</h2>
+      <p class="small">Mục tiêu: dưới 10 giây mỗi câu. Lướt mắt — dừng đúng từ khoá.</p>
+
+      <ul class="q-list" style="margin-top: 20px;">
+        <li><span class="q-num">Q1</span><span>What was Shen Nong by profession?</span><span>—</span></li>
+        <li><span class="q-num">Q2</span><span>In which year did Dutch traders first import tea?</span><span>—</span></li>
+        <li><span class="q-num">Q3</span><span>Who wrote <em>The Classic of Tea</em>?</span><span>—</span></li>
+        <li><span class="q-num">Q4</span><span>What is the Japanese tea ceremony called?</span><span>—</span></li>
+        <li><span class="q-num">Q5</span><span>In how many countries is tea now grown?</span><span>—</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · keyword scan</p>
+      <ul class="q-list">
+        <li><span class="q-num">Q1</span><span>Scan: <em>Shen Nong</em></span><span class="q-ans">a herbalist</span></li>
+        <li><span class="q-num">Q2</span><span>Scan: <em>Dutch</em></span><span class="q-ans">1610</span></li>
+        <li><span class="q-num">Q3</span><span>Scan: <em>Classic of Tea</em></span><span class="q-ans">Lu Yu</span></li>
+        <li><span class="q-num">Q4</span><span>Scan: <em>Japanese</em></span><span class="q-ans">chanoyu</span></li>
+        <li><span class="q-num">Q5</span><span>Scan: <em>grown · countries</em></span><span class="q-ans">more than 50</span></li>
+      </ul>
+      <p class="fine">Tất cả đáp án đều là <em class="hi">tên hoặc số</em> — dễ bắt khi scan.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · TEA · YES/NO/NOT GIVEN -->
+<section data-label="15 Tea Ex3 YNNG" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Bài tập 3 · Scan</span></div>
+  <p class="eyebrow">Exercise 3 · Scan — Yes / No / Not Given</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Yes (<strong>Y</strong>) · No (<strong>N</strong>) · Not Given (<strong>NG</strong>)?</h2>
+
+      <ul class="tfng">
+        <li><span class="n">Q6</span><span>Shen Nong discovered tea while searching for medicine for soldiers.</span><span class="a">NO</span></li>
+        <li><span class="n">Q7</span><span>Tea was the subject of the first book devoted entirely to it during the Tang dynasty.</span><span class="a">YES</span></li>
+        <li><span class="n">Q8</span><span>Lu Yu's book was later translated into Japanese.</span><span class="a">NOT GIVEN</span></li>
+        <li><span class="n">Q9</span><span>Buddhist monks brought tea from China to Japan.</span><span class="a">YES</span></li>
+        <li><span class="n">Q10</span><span>In the early 17th century, tea cost less than coffee in Europe.</span><span class="a">NOT GIVEN</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Chiến lược</span>
+        <p style="margin:0 0 14px 0;"><strong>NO</strong> = bài nói <em>ngược lại</em> với câu hỏi.</p>
+        <p style="margin:0 0 14px 0;"><strong>NOT GIVEN</strong> = bài <em>không đề cập</em> — dù đúng hay sai ngoài đời.</p>
+        <p style="margin:0;"><strong>YES</strong> = bài nói cùng ý, dù có paraphrase.</p>
+      </div>
+
+      <p class="fine" style="margin-top: 20px;"><em class="hi">Q6 NO</em>: bài nói Shen Nong đang <em>đun nước trong vườn</em>, lá bay vào nồi — không phải tìm thuốc.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · TEA · WALKTHROUGH with quotes + paraphrase -->
+<section data-label="16 Tea Walkthrough" class="slide">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Giải thích chi tiết</span></div>
+  <p class="eyebrow">Answer Walkthrough · Quote + paraphrase</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Vì sao đáp án như vậy — <em class="hi">dẫn từ bài đọc</em>.</h2>
+
+  <ul class="walk" style="grid-template-columns: 1fr 1fr; display: grid;">
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q2</span><span class="w-q">Year Dutch traders first imported tea?</span><span class="w-ans">1610</span></div>
+      <p class="w-quote">"Dutch traders began <span class="k">importing</span> small, expensive quantities from the East <span class="k">in 1610</span>…"</p>
+      <p class="w-why"><b>Paraphrase:</b> "first imported" = "began importing". <b>Keyword scan:</b> <em>Dutch</em> — tên riêng duy nhất.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q7</span><span class="w-q">First book on tea during Tang dynasty?</span><span class="w-ans">YES</span></div>
+      <p class="w-quote">"…the <span class="k">first book devoted entirely to tea</span>…was written by a scholar named Lu Yu around 760 AD."</p>
+      <p class="w-why"><b>Paraphrase:</b> "the subject of the first book" = "the first book devoted entirely to". 760 AD nằm trong Tang (618–907).</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q8</span><span class="w-q">Lu Yu's book translated into Japanese?</span><span class="w-ans">NOT GIVEN</span></div>
+      <p class="w-quote">Bài đọc chỉ nói Lu Yu <em>viết</em> sách — <span class="k">không</span> nói gì về bản dịch tiếng Nhật.</p>
+      <p class="w-why"><b>Bẫy:</b> monks Nhật có sang Trung Quốc, nhưng đó là vế khác. Không có thông tin = NOT GIVEN.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q10</span><span class="w-q">Tea cheaper than coffee in 17th-century Europe?</span><span class="w-ans">NOT GIVEN</span></div>
+      <p class="w-quote">"…a single pound of tea could cost the equivalent of <span class="k">a worker's monthly wages</span>."</p>
+      <p class="w-why"><b>Bẫy:</b> bài đọc nói giá trà rất đắt, nhưng <em>không</em> so sánh với cà phê. Không có đối chiếu = NOT GIVEN.</p>
+    </li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · TEA · SUMMARY COMPLETION -->
+<section data-label="17 Tea Ex4 Summary" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Bài tập 4 · Skim + Scan</span></div>
+  <p class="eyebrow">Exercise 4 · Summary Completion</p>
+
+  <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 18px;">Complete the summary — <em class="hi">no more than 2 words</em> per blank.</h2>
+
+      <div class="ex-card" style="font-family: var(--display); font-size: 25px; line-height: 1.7;">
+        According to legend, tea was discovered by a Chinese emperor in <strong style="color:var(--accent)">(Q11)&nbsp;______</strong>. For a long time, the plant was used as a <strong style="color:var(--accent)">(Q12)&nbsp;______</strong> rather than a common drink. Because British profits were high, the government introduced heavy <strong style="color:var(--accent)">(Q13)&nbsp;______</strong> on tea, which caused smuggling. Modern research links tea to a lower risk of <strong style="color:var(--accent)">(Q14)&nbsp;______</strong>.
+      </div>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án &amp; quote</p>
+      <ul class="q-list">
+        <li><span class="q-num">Q11</span><span>"…around <em>2737 BC</em>."</span><span class="q-ans">2737 BC</span></li>
+        <li><span class="q-num">Q12</span><span>"…used as a traditional <em>medicine</em>."</span><span class="q-ans">medicine</span></li>
+        <li><span class="q-num">Q13</span><span>"…imposed heavy <em>taxes</em>…"</span><span class="q-ans">taxes</span></li>
+        <li><span class="q-num">Q14</span><span>"…lower risk of <em>heart disease</em>…"</span><span class="q-ans">heart disease</span></li>
+      </ul>
+      <p class="fine">Summary đi theo thứ tự bài đọc — scan từ trên xuống, không nhảy.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · TEA · VOCAB + COLLOCATIONS -->
+<section data-label="18 Tea Vocab" class="slide">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Vocabulary</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ &amp; bốn collocations — <em class="hi">học thuộc trước bài 02.</em></h2>
+
+  <div class="vc-grid">
+    <div>
+      <div class="col-title">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">herbalist <span class="pos">(n.)</span></div><div class="vocab-meaning">nhà thảo dược</div></div>
+        <div class="vocab-item"><div class="vocab-word">brew <span class="pos">(n./v.)</span></div><div class="vocab-meaning">nước pha, đồ uống pha chế</div></div>
+        <div class="vocab-item"><div class="vocab-word">scholar <span class="pos">(n.)</span></div><div class="vocab-meaning">học giả, nhà nghiên cứu</div></div>
+        <div class="vocab-item"><div class="vocab-word">ceremony <span class="pos">(n.)</span></div><div class="vocab-meaning">nghi lễ, nghi thức</div></div>
+        <div class="vocab-item"><div class="vocab-word">tranquillity <span class="pos">(n.)</span></div><div class="vocab-meaning">sự tĩnh lặng, yên bình</div></div>
+        <div class="vocab-item"><div class="vocab-word">wages <span class="pos">(n.pl.)</span></div><div class="vocab-meaning">tiền lương theo giờ/ngày</div></div>
+        <div class="vocab-item"><div class="vocab-word">smuggling <span class="pos">(n.)</span></div><div class="vocab-meaning">hoạt động buôn lậu</div></div>
+        <div class="vocab-item"><div class="vocab-word">beverage <span class="pos">(n.)</span></div><div class="vocab-meaning">đồ uống (trang trọng)</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title">Collocations (4)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">a closely guarded secret</div><div class="vocab-meaning">bí mật được bảo vệ cẩn thận</div></div>
+        <div class="vocab-item"><div class="vocab-word">devoted entirely to</div><div class="vocab-meaning">dành toàn bộ cho</div></div>
+        <div class="vocab-item"><div class="vocab-word">impose heavy taxes</div><div class="vocab-meaning">áp thuế nặng</div></div>
+        <div class="vocab-item"><div class="vocab-word">lower risk of</div><div class="vocab-meaning">giảm nguy cơ (bệnh)</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">Đừng học từ lẻ — học cả cụm. IELTS Reading kiểm tra khả năng nhận biết collocation.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · TEA · SELF-SCORE -->
+<section data-label="19 Tea Score" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Tea</span><span class="rule"></span><span>Tự đánh giá</span></div>
+  <p class="eyebrow">Practice 01 · Score Recap</p>
+  <h2 class="h-section">12 câu hỏi — <em class="hi">đếm đúng trước khi sang bài 02.</em></h2>
+
+  <div class="key-grid" style="margin-bottom: 36px;">
+    <div class="k"><div class="q">Q1</div><div class="a">herbalist</div></div>
+    <div class="k"><div class="q">Q2</div><div class="a">1610</div></div>
+    <div class="k"><div class="q">Q3</div><div class="a">Lu Yu</div></div>
+    <div class="k"><div class="q">Q4</div><div class="a">chanoyu</div></div>
+    <div class="k"><div class="q">Q5</div><div class="a">&gt;50</div></div>
+    <div class="k"><div class="q">Q6</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q7</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q8</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q9</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q10</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q11</div><div class="a">2737 BC</div></div>
+    <div class="k"><div class="q">Q12</div><div class="a">medicine</div></div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="k">10–12 đúng</div><div class="v" style="color:var(--accent);">Band 6+</div><div class="d">Kỹ thuật vững. Sang Practice 02 — công nghệ.</div></div>
+    <div class="stat"><div class="k">7–9 đúng</div><div class="v">Band 5</div><div class="d">Đúng mục tiêu. Xem lại Walkthrough (slide 16).</div></div>
+    <div class="stat"><div class="k">&lt; 7 đúng</div><div class="v">Band 4.5</div><div class="d">Skim lại passage 1 lần nữa — đừng bỏ qua slide 18.</div></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Tea</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — MICROCHIP (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · PRACTICE 02 SECTION BREAK -->
+<section data-label="20 Practice 02 · Microchip" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Technology</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice Passage 02</p>
+    <h2><em>Microchip.</em><br>430 từ ·<br>12 câu hỏi.</h2>
+    <div class="toc">
+      <div>01 · Tea — lịch sử &amp; văn hoá</div>
+      <div class="active">02 · Microchip — công nghệ</div>
+      <div>03 · Octopuses — khoa học</div>
+      <div>04 · Whistled Language — ngôn ngữ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · PASSAGE · MICROCHIP -->
+<section data-label="21 Microchip Passage" class="slide">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Bài đọc</span></div>
+  <p class="eyebrow">Reading Passage 02 · The Quiet Revolution of the Microchip</p>
+
+  <div class="passage compact" style="column-count: 2; column-gap: 56px; column-rule: 1px solid var(--rule-soft);">
+    <h4 style="column-span: all;">The Quiet Revolution of the Microchip</h4>
+    <div class="meta" style="column-span: all;">~430 từ · Skim ≤ 90 giây · Highlight: đỏ đậm = scannable, đỏ nhạt = topic sentence</div>
+
+    <p><span class="para-num">A</span><span class="hl-skim">Few inventions have changed daily life as quietly as the microchip.</span> Unlike the steam engine or the aeroplane, it produces no smoke and no noise, yet today it sits inside almost every car, washing machine and mobile phone. The first working microchip was built in <span class="hl-scan">1958</span> by an American engineer named <span class="hl-scan">Jack Kilby</span>, who worked for the electronics company Texas Instruments.</p>
+
+    <p><span class="para-num">B</span>Kilby's breakthrough was to place several electronic components — transistors, resistors and capacitors — on a single piece of <span class="hl-scan">germanium</span>, a silvery semiconductor. Before his invention, each component had to be wired together by hand, which was slow and prone to errors. A few months later, another engineer, <span class="hl-scan">Robert Noyce</span>, independently developed a similar design using silicon, the material now used in nearly every modern chip.</p>
+
+    <p><span class="para-num">C</span><span class="hl-skim">During the 1960s, the microchip was used almost exclusively by the military and the space programme.</span> The Apollo Guidance Computer, which helped astronauts land on the Moon in <span class="hl-scan">1969</span>, relied on thousands of tiny integrated circuits. Each chip at the time cost roughly <span class="hl-scan">$1,000</span>, making consumer use impossible.</p>
+
+    <p><span class="para-num">D</span><span class="hl-skim">The 1970s brought the chip into ordinary homes.</span> In 1971, Intel released the first commercial microprocessor, the <span class="hl-scan">4004</span>, which contained 2,300 transistors and could perform 60,000 calculations per second. It was originally designed for a Japanese calculator company, but its flexibility meant it quickly found its way into cash registers, traffic lights and, by the end of the decade, personal computers.</p>
+
+    <p><span class="para-num">E</span>Progress has followed a famous prediction made by Intel co-founder <span class="hl-scan">Gordon Moore</span> in 1965. Moore observed that the number of transistors on a chip was doubling roughly every two years. <span class="hl-skim">This pattern, now known as Moore's Law, has held true for nearly six decades.</span> A modern smartphone chip contains more than 15 billion transistors, each smaller than a virus.</p>
+
+    <p><span class="para-num">F</span><span class="hl-skim">Today, the industry faces physical limits.</span> Transistors are approaching the size of a single atom, and producing them requires factories worth more than <span class="hl-scan">$20 billion</span>. Researchers explore alternatives such as quantum computing and 3-D chip design, but for now, silicon continues to power the quiet revolution.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · MICROCHIP · MATCHING HEADINGS -->
+<section data-label="22 Microchip Ex1 Matching Headings" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Bài tập 1 · Skim</span></div>
+  <p class="eyebrow">Exercise 1 · Skim — Matching Headings</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 12px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Match each paragraph A–F to a heading.</h2>
+      <p class="small">Thời gian: <em class="hi">90 giây</em>. Chỉ cần topic sentence.</p>
+
+      <div style="margin-top: 20px;">
+        <p class="mono-label" style="margin-bottom: 12px;">Danh sách tiêu đề</p>
+        <ul style="list-style:none; padding:0; margin:0; font-family: var(--display); font-size: 25px; line-height: 1.35;">
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">i</span>The chip enters the home</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">ii</span>Early military and space use</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iii</span>A quiet yet universal invention</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iv</span>A steady doubling of power</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">v</span>Meeting the limits of physics</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">vi</span>Two inventors, one breakthrough</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · đoạn → tiêu đề</p>
+      <ul class="q-list">
+        <li><span class="q-num">A</span><span>"changed daily life as quietly as…"</span><span class="q-ans">iii</span></li>
+        <li><span class="q-num">B</span><span>Kilby &amp; Noyce cùng phát minh</span><span class="q-ans">vi</span></li>
+        <li><span class="q-num">C</span><span>"used almost exclusively by military…"</span><span class="q-ans">ii</span></li>
+        <li><span class="q-num">D</span><span>"1970s brought the chip into homes"</span><span class="q-ans">i</span></li>
+        <li><span class="q-num">E</span><span>Moore's Law — doubling</span><span class="q-ans">iv</span></li>
+        <li><span class="q-num">F</span><span>"industry faces physical limits"</span><span class="q-ans">v</span></li>
+      </ul>
+      <p class="fine">Đoạn B &amp; E không có câu 1 là topic sentence lộ rõ — dùng từ riêng: "Kilby" / "Moore".</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · MICROCHIP · MULTIPLE CHOICE -->
+<section data-label="23 Microchip Ex2 MC" class="slide">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Bài tập 2 · Scan + hiểu</span></div>
+  <p class="eyebrow">Exercise 2 · Multiple Choice</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Choose <em class="hi">the correct letter</em> — A, B, C or D.</h2>
+
+      <ol class="mcq">
+        <li>
+          <div class="q"><span class="n">Q1</span><span>The main material used in modern microchips is</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>germanium.</span>
+            <span class="correct"><span class="lbl">B</span>silicon.</span>
+            <span><span class="lbl">C</span>copper.</span>
+            <span><span class="lbl">D</span>quartz.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q2</span><span>The Intel 4004 was originally designed for</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>a personal computer.</span>
+            <span><span class="lbl">B</span>a traffic-light system.</span>
+            <span class="correct"><span class="lbl">C</span>a Japanese calculator.</span>
+            <span><span class="lbl">D</span>a cash register.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q3</span><span>During the 1960s, the main users of the microchip were</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>family households.</span>
+            <span class="correct"><span class="lbl">B</span>the military and space programme.</span>
+            <span><span class="lbl">C</span>Japanese companies.</span>
+            <span><span class="lbl">D</span>university researchers.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q4</span><span>According to Moore, the number of transistors on a chip doubles approximately every</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>six months.</span>
+            <span><span class="lbl">B</span>one year.</span>
+            <span class="correct"><span class="lbl">C</span>two years.</span>
+            <span><span class="lbl">D</span>six decades.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Chiến lược MC</span>
+        <p style="margin:0 0 12px 0;"><strong>1.</strong> Đọc câu hỏi — gạch keyword.</p>
+        <p style="margin:0 0 12px 0;"><strong>2.</strong> Scan bài tìm keyword — đọc kỹ câu chứa nó.</p>
+        <p style="margin:0 0 12px 0;"><strong>3.</strong> Loại 2 đáp án sai rõ ràng.</p>
+        <p style="margin:0;"><strong>4.</strong> So sánh 2 đáp án còn lại — chọn cái bám sát bài đọc.</p>
+      </div>
+      <p class="fine" style="margin-top: 16px;"><em class="hi">Q4 bẫy:</em> "six decades" có xuất hiện trong bài ("has held true for nearly six decades") — nhưng đó là thời gian Moore's Law đúng, không phải chu kỳ doubling.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · MICROCHIP · YES/NO/NOT GIVEN -->
+<section data-label="24 Microchip Ex3 YNNG" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Bài tập 3 · Scan</span></div>
+  <p class="eyebrow">Exercise 3 · Yes / No / Not Given</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Does the statement agree with the writer? <em class="hi">Y / N / NG.</em></h2>
+
+      <ul class="tfng">
+        <li><span class="n">Q5</span><span>Jack Kilby worked for Texas Instruments when he built the first chip.</span><span class="a">YES</span></li>
+        <li><span class="n">Q6</span><span>Robert Noyce copied Kilby's design.</span><span class="a">NO</span></li>
+        <li><span class="n">Q7</span><span>The Apollo Guidance Computer used more than one chip.</span><span class="a">YES</span></li>
+        <li><span class="n">Q8</span><span>Intel paid Moore to write his prediction in 1965.</span><span class="a">NOT GIVEN</span></li>
+        <li><span class="n">Q9</span><span>Modern chip factories cost less than they did in the 1970s.</span><span class="a">NO</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Ba câu phổ biến nhất</span>
+        <p style="margin:0 0 12px 0;"><strong>Q6</strong>: bài nói Noyce "<em>independently</em> developed" — tức là <em>riêng biệt</em>, không copy. Ngược nghĩa → NO.</p>
+        <p style="margin:0 0 12px 0;"><strong>Q8</strong>: bài chỉ nói Moore <em>đã dự đoán</em>. Không nói Intel trả tiền. → NG.</p>
+        <p style="margin:0;"><strong>Q9</strong>: bài nói factories <em>worth more than $20 billion</em> ngày nay — hàm ý cao hơn xưa. → NO.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · MICROCHIP · SHORT ANSWER -->
+<section data-label="25 Microchip Ex4 Short Answer" class="slide">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Bài tập 4 · Scan</span></div>
+  <p class="eyebrow">Exercise 4 · Short Answer</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Answer in <em class="hi">no more than 2 words or a number</em>.</h2>
+
+      <ul class="q-list" style="margin-top: 16px;">
+        <li><span class="q-num">Q10</span><span>In which year was the first working microchip built?</span><span>—</span></li>
+        <li><span class="q-num">Q11</span><span>How many transistors did the Intel 4004 contain?</span><span>—</span></li>
+        <li><span class="q-num">Q12</span><span>Who predicted that chips would double every two years?</span><span>—</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · keyword scan</p>
+      <ul class="q-list">
+        <li><span class="q-num">Q10</span><span>Scan: <em>first · built</em></span><span class="q-ans">1958</span></li>
+        <li><span class="q-num">Q11</span><span>Scan: <em>4004</em></span><span class="q-ans">2,300</span></li>
+        <li><span class="q-num">Q12</span><span>Scan: <em>doubling · prediction</em></span><span class="q-ans">Gordon Moore</span></li>
+      </ul>
+      <p class="fine">Số &amp; tên riêng — scan thấy ngay. "2,300" là con số duy nhất theo sau "4004" trong bài.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · MICROCHIP · WALKTHROUGH -->
+<section data-label="26 Microchip Walkthrough" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Giải thích chi tiết</span></div>
+  <p class="eyebrow">Answer Walkthrough · Quote + paraphrase</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Bốn câu <em class="hi">bẫy</em> của bài Microchip.</h2>
+
+  <ul class="walk" style="grid-template-columns: 1fr 1fr; display: grid;">
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q1</span><span class="w-q">Main material in modern chips?</span><span class="w-ans">B · silicon</span></div>
+      <p class="w-quote">"…another engineer, Robert Noyce, independently developed a similar design <span class="k">using silicon, the material now used in nearly every modern chip</span>."</p>
+      <p class="w-why"><b>Bẫy:</b> germanium xuất hiện trước silicon trong bài — nhưng là vật liệu <em>đầu tiên</em>, không phải hiện đại.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q3</span><span class="w-q">Main users in the 1960s?</span><span class="w-ans">B · military + space</span></div>
+      <p class="w-quote">"During the 1960s, the microchip was used almost exclusively by <span class="k">the military and the space programme</span>."</p>
+      <p class="w-why"><b>Paraphrase:</b> "main users" = "used almost exclusively by". Topic sentence của đoạn C.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q6</span><span class="w-q">Noyce copied Kilby's design?</span><span class="w-ans">NO</span></div>
+      <p class="w-quote">"…Robert Noyce, <span class="k">independently</span> developed a similar design using silicon…"</p>
+      <p class="w-why"><b>Keyword trái nghĩa:</b> "independently" = "không copy". Từ này luôn biến YES thành NO.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q8</span><span class="w-q">Intel paid Moore?</span><span class="w-ans">NOT GIVEN</span></div>
+      <p class="w-quote">"…a famous prediction made by <span class="k">Intel co-founder Gordon Moore</span> in 1965."</p>
+      <p class="w-why"><b>Bẫy:</b> Moore là <em>co-founder</em> của Intel (bài có nói) — nhưng không nói được Intel trả tiền để dự đoán. Không có = NG.</p>
+    </li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · MICROCHIP · VOCAB -->
+<section data-label="27 Microchip Vocab" class="slide">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Vocabulary</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Bảy từ &amp; bốn collocations — <em class="hi">từ vựng công nghệ.</em></h2>
+
+  <div class="vc-grid">
+    <div>
+      <div class="col-title">Vocabulary (7)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">breakthrough <span class="pos">(n.)</span></div><div class="vocab-meaning">bước đột phá</div></div>
+        <div class="vocab-item"><div class="vocab-word">transistor <span class="pos">(n.)</span></div><div class="vocab-meaning">bóng bán dẫn</div></div>
+        <div class="vocab-item"><div class="vocab-word">semiconductor <span class="pos">(n.)</span></div><div class="vocab-meaning">chất bán dẫn</div></div>
+        <div class="vocab-item"><div class="vocab-word">prone to <span class="pos">(adj.)</span></div><div class="vocab-meaning">dễ bị (lỗi, bệnh…)</div></div>
+        <div class="vocab-item"><div class="vocab-word">integrated <span class="pos">(adj.)</span></div><div class="vocab-meaning">tích hợp</div></div>
+        <div class="vocab-item"><div class="vocab-word">flexibility <span class="pos">(n.)</span></div><div class="vocab-meaning">tính linh hoạt</div></div>
+        <div class="vocab-item"><div class="vocab-word">alternative <span class="pos">(n./adj.)</span></div><div class="vocab-meaning">giải pháp thay thế</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title">Collocations (4)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">used almost exclusively by</div><div class="vocab-meaning">hầu như chỉ được dùng bởi</div></div>
+        <div class="vocab-item"><div class="vocab-word">independently developed</div><div class="vocab-meaning">phát triển một cách độc lập</div></div>
+        <div class="vocab-item"><div class="vocab-word">face physical limits</div><div class="vocab-meaning">đối mặt với giới hạn vật lý</div></div>
+        <div class="vocab-item"><div class="vocab-word">to hold true</div><div class="vocab-meaning">vẫn đúng, vẫn hợp lệ</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Independently" là keyword chuyển nghĩa — xuất hiện rất nhiều trong bài khoa học &amp; công nghệ.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · MICROCHIP · SCORE -->
+<section data-label="28 Microchip Score" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Microchip</span><span class="rule"></span><span>Tự đánh giá</span></div>
+  <p class="eyebrow">Practice 02 · Score Recap</p>
+  <h2 class="h-section">12 câu — <em class="hi">bài này khó hơn Tea.</em></h2>
+
+  <div class="key-grid" style="margin-bottom: 36px;">
+    <div class="k"><div class="q">Q1</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q2</div><div class="a">C</div></div>
+    <div class="k"><div class="q">Q3</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q4</div><div class="a">C</div></div>
+    <div class="k"><div class="q">Q5</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q6</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q7</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q8</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q9</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q10</div><div class="a">1958</div></div>
+    <div class="k"><div class="q">Q11</div><div class="a">2,300</div></div>
+    <div class="k"><div class="q">Q12</div><div class="a">Moore</div></div>
+  </div>
+
+  <p class="fine">Bài công nghệ nhiều từ chuyên môn — nhưng câu hỏi không đòi hiểu chuyên môn, chỉ đòi scan đúng. Nếu &lt; 8/12, tập trung vào Walkthrough (slide 26) trước khi sang bài 03.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Microchip</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — OCTOPUS (29–37) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 29 · PRACTICE 03 SECTION BREAK -->
+<section data-label="29 Practice 03 · Octopus" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">Science · Nature</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice Passage 03</p>
+    <h2><em>Octopus.</em><br>440 từ ·<br>12 câu hỏi.</h2>
+    <div class="toc">
+      <div>01 · Tea — lịch sử &amp; văn hoá</div>
+      <div>02 · Microchip — công nghệ</div>
+      <div class="active">03 · Octopuses — khoa học</div>
+      <div>04 · Whistled Language — ngôn ngữ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · PASSAGE · OCTOPUS -->
+<section data-label="30 Octopus Passage" class="slide">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Bài đọc</span></div>
+  <p class="eyebrow">Reading Passage 03 · How Octopuses Solve Puzzles</p>
+
+  <div class="passage compact dense" style="column-count: 2; column-gap: 56px; column-rule: 1px solid var(--rule-soft);">
+    <h4 style="column-span: all;">How Octopuses Solve Puzzles</h4>
+    <div class="meta" style="column-span: all;">~440 từ · Skim ≤ 90 giây · Highlight: đỏ đậm = scannable, đỏ nhạt = topic sentence</div>
+
+    <p><span class="para-num">A</span><span class="hl-skim">Octopuses are widely regarded as the most intelligent of all invertebrates.</span> Despite having no bones, no central skeleton and a brain the size of a walnut, they can open jars, escape from locked tanks and recognise individual human keepers. Because they have no external features linking them to humans, studying their minds tells biologists a great deal about what intelligence itself actually is.</p>
+
+    <p><span class="para-num">B</span>A single octopus has around <span class="hl-scan">500 million</span> neurons — roughly the same number as a dog. Unusually, <span class="hl-skim">two-thirds of these neurons are located not in the brain but in the arms.</span> Each of the eight arms can therefore act almost independently, tasting, gripping and exploring without direct instruction from the central brain. This distributed nervous system is unique in the animal kingdom.</p>
+
+    <p><span class="para-num">C</span><span class="hl-skim">Laboratory experiments have revealed remarkable problem-solving skills.</span> In one well-known 2011 study at the <span class="hl-scan">Seattle Aquarium</span>, octopuses were given a clear plastic jar with a crab inside, sealed with a childproof lid. Most individuals worked out how to unscrew the lid within ten minutes, and one animal, nicknamed <span class="hl-scan">Billye</span>, did so in under three.</p>
+
+    <p><span class="para-num">D</span><span class="hl-skim">They also appear to learn by watching others.</span> Italian researchers placed two jars before an observer octopus — one red, one white. A trained octopus opened the red jar while the observer watched. When given the same choice the next day, the observer reliably chose red, suggesting a form of social learning previously thought impossible in a solitary animal.</p>
+
+    <p><span class="para-num">E</span><span class="hl-skim">Despite these abilities, octopuses are short-lived.</span> Most species survive only <span class="hl-scan">one to two years</span>, which gives them very little time to learn. Biologists are puzzled by how such a brief life can produce such advanced cognition. One theory is that complex behaviour evolved as a defence: with soft bodies and many predators, the octopus had to outthink danger rather than outrun it.</p>
+
+    <p><span class="para-num">F</span><span class="hl-skim">The study of octopus intelligence now influences machine learning.</span> Engineers at <span class="hl-scan">MIT</span> have designed "soft robots" whose flexible arms contain small processors — a direct imitation of the octopus's distributed brain.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · OCTOPUS · MATCHING HEADINGS -->
+<section data-label="31 Octopus Ex1 Matching Headings" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Bài tập 1 · Skim</span></div>
+  <p class="eyebrow">Exercise 1 · Skim — Matching Headings</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 12px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Match each paragraph A–F to a heading.</h2>
+      <p class="small">Thời gian: <em class="hi">90 giây</em>.</p>
+
+      <div style="margin-top: 20px;">
+        <p class="mono-label" style="margin-bottom: 12px;">Danh sách tiêu đề</p>
+        <ul style="list-style:none; padding:0; margin:0; font-family: var(--display); font-size: 25px; line-height: 1.35;">
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">i</span>An unusually brief life span</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">ii</span>Inspiring the next generation of robots</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iii</span>The smartest invertebrate</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iv</span>A body full of brains</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">v</span>Learning by watching others</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">vi</span>Unscrewing jars in the lab</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · đoạn → tiêu đề</p>
+      <ul class="q-list">
+        <li><span class="q-num">A</span><span>"most intelligent of all invertebrates"</span><span class="q-ans">iii</span></li>
+        <li><span class="q-num">B</span><span>"two-thirds of neurons in the arms"</span><span class="q-ans">iv</span></li>
+        <li><span class="q-num">C</span><span>Seattle Aquarium jar test</span><span class="q-ans">vi</span></li>
+        <li><span class="q-num">D</span><span>"learn by watching others"</span><span class="q-ans">v</span></li>
+        <li><span class="q-num">E</span><span>"short-lived · 1–2 years"</span><span class="q-ans">i</span></li>
+        <li><span class="q-num">F</span><span>"influences machine learning · MIT"</span><span class="q-ans">ii</span></li>
+      </ul>
+      <p class="fine">Bài khoa học — nhiều tên riêng (Seattle, Billye, MIT). Topic sentence luôn là câu đầu.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · OCTOPUS · MULTIPLE CHOICE -->
+<section data-label="32 Octopus Ex2 MC" class="slide">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Bài tập 2 · Scan + hiểu</span></div>
+  <p class="eyebrow">Exercise 2 · Multiple Choice</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Choose <em class="hi">the correct letter</em> — A, B, C or D.</h2>
+
+      <ol class="mcq">
+        <li>
+          <div class="q"><span class="n">Q1</span><span>Roughly how many neurons does an octopus have?</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>50 million.</span>
+            <span class="correct"><span class="lbl">B</span>500 million.</span>
+            <span><span class="lbl">C</span>5 billion.</span>
+            <span><span class="lbl">D</span>The same as a walnut.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q2</span><span>According to the passage, most of an octopus's neurons are in</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>the central brain.</span>
+            <span class="correct"><span class="lbl">B</span>the eight arms.</span>
+            <span><span class="lbl">C</span>the skin.</span>
+            <span><span class="lbl">D</span>the eyes.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q3</span><span>Billye opened the sealed jar in</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>under one minute.</span>
+            <span class="correct"><span class="lbl">B</span>under three minutes.</span>
+            <span><span class="lbl">C</span>around ten minutes.</span>
+            <span><span class="lbl">D</span>exactly fifteen minutes.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q4</span><span>One theory for octopus intelligence is that it evolved as a way to</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>communicate with other octopuses.</span>
+            <span class="correct"><span class="lbl">B</span>defend against predators.</span>
+            <span><span class="lbl">C</span>learn from humans.</span>
+            <span><span class="lbl">D</span>extend its life span.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Chiến lược MC</span>
+        <p style="margin:0 0 12px 0;"><strong>Q1</strong>: 3 con số trong bài (500M neurons, 50 countries ở bài khác…). Scan "neurons" để chắc.</p>
+        <p style="margin:0 0 12px 0;"><strong>Q3</strong>: "ten minutes" &amp; "three" đều có — nhưng Billye là tên riêng, chỉ xuất hiện ở 1 chỗ.</p>
+        <p style="margin:0;"><strong>Q4</strong>: Paraphrase: "outthink danger" = "defend against predators".</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · OCTOPUS · YES/NO/NOT GIVEN -->
+<section data-label="33 Octopus Ex3 YNNG" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Bài tập 3 · Scan</span></div>
+  <p class="eyebrow">Exercise 3 · Yes / No / Not Given</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Does the statement agree with the writer? <em class="hi">Y / N / NG.</em></h2>
+
+      <ul class="tfng">
+        <li><span class="n">Q5</span><span>Octopuses can recognise the people who look after them.</span><span class="a">YES</span></li>
+        <li><span class="n">Q6</span><span>A dog has more neurons than an octopus.</span><span class="a">NO</span></li>
+        <li><span class="n">Q7</span><span>The Italian experiment used jars of three different colours.</span><span class="a">NO</span></li>
+        <li><span class="n">Q8</span><span>Billye enjoys interacting with aquarium visitors.</span><span class="a">NOT GIVEN</span></li>
+        <li><span class="n">Q9</span><span>MIT engineers put small processors into robot arms.</span><span class="a">YES</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Phân tích 3 câu dễ nhầm</span>
+        <p style="margin:0 0 12px 0;"><strong>Q6</strong>: bài nói "<em>roughly the same number as a dog</em>" → tương đương, không hơn → NO.</p>
+        <p style="margin:0 0 12px 0;"><strong>Q7</strong>: bài nói <em>"one red, one white"</em> — 2 màu, không phải 3 → NO.</p>
+        <p style="margin:0;"><strong>Q8</strong>: Billye chỉ được nhắc tới vì mở lọ. Không nói gì về khách → NG.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · OCTOPUS · SHORT ANSWER -->
+<section data-label="34 Octopus Ex4 Short Answer" class="slide">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Bài tập 4 · Scan</span></div>
+  <p class="eyebrow">Exercise 4 · Short Answer</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Answer in <em class="hi">no more than 3 words</em>.</h2>
+
+      <ul class="q-list" style="margin-top: 16px;">
+        <li><span class="q-num">Q10</span><span>Where was the jar-opening study conducted?</span><span>—</span></li>
+        <li><span class="q-num">Q11</span><span>How long do most octopus species live?</span><span>—</span></li>
+        <li><span class="q-num">Q12</span><span>Which institution built the soft robots?</span><span>—</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · keyword scan</p>
+      <ul class="q-list">
+        <li><span class="q-num">Q10</span><span>Scan: <em>jar · study</em></span><span class="q-ans">Seattle Aquarium</span></li>
+        <li><span class="q-num">Q11</span><span>Scan: <em>live · species</em></span><span class="q-ans">one to two years</span></li>
+        <li><span class="q-num">Q12</span><span>Scan: <em>soft robots</em></span><span class="q-ans">MIT</span></li>
+      </ul>
+      <p class="fine">Tên địa danh &amp; viết tắt dễ scan nhất trong bài khoa học.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · OCTOPUS · WALKTHROUGH -->
+<section data-label="35 Octopus Walkthrough" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Giải thích chi tiết</span></div>
+  <p class="eyebrow">Answer Walkthrough · Quote + paraphrase</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Các câu đòi <em class="hi">hiểu paraphrase</em>.</h2>
+
+  <ul class="walk" style="grid-template-columns: 1fr 1fr; display: grid;">
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q4</span><span class="w-q">Theory — why octopus is smart?</span><span class="w-ans">B · defend against predators</span></div>
+      <p class="w-quote">"…the octopus had to <span class="k">outthink danger rather than outrun it</span>."</p>
+      <p class="w-why"><b>Paraphrase khó:</b> "outthink danger" (dùng trí thay vì chạy) = "defend against predators".</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q5</span><span class="w-q">Recognise their keepers?</span><span class="w-ans">YES</span></div>
+      <p class="w-quote">"…recognise <span class="k">individual human keepers</span>."</p>
+      <p class="w-why"><b>Paraphrase:</b> "people who look after them" = "human keepers". Từ đồng nghĩa chính xác.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q6</span><span class="w-q">Dog has more neurons?</span><span class="w-ans">NO</span></div>
+      <p class="w-quote">"…around 500 million neurons — <span class="k">roughly the same number as a dog</span>."</p>
+      <p class="w-why"><b>Bẫy so sánh:</b> "same" ≠ "more". Câu hỏi nói "more" → ngược nghĩa → NO, không phải NG.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q8</span><span class="w-q">Billye enjoys visitors?</span><span class="w-ans">NOT GIVEN</span></div>
+      <p class="w-quote">"…one animal, nicknamed <span class="k">Billye</span>, did so in under three."</p>
+      <p class="w-why"><b>Bẫy cảm xúc:</b> bài chỉ nói Billye <em>mở lọ</em>. Không nói gì về tương tác với người. → NG.</p>
+    </li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · OCTOPUS · VOCAB -->
+<section data-label="36 Octopus Vocab" class="slide">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Vocabulary</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Bảy từ &amp; bốn collocations — <em class="hi">khoa học &amp; sinh học.</em></h2>
+
+  <div class="vc-grid">
+    <div>
+      <div class="col-title">Vocabulary (7)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">invertebrate <span class="pos">(n.)</span></div><div class="vocab-meaning">động vật không xương sống</div></div>
+        <div class="vocab-item"><div class="vocab-word">neuron <span class="pos">(n.)</span></div><div class="vocab-meaning">tế bào thần kinh</div></div>
+        <div class="vocab-item"><div class="vocab-word">distributed <span class="pos">(adj.)</span></div><div class="vocab-meaning">phân tán, phân bổ</div></div>
+        <div class="vocab-item"><div class="vocab-word">remarkable <span class="pos">(adj.)</span></div><div class="vocab-meaning">đáng chú ý, phi thường</div></div>
+        <div class="vocab-item"><div class="vocab-word">solitary <span class="pos">(adj.)</span></div><div class="vocab-meaning">sống đơn độc</div></div>
+        <div class="vocab-item"><div class="vocab-word">cognition <span class="pos">(n.)</span></div><div class="vocab-meaning">nhận thức, khả năng tư duy</div></div>
+        <div class="vocab-item"><div class="vocab-word">imitation <span class="pos">(n.)</span></div><div class="vocab-meaning">sự bắt chước, mô phỏng</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title">Collocations (4)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">widely regarded as</div><div class="vocab-meaning">được nhiều người coi là</div></div>
+        <div class="vocab-item"><div class="vocab-word">problem-solving skills</div><div class="vocab-meaning">kỹ năng giải quyết vấn đề</div></div>
+        <div class="vocab-item"><div class="vocab-word">advanced cognition</div><div class="vocab-meaning">nhận thức cao cấp</div></div>
+        <div class="vocab-item"><div class="vocab-word">a direct imitation of</div><div class="vocab-meaning">mô phỏng trực tiếp từ</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Widely regarded as" xuất hiện ở rất nhiều bài khoa học IELTS — học thuộc.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · OCTOPUS · SCORE -->
+<section data-label="37 Octopus Score" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Octopus</span><span class="rule"></span><span>Tự đánh giá</span></div>
+  <p class="eyebrow">Practice 03 · Score Recap</p>
+  <h2 class="h-section">12 câu — <em class="hi">paraphrase là chìa khoá.</em></h2>
+
+  <div class="key-grid" style="margin-bottom: 36px;">
+    <div class="k"><div class="q">Q1</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q2</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q3</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q4</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q5</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q6</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q7</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q8</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q9</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q10</div><div class="a">Seattle</div></div>
+    <div class="k"><div class="q">Q11</div><div class="a">1–2 yrs</div></div>
+    <div class="k"><div class="q">Q12</div><div class="a">MIT</div></div>
+  </div>
+
+  <p class="fine">Nếu Q4, Q6, Q8 sai — bạn cần học thêm paraphrase. Quay lại slide 09 trước khi sang bài 04.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Octopus</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — WHISTLED LANGUAGE (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · PRACTICE 04 SECTION BREAK -->
+<section data-label="38 Practice 04 · Whistled Language" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Culture · Language</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice Passage 04</p>
+    <h2><em>Silbo.</em><br>430 từ ·<br>12 câu hỏi.</h2>
+    <div class="toc">
+      <div>01 · Tea — lịch sử &amp; văn hoá</div>
+      <div>02 · Microchip — công nghệ</div>
+      <div>03 · Octopuses — khoa học</div>
+      <div class="active">04 · Whistled Language — ngôn ngữ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · PASSAGE · SILBO -->
+<section data-label="39 Silbo Passage" class="slide">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Bài đọc</span></div>
+  <p class="eyebrow">Reading Passage 04 · The Whistled Language of La Gomera</p>
+
+  <div class="passage compact dense" style="column-count: 2; column-gap: 56px; column-rule: 1px solid var(--rule-soft);">
+    <h4 style="column-span: all;">The Whistled Language of La Gomera</h4>
+    <div class="meta" style="column-span: all;">~430 từ · Skim ≤ 90 giây · Highlight: đỏ đậm = scannable, đỏ nhạt = topic sentence</div>
+
+    <p><span class="para-num">A</span><span class="hl-skim">On the steep green island of La Gomera, shepherds have long spoken to each other without words.</span> Instead of shouting across the deep ravines that divide the island, they whistle — producing a piercing sound that can carry for more than <span class="hl-scan">three kilometres</span>. The language, called <span class="hl-scan">Silbo Gomero</span>, is not a code: it is a full translation of Spanish into whistles.</p>
+
+    <p><span class="para-num">B</span><span class="hl-skim">Silbo was developed by the island's original inhabitants before the Spanish arrived.</span> Known as the Guanches, they reached La Gomera from <span class="hl-scan">North Africa</span> around 2,000 years ago. When Spanish settlers arrived in the <span class="hl-scan">15th century</span>, the whistled language was adapted to Spanish sounds and passed down within families.</p>
+
+    <p><span class="para-num">C</span>In technical terms, <span class="hl-skim">Silbo replaces Spanish vowels and consonants with two pitches and four interruptions.</span> Because it carries across valleys far better than the human voice, it was once used to report births, funerals, fires and government announcements — even against the wind.</p>
+
+    <p><span class="para-num">D</span><span class="hl-skim">By the 1950s, the language had almost disappeared.</span> Younger islanders moved to the cities or to Venezuela for work, and telephones made whistling across the ravines unnecessary. By 1980, fewer than <span class="hl-scan">100 active speakers</span> remained, most of them over sixty.</p>
+
+    <p><span class="para-num">E</span><span class="hl-skim">In 1999, the local government took a decisive step.</span> Silbo Gomero was made a <span class="hl-scan">compulsory subject</span> in every primary school on the island, with 30 minutes of instruction per week. All children under 18 now understand basic Silbo, though fluency still depends on practising with experienced older whistlers. In 2009, Silbo was added to <span class="hl-scan">UNESCO</span>'s list of cultural heritage.</p>
+
+    <p><span class="para-num">F</span><span class="hl-skim">The language has also attracted scientific interest.</span> At the University of <span class="hl-scan">La Laguna</span>, researchers showed that fluent Silbo speakers process whistles in the same brain region as ordinary spoken language — evidence that the human language system is remarkably flexible.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · SILBO · MATCHING HEADINGS -->
+<section data-label="40 Silbo Ex1 Matching Headings" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Bài tập 1 · Skim</span></div>
+  <p class="eyebrow">Exercise 1 · Skim — Matching Headings</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 12px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Match each paragraph A–F to a heading.</h2>
+      <p class="small">Thời gian: <em class="hi">90 giây</em>.</p>
+
+      <div style="margin-top: 20px;">
+        <p class="mono-label" style="margin-bottom: 12px;">Danh sách tiêu đề</p>
+        <ul style="list-style:none; padding:0; margin:0; font-family: var(--display); font-size: 25px; line-height: 1.35;">
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">i</span>A decline in the modern age</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">ii</span>Saved by the classroom</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iii</span>Origins before the Spanish</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">iv</span>A language that carries for kilometres</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">v</span>What science says about Silbo</li>
+          <li style="padding:12px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);"><span style="font-family:var(--mono); color:var(--accent); font-weight:600; margin-right:16px;">vi</span>How whistles replace words</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · đoạn → tiêu đề</p>
+      <ul class="q-list">
+        <li><span class="q-num">A</span><span>"shepherds… whistle across ravines"</span><span class="q-ans">iv</span></li>
+        <li><span class="q-num">B</span><span>"developed… before the Spanish"</span><span class="q-ans">iii</span></li>
+        <li><span class="q-num">C</span><span>"replaces vowels &amp; consonants"</span><span class="q-ans">vi</span></li>
+        <li><span class="q-num">D</span><span>"almost disappeared by 1950s"</span><span class="q-ans">i</span></li>
+        <li><span class="q-num">E</span><span>"compulsory subject in schools"</span><span class="q-ans">ii</span></li>
+        <li><span class="q-num">F</span><span>"scientific interest · brain study"</span><span class="q-ans">v</span></li>
+      </ul>
+      <p class="fine">Bài lịch sử/văn hoá — topic sentence lại là câu đầu, rất đều đặn.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · SILBO · MULTIPLE CHOICE -->
+<section data-label="41 Silbo Ex2 MC" class="slide">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Bài tập 2 · Scan + hiểu</span></div>
+  <p class="eyebrow">Exercise 2 · Multiple Choice</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Choose <em class="hi">the correct letter</em> — A, B, C or D.</h2>
+
+      <ol class="mcq">
+        <li>
+          <div class="q"><span class="n">Q1</span><span>Silbo Gomero is best described as</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>a code based on Morse.</span>
+            <span class="correct"><span class="lbl">B</span>a full translation of Spanish into whistles.</span>
+            <span><span class="lbl">C</span>a type of song.</span>
+            <span><span class="lbl">D</span>an ancient African dialect.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q2</span><span>The original inhabitants of La Gomera are thought to have come from</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>southern Spain.</span>
+            <span><span class="lbl">B</span>Venezuela.</span>
+            <span class="correct"><span class="lbl">C</span>North Africa.</span>
+            <span><span class="lbl">D</span>the Americas.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q3</span><span>By 1980, the number of fluent Silbo speakers had fallen to</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>fewer than 100.</span>
+            <span><span class="lbl">B</span>exactly 100.</span>
+            <span><span class="lbl">C</span>around 500.</span>
+            <span><span class="lbl">D</span>several thousand.</span>
+          </div>
+        </li>
+        <li>
+          <div class="q"><span class="n">Q4</span><span>Brain studies on Silbo suggest that</span></div>
+          <div class="opts">
+            <span><span class="lbl">A</span>whistling is faster than speaking.</span>
+            <span class="correct"><span class="lbl">B</span>the brain treats whistles like ordinary speech.</span>
+            <span><span class="lbl">C</span>only children can learn Silbo.</span>
+            <span><span class="lbl">D</span>Silbo uses a separate language region.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Chiến lược MC</span>
+        <p style="margin:0 0 12px 0;"><strong>Q1</strong>: bài nói "<em>not a code</em>" → loại A ngay.</p>
+        <p style="margin:0 0 12px 0;"><strong>Q3</strong>: bài nói "<em>fewer than 100</em>" = đáp án A, không phải B.</p>
+        <p style="margin:0;"><strong>Q4</strong>: đáp án D ngược với bài — bài nói "<em>same part of the brain</em>".</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · SILBO · YES/NO/NOT GIVEN -->
+<section data-label="42 Silbo Ex3 YNNG" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Bài tập 3 · Scan</span></div>
+  <p class="eyebrow">Exercise 3 · Yes / No / Not Given</p>
+
+  <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 34px; margin-bottom: 18px;">Does the statement agree with the writer? <em class="hi">Y / N / NG.</em></h2>
+
+      <ul class="tfng">
+        <li><span class="n">Q5</span><span>Silbo can be heard at distances further than the human voice.</span><span class="a">YES</span></li>
+        <li><span class="n">Q6</span><span>Spanish settlers banned the use of Silbo when they arrived.</span><span class="a">NOT GIVEN</span></li>
+        <li><span class="n">Q7</span><span>The spread of the telephone contributed to Silbo's decline.</span><span class="a">YES</span></li>
+        <li><span class="n">Q8</span><span>Schools on La Gomera teach Silbo for one hour per week.</span><span class="a">NO</span></li>
+        <li><span class="n">Q9</span><span>Silbo was the first whistled language added to the UNESCO list.</span><span class="a">NOT GIVEN</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="ex-card">
+        <span class="tag">Bẫy thường gặp</span>
+        <p style="margin:0 0 12px 0;"><strong>Q6</strong>: bài chỉ nói Spanish đến thế kỷ 15 và "ngôn ngữ được chỉnh lại". Không nói gì về lệnh cấm → NG.</p>
+        <p style="margin:0 0 12px 0;"><strong>Q8</strong>: bài nói "<em>30 minutes per week</em>" — không phải 1 tiếng → NO.</p>
+        <p style="margin:0;"><strong>Q9</strong>: "first whistled" hoàn toàn không được so sánh với các ngôn ngữ huýt khác → NG.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · SILBO · SHORT ANSWER -->
+<section data-label="43 Silbo Ex4 Short Answer" class="slide">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Bài tập 4 · Scan</span></div>
+  <p class="eyebrow">Exercise 4 · Short Answer</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 56px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 36px; margin-bottom: 18px;">Answer in <em class="hi">no more than 3 words or a number</em>.</h2>
+
+      <ul class="q-list" style="margin-top: 16px;">
+        <li><span class="q-num">Q10</span><span>How far can a Silbo whistle carry?</span><span>—</span></li>
+        <li><span class="q-num">Q11</span><span>In which year did Silbo become compulsory in schools?</span><span>—</span></li>
+        <li><span class="q-num">Q12</span><span>Which university has studied Silbo speakers' brains?</span><span>—</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="mono-label" style="margin-bottom: 14px;">Đáp án · keyword scan</p>
+      <ul class="q-list">
+        <li><span class="q-num">Q10</span><span>Scan: <em>carry · sound</em></span><span class="q-ans">3 kilometres</span></li>
+        <li><span class="q-num">Q11</span><span>Scan: <em>compulsory · schools</em></span><span class="q-ans">1999</span></li>
+        <li><span class="q-num">Q12</span><span>Scan: <em>university · brain</em></span><span class="q-ans">La Laguna</span></li>
+      </ul>
+      <p class="fine">"More than three kilometres" → đáp án có thể là "3 kilometres" hoặc "3 km" (đều chấp nhận).</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · SILBO · WALKTHROUGH -->
+<section data-label="44 Silbo Walkthrough" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Giải thích chi tiết</span></div>
+  <p class="eyebrow">Answer Walkthrough · Quote + paraphrase</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Số &amp; tên riêng — <em class="hi">bẫy độ chính xác.</em></h2>
+
+  <ul class="walk" style="grid-template-columns: 1fr 1fr; display: grid;">
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q3</span><span class="w-q">Fluent speakers by 1980?</span><span class="w-ans">A · fewer than 100</span></div>
+      <p class="w-quote">"By 1980, <span class="k">fewer than 100 active speakers</span> remained…"</p>
+      <p class="w-why"><b>Bẫy chữ "exactly":</b> bài nói "fewer than" (ít hơn) → A đúng, B ("exactly 100") sai. Đọc số phải kèm từ đi trước.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q7</span><span class="w-q">Telephones caused decline?</span><span class="w-ans">YES</span></div>
+      <p class="w-quote">"…<span class="k">telephones made whistling across the ravines unnecessary</span>."</p>
+      <p class="w-why"><b>Paraphrase:</b> "contributed to decline" = "made unnecessary". Câu hỏi diễn đạt ngắn hơn nhưng cùng nghĩa.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q8</span><span class="w-q">1 hour per week?</span><span class="w-ans">NO</span></div>
+      <p class="w-quote">"…<span class="k">30 minutes of instruction per week</span>."</p>
+      <p class="w-why"><b>Bẫy số:</b> 30 phút ≠ 1 tiếng. Đây là NO (ngược), không phải NG — bài có thông tin này.</p>
+    </li>
+    <li class="w-item">
+      <div class="w-head"><span class="w-num">Q9</span><span class="w-q">First whistled language at UNESCO?</span><span class="w-ans">NOT GIVEN</span></div>
+      <p class="w-quote">"In 2009, Silbo Gomero was added to <span class="k">UNESCO's list of intangible cultural heritage</span>."</p>
+      <p class="w-why"><b>Bẫy "first":</b> bài nói Silbo được thêm vào — không so sánh với các ngôn ngữ huýt khác. "First" không xác nhận → NG.</p>
+    </li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · SILBO · VOCAB -->
+<section data-label="45 Silbo Vocab" class="slide">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Vocabulary</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Sáu từ &amp; bốn collocations — <em class="hi">ngôn ngữ &amp; văn hoá.</em></h2>
+
+  <div class="vc-grid">
+    <div>
+      <div class="col-title">Vocabulary (6)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">shepherd <span class="pos">(n.)</span></div><div class="vocab-meaning">người chăn cừu</div></div>
+        <div class="vocab-item"><div class="vocab-word">ravine <span class="pos">(n.)</span></div><div class="vocab-meaning">khe núi sâu và hẹp</div></div>
+        <div class="vocab-item"><div class="vocab-word">piercing <span class="pos">(adj.)</span></div><div class="vocab-meaning">chói tai, xuyên thấu</div></div>
+        <div class="vocab-item"><div class="vocab-word">hybrid <span class="pos">(n.)</span></div><div class="vocab-meaning">sự pha trộn, lai ghép</div></div>
+        <div class="vocab-item"><div class="vocab-word">fluency <span class="pos">(n.)</span></div><div class="vocab-meaning">sự thành thạo ngôn ngữ</div></div>
+        <div class="vocab-item"><div class="vocab-word">intangible <span class="pos">(adj.)</span></div><div class="vocab-meaning">phi vật thể, vô hình</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title">Collocations (4)</div>
+      <div class="vocab-grid" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">passed down within families</div><div class="vocab-meaning">truyền lại trong gia đình</div></div>
+        <div class="vocab-item"><div class="vocab-word">a compulsory subject</div><div class="vocab-meaning">môn học bắt buộc</div></div>
+        <div class="vocab-item"><div class="vocab-word">attract scientific interest</div><div class="vocab-meaning">thu hút sự quan tâm khoa học</div></div>
+        <div class="vocab-item"><div class="vocab-word">cultural heritage</div><div class="vocab-meaning">di sản văn hoá</div></div>
+      </div>
+      <p class="fine" style="margin-top: 22px;">"Intangible cultural heritage" là collocation cố định — hay gặp trong bài về UNESCO.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · SILBO · SCORE -->
+<section data-label="46 Silbo Score" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Silbo</span><span class="rule"></span><span>Tự đánh giá</span></div>
+  <p class="eyebrow">Practice 04 · Score Recap</p>
+  <h2 class="h-section">12 câu — <em class="hi">tổng kết qua 4 bài: 48 câu.</em></h2>
+
+  <div class="key-grid" style="margin-bottom: 36px;">
+    <div class="k"><div class="q">Q1</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q2</div><div class="a">C</div></div>
+    <div class="k"><div class="q">Q3</div><div class="a">A</div></div>
+    <div class="k"><div class="q">Q4</div><div class="a">B</div></div>
+    <div class="k"><div class="q">Q5</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q6</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q7</div><div class="a">YES</div></div>
+    <div class="k"><div class="q">Q8</div><div class="a">NO</div></div>
+    <div class="k"><div class="q">Q9</div><div class="a">NG</div></div>
+    <div class="k"><div class="q">Q10</div><div class="a">3 km</div></div>
+    <div class="k"><div class="q">Q11</div><div class="a">1999</div></div>
+    <div class="k"><div class="q">Q12</div><div class="a">La Laguna</div></div>
+  </div>
+
+  <p class="fine">Tổng 48 câu qua 4 bài. Mục tiêu: &gt; 32/48 = Band 5.5. Đạt 36+ → Band 6.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Silbo</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERNS ACROSS 4 PASSAGES -->
+<section data-label="47 Patterns Across" class="slide">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Pattern giữa 4 bài</span></div>
+  <p class="eyebrow">Patterns across four passages</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 32px;">Cái gì <em class="hi">lặp lại</em> — cái đó quan trọng.</h2>
+
+  <div class="patt-grid">
+    <div class="patt">
+      <div class="t">01 · Topic sentence luôn là câu đầu</div>
+      <div class="d">Ở 23/24 đoạn của 4 bài, câu đầu bộc lộ ý chính. Ngoại lệ hiếm — khi đoạn bắt đầu bằng tên riêng (Kilby, Moore).</div>
+      <div class="ex">→ Skim chỉ cần đọc câu đầu mỗi đoạn.</div>
+    </div>
+    <div class="patt">
+      <div class="t">02 · Số + năm = scan keyword</div>
+      <div class="d">1610 · 1958 · 2737 BC · 1999 · 3 km · 500 million. Nếu câu hỏi có số → scan đúng số đó trong bài.</div>
+      <div class="ex">→ Số &amp; năm không bao giờ paraphrase.</div>
+    </div>
+    <div class="patt">
+      <div class="t">03 · Tên riêng không bao giờ bị thay</div>
+      <div class="d">Shen Nong · Lu Yu · Kilby · Noyce · Moore · Billye · La Laguna. Scan thẳng.</div>
+      <div class="ex">→ Câu hỏi có tên riêng = 3 giây scan.</div>
+    </div>
+    <div class="patt">
+      <div class="t">04 · Động từ luôn bị paraphrase</div>
+      <div class="d">"bring" → "import". "cause" → "contribute to". "same as" ≠ "more than".</div>
+      <div class="ex">→ Tìm ý, không tìm từ — trừ tên &amp; số.</div>
+    </div>
+    <div class="patt">
+      <div class="t">05 · "Independently", "only", "exactly" — đổi đáp án</div>
+      <div class="d">Một từ nhỏ đổi YES thành NO. "Independently developed" ngược với "copied". "Fewer than 100" ngược với "exactly 100".</div>
+      <div class="ex">→ Đọc kỹ cả câu có keyword.</div>
+    </div>
+    <div class="patt">
+      <div class="t">06 · NOT GIVEN = bài không nhắc</div>
+      <div class="d">Cảm xúc (Billye enjoys…), so sánh (tea vs coffee), thứ hạng (first whistled…) — bài không nói thì không đoán.</div>
+      <div class="ex">→ Đừng dùng kiến thức ngoài.</div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · KEY TAKEAWAYS -->
+<section data-label="48 Takeaways" class="slide slide--paper">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Điểm cốt lõi</span></div>
+  <p class="eyebrow">Key Takeaways</p>
+  <h2 class="h-section" style="margin-bottom: 40px;">Sáu điều <em class="hi">mang về</em> từ bài hôm nay.</h2>
+
+  <div class="take" style="grid-template-columns: 1fr 1fr; gap: 32px 72px;">
+    <div class="item">
+      <div class="k">01 · Thời gian</div>
+      <div class="v">20 phút / bài. 90 giây skim — rồi 10 giây/câu scan.</div>
+    </div>
+    <div class="item">
+      <div class="k">02 · Topic sentence</div>
+      <div class="v">Câu đầu mỗi đoạn = 90% ý chính. Đủ cho Matching Headings.</div>
+    </div>
+    <div class="item">
+      <div class="k">03 · Keyword</div>
+      <div class="v">Tên &amp; số = scan thẳng. Động từ &amp; tính từ = phải đoán paraphrase.</div>
+    </div>
+    <div class="item">
+      <div class="k">04 · Paraphrase</div>
+      <div class="v">Câu hỏi không dùng nguyên văn. Tìm <em class="hi">ý</em>, không tìm <em class="hi">từ</em>.</div>
+    </div>
+    <div class="item">
+      <div class="k">05 · NOT GIVEN</div>
+      <div class="v">Bài không nhắc = NG. Đừng dùng kiến thức ngoài đời để đoán.</div>
+    </div>
+    <div class="item">
+      <div class="k">06 · Luyện</div>
+      <div class="v">Kỹ thuật thành phản xạ qua lặp. 30 phút × 6 ngày/tuần.</div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · WEEKLY PLAN -->
+<section data-label="49 Weekly Plan" class="slide">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Lịch tuần · HW</span></div>
+  <p class="eyebrow">Weekly Plan · Homework</p>
+  <h2 class="h-section" style="margin-bottom: 36px;">30 phút × 6 ngày — <em class="hi">đến tuần sau.</em></h2>
+
+  <div class="plan-grid">
+    <div class="hdr">Ngày</div>
+    <div class="hdr">Nhiệm vụ</div>
+    <div class="hdr">Trọng tâm</div>
+    <div class="hdr">Thời gian</div>
+
+    <div class="day">Thứ 2</div>
+    <div>Học thuộc 28 từ vựng + 16 collocations qua 4 bài.</div>
+    <div>Vocabulary</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 3</div>
+    <div>Làm lại Practice 01 (Tea) — bấm giờ 15 phút.</div>
+    <div>Tốc độ cơ bản</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 4</div>
+    <div>Làm lại Practice 02 (Microchip) — bấm giờ.</div>
+    <div>Từ công nghệ + paraphrase</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 5</div>
+    <div>Làm lại Practice 03 (Octopus) — bấm giờ.</div>
+    <div>Khoa học + paraphrase khó</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 6</div>
+    <div>Làm lại Practice 04 (Silbo) — bấm giờ.</div>
+    <div>Số &amp; tên riêng</div>
+    <div class="time">30 phút</div>
+
+    <div class="day">Thứ 7</div>
+    <div>Cambridge IELTS 17 · Test 1 · Passage 1.</div>
+    <div>Bài mới · tự làm</div>
+    <div class="time">25 phút</div>
+
+    <div class="day">Chủ nhật</div>
+    <div>Full Reading test 60 phút — như phòng thi.</div>
+    <div>Sức bền toàn bài</div>
+    <div class="time">60 phút</div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Skimming &amp; Scanning</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · END -->
+<section data-label="50 End" class="slide end-slide">
+  <div>
+    <h1>Questions?</h1>
+    <p class="hint">Bài sau · Lesson 02: True / False / Not Given — chuyên sâu</p>
+  </div>
+</section>
+
+</deck-stage>
+
+<!-- TWEAKS -->
+<div id="tweaks-panel">
+  <h3>Tweaks</h3>
+  <div class="row">
+    <label>Màu chủ đề</label>
+    <div class="options" data-group="theme">
+      <button data-value="red">Red / White</button>
+      <button data-value="cream">Cream</button>
+      <button data-value="ink">Ink</button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Phông chữ</label>
+    <div class="options" data-group="fonts">
+      <button data-value="roboto">Roboto</button>
+      <button data-value="inter">Source Serif + Inter</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "theme": "red",
+    "fonts": "roboto"
+  }/*EDITMODE-END*/;
+
+  let current = Object.assign({}, TWEAK_DEFAULTS);
+  function apply(state) {
+    document.documentElement.setAttribute('data-theme', state.theme);
+    document.documentElement.setAttribute('data-fonts', state.fonts);
+    document.querySelectorAll('#tweaks-panel .options').forEach(group => {
+      const key = group.dataset.group;
+      group.querySelectorAll('button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.value === state[key]);
+      });
+    });
+  }
+  function setKey(k, v) {
+    current[k] = v;
+    apply(current);
+    try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [k]: v } }, '*'); } catch (e) {}
+  }
+  document.querySelectorAll('#tweaks-panel .options').forEach(group => {
+    const key = group.dataset.group;
+    group.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => setKey(key, btn.dataset.value));
+    });
+  });
+  window.addEventListener('message', (e) => {
+    const t = e.data && e.data.type;
+    if (t === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+    else if (t === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+  });
+  apply(current);
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+</script>
+
+</body>
+</html>
