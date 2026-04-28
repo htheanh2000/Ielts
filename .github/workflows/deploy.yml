@@ -23,13 +23,17 @@ jobs:
           script: |
             set -euo pipefail
             cd /srv/ielts
-            git fetch --all
-            git reset --hard origin/main
+            # Empty hooksPath disables server-side hooks that can make fetch/reset exit non-zero after a successful tree update.
+            _gh="$(mktemp -d)"
+            git -c core.hooksPath="$_gh" fetch --all
+            git -c core.hooksPath="$_gh" reset --hard origin/main
+            rmdir "$_gh" 2>/dev/null || true
 
-            # Traefik dynamic config (best-effort). If mkdir/cp fails (e.g. root-owned /srv/traefik),
-            # static site still updates via bind mount — do not fail the whole deploy.
-            mkdir -p /srv/traefik/data/dynamic && cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml \
-              || echo "WARN: Traefik yml not synced; fix ownership on /srv/traefik/data/dynamic or use sudoers if needed."
+            # Traefik: never fail deploy on mkdir/cp (perms on /srv/traefik are common). Site updates via bind mount.
+            set +e
+            mkdir -p /srv/traefik/data/dynamic
+            cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
+            set -euo pipefail
 
             # Nginx picks up volume-mounted files immediately;
             # restart only if compose or nginx.conf itself changed.
