@@ -54,4 +54,8 @@ jobs:
           echo "Writing L2: HTTP $STATUS"
           [ "$STATUS" = "200" ] || exit 1
 
+          STATUS=$(curl -sk -o /dev/null -w "%{http_code}" https://ielts.huynhtheanh.com/listening/lesson/1/)
+          echo "Listening L1: HTTP $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
           echo "Deploy verified"
