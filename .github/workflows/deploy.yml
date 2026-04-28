@@ -27,13 +27,14 @@ jobs:
             _gh="$(mktemp -d)"
             git -c core.hooksPath="$_gh" fetch --all
             git -c core.hooksPath="$_gh" reset --hard origin/main
-            rmdir "$_gh" 2>/dev/null || true
+            # hooksPath dir may not be empty (Git can leave files); rmdir fails under set -e even with || on some runners
+            rm -rf "$_gh" || true
 
             # Traefik: never fail deploy on mkdir/cp (perms on /srv/traefik are common). Site updates via bind mount.
             set +e
             mkdir -p /srv/traefik/data/dynamic
             cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
-            set -euo pipefail
+            set -e
 
             # Nginx picks up volume-mounted files immediately;
             # restart only if compose or nginx.conf itself changed.
