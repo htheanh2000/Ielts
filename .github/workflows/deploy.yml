@@ -26,12 +26,13 @@ jobs:
             git fetch --all
             git reset --hard origin/main
 
-            # Idempotent Traefik dynamic config copy
-            cp deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
+            # Traefik dynamic config: parent dir must exist or cp exits 1 (breaks whole deploy).
+            mkdir -p /srv/traefik/data/dynamic
+            cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
 
             # Nginx picks up volume-mounted files immediately;
             # restart only if compose or nginx.conf itself changed.
-            if git diff --name-only HEAD@{1} HEAD 2>/dev/null | grep -qE '^(docker-compose\.yml|deploy/nginx\.conf)$'; then
+            if git diff --name-only 'HEAD@{1}' HEAD 2>/dev/null | grep -qE '^(docker-compose\.yml|deploy/nginx\.conf)$'; then
               docker compose up -d --force-recreate
             else
               docker compose up -d
