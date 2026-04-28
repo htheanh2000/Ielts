@@ -21,7 +21,8 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script_stop: true
           script: |
-            set -euo pipefail
+            # No pipefail: dash/embedded shells and ssh-action can mishandle pipelines with set -e.
+            set -eu
             cd /srv/ielts
             # Empty hooksPath disables server-side hooks that can make fetch/reset exit non-zero after a successful tree update.
             _gh="$(mktemp -d)"
@@ -38,7 +39,9 @@ jobs:
 
             # Nginx picks up volume-mounted files immediately;
             # restart only if compose or nginx.conf itself changed.
-            if git diff --name-only 'HEAD@{1}' HEAD 2>/dev/null | grep -qE '^(docker-compose\.yml|deploy/nginx\.conf)$'; then
+            docker network inspect proxy >/dev/null 2>&1 || docker network create proxy
+            CHANGED="$(git diff --name-only 'HEAD@{1}' HEAD 2>/dev/null || true)"
+            if printf '%s\n' "$CHANGED" | grep -qE '^(docker-compose\.yml|deploy/nginx\.conf)$'; then
               docker compose up -d --force-recreate
             else
               docker compose up -d
