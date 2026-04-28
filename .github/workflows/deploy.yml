@@ -26,9 +26,10 @@ jobs:
             git fetch --all
             git reset --hard origin/main
 
-            # Traefik dynamic config: parent dir must exist or cp exits 1 (breaks whole deploy).
-            mkdir -p /srv/traefik/data/dynamic
-            cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
+            # Traefik dynamic config (best-effort). If mkdir/cp fails (e.g. root-owned /srv/traefik),
+            # static site still updates via bind mount — do not fail the whole deploy.
+            mkdir -p /srv/traefik/data/dynamic && cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml \
+              || echo "WARN: Traefik yml not synced; fix ownership on /srv/traefik/data/dynamic or use sudoers if needed."
 
             # Nginx picks up volume-mounted files immediately;
             # restart only if compose or nginx.conf itself changed.
