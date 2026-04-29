@@ -60,6 +60,22 @@ HEAD = r"""<!doctype html>
   ul.annot-list li b { color: var(--ink); font-weight: 600; }
   .script-box--full { max-height: 560px; overflow-y: auto; font-size: 21px; line-height: 1.52; }
   .script-box--full .ln { font-size: 15px; }
+  /* Full transcript: giữ màu chữ nền; chỉ highlight + gạch chân từ khóa/đáp án */
+  .script-box--full p { font-weight: 400; color: var(--ink); }
+  .script-box--full .tx-hit {
+    color: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 0 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
 </style>
 </head>
 <body>
@@ -393,13 +409,13 @@ P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
   <div class="script-box script-box--full">
     <p><span class="ln">S</span>Good morning, everyone, and welcome to Hinchingbrooke Country Park. My name’s Sally, I’m one of the park rangers, and I’ll be looking after you today.</p>
     <p><span class="ln">J</span>Thanks, Sally. I’m John — I’m a teaching assistant with the school group. We’re really interested in the lake area and how you use the park for education.</p>
-    <p><span class="ln">S</span>Great. Let me start with a bit of background. The park has changed size over the years — some materials still say we cover <strong>28 hectares</strong>, but that’s out of date. The park <strong>actually covers just under 70 hectares</strong> now — we’ve expanded the managed land around the wetland.</p>
+    <p><span class="ln">S</span>Great. Let me start with a bit of background. The park has changed size over the years — some materials still say we cover <span class="tx-hit">28 hectares</span>, but that’s out of date. The park <span class="tx-hit">actually covers just under 70 hectares</span> now — we’ve expanded the managed land around the wetland.</p>
     <p><span class="ln">J</span>So the figure for the total area is …?</p>
-    <p><span class="ln">S</span>For your worksheet, you should use <strong>69 hectares</strong> — that’s the official figure we give schools.</p>
-    <p><span class="ln">S</span>If we look at the wetland zone, you’ll see <strong>lakes and ponds</strong>, and also a small <strong>stream</strong> that feeds the marsh — the children can study the flow of water and the plants along the banks.</p>
-    <p><span class="ln">S</span>In Science sessions, we don’t just observe plants — they collect <strong>data</strong> about species and habitats, so they learn how evidence is recorded in the field.</p>
-    <p><span class="ln">S</span>For Geography, we include basic navigation — they learn to use a <strong>map</strong> and compass to read the landscape.</p>
-    <p><span class="ln">S</span>And in the leisure and tourism module, we mostly focus on the park’s <strong>visitors</strong> — who comes, why they come, and how we balance access with conservation.</p>
+    <p><span class="ln">S</span>For your worksheet, you should use <span class="tx-hit">69 hectares</span> — that’s the official figure we give schools.</p>
+    <p><span class="ln">S</span>If we look at the wetland zone, you’ll see <span class="tx-hit">lakes and ponds</span>, and also a small <span class="tx-hit">stream</span> that feeds the marsh — the children can study the flow of water and the plants along the banks.</p>
+    <p><span class="ln">S</span>In Science sessions, we don’t just observe plants — they collect <span class="tx-hit">data</span> about species and habitats, so they learn how evidence is recorded in the field.</p>
+    <p><span class="ln">S</span>For Geography, we include basic navigation — they learn to use a <span class="tx-hit">map</span> and compass to read the landscape.</p>
+    <p><span class="ln">S</span>And in the leisure and tourism module, we mostly focus on the park’s <span class="tx-hit">visitors</span> — who comes, why they come, and how we balance access with conservation.</p>
   </div>""",
     ),
     (
@@ -408,11 +424,11 @@ P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
         """<p class="eyebrow">Full transcript · Trainer alignment · 2/2</p>
   <h2 class="h-section">Hoạt động âm nhạc, lợi ích &amp; <em class="hi">giá vé</em></h2>
   <div class="script-box script-box--full">
-    <p><span class="ln">S</span>In Music, we take a very hands-on approach — the children <strong>make sounds</strong> using natural materials, and then we experiment with <strong>rhythm and tempo</strong> so they connect what they hear outdoors with basic musical ideas.</p>
+    <p><span class="ln">S</span>In Music, we take a very hands-on approach — the children <span class="tx-hit">make sounds</span> using natural materials, and then we experiment with <span class="tx-hit">rhythm and tempo</span> so they connect what they hear outdoors with basic musical ideas.</p>
     <p><span class="ln">J</span>That sounds brilliant. What do you find the children take away emotionally?</p>
-    <p><span class="ln">S</span>We notice they get a real sense of <strong>freedom</strong> here — it’s different from the classroom. They also learn new <strong>skills</strong> and grow in confidence because they’re trying things in a safe outdoor setting.</p>
+    <p><span class="ln">S</span>We notice they get a real sense of <span class="tx-hit">freedom</span> here — it’s different from the classroom. They also learn new <span class="tx-hit">skills</span> and grow in confidence because they’re trying things in a safe outdoor setting.</p>
     <p><span class="ln">J</span>Could you tell me about pricing for school visits?</p>
-    <p><span class="ln">S</span>Of course. The cost is <strong>four pounds and ninety-five pence</strong> per child for the standard package. Adults who accompany the group — for example parents or group <strong>leaders</strong> — don’t pay.</p>
+    <p><span class="ln">S</span>Of course. The cost is <span class="tx-hit">four pounds and ninety-five pence</span> per child for the standard package. Adults who accompany the group — for example parents or group <span class="tx-hit">leaders</span> — don’t pay.</p>
     <p><span class="ln">J</span>Perfect — we’ll make sure our paperwork matches that.</p>
   </div>
   <p class="fine">Sau khi nghe băng gốc, khoanh trong transcript chỗ <em>correction</em> (actually / just under) — đó là mô típ IELTS cho số liệu.</p>""",
