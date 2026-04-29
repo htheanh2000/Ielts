@@ -62,6 +62,11 @@
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
+  .transcript-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 28px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-soft); }
+  .transcript-head .h-section { margin: 0; flex: 1; min-width: 300px; }
+  .transcript-meta-pill { font-family: var(--mono); font-size: 17px; letter-spacing: 0.06em; color: var(--ink-soft); border: 1px solid var(--rule-soft); padding: 10px 18px; border-radius: 999px; background: color-mix(in srgb, var(--accent-soft) 45%, transparent); white-space: nowrap; }
+  ul.annot-list.annot-dense li { font-size: 21px; padding: 11px 0; line-height: 1.42; }
+  .vocab-pair { font-size: 20px; color: var(--ink-muted); margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -72,17 +77,17 @@
   <div class="left">
     <div class="mark">IELTS Listening · Academic &amp; GT</div>
     <h1 class="main">Predictions<br>&amp; <em>Forms.</em></h1>
-    <div class="mark">Lesson 01 · Bốn section · Bốn bài mẫu</div>
+    <div class="mark">Lesson 01 · Lý thuyết + một bài Section 1</div>
   </div>
   <div class="right">
     <div class="mark">Thông tin buổi học</div>
     <dl class="meta-grid">
-      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Thời lượng</dt><dd>~60 phút</dd></div>
       <div><dt>Trình độ hiện tại</dt><dd>Band 4.5 → 5.5</dd></div>
       <div><dt>Mục tiêu</dt><dd>Band 5.5 → 6.0</dd></div>
       <div><dt>Lý thuyết</dt><dd>8 slide</dd></div>
-      <div><dt>Thực hành</dt><dd>4 bài (P1 có audio + transcript đầy đủ)</dd></div>
-      <div><dt>Từ vựng</dt><dd>28 từ · 16 collocations</dd></div>
+      <div><dt>Thực hành</dt><dd>Cambridge 19 · Test 1 · Section 1 (audio + transcript)</dd></div>
+      <div><dt>Từ vựng</dt><dd>Theo đúng băng + paraphrase trong đề</dd></div>
     </dl>
     <div class="mark">Giảng viên · IELTS Academy</div>
   </div>
@@ -91,24 +96,21 @@
 <!-- 02 · AGENDA -->
 <section data-label="Agenda" class="slide">
   <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
-  <p class="eyebrow">Agenda · 90 minutes</p>
+  <p class="eyebrow">Agenda · ~60 phút</p>
   <h2 class="h-section">Agenda</h2>
   <ol class="num-list tight">
-    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · 15 phút. Cấu trúc 4 section · dự đoán loại từ · dạng Form completion · MCQ · map · note completion · chiến thuật spelling.</span></div></li>
-    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">13 slide · ~22 phút. Cambridge 19 Test 1 · form · 10 gap · audio · transcript đầy đủ · walkthrough từng câu.</span></div></li>
-    <li><div><span class="step-title">Practice 02 · Section 2 — Campus tour.</span><span class="step-body">9 slide · 17 phút. MCQ + labelling plan · theo dõi tín hiệu chuyển ý.</span></div></li>
-    <li><div><span class="step-title">Practice 03 · Section 3 — Assignment discussion.</span><span class="step-body">9 slide · 16 phút. Matching opinions · paraphrase giữa các giọng.</span></div></li>
-    <li><div><span class="step-title">Practice 04 · Section 4 — Urban ecology lecture.</span><span class="step-body">9 slide · 16 phút. Note completion · một người nói · mật độ thông tin cao.</span></div></li>
-    <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide · 8 phút. Pattern chung · takeaways · lịch luyện tuần.</span></div></li>
+    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · dự đoán loại từ · Form completion · tín hiệu discourse · spelling.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">9 slide · ~35 phút. Cambridge 19 Test 1 · 10 gap · audio · transcript 2 phần · giải thích từng câu + từ vựng/paraphrase.</span></div></li>
+    <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide. Ôn pattern · takeaways · lịch luyện tuần.</span></div></li>
   </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>2 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>2 / 23</span></div>
 </section>
 
 <!-- 03 · OBJECTIVES -->
 <section data-label="Objectives" class="slide slide--paper">
   <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Mục tiêu</span></div>
   <p class="eyebrow">Learning Objectives</p>
-  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+  <h2 class="h-section">Sau buổi này, bạn <em class="hi">làm được</em> năm việc.</h2>
   <ol class="num-list">
     <li><div><span class="step-title">Đọc câu hỏi trước và đoán loại từ (word type) trong 60 giây.</span><span class="step-body">Số / tên / địa điểm / danh từ chung — giảm 50% lỗi spelling.</span></div></li>
     <li><div><span class="step-title">Theo dõi Section 1–2 mà không “đuổi” theo từng chữ.</span><span class="step-body">Nghe tín hiệu: số, tên riêng, từ đồng nghĩa với đề.</span></div></li>
@@ -116,7 +118,7 @@
     <li><div><span class="step-title">Chọn đúng MCQ khi có distractor rõ ràng.</span><span class="step-body">Loại phương án nghe thấy nhưng sai ngữ cảnh / sai thì.</span></div></li>
     <li><div><span class="step-title">Hoàn thành note completion Section 4 với outline trên giấy nháp.</span><span class="step-body">Ghi khung bài giảng trước khi nghe lần 2.</span></div></li>
   </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>3 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>3 / 23</span></div>
 </section>
 
 <!-- 04 · TEST OVERVIEW -->
@@ -144,7 +146,7 @@
     <div>Khó nhất · note / summary completion</div>
   </div>
   <p class="fine">Có 10 phút cuối để chuyển đáp án sang answer sheet — trong lúc nghe không được dừng băng.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>4 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>4 / 23</span></div>
 </section>
 
 <!-- 05 · SCORING -->
@@ -158,7 +160,7 @@
     <div class="stat"><div class="k">Raw 30+</div><div class="v">7.0+</div><div class="d">Section 4 phải “ăn” được 7–8/10.</div></div>
   </div>
   <p class="fine">Listening không có tiêu chí viết như Writing — chỉ cần <em class="hi">đúng đáp án + đúng chính tả theo audio</em>.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>5 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>5 / 23</span></div>
 </section>
 
 <!-- 06 · QUESTION FAMILIES -->
@@ -172,7 +174,7 @@
     <div class="kw-tile"><div class="k">03 · MAP</div><div class="ex">Plan / Diagram</div><div class="d">Định hướng trước (N/E/S/W) · ghi nhãn A–H trên sơ đồ trước khi nghe.</div></div>
     <div class="kw-tile"><div class="k">04 · MATCH</div><div class="ex">People · Endings</div><div class="d">Section 3: ai nói gì — theo dõi giọng nam/nữ và tên.</div></div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>6 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>6 / 23</span></div>
 </section>
 
 <!-- 07 · PREDICTION -->
@@ -186,7 +188,7 @@
     <li><div><span class="step-title">Ghi 3 từ khóa có thể paraphrase.</span><span class="step-body">“near the station” ↔ <em>close to the railway</em> — tai tìm cặp này.</span></div></li>
     <li><div><span class="step-title">Chuẩn bị chính tả số &amp; chữ cái.</span><span class="step-body">Double letters: <em>Millennium, accommodation</em> — IELTS thích bẫy chính tả.</span></div></li>
   </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>7 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>7 / 23</span></div>
 </section>
 
 <!-- 08 · DISCOURSE SIGNALS -->
@@ -198,7 +200,7 @@
     <div class="col-card"><p class="mono-label">Section 1–2</p><h3>Định vị câu trả lời</h3><ul><li><em>Actually / I mean</em> → sửa thông tin trước đó</li><li><em>So that’s / OK so</em> → kết luận nhỏ</li><li>Số đọc theo kiểu Anh/Mỹ — ghi đúng format đề yêu cầu</li></ul></div>
     <div class="col-card"><p class="mono-label">Section 3–4</p><h3>Theo dõi luận điểm</h3><ul><li><em>The main point is / What I’m saying is</em></li><li><em>However / On the other hand</em> → contrast = đáp án hay nằm sau</li><li><em>For instance</em> → ví dụ minh họa cho ý vừa rồi</li></ul></div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>8 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>8 / 23</span></div>
 </section>
 
 <!-- 09 · SPELLING -->
@@ -215,7 +217,7 @@
     <div class="vocab-item"><div class="vocab-word">parallel</div><div class="vocab-meaning">Hai l — map / mô tả đường.</div></div>
   </div>
   <p class="fine">Luôn kiểm tra: <em class="hi">số từ cho phép</em> (NO MORE THAN TWO WORDS) — mạo từ <em>a/the</em> tính là một từ.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>9 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>9 / 23</span></div>
 </section>
 
 <!-- 10 · EXAM SEQUENCE -->
@@ -229,7 +231,7 @@
     <li><div><span class="step-title">Section 4: đọc summary trước khi nghe.</span><span class="step-body">Gạch đầu dòng chủ đề từng đoạn trong 45 giây pause trước S4.</span></div></li>
     <li><div><span class="step-title">Transfer time 10′.</span><span class="step-body">Chép cẩn thận ô đáp án — không để trống; đoán chữ cái nếu bắt buộc.</span></div></li>
   </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>10 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>10 / 23</span></div>
 </section>
 
 <!-- 11 · SECTION BREAK -->
@@ -242,10 +244,7 @@
   <div class="content">
     <p class="eyebrow">Practice 01 · Section 1</p>
     <h2><em>Hinchingbrooke</em><br>Country Park<br><span style="font-size:0.85em">Cambridge IELTS 19 · Test 1 · S1</span></h2>
-    <div class="toc"><div class="active">01 · Section 1 — Hinchingbrooke (form)</div>
-<div class="">02 · Section 2 — MCQ + map</div>
-<div class="">03 · Section 3 — matching opinions</div>
-<div class="">04 · Section 4 — note completion</div></div>
+    <div class="toc"><div class="active">01 · Section 1 — Hinchingbrooke (form)</div></div>
   </div>
 </section>
 
@@ -276,7 +275,7 @@
        <div class="q-strip"><span class="n">10</span><span>Adults, such as ____________, free</span></div>
        </div></div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>12 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>12 / 23</span></div>
 </section>
 
 <!-- 13 · STEP 1 -->
@@ -291,7 +290,7 @@
          <div class="qtype-item"><div class="n">Q9</div><div><div class="t">Giá</div><div class="s">Độ chính xác đến pence — hai phần số sau dấu chấm.</div></div></div>
        </div>
        <p class="fine" style="margin-top: 28px;">Trước khi nghe: đánh dấu từ loại cho từng ô (số / danh từ / từ chỉ người).</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>13 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>13 / 23</span></div>
 </section>
 
 <!-- 14 · STEP 2 -->
@@ -304,7 +303,7 @@
          <li><div><span class="step-title">Giá vé trẻ em.</span><span class="step-body">Điều kiện <em>over 30</em> children → <em>£4.95</em> each; invoice sau — không trả tiền trẻ vắng vì ốm.</span></div></li>
          <li><div><span class="step-title">Người lớn miễn phí.</span><span class="step-body">Nghe &ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — ô <em>such as …</em> một từ → <strong>leaders</strong>.</span></div></li>
        </ul>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>14 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>14 / 23</span></div>
 </section>
 
 <!-- 15 · STEP 3 -->
@@ -325,15 +324,17 @@
          <div class="k"><div class="q">10</div><div class="a">leaders</div></div>
        </div>
        <p class="fine">Đáp án khớp Cambridge IELTS 19 Test 1 Listening Section 1 — đối chiếu spelling / số với transcript chính thức.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>15 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>15 / 23</span></div>
 </section>
 
 <!-- 16 · TRANSCRIPT1 -->
 <section data-label="16 Transcript1" class="slide slide--paper">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Transcript · phần 1 / 2</span></div>
-  <p class="eyebrow">Full transcript · Cambridge 19 · Test 1 · Part 1 · 1/2</p>
-  <h2 class="h-section">Theo băng — <em class="hi">mở bài đến Music</em></h2>
-  <p class="small" style="margin-bottom: 16px;">Lời thoại trùng audioscript kèm sách / file audio bản quyền — từ <span class="tx-hit">highlight</span> là tín hiệu khớp ô trống trong đề.</p>
+  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Transcript · 1/2</span></div>
+  <p class="eyebrow">Cambridge IELTS 19 · Test 1 · Part 1</p>
+  <div class="transcript-head">
+    <h2 class="h-section tidy-h2">Băng phần 1 — <em class="hi">giới thiệu công viên → hết mục Music</em></h2>
+    <span class="transcript-meta-pill">Gạch chân = đúng chỗ điền</span>
+  </div>
   <div class="script-box script-box--full">
     <p><span class="ln">S</span>Good morning. Hinchingbrooke Country Park, Sally speaking. I&rsquo;m one of the rangers.</p>
     <p><span class="ln">J</span>Oh hello. My name&rsquo;s John Chapman, and I&rsquo;m a teaching assistant at a local primary school. I&rsquo;ve been asked to arrange a visit to the park for two of our classes.</p>
@@ -357,14 +358,17 @@
     <p><span class="ln">J</span>That must be fun!</p>
     <p><span class="ln">S</span>Most children really enjoy it.</p>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>16 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>16 / 23</span></div>
 </section>
 
 <!-- 17 · TRANSCRIPT2 -->
 <section data-label="17 Transcript2" class="slide slide--paper">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Transcript · phần 2 / 2</span></div>
-  <p class="eyebrow">Full transcript · Cambridge 19 · Test 1 · Part 1 · 2/2</p>
-  <h2 class="h-section">Theo băng — <em class="hi">lợi ích &amp; giá</em></h2>
+  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Transcript · 2/2</span></div>
+  <p class="eyebrow">Cambridge IELTS 19 · Test 1 · Part 1</p>
+  <div class="transcript-head">
+    <h2 class="h-section tidy-h2">Băng phần 2 — <em class="hi">lợi ích hoạt động &amp; giá vé</em></h2>
+    <span class="transcript-meta-pill">Phần còn lại của Part 1</span>
+  </div>
   <div class="script-box script-box--full">
     <p><span class="ln">S</span>And of course, all the activities are educational, too. Learning outside the classroom encourages children to be creative, and to explore and discover for themselves.</p>
     <p><span class="ln">J</span>I would imagine they get a sense of <span class="tx-hit">freedom</span> that might not be a normal part of their lives.</p>
@@ -375,520 +379,103 @@
     <p><span class="ln">S</span>We&rsquo;ll look forward to hearing from you. Goodbye.</p>
     <p><span class="ln">J</span>Goodbye, and thank you.</p>
   </div>
-  <p class="fine">Q1: cùng một câu có cả <em>acres</em> và <em>hectares</em> — ô đề hỏi hectares → ghi số <strong>69</strong>. Q9: mức giá khi trên 30 trẻ.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>17 / 54</span></div>
+  <p class="fine">Gợi ý nhanh: Q1 — cùng câu có <em>acres</em> và <em>hectares</em>; ô đề hỏi hectares → <strong>69</strong>. Q9 — giá khi <em>over 30</em> trẻ.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>17 / 23</span></div>
 </section>
 
-<!-- 18 · WALKTHROUGH15 -->
-<section data-label="18 Walkthrough15" class="slide slide--paper">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Giải từng câu · Q1–5</span></div>
-  <p class="eyebrow">Answer walkthrough · Q1–5</p>
-  <h2 class="h-section">Năm ô đầu — <em class="hi">tín hiệu nghe</em></h2>
-  <ol class="num-list tight">
-    <li><div><span class="step-title">Q1 · <em class="hi">69</em></span><span class="step-body">Audio: &ldquo;Altogether the park covers <strong>170 acres</strong>, that&rsquo;s <strong>69 hectares</strong>.&rdquo; — ô Area (hectares) ghi <strong>69</strong>; đừng chép nhầm <strong>170</strong> hay đơn vị acres.</span></div></li>
-    <li><div><span class="step-title">Q2 · <em class="hi">stream</em></span><span class="step-body">Sau hai hồ lớn: &ldquo;ponds and a <strong>stream</strong> that flows through the park&rdquo; — một từ cho ô wetland.</span></div></li>
-    <li><div><span class="step-title">Q3 · <em class="hi">data</em></span><span class="step-body">Science: &ldquo;They also collect and analyse <strong>data</strong> about the things they see&rdquo; — đề paraphrase &ldquo;look at &hellip; about plants&rdquo; nhưng key vẫn là <strong>data</strong>.</span></div></li>
-    <li><div><span class="step-title">Q4 · <em class="hi">map</em></span><span class="step-body">&ldquo;reading a <strong>map</strong> and using a compass&rdquo; — ô đứng trước <em>and compass</em>.</span></div></li>
-    <li><div><span class="step-title">Q5 · <em class="hi">visitors</em></span><span class="step-body">John nói leisure &amp; tourism &ldquo;focuses on your <strong>visitors</strong>&rdquo; — Sally xác nhận &ldquo;Yes, mostly&rdquo; rồi giải thích thêm.</span></div></li>
-  </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>18 / 54</span></div>
-</section>
-
-<!-- 19 · WALKTHROUGH610 -->
-<section data-label="19 Walkthrough610" class="slide slide--paper">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Giải từng câu · Q6–10</span></div>
-  <p class="eyebrow">Answer walkthrough · Q6–10</p>
-  <h2 class="h-section">Năm ô sau — <em class="hi">collocation &amp; giá</em></h2>
-  <ol class="num-list tight">
-    <li><div><span class="step-title">Q6 · <em class="hi">sounds</em></span><span class="step-body">Audio: &ldquo;create <strong>sounds</strong>&rdquo; với natural materials; đề dùng động từ <em>make</em> — cùng nghĩa; <em>rhythm and tempo</em> đã in trong đề.</span></div></li>
-    <li><div><span class="step-title">Q7 · <em class="hi">freedom</em></span><span class="step-body">&ldquo;a sense of <strong>freedom</strong>&rdquo; — một từ trong Benefits.</span></div></li>
-    <li><div><span class="step-title">Q8 · <em class="hi">skills</em></span><span class="step-body">&ldquo;develop new <strong>skills</strong>&rdquo; — ngay sau đoạn về freedom.</span></div></li>
-    <li><div><span class="step-title">Q9 · <em class="hi">4.95</em></span><span class="step-body">&ldquo;If there are <strong>over 30</strong>, it costs <strong>&pound;4.95</strong> for each child&rdquo; — ô đã có ký hiệu £ → ghi <strong>4.95</strong>.</span></div></li>
-    <li><div><span class="step-title">Q10 · <em class="hi">leaders</em></span><span class="step-body">&ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — đề &ldquo;Adults, such as &hellip;&rdquo; một từ; key Cambridge: <strong>leaders</strong>.</span></div></li>
-  </ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>19 / 54</span></div>
-</section>
-
-<!-- 20 · SAMPLE SCRIPT -->
-<section data-label="20 Script" class="slide">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Transcript rút gọn</span></div>
-  <p class="eyebrow">Script excerpt · Theo băng</p>
-  <h2 class="h-section">Đoạn thoại <em class="hi">rút gọn</em> (đúng lời audio)</h2>
-  <div class="script-box" style="max-height: 520px; overflow-y: auto;">
-         <p><span class="ln">S</span>Hinchingbrooke Country Park, Sally speaking. I&rsquo;m one of the rangers.</p>
-         <p><span class="ln">J</span>John Chapman — teaching assistant — arranging a visit for two classes.</p>
-         <p><span class="ln">S</span>The park covers <span class="tx-hit">170 acres</span>, that&rsquo;s <span class="tx-hit">69 hectares</span> … wetland … ponds and a <span class="tx-hit">stream</span> … collect and analyse <span class="tx-hit">data</span> … read a <span class="tx-hit">map</span> and compass … leisure and tourism — your <span class="tx-hit">visitors</span> … create <span class="tx-hit">sounds</span>, <span class="tx-hit">rhythm and tempo</span>.</p>
-         <p><span class="ln">J</span>Sense of <span class="tx-hit">freedom</span> … new <span class="tx-hit">skills</span> … over 30 children → <span class="tx-hit">&pound;4.95</span> each … no charge for <span class="tx-hit">leaders</span> and other adults.</p>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>20 / 54</span></div>
-</section>
-
-<!-- 21 · ANALYSIS -->
-<section data-label="21 Analysis" class="slide slide--paper">
+<!-- 18 · ANALYSIS -->
+<section data-label="18 Analysis" class="slide slide--paper">
   <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Phân tích</span></div>
   <p class="eyebrow">Language &amp; strategy</p>
   <h2 class="h-section">Vì sao đáp án <em class="hi">nằm ở đó?</em></h2>
-  <ul class="annot-list">
-         <li><span class="tag">Q1</span><b>Acres + hectares:</b> &ldquo;<strong>170 acres</strong>, that&rsquo;s <strong>69 hectares</strong>&rdquo; — ô hectares ghi <em>69</em> (không chép 170).</li>
-         <li><span class="tag">Q2</span>Sau “lakes and ponds” → nối tiếp <em>a stream</em>.</li>
-         <li><span class="tag">Q3</span><em>Collect data</em> about plants → một từ <strong>data</strong>.</li>
-         <li><span class="tag">Q4</span><em>Use a map and compass</em> — từ khóa đứng ngay trước <em>and compass</em>.</li>
-         <li><span class="tag">Q5</span>Leisure unit: trọng tâm là <em>visitors</em> (không phải staff).</li>
-         <li><span class="tag">Q6</span><em>Make sounds</em> với materials; rhythm/tempo là phần thử nghiệm thêm.</li>
-         <li><span class="tag">Q7–8</span><em>Feeling of freedom</em> · <em>learn new skills</em>.</li>
-         <li><span class="tag">Q9–10</span><em>£4.95</em> · adults such as <em>leaders</em> (one word).</li>
+  <p class="small" style="margin-bottom: 16px;">Mỗi ô ghi <strong>đúng cụm</strong> vừa xuất hiện trên băng. Dưới đây là <em>vì sao</em> đáp án nằm đúng chỗ đó và cách đề diễn đạt lại (đề ↔ băng).</p>
+    <ul class="annot-list annot-dense">
+         <li><span class="tag">Q1</span><b>Vì sao <em>69</em>:</b> Sally nói một câu có cả <em>170 acres</em> lẫn <em>69 hectares</em> — ô đề hỏi <strong>hectares</strong> nên chỉ ghi <strong>69</strong>, không lấy 170 (đó là acres). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>Area (hectares)</em> ↔ <em>covers … that&rsquo;s … hectares</em>.</span></li>
+         <li><span class="tag">Q2</span><b>Vì sao <em>stream</em>:</b> Sau hai hồ lớn, câu nối tiếp là &ldquo;ponds and a <strong>stream</strong> that flows through the park&rdquo; — một danh từ cho ô sau <em>and a</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>lakes, ponds and a ___</em> ↔ nguyên cụm trên băng.</span></li>
+         <li><span class="tag">Q3</span><b>Vì sao <em>data</em>:</b> Đề viết <em>look at ___ about plants</em>; băng nói họ &ldquo;collect and analyse <strong>data</strong> about the things they see&rdquo; — từ điền là <strong>data</strong> (không phải plants vì đã có trong câu). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>look at</em> ↔ <em>collect and analyse</em>.</span></li>
+         <li><span class="tag">Q4</span><b>Vì sao <em>map</em>:</b> Geography: &ldquo;reading a <strong>map</strong> and using a compass&rdquo; — ô đứng ngay trước <em>and compass</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>use a ___ and compass</em> ↔ <em>reading a map and using a compass</em> (learn and practice).</span></li>
+         <li><span class="tag">Q5</span><b>Vì sao <em>visitors</em>:</b> John đoán leisure &amp; tourism &ldquo;focuses on your <strong>visitors</strong>&rdquo; — Sally &ldquo;Yes, mostly&rdquo; rồi mở rộng — key nằm ở <strong>visitors</strong>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>concentrates on the park&rsquo;s ___</em> ↔ <em>focuses on your visitors</em>.</span></li>
+         <li><span class="tag">Q6</span><b>Vì sao <em>sounds</em>:</b> Music: &ldquo;create <strong>sounds</strong>&rdquo; với natural materials; đề dùng động từ <em>make</em> — cùng nghĩa với <em>create</em>. <em>Rhythm and tempo</em> đã in trong đề nên không điền vào ô này. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>make</em> ↔ <em>create</em>.</span></li>
+         <li><span class="tag">Q7</span><b>Vì sao <em>freedom</em>:</b> John: &ldquo;a sense of <strong>freedom</strong>&rdquo; — khớp ô <em>feeling of ___</em> (feeling = sense). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>feeling of</em> ↔ <em>sense of</em>.</span></li>
+         <li><span class="tag">Q8</span><b>Vì sao <em>skills</em>:</b> Ngay sau đoạn freedom: &ldquo;develop new <strong>skills</strong>&rdquo; — đề viết <em>learn new ___</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>learn</em> ↔ <em>develop</em>.</span></li>
+         <li><span class="tag">Q9</span><b>Vì sao <em>4.95</em>:</b> Điều kiện &ldquo;If there are <strong>over 30</strong>&rdquo; trẻ → &ldquo;it costs <strong>&pound;4.95</strong> for each child&rdquo;; ô đề đã có ký hiệu £ nên thường chỉ ghi <strong>4.95</strong>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>Cost per child: £</em> ↔ <em>costs £4.95 for each child</em>.</span></li>
+         <li><span class="tag">Q10</span><b>Vì sao <em>leaders</em>:</b> &ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — đề <em>Adults, such as ___</em> một từ; Cambridge key là <strong>leaders</strong> (không phải parents/teachers vì không nói). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>such as</em> ↔ <em>leaders and other adults</em> (chọn từ đầu cụm song song).</span></li>
        </ul>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>21 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>18 / 23</span></div>
 </section>
 
-<!-- 22 · VOCAB -->
-<section data-label="22 Vocab" class="slide">
+<!-- 19 · VOCAB -->
+<section data-label="19 Vocab" class="slide">
   <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Từ vựng</span></div>
-  <p class="eyebrow">Vocabulary · Collocations</p>
-  <h2 class="h-section">Từ cần <em class="hi">thuộc</em> sau bài này</h2>
+  <p class="eyebrow">Vocabulary · Paraphrase</p>
+  <h2 class="h-section">Từ &amp; cặp <em class="hi">đề ↔ băng</em> trong bài</h2>
   <div class="vocab-grid compact">
-         <div class="vocab-item"><div class="vocab-word">ranger</div><div class="vocab-meaning">employee who protects / guides in a park</div></div>
-         <div class="vocab-item"><div class="vocab-word">wetland · stream</div><div class="vocab-meaning">marshy area · small flowing water</div></div>
-         <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">area units — same utterance may give both; match the gap unit</div></div>
-         <div class="vocab-item"><div class="vocab-word">navigate · map + compass</div><div class="vocab-meaning">find direction in the field</div></div>
-         <div class="vocab-item"><div class="vocab-word">make sounds</div><div class="vocab-meaning">collocation · music activity</div></div>
-         <div class="vocab-item"><div class="vocab-word">group leaders</div><div class="vocab-meaning">adults supervising children on a trip</div></div>
+         <div class="vocab-item"><div class="vocab-word">covers / area</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>Area</em> · băng: <em>covers … hectares</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">hai đơn vị trong một câu — khớp đơn vị ô trống</div></div>
+         <div class="vocab-item"><div class="vocab-word">wetland · ponds · stream</div><div class="vocab-meaning">chuỗi địa hình: hồ → ao → <strong>stream</strong></div></div>
+         <div class="vocab-item"><div class="vocab-word">collect &amp; analyse data</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>look at … about plants</em> · băng: <em>data about the things they see</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">map · compass · navigate</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>use a … and compass</em> · băng: <em>reading a map and using a compass</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">focus on · concentrates on</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>concentrates on</em> · băng: <em>focuses on</em> (visitors)</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">create / make sounds</div><div class="vocab-meaning">music: natural materials + rhythm/tempo</div></div>
+         <div class="vocab-item"><div class="vocab-word">sense of freedom</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>feeling of</em> · băng: <em>sense of</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">develop / learn skills</div><div class="vocab-meaning">self-confidence ngay sau đó</div></div>
+         <div class="vocab-item"><div class="vocab-word">over 30 · £4.95 each</div><div class="vocab-meaning">điều kiện số lượng → mức giá</div></div>
+         <div class="vocab-item"><div class="vocab-word">no charge · leaders · adults</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>Adults, such as …</em> · băng: <em>leaders and other adults</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">ranger · teaching assistant</div><div class="vocab-meaning">vai trò hai người nói (ngữ cảnh S1)</div></div>
        </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>22 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>19 / 23</span></div>
 </section>
 
-<!-- 23 · MISTAKES -->
-<section data-label="23 Mistakes" class="slide slide--paper">
-  <div class="run-header"><span>Practice 01 · Section 1</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
-  <p class="eyebrow">Common mistakes</p>
-  <h2 class="h-section">Năm lỗi <em class="hi">đừng lặp lại.</em></h2>
-  <div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Ghi 170 hoặc &ldquo;acres&rdquo; vào ô hectares</h4><p><strong>170</strong> là số <em>acres</em> trong cùng câu; đáp án ô Area (hectares) là <strong>69</strong>.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Điền river</h4><p>Audio nói <em>a stream</em> nối giữa lakes/ponds — chính tả pool/river nếu nghe nhầm.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Q6 điền tempo</h4><p>Ô cần danh từ cho “make ___ with materials”; tempo nằm ở mệnh đề sau.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Viết £4.95 trong ô chỉ cần số</h4><p>Nếu đề đã in £ — thường chỉ ghi <strong>4.95</strong>.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Q10 parents</h4><p>Trên băng là <em>leaders and other adults</em> — key Cambridge một từ: <strong>leaders</strong>.</p></div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>23 / 54</span></div>
-</section>
-
-<!-- 24 · SECTION BREAK -->
-<section data-label="24 Campus tour" class="slide section-break">
-  <div class="band">
-    <div class="lbl">Practice · 02</div>
-    <div class="n">02</div>
-    <div class="lbl">Section 2</div>
-  </div>
-  <div class="content">
-    <p class="eyebrow">Practice 02 · Section 2</p>
-    <h2><em>New</em><br>Arts<br>Building tour.</h2>
-    <div class="toc"><div class="">01 · Section 1 — Hinchingbrooke (form)</div>
-<div class="active">02 · Section 2 — MCQ + map</div>
-<div class="">03 · Section 3 — matching opinions</div>
-<div class="">04 · Section 4 — note completion</div></div>
-  </div>
-</section>
-
-<!-- 25 · TASK -->
-<section data-label="25 Task" class="slide">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Đề + ngữ cảnh</span></div>
-  <p class="eyebrow">Task · Campus tour</p>
-  <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap: 48px; margin-top: 8px;">
-    <div><h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Questions 6–10: multiple choice. Choose the correct letter <strong>A, B or C</strong>.</h2>
-       <p class="small">You will hear a guide showing new students around the Arts Building.</p>
-       <div class="audio-meta">
-         <div class="cell"><div class="k">Giọng</div><div class="v">1</div><div class="d">Tour guide</div></div>
-         <div class="cell"><div class="k">Bài liên quan</div><div class="v">Map</div><div class="d">Q11–14 trên sơ đồ (lớp khác)</div></div>
-         <div class="cell"><div class="k">Focus</div><div class="v">Opinion</div><div class="d">So sánh A/B/C</div></div>
-       </div></div>
-    <div><div class="ex-card"><span class="tag">MCQ stems · 6–8</span>
-       <p style="margin:0 0 12px; font-size: 24px;"><strong>6</strong> The sculpture workshop is closed on …</p>
-       <p style="margin:0 0 12px; font-size: 22px; color: var(--ink-soft);">A Mondays &nbsp; B Wednesdays &nbsp; C Fridays</p>
-       <p style="margin:0 0 12px; font-size: 24px;"><strong>7</strong> Students need a pass to enter …</p>
-       <p style="margin:0; font-size: 22px; color: var(--ink-soft);">A the darkroom &nbsp; B the print studio &nbsp; C the lecture theatre</p>
-       </div></div>
-  </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>25 / 54</span></div>
-</section>
-
-<!-- 26 · STEP 1 -->
-<section data-label="26 Step1" class="slide slide--paper">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Bước 1 · Dự đoán</span></div>
-  <p class="eyebrow">Step 1 · Predict · 3 phút</p>
-  <h2 class="h-section">Trước khi bấm play — <em class="hi">làm xong checklist.</em></h2>
-  <div class="qtype-grid">
-         <div class="qtype-item"><div class="n">Q6</div><div><div class="t">Distractor pattern</div><div class="s">Nghe cả “Monday” và “Friday” — một ngày là lịch cũ</div></div></div>
-         <div class="qtype-item"><div class="n">Q7</div><div><div class="t">Paraphrase “pass”</div><div class="s">access card / swipe card</div></div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>26 / 54</span></div>
-</section>
-
-<!-- 27 · STEP 2 -->
-<section data-label="27 Step2" class="slide">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Bước 2 · While listening</span></div>
-  <p class="eyebrow">Step 2 · While listening · cues</p>
-  <h2 class="h-section">Tín hiệu cần <em class="hi">bắt</em> trong lần nghe 1</h2>
-  <ol class="num-list tight"><li><div><span class="step-title">Đánh dấu từ khác biệt giữa A/B/C.</span><span class="step-body">Chỉ 1–2 từ / lựa chọn — Monday vs Wednesday vs Friday.</span></div></li>
-         <li><div><span class="step-title">Chờ mệnh đề xác nhận cuối.</span><span class="step-body">“So from this term, it’s <strong>Wednesday</strong> afternoons only.”</span></div></li></ol>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>27 / 54</span></div>
-</section>
-
-<!-- 28 · STEP 3 -->
-<section data-label="28 Step3" class="slide slide--paper">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Bước 3 · Đáp án</span></div>
-  <p class="eyebrow">Step 3 · Key · spelling check</p>
-  <h2 class="h-section">Đáp án mẫu — <em class="hi">đối chiếu chính tả.</em></h2>
-  <div class="key-grid key-grid--3">
-         <div class="k"><div class="q">6</div><div class="a">B</div></div>
-         <div class="k"><div class="q">7</div><div class="a">A</div></div>
-         <div class="k"><div class="q">8</div><div class="a">C</div></div>
-       </div>
-       <p class="fine">MCQ: đáp án đúng thường được <em>khẳng định lại</em> sau khi loại các lựa chọn còn lại.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>28 / 54</span></div>
-</section>
-
-<!-- 29 · SAMPLE SCRIPT -->
-<section data-label="29 Script" class="slide">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Transcript rút gọn</span></div>
-  <p class="eyebrow">Script excerpt · Theo băng</p>
-  <h2 class="h-section">Đoạn thoại <em class="hi">rút gọn</em> (đúng lời audio)</h2>
-  <div class="script-box">
-         <p><span class="ln">G</span>…the workshop used to shut on Mondays, but <strong>from this month it’s Wednesday afternoons</strong> because of staff training…</p>
-         <p><span class="ln">G</span>For the darkroom, you’ll need your <strong>student pass</strong> — the print studio is open to everyone.</p>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>29 / 54</span></div>
-</section>
-
-<!-- 30 · ANALYSIS -->
-<section data-label="30 Analysis" class="slide slide--paper">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Phân tích</span></div>
-  <p class="eyebrow">Language &amp; strategy</p>
-  <h2 class="h-section">Vì sao đáp án <em class="hi">nằm ở đó?</em></h2>
-  <ul class="annot-list">
-         <li><span class="tag">Q6</span><b>Used to</b> vs <b>from this month</b> — đáp án theo thông tin mới nhất.</li>
-         <li><span class="tag">Q7</span>Đối chiếu <em>darkroom</em> với “need pass” — studio không cần.</li>
-       </ul>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>30 / 54</span></div>
-</section>
-
-<!-- 31 · VOCAB -->
-<section data-label="31 Vocab" class="slide">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Từ vựng</span></div>
-  <p class="eyebrow">Vocabulary · Collocations</p>
-  <h2 class="h-section">Từ cần <em class="hi">thuộc</em> sau bài này</h2>
-  <div class="vocab-grid compact">
-         <div class="vocab-item"><div class="vocab-word">used to</div><div class="vocab-meaning">past habit — thường đi kèm correction</div></div>
-         <div class="vocab-item"><div class="vocab-word">from this term / month</div><div class="vocab-meaning">signal of updated rule</div></div>
-         <div class="vocab-item"><div class="vocab-word">student pass</div><div class="vocab-meaning">= access card / ID swipe</div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>31 / 54</span></div>
-</section>
-
-<!-- 32 · MISTAKES -->
-<section data-label="32 Mistakes" class="slide slide--paper">
-  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
-  <p class="eyebrow">Common mistakes</p>
-  <h2 class="h-section">Năm lỗi <em class="hi">đừng lặp lại.</em></h2>
-  <div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Chọn đáp án nghe thấy đầu tiên</h4><p>IELTS hay đưa đúng thứ tự A/B/C trong audio nhưng <em>sai ngữ cảnh</em>.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Không đọc stem kỹ</h4><p>“need a pass to enter” vs “need a pass to borrow equipment” — khác hoàn toàn.</p></div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>32 / 54</span></div>
-</section>
-
-<!-- 33 · SECTION BREAK -->
-<section data-label="33 Assignment discussion" class="slide section-break">
-  <div class="band">
-    <div class="lbl">Practice · 03</div>
-    <div class="n">03</div>
-    <div class="lbl">Section 3</div>
-  </div>
-  <div class="content">
-    <p class="eyebrow">Practice 03 · Section 3</p>
-    <h2><em>Marketing</em><br>essay<br>plan.</h2>
-    <div class="toc"><div class="">01 · Section 1 — Hinchingbrooke (form)</div>
-<div class="">02 · Section 2 — MCQ + map</div>
-<div class="active">03 · Section 3 — matching opinions</div>
-<div class="">04 · Section 4 — note completion</div></div>
-  </div>
-</section>
-
-<!-- 34 · TASK -->
-<section data-label="34 Task" class="slide">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Đề + ngữ cảnh</span></div>
-  <p class="eyebrow">Task · Assignment discussion</p>
-  <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap: 48px; margin-top: 8px;">
-    <div><h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Who expresses which opinion? Match each opinion to <strong>A–D</strong> (students + tutor).</h2>
-       <p class="small">You will hear three students and a tutor discussing an essay on consumer behaviour.</p></div>
-    <div><div class="ex-card"><span class="tag">Opinions · 15–18</span>
-       <div class="q-strip"><span class="n">15</span><span>The introduction should define key terms.</span></div>
-       <div class="q-strip"><span class="n">16</span><span>Case studies are more useful than surveys.</span></div>
-       <div class="q-strip"><span class="n">17</span><span>The word limit is too tight for the topic.</span></div>
-       <div class="q-strip"><span class="n">18</span><span>They should include a counter-argument paragraph.</span></div>
-       <p class="small" style="margin-top:16px;">A Anna · B Ben · C Carla · D Tutor</p>
-       </div></div>
-  </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>34 / 54</span></div>
-</section>
-
-<!-- 35 · STEP 1 -->
-<section data-label="35 Step1" class="slide slide--paper">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Bước 1 · Dự đoán</span></div>
-  <p class="eyebrow">Step 1 · Predict · 3 phút</p>
-  <h2 class="h-section">Trước khi bấm play — <em class="hi">làm xong checklist.</em></h2>
-  <div class="two-col"><div class="col-card"><p class="mono-label">Trước khi nghe</p><h3>Ghi tên + vai trò</h3><ul><li>Anna: thích lý thuyết</li><li>Ben: thích dữ liệu thực địa</li><li>Carla: lo chữ</li><li>Tutor: đưa rubric</li></ul></div>
-         <div class="col-card"><p class="mono-label">Paraphrase stem</p><h3>“define key terms”</h3><ul><li>nghe: <em>operationalise the concepts in the first paragraph</em></li></ul></div></div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>35 / 54</span></div>
-</section>
-
-<!-- 36 · STEP 2 -->
-<section data-label="36 Step2" class="slide">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Bước 2 · While listening</span></div>
-  <p class="eyebrow">Step 2 · While listening · cues</p>
-  <h2 class="h-section">Tín hiệu cần <em class="hi">bắt</em> trong lần nghe 1</h2>
-  <p class="body">Theo dõi <em class="hi">chủ ngữ câu</em>: “I think / In my view / What I’d suggest is” — map về A–D trên giấy nháp trong lần nghe 1.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>36 / 54</span></div>
-</section>
-
-<!-- 37 · STEP 3 -->
-<section data-label="37 Step3" class="slide slide--paper">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Bước 3 · Đáp án</span></div>
-  <p class="eyebrow">Step 3 · Key · spelling check</p>
-  <h2 class="h-section">Đáp án mẫu — <em class="hi">đối chiếu chính tả.</em></h2>
-  <div class="key-grid key-grid--4">
-         <div class="k"><div class="q">15</div><div class="a">D</div></div>
-         <div class="k"><div class="q">16</div><div class="a">B</div></div>
-         <div class="k"><div class="q">17</div><div class="a">C</div></div>
-         <div class="k"><div class="q">18</div><div class="a">D</div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>37 / 54</span></div>
-</section>
-
-<!-- 38 · SAMPLE SCRIPT -->
-<section data-label="38 Script" class="slide">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Transcript rút gọn</span></div>
-  <p class="eyebrow">Script excerpt · Theo băng</p>
-  <h2 class="h-section">Đoạn thoại <em class="hi">rút gọn</em> (đúng lời audio)</h2>
-  <div class="script-box">
-         <p><span class="ln">T</span>In academic writing, you should <strong>operationalise your key concepts</strong> right at the start…</p>
-         <p><span class="ln">B</span>I’m not convinced by surveys here — <strong>case studies</strong> give richer insight…</p>
-         <p><span class="ln">C</span>Honestly, <strong>2,000 words feels tight</strong> for this topic…</p>
-         <p><span class="ln">T</span>And yes, add <strong>a counter-argument section</strong> — the rubric rewards it.</p>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>38 / 54</span></div>
-</section>
-
-<!-- 39 · ANALYSIS -->
-<section data-label="39 Analysis" class="slide slide--paper">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Phân tích</span></div>
-  <p class="eyebrow">Language &amp; strategy</p>
-  <h2 class="h-section">Vì sao đáp án <em class="hi">nằm ở đó?</em></h2>
-  <ul class="annot-list">
-         <li><span class="tag">S3</span>Giảng viên thường mang <b>rubric</b> — ý chuẩn hay từ tutor.</li>
-         <li><span class="tag">Para</span>“operationalise” = define key terms (academic paraphrase).</li>
-       </ul>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>39 / 54</span></div>
-</section>
-
-<!-- 40 · VOCAB -->
-<section data-label="40 Vocab" class="slide">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Từ vựng</span></div>
-  <p class="eyebrow">Vocabulary · Collocations</p>
-  <h2 class="h-section">Từ cần <em class="hi">thuộc</em> sau bài này</h2>
-  <div class="vocab-grid compact">
-         <div class="vocab-item"><div class="vocab-word">operationalise</div><div class="vocab-meaning">define for use in the essay</div></div>
-         <div class="vocab-item"><div class="vocab-word">case study</div><div class="vocab-meaning">deep example vs broad survey</div></div>
-         <div class="vocab-item"><div class="vocab-word">counter-argument</div><div class="vocab-meaning"> opposing view then refute</div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>40 / 54</span></div>
-</section>
-
-<!-- 41 · MISTAKES -->
-<section data-label="41 Mistakes" class="slide slide--paper">
-  <div class="run-header"><span>Practice 03 · Section 3</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
-  <p class="eyebrow">Common mistakes</p>
-  <h2 class="h-section">Năm lỗi <em class="hi">đừng lặp lại.</em></h2>
-  <div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Nhầm giọng nam/nữ</h4><p>Lập bảng 4 cột trước — mỗi ý kiến gạch tên ngay khi nghe.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Match theo từ giống stem</h4><p>IELTS paraphrase mạnh ở Section 3.</p></div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>41 / 54</span></div>
-</section>
-
-<!-- 42 · SECTION BREAK -->
-<section data-label="42 Urban ecology lecture" class="slide section-break">
-  <div class="band">
-    <div class="lbl">Practice · 04</div>
-    <div class="n">04</div>
-    <div class="lbl">Section 4</div>
-  </div>
-  <div class="content">
-    <p class="eyebrow">Practice 04 · Section 4</p>
-    <h2><em>Green</em><br>infrastructure<br>lecture.</h2>
-    <div class="toc"><div class="">01 · Section 1 — Hinchingbrooke (form)</div>
-<div class="">02 · Section 2 — MCQ + map</div>
-<div class="">03 · Section 3 — matching opinions</div>
-<div class="active">04 · Section 4 — note completion</div></div>
-  </div>
-</section>
-
-<!-- 43 · TASK -->
-<section data-label="43 Task" class="slide">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Đề + ngữ cảnh</span></div>
-  <p class="eyebrow">Task · Urban ecology lecture</p>
-  <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap: 48px; margin-top: 8px;">
-    <div><h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Complete the notes below. Write <strong>NO MORE THAN TWO WORDS</strong> for each answer.</h2>
-       <p class="small">One speaker · academic lecture · dense information in the second half.</p></div>
-    <div><div class="ex-card"><span class="tag">Notes · gaps 19–24 (sample)</span>
-       <p style="font-size:23px; line-height:1.55; color:var(--ink-soft); margin:0;">
-         Green roofs reduce <strong>19 ……………</strong> in summer.<br>
-         The main cost barrier is <strong>20 ……………</strong>.<br>
-         Cities use <strong>21 ……………</strong> to manage stormwater.<br>
-         Biodiversity improves when plants are <strong>22 ……………</strong>.<br>
-       </p></div></div>
-  </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>43 / 54</span></div>
-</section>
-
-<!-- 44 · STEP 1 -->
-<section data-label="44 Step1" class="slide slide--paper">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Bước 1 · Dự đoán</span></div>
-  <p class="eyebrow">Step 1 · Predict · 3 phút</p>
-  <h2 class="h-section">Trước khi bấm play — <em class="hi">làm xong checklist.</em></h2>
-  <div class="flow" style="margin-top:8px;">
-         <div class="flow-step"><div class="n">01</div><div class="t">Skim headings</div><div class="d">3–4 ý lớn của bài giảng</div><div class="time">45″</div></div>
-         <div class="flow-step"><div class="n">02</div><div class="t">Predict word class</div><div class="d">19: noun (heat? runoff?) · 20: noun phrase</div><div class="time">60″</div></div>
-         <div class="flow-step"><div class="n">03</div><div class="t">Track signposts</div><div class="d">Firstly / However / In conclusion</div><div class="time">while</div></div>
-         <div class="flow-step"><div class="n">04</div><div class="t">Second listen</div><div class="d">Chỉ điền chỗ trống — không sửa toàn bài</div><div class="time">replay</div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>44 / 54</span></div>
-</section>
-
-<!-- 45 · STEP 2 -->
-<section data-label="45 Step2" class="slide">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Bước 2 · While listening</span></div>
-  <p class="eyebrow">Step 2 · While listening · cues</p>
-  <h2 class="h-section">Tín hiệu cần <em class="hi">bắt</em> trong lần nghe 1</h2>
-  <p class="body">Section 4: <em class="hi">đáp án thường là cụm danh từ</em> ngay sau signpost “the key point is / what we call”.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>45 / 54</span></div>
-</section>
-
-<!-- 46 · STEP 3 -->
-<section data-label="46 Step3" class="slide slide--paper">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Bước 3 · Đáp án</span></div>
-  <p class="eyebrow">Step 3 · Key · spelling check</p>
-  <h2 class="h-section">Đáp án mẫu — <em class="hi">đối chiếu chính tả.</em></h2>
-  <div class="key-grid key-grid--3">
-         <div class="k"><div class="q">19</div><div class="a">heat / heat gain</div></div>
-         <div class="k"><div class="q">20</div><div class="a">maintenance / maintenance costs</div></div>
-         <div class="k"><div class="q">21</div><div class="a">bioswales</div></div>
-       </div>
-       <p class="fine">Nếu audio nói <em>bioswales</em> — chính xác chính tả; nếu không chắc, ghi phiên âm gần đúng rồi đối chiếu lần 2.</p>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>46 / 54</span></div>
-</section>
-
-<!-- 47 · SAMPLE SCRIPT -->
-<section data-label="47 Script" class="slide">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Transcript rút gọn</span></div>
-  <p class="eyebrow">Script excerpt · Theo băng</p>
-  <h2 class="h-section">Đoạn thoại <em class="hi">rút gọn</em> (đúng lời audio)</h2>
-  <div class="script-box">
-         <p><span class="ln">L</span>…green roofs can significantly reduce <strong>heat gain</strong> in urban corridors…</p>
-         <p><span class="ln">L</span>…the barrier most cities cite is not installation but <strong>ongoing maintenance</strong>…</p>
-         <p><span class="ln">L</span>…<strong>bioswales</strong> are shallow vegetated channels used to slow runoff…</p>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>47 / 54</span></div>
-</section>
-
-<!-- 48 · ANALYSIS -->
-<section data-label="48 Analysis" class="slide slide--paper">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Phân tích</span></div>
-  <p class="eyebrow">Language &amp; strategy</p>
-  <h2 class="h-section">Vì sao đáp án <em class="hi">nằm ở đó?</em></h2>
-  <ul class="annot-list">
-         <li><span class="tag">19</span>Sau “reduce” → danh từ / noun phrase.</li>
-         <li><span class="tag">21</span>Từ chuyên ngành — tái hiện đúng spelling từ audio.</li>
-       </ul>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>48 / 54</span></div>
-</section>
-
-<!-- 49 · VOCAB -->
-<section data-label="49 Vocab" class="slide">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Từ vựng</span></div>
-  <p class="eyebrow">Vocabulary · Collocations</p>
-  <h2 class="h-section">Từ cần <em class="hi">thuộc</em> sau bài này</h2>
-  <div class="vocab-grid compact">
-         <div class="vocab-item"><div class="vocab-word">green infrastructure</div><div class="vocab-meaning">roofs · parks · drainage as a system</div></div>
-         <div class="vocab-item"><div class="vocab-word">stormwater</div><div class="vocab-meaning">rainwater runoff in cities</div></div>
-         <div class="vocab-item"><div class="vocab-word">biodiversity</div><div class="vocab-meaning">range of species — spelling with two i’s</div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>49 / 54</span></div>
-</section>
-
-<!-- 50 · MISTAKES -->
-<section data-label="50 Mistakes" class="slide slide--paper">
-  <div class="run-header"><span>Practice 04 · Section 4</span><span class="rule"></span><span>Lỗi thường gặp</span></div>
-  <p class="eyebrow">Common mistakes</p>
-  <h2 class="h-section">Năm lỗi <em class="hi">đừng lặp lại.</em></h2>
-  <div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Viết từ đồng nghĩa không có trong audio</h4><p>Đáp án phải <em>exact wording from recording</em> (trừ khi đề cho multiple acceptable answers).</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Mất chỗ ở S4 vì cố ghi hết</h4><p>Ưu tiên ô trống — bỏ qua 5 giây không hiểu, quay lại lần 2.</p></div></div>
-       </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>50 / 54</span></div>
-</section>
-
-<!-- 51 · PATTERNS -->
-<section data-label="51 Patterns" class="slide">
-  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Pattern chung</span></div>
-  <p class="eyebrow">Patterns across 4 practices</p>
-  <h2 class="h-section">Bốn điều <em class="hi">lặp lại</em> trong mọi section</h2>
+<!-- 20 · PATTERNS -->
+<section data-label="20 Patterns" class="slide">
+  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Pattern · Section 1</span></div>
+  <p class="eyebrow">Patterns · Form completion</p>
+  <h2 class="h-section">Bốn điều <em class="hi">ôn lại</em> từ bài Hinchingbrooke</h2>
   <div class="patt-grid" style="margin-top: 8px;">
-    <div class="patt"><div class="t">01 · Paraphrase</div><div class="d">Đề không trùng audio — luôn đổi từ hoặc cấu trúc.</div><div class="ex">“near the centre” ↔ <em>close to the downtown campus</em></div></div>
-    <div class="patt"><div class="t">02 · Correction</div><div class="d">Actually / sorry / I mean — thông tin đúng đến sau.</div><div class="ex">Giá / tên / ngày hay bị sửa.</div></div>
-    <div class="patt"><div class="t">03 · Word limit</div><div class="d">Đếm từ trước khi chép sang answer sheet.</div><div class="ex">NO MORE THAN TWO WORDS</div></div>
-    <div class="patt"><div class="t">04 · Spelling</div><div class="d">Proper nouns &amp; technical terms — độ khó tăng dần tới S4.</div><div class="ex">bioswales · accommodation</div></div>
+    <div class="patt"><div class="t">01 · Paraphrase đề ↔ băng</div><div class="d">Stem đổi động từ / cụm nhưng đáp án vẫn là từ nghe được nguyên văn.</div><div class="ex"><em>make</em> ↔ <em>create</em> · <em>learn</em> ↔ <em>develop</em></div></div>
+    <div class="patt"><div class="t">02 · Một câu, hai số</div><div class="d">Cùng lúc có acres và hectares — khớp đơn vị ô trống.</div><div class="ex">Area (hectares) → <strong>69</strong>, không chép <strong>170</strong></div></div>
+    <div class="patt"><div class="t">03 · Giới hạn từ / số</div><div class="d">ONE WORD AND/OR A NUMBER — đếm từ; ô đã in £ thì thường chỉ ghi số.</div><div class="ex"><strong>4.95</strong> · <strong>leaders</strong></div></div>
+    <div class="patt"><div class="t">04 · Chủ đề song song</div><div class="d">Science → Geography → History → Leisure → Music — mỗi khối một gap.</div><div class="ex">Theo dấu mốc môn học trên ghi chú</div></div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>51 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>20 / 23</span></div>
 </section>
 
-<!-- 52 · TAKEAWAYS -->
-<section data-label="52 Takeaways" class="slide slide--paper">
+<!-- 21 · TAKEAWAYS -->
+<section data-label="21 Takeaways" class="slide slide--paper">
   <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Takeaways</span></div>
-  <p class="eyebrow">Key Takeaways · 8 điểm</p>
-  <h2 class="h-section">Tám điều <em class="hi">mang về nhà.</em></h2>
+  <p class="eyebrow">Key takeaways · Section 1</p>
+  <h2 class="h-section">Sáu điều <em class="hi">mang về nhà</em></h2>
   <div class="take">
-    <div class="item"><div class="k">01</div><div class="v">Đọc trước — dự đoán loại từ mỗi ô trống.</div></div>
-    <div class="item"><div class="k">02</div><div class="v">S1: spelling + số — không mất điểm “ngu”.</div></div>
-    <div class="item"><div class="k">03</div><div class="v">S2: MCQ chờ xác nhận cuối — tránh distractor đầu.</div></div>
-    <div class="item"><div class="k">04</div><div class="v">Map: định hướng + nhãn trước khi nghe.</div></div>
-    <div class="item"><div class="k">05</div><div class="v">S3: bảng người — ý kiến paraphrase mạnh.</div></div>
-    <div class="item"><div class="k">06</div><div class="v">S4: outline 3 ý lớn trong pause.</div></div>
-    <div class="item"><div class="k">07</div><div class="v">Luôn kiểm tra giới hạn từ trước khi nộp bài.</div></div>
-    <div class="item"><div class="k">08</div><div class="v">Nghe lại transcript sau buổi — sửa chỗ tai “trễ”.</div></div>
+    <div class="item"><div class="k">01</div><div class="v">Đọc trước cả form — ghi loại từ (số / danh từ / tên) từng ô.</div></div>
+    <div class="item"><div class="k">02</div><div class="v">Theo dõi hai giọng: ai hỏi thông tin, ai đưa đáp án điền.</div></div>
+    <div class="item"><div class="k">03</div><div class="v">Khi đề paraphrase, chờ cụm <strong>word-for-word</strong> trên băng khớp giới hạn từ.</div></div>
+    <div class="item"><div class="k">04</div><div class="v">Spelling: stream, leaders, data — chép ngay khi nghe xong cụm.</div></div>
+    <div class="item"><div class="k">05</div><div class="v">Điều kiện (over 30) đi kèm giá — ghi đúng mức được nói sau điều kiện.</div></div>
+    <div class="item"><div class="k">06</div><div class="v">Nghe lại transcript đã highlight — đánh dấu cặp đề ↔ audio.</div></div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>52 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>21 / 23</span></div>
 </section>
 
-<!-- 53 · WEEKLY PLAN -->
-<section data-label="53 Weekly Plan" class="slide">
+<!-- 22 · WEEKLY PLAN -->
+<section data-label="22 Weekly Plan" class="slide">
   <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Lịch luyện tuần</span></div>
-  <p class="eyebrow">Weekly Practice Plan · 7 days</p>
-  <h2 class="h-section">25–30 phút/ngày — <em class="hi">tai quen tốc độ IELTS.</em></h2>
+  <p class="eyebrow">Weekly plan · Listening</p>
+  <h2 class="h-section">25–30 phút/ngày — <em class="hi">ưu tiên Section 1</em></h2>
   <div class="plan-grid">
     <div class="hdr">Day</div><div class="hdr">Nhiệm vụ</div><div class="hdr">Nội dung</div><div class="hdr">Thời lượng</div>
-    <div class="day">Thứ 2</div><div>S1 form completion</div><div>Cambridge Test · chỉ S1 · chép sai chính tả vào sổ.</div><div class="time">30′</div>
-    <div class="day">Thứ 3</div><div>S2 MCQ + map</div><div>1 đề · khoanh distractor trong transcript.</div><div class="time">30′</div>
-    <div class="day">Thứ 4</div><div>S3 matching</div><div>Nghe 1 lần không pause — lần 2 chỉ chỗ sai.</div><div class="time">30′</div>
-    <div class="day">Thứ 5</div><div>S4 note completion</div><div>Outline trước khi nghe lần 1.</div><div class="time">30′</div>
-    <div class="day">Thứ 6</div><div>Full test Listening</div><div>40 câu · timing thật · transfer 10′.</div><div class="time">40′</div>
-    <div class="day">Thứ 7</div><div>Review transcript</div><div>Highlight paraphrase pairs (đề ↔ audio).</div><div class="time">45′</div>
-    <div class="day">CN</div><div>Shadowing 10′</div><div>Đoạn S2 hoặc S4 — bắt chước stress &amp; chunking.</div><div class="time">25′</div>
+    <div class="day">Thứ 2</div><div>S1 form</div><div>1 Test · Part 1 — chỉ ghi lỗi chính tả / số vào sổ.</div><div class="time">30′</div>
+    <div class="day">Thứ 3</div><div>S1 + review</div><div>Nghe lại cùng transcript — khoanh paraphrase đề ↔ băng.</div><div class="time">30′</div>
+    <div class="day">Thứ 4</div><div>S1 dictation</div><div>Chép 2 đoạn ngắn từ transcript — kiểm tra spelling.</div><div class="time">25′</div>
+    <div class="day">Thứ 5</div><div>Mixed S1–S2</div><div>Một test: S1 full + 5 câu đầu S2 (nếu đã học S2).</div><div class="time">35′</div>
+    <div class="day">Thứ 6</div><div>Full Listening</div><div>40 câu · timing thật · 10′ transfer.</div><div class="time">40′</div>
+    <div class="day">Thứ 7</div><div>Error log</div><div>Tổng hợp từ tuần — đọc to các từ hay sai.</div><div class="time">20′</div>
+    <div class="day">CN</div><div>Nghỉ / nhẹ</div><div>Shadowing 1 đoạn S1 5′ (tùy chọn).</div><div class="time">15′</div>
   </div>
-  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>53 / 54</span></div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 01</span><span>22 / 23</span></div>
 </section>
 
-<!-- 54 · END -->
-<section data-label="54 End" class="slide end-slide">
+<!-- 23 · END -->
+<section data-label="23 End" class="slide end-slide">
   <div>
     <h1>Keep<br>listening.</h1>
     <div class="hint">Lesson 01 · Listening · IELTS Academy</div>
