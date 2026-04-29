@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate listening/lesson/1/index.html — 23 slides (lý thuyết + chỉ Practice 01 / Cambridge 19 S1)."""
+"""Generate listening/lesson/1/index.html — 25 slides (lý thuyết + chỉ Practice 01 / Cambridge 19 S1)."""
 
 import os
 from html import escape
 
 FOOTER = "IELTS Listening · Lesson 01"
-TOTAL_SLIDES = 23
+TOTAL_SLIDES = 25
 
 
 def foot(n: int) -> str:
@@ -89,6 +89,18 @@ HEAD = r"""<!doctype html>
   .patt .ex { font-size: 21px; color: var(--ink-soft); line-height: 1.45; font-style: italic; }
   .patt .ex .ex-line { display: block; margin: 0; padding: 4px 0 0; border-top: 1px dashed color-mix(in srgb, var(--rule-soft) 80%, transparent); }
   .patt .ex .ex-line:first-child { border-top: 0; padding-top: 0; }
+  /* Walkthrough: 2 câu / slide — transcript rút gọn + tín hiệu → nghĩa → chọn */
+  .tw-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 28px 44px; margin-top: 10px; align-items: start; }
+  .tw-tx-label { font-family: var(--mono); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+  .script-box.script-box--tw { max-height: 400px; overflow: hidden; padding: 20px 26px; font-size: 20px; line-height: 1.5; }
+  .script-box.script-box--tw .ln { font-size: 14px; }
+  .tw-explain { min-width: 0; }
+  .tw-q { border-top: 1px solid var(--rule-soft); padding-top: 14px; margin-top: 14px; }
+  .tw-q:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+  .tw-n { font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 6px; display: block; }
+  .tw-body { font-size: 22px; line-height: 1.42; color: var(--ink-soft); }
+  .tw-body b { color: var(--ink); font-weight: 600; }
+  .tw-pick { margin-top: 10px; font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--ink); }
 </style>
 </head>
 <body>
@@ -128,7 +140,7 @@ slides.append(f"""<!-- 02 · AGENDA -->
   <h2 class="h-section">Agenda</h2>
   <ol class="num-list tight">
     <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · dự đoán loại từ · Form completion · tín hiệu discourse · spelling.</span></div></li>
-    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">9 slide · ~35 phút. Cambridge 19 Test 1 · 10 gap · audio · transcript 2 phần · giải thích từng câu + từ vựng/paraphrase.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">11 slide · ~35 phút. Cambridge 19 Test 1 · 10 gap · audio · 5 slide listen-back (2 câu/slide: transcript rút gọn + tín hiệu → chọn đáp án) · từ vựng/paraphrase.</span></div></li>
     <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide. Ôn pattern · takeaways · lịch luyện tuần.</span></div></li>
   </ol>
   {foot(2)}
@@ -287,6 +299,7 @@ def practice_block(
     step3_html: str,
     sample_html: str,
     analysis_html: str,
+    analysis_slides: list[str] | None,
     vocab_html: str,
     mistakes_html: str,
     extra_after_step3: list[tuple[str, str, str]] | None = None,
@@ -370,8 +383,18 @@ def practice_block(
   {sample_html}
   {foot(n)}
 </section>""")
-    n += 1
-    slides.append(f"""<!-- {n:02d} · ANALYSIS -->
+    if analysis_slides:
+        for idx, inner in enumerate(analysis_slides, 1):
+            n += 1
+            slides.append(f"""<!-- {n:02d} · WALKTHROUGH {idx}/5 -->
+<section data-label="{n:02d} Walkthrough{idx}" class="slide slide--paper">
+  <div class="run-header"><span>Practice {practice_num} · {section_name}</span><span class="rule"></span><span>Listen-back · {idx}/5</span></div>
+  {inner}
+  {foot(n)}
+</section>""")
+    elif analysis_html.strip():
+        n += 1
+        slides.append(f"""<!-- {n:02d} · ANALYSIS -->
 <section data-label="{n:02d} Analysis" class="slide slide--paper">
   <div class="run-header"><span>Practice {practice_num} · {section_name}</span><span class="rule"></span><span>Phân tích</span></div>
   <p class="eyebrow">Language &amp; strategy</p>
@@ -410,60 +433,144 @@ TOC_P01 = [
 # Web path is relative to index.html (no spaces in filename for stable URLs).
 _LISTENING_P1_MP3 = "audio/cam19-test1-part1.mp3"
 
-# Hai slide transcript sau Step 3 (đúng audioscript Cambridge; gạch chân = khớp ô đề).
-P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
-    (
-        "Transcript1",
-        "Transcript · 1/2",
-        """<p class="eyebrow">Cambridge IELTS 19 · Test 1 · Part 1</p>
-  <div class="transcript-head">
-    <h2 class="h-section tidy-h2">Băng phần 1 — <em class="hi">giới thiệu công viên → hết mục Music</em></h2>
-    <span class="transcript-meta-pill">Gạch chân = đúng chỗ điền</span>
-  </div>
-  <div class="script-box script-box--full">
-    <p><span class="ln">S</span>Good morning. Hinchingbrooke Country Park, Sally speaking. I&rsquo;m one of the rangers.</p>
-    <p><span class="ln">J</span>Oh hello. My name&rsquo;s John Chapman, and I&rsquo;m a teaching assistant at a local primary school. I&rsquo;ve been asked to arrange a visit to the park for two of our classes.</p>
-    <p><span class="ln">S</span>OK. What would you like to know?</p>
-    <p><span class="ln">J</span>Well, I&rsquo;m new to this area, so perhaps you could tell me something about the park first, please.</p>
-    <p><span class="ln">S</span>Of course. Altogether the park covers <span class="tx-hit">170 acres</span>, that&rsquo;s <span class="tx-hit">69 hectares</span>. There are three main types of habitat: wetland, grassland and woodland. The woods are well established and varied, with an oak plantation, and other areas of mixed species.</p>
-    <p><span class="ln">J</span>Right.</p>
-    <p><span class="ln">S</span>The wetland is quite varied, too. The original farmland was dug up around 40 years ago to extract gravel. Once this work was completed, the gravel pits filled with water, forming the two large lakes. There are also several smaller ones, ponds and a <span class="tx-hit">stream</span> that flows through the park.</p>
-    <p><span class="ln">J</span>OK, so I suppose with these different habitats there&rsquo;s quite a variety of wildlife.</p>
-    <p><span class="ln">S</span>There certainly is – a lot of different species of birds and insects, and also animals like deer and rabbits.</p>
-    <p><span class="ln">J</span>And I understand you organise educational visits for school parties.</p>
-    <p><span class="ln">S</span>That&rsquo;s right. We can organise a wide range of activities and adapt them to suit all ages.</p>
-    <p><span class="ln">J</span>Can you give me some examples of the activities?</p>
-    <p><span class="ln">S</span>Well, one focus is on science, where we help children to discover and study plants, trees and insects. They also collect and analyse <span class="tx-hit">data</span> about the things they see.</p>
-    <p><span class="ln">J</span>Uhuh.</p>
-    <p><span class="ln">S</span>Another focus is on geography. The park is a great environment to learn and practice reading a <span class="tx-hit">map</span> and using a compass to navigate around the park.</p>
-    <p><span class="ln">J</span>Do you do anything connected with history?</p>
-    <p><span class="ln">S</span>Yes, we do. For instance, the children can explore how the use of the land has changed over time. Then there&rsquo;s leisure and tourism.</p>
-    <p><span class="ln">J</span>That focuses on your <span class="tx-hit">visitors</span>, I would imagine.</p>
-    <p><span class="ln">S</span>Yes, mostly. The children find out about them, their requirements, the problems they may cause and how we manage these. And another subject we cover is music: here the children experiment with natural materials to create <span class="tx-hit">sounds</span> and explore <span class="tx-hit">rhythm and tempo</span>.</p>
-    <p><span class="ln">J</span>That must be fun!</p>
-    <p><span class="ln">S</span>Most children really enjoy it.</p>
+# 5 slide listen-back sau Step 3: mỗi slide 2 câu — transcript rút gọn + tín hiệu (gạch chân) → nghĩa → chọn đáp án.
+P01_ANALYSIS_SLIDES: list[str] = [
+    r"""<p class="eyebrow">Q1–2 · Transcript + signals</p>
+  <h2 class="h-section tidy-h2">Vì sao cần đoạn băng? — <em class="hi">tín hiệu</em> → nghĩa → chọn</h2>
+  <p class="small" style="margin-bottom: 10px;">Chỉ trích đúng câu có gap; gạch chân = cụm bắt trên băng (không đoán ngoài audio).</p>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Đoạn transcript</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>Altogether the park covers <span class="tx-hit">170 acres</span>, that&rsquo;s <span class="tx-hit">69 hectares</span>. There are three main types of habitat: wetland, grassland and woodland.</p>
+        <p><span class="ln">S</span>There are also several smaller ones, ponds and a <span class="tx-hit">stream</span> that flows through the park.</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q1</span>
+        <div class="tw-body"><b>Tín hiệu:</b> hai con số + hai đơn vị (<em>acres</em> / <em>hectares</em>) trong <strong>một câu</strong>.<br>
+        <b>Nghĩa:</b> ô đề hỏi <strong>Area (hectares)</strong> → chỉ ghi số theo đơn vị hectares.<br>
+        <b>Đề ↔ băng:</b> <em>Area (hectares)</em> ↔ <em>covers … that&rsquo;s … hectares</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>69</strong> (không chép 170 — đó là acres).</div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q2</span>
+        <div class="tw-body"><b>Tín hiệu:</b> chuỗi địa hình <em>ponds and a ___</em> — ngay sau đó là danh từ + <em>flows through</em>.<br>
+        <b>Nghĩa:</b> một từ cho dòng nước nhỏ giữa các ao.<br>
+        <b>Đề ↔ băng:</b> <em>lakes, ponds and a ___</em> ↔ nguyên cụm trên băng.</div>
+        <div class="tw-pick">→ Chọn: <strong>stream</strong></div>
+      </div>
+    </div>
   </div>""",
-    ),
-    (
-        "Transcript2",
-        "Transcript · 2/2",
-        """<p class="eyebrow">Cambridge IELTS 19 · Test 1 · Part 1</p>
-  <div class="transcript-head">
-    <h2 class="h-section tidy-h2">Băng phần 2 — <em class="hi">lợi ích hoạt động &amp; giá vé</em></h2>
-    <span class="transcript-meta-pill">Phần còn lại của Part 1</span>
-  </div>
-  <div class="script-box script-box--full">
-    <p><span class="ln">S</span>And of course, all the activities are educational, too. Learning outside the classroom encourages children to be creative, and to explore and discover for themselves.</p>
-    <p><span class="ln">J</span>I would imagine they get a sense of <span class="tx-hit">freedom</span> that might not be a normal part of their lives.</p>
-    <p><span class="ln">S</span>That&rsquo;s right. And very often the children discover that they can do things they didn&rsquo;t know they could do, and they develop new <span class="tx-hit">skills</span>. This gives them greater self-confidence.</p>
-    <p><span class="ln">J</span>It sounds great. So, what about the practical side of it? How much does it cost for a full-day visit? We would expect to bring between 30 and 40 children.</p>
-    <p><span class="ln">S</span>If there are over 30, it costs <span class="tx-hit">&pound;4.95</span> for each child who attends on the day. We invoice you afterwards, so you don&rsquo;t pay for children who can&rsquo;t come because of sickness, for example. There&rsquo;s no charge for <span class="tx-hit">leaders</span> and other adults – as many as you want to bring.</p>
-    <p><span class="ln">J</span>That sounds very fair. Well, thanks for all the information. I&rsquo;ll need to discuss it with my colleagues, and I hope to get back to you soon to make a booking.</p>
-    <p><span class="ln">S</span>We&rsquo;ll look forward to hearing from you. Goodbye.</p>
-    <p><span class="ln">J</span>Goodbye, and thank you.</p>
-  </div>
-  <p class="fine">Gợi ý nhanh: Q1 — cùng câu có <em>acres</em> và <em>hectares</em>; ô đề hỏi hectares → <strong>69</strong>. Q9 — giá khi <em>over 30</em> trẻ.</p>""",
-    ),
+    r"""<p class="eyebrow">Q3–4 · Transcript + signals</p>
+  <h2 class="h-section tidy-h2">Science → Geography — <em class="hi">mỗi khối một gap</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Đoạn transcript</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>Well, one focus is on science, where we help children to discover and study plants, trees and insects. They also collect and analyse <span class="tx-hit">data</span> about the things they see.</p>
+        <p><span class="ln">S</span>Another focus is on geography. The park is a great environment to learn and practice reading a <span class="tx-hit">map</span> and using a compass to navigate around the park.</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q3</span>
+        <div class="tw-body"><b>Tín hiệu:</b> sau <em>collect and analyse</em> là danh từ chỉ thứ các em thu thập về những gì họ thấy.<br>
+        <b>Nghĩa:</b> đề viết <em>look at ___ about plants</em> — băng nói <em>analyse data about the things they see</em> (không lặp <em>plants</em> trong ô).<br>
+        <b>Đề ↔ băng:</b> <em>look at</em> ↔ <em>collect and analyse</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>data</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q4</span>
+        <div class="tw-body"><b>Tín hiệu:</b> Geography + cụm <em>reading a … and using a compass</em>.<br>
+        <b>Nghĩa:</b> ô đứng trước <em>and compass</em> — một danh từ dụng cụ định hướng.<br>
+        <b>Đề ↔ băng:</b> <em>use a ___ and compass</em> ↔ <em>reading a map and using a compass</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>map</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q5–6 · Transcript + signals</p>
+  <h2 class="h-section tidy-h2">Leisure &amp; Music — <em class="hi">paraphrase đề</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Đoạn transcript</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">J</span>That focuses on your <span class="tx-hit">visitors</span>, I would imagine.</p>
+        <p><span class="ln">S</span>Yes, mostly. The children find out about them, their requirements, the problems they may cause and how we manage these. And another subject we cover is music: here the children experiment with natural materials to create <span class="tx-hit">sounds</span> and explore <span class="tx-hit">rhythm and tempo</span>.</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q5</span>
+        <div class="tw-body"><b>Tín hiệu:</b> John nói <em>focuses on your visitors</em> — Sally <em>Yes, mostly</em> rồi triển khai.<br>
+        <b>Nghĩa:</b> ô hỏi <em>concentrates on the park&rsquo;s ___</em> — cần danh từ chỉ nhóm người đến thăm.<br>
+        <b>Đề ↔ băng:</b> <em>concentrates on</em> ↔ <em>focuses on your visitors</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>visitors</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q6</span>
+        <div class="tw-body"><b>Tín hiệu:</b> Music + <em>create … with natural materials</em> — <em>rhythm and tempo</em> đã in trong đề nên không điền vào ô <em>make ___</em>.<br>
+        <b>Nghĩa:</b> <em>make</em> trên đề = <em>create</em> trên băng; ô cần danh từ âm thanh tạo ra.<br>
+        <b>Đề ↔ băng:</b> <em>make</em> ↔ <em>create</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>sounds</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q7–8 · Transcript + signals</p>
+  <h2 class="h-section tidy-h2">Lợi ích — <em class="hi">feeling / learn</em> đổi cách nói</h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Đoạn transcript</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">J</span>I would imagine they get a sense of <span class="tx-hit">freedom</span> that might not be a normal part of their lives.</p>
+        <p><span class="ln">S</span>That&rsquo;s right. And very often the children discover that they can do things they didn&rsquo;t know they could do, and they develop new <span class="tx-hit">skills</span>. This gives them greater self-confidence.</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q7</span>
+        <div class="tw-body"><b>Tín hiệu:</b> <em>a sense of ___</em> ngay sau đoạn về hoạt động ngoài lớp.<br>
+        <b>Nghĩa:</b> đề <em>feeling of</em> = băng <em>sense of</em> — cùng nghĩa cảm giác tự do.<br>
+        <b>Đề ↔ băng:</b> <em>feeling of</em> ↔ <em>sense of</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>freedom</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q8</span>
+        <div class="tw-body"><b>Tín hiệu:</b> <em>develop new ___</em> nối tiếp câu về freedom; sau đó <em>self-confidence</em>.<br>
+        <b>Nghĩa:</b> đề <em>learn new</em> = băng <em>develop new</em> — ô cần danh từ số nhiều (kỹ năng).<br>
+        <b>Đề ↔ băng:</b> <em>learn</em> ↔ <em>develop</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>skills</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q9–10 · Transcript + signals</p>
+  <h2 class="h-section tidy-h2">Giá &amp; người lớn — <em class="hi">điều kiện + song song</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Đoạn transcript</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">J</span>How much does it cost for a full-day visit? We would expect to bring between 30 and 40 children.</p>
+        <p><span class="ln">S</span>If there are over 30, it costs <span class="tx-hit">&pound;4.95</span> for each child who attends on the day. We invoice you afterwards, so you don&rsquo;t pay for children who can&rsquo;t come because of sickness, for example. There&rsquo;s no charge for <span class="tx-hit">leaders</span> and other adults – as many as you want to bring.</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q9</span>
+        <div class="tw-body"><b>Tín hiệu:</b> điều kiện <em>If there are over 30</em> → ngay sau đó là mức giá <em>£4.95 each child</em>.<br>
+        <b>Nghĩa:</b> ô đề đã in <strong>£</strong> → thường chỉ ghi phần số <strong>4.95</strong>.<br>
+        <b>Đề ↔ băng:</b> <em>Cost per child: £</em> ↔ <em>costs £4.95 for each child</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>4.95</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q10</span>
+        <div class="tw-body"><b>Tín hiệu:</b> <em>no charge for leaders and other adults</em> — cụm song song; ô <em>Adults, such as ___</em> một từ.<br>
+        <b>Nghĩa:</b> chọn từ đầu cụm được nói rõ (Cambridge key), không đoán <em>parents/teachers</em> vì băng không nói.<br>
+        <b>Đề ↔ băng:</b> <em>such as</em> ↔ <em>leaders and other adults</em>.</div>
+        <div class="tw-pick">→ Chọn: <strong>leaders</strong></div>
+      </div>
+    </div>
+  </div>""",
 ]
 
 practice_block(
@@ -522,19 +629,8 @@ practice_block(
        </div>
        <p class="fine">Đáp án khớp Cambridge IELTS 19 Test 1 Listening Section 1 — đối chiếu spelling / số với transcript chính thức.</p>""",
     "",
-    """<p class="small" style="margin-bottom: 16px;">Mỗi ô ghi <strong>đúng cụm</strong> vừa xuất hiện trên băng. Dưới đây là <em>vì sao</em> đáp án nằm đúng chỗ đó và cách đề diễn đạt lại (đề ↔ băng).</p>
-    <ul class="annot-list annot-dense">
-         <li><span class="tag">Q1</span><b>Vì sao <em>69</em>:</b> Sally nói một câu có cả <em>170 acres</em> lẫn <em>69 hectares</em> — ô đề hỏi <strong>hectares</strong> nên chỉ ghi <strong>69</strong>, không lấy 170 (đó là acres). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>Area (hectares)</em> ↔ <em>covers … that&rsquo;s … hectares</em>.</span></li>
-         <li><span class="tag">Q2</span><b>Vì sao <em>stream</em>:</b> Sau hai hồ lớn, câu nối tiếp là &ldquo;ponds and a <strong>stream</strong> that flows through the park&rdquo; — một danh từ cho ô sau <em>and a</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>lakes, ponds and a ___</em> ↔ nguyên cụm trên băng.</span></li>
-         <li><span class="tag">Q3</span><b>Vì sao <em>data</em>:</b> Đề viết <em>look at ___ about plants</em>; băng nói họ &ldquo;collect and analyse <strong>data</strong> about the things they see&rdquo; — từ điền là <strong>data</strong> (không phải plants vì đã có trong câu). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>look at</em> ↔ <em>collect and analyse</em>.</span></li>
-         <li><span class="tag">Q4</span><b>Vì sao <em>map</em>:</b> Geography: &ldquo;reading a <strong>map</strong> and using a compass&rdquo; — ô đứng ngay trước <em>and compass</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>use a ___ and compass</em> ↔ <em>reading a map and using a compass</em> (learn and practice).</span></li>
-         <li><span class="tag">Q5</span><b>Vì sao <em>visitors</em>:</b> John đoán leisure &amp; tourism &ldquo;focuses on your <strong>visitors</strong>&rdquo; — Sally &ldquo;Yes, mostly&rdquo; rồi mở rộng — key nằm ở <strong>visitors</strong>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>concentrates on the park&rsquo;s ___</em> ↔ <em>focuses on your visitors</em>.</span></li>
-         <li><span class="tag">Q6</span><b>Vì sao <em>sounds</em>:</b> Music: &ldquo;create <strong>sounds</strong>&rdquo; với natural materials; đề dùng động từ <em>make</em> — cùng nghĩa với <em>create</em>. <em>Rhythm and tempo</em> đã in trong đề nên không điền vào ô này. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>make</em> ↔ <em>create</em>.</span></li>
-         <li><span class="tag">Q7</span><b>Vì sao <em>freedom</em>:</b> John: &ldquo;a sense of <strong>freedom</strong>&rdquo; — khớp ô <em>feeling of ___</em> (feeling = sense). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>feeling of</em> ↔ <em>sense of</em>.</span></li>
-         <li><span class="tag">Q8</span><b>Vì sao <em>skills</em>:</b> Ngay sau đoạn freedom: &ldquo;develop new <strong>skills</strong>&rdquo; — đề viết <em>learn new ___</em>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>learn</em> ↔ <em>develop</em>.</span></li>
-         <li><span class="tag">Q9</span><b>Vì sao <em>4.95</em>:</b> Điều kiện &ldquo;If there are <strong>over 30</strong>&rdquo; trẻ → &ldquo;it costs <strong>&pound;4.95</strong> for each child&rdquo;; ô đề đã có ký hiệu £ nên thường chỉ ghi <strong>4.95</strong>. <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>Cost per child: £</em> ↔ <em>costs £4.95 for each child</em>.</span></li>
-         <li><span class="tag">Q10</span><b>Vì sao <em>leaders</em>:</b> &ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — đề <em>Adults, such as ___</em> một từ; Cambridge key là <strong>leaders</strong> (không phải parents/teachers vì không nói). <span class="vocab-pair"><b>Đề ↔ băng:</b> <em>such as</em> ↔ <em>leaders and other adults</em> (chọn từ đầu cụm song song).</span></li>
-       </ul>""",
+    "",
+    P01_ANALYSIS_SLIDES,
     """<div class="vocab-grid compact">
          <div class="vocab-item"><div class="vocab-word">covers / area</div><div class="vocab-meaning"><span class="vocab-pair">đề: <em>Area</em> · băng: <em>covers … hectares</em></span></div></div>
          <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">hai đơn vị trong một câu — khớp đơn vị ô trống</div></div>
@@ -550,14 +646,14 @@ practice_block(
          <div class="vocab-item"><div class="vocab-word">ranger · teaching assistant</div><div class="vocab-meaning">vai trò hai người nói (ngữ cảnh S1)</div></div>
        </div>""",
     "",
-    extra_after_step3=P01_EXTRA_AFTER_STEP3,
+    extra_after_step3=None,
     include_sample_script=False,
     include_mistakes=False,
 )
 
-# 20 PATTERNS (sau Practice 01)
-slides.append(f"""<!-- 20 · PATTERNS -->
-<section data-label="20 Patterns" class="slide">
+# 22 PATTERNS (sau Practice 01 — walkthrough kết thúc ở slide 21)
+slides.append(f"""<!-- 22 · PATTERNS -->
+<section data-label="22 Patterns" class="slide">
   <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Patterns · Section 1</span></div>
   <p class="eyebrow">Patterns · Form completion</p>
   <h2 class="h-section">Four patterns to <em class="hi">review</em> from Hinchingbrooke</h2>
@@ -567,29 +663,27 @@ slides.append(f"""<!-- 20 · PATTERNS -->
     <div class="patt"><div class="t">03 · Word / number limits</div><div class="d">ONE WORD AND/OR A NUMBER — count words; if the form already shows £, usually write digits only.</div><div class="ex"><span class="ex-line"><strong>£</strong> on the form → write <strong>4.95</strong> only.</span><span class="ex-line">One-word gap → <strong>leaders</strong> (heard on tape), not a longer paraphrase.</span></div></div>
     <div class="patt"><div class="t">04 · Parallel topics</div><div class="d">Science → Geography → History → Leisure → Music — often one gap per block.</div><div class="ex">Use subject headings on your notes as signposts.</div></div>
   </div>
-  {foot(20)}
+  {foot(22)}
 </section>""")
 
-# 21 TAKEAWAYS
-slides.append(f"""<!-- 21 · TAKEAWAYS -->
-<section data-label="21 Takeaways" class="slide slide--paper">
+# 23 TAKEAWAYS (bốn ý — khớp bốn patterns)
+slides.append(f"""<!-- 23 · TAKEAWAYS -->
+<section data-label="23 Takeaways" class="slide slide--paper">
   <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Takeaways</span></div>
   <p class="eyebrow">Key takeaways · Section 1</p>
-  <h2 class="h-section">Six takeaways to <em class="hi">bring home</em></h2>
+  <h2 class="h-section">Four takeaways to <em class="hi">bring home</em></h2>
   <div class="take">
-    <div class="item"><div class="k">01</div><div class="v">Đọc trước cả form — ghi loại từ (số / danh từ / tên) từng ô.</div></div>
-    <div class="item"><div class="k">02</div><div class="v">Theo dõi hai giọng: ai hỏi thông tin, ai đưa đáp án điền.</div></div>
-    <div class="item"><div class="k">03</div><div class="v">Khi đề paraphrase, chờ cụm <strong>word-for-word</strong> trên băng khớp giới hạn từ.</div></div>
-    <div class="item"><div class="k">04</div><div class="v">Spelling: stream, leaders, data — chép ngay khi nghe xong cụm.</div></div>
-    <div class="item"><div class="k">05</div><div class="v">Điều kiện (over 30) đi kèm giá — ghi đúng mức được nói sau điều kiện.</div></div>
-    <div class="item"><div class="k">06</div><div class="v">Nghe lại transcript đã highlight — đánh dấu cặp đề ↔ audio.</div></div>
+    <div class="item"><div class="k">01</div><div class="v">Đọc trước cả form — ghi loại từ (số / danh từ / tên) từng ô; theo dõi hai giọng (ai hỏi, ai cho đáp án).</div></div>
+    <div class="item"><div class="k">02</div><div class="v">Hai con số / hai đơn vị trong một câu — khớp đúng đơn vị trên ô trống (vd. hectares vs acres).</div></div>
+    <div class="item"><div class="k">03</div><div class="v">Đề paraphrase vẫn cần <strong>đúng từ trên băng</strong> trong giới hạn ONE WORD — spelling: stream, leaders, data.</div></div>
+    <div class="item"><div class="k">04</div><div class="v">Điều kiện (over 30) + giá; nghe lại transcript rút gọn (highlight) — ghi cặp đề ↔ băng.</div></div>
   </div>
-  {foot(21)}
+  {foot(23)}
 </section>""")
 
-# 22 WEEKLY PLAN
-slides.append(f"""<!-- 22 · WEEKLY PLAN -->
-<section data-label="22 Weekly Plan" class="slide">
+# 24 WEEKLY PLAN
+slides.append(f"""<!-- 24 · WEEKLY PLAN -->
+<section data-label="24 Weekly Plan" class="slide">
   <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Weekly plan</span></div>
   <div class="plan-grid" style="margin-top: 20px;">
     <div class="hdr">Day</div><div class="hdr">Task</div><div class="hdr">Focus</div><div class="hdr">Time</div>
@@ -601,12 +695,12 @@ slides.append(f"""<!-- 22 · WEEKLY PLAN -->
     <div class="day">Thứ 7</div><div>Error log</div><div>Tổng hợp từ tuần — đọc to các từ hay sai.</div><div class="time">20′</div>
     <div class="day">CN</div><div>Nghỉ / nhẹ</div><div>Shadowing 1 đoạn S1 5′ (tùy chọn).</div><div class="time">15′</div>
   </div>
-  {foot(22)}
+  {foot(24)}
 </section>""")
 
-# 23 END
-slides.append("""<!-- 23 · END -->
-<section data-label="23 End" class="slide end-slide">
+# 25 END
+slides.append("""<!-- 25 · END -->
+<section data-label="25 End" class="slide end-slide">
   <div>
     <h1>Keep<br>listening.</h1>
     <div class="hint">Lesson 01 · Listening · IELTS Academy</div>
