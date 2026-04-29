@@ -81,6 +81,14 @@ HEAD = r"""<!doctype html>
   .transcript-meta-pill { font-family: var(--mono); font-size: 17px; letter-spacing: 0.06em; color: var(--ink-soft); border: 1px solid var(--rule-soft); padding: 10px 18px; border-radius: 999px; background: color-mix(in srgb, var(--accent-soft) 45%, transparent); white-space: nowrap; }
   ul.annot-list.annot-dense li { font-size: 21px; padding: 11px 0; line-height: 1.42; }
   .vocab-pair { font-size: 20px; color: var(--ink-muted); margin-top: 4px; }
+  /* Pattern recap grid (Form completion) */
+  .patt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 56px; align-content: start; }
+  .patt { border-top: 3px solid var(--accent); padding-top: 18px; min-width: 0; }
+  .patt .t { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 10px; }
+  .patt .d { font-family: var(--display); font-size: 26px; line-height: 1.32; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .patt .ex { font-size: 21px; color: var(--ink-soft); line-height: 1.45; font-style: italic; }
+  .patt .ex .ex-line { display: block; margin: 0; padding: 4px 0 0; border-top: 1px dashed color-mix(in srgb, var(--rule-soft) 80%, transparent); }
+  .patt .ex .ex-line:first-child { border-top: 0; padding-top: 0; }
 </style>
 </head>
 <body>
@@ -550,14 +558,14 @@ practice_block(
 # 20 PATTERNS (sau Practice 01)
 slides.append(f"""<!-- 20 · PATTERNS -->
 <section data-label="20 Patterns" class="slide">
-  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Pattern · Section 1</span></div>
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Patterns · Section 1</span></div>
   <p class="eyebrow">Patterns · Form completion</p>
-  <h2 class="h-section">Bốn điều <em class="hi">ôn lại</em> từ bài Hinchingbrooke</h2>
+  <h2 class="h-section">Four patterns to <em class="hi">review</em> from Hinchingbrooke</h2>
   <div class="patt-grid" style="margin-top: 8px;">
-    <div class="patt"><div class="t">01 · Paraphrase đề ↔ băng</div><div class="d">Stem đổi động từ / cụm nhưng đáp án vẫn là từ nghe được nguyên văn.</div><div class="ex"><em>make</em> ↔ <em>create</em> · <em>learn</em> ↔ <em>develop</em></div></div>
-    <div class="patt"><div class="t">02 · Một câu, hai số</div><div class="d">Cùng lúc có acres và hectares — khớp đơn vị ô trống.</div><div class="ex">Area (hectares) → <strong>69</strong>, không chép <strong>170</strong></div></div>
-    <div class="patt"><div class="t">03 · Giới hạn từ / số</div><div class="d">ONE WORD AND/OR A NUMBER — đếm từ; ô đã in £ thì thường chỉ ghi số.</div><div class="ex"><strong>4.95</strong> · <strong>leaders</strong></div></div>
-    <div class="patt"><div class="t">04 · Chủ đề song song</div><div class="d">Science → Geography → History → Leisure → Music — mỗi khối một gap.</div><div class="ex">Theo dấu mốc môn học trên ghi chú</div></div>
+    <div class="patt"><div class="t">01 · Question stem vs audio</div><div class="d">The stem may change the verb or phrase; the gap still needs the exact word you hear.</div><div class="ex"><em>make</em> ↔ <em>create</em> · <em>learn</em> ↔ <em>develop</em></div></div>
+    <div class="patt"><div class="t">02 · Two numbers, one sentence</div><div class="d">Acres and hectares in the same line — match the unit printed in the blank.</div><div class="ex">Area (hectares) → <strong>69</strong>, not <strong>170</strong> (acres)</div></div>
+    <div class="patt"><div class="t">03 · Word / number limits</div><div class="d">ONE WORD AND/OR A NUMBER — count words; if the form already shows £, usually write digits only.</div><div class="ex"><span class="ex-line"><strong>£</strong> on the form → write <strong>4.95</strong> only.</span><span class="ex-line">One-word gap → <strong>leaders</strong> (heard on tape), not a longer paraphrase.</span></div></div>
+    <div class="patt"><div class="t">04 · Parallel topics</div><div class="d">Science → Geography → History → Leisure → Music — often one gap per block.</div><div class="ex">Use subject headings on your notes as signposts.</div></div>
   </div>
   {foot(20)}
 </section>""")
@@ -565,9 +573,9 @@ slides.append(f"""<!-- 20 · PATTERNS -->
 # 21 TAKEAWAYS
 slides.append(f"""<!-- 21 · TAKEAWAYS -->
 <section data-label="21 Takeaways" class="slide slide--paper">
-  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Takeaways</span></div>
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Takeaways</span></div>
   <p class="eyebrow">Key takeaways · Section 1</p>
-  <h2 class="h-section">Sáu điều <em class="hi">mang về nhà</em></h2>
+  <h2 class="h-section">Six takeaways to <em class="hi">bring home</em></h2>
   <div class="take">
     <div class="item"><div class="k">01</div><div class="v">Đọc trước cả form — ghi loại từ (số / danh từ / tên) từng ô.</div></div>
     <div class="item"><div class="k">02</div><div class="v">Theo dõi hai giọng: ai hỏi thông tin, ai đưa đáp án điền.</div></div>
@@ -582,11 +590,11 @@ slides.append(f"""<!-- 21 · TAKEAWAYS -->
 # 22 WEEKLY PLAN
 slides.append(f"""<!-- 22 · WEEKLY PLAN -->
 <section data-label="22 Weekly Plan" class="slide">
-  <div class="run-header"><span>Tổng kết</span><span class="rule"></span><span>Lịch luyện tuần</span></div>
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Weekly plan</span></div>
   <p class="eyebrow">Weekly plan · Listening</p>
-  <h2 class="h-section">25–30 phút/ngày — <em class="hi">ưu tiên Section 1</em></h2>
+  <h2 class="h-section">25–30 minutes/day — <em class="hi">Section 1 first</em></h2>
   <div class="plan-grid">
-    <div class="hdr">Day</div><div class="hdr">Nhiệm vụ</div><div class="hdr">Nội dung</div><div class="hdr">Thời lượng</div>
+    <div class="hdr">Day</div><div class="hdr">Task</div><div class="hdr">Focus</div><div class="hdr">Time</div>
     <div class="day">Thứ 2</div><div>S1 form</div><div>1 Test · Part 1 — chỉ ghi lỗi chính tả / số vào sổ.</div><div class="time">30′</div>
     <div class="day">Thứ 3</div><div>S1 + review</div><div>Nghe lại cùng transcript — khoanh paraphrase đề ↔ băng.</div><div class="time">30′</div>
     <div class="day">Thứ 4</div><div>S1 dictation</div><div>Chép 2 đoạn ngắn từ transcript — kiểm tra spelling.</div><div class="time">25′</div>
