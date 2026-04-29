@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate listening/lesson/1/index.html — 25 slides (lý thuyết + chỉ Practice 01 / Cambridge 19 S1)."""
+"""Generate listening/lesson/1/index.html — 21 slides (lý thuyết + Practice 01 / Cambridge 19 S1; no wrap-up)."""
 
 import os
 from html import escape
 
 FOOTER = "IELTS Listening · Lesson 01"
-TOTAL_SLIDES = 25
+TOTAL_SLIDES = 21
 
 
 def foot(n: int) -> str:
@@ -142,7 +142,6 @@ slides.append(f"""<!-- 02 · AGENDA -->
   <ol class="num-list tight">
     <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · dự đoán loại từ · Form completion · tín hiệu discourse · spelling.</span></div></li>
     <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">11 slide · ~35 phút. Cambridge 19 Test 1 · 10 gap · audio · 5 slide listen-back (2 câu/slide: transcript rút gọn + tín hiệu → chọn đáp án) · từ vựng/paraphrase.</span></div></li>
-    <li><div><span class="step-title">Tổng kết &amp; bài về nhà.</span><span class="step-body">4 slide. Ôn pattern · takeaways · lịch luyện tuần.</span></div></li>
   </ol>
   {foot(2)}
 </section>""")
@@ -651,62 +650,6 @@ practice_block(
     include_sample_script=False,
     include_mistakes=False,
 )
-
-# 22 PATTERNS (sau Practice 01 — walkthrough kết thúc ở slide 21)
-slides.append(f"""<!-- 22 · PATTERNS -->
-<section data-label="22 Patterns" class="slide">
-  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Patterns · Section 1</span></div>
-  <p class="eyebrow">Patterns · Form completion</p>
-  <h2 class="h-section">Four patterns to <em class="hi">review</em> from Hinchingbrooke</h2>
-  <div class="patt-grid" style="margin-top: 8px;">
-    <div class="patt"><div class="t">01 · Question stem vs audio</div><div class="d">The stem may change the verb or phrase; the gap still needs the exact word you hear.</div><div class="ex"><em>make</em> ↔ <em>create</em> · <em>learn</em> ↔ <em>develop</em></div></div>
-    <div class="patt"><div class="t">02 · Two numbers, one sentence</div><div class="d">Acres and hectares in the same line — match the unit printed in the blank.</div><div class="ex">Area (hectares) → <strong>69</strong>, not <strong>170</strong> (acres)</div></div>
-    <div class="patt"><div class="t">03 · Word / number limits</div><div class="d">ONE WORD AND/OR A NUMBER — count words; if the form already shows £, usually write digits only.</div><div class="ex"><span class="ex-line"><strong>£</strong> on the form → write <strong>4.95</strong> only.</span><span class="ex-line">One-word gap → <strong>leaders</strong> (heard on tape), not a longer paraphrase.</span></div></div>
-    <div class="patt"><div class="t">04 · Parallel topics</div><div class="d">Science → Geography → History → Leisure → Music — often one gap per block.</div><div class="ex">Use subject headings on your notes as signposts.</div></div>
-  </div>
-  {foot(22)}
-</section>""")
-
-# 23 TAKEAWAYS (bốn ý — khớp bốn patterns)
-slides.append(f"""<!-- 23 · TAKEAWAYS -->
-<section data-label="23 Takeaways" class="slide slide--paper">
-  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Takeaways</span></div>
-  <p class="eyebrow">Key takeaways · Section 1</p>
-  <h2 class="h-section">Four takeaways to <em class="hi">bring home</em></h2>
-  <div class="take">
-    <div class="item"><div class="k">01</div><div class="v">Đọc trước cả form — ghi loại từ (số / danh từ / tên) từng ô; theo dõi hai giọng (ai hỏi, ai cho đáp án).</div></div>
-    <div class="item"><div class="k">02</div><div class="v">Hai con số / hai đơn vị trong một câu — khớp đúng đơn vị trên ô trống (vd. hectares vs acres).</div></div>
-    <div class="item"><div class="k">03</div><div class="v">Đề paraphrase vẫn cần <strong>đúng từ trên băng</strong> trong giới hạn ONE WORD — spelling: stream, leaders, data.</div></div>
-    <div class="item"><div class="k">04</div><div class="v">Điều kiện (over 30) + giá; nghe lại transcript rút gọn (highlight) — ghi cặp đề ↔ băng.</div></div>
-  </div>
-  {foot(23)}
-</section>""")
-
-# 24 WEEKLY PLAN
-slides.append(f"""<!-- 24 · WEEKLY PLAN -->
-<section data-label="24 Weekly Plan" class="slide">
-  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Weekly plan</span></div>
-  <div class="plan-grid" style="margin-top: 20px;">
-    <div class="hdr">Day</div><div class="hdr">Task</div><div class="hdr">Focus</div><div class="hdr">Time</div>
-    <div class="day">Thứ 2</div><div>S1 form</div><div>1 Test · Part 1 — chỉ ghi lỗi chính tả / số vào sổ.</div><div class="time">30′</div>
-    <div class="day">Thứ 3</div><div>S1 + review</div><div>Nghe lại cùng transcript — khoanh paraphrase đề ↔ băng.</div><div class="time">30′</div>
-    <div class="day">Thứ 4</div><div>S1 dictation</div><div>Chép 2 đoạn ngắn từ transcript — kiểm tra spelling.</div><div class="time">25′</div>
-    <div class="day">Thứ 5</div><div>Mixed S1–S2</div><div>Một test: S1 full + 5 câu đầu S2 (nếu đã học S2).</div><div class="time">35′</div>
-    <div class="day">Thứ 6</div><div>Full Listening</div><div>40 câu · timing thật · 10′ transfer.</div><div class="time">40′</div>
-    <div class="day">Thứ 7</div><div>Error log</div><div>Tổng hợp từ tuần — đọc to các từ hay sai.</div><div class="time">20′</div>
-    <div class="day">CN</div><div>Nghỉ / nhẹ</div><div>Shadowing 1 đoạn S1 5′ (tùy chọn).</div><div class="time">15′</div>
-  </div>
-  {foot(24)}
-</section>""")
-
-# 25 END
-slides.append("""<!-- 25 · END -->
-<section data-label="25 End" class="slide end-slide">
-  <div>
-    <h1>Keep<br>listening.</h1>
-    <div class="hint">Lesson 01 · Listening · IELTS Academy</div>
-  </div>
-</section>""")
 
 out = HEAD + "\n\n".join(slides) + "\n\n</deck-stage>\n\n</body>\n</html>\n"
 
