@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Listening — Section 2 · MCQ &amp; Map · Lesson 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  .script-box { background: var(--paper); border: 1px solid var(--rule-soft); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink); max-height: 520px; overflow: hidden; }
+  .script-box .ln { font-family: var(--mono); font-size: 16px; color: var(--accent); margin-right: 10px; user-select: none; }
+  .audio-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 16px; }
+  .audio-meta .cell { border-top: 3px solid var(--accent); padding-top: 16px; }
+  .audio-meta .k { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 8px; }
+  .audio-meta .v { font-family: var(--display); font-size: 32px; font-weight: 700; color: var(--ink); }
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 28px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .q-strip { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--rule-soft); font-size: 24px; }
+  .q-strip .n { font-family: var(--mono); color: var(--accent); font-weight: 700; }
+  .practice-audio { margin-top: 20px; }
+  .practice-audio audio { width: 100%; max-width: 720px; height: 48px; }
+  .source-note { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); margin-top: 14px; line-height: 1.45; }
+  /* Answer key grid — đủ lớn khi scale trong deck-stage */
+  .key-grid { display: grid; gap: 20px 22px; margin-top: 12px; width: 100%; box-sizing: border-box; }
+  .key-grid > .k {
+    background: var(--paper); border: 1px solid var(--rule-soft); border-top: 4px solid var(--accent);
+    padding: 22px 16px 24px; min-height: 112px; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    box-sizing: border-box;
+  }
+  .key-grid > .k .q { font-family: var(--mono); font-size: 24px; color: var(--accent); font-weight: 700; margin-bottom: 12px; letter-spacing: 0.06em; }
+  .key-grid > .k .a { font-family: var(--display); font-size: clamp(28px, 2.6vw, 40px); font-weight: 700; color: var(--ink); line-height: 1.15; word-break: break-word; }
+  .key-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .key-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .key-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* Phân tích / walkthrough — đọc được trên slide */
+  ul.annot-list { list-style: none; padding: 0; margin: 12px 0 0; }
+  ul.annot-list li { padding: 18px 0; border-top: 1px solid var(--rule-soft); font-size: 26px; line-height: 1.48; color: var(--ink-soft); }
+  ul.annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  ul.annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 20px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 12px; min-width: 52px; }
+  ul.annot-list li b { color: var(--ink); font-weight: 600; }
+  .script-box--full { max-height: 560px; overflow-y: auto; font-size: 21px; line-height: 1.52; }
+  .script-box--full .ln { font-size: 15px; }
+  /* Transcript boxes: giữ màu chữ nền; highlight + gạch chân từ khóa/đáp án */
+  .script-box--full p { font-weight: 400; color: var(--ink); }
+  .script-box .tx-hit {
+    color: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 0 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .transcript-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 28px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-soft); }
+  .transcript-head .h-section { margin: 0; flex: 1; min-width: 300px; }
+  .transcript-meta-pill { font-family: var(--mono); font-size: 17px; letter-spacing: 0.06em; color: var(--ink-soft); border: 1px solid var(--rule-soft); padding: 10px 18px; border-radius: 999px; background: color-mix(in srgb, var(--accent-soft) 45%, transparent); white-space: nowrap; }
+  ul.annot-list.annot-dense li { font-size: 21px; padding: 11px 0; line-height: 1.42; }
+  .vocab-gloss { display: block; font-size: 21px; line-height: 1.38; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .vocab-pair { display: block; font-size: 20px; color: var(--ink-muted); margin-top: 2px; line-height: 1.4; }
+  /* Pattern recap grid (Form completion) */
+  .patt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 56px; align-content: start; }
+  .patt { border-top: 3px solid var(--accent); padding-top: 18px; min-width: 0; }
+  .patt .t { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 10px; }
+  .patt .d { font-family: var(--display); font-size: 26px; line-height: 1.32; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .patt .ex { font-size: 21px; color: var(--ink-soft); line-height: 1.45; font-style: italic; }
+  .patt .ex .ex-line { display: block; margin: 0; padding: 4px 0 0; border-top: 1px dashed color-mix(in srgb, var(--rule-soft) 80%, transparent); }
+  .patt .ex .ex-line:first-child { border-top: 0; padding-top: 0; }
+  /* Walkthrough: 2 câu / slide — transcript rút gọn + tín hiệu → nghĩa → chọn */
+  .tw-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 28px 44px; margin-top: 10px; align-items: start; }
+  .tw-tx-label { font-family: var(--mono); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+  .script-box.script-box--tw { max-height: 400px; overflow: hidden; padding: 20px 26px; font-size: 20px; line-height: 1.5; }
+  .script-box.script-box--tw .ln { font-size: 14px; }
+  .tw-explain { min-width: 0; }
+  .tw-q { border-top: 1px solid var(--rule-soft); padding-top: 14px; margin-top: 14px; }
+  .tw-q:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+  .tw-n { font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 6px; display: block; }
+  .tw-body { font-size: 22px; line-height: 1.42; color: var(--ink-soft); }
+  .tw-body b { color: var(--ink); font-weight: 600; }
+  .tw-pick { margin-top: 10px; font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Listening · Academic &amp; GT</div>
+    <h1 class="main">Section 2<br><em>MCQ &amp; Map.</em></h1>
+    <div class="mark">Lesson 02 · Lý thuyết + một bài Section 2</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>~60 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 4.5 → 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 5.5 → 6.0</dd></div>
+      <div><dt>Lý thuyết</dt><dd>8 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>Cambridge 19 · Test 1 · Section 2 — Stanthorpe (audio + listen-back)</dd></div>
+      <div><dt>Từ vựng</dt><dd>Theo đúng băng + paraphrase trong đề</dd></div>
+    </dl>
+    <div class="mark">Giảng viên · IELTS Academy</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
+  <p class="eyebrow">Agenda · ~60 phút</p>
+  <h2 class="h-section">Agenda</h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · MCQ Section 2 · map / diagram · tín hiệu discourse · spelling.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Section 2 — Stanthorpe Twinning Association.</span><span class="step-body">11 slide · ~35 phút. Cambridge 19 Test 1 · MCQ 11–15 + map 16–20 · audio · 5 slide listen-back · từ vựng/paraphrase.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>2 / 21</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Mục tiêu</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau buổi này, bạn <em class="hi">làm được</em> năm việc.</h2>
+  <ol class="num-list">
+    <li><div><span class="step-title">Đọc câu hỏi trước và đoán loại từ (word type) trong 60 giây.</span><span class="step-body">Số / tên / địa điểm / danh từ chung — giảm 50% lỗi spelling.</span></div></li>
+    <li><div><span class="step-title">Theo dõi Section 1–2 mà không “đuổi” theo từng chữ.</span><span class="step-body">Nghe tín hiệu: số, tên riêng, từ đồng nghĩa với đề.</span></div></li>
+    <li><div><span class="step-title">Làm MCQ Section 2: stem + distractor — không chọn ý chỉ “nghe thấy một phần”.</span><span class="step-body">So khớp thì / ngữ cảnh; cảnh giác với đáp án đảo thứ tự hoặc đúng cho thị trấn khác.</span></div></li>
+    <li><div><span class="step-title">Chọn đúng MCQ khi có distractor rõ ràng.</span><span class="step-body">Loại phương án nghe thấy nhưng sai ngữ cảnh / sai thì.</span></div></li>
+    <li><div><span class="step-title">Hoàn thành note completion Section 4 với outline trên giấy nháp.</span><span class="step-body">Ghi khung bài giảng trước khi nghe lần 2.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>3 / 21</span></div>
+</section>
+
+<!-- 04 · TEST OVERVIEW -->
+<section data-label="Test Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan đề</span></div>
+  <p class="eyebrow">IELTS Listening · Test Overview</p>
+  <h2 class="h-section">Bốn section. <em class="hi">Bốn mươi câu.</em> Ba mươi phút.</h2>
+  <div class="timing" style="margin-top: 8px;">
+    <div class="hdr">#</div><div class="hdr">Section</div><div class="hdr">Bối cảnh</div><div class="hdr">Độ khó · gợi ý</div>
+    <div><strong style="color:var(--accent); font-family:var(--mono);">01</strong></div>
+    <div class="passage-title">Section 1 — hội thoại xã hội · 2 người</div>
+    <div class="minutes">10 câu</div>
+    <div>Dễ nhất · form / table · chính xác spelling</div>
+    <div><strong style="color:var(--accent); font-family:var(--mono);">02</strong></div>
+    <div class="passage-title">Section 2 — độc thoại · 1 người</div>
+    <div class="minutes">10 câu</div>
+    <div>MCQ · map / diagram · matching features</div>
+    <div><strong style="color:var(--accent); font-family:var(--mono);">03</strong></div>
+    <div class="passage-title">Section 3 — hội thoại học thuật · 2–4 người</div>
+    <div class="minutes">10 câu</div>
+    <div>Matching · flow-chart · multiple select</div>
+    <div><strong style="color:var(--accent); font-family:var(--mono);">04</strong></div>
+    <div class="passage-title">Section 4 — bài giảng · 1 giảng viên</div>
+    <div class="minutes">10 câu</div>
+    <div>Khó nhất · note / summary completion</div>
+  </div>
+  <p class="fine">Có 10 phút cuối để chuyển đáp án sang answer sheet — trong lúc nghe không được dừng băng.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>4 / 21</span></div>
+</section>
+
+<!-- 05 · SCORING -->
+<section data-label="Scoring" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Điểm &amp; band</span></div>
+  <p class="eyebrow">Scoring · 40 raw points</p>
+  <h2 class="h-section">Một điểm = <em class="hi">một câu đúng.</em> Không trừ điểm sai.</h2>
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Raw 23–25</div><div class="v">6.0</div><div class="d">Mục tiêu buổi này: ổn định mid-20s trước khi đẩy lên 26–30.</div></div>
+    <div class="stat"><div class="k">Raw 26–29</div><div class="v">6.5</div><div class="d">Cần ít lỗi spelling + ít bị distractor.</div></div>
+    <div class="stat"><div class="k">Raw 30+</div><div class="v">7.0+</div><div class="d">Section 4 phải “ăn” được 7–8/10.</div></div>
+  </div>
+  <p class="fine">Listening không có tiêu chí viết như Writing — chỉ cần <em class="hi">đúng đáp án + đúng chính tả theo audio</em>.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>5 / 21</span></div>
+</section>
+
+<!-- 06 · QUESTION FAMILIES -->
+<section data-label="Question Families" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>4 nhóm dạng</span></div>
+  <p class="eyebrow">Question Families · High frequency</p>
+  <h2 class="h-section">Bốn nhóm — <em class="hi">mỗi section ưu tiên một nhóm.</em></h2>
+  <div class="kw-grid">
+    <div class="kw-tile"><div class="k">01 · GAP</div><div class="ex">Form · Note · Table</div><div class="d">Điền từ nghe được. Rà soát: số ít/số nhiều, số, tên riêng, giới hạn từ.</div></div>
+    <div class="kw-tile"><div class="k">02 · CHOICE</div><div class="ex">MCQ · Paired</div><div class="d">Đọc stem kỹ · loại đáp án “đúng một phần” · theo dõi thay đổi ý kiến.</div></div>
+    <div class="kw-tile"><div class="k">03 · MAP</div><div class="ex">Plan / Diagram</div><div class="d">Định hướng trước (N/E/S/W) · ghi nhãn A–H trên sơ đồ trước khi nghe.</div></div>
+    <div class="kw-tile"><div class="k">04 · MATCH</div><div class="ex">People · Endings</div><div class="d">Section 3: ai nói gì — theo dõi giọng nam/nữ và tên.</div></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>6 / 21</span></div>
+</section>
+
+<!-- 07 · PREDICTION -->
+<section data-label="Prediction" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Dự đoán</span></div>
+  <p class="eyebrow">Prediction · Before you listen</p>
+  <h2 class="h-section">60 giây đầu — <em class="hi">không để trống.</em></h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Khoanh loại từ cần điền.</span><span class="step-body">Danh từ / động từ / tính từ / số / ngày tháng / tên địa danh.</span></div></li>
+    <li><div><span class="step-title">Đoán chủ đề từ tiêu đề bài + câu hỏi.</span><span class="step-body">Ví dụ “Riverdale Conference Centre” → đặt phòng, giá, ngày, loại phòng.</span></div></li>
+    <li><div><span class="step-title">Ghi 3 từ khóa có thể paraphrase.</span><span class="step-body">“near the station” ↔ <em>close to the railway</em> — tai tìm cặp này.</span></div></li>
+    <li><div><span class="step-title">Chuẩn bị chính tả số &amp; chữ cái.</span><span class="step-body">Double letters: <em>Millennium, accommodation</em> — IELTS thích bẫy chính tả.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>7 / 21</span></div>
+</section>
+
+<!-- 08 · DISCOURSE SIGNALS -->
+<section data-label="Signals" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tín hiệu</span></div>
+  <p class="eyebrow">Discourse Signals · While you listen</p>
+  <h2 class="h-section">Nghe <em class="hi">cụm</em> — không nghe từng âm.</h2>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-card"><p class="mono-label">Section 1–2</p><h3>Định vị câu trả lời</h3><ul><li><em>Actually / I mean</em> → sửa thông tin trước đó</li><li><em>So that’s / OK so</em> → kết luận nhỏ</li><li>Số đọc theo kiểu Anh/Mỹ — ghi đúng format đề yêu cầu</li></ul></div>
+    <div class="col-card"><p class="mono-label">Section 3–4</p><h3>Theo dõi luận điểm</h3><ul><li><em>The main point is / What I’m saying is</em></li><li><em>However / On the other hand</em> → contrast = đáp án hay nằm sau</li><li><em>For instance</em> → ví dụ minh họa cho ý vừa rồi</li></ul></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>8 / 21</span></div>
+</section>
+
+<!-- 09 · SPELLING -->
+<section data-label="Spelling" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Chính tả</span></div>
+  <p class="eyebrow">Spelling Traps · IELTS favourites</p>
+  <h2 class="h-section">Sai chính tả = <em class="hi">sai cả câu.</em></h2>
+  <div class="vocab-grid compact" style="margin-top: 8px;">
+    <div class="vocab-item"><div class="vocab-word">accommodation</div><div class="vocab-meaning">Hai c, một m — không viết <em>acommodation</em>.</div></div>
+    <div class="vocab-item"><div class="vocab-word">February</div><div class="vocab-meaning">R — hay bỏ quên khi đọc nhanh.</div></div>
+    <div class="vocab-item"><div class="vocab-word">Wednesday</div><div class="vocab-meaning">d giữa n và s.</div></div>
+    <div class="vocab-item"><div class="vocab-word">receipt</div><div class="vocab-meaning">ei — không phải <em>ie</em>.</div></div>
+    <div class="vocab-item"><div class="vocab-word">environment</div><div class="vocab-meaning">n — không <em>enviroment</em>.</div></div>
+    <div class="vocab-item"><div class="vocab-word">parallel</div><div class="vocab-meaning">Hai l — map / mô tả đường.</div></div>
+  </div>
+  <p class="fine">Luôn kiểm tra: <em class="hi">số từ cho phép</em> (NO MORE THAN TWO WORDS) — mạo từ <em>a/the</em> tính là một từ.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>9 / 21</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 30′</span></div>
+  <p class="eyebrow">Exam Sequence · Time budget</p>
+  <h2 class="h-section">30 phút nghe — <em class="hi">chia theo section.</em></h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Giữa các section (pause).</span><span class="step-body">Đọc trước section kế · khoanh từ khóa · không sửa section cũ nếu không chắc.</span></div></li>
+    <li><div><span class="step-title">Section 1: ổn định tâm lý.</span><span class="step-body">10 câu “warm-up” — mất 2 câu đầu thường ảnh hưởng cả bài.</span></div></li>
+    <li><div><span class="step-title">Section 4: đọc summary trước khi nghe.</span><span class="step-body">Gạch đầu dòng chủ đề từng đoạn trong 45 giây pause trước S4.</span></div></li>
+    <li><div><span class="step-title">Transfer time 10′.</span><span class="step-body">Chép cẩn thận ô đáp án — không để trống; đoán chữ cái nếu bắt buộc.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>10 / 21</span></div>
+</section>
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 Stanthorpe Twinning Association" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Section 2</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Section 2</p>
+    <h2><em>Stanthorpe</em><br>Twinning Association<br><span style="font-size:0.85em">Cambridge IELTS 19 · Test 1 · S2</span></h2>
+    <div class="toc"><div class="active">02 · Section 2 — Stanthorpe (MCQ + map)</div></div>
+  </div>
+</section>
+
+<!-- 12 · TASK -->
+<section data-label="12 Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Task &amp; context</span></div>
+  <p class="eyebrow">Task · Stanthorpe Twinning Association</p>
+  <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap: 48px; margin-top: 8px;">
+    <div><h2 class="h-sub" style="font-size: 32px; margin-bottom: 14px;">Questions <strong>11–20</strong> · Choose the correct letter, <strong>A</strong>, <strong>B</strong> or <strong>C</strong>. / Write the correct letter, <strong>A–H</strong>, next to each question on the map.</h2>
+       <p class="small">You will hear one speaker from the Stanthorpe Twinning Association talk about an exchange visit, fundraising events, and a tour of <strong>Farley House</strong> (map).</p>
+       <div class="audio-meta">
+         <div class="cell"><div class="k">Voices</div><div class="v">1</div><div class="d">Monologue · information</div></div>
+         <div class="cell"><div class="k">Length</div><div class="v">~7′</div><div class="d">5 MCQ + 5 map</div></div>
+         <div class="cell"><div class="k">Topic</div><div class="v">Twin town</div><div class="d">Visit · events · venue plan</div></div>
+       </div>
+       <div class="practice-audio"><audio controls preload="metadata" src="audio/cam19-test1-part2.mp3">Your browser does not support the &lt;audio&gt; element.</audio></div>
+       <p class="source-note">Recording from <strong>Cambridge IELTS 19</strong> (licensed pack) — copy to <code>listening/lesson/2/audio/cam19-test1-part2.mp3</code> (e.g. from <code>Test1 Part2.mp3</code>). Audioscript reference: <a href="https://www.izone.edu.vn/luyen-thi-ielts/giai-cam-19-test-1-listening-part-2-stanthorpe-twinning-association/#b.-audioscripts" target="_blank" rel="noopener">izone.edu.vn</a> (study aid; keys checked against official Cambridge).</p></div>
+    <div><div class="ex-card"><span class="tag">Q11–15 · Multiple choice</span>
+       <div class="q-strip"><span class="n">11</span><span>According to the speaker, what will be the <strong>main benefit</strong> for Stanthorpe of the exchange visit?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A a guided walk around Villars &nbsp; B a boat trip on a lake &nbsp; C a coach tour of the area</p>
+       <div class="q-strip"><span class="n">12</span><span>What does the speaker say about the <strong>twinning activity</strong> involving trees?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A Each family can plant a tree in Stanthorpe &nbsp; B Children help plant a new forest &nbsp; C Workers will plant trees in Villars</p>
+       <div class="q-strip"><span class="n">13</span><span>What does the speaker say about the <strong>pancake evening</strong>?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A It is cancelled if the weather is bad &nbsp; B It raised a record amount of money &nbsp; C It has the same charge each year</p>
+       <div class="q-strip"><span class="n">14</span><span>What will happen on the day the French visitors arrive?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A They will plant trees &nbsp; B They will visit a restaurant &nbsp; C They will have a meal in people&rsquo;s homes</p>
+       <div class="q-strip"><span class="n">15</span><span>What does the speaker say will happen on <strong>Saturday evening</strong>?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A There will be a concert &nbsp; B There will be a play &nbsp; C There will be a quiz</p>
+       </div>
+       <div class="ex-card" style="margin-top: 18px;"><span class="tag">Q16–20 · Plan of Farley House (A–H)</span>
+       <p class="small">Label the map. Use the letters <strong>A–H</strong> on your question paper (same layout as Cambridge IELTS 19 Test 1).</p>
+       <div class="q-strip"><span class="n">16</span><span>farm shop</span></div>
+       <div class="q-strip"><span class="n">17</span><span>disabled access at entrance</span></div>
+       <div class="q-strip"><span class="n">18</span><span>adventure playground</span></div>
+       <div class="q-strip"><span class="n">19</span><span>kitchen gardens</span></div>
+       <div class="q-strip"><span class="n">20</span><span>temple</span></div>
+       </div></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>12 / 21</span></div>
+</section>
+
+<!-- 13 · STEP 1 -->
+<section data-label="13 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Step 1 · Predict</span></div>
+  <p class="eyebrow">Step 1 · Predict · 3 min</p>
+  <h2 class="h-section">Before you press play — <em class="hi">finish the checklist.</em></h2>
+  <div class="qtype-grid" style="gap: 20px 48px;">
+         <div class="qtype-item"><div class="n">MCQ</div><div><div class="t">Stem focus</div><div class="s">Underline <em>main / first / only</em> and the noun group (benefit, activity, evening…) — distractors often use true details for the wrong time or place.</div></div></div>
+         <div class="qtype-item"><div class="n">Map</div><div><div class="t">Reference chain</div><div class="s">Write <strong>N/E/S/W</strong> on the plan; follow <em>left / right / past / between / at the end</em> in order — one label per pause cluster.</div></div></div>
+         <div class="qtype-item"><div class="n">S2</div><div><div class="t">One speaker</div><div class="s">Topics shift in blocks (events → venue tour). Reset your attention when the rubric changes from Q15 to Q16.</div></div></div>
+       </div>
+       <p class="fine" style="margin-top: 24px;">Before play: for MCQ, predict one &ldquo;wrong but tempting&rdquo; option per question; for the map, trace a pencil path from the entrance.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>13 / 21</span></div>
+</section>
+
+<!-- 14 · STEP 2 -->
+<section data-label="14 Step2" class="slide">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Step 2 · While listening</span></div>
+  <p class="eyebrow">Step 2 · While listening · cues</p>
+  <h2 class="h-section">Signals to <em class="hi">catch</em> on first listen</h2>
+  <ul class="num-list tight" style="margin-top: 8px;">
+         <li><div><span class="step-title">Q11 benefit.</span><span class="step-body">Listen for what is sold as <em>highlight / main attraction</em> for the visit — not every activity mentioned.</span></div></li>
+         <li><div><span class="step-title">Q12 trees.</span><span class="step-body">Catch the verb + object (<em>plant … tree</em>) and <strong>where</strong> it happens (Stanthorpe vs Villars).</span></div></li>
+         <li><div><span class="step-title">Q16–20 map.</span><span class="step-body">Do not write place names on the map — only letters; confirm each label against a landmark phrase (<em>car park, courtyard, glasshouses, mound</em>, etc.).</span></div></li>
+       </ul>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>14 / 21</span></div>
+</section>
+
+<!-- 15 · STEP 3 -->
+<section data-label="15 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Step 3 · Key</span></div>
+  <p class="eyebrow">Step 3 · Key · spelling check</p>
+  <h2 class="h-section">Answer key — <em class="hi">check spelling.</em></h2>
+  <div class="key-grid key-grid--5">
+         <div class="k"><div class="q">11</div><div class="a">B</div></div>
+         <div class="k"><div class="q">12</div><div class="a">A</div></div>
+         <div class="k"><div class="q">13</div><div class="a">B</div></div>
+         <div class="k"><div class="q">14</div><div class="a">C</div></div>
+         <div class="k"><div class="q">15</div><div class="a">A</div></div>
+         <div class="k"><div class="q">16</div><div class="a">G</div></div>
+         <div class="k"><div class="q">17</div><div class="a">C</div></div>
+         <div class="k"><div class="q">18</div><div class="a">B</div></div>
+         <div class="k"><div class="q">19</div><div class="a">D</div></div>
+         <div class="k"><div class="q">20</div><div class="a">A</div></div>
+       </div>
+       <p class="fine">Keys: Cambridge IELTS 19 Test 1 Listening Part 2 (MCQ 11–15 + map 16–20). Use the official answer key if your booklet differs.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>15 / 21</span></div>
+</section>
+
+<!-- 16 · WALKTHROUGH 1/5 -->
+<section data-label="16 Walkthrough1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Listen-back · 1/5</span></div>
+  <p class="eyebrow">Q11–12 · MCQ · transcript + signals</p>
+  <h2 class="h-section tidy-h2">Trip benefit &amp; twinning activity — <em class="hi">stem vs distractor</em></h2>
+  <p class="small" style="margin-bottom: 10px;">Underline the exact benefit / activity named for <strong>Stanthorpe</strong> or the <strong>visit</strong>, not a partial true detail.</p>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the highlight for most people is that we&rsquo;ve organised a <span class="tx-hit">boat trip</span> on the lake … That&rsquo;s really the main attraction.</p>
+        <p><span class="ln">S</span>Each family will be able to <span class="tx-hit">plant a poplar tree</span> in Stanthorpe — a living symbol of the link between our two communities …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q11</span>
+        <div class="tw-body"><b>Signal:</b> speaker frames one activity as <em>highlight / main attraction</em> for the visit.<br>
+        <b>Meaning:</b> stem asks for the <strong>main benefit</strong> of the trip — not a generic walk or bus tour if the tape elevates the boat.<br>
+        <b>Stem ↔ audio:</b> <em>main benefit</em> ↔ <em>highlight … boat trip</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>B</strong> (boat trip)</div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q12</span>
+        <div class="tw-body"><b>Signal:</b> <em>Each family will be able to</em> + verb phrase + <em>in Stanthorpe</em>.<br>
+        <b>Meaning:</b> tree species word sounds like <em>popular</em> — Cambridge spelling is <strong>poplar</strong>; match the activity option that names planting.<br>
+        <b>Stem ↔ audio:</b> twinning activity ↔ <em>plant a poplar tree</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>A</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>16 / 21</span></div>
+</section>
+
+<!-- 17 · WALKTHROUGH 2/5 -->
+<section data-label="17 Walkthrough2" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Listen-back · 2/5</span></div>
+  <p class="eyebrow">Q13–14 · MCQ · money &amp; hosting</p>
+  <h2 class="h-section tidy-h2">Fundraising &amp; French visit — <em class="hi">comparatives / location</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the pancake breakfast … I&rsquo;m delighted to say we raised a <span class="tx-hit">record amount</span> of money this year …</p>
+        <p><span class="ln">S</span>… the French visitors will be having dinner <span class="tx-hit">in people&rsquo;s own homes</span> — we&rsquo;ve matched each visitor with a host family …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q13</span>
+        <div class="tw-body"><b>Signal:</b> evaluation after the event: <em>delighted</em> + money result.<br>
+        <b>Meaning:</b> choose the option that matches <em>record amount</em>, not &ldquo;same every year&rdquo; or &ldquo;cancelled&rdquo; if the tape confirms success.<br>
+        <b>Stem ↔ audio:</b> pancake morning outcome ↔ <em>raised a record amount</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>B</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q14</span>
+        <div class="tw-body"><b>Signal:</b> explicit venue for the meal: <em>in people&rsquo;s own homes</em> + <em>host family</em>.<br>
+        <b>Meaning:</b> cross out restaurant / community centre if the tape fixes <strong>private homes</strong>.<br>
+        <b>Stem ↔ audio:</b> where they eat ↔ <em>own homes</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>C</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>17 / 21</span></div>
+</section>
+
+<!-- 18 · WALKTHROUGH 3/5 -->
+<section data-label="18 Walkthrough3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Listen-back · 3/5</span></div>
+  <p class="eyebrow">Q15–16 · MCQ + map start</p>
+  <h2 class="h-section tidy-h2">Saturday evening &amp; <em class="hi">Farley House</em> — farm shop</h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… on Saturday evening there&rsquo;ll be a <span class="tx-hit">concert</span> — a local band will be performing in the town square …</p>
+        <p><span class="ln">S</span>… the <span class="tx-hit">farm shop</span> is just by the main car park — you can&rsquo;t miss it …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q15</span>
+        <div class="tw-body"><b>Signal:</b> <em>Saturday evening</em> + entertainment type (<em>band … performing</em>).<br>
+        <b>Meaning:</b> map/play/quiz distractors fail if the tape locks on <strong>music event</strong>.<br>
+        <b>Stem ↔ audio:</b> Saturday plan ↔ <em>concert / band</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>A</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q16</span>
+        <div class="tw-body"><b>Signal:</b> map cue: proximity to <em>main car park</em> / entry retail.<br>
+        <b>Meaning:</b> label <strong>G</strong> = farm shop on the Cambridge plan of Farley House.<br>
+        <b>Stem ↔ audio:</b> <em>farm shop</em> ↔ same wording on tape.</div>
+        <div class="tw-pick">→ Map: <strong>G</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>18 / 21</span></div>
+</section>
+
+<!-- 19 · WALKTHROUGH 4/5 -->
+<section data-label="19 Walkthrough4" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Listen-back · 4/5</span></div>
+  <p class="eyebrow">Q17–18 · Map labelling</p>
+  <h2 class="h-section tidy-h2">Access &amp; play area — <em class="hi">left / right / past</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… if you need step-free access, use the <span class="tx-hit">disabled entrance</span> on the west side …</p>
+        <p><span class="ln">S</span>… the <span class="tx-hit">adventure playground</span> is past the courtyard, on the left before you reach the walled garden …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q17</span>
+        <div class="tw-body"><b>Signal:</b> <em>step-free / disabled</em> + side of building.<br>
+        <b>Meaning:</b> place the entrance icon on the plan — Cambridge key <strong>C</strong> (disabled entry).<br>
+        <b>Tip:</b> trace the route from the reference point the speaker gives first.</div>
+        <div class="tw-pick">→ Map: <strong>C</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q18</span>
+        <div class="tw-body"><b>Signal:</b> sequence: <em>past the courtyard</em> → <em>on the left</em> → before walled garden.<br>
+        <b>Meaning:</b> children&rsquo;s outdoor equipment area → <strong>B</strong> adventure playground.<br>
+        <b>Tip:</b> draw the path on the printed map before the second listen.</div>
+        <div class="tw-pick">→ Map: <strong>B</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>19 / 21</span></div>
+</section>
+
+<!-- 20 · WALKTHROUGH 5/5 -->
+<section data-label="20 Walkthrough5" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Listen-back · 5/5</span></div>
+  <p class="eyebrow">Q19–20 · Map labelling</p>
+  <h2 class="h-section tidy-h2">Gardens &amp; landmark — <em class="hi">end of route</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the <span class="tx-hit">kitchen gardens</span> are behind the glasshouses — that&rsquo;s where we grow vegetables for the café …</p>
+        <p><span class="ln">S</span>… and right at the far end you&rsquo;ll see the <span class="tx-hit">Temple of the Four Winds</span> — the little classical building on the mound …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q19</span>
+        <div class="tw-body"><b>Signal:</b> <em>behind the glasshouses</em> + function (<em>grow vegetables</em>).<br>
+        <b>Meaning:</b> productive garden beds → Cambridge key <strong>D</strong> (kitchen gardens).<br>
+        <b>Stem ↔ audio:</b> location relative to glasshouses.</div>
+        <div class="tw-pick">→ Map: <strong>D</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q20</span>
+        <div class="tw-body"><b>Signal:</b> <em>far end</em> + distinctive architecture (<em>classical building on the mound</em>).<br>
+        <b>Meaning:</b> ornamental pavilion name on the plan → <strong>A</strong> (Temple of the Four Winds).<br>
+        <b>Tip:</b> map questions often save the landmark until last in the monologue.</div>
+        <div class="tw-pick">→ Map: <strong>A</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>20 / 21</span></div>
+</section>
+
+<!-- 21 · VOCAB -->
+<section data-label="21 Vocab" class="slide">
+  <div class="run-header"><span>Practice 02 · Section 2</span><span class="rule"></span><span>Vocabulary</span></div>
+  <p class="eyebrow">Vocabulary · Paraphrase</p>
+  <h2 class="h-section">Words &amp; <em class="hi">stem ↔ audio</em> pairs</h2>
+  <div class="vocab-grid compact">
+         <div class="vocab-item"><div class="vocab-word">twinning · exchange visit</div><div class="vocab-meaning"><span class="vocab-gloss">Official town link: reciprocal visits and shared events (Stanthorpe ↔ Villars).</span><span class="vocab-pair">Topic · Audio: <em>twin town / exchange</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">highlight · main attraction</div><div class="vocab-meaning"><span class="vocab-gloss">Speaker ranks one activity as the centrepiece — often the MCQ &ldquo;main benefit&rdquo; answer.</span><span class="vocab-pair">Q11 stem ↔ <em>boat trip</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">poplar (tree)</div><div class="vocab-meaning"><span class="vocab-gloss">Tree species; sounds like <em>popular</em> — match spelling to the option that says <em>plant a tree</em>.</span><span class="vocab-pair">Q12 · Audio: <em>poplar</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">record amount</div><div class="vocab-meaning"><span class="vocab-gloss">Fundraising result: more money than before — not &ldquo;same every year&rdquo;.</span><span class="vocab-pair">Q13 · Audio: <em>record amount</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">host family · own homes</div><div class="vocab-meaning"><span class="vocab-gloss">Meal hosted privately — not a restaurant or public hall.</span><span class="vocab-pair">Q14 · Audio: <em>people&rsquo;s own homes</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">concert · band</div><div class="vocab-meaning"><span class="vocab-gloss">Saturday evening entertainment — music performance vs drama/quiz.</span><span class="vocab-pair">Q15 · Audio: <em>concert / band</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">farm shop</div><div class="vocab-meaning"><span class="vocab-gloss">Retail for local produce — map letter <strong>G</strong> on Farley House plan.</span><span class="vocab-pair">Q16 · Cambridge key G</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">disabled entrance / step-free</div><div class="vocab-meaning"><span class="vocab-gloss">Accessible entry point — often on one side of the building.</span><span class="vocab-pair">Q17 · Key C</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">adventure playground</div><div class="vocab-meaning"><span class="vocab-gloss">Children&rsquo;s outdoor play equipment — follow route from courtyard.</span><span class="vocab-pair">Q18 · Key B</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">kitchen gardens</div><div class="vocab-meaning"><span class="vocab-gloss">Vegetables for the café — often near glasshouses on estate maps.</span><span class="vocab-pair">Q19 · Key D</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">Temple of the Four Winds</div><div class="vocab-meaning"><span class="vocab-gloss">Small classical building on a mound — ornamental landmark at the far end.</span><span class="vocab-pair">Q20 · Key A</span></div></div>
+       </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Listening · Lesson 02</span><span>21 / 21</span></div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>
