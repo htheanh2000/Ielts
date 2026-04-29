@@ -35,6 +35,9 @@ HEAD = r"""<!doctype html>
   .num-list.tight li::before { font-size: 24px !important; }
   .q-strip { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--rule-soft); font-size: 24px; }
   .q-strip .n { font-family: var(--mono); color: var(--accent); font-weight: 700; }
+  .practice-audio { margin-top: 20px; }
+  .practice-audio audio { width: 100%; max-width: 720px; height: 48px; }
+  .source-note { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); margin-top: 14px; line-height: 1.45; }
 </style>
 </head>
 <body>
@@ -59,7 +62,7 @@ slides.append(r"""<!-- 01 · TITLE -->
       <div><dt>Trình độ hiện tại</dt><dd>Band 4.5 → 5.5</dd></div>
       <div><dt>Mục tiêu</dt><dd>Band 5.5 → 6.0</dd></div>
       <div><dt>Lý thuyết</dt><dd>8 slide</dd></div>
-      <div><dt>Thực hành</dt><dd>4 đoạn nghe</dd></div>
+      <div><dt>Thực hành</dt><dd>4 bài (P1 có audio)</dd></div>
       <div><dt>Từ vựng</dt><dd>28 từ · 16 collocations</dd></div>
     </dl>
     <div class="mark">Giảng viên · IELTS Academy</div>
@@ -74,7 +77,7 @@ slides.append(f"""<!-- 02 · AGENDA -->
   <h2 class="h-section">Agenda</h2>
   <ol class="num-list tight">
     <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · 15 phút. Cấu trúc 4 section · dự đoán loại từ · dạng Form completion · MCQ · map · note completion · chiến thuật spelling.</span></div></li>
-    <li><div><span class="step-title">Practice 01 · Section 1 — Room booking.</span><span class="step-body">9 slide · 18 phút. Form · 10 chỗ trống · từ vựng đặt phòng · số &amp; chính tả.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">9 slide · 18 phút. Cambridge 19 Test 1 · form · 10 gap · audio + autoscript.</span></div></li>
     <li><div><span class="step-title">Practice 02 · Section 2 — Campus tour.</span><span class="step-body">9 slide · 17 phút. MCQ + labelling plan · theo dõi tín hiệu chuyển ý.</span></div></li>
     <li><div><span class="step-title">Practice 03 · Section 3 — Assignment discussion.</span><span class="step-body">9 slide · 16 phút. Matching opinions · paraphrase giữa các giọng.</span></div></li>
     <li><div><span class="step-title">Practice 04 · Section 4 — Urban ecology lecture.</span><span class="step-body">9 slide · 16 phút. Note completion · một người nói · mật độ thông tin cao.</span></div></li>
@@ -335,78 +338,101 @@ def practice_block(
 
 
 TOC_ALL = [
-    "01 · Section 1 — form / booking",
+    "01 · Section 1 — Hinchingbrooke (form)",
     "02 · Section 2 — MCQ + map",
     "03 · Section 3 — matching opinions",
     "04 · Section 4 — note completion",
 ]
 
-# Practice 01 — Section 1
+# Practice 01 — Section 1 (Cambridge IELTS 19 · Test 1 · Section 1 — Hinchingbrooke Country Park)
+_LISTENING_P1_MP3 = "https://www.izone.edu.vn/wp-content/uploads/2024/06/Test1-Part1.mp3"
+
 practice_block(
     11,
     "01",
-    "Room booking",
+    "Hinchingbrooke Country Park",
     "Section 1",
     "S1",
     0,
     TOC_ALL,
-    "<em>Riverside</em><br>Hotel<br>booking form.",
-    """<h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Complete the notes below. Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</h2>
-       <p class="small">You will hear a conversation between a hotel receptionist and a guest who wants to book a room for a conference.</p>
+    "<em>Hinchingbrooke</em><br>Country Park<br><span style=\"font-size:0.85em\">Cambridge IELTS 19 · Test 1 · S1</span>",
+    f"""<h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Complete the notes below. Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</h2>
+       <p class="small">You will hear a park ranger, Sally, talking to John, a teaching assistant, about Hinchingbrooke Country Park — a day visit for school children.</p>
        <div class="audio-meta">
-         <div class="cell"><div class="k">Giọng</div><div class="v">2</div><div class="d">Receptionist + guest</div></div>
-         <div class="cell"><div class="k">Độ dài</div><div class="v">~4′</div><div class="d">10 gaps</div></div>
-         <div class="cell"><div class="k">Chủ đề</div><div class="v">Hotel</div><div class="d">Dates · prices · facilities</div></div>
-       </div>""",
-    """<div class="ex-card"><span class="tag">Booking form · gaps 1–5</span>
-       <div class="q-strip"><span class="n">1</span><span>Guest name: ____________</span></div>
-       <div class="q-strip"><span class="n">2</span><span>Check-in date: ____________</span></div>
-       <div class="q-strip"><span class="n">3</span><span>Room type: ____________ (single / twin / suite)</span></div>
-       <div class="q-strip"><span class="n">4</span><span>Rate per night: £ ____________</span></div>
-       <div class="q-strip"><span class="n">5</span><span>Breakfast: ____________ (included / not)</span></div>
+         <div class="cell"><div class="k">Giọng</div><div class="v">2</div><div class="d">Ranger + teaching assistant</div></div>
+         <div class="cell"><div class="k">Độ dài</div><div class="v">~7′</div><div class="d">10 gaps · form</div></div>
+         <div class="cell"><div class="k">Chủ đề</div><div class="v">Nature park</div><div class="d">Habitats · education visit · practical info</div></div>
+       </div>
+       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P1_MP3}">Trình duyệt không hỗ trợ &lt;audio&gt;.</audio></div>
+       <p class="source-note">Ghi âm nguồn tham khảo: izone.edu.vn — bản quyền Cambridge; nên dùng đĩa/audio chính thức bạn đã mua khi luyện có phản hồi.</p>""",
+    """<div class="ex-card"><span class="tag">Hinchingbrooke Country Park · Q1–10</span>
+       <div class="q-strip"><span class="n">1</span><span>The park — Area: ____________ hectares</span></div>
+       <div class="q-strip"><span class="n">2</span><span>Wetland: lakes, ponds and a ____________</span></div>
+       <div class="q-strip"><span class="n">3</span><span>Science: Children look at ____________ about plants, etc.</span></div>
+       <div class="q-strip"><span class="n">4</span><span>Geography: includes learning to use a ____________ and compass</span></div>
+       <div class="q-strip"><span class="n">5</span><span>Leisure and tourism: mostly concentrates on the park’s ____________</span></div>
+       <div class="q-strip"><span class="n">6</span><span>Music: Children make ____________ with natural materials, and experiment with rhythm and tempo.</span></div>
+       <div class="q-strip"><span class="n">7</span><span>Benefits: They give children a feeling of ____________</span></div>
+       <div class="q-strip"><span class="n">8</span><span>Children learn new ____________ and gain self-confidence</span></div>
+       <div class="q-strip"><span class="n">9</span><span>Cost per child: £ ____________</span></div>
+       <div class="q-strip"><span class="n">10</span><span>Adults, such as ____________, free</span></div>
        </div>""",
     """<div class="qtype-grid" style="gap: 20px 48px;">
-         <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại từ?</div><div class="s">Họ tên — chữ in hoa theo spelling</div></div></div>
-         <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Loại từ?</div><div class="s">Ngày — British order possible</div></div></div>
-         <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Paraphrase có thể?</div><div class="s">“twin room” ↔ <em>two single beds</em></div></div></div>
-         <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Bẫy?</div><div class="s">Giá cuối vs giá trước thuế — nghe <em>including VAT</em></div></div></div>
+         <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Số + đơn vị</div><div class="s">Hectares vs <em>acres</em> — nghe kỹ số cuối cùng sau chỗ “actually / but”.</div></div></div>
+         <div class="qtype-item"><div class="n">Q2–4</div><div><div class="t">Môn học song song</div><div class="s">Science → Geography → History — mỗi môn một fact ngắn.</div></div></div>
+         <div class="qtype-item"><div class="n">Q6</div><div><div class="t">Danh từ đếm được</div><div class="s">Collocation với <em>make … with materials</em> — không nhầm với <em>rhythm / tempo</em> (đã in trong đề).</div></div></div>
+         <div class="qtype-item"><div class="n">Q9</div><div><div class="t">Giá</div><div class="s">Độ chính xác đến pence — hai phần số sau dấu chấm.</div></div></div>
        </div>
-       <p class="fine" style="margin-top: 28px;">Ghi nháp: 1 từ khóa / ô — không viết cả câu.</p>""",
+       <p class="fine" style="margin-top: 28px;">Trước khi nghe: đánh dấu từ loại cho từng ô (số / danh từ / từ chỉ người).</p>""",
     """<ul class="num-list tight" style="margin-top: 8px;">
-         <li><div><span class="step-title">Tín hiệu sửa ý.</span><span class="step-body"><em>Actually, it’s under a different name…</em> → đáp án Q1 có thể đổi sau chỗ này.</span></div></li>
-         <li><div><span class="step-title">Số tiền.</span><span class="step-body">Nghe <em>85 pounds per night</em> — ghi <strong>85</strong> nếu đề chỉ cần số.</span></div></li>
+         <li><div><span class="step-title">Đơn vị diện tích.</span><span class="step-body">Nghe <em>170 acres</em> xuất hiện trước — đáp án thường là thông tin được <strong>sửa</strong> sang hectares.</span></div></li>
+         <li><div><span class="step-title">Giá vé trẻ em.</span><span class="step-body">Xác nhận <em>pounds and pence</em> — không tròn nếu audio đọc chính xác.</span></div></li>
+         <li><div><span class="step-title">Người lớn miễn phí.</span><span class="step-body">Nghe cụm <em>parents or group leaders</em> — ô chỉ một từ → chọn từ cuối cụm được nêu làm ví dụ.</span></div></li>
        </ul>""",
     """<div class="key-grid" style="grid-template-columns: repeat(5, 1fr); margin-top: 12px;">
-         <div class="k"><div class="q">1</div><div class="a">MORRIS</div></div>
-         <div class="k"><div class="q">2</div><div class="a">14 June</div></div>
-         <div class="k"><div class="q">3</div><div class="a">twin</div></div>
-         <div class="k"><div class="q">4</div><div class="a">85</div></div>
-         <div class="k"><div class="q">5</div><div class="a">included</div></div>
+         <div class="k"><div class="q">1</div><div class="a">69</div></div>
+         <div class="k"><div class="q">2</div><div class="a">stream</div></div>
+         <div class="k"><div class="q">3</div><div class="a">data</div></div>
+         <div class="k"><div class="q">4</div><div class="a">map</div></div>
+         <div class="k"><div class="q">5</div><div class="a">visitors</div></div>
+         <div class="k"><div class="q">6</div><div class="a">sounds</div></div>
+         <div class="k"><div class="q">7</div><div class="a">freedom</div></div>
+         <div class="k"><div class="q">8</div><div class="a">skills</div></div>
+         <div class="k"><div class="q">9</div><div class="a">4.95</div></div>
+         <div class="k"><div class="q">10</div><div class="a">leaders</div></div>
        </div>
-       <p class="fine">Nếu đề cho phép <em>TWO WORDS</em>, “14 June” vẫn hợp lệ; không thêm thừa.</p>""",
-    """<div class="script-box">
-         <p><span class="ln">R</span>Good morning, Riverside Hotel, how can I help?</p>
-         <p><span class="ln">G</span>Hi, I’d like to book a room for the conference next month. The name’s Morris, M-O-R-R-I-S.</p>
-         <p><span class="ln">R</span>Let me check… So check-in on the <strong>14th of June</strong>, is that right?</p>
-         <p><span class="ln">G</span>Yes. I’d prefer a <strong>twin</strong> if you have one.</p>
-         <p><span class="ln">R</span>That’s <strong>85 pounds</strong> per night, and breakfast <strong>is included</strong>.</p>
+       <p class="fine">Đáp án khớp Cambridge IELTS 19 Test 1 Listening Section 1 — đối chiếu spelling / số với transcipt chính thức.</p>""",
+    """<div class="script-box" style="max-height: 520px; overflow-y: auto;">
+         <p><span class="ln">S</span>Good morning, everyone, and welcome to Hinchingbrooke Country Park. My name’s Sally… you <strong>follow me</strong>?</p>
+         <p><span class="ln">J</span>…I’m interested in the area <strong>surrounding the lake</strong>… I believe … overall size increased … <strong>28 hectares</strong> … <strong>actually</strong> covers <strong>just under 70 hectares</strong>.</p>
+         <p><span class="ln">S</span>There’s a <strong>stream</strong> … a number of small areas of trees … the study of plants, including finding out what they’re good for … collecting <strong>data</strong> to study …</p>
+         <p><span class="ln">S</span>They can use a <strong>map</strong> and compass to learn about the countryside … leisure and tourism … focusing on <strong>visitors</strong> … making <strong>sounds</strong> with natural materials … rhythm and <em>tempo</em> …</p>
+         <p><span class="ln">S</span>…sense of <strong>freedom</strong> they don’t get elsewhere… learn <strong>skills</strong> … <strong>four pounds and 95 pence</strong> per child … adults like parents or group <strong>leaders</strong> for free.</p>
        </div>""",
     """<div class="annot-list">
-         <li><span class="tag">Q1</span><b>Spelling letter-by-letter</b> — luôn xuất hiện khi tên lạ.</li>
-         <li><span class="tag">Q3</span><b>Paraphrase</b> “two beds” vẫn map về <em>twin</em> nếu đề ghi sẵn từ khóa.</li>
-         <li><span class="tag">Q5</span><b>Positive clause</b> “is included” → một từ <em>included</em>.</li>
+         <li><span class="tag">Q1</span><b>Correction:</b> 28 → “actually just under <strong>70</strong>” → ô hectares ghi <em>69</em>.</li>
+         <li><span class="tag">Q2</span>Sau “lakes and ponds” → nối tiếp <em>a stream</em>.</li>
+         <li><span class="tag">Q3</span><em>Collect data</em> about plants → một từ <strong>data</strong>.</li>
+         <li><span class="tag">Q4</span><em>Use a map and compass</em> — từ khóa đứng ngay trước <em>and compass</em>.</li>
+         <li><span class="tag">Q5</span>Leisure unit: trọng tâm là <em>visitors</em> (không phải staff).</li>
+         <li><span class="tag">Q6</span><em>Make sounds</em> với materials; rhythm/tempo là phần thử nghiệm thêm.</li>
+         <li><span class="tag">Q7–8</span><em>Feeling of freedom</em> · <em>learn new skills</em>.</li>
+         <li><span class="tag">Q9–10</span><em>£4.95</em> · adults such as <em>leaders</em> (one word).</li>
        </div>""",
     """<div class="vocab-grid compact">
-         <div class="vocab-item"><div class="vocab-word">book a room</div><div class="vocab-meaning">make a reservation · block a room</div></div>
-         <div class="vocab-item"><div class="vocab-word">check-in</div><div class="vocab-meaning">arrival date · opposite: check-out</div></div>
-         <div class="vocab-item"><div class="vocab-word">per night</div><div class="vocab-meaning">collocation with price</div></div>
-         <div class="vocab-item"><div class="vocab-word">included</div><div class="vocab-meaning">covered in the rate · not extra</div></div>
+         <div class="vocab-item"><div class="vocab-word">ranger</div><div class="vocab-meaning">employee who protects / guides in a park</div></div>
+         <div class="vocab-item"><div class="vocab-word">wetland · stream</div><div class="vocab-meaning">marshy area · small flowing water</div></div>
+         <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">area units — listen for correction</div></div>
+         <div class="vocab-item"><div class="vocab-word">navigate · map + compass</div><div class="vocab-meaning">find direction in the field</div></div>
+         <div class="vocab-item"><div class="vocab-word">make sounds</div><div class="vocab-meaning">collocation · music activity</div></div>
+         <div class="vocab-item"><div class="vocab-word">group leaders</div><div class="vocab-meaning">adults supervising children on a trip</div></div>
        </div>""",
     """<div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Viết thừa từ</h4><p>Đề “ONE WORD” mà ghi <em>is included</em> → sai quy tắc.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Sai thứ tự ngày</h4><p>Nếu audio nói <em>the fourteenth of June</em> — không đổi sang Mỹ nếu đề không yêu cầu.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Bỏ qua correction</h4><p>Bỏ lỡ <em>Actually…</em> → điền tên cũ từ lúc đầu.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Currency ký tự thừa</h4><p>Ô chỉ cần số — đừng ghi £ trong ô nếu đề đã in £.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Ghi 170 hoặc acres</h4><p>Đó là distractor trước khi đổi sang <strong>69 hectares</strong>.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Điền river</h4><p>Audio nói <em>a stream</em> nối giữa lakes/ponds — chính tả pool/river nếu nghe nhầm.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Q6 điền tempo</h4><p>Ô cần danh từ cho “make ___ with materials”; tempo nằm ở mệnh đề sau.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Viết £4.95 trong ô chỉ cần số</h4><p>Nếu đề đã in £ — thường chỉ ghi <strong>4.95</strong>.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Q10 parents</h4><p>Audio liệt kê parents <strong>or</strong> group leaders — đáp án một từ chuẩn là <strong>leaders</strong>.</p></div></div>
        </div>""",
 )
 
