@@ -345,7 +345,9 @@ TOC_ALL = [
 ]
 
 # Practice 01 — Section 1 (Cambridge IELTS 19 · Test 1 · Section 1 — Hinchingbrooke Country Park)
-# Audio file bundled next to generated index: listening/lesson/1/audio/cam19-test1-part1.mp3
+# Audio: copy from licensed pack (e.g. "Test1 Part1.mp3" from Cambridge IELTS 19 audio) to:
+#   listening/lesson/1/audio/cam19-test1-part1.mp3
+# Web path is relative to index.html (no spaces in filename for stable URLs).
 _LISTENING_P1_MP3 = "audio/cam19-test1-part1.mp3"
 
 practice_block(
@@ -365,7 +367,7 @@ practice_block(
          <div class="cell"><div class="k">Chủ đề</div><div class="v">Nature park</div><div class="d">Habitats · education visit · practical info</div></div>
        </div>
        <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P1_MP3}">Trình duyệt không hỗ trợ &lt;audio&gt;.</audio></div>
-       <p class="source-note">File MP3 nằm trong project (<code>listening/lesson/1/audio/</code>). Nội dung thuộc Cambridge IELTS — chỉ dùng trong phạm vi bạn được phép (cá nhân / nội bộ).</p>""",
+       <p class="source-note">Ghi âm từ <strong>bộ Cambridge IELTS 19</strong> bạn đã mua — file trong project: <code>listening/lesson/1/audio/cam19-test1-part1.mp3</code> (copy từ <code>Test1 Part1.mp3</code> trong thư mục audio bản quyền).</p>""",
     """<div class="ex-card"><span class="tag">Hinchingbrooke Country Park · Q1–10</span>
        <div class="q-strip"><span class="n">1</span><span>The park — Area: ____________ hectares</span></div>
        <div class="q-strip"><span class="n">2</span><span>Wetland: lakes, ponds and a ____________</span></div>
