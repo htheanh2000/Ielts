@@ -60,9 +60,9 @@ HEAD = r"""<!doctype html>
   ul.annot-list li b { color: var(--ink); font-weight: 600; }
   .script-box--full { max-height: 560px; overflow-y: auto; font-size: 21px; line-height: 1.52; }
   .script-box--full .ln { font-size: 15px; }
-  /* Full transcript: giữ màu chữ nền; chỉ highlight + gạch chân từ khóa/đáp án */
+  /* Transcript boxes: giữ màu chữ nền; highlight + gạch chân từ khóa/đáp án */
   .script-box--full p { font-weight: 400; color: var(--ink); }
-  .script-box--full .tx-hit {
+  .script-box .tx-hit {
     color: inherit;
     font-weight: inherit;
     font-style: inherit;
@@ -351,8 +351,8 @@ def practice_block(
     slides.append(f"""<!-- {n:02d} · SAMPLE SCRIPT -->
 <section data-label="{n:02d} Script" class="slide">
   <div class="run-header"><span>Practice {practice_num} · {section_name}</span><span class="rule"></span><span>Transcript rút gọn</span></div>
-  <p class="eyebrow">Script excerpt · Trainer version</p>
-  <h2 class="h-section">Đoạn thoại <em class="hi">minh họa</em> (rút gọn)</h2>
+  <p class="eyebrow">Script excerpt · Theo băng</p>
+  <h2 class="h-section">Đoạn thoại <em class="hi">rút gọn</em> (đúng lời audio)</h2>
   {sample_html}
   {foot(n)}
 </section>""")
@@ -398,40 +398,54 @@ TOC_ALL = [
 # Web path is relative to index.html (no spaces in filename for stable URLs).
 _LISTENING_P1_MP3 = "audio/cam19-test1-part1.mp3"
 
-# Bốn slide chèn sau Step 3 (đáp án): transcript 2 phần + walkthrough Q1–5 / Q6–10.
+# Bốn slide chèn sau Step 3 (đáp án): transcript 2 phần (theo audioscript Cambridge) + walkthrough Q1–5 / Q6–10.
 P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
     (
         "Transcript1",
         "Transcript · phần 1 / 2",
-        """<p class="eyebrow">Full transcript · Trainer alignment · 1/2</p>
-  <h2 class="h-section">Mở bài, diện tích &amp; <em class="hi">wetland</em></h2>
-  <p class="small" style="margin-bottom: 16px;">Bản lược sát nội dung băng Cambridge IELTS 19 Test 1 Part 1 — dùng khi đối chiếu với file audio bản quyền của bạn.</p>
+        """<p class="eyebrow">Full transcript · Cambridge 19 · Test 1 · Part 1 · 1/2</p>
+  <h2 class="h-section">Theo băng — <em class="hi">mở bài đến Music</em></h2>
+  <p class="small" style="margin-bottom: 16px;">Lời thoại trùng audioscript kèm sách / file audio bản quyền — từ <span class="tx-hit">highlight</span> là tín hiệu khớp ô trống trong đề.</p>
   <div class="script-box script-box--full">
-    <p><span class="ln">S</span>Good morning, everyone, and welcome to Hinchingbrooke Country Park. My name’s Sally, I’m one of the park rangers, and I’ll be looking after you today.</p>
-    <p><span class="ln">J</span>Thanks, Sally. I’m John — I’m a teaching assistant with the school group. We’re really interested in the lake area and how you use the park for education.</p>
-    <p><span class="ln">S</span>Great. Let me start with a bit of background. The park has changed size over the years — some materials still say we cover <span class="tx-hit">28 hectares</span>, but that’s out of date. The park <span class="tx-hit">actually covers just under 70 hectares</span> now — we’ve expanded the managed land around the wetland.</p>
-    <p><span class="ln">J</span>So the figure for the total area is …?</p>
-    <p><span class="ln">S</span>For your worksheet, you should use <span class="tx-hit">69 hectares</span> — that’s the official figure we give schools.</p>
-    <p><span class="ln">S</span>If we look at the wetland zone, you’ll see <span class="tx-hit">lakes and ponds</span>, and also a small <span class="tx-hit">stream</span> that feeds the marsh — the children can study the flow of water and the plants along the banks.</p>
-    <p><span class="ln">S</span>In Science sessions, we don’t just observe plants — they collect <span class="tx-hit">data</span> about species and habitats, so they learn how evidence is recorded in the field.</p>
-    <p><span class="ln">S</span>For Geography, we include basic navigation — they learn to use a <span class="tx-hit">map</span> and compass to read the landscape.</p>
-    <p><span class="ln">S</span>And in the leisure and tourism module, we mostly focus on the park’s <span class="tx-hit">visitors</span> — who comes, why they come, and how we balance access with conservation.</p>
+    <p><span class="ln">S</span>Good morning. Hinchingbrooke Country Park, Sally speaking. I&rsquo;m one of the rangers.</p>
+    <p><span class="ln">J</span>Oh hello. My name&rsquo;s John Chapman, and I&rsquo;m a teaching assistant at a local primary school. I&rsquo;ve been asked to arrange a visit to the park for two of our classes.</p>
+    <p><span class="ln">S</span>OK. What would you like to know?</p>
+    <p><span class="ln">J</span>Well, I&rsquo;m new to this area, so perhaps you could tell me something about the park first, please.</p>
+    <p><span class="ln">S</span>Of course. Altogether the park covers <span class="tx-hit">170 acres</span>, that&rsquo;s <span class="tx-hit">69 hectares</span>. There are three main types of habitat: wetland, grassland and woodland. The woods are well established and varied, with an oak plantation, and other areas of mixed species.</p>
+    <p><span class="ln">J</span>Right.</p>
+    <p><span class="ln">S</span>The wetland is quite varied, too. The original farmland was dug up around 40 years ago to extract gravel. Once this work was completed, the gravel pits filled with water, forming the two large lakes. There are also several smaller ones, ponds and a <span class="tx-hit">stream</span> that flows through the park.</p>
+    <p><span class="ln">J</span>OK, so I suppose with these different habitats there&rsquo;s quite a variety of wildlife.</p>
+    <p><span class="ln">S</span>There certainly is – a lot of different species of birds and insects, and also animals like deer and rabbits.</p>
+    <p><span class="ln">J</span>And I understand you organise educational visits for school parties.</p>
+    <p><span class="ln">S</span>That&rsquo;s right. We can organise a wide range of activities and adapt them to suit all ages.</p>
+    <p><span class="ln">J</span>Can you give me some examples of the activities?</p>
+    <p><span class="ln">S</span>Well, one focus is on science, where we help children to discover and study plants, trees and insects. They also collect and analyse <span class="tx-hit">data</span> about the things they see.</p>
+    <p><span class="ln">J</span>Uhuh.</p>
+    <p><span class="ln">S</span>Another focus is on geography. The park is a great environment to learn and practice reading a <span class="tx-hit">map</span> and using a compass to navigate around the park.</p>
+    <p><span class="ln">J</span>Do you do anything connected with history?</p>
+    <p><span class="ln">S</span>Yes, we do. For instance, the children can explore how the use of the land has changed over time. Then there&rsquo;s leisure and tourism.</p>
+    <p><span class="ln">J</span>That focuses on your <span class="tx-hit">visitors</span>, I would imagine.</p>
+    <p><span class="ln">S</span>Yes, mostly. The children find out about them, their requirements, the problems they may cause and how we manage these. And another subject we cover is music: here the children experiment with natural materials to create <span class="tx-hit">sounds</span> and explore <span class="tx-hit">rhythm and tempo</span>.</p>
+    <p><span class="ln">J</span>That must be fun!</p>
+    <p><span class="ln">S</span>Most children really enjoy it.</p>
   </div>""",
     ),
     (
         "Transcript2",
         "Transcript · phần 2 / 2",
-        """<p class="eyebrow">Full transcript · Trainer alignment · 2/2</p>
-  <h2 class="h-section">Hoạt động âm nhạc, lợi ích &amp; <em class="hi">giá vé</em></h2>
+        """<p class="eyebrow">Full transcript · Cambridge 19 · Test 1 · Part 1 · 2/2</p>
+  <h2 class="h-section">Theo băng — <em class="hi">lợi ích &amp; giá</em></h2>
   <div class="script-box script-box--full">
-    <p><span class="ln">S</span>In Music, we take a very hands-on approach — the children <span class="tx-hit">make sounds</span> using natural materials, and then we experiment with <span class="tx-hit">rhythm and tempo</span> so they connect what they hear outdoors with basic musical ideas.</p>
-    <p><span class="ln">J</span>That sounds brilliant. What do you find the children take away emotionally?</p>
-    <p><span class="ln">S</span>We notice they get a real sense of <span class="tx-hit">freedom</span> here — it’s different from the classroom. They also learn new <span class="tx-hit">skills</span> and grow in confidence because they’re trying things in a safe outdoor setting.</p>
-    <p><span class="ln">J</span>Could you tell me about pricing for school visits?</p>
-    <p><span class="ln">S</span>Of course. The cost is <span class="tx-hit">four pounds and ninety-five pence</span> per child for the standard package. Adults who accompany the group — for example parents or group <span class="tx-hit">leaders</span> — don’t pay.</p>
-    <p><span class="ln">J</span>Perfect — we’ll make sure our paperwork matches that.</p>
+    <p><span class="ln">S</span>And of course, all the activities are educational, too. Learning outside the classroom encourages children to be creative, and to explore and discover for themselves.</p>
+    <p><span class="ln">J</span>I would imagine they get a sense of <span class="tx-hit">freedom</span> that might not be a normal part of their lives.</p>
+    <p><span class="ln">S</span>That&rsquo;s right. And very often the children discover that they can do things they didn&rsquo;t know they could do, and they develop new <span class="tx-hit">skills</span>. This gives them greater self-confidence.</p>
+    <p><span class="ln">J</span>It sounds great. So, what about the practical side of it? How much does it cost for a full-day visit? We would expect to bring between 30 and 40 children.</p>
+    <p><span class="ln">S</span>If there are over 30, it costs <span class="tx-hit">&pound;4.95</span> for each child who attends on the day. We invoice you afterwards, so you don&rsquo;t pay for children who can&rsquo;t come because of sickness, for example. There&rsquo;s no charge for <span class="tx-hit">leaders</span> and other adults – as many as you want to bring.</p>
+    <p><span class="ln">J</span>That sounds very fair. Well, thanks for all the information. I&rsquo;ll need to discuss it with my colleagues, and I hope to get back to you soon to make a booking.</p>
+    <p><span class="ln">S</span>We&rsquo;ll look forward to hearing from you. Goodbye.</p>
+    <p><span class="ln">J</span>Goodbye, and thank you.</p>
   </div>
-  <p class="fine">Sau khi nghe băng gốc, khoanh trong transcript chỗ <em>correction</em> (actually / just under) — đó là mô típ IELTS cho số liệu.</p>""",
+  <p class="fine">Q1: cùng một câu có cả <em>acres</em> và <em>hectares</em> — ô đề hỏi hectares → ghi số <strong>69</strong>. Q9: mức giá khi trên 30 trẻ.</p>""",
     ),
     (
         "Walkthrough15",
@@ -439,11 +453,11 @@ P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
         """<p class="eyebrow">Answer walkthrough · Q1–5</p>
   <h2 class="h-section">Năm ô đầu — <em class="hi">tín hiệu nghe</em></h2>
   <ol class="num-list tight">
-    <li><div><span class="step-title">Q1 · <em class="hi">69</em></span><span class="step-body">Audio nêu <strong>28 hectares</strong> (distractor) rồi sửa: park <strong>actually covers just under 70</strong> — đề hỏi diện tích hiện tại → ghi <strong>69</strong> (hectares) đúng key Cambridge.</span></div></li>
-    <li><div><span class="step-title">Q2 · <em class="hi">stream</em></span><span class="step-body">Chuỗi địa hình: lakes, ponds and a … — từ điền là dòng nước nhỏ: <strong>stream</strong> (không nhầm với river/pool).</span></div></li>
-    <li><div><span class="step-title">Q3 · <em class="hi">data</em></span><span class="step-body">Science: họ không chỉ nhìn cây — họ <strong>collect data</strong> về thực vật → một từ: <strong>data</strong>.</span></div></li>
-    <li><div><span class="step-title">Q4 · <em class="hi">map</em></span><span class="step-body">Geography: học dùng <strong>a map and compass</strong> — ô trống đứng trước <em>and compass</em> → <strong>map</strong>.</span></div></li>
-    <li><div><span class="step-title">Q5 · <em class="hi">visitors</em></span><span class="step-body">Leisure &amp; tourism: trọng tâm module là <strong>visitors</strong> (không điền “tourism” nếu audio nhấn visitors).</span></div></li>
+    <li><div><span class="step-title">Q1 · <em class="hi">69</em></span><span class="step-body">Audio: &ldquo;Altogether the park covers <strong>170 acres</strong>, that&rsquo;s <strong>69 hectares</strong>.&rdquo; — ô Area (hectares) ghi <strong>69</strong>; đừng chép nhầm <strong>170</strong> hay đơn vị acres.</span></div></li>
+    <li><div><span class="step-title">Q2 · <em class="hi">stream</em></span><span class="step-body">Sau hai hồ lớn: &ldquo;ponds and a <strong>stream</strong> that flows through the park&rdquo; — một từ cho ô wetland.</span></div></li>
+    <li><div><span class="step-title">Q3 · <em class="hi">data</em></span><span class="step-body">Science: &ldquo;They also collect and analyse <strong>data</strong> about the things they see&rdquo; — đề paraphrase &ldquo;look at &hellip; about plants&rdquo; nhưng key vẫn là <strong>data</strong>.</span></div></li>
+    <li><div><span class="step-title">Q4 · <em class="hi">map</em></span><span class="step-body">&ldquo;reading a <strong>map</strong> and using a compass&rdquo; — ô đứng trước <em>and compass</em>.</span></div></li>
+    <li><div><span class="step-title">Q5 · <em class="hi">visitors</em></span><span class="step-body">John nói leisure &amp; tourism &ldquo;focuses on your <strong>visitors</strong>&rdquo; — Sally xác nhận &ldquo;Yes, mostly&rdquo; rồi giải thích thêm.</span></div></li>
   </ol>""",
     ),
     (
@@ -452,11 +466,11 @@ P01_EXTRA_AFTER_STEP3: list[tuple[str, str, str]] = [
         """<p class="eyebrow">Answer walkthrough · Q6–10</p>
   <h2 class="h-section">Năm ô sau — <em class="hi">collocation &amp; giá</em></h2>
   <ol class="num-list tight">
-    <li><div><span class="step-title">Q6 · <em class="hi">sounds</em></span><span class="step-body">Cấu trúc <strong>make … with natural materials</strong> — đáp án là danh từ số nhiều <strong>sounds</strong>; <em>rhythm / tempo</em> nằm ở mệnh đề sau (đã gợi ý trong đề).</span></div></li>
-    <li><div><span class="step-title">Q7 · <em class="hi">freedom</em></span><span class="step-body">Collocation cảm xúc: <strong>a feeling of freedom</strong> — một từ duy nhất.</span></div></li>
-    <li><div><span class="step-title">Q8 · <em class="hi">skills</em></span><span class="step-body">Họ <strong>learn new skills</strong> và tự tin hơn → ô cần <strong>skills</strong>.</span></div></li>
-    <li><div><span class="step-title">Q9 · <em class="hi">4.95</em></span><span class="step-body">Giá đọc đủ pounds and pence — ghi <strong>4.95</strong> khi đề đã in £ (đúng format answer key).</span></div></li>
-    <li><div><span class="step-title">Q10 · <em class="hi">leaders</em></span><span class="step-body">Người lớn miễn phí: <strong>parents or group leaders</strong> — đề cho <em>such as …</em> một từ; key chuẩn <strong>leaders</strong> (parents cũng đúng ngữ cảnh nhưng học viên cần khớp official key).</span></div></li>
+    <li><div><span class="step-title">Q6 · <em class="hi">sounds</em></span><span class="step-body">Audio: &ldquo;create <strong>sounds</strong>&rdquo; với natural materials; đề dùng động từ <em>make</em> — cùng nghĩa; <em>rhythm and tempo</em> đã in trong đề.</span></div></li>
+    <li><div><span class="step-title">Q7 · <em class="hi">freedom</em></span><span class="step-body">&ldquo;a sense of <strong>freedom</strong>&rdquo; — một từ trong Benefits.</span></div></li>
+    <li><div><span class="step-title">Q8 · <em class="hi">skills</em></span><span class="step-body">&ldquo;develop new <strong>skills</strong>&rdquo; — ngay sau đoạn về freedom.</span></div></li>
+    <li><div><span class="step-title">Q9 · <em class="hi">4.95</em></span><span class="step-body">&ldquo;If there are <strong>over 30</strong>, it costs <strong>&pound;4.95</strong> for each child&rdquo; — ô đã có ký hiệu £ → ghi <strong>4.95</strong>.</span></div></li>
+    <li><div><span class="step-title">Q10 · <em class="hi">leaders</em></span><span class="step-body">&ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — đề &ldquo;Adults, such as &hellip;&rdquo; một từ; key Cambridge: <strong>leaders</strong>.</span></div></li>
   </ol>""",
     ),
 ]
@@ -471,7 +485,7 @@ practice_block(
     TOC_ALL,
     "<em>Hinchingbrooke</em><br>Country Park<br><span style=\"font-size:0.85em\">Cambridge IELTS 19 · Test 1 · S1</span>",
     f"""<h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Complete the notes below. Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</h2>
-       <p class="small">You will hear a park ranger, Sally, talking to John, a teaching assistant, about Hinchingbrooke Country Park — a day visit for school children.</p>
+       <p class="small">You will hear Sally from Hinchingbrooke Country Park (ranger) and John Chapman (teaching assistant) arranging an educational visit for school classes.</p>
        <div class="audio-meta">
          <div class="cell"><div class="k">Giọng</div><div class="v">2</div><div class="d">Ranger + teaching assistant</div></div>
          <div class="cell"><div class="k">Độ dài</div><div class="v">~7′</div><div class="d">10 gaps · form</div></div>
@@ -492,16 +506,16 @@ practice_block(
        <div class="q-strip"><span class="n">10</span><span>Adults, such as ____________, free</span></div>
        </div>""",
     """<div class="qtype-grid" style="gap: 20px 48px;">
-         <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Số + đơn vị</div><div class="s">Hectares vs <em>acres</em> — nghe kỹ số cuối cùng sau chỗ “actually / but”.</div></div></div>
+         <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Số + đơn vị</div><div class="s">Một câu có cả <em>acres</em> và <em>hectares</em> — ô hỏi hectares → ghi đúng số hectares, không chép nhầm acres.</div></div></div>
          <div class="qtype-item"><div class="n">Q2–4</div><div><div class="t">Môn học song song</div><div class="s">Science → Geography → History — mỗi môn một fact ngắn.</div></div></div>
          <div class="qtype-item"><div class="n">Q6</div><div><div class="t">Danh từ đếm được</div><div class="s">Collocation với <em>make … with materials</em> — không nhầm với <em>rhythm / tempo</em> (đã in trong đề).</div></div></div>
          <div class="qtype-item"><div class="n">Q9</div><div><div class="t">Giá</div><div class="s">Độ chính xác đến pence — hai phần số sau dấu chấm.</div></div></div>
        </div>
        <p class="fine" style="margin-top: 28px;">Trước khi nghe: đánh dấu từ loại cho từng ô (số / danh từ / từ chỉ người).</p>""",
     """<ul class="num-list tight" style="margin-top: 8px;">
-         <li><div><span class="step-title">Đơn vị diện tích.</span><span class="step-body">Nghe <em>170 acres</em> xuất hiện trước — đáp án thường là thông tin được <strong>sửa</strong> sang hectares.</span></div></li>
-         <li><div><span class="step-title">Giá vé trẻ em.</span><span class="step-body">Xác nhận <em>pounds and pence</em> — không tròn nếu audio đọc chính xác.</span></div></li>
-         <li><div><span class="step-title">Người lớn miễn phí.</span><span class="step-body">Nghe cụm <em>parents or group leaders</em> — ô chỉ một từ → chọn từ cuối cụm được nêu làm ví dụ.</span></div></li>
+         <li><div><span class="step-title">Đơn vị diện tích.</span><span class="step-body">Cùng lúc có <em>170 acres</em> và <em>69 hectares</em> — ô Area (hectares) chỉ ghi <strong>69</strong>.</span></div></li>
+         <li><div><span class="step-title">Giá vé trẻ em.</span><span class="step-body">Điều kiện <em>over 30</em> children → <em>£4.95</em> each; invoice sau — không trả tiền trẻ vắng vì ốm.</span></div></li>
+         <li><div><span class="step-title">Người lớn miễn phí.</span><span class="step-body">Nghe &ldquo;no charge for <strong>leaders</strong> and other adults&rdquo; — ô <em>such as …</em> một từ → <strong>leaders</strong>.</span></div></li>
        </ul>""",
     """<div class="key-grid key-grid--5">
          <div class="k"><div class="q">1</div><div class="a">69</div></div>
@@ -515,16 +529,15 @@ practice_block(
          <div class="k"><div class="q">9</div><div class="a">4.95</div></div>
          <div class="k"><div class="q">10</div><div class="a">leaders</div></div>
        </div>
-       <p class="fine">Đáp án khớp Cambridge IELTS 19 Test 1 Listening Section 1 — đối chiếu spelling / số với transcipt chính thức.</p>""",
+       <p class="fine">Đáp án khớp Cambridge IELTS 19 Test 1 Listening Section 1 — đối chiếu spelling / số với transcript chính thức.</p>""",
     """<div class="script-box" style="max-height: 520px; overflow-y: auto;">
-         <p><span class="ln">S</span>Good morning, everyone, and welcome to Hinchingbrooke Country Park. My name’s Sally… you <strong>follow me</strong>?</p>
-         <p><span class="ln">J</span>…I’m interested in the area <strong>surrounding the lake</strong>… I believe … overall size increased … <strong>28 hectares</strong> … <strong>actually</strong> covers <strong>just under 70 hectares</strong>.</p>
-         <p><span class="ln">S</span>There’s a <strong>stream</strong> … a number of small areas of trees … the study of plants, including finding out what they’re good for … collecting <strong>data</strong> to study …</p>
-         <p><span class="ln">S</span>They can use a <strong>map</strong> and compass to learn about the countryside … leisure and tourism … focusing on <strong>visitors</strong> … making <strong>sounds</strong> with natural materials … rhythm and <em>tempo</em> …</p>
-         <p><span class="ln">S</span>…sense of <strong>freedom</strong> they don’t get elsewhere… learn <strong>skills</strong> … <strong>four pounds and 95 pence</strong> per child … adults like parents or group <strong>leaders</strong> for free.</p>
+         <p><span class="ln">S</span>Hinchingbrooke Country Park, Sally speaking. I&rsquo;m one of the rangers.</p>
+         <p><span class="ln">J</span>John Chapman — teaching assistant — arranging a visit for two classes.</p>
+         <p><span class="ln">S</span>The park covers <span class="tx-hit">170 acres</span>, that&rsquo;s <span class="tx-hit">69 hectares</span> … wetland … ponds and a <span class="tx-hit">stream</span> … collect and analyse <span class="tx-hit">data</span> … read a <span class="tx-hit">map</span> and compass … leisure and tourism — your <span class="tx-hit">visitors</span> … create <span class="tx-hit">sounds</span>, <span class="tx-hit">rhythm and tempo</span>.</p>
+         <p><span class="ln">J</span>Sense of <span class="tx-hit">freedom</span> … new <span class="tx-hit">skills</span> … over 30 children → <span class="tx-hit">&pound;4.95</span> each … no charge for <span class="tx-hit">leaders</span> and other adults.</p>
        </div>""",
     """<ul class="annot-list">
-         <li><span class="tag">Q1</span><b>Correction:</b> 28 → “actually just under <strong>70</strong>” → ô hectares ghi <em>69</em>.</li>
+         <li><span class="tag">Q1</span><b>Acres + hectares:</b> &ldquo;<strong>170 acres</strong>, that&rsquo;s <strong>69 hectares</strong>&rdquo; — ô hectares ghi <em>69</em> (không chép 170).</li>
          <li><span class="tag">Q2</span>Sau “lakes and ponds” → nối tiếp <em>a stream</em>.</li>
          <li><span class="tag">Q3</span><em>Collect data</em> about plants → một từ <strong>data</strong>.</li>
          <li><span class="tag">Q4</span><em>Use a map and compass</em> — từ khóa đứng ngay trước <em>and compass</em>.</li>
@@ -536,17 +549,17 @@ practice_block(
     """<div class="vocab-grid compact">
          <div class="vocab-item"><div class="vocab-word">ranger</div><div class="vocab-meaning">employee who protects / guides in a park</div></div>
          <div class="vocab-item"><div class="vocab-word">wetland · stream</div><div class="vocab-meaning">marshy area · small flowing water</div></div>
-         <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">area units — listen for correction</div></div>
+         <div class="vocab-item"><div class="vocab-word">hectare · acre</div><div class="vocab-meaning">area units — same utterance may give both; match the gap unit</div></div>
          <div class="vocab-item"><div class="vocab-word">navigate · map + compass</div><div class="vocab-meaning">find direction in the field</div></div>
          <div class="vocab-item"><div class="vocab-word">make sounds</div><div class="vocab-meaning">collocation · music activity</div></div>
          <div class="vocab-item"><div class="vocab-word">group leaders</div><div class="vocab-meaning">adults supervising children on a trip</div></div>
        </div>""",
     """<div class="mistake-grid">
-         <div class="mistake"><div class="x">×</div><div><h4>Ghi 170 hoặc acres</h4><p>Đó là distractor trước khi đổi sang <strong>69 hectares</strong>.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Ghi 170 hoặc &ldquo;acres&rdquo; vào ô hectares</h4><p><strong>170</strong> là số <em>acres</em> trong cùng câu; đáp án ô Area (hectares) là <strong>69</strong>.</p></div></div>
          <div class="mistake"><div class="x">×</div><div><h4>Điền river</h4><p>Audio nói <em>a stream</em> nối giữa lakes/ponds — chính tả pool/river nếu nghe nhầm.</p></div></div>
          <div class="mistake"><div class="x">×</div><div><h4>Q6 điền tempo</h4><p>Ô cần danh từ cho “make ___ with materials”; tempo nằm ở mệnh đề sau.</p></div></div>
          <div class="mistake"><div class="x">×</div><div><h4>Viết £4.95 trong ô chỉ cần số</h4><p>Nếu đề đã in £ — thường chỉ ghi <strong>4.95</strong>.</p></div></div>
-         <div class="mistake"><div class="x">×</div><div><h4>Q10 parents</h4><p>Audio liệt kê parents <strong>or</strong> group leaders — đáp án một từ chuẩn là <strong>leaders</strong>.</p></div></div>
+         <div class="mistake"><div class="x">×</div><div><h4>Q10 parents</h4><p>Trên băng là <em>leaders and other adults</em> — key Cambridge một từ: <strong>leaders</strong>.</p></div></div>
        </div>""",
     extra_after_step3=P01_EXTRA_AFTER_STEP3,
 )
