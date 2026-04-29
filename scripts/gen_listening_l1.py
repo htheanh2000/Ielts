@@ -591,9 +591,7 @@ slides.append(f"""<!-- 21 · TAKEAWAYS -->
 slides.append(f"""<!-- 22 · WEEKLY PLAN -->
 <section data-label="22 Weekly Plan" class="slide">
   <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Weekly plan</span></div>
-  <p class="eyebrow">Weekly plan · Listening</p>
-  <h2 class="h-section">25–30 minutes/day — <em class="hi">Section 1 first</em></h2>
-  <div class="plan-grid">
+  <div class="plan-grid" style="margin-top: 20px;">
     <div class="hdr">Day</div><div class="hdr">Task</div><div class="hdr">Focus</div><div class="hdr">Time</div>
     <div class="day">Thứ 2</div><div>S1 form</div><div>1 Test · Part 1 — chỉ ghi lỗi chính tả / số vào sổ.</div><div class="time">30′</div>
     <div class="day">Thứ 3</div><div>S1 + review</div><div>Nghe lại cùng transcript — khoanh paraphrase đề ↔ băng.</div><div class="time">30′</div>
