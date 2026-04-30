@@ -38,7 +38,6 @@ HEAD = r"""<!doctype html>
   .q-strip .n { font-family: var(--mono); color: var(--accent); font-weight: 700; }
   .practice-audio { margin-top: 20px; }
   .practice-audio audio { width: 100%; max-width: 720px; height: 48px; }
-  .source-note { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); margin-top: 14px; line-height: 1.45; }
   /* Answer key grid — đủ lớn khi scale trong deck-stage */
   .key-grid { display: grid; gap: 20px 22px; margin-top: 12px; width: 100%; box-sizing: border-box; }
   .key-grid > .k {
@@ -429,10 +428,7 @@ TOC_LESSON1 = [
     "02 · Section 2 — Stanthorpe (MCQ + map)",
 ]
 
-# Practice 01 — Section 1 (Cambridge IELTS 19 · Test 1 · Section 1 — Hinchingbrooke Country Park)
-# Audio: copy from licensed pack (e.g. "Test1 Part1.mp3" from Cambridge IELTS 19 audio) to:
-#   listening/lesson/1/audio/cam19-test1-part1.mp3
-# Web path is relative to index.html (no spaces in filename for stable URLs).
+# Practice 01 — Section 1 (Cam19 T1 S1 — Hinchingbrooke). Audio path relative to index.html.
 _LISTENING_P1_MP3 = "audio/cam19-test1-part1.mp3"
 
 # Five listen-back slides after Step 3: two questions each — short transcript + signals → meaning → answer (UI copy in English).
@@ -575,9 +571,7 @@ P01_ANALYSIS_SLIDES: list[str] = [
   </div>""",
 ]
 
-# Practice 02 — Section 2 (Cambridge IELTS 19 · Test 1 · Section 2 — Stanthorpe Twinning Association)
-# Audio: copy from licensed pack (e.g. "Test1 Part2.mp3") to:
-#   listening/lesson/1/audio/cam19-test1-part2.mp3
+# Practice 02 — Section 2 (Cam19 T1 S2 — Stanthorpe). Audio path relative to index.html.
 _LISTENING_P2_MP3 = "audio/cam19-test1-part2.mp3"
 
 # Five listen-back slides after Step 3: two questions each — short transcript + signals → meaning → answer (UI copy in English).
@@ -737,8 +731,7 @@ practice_block(
          <div class="cell"><div class="k">Length</div><div class="v">~7′</div><div class="d">10 gaps · form</div></div>
          <div class="cell"><div class="k">Topic</div><div class="v">Nature park</div><div class="d">Habitats · school visit · practical info</div></div>
        </div>
-       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P1_MP3}">Your browser does not support the &lt;audio&gt; element.</audio></div>
-       <p class="source-note">Recording from <strong>Cambridge IELTS 19</strong> (licensed pack) — project file: <code>listening/lesson/1/audio/cam19-test1-part1.mp3</code> (copy from <code>Test1 Part1.mp3</code> in your official audio folder).</p>""",
+       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P1_MP3}">Your browser does not support the &lt;audio&gt; element.</audio></div>""",
     """<div class="ex-card"><span class="tag">Hinchingbrooke Country Park · Q1–10</span>
        <div class="q-strip"><span class="n">1</span><span>The park — Area: ____________ hectares</span></div>
        <div class="q-strip"><span class="n">2</span><span>Wetland: lakes, ponds and a ____________</span></div>
@@ -815,8 +808,7 @@ practice_block(
          <div class="cell"><div class="k">Length</div><div class="v">~7′</div><div class="d">5 MCQ + 5 map</div></div>
          <div class="cell"><div class="k">Topic</div><div class="v">Twin town</div><div class="d">Visit · events · venue plan</div></div>
        </div>
-       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P2_MP3}">Your browser does not support the &lt;audio&gt; element.</audio></div>
-       <p class="source-note">Recording from <strong>Cambridge IELTS 19</strong> (licensed pack) — copy to <code>listening/lesson/1/audio/cam19-test1-part2.mp3</code> (e.g. from <code>Test1 Part2.mp3</code>). Audioscript reference: <a href="https://www.izone.edu.vn/luyen-thi-ielts/giai-cam-19-test-1-listening-part-2-stanthorpe-twinning-association/#b.-audioscripts" target="_blank" rel="noopener">izone.edu.vn</a> (study aid; keys checked against official Cambridge).</p>""",
+       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P2_MP3}">Your browser does not support the &lt;audio&gt; element.</audio></div>""",
     """<div class="ex-card"><span class="tag">Q11–15 · Multiple choice</span>
        <div class="q-strip"><span class="n">11</span><span>According to the speaker, what will be the <strong>main benefit</strong> for Stanthorpe of the exchange visit?</span></div>
        <p class="small" style="margin:6px 0 10px 72px;">A a guided walk around Villars &nbsp; B a boat trip on a lake &nbsp; C a coach tour of the area</p>
