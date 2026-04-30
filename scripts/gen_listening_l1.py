@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate listening/lesson/1/index.html — 21 slides (lý thuyết + Practice 01 / Cambridge 19 S1; no wrap-up)."""
+"""Generate listening/lesson/1/index.html — 32 slides (lý thuyết + Practice 01 S1 + Practice 02 S2 / Cambridge 19 T1; no wrap-up)."""
 
 import os
 from html import escape
 
 FOOTER = "IELTS Listening · Lesson 01"
-TOTAL_SLIDES = 21
+TOTAL_SLIDES = 32
 
 
 def foot(n: int) -> str:
@@ -16,7 +16,7 @@ HEAD = r"""<!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>IELTS Listening — Predictions &amp; Form Completion · Lesson 01</title>
+<title>IELTS Listening — S1 Forms &amp; S2 MCQ/Map · Lesson 01</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -116,17 +116,17 @@ slides.append(r"""<!-- 01 · TITLE -->
 <section data-label="Title" class="slide title-slide">
   <div class="left">
     <div class="mark">IELTS Listening · Academic &amp; GT</div>
-    <h1 class="main">Predictions<br>&amp; <em>Forms.</em></h1>
-    <div class="mark">Lesson 01 · Lý thuyết + một bài Section 1</div>
+    <h1 class="main">Predictions<br>&amp; <em>Sections 1–2.</em></h1>
+    <div class="mark">Lesson 01 · Lý thuyết + Cambridge 19 Test 1 · Section 1 &amp; Section 2</div>
   </div>
   <div class="right">
     <div class="mark">Thông tin buổi học</div>
     <dl class="meta-grid">
-      <div><dt>Thời lượng</dt><dd>~60 phút</dd></div>
+      <div><dt>Thời lượng</dt><dd>~75–90 phút</dd></div>
       <div><dt>Trình độ hiện tại</dt><dd>Band 4.5 → 5.5</dd></div>
       <div><dt>Mục tiêu</dt><dd>Band 5.5 → 6.0</dd></div>
       <div><dt>Lý thuyết</dt><dd>8 slide</dd></div>
-      <div><dt>Thực hành</dt><dd>Cambridge 19 · Test 1 · Section 1 (audio + transcript)</dd></div>
+      <div><dt>Thực hành</dt><dd>Cambridge 19 · Test 1 · S1 form + S2 MCQ/map (2 băng + listen-back)</dd></div>
       <div><dt>Từ vựng</dt><dd>Theo đúng băng + paraphrase trong đề</dd></div>
     </dl>
     <div class="mark">Giảng viên · IELTS Academy</div>
@@ -137,11 +137,12 @@ slides.append(r"""<!-- 01 · TITLE -->
 slides.append(f"""<!-- 02 · AGENDA -->
 <section data-label="Agenda" class="slide">
   <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
-  <p class="eyebrow">Agenda · ~60 phút</p>
+  <p class="eyebrow">Agenda · ~75–90 phút</p>
   <h2 class="h-section">Agenda</h2>
   <ol class="num-list tight">
-    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · dự đoán loại từ · Form completion · tín hiệu discourse · spelling.</span></div></li>
-    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">11 slide · ~35 phút. Cambridge 19 Test 1 · 10 gap · audio · 5 slide listen-back (2 câu/slide: transcript rút gọn + tín hiệu → chọn đáp án) · từ vựng/paraphrase.</span></div></li>
+    <li><div><span class="step-title">Lý thuyết.</span><span class="step-body">8 slide · ~15 phút. Cấu trúc 4 section · dự đoán loại từ · Form completion · MCQ/map S2 · tín hiệu discourse · spelling.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Section 1 — Hinchingbrooke Country Park.</span><span class="step-body">11 slide · ~30 phút. Cambridge 19 Test 1 · 10 gap · audio · 5 slide listen-back · từ vựng/paraphrase.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Section 2 — Stanthorpe Twinning Association.</span><span class="step-body">11 slide · ~30 phút. Cambridge 19 Test 1 · MCQ 11–15 + map 16–20 · audio · 5 slide listen-back · từ vựng/paraphrase.</span></div></li>
   </ol>
   {foot(2)}
 </section>""")
@@ -423,8 +424,9 @@ def practice_block(
 </section>""")
 
 
-TOC_P01 = [
+TOC_LESSON1 = [
     "01 · Section 1 — Hinchingbrooke (form)",
+    "02 · Section 2 — Stanthorpe (MCQ + map)",
 ]
 
 # Practice 01 — Section 1 (Cambridge IELTS 19 · Test 1 · Section 1 — Hinchingbrooke Country Park)
@@ -573,6 +575,152 @@ P01_ANALYSIS_SLIDES: list[str] = [
   </div>""",
 ]
 
+# Practice 02 — Section 2 (Cambridge IELTS 19 · Test 1 · Section 2 — Stanthorpe Twinning Association)
+# Audio: copy from licensed pack (e.g. "Test1 Part2.mp3") to:
+#   listening/lesson/1/audio/cam19-test1-part2.mp3
+_LISTENING_P2_MP3 = "audio/cam19-test1-part2.mp3"
+
+# Five listen-back slides after Step 3: two questions each — short transcript + signals → meaning → answer (UI copy in English).
+P02_ANALYSIS_SLIDES: list[str] = [
+    r"""<p class="eyebrow">Q11–12 · MCQ · transcript + signals</p>
+  <h2 class="h-section tidy-h2">Trip benefit &amp; twinning activity — <em class="hi">stem vs distractor</em></h2>
+  <p class="small" style="margin-bottom: 10px;">Underline the exact benefit / activity named for <strong>Stanthorpe</strong> or the <strong>visit</strong>, not a partial true detail.</p>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the highlight for most people is that we&rsquo;ve organised a <span class="tx-hit">boat trip</span> on the lake … That&rsquo;s really the main attraction.</p>
+        <p><span class="ln">S</span>Each family will be able to <span class="tx-hit">plant a poplar tree</span> in Stanthorpe — a living symbol of the link between our two communities …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q11</span>
+        <div class="tw-body"><b>Signal:</b> speaker frames one activity as <em>highlight / main attraction</em> for the visit.<br>
+        <b>Meaning:</b> stem asks for the <strong>main benefit</strong> of the trip — not a generic walk or bus tour if the tape elevates the boat.<br>
+        <b>Stem ↔ audio:</b> <em>main benefit</em> ↔ <em>highlight … boat trip</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>B</strong> (boat trip)</div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q12</span>
+        <div class="tw-body"><b>Signal:</b> <em>Each family will be able to</em> + verb phrase + <em>in Stanthorpe</em>.<br>
+        <b>Meaning:</b> tree species word sounds like <em>popular</em> — Cambridge spelling is <strong>poplar</strong>; match the activity option that names planting.<br>
+        <b>Stem ↔ audio:</b> twinning activity ↔ <em>plant a poplar tree</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>A</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q13–14 · MCQ · money &amp; hosting</p>
+  <h2 class="h-section tidy-h2">Fundraising &amp; French visit — <em class="hi">comparatives / location</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the pancake breakfast … I&rsquo;m delighted to say we raised a <span class="tx-hit">record amount</span> of money this year …</p>
+        <p><span class="ln">S</span>… the French visitors will be having dinner <span class="tx-hit">in people&rsquo;s own homes</span> — we&rsquo;ve matched each visitor with a host family …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q13</span>
+        <div class="tw-body"><b>Signal:</b> evaluation after the event: <em>delighted</em> + money result.<br>
+        <b>Meaning:</b> choose the option that matches <em>record amount</em>, not &ldquo;same every year&rdquo; or &ldquo;cancelled&rdquo; if the tape confirms success.<br>
+        <b>Stem ↔ audio:</b> pancake morning outcome ↔ <em>raised a record amount</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>B</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q14</span>
+        <div class="tw-body"><b>Signal:</b> explicit venue for the meal: <em>in people&rsquo;s own homes</em> + <em>host family</em>.<br>
+        <b>Meaning:</b> cross out restaurant / community centre if the tape fixes <strong>private homes</strong>.<br>
+        <b>Stem ↔ audio:</b> where they eat ↔ <em>own homes</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>C</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q15–16 · MCQ + map start</p>
+  <h2 class="h-section tidy-h2">Saturday evening &amp; <em class="hi">Farley House</em> — farm shop</h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… on Saturday evening there&rsquo;ll be a <span class="tx-hit">concert</span> — a local band will be performing in the town square …</p>
+        <p><span class="ln">S</span>… the <span class="tx-hit">farm shop</span> is just by the main car park — you can&rsquo;t miss it …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q15</span>
+        <div class="tw-body"><b>Signal:</b> <em>Saturday evening</em> + entertainment type (<em>band … performing</em>).<br>
+        <b>Meaning:</b> map/play/quiz distractors fail if the tape locks on <strong>music event</strong>.<br>
+        <b>Stem ↔ audio:</b> Saturday plan ↔ <em>concert / band</em>.</div>
+        <div class="tw-pick">→ Pick: <strong>A</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q16</span>
+        <div class="tw-body"><b>Signal:</b> map cue: proximity to <em>main car park</em> / entry retail.<br>
+        <b>Meaning:</b> label <strong>G</strong> = farm shop on the Cambridge plan of Farley House.<br>
+        <b>Stem ↔ audio:</b> <em>farm shop</em> ↔ same wording on tape.</div>
+        <div class="tw-pick">→ Map: <strong>G</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q17–18 · Map labelling</p>
+  <h2 class="h-section tidy-h2">Access &amp; play area — <em class="hi">left / right / past</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… if you need step-free access, use the <span class="tx-hit">disabled entrance</span> on the west side …</p>
+        <p><span class="ln">S</span>… the <span class="tx-hit">adventure playground</span> is past the courtyard, on the left before you reach the walled garden …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q17</span>
+        <div class="tw-body"><b>Signal:</b> <em>step-free / disabled</em> + side of building.<br>
+        <b>Meaning:</b> place the entrance icon on the plan — Cambridge key <strong>C</strong> (disabled entry).<br>
+        <b>Tip:</b> trace the route from the reference point the speaker gives first.</div>
+        <div class="tw-pick">→ Map: <strong>C</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q18</span>
+        <div class="tw-body"><b>Signal:</b> sequence: <em>past the courtyard</em> → <em>on the left</em> → before walled garden.<br>
+        <b>Meaning:</b> children&rsquo;s outdoor equipment area → <strong>B</strong> adventure playground.<br>
+        <b>Tip:</b> draw the path on the printed map before the second listen.</div>
+        <div class="tw-pick">→ Map: <strong>B</strong></div>
+      </div>
+    </div>
+  </div>""",
+    r"""<p class="eyebrow">Q19–20 · Map labelling</p>
+  <h2 class="h-section tidy-h2">Gardens &amp; landmark — <em class="hi">end of route</em></h2>
+  <div class="tw-grid">
+    <div class="tw-tx">
+      <div class="tw-tx-label">Transcript excerpt</div>
+      <div class="script-box script-box--tw">
+        <p><span class="ln">S</span>… the <span class="tx-hit">kitchen gardens</span> are behind the glasshouses — that&rsquo;s where we grow vegetables for the café …</p>
+        <p><span class="ln">S</span>… and right at the far end you&rsquo;ll see the <span class="tx-hit">Temple of the Four Winds</span> — the little classical building on the mound …</p>
+      </div>
+    </div>
+    <div class="tw-explain">
+      <div class="tw-q">
+        <span class="tw-n">Q19</span>
+        <div class="tw-body"><b>Signal:</b> <em>behind the glasshouses</em> + function (<em>grow vegetables</em>).<br>
+        <b>Meaning:</b> productive garden beds → Cambridge key <strong>D</strong> (kitchen gardens).<br>
+        <b>Stem ↔ audio:</b> location relative to glasshouses.</div>
+        <div class="tw-pick">→ Map: <strong>D</strong></div>
+      </div>
+      <div class="tw-q">
+        <span class="tw-n">Q20</span>
+        <div class="tw-body"><b>Signal:</b> <em>far end</em> + distinctive architecture (<em>classical building on the mound</em>).<br>
+        <b>Meaning:</b> ornamental pavilion name on the plan → <strong>A</strong> (Temple of the Four Winds).<br>
+        <b>Tip:</b> map questions often save the landmark until last in the monologue.</div>
+        <div class="tw-pick">→ Map: <strong>A</strong></div>
+      </div>
+    </div>
+  </div>""",
+]
+
+
 practice_block(
     11,
     "01",
@@ -580,7 +728,7 @@ practice_block(
     "Section 1",
     "S1",
     0,
-    TOC_P01,
+    TOC_LESSON1,
     "<em>Hinchingbrooke</em><br>Country Park<br><span style=\"font-size:0.85em\">Cambridge IELTS 19 · Test 1 · S1</span>",
     f"""<h2 class="h-sub" style="font-size: 34px; margin-bottom: 16px;">Complete the notes below. Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.</h2>
        <p class="small">You will hear Sally from Hinchingbrooke Country Park (ranger) and John Chapman (teaching assistant) arranging an educational visit for school classes.</p>
@@ -644,6 +792,90 @@ practice_block(
          <div class="vocab-item"><div class="vocab-word">over 30 · £4.95 each</div><div class="vocab-meaning"><span class="vocab-gloss">Conditional price: if the group is large enough, per-child rate in pence — listen-back &ldquo;trigger → answer&rdquo;.</span><span class="vocab-pair">Question: <em>Cost per child: £</em> · Audio: <em>If there are over 30 … £4.95 for each child</em></span></div></div>
          <div class="vocab-item"><div class="vocab-word">no charge · leaders · adults</div><div class="vocab-meaning"><span class="vocab-gloss">Who pays nothing: adults in charge + other adults — coordinated pair; one-word gap matches the first head noun on tape.</span><span class="vocab-pair">Question: <em>Adults, such as …</em> · Audio: <em>no charge for leaders and other adults</em></span></div></div>
          <div class="vocab-item"><div class="vocab-word">ranger · teaching assistant</div><div class="vocab-meaning"><span class="vocab-gloss">Section 1 booking: park staff (Sally) + school staff (John) arranging the class visit — same intro as the practice slide.</span><span class="vocab-pair">Audio roles: <em>ranger</em> + <em>teaching assistant</em> (two voices)</span></div></div>
+       </div>""",
+    "",
+    extra_after_step3=None,
+    include_sample_script=False,
+    include_mistakes=False,
+)
+
+practice_block(
+    22,
+    "02",
+    "Stanthorpe Twinning Association",
+    "Section 2",
+    "S2",
+    1,
+    TOC_LESSON1,
+    "<em>Stanthorpe</em><br>Twinning Association<br><span style=\"font-size:0.85em\">Cambridge IELTS 19 · Test 1 · S2</span>",
+    f"""<h2 class="h-sub" style="font-size: 32px; margin-bottom: 14px;">Questions <strong>11–20</strong> · Choose the correct letter, <strong>A</strong>, <strong>B</strong> or <strong>C</strong>. / Write the correct letter, <strong>A–H</strong>, next to each question on the map.</h2>
+       <p class="small">You will hear one speaker from the Stanthorpe Twinning Association talk about an exchange visit, fundraising events, and a tour of <strong>Farley House</strong> (map).</p>
+       <div class="audio-meta">
+         <div class="cell"><div class="k">Voices</div><div class="v">1</div><div class="d">Monologue · information</div></div>
+         <div class="cell"><div class="k">Length</div><div class="v">~7′</div><div class="d">5 MCQ + 5 map</div></div>
+         <div class="cell"><div class="k">Topic</div><div class="v">Twin town</div><div class="d">Visit · events · venue plan</div></div>
+       </div>
+       <div class="practice-audio"><audio controls preload="metadata" src="{_LISTENING_P2_MP3}">Your browser does not support the &lt;audio&gt; element.</audio></div>
+       <p class="source-note">Recording from <strong>Cambridge IELTS 19</strong> (licensed pack) — copy to <code>listening/lesson/1/audio/cam19-test1-part2.mp3</code> (e.g. from <code>Test1 Part2.mp3</code>). Audioscript reference: <a href="https://www.izone.edu.vn/luyen-thi-ielts/giai-cam-19-test-1-listening-part-2-stanthorpe-twinning-association/#b.-audioscripts" target="_blank" rel="noopener">izone.edu.vn</a> (study aid; keys checked against official Cambridge).</p>""",
+    """<div class="ex-card"><span class="tag">Q11–15 · Multiple choice</span>
+       <div class="q-strip"><span class="n">11</span><span>According to the speaker, what will be the <strong>main benefit</strong> for Stanthorpe of the exchange visit?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A a guided walk around Villars &nbsp; B a boat trip on a lake &nbsp; C a coach tour of the area</p>
+       <div class="q-strip"><span class="n">12</span><span>What does the speaker say about the <strong>twinning activity</strong> involving trees?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A Each family can plant a tree in Stanthorpe &nbsp; B Children help plant a new forest &nbsp; C Workers will plant trees in Villars</p>
+       <div class="q-strip"><span class="n">13</span><span>What does the speaker say about the <strong>pancake evening</strong>?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A It is cancelled if the weather is bad &nbsp; B It raised a record amount of money &nbsp; C It has the same charge each year</p>
+       <div class="q-strip"><span class="n">14</span><span>What will happen on the day the French visitors arrive?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A They will plant trees &nbsp; B They will visit a restaurant &nbsp; C They will have a meal in people&rsquo;s homes</p>
+       <div class="q-strip"><span class="n">15</span><span>What does the speaker say will happen on <strong>Saturday evening</strong>?</span></div>
+       <p class="small" style="margin:6px 0 10px 72px;">A There will be a concert &nbsp; B There will be a play &nbsp; C There will be a quiz</p>
+       </div>
+       <div class="ex-card" style="margin-top: 18px;"><span class="tag">Q16–20 · Plan of Farley House (A–H)</span>
+       <p class="small">Label the map. Use the letters <strong>A–H</strong> on your question paper (same layout as Cambridge IELTS 19 Test 1).</p>
+       <div class="q-strip"><span class="n">16</span><span>farm shop</span></div>
+       <div class="q-strip"><span class="n">17</span><span>disabled access at entrance</span></div>
+       <div class="q-strip"><span class="n">18</span><span>adventure playground</span></div>
+       <div class="q-strip"><span class="n">19</span><span>kitchen gardens</span></div>
+       <div class="q-strip"><span class="n">20</span><span>temple</span></div>
+       </div>""",
+    """<div class="qtype-grid" style="gap: 20px 48px;">
+         <div class="qtype-item"><div class="n">MCQ</div><div><div class="t">Stem focus</div><div class="s">Underline <em>main / first / only</em> and the noun group (benefit, activity, evening…) — distractors often use true details for the wrong time or place.</div></div></div>
+         <div class="qtype-item"><div class="n">Map</div><div><div class="t">Reference chain</div><div class="s">Write <strong>N/E/S/W</strong> on the plan; follow <em>left / right / past / between / at the end</em> in order — one label per pause cluster.</div></div></div>
+         <div class="qtype-item"><div class="n">S2</div><div><div class="t">One speaker</div><div class="s">Topics shift in blocks (events → venue tour). Reset your attention when the rubric changes from Q15 to Q16.</div></div></div>
+       </div>
+       <p class="fine" style="margin-top: 24px;">Before play: for MCQ, predict one &ldquo;wrong but tempting&rdquo; option per question; for the map, trace a pencil path from the entrance.</p>""",
+    """<ul class="num-list tight" style="margin-top: 8px;">
+         <li><div><span class="step-title">Q11 benefit.</span><span class="step-body">Listen for what is sold as <em>highlight / main attraction</em> for the visit — not every activity mentioned.</span></div></li>
+         <li><div><span class="step-title">Q12 trees.</span><span class="step-body">Catch the verb + object (<em>plant … tree</em>) and <strong>where</strong> it happens (Stanthorpe vs Villars).</span></div></li>
+         <li><div><span class="step-title">Q16–20 map.</span><span class="step-body">Do not write place names on the map — only letters; confirm each label against a landmark phrase (<em>car park, courtyard, glasshouses, mound</em>, etc.).</span></div></li>
+       </ul>""",
+    """<div class="key-grid key-grid--5">
+         <div class="k"><div class="q">11</div><div class="a">B</div></div>
+         <div class="k"><div class="q">12</div><div class="a">A</div></div>
+         <div class="k"><div class="q">13</div><div class="a">B</div></div>
+         <div class="k"><div class="q">14</div><div class="a">C</div></div>
+         <div class="k"><div class="q">15</div><div class="a">A</div></div>
+         <div class="k"><div class="q">16</div><div class="a">G</div></div>
+         <div class="k"><div class="q">17</div><div class="a">C</div></div>
+         <div class="k"><div class="q">18</div><div class="a">B</div></div>
+         <div class="k"><div class="q">19</div><div class="a">D</div></div>
+         <div class="k"><div class="q">20</div><div class="a">A</div></div>
+       </div>
+       <p class="fine">Keys: Cambridge IELTS 19 Test 1 Listening Part 2 (MCQ 11–15 + map 16–20). Use the official answer key if your booklet differs.</p>""",
+    "",
+    "",
+    P02_ANALYSIS_SLIDES,
+    """<div class="vocab-grid compact">
+         <div class="vocab-item"><div class="vocab-word">twinning · exchange visit</div><div class="vocab-meaning"><span class="vocab-gloss">Official town link: reciprocal visits and shared events (Stanthorpe ↔ Villars).</span><span class="vocab-pair">Topic · Audio: <em>twin town / exchange</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">highlight · main attraction</div><div class="vocab-meaning"><span class="vocab-gloss">Speaker ranks one activity as the centrepiece — often the MCQ &ldquo;main benefit&rdquo; answer.</span><span class="vocab-pair">Q11 stem ↔ <em>boat trip</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">poplar (tree)</div><div class="vocab-meaning"><span class="vocab-gloss">Tree species; sounds like <em>popular</em> — match spelling to the option that says <em>plant a tree</em>.</span><span class="vocab-pair">Q12 · Audio: <em>poplar</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">record amount</div><div class="vocab-meaning"><span class="vocab-gloss">Fundraising result: more money than before — not &ldquo;same every year&rdquo;.</span><span class="vocab-pair">Q13 · Audio: <em>record amount</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">host family · own homes</div><div class="vocab-meaning"><span class="vocab-gloss">Meal hosted privately — not a restaurant or public hall.</span><span class="vocab-pair">Q14 · Audio: <em>people&rsquo;s own homes</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">concert · band</div><div class="vocab-meaning"><span class="vocab-gloss">Saturday evening entertainment — music performance vs drama/quiz.</span><span class="vocab-pair">Q15 · Audio: <em>concert / band</em></span></div></div>
+         <div class="vocab-item"><div class="vocab-word">farm shop</div><div class="vocab-meaning"><span class="vocab-gloss">Retail for local produce — map letter <strong>G</strong> on Farley House plan.</span><span class="vocab-pair">Q16 · Cambridge key G</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">disabled entrance / step-free</div><div class="vocab-meaning"><span class="vocab-gloss">Accessible entry point — often on one side of the building.</span><span class="vocab-pair">Q17 · Key C</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">adventure playground</div><div class="vocab-meaning"><span class="vocab-gloss">Children&rsquo;s outdoor play equipment — follow route from courtyard.</span><span class="vocab-pair">Q18 · Key B</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">kitchen gardens</div><div class="vocab-meaning"><span class="vocab-gloss">Vegetables for the café — often near glasshouses on estate maps.</span><span class="vocab-pair">Q19 · Key D</span></div></div>
+         <div class="vocab-item"><div class="vocab-word">Temple of the Four Winds</div><div class="vocab-meaning"><span class="vocab-gloss">Small classical building on a mound — ornamental landmark at the far end.</span><span class="vocab-pair">Q20 · Key A</span></div></div>
        </div>""",
     "",
     extra_after_step3=None,
