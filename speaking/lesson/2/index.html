@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IELTS Speaking Part 1 — Hometown</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background: #f5f5f0;
+    background-image:
+      linear-gradient(rgba(30,58,138,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,58,138,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #1a1a1a;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+  }
+  .topic-tag {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #1e3a8a;
+  }
+  .counter {
+    font-size: 13px;
+    color: #6b7280;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .slide-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 20px 60px rgba(30,58,138,0.08);
+    width: 100%;
+    max-width: 960px;
+    min-height: 480px;
+    padding: 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .label.q  { background: #fff3e0; color: #c2410c; }
+  .label.a  { background: #e0f2fe; color: #1e3a8a; }
+  .label.test { background: #fef3c7; color: #92400e; }
+  .label.empty { background: #f3f4f6; color: #6b7280; }
+
+  .question {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #111;
+    letter-spacing: -0.5px;
+  }
+  .answer {
+    font-size: 26px;
+    line-height: 1.6;
+    color: #1f2937;
+    font-weight: 400;
+  }
+  .answer .blank {
+    display: inline-block;
+    background: #e5e7eb;
+    color: transparent;
+    border-radius: 4px;
+    padding: 0 4px;
+    margin: 0 1px;
+    user-select: none;
+  }
+  .answer.hidden-all {
+    color: #9ca3af;
+    font-style: italic;
+    font-size: 22px;
+  }
+
+  .progress {
+    position: absolute;
+    bottom: 24px;
+    left: 80px;
+    right: 80px;
+    height: 4px;
+    background: #f3f4f6;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: #1e3a8a;
+    transition: width 0.3s ease;
+  }
+
+  footer {
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #6b7280;
+  }
+  .nav-hint kbd {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: inherit;
+    font-size: 11px;
+    margin: 0 2px;
+  }
+  .nav-buttons button {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 8px;
+    transition: all 0.15s;
+  }
+  .nav-buttons button:hover { background: #1e3a8a; color: #fff; border-color: #1e3a8a; }
+
+  .level-indicator {
+    position: absolute;
+    top: 24px;
+    right: 80px;
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topic-tag" id="topic-name">Topic 1 · Hometown</div>
+  <div class="counter" id="counter">1 / 50</div>
+</header>
+
+<div class="slide-container">
+  <div class="card" id="card">
+    <!-- slide rendered here -->
+  </div>
+</div>
+
+<footer>
+  <div class="nav-hint">
+    <kbd>←</kbd> <kbd>→</kbd> chuyển slide ·
+    <kbd>Space</kbd> next ·
+    <kbd>Home</kbd> đầu ·
+    <kbd>End</kbd> cuối
+  </div>
+  <div class="nav-buttons">
+    <button onclick="prev()">← Prev</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</footer>
+
+<script>
+/*
+  Markup syntax inside answers:
+    ~~text~~  -> hide at level 1 onward (slide 3, 4)
+    ==text==  -> hide at level 2 onward (slide 4 only)
+    plain     -> always shown until level 3 (where everything is hidden)
+
+  Levels per question (5 slides):
+    0 = Question
+    1 = Full answer
+    2 = Hide level 1 (a few)
+    3 = Hide level 1 + 2 (more)
+    4 = Hide everything (only "Answer:" label)
+*/
+
+const TOPIC = "Hometown";
+
+const QUESTIONS = [
+  {
+    q: "Where is your hometown?",
+    a: "I'm ==originally== from ~~Da Nang~~, a ~~coastal~~ ==city== in ~~central Vietnam~~. It's ==about== an ~~hour's flight~~ from ~~Ho Chi Minh City~~ and ==pretty== ~~well-known~~ for its ~~beaches~~ and the ~~Dragon Bridge~~."
+  },
+  {
+    q: "What's your hometown like?",
+    a: "~~Da Nang~~ is a ~~laid-back coastal~~ ==city== with a ==great mix== of ~~beaches~~, ~~mountains~~, and ~~modern infrastructure~~. It's not as ~~crowded~~ as ~~Hanoi or Saigon~~, so the ==pace of life== feels more ~~relaxed~~."
+  },
+  {
+    q: "Is your hometown a popular place?",
+    a: "Yeah, ==definitely==. It's become a ~~major tourist hotspot~~ in ==recent years==, especially among ~~Korean and domestic travelers~~. Most people come for the ~~beaches~~ and the ~~food scene~~."
+  },
+  {
+    q: "Do you like your hometown?",
+    a: "==Honestly==, I love it. The ~~cost of living~~ is ~~reasonable~~, the ==air== is ~~clean~~, and you can be at the ~~beach~~ in ~~15 minutes~~. It's ==hard to beat== that ~~lifestyle~~."
+  },
+  {
+    q: "Has your hometown changed much in recent years?",
+    a: "~~Massively~~. A ~~decade ago~~ it was still ==pretty sleepy==, but now there are ~~skyscrapers~~, ~~international hotels~~, and the ~~tourist industry~~ is ~~booming~~. ==Sometimes== I ~~barely recognize~~ certain ~~neighborhoods~~."
+  },
+  {
+    q: "What do you like most about your hometown?",
+    a: "==Probably== the ~~balance between city and nature~~. I can ~~grab coffee~~ in a ~~trendy cafe~~ in the ==morning== and be ~~hiking~~ on ~~Son Tra Mountain~~ by ==afternoon==. That kind of ~~variety~~ is ~~rare~~."
+  },
+  {
+    q: "Is there anything you don't like about it?",
+    a: "The ~~summer heat~~ can be ~~brutal~~, especially in ~~June and July~~. Also, ~~traffic~~ has gotten ==noticeably worse== as more ~~tourists~~ arrive, which can be ~~annoying~~ during ~~peak season~~."
+  },
+  {
+    q: "Would you like to live there in the future?",
+    a: "~~Definitely~~. I see myself ~~settling~~ there ~~long-term~~ once I'm ==done== with my ~~career goals~~. The ~~quality of life~~ is ==exactly== what I'm ~~looking for~~."
+  },
+  {
+    q: "What's the best thing about living there?",
+    a: "For me, it's the ~~work-life balance~~. People aren't as ~~obsessed~~ with ~~hustle culture~~ as in ==bigger cities==, so there's ==actually== time to ~~enjoy life~~ and be with ~~family~~."
+  },
+  {
+    q: "How long have you lived there?",
+    a: "I was ~~born and raised~~ there, so over ~~20 years~~ in total. I did ~~move away~~ ==briefly== for ~~university~~, but I came back ==as soon as== I ~~graduated~~."
+  }
+];
+
+// Build slide list. Per question = 5 slides (level 0..4)
+const slides = [];
+QUESTIONS.forEach((item, qi) => {
+  for (let lvl = 0; lvl <= 4; lvl++) {
+    slides.push({ qIndex: qi, level: lvl });
+  }
+});
+
+let cursor = 0;
+
+function renderAnswer(raw, level) {
+  // level: 1 = full, 2 = hide ~~..~~, 3 = hide ~~..~~ and ==..==, 4 = all hidden
+  if (level === 4) return null;
+
+  // Tokenize: split by ~~..~~ and ==..==
+  // Approach: regex replace
+  let out = raw;
+
+  // Hide level-1 marks ~~text~~
+  out = out.replace(/~~(.*?)~~/g, (_, txt) => {
+    if (level >= 2) {
+      return wrapBlank(txt);
+    }
+    return txt; // show plain at level 1
+  });
+
+  // Hide level-2 marks ==text==
+  out = out.replace(/==(.*?)==/g, (_, txt) => {
+    if (level >= 3) {
+      return wrapBlank(txt);
+    }
+    return txt;
+  });
+
+  return out;
+}
+
+function wrapBlank(txt) {
+  // Replace each word with a blank of similar visual width
+  const words = txt.split(/(\s+)/); // keep whitespace
+  return words.map(w => {
+    if (/^\s+$/.test(w)) return w;
+    if (!w) return w;
+    // Keep punctuation-only attached
+    const m = w.match(/^([^\w]*)([\w'-]+)([^\w]*)$/);
+    if (m) {
+      return m[1] + `<span class="blank">${' '.repeat(Math.max(3, m[2].length))}</span>` + m[3];
+    }
+    return `<span class="blank">${' '.repeat(Math.max(3, w.length))}</span>`;
+  }).join('');
+}
+
+function render() {
+  const slide = slides[cursor];
+  const item = QUESTIONS[slide.qIndex];
+  const card = document.getElementById('card');
+  document.getElementById('counter').textContent = `${cursor + 1} / ${slides.length}`;
+  document.getElementById('topic-name').textContent = `Topic 1 · ${TOPIC} · Q${slide.qIndex + 1}`;
+
+  let html = '';
+
+  if (slide.level === 0) {
+    // Question slide
+    html = `
+      <div class="level-indicator">Question</div>
+      <span class="label q">Question ${slide.qIndex + 1}</span>
+      <div class="question">${item.q}</div>
+    `;
+  } else if (slide.level === 4) {
+    html = `
+      <div class="level-indicator">Recall · Level 4</div>
+      <span class="label empty">Answer</span>
+      <div class="answer hidden-all">— hãy tự nói câu trả lời —</div>
+    `;
+  } else {
+    let labelText = '';
+    let levelTxt = '';
+    if (slide.level === 1) { labelText = 'Answer · Full'; levelTxt = 'Read · Level 1'; }
+    if (slide.level === 2) { labelText = 'Answer · Hide a few'; levelTxt = 'Practice · Level 2'; }
+    if (slide.level === 3) { labelText = 'Answer · Hide more'; levelTxt = 'Practice · Level 3'; }
+    html = `
+      <div class="level-indicator">${levelTxt}</div>
+      <span class="label a">${labelText}</span>
+      <div class="answer">${renderAnswer(item.a, slide.level)}</div>
+    `;
+  }
+
+  // Progress bar across whole deck
+  const progressPct = ((cursor + 1) / slides.length) * 100;
+  html += `<div class="progress"><div class="progress-fill" style="width:${progressPct}%"></div></div>`;
+
+  card.innerHTML = html;
+}
+
+function next() { if (cursor < slides.length - 1) { cursor++; render(); } }
+function prev() { if (cursor > 0) { cursor--; render(); } }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+  else if (e.key === 'Home') { cursor = 0; render(); }
+  else if (e.key === 'End') { cursor = slides.length - 1; render(); }
+});
+
+render();
+</script>
+
+</body>
+</html>
