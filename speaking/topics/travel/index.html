@@ -164,6 +164,13 @@
     text-transform: uppercase;
   }
 
+  .audio-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
   .play-btn {
     display: inline-flex;
     align-items: center;
@@ -176,7 +183,6 @@
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 24px;
     transition: all 0.15s;
     font-family: inherit;
     letter-spacing: 0.3px;
@@ -194,6 +200,59 @@
     font-size: 11px;
     font-family: inherit;
   }
+
+  .speed-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .speed-trigger {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.12s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .speed-trigger:hover { background: #e5e7eb; color: #1e3a8a; }
+  .speed-trigger .caret { font-size: 9px; opacity: 0.7; }
+  .speed-menu {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 6px;
+    display: none;
+    min-width: 110px;
+    z-index: 10;
+  }
+  .speed-menu.open { display: block; }
+  .speed-menu .speed-opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.1s;
+  }
+  .speed-menu .speed-opt:hover { background: #f3f4f6; }
+  .speed-menu .speed-opt.active { background: #1e3a8a; color: #fff; }
 </style>
 </head>
 <body>
@@ -301,11 +360,42 @@ function wrapBlank(txt) {
 }
 
 let currentAudio = null;
+let playbackRate = parseFloat(localStorage.getItem('ielts_speed') || '1.0');
+
+function setSpeed(rate) {
+  playbackRate = rate;
+  localStorage.setItem('ielts_speed', String(rate));
+  if (currentAudio) currentAudio.playbackRate = rate;
+  document.querySelectorAll('.speed-opt').forEach(b => {
+    b.classList.toggle('active', parseFloat(b.dataset.rate) === rate);
+  });
+  document.querySelectorAll('.speed-trigger .label').forEach(l => {
+    l.textContent = `${rate}×`;
+  });
+  closeSpeedMenu();
+}
+
+function toggleSpeedMenu(ev) {
+  ev.stopPropagation();
+  const menu = document.querySelector('.speed-menu');
+  if (menu) menu.classList.toggle('open');
+}
+
+function closeSpeedMenu() {
+  const menu = document.querySelector('.speed-menu');
+  if (menu) menu.classList.remove('open');
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.speed-wrap')) closeSpeedMenu();
+});
+
 function playAudio(src) {
   if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
   const btn = document.querySelector('.play-btn');
   if (btn) btn.classList.add('playing');
   currentAudio = new Audio(src);
+  currentAudio.playbackRate = playbackRate;
   currentAudio.addEventListener('ended', () => { if (btn) btn.classList.remove('playing'); });
   currentAudio.addEventListener('error', () => { if (btn) btn.classList.remove('playing'); });
   currentAudio.play().catch(() => { if (btn) btn.classList.remove('playing'); });
@@ -325,23 +415,43 @@ function render() {
 
   let html = '';
 
+  const speedHtml = `
+    <div class="speed-wrap">
+      <button class="speed-trigger" onclick="toggleSpeedMenu(event)">
+        <span class="label">${playbackRate}×</span><span class="caret">▾</span>
+      </button>
+      <div class="speed-menu">
+        <button class="speed-opt" data-rate="0.75" onclick="setSpeed(0.75)">0.75× &nbsp;Slow</button>
+        <button class="speed-opt" data-rate="1" onclick="setSpeed(1)">1× &nbsp;Normal</button>
+        <button class="speed-opt" data-rate="1.25" onclick="setSpeed(1.25)">1.25× &nbsp;Faster</button>
+        <button class="speed-opt" data-rate="1.5" onclick="setSpeed(1.5)">1.5× &nbsp;Fast</button>
+      </div>
+    </div>
+  `;
+
   if (slide.level === 0) {
     html = `
       <div class="level-indicator">Question</div>
       <span class="label q">Question ${qNum}</span>
       <div class="question">${item.q}</div>
-      <button class="play-btn" onclick="playAudio('${qAudio}')">
-        <span class="icon">▶</span> Play question <kbd>P</kbd>
-      </button>
+      <div class="audio-row">
+        <button class="play-btn" onclick="playAudio('${qAudio}')">
+          <span class="icon">▶</span> Play question <kbd>P</kbd>
+        </button>
+        ${speedHtml}
+      </div>
     `;
   } else if (slide.level === 4) {
     html = `
       <div class="level-indicator">Recall · Level 4</div>
       <span class="label empty">Answer</span>
       <div class="answer hidden-all">— hãy tự nói câu trả lời —</div>
-      <button class="play-btn" onclick="playAudio('${aAudio}')">
-        <span class="icon">▶</span> Play answer <kbd>P</kbd>
-      </button>
+      <div class="audio-row">
+        <button class="play-btn" onclick="playAudio('${aAudio}')">
+          <span class="icon">▶</span> Play answer <kbd>P</kbd>
+        </button>
+        ${speedHtml}
+      </div>
     `;
   } else {
     let labelText = '';
@@ -353,9 +463,12 @@ function render() {
       <div class="level-indicator">${levelTxt}</div>
       <span class="label a">${labelText}</span>
       <div class="answer">${renderAnswer(item.a, slide.level)}</div>
-      <button class="play-btn" onclick="playAudio('${aAudio}')">
-        <span class="icon">▶</span> Play answer <kbd>P</kbd>
-      </button>
+      <div class="audio-row">
+        <button class="play-btn" onclick="playAudio('${aAudio}')">
+          <span class="icon">▶</span> Play answer <kbd>P</kbd>
+        </button>
+        ${speedHtml}
+      </div>
     `;
   }
 
@@ -363,6 +476,10 @@ function render() {
   html += `<div class="progress"><div class="progress-fill" style="width:${progressPct}%"></div></div>`;
 
   card.innerHTML = html;
+
+  document.querySelectorAll('.speed-opt').forEach(b => {
+    b.classList.toggle('active', parseFloat(b.dataset.rate) === playbackRate);
+  });
 }
 
 function next() { if (cursor < slides.length - 1) { cursor++; render(); } }

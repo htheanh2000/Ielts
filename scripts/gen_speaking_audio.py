@@ -25,8 +25,10 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 from gen_speaking_topics import TOPICS  # noqa: E402
 
 REPO_ROOT = SCRIPTS_DIR.parent
-MODEL = Path.home() / ".cache" / "piper-voices" / "en_US-amy-medium.onnx"
+MODEL = Path.home() / ".cache" / "piper-voices" / "cori-med.onnx"
 LENGTH_SCALE = "1.0"  # 1.0 = normal, >1.0 slower (more pedagogical), <1.0 faster
+# Voice: Cori (medium) by Bryce Beattie — UK English female, public domain
+# Source: https://brycebeattie.com/files/tts/  (LibriVox-trained, 24h dataset)
 
 
 def strip_markup(text: str) -> str:
