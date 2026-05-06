@@ -375,7 +375,7 @@ QUESTIONS.forEach((item, qi) => {
 
 let cursor = 0;
 
-const NBSP_CHAR = ' ';
+const NBSP_CHAR = ' ';
 function escAttr(s) { return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
 
 let __wordIdx = 0;
@@ -473,6 +473,24 @@ function clearKaraoke() {
   if (karaokeRAF) { cancelAnimationFrame(karaokeRAF); karaokeRAF = null; }
 }
 
+function getWordWeight(el) {
+  const txt = el.dataset.word || el.textContent.trim();
+  // Base weight: phoneme-ish proxy via char count, clamped
+  let w = Math.max(2, txt.length);
+  // Plus extra "time" for trailing punctuation (acts like a pause)
+  let n = el.nextSibling;
+  let scanned = '';
+  while (n && n.nodeType === 3 /* TEXT_NODE */ && scanned.length < 8) {
+    scanned += n.textContent;
+    if (/\S/.test(n.textContent)) break;
+    n = n.nextSibling;
+  }
+  if (/[.!?]/.test(scanned))      w += 6;   // sentence end
+  else if (/[—–]/.test(scanned))  w += 4;   // em/en dash
+  else if (/[,;:]/.test(scanned)) w += 3;   // mid-clause comma
+  return w;
+}
+
 function startKaraoke() {
   const container = document.querySelector('.answer') || document.querySelector('.question');
   if (!container) return;
@@ -480,12 +498,31 @@ function startKaraoke() {
   if (karaokeWords.length === 0) return;
   const dur = currentAudio.duration;
   if (!dur || !isFinite(dur)) return;
-  const per = dur / karaokeWords.length;
+
+  // Empirical: Cori voice has a small lead-in pause; trim a touch off the start.
+  const leadIn = Math.min(0.15, dur * 0.03);
+  const usable = dur - leadIn;
+
+  const weights = karaokeWords.map(getWordWeight);
+  const total = weights.reduce((a, b) => a + b, 0);
+  let cum = leadIn;
+  karaokeWords.forEach((el, i) => {
+    const slice = (weights[i] / total) * usable;
+    el._s = cum;
+    cum += slice;
+    el._e = cum;
+  });
+
   let lastIdx = -1;
   function tick() {
     if (!currentAudio || currentAudio.paused) return;
     const t = currentAudio.currentTime;
-    const idx = Math.min(karaokeWords.length - 1, Math.floor(t / per));
+    // Linear scan from lastIdx forward (cheaper than binary search for small N)
+    let idx = lastIdx;
+    if (idx < 0 || t < karaokeWords[idx]._s || t >= karaokeWords[idx]._e) {
+      idx = karaokeWords.findIndex(el => t < el._e);
+      if (idx < 0) idx = karaokeWords.length - 1;
+    }
     if (idx !== lastIdx) {
       if (lastIdx >= 0) karaokeWords[lastIdx].classList.remove('speaking');
       karaokeWords[idx].classList.add('speaking');
