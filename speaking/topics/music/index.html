@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>IELTS Speaking Part 1 — Hometown</title>
+<title>IELTS Speaking Part 1 — Music</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
@@ -37,6 +37,8 @@
     text-transform: uppercase;
     color: #1e3a8a;
   }
+  .topic-tag a { color: inherit; text-decoration: none; opacity: 0.7; }
+  .topic-tag a:hover { opacity: 1; }
   .counter {
     font-size: 13px;
     color: #6b7280;
@@ -166,7 +168,7 @@
 <body>
 
 <header>
-  <div class="topic-tag" id="topic-name">Topic 1 · Hometown</div>
+  <div class="topic-tag"><a href="/">← Decks</a> &nbsp;·&nbsp; <span id="topic-name">Topic 7 · Music</span></div>
   <div class="counter" id="counter">1 / 50</div>
 </header>
 
@@ -190,66 +192,52 @@
 </footer>
 
 <script>
-/*
-  Markup syntax inside answers:
-    ~~text~~  -> hide at level 1 onward (slide 3, 4)
-    ==text==  -> hide at level 2 onward (slide 4 only)
-    plain     -> always shown until level 3 (where everything is hidden)
-
-  Levels per question (5 slides):
-    0 = Question
-    1 = Full answer
-    2 = Hide level 1 (a few)
-    3 = Hide level 1 + 2 (more)
-    4 = Hide everything (only "Answer:" label)
-*/
-
-const TOPIC = "Hometown";
+const TOPIC_NUM = 7;
+const TOPIC = "Music";
 
 const QUESTIONS = [
   {
-    q: "Where is your hometown?",
-    a: "My hometown is ~~Dong Thap~~, a ~~small province~~ in the ~~Mekong Delta~~ region of ~~southern Vietnam~~. It's about a ==three-hour drive== from ~~Ho Chi Minh City~~, where I currently ==live and work== as a ~~backend developer~~."
+    "q": "Do you like listening to music?",
+    "a": "~~Definitely~~. Music is on for ~~most of my workday~~ — it helps me ~~focus when I'm coding~~. Without music, the ~~office or my apartment~~ feels ==too quiet, weirdly==."
   },
   {
-    q: "What's your hometown like?",
-    a: "It's a ~~quiet, rural area~~ surrounded by ~~rice fields~~, ~~lotus ponds~~, and ~~rivers~~. The ==pace of life== is ~~super slow~~ compared to ~~Saigon~~ — people are ~~friendly~~, the food is ~~fresh~~, and you can hear ~~birds~~ in the morning instead of ~~motorbikes~~."
+    "q": "What kind of music do you like?",
+    "a": "Mostly ~~chill stuff~~ — ~~lo-fi~~, ~~indie~~, ~~acoustic singer-songwriter~~. When I'm coding I need something ~~without lyrics~~. On weekends I'll throw on ==Vietnamese indie or some pop==."
   },
   {
-    q: "Is your hometown a popular place?",
-    a: "Not really, it's not a ~~major tourist destination~~. But ~~Sa Dec~~ — a ~~flower village~~ in my province — gets a ==fair number== of visitors during ~~Tet~~ for the ~~flower season~~. Most outsiders haven't really ==heard of== ~~Dong Thap~~."
+    "q": "When do you usually listen to music?",
+    "a": "Pretty much ~~all day~~. Music ~~while I work~~, music ~~in the gym~~, even music ~~while I'm cooking~~. The only time I don't listen is during ~~meetings~~, or ==when I'm trying to fall asleep==."
   },
   {
-    q: "Do you like your hometown?",
-    a: "Yeah, I really do. The food is ~~incredible~~ — especially ~~hu tieu Sa Dec~~ — and I love how ~~peaceful~~ it feels. Whenever ~~Saigon~~ gets too ~~overwhelming~~, going home for a ==weekend== ~~recharges~~ me completely."
+    "q": "Do you play any musical instruments?",
+    "a": "I picked up the ~~guitar in high school~~ and got ~~reasonably okay~~ at it. I haven't ~~touched it much since university~~ though — it's ~~collecting dust in the corner~~. I keep telling myself ==I'll start again==."
   },
   {
-    q: "Has your hometown changed much in recent years?",
-    a: "A bit, but not ~~dramatically~~. ~~New roads~~ make travel ~~easier~~, and a few ~~coffee shops~~ have opened up in town. But the core feel — ~~rural, slow, agricultural~~ — has stayed ==pretty much the same==. Honestly I think that's a ~~good thing~~."
+    "q": "Has your taste in music changed?",
+    "a": "A lot. As a teenager I was into ~~rock and metal~~ — ~~Linkin Park, Green Day~~. As I got older I shifted toward ~~calmer genres~~. Now anything ~~too aggressive~~ just feels ==exhausting to listen to==."
   },
   {
-    q: "What do you like most about your hometown?",
-    a: "==Honestly==, the ~~food and the quietness~~. I can wake up, grab a ~~Vietnamese drip coffee~~ at a ~~riverside cafe~~, and just ~~watch boats~~ pass by for hours. That kind of ~~stillness~~ is ==impossible to find== in ~~Saigon~~."
+    "q": "Do you like live music?",
+    "a": "Yeah, when I get the chance. There aren't ~~tons of concerts in Saigon~~, but I've been to a few ~~small acoustic shows at cafes~~. There's something about ~~live performance~~ that ==recordings can't capture==."
   },
   {
-    q: "Is there anything you don't like about it?",
-    a: "Career-wise, it's ~~tough~~. There aren't many ~~tech jobs~~ in the area — I work as a ~~backend Golang developer~~, so I had to ~~move to Saigon~~. Also, the ~~summer heat~~ in the ~~Mekong~~ can be ==pretty intense==."
+    "q": "Is music important in your daily life?",
+    "a": "~~Hugely~~. It's like ~~background noise that shapes my mood~~. A ~~good playlist~~ can turn a ~~tedious task~~ into something ~~almost enjoyable~~. Without it, the day just ==feels flatter==."
   },
   {
-    q: "Would you like to live there in the future?",
-    a: "Maybe in the ~~long run~~. Right now I need to be in ~~Saigon~~ for my ~~career~~, but once I'm more ~~established~~ or working ~~remotely~~ full-time, I'd love to ~~move back~~. The ~~quality of life~~ there is ==hard to beat==."
+    "q": "Do you sing?",
+    "a": "Only in the ~~shower~~ or when ~~no one's around~~. ~~Karaoke is huge in Vietnam~~, and my friends drag me out sometimes — I'll do it once ==enough beer is involved==. I'm aware I'm not good."
   },
   {
-    q: "What's the best thing about living there?",
-    a: "For me, it's the ~~cost of living~~ and how ~~close everyone~~ is. My whole ~~family~~ lives within a ~~few kilometers~~, food is ~~dirt cheap~~, and there's almost no ~~traffic~~. Life is just ==a lot simpler==."
+    "q": "What music was popular when you were young?",
+    "a": "~~V-pop~~ and a lot of ~~K-pop~~, especially around the ~~early 2010s~~. ~~Big Bang and Super Junior~~ were everywhere. I wasn't into it then, but those songs ==trigger major nostalgia== now."
   },
   {
-    q: "How long have you lived there?",
-    a: "I grew up there until I was ~~18~~, so about ~~18 years~~ in total. After ~~high school~~ I moved to ~~Saigon~~ for ~~university~~, and I've been ==based== there ever since — but I still go back ~~two or three times a year~~."
+    "q": "Do people in your country listen to a lot of music?",
+    "a": "~~Absolutely~~, music is everywhere in Vietnam. ~~Cafes, taxis, weddings~~, even ~~sidewalk shops~~. ~~Karaoke~~ especially is a ~~huge cultural thing~~ — almost every gathering ends with ==someone grabbing a microphone==."
   }
 ];
 
-// Build slide list. Per question = 5 slides (level 0..4)
 const slides = [];
 QUESTIONS.forEach((item, qi) => {
   for (let lvl = 0; lvl <= 4; lvl++) {
@@ -260,44 +248,23 @@ QUESTIONS.forEach((item, qi) => {
 let cursor = 0;
 
 function renderAnswer(raw, level) {
-  // level: 1 = full, 2 = hide ~~..~~, 3 = hide ~~..~~ and ==..==, 4 = all hidden
   if (level === 4) return null;
-
-  // Tokenize: split by ~~..~~ and ==..==
-  // Approach: regex replace
   let out = raw;
-
-  // Hide level-1 marks ~~text~~
-  out = out.replace(/~~(.*?)~~/g, (_, txt) => {
-    if (level >= 2) {
-      return wrapBlank(txt);
-    }
-    return txt; // show plain at level 1
-  });
-
-  // Hide level-2 marks ==text==
-  out = out.replace(/==(.*?)==/g, (_, txt) => {
-    if (level >= 3) {
-      return wrapBlank(txt);
-    }
-    return txt;
-  });
-
+  out = out.replace(/~~(.*?)~~/g, (_, txt) => level >= 2 ? wrapBlank(txt) : txt);
+  out = out.replace(/==(.*?)==/g, (_, txt) => level >= 3 ? wrapBlank(txt) : txt);
   return out;
 }
 
 function wrapBlank(txt) {
-  // Replace each word with a blank of similar visual width
-  const words = txt.split(/(\s+)/); // keep whitespace
+  const words = txt.split(/(\s+)/);
   return words.map(w => {
     if (/^\s+$/.test(w)) return w;
     if (!w) return w;
-    // Keep punctuation-only attached
     const m = w.match(/^([^\w]*)([\w'-]+)([^\w]*)$/);
     if (m) {
-      return m[1] + `<span class="blank">${' '.repeat(Math.max(3, m[2].length))}</span>` + m[3];
+      return m[1] + `<span class="blank">${' '.repeat(Math.max(3, m[2].length))}</span>` + m[3];
     }
-    return `<span class="blank">${' '.repeat(Math.max(3, w.length))}</span>`;
+    return `<span class="blank">${' '.repeat(Math.max(3, w.length))}</span>`;
   }).join('');
 }
 
@@ -306,12 +273,11 @@ function render() {
   const item = QUESTIONS[slide.qIndex];
   const card = document.getElementById('card');
   document.getElementById('counter').textContent = `${cursor + 1} / ${slides.length}`;
-  document.getElementById('topic-name').textContent = `Topic 1 · ${TOPIC} · Q${slide.qIndex + 1}`;
+  document.getElementById('topic-name').textContent = `Topic ${TOPIC_NUM} · ${TOPIC} · Q${slide.qIndex + 1}`;
 
   let html = '';
 
   if (slide.level === 0) {
-    // Question slide
     html = `
       <div class="level-indicator">Question</div>
       <span class="label q">Question ${slide.qIndex + 1}</span>
@@ -336,7 +302,6 @@ function render() {
     `;
   }
 
-  // Progress bar across whole deck
   const progressPct = ((cursor + 1) / slides.length) * 100;
   html += `<div class="progress"><div class="progress-fill" style="width:${progressPct}%"></div></div>`;
 
