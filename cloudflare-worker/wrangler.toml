@@ -3,6 +3,10 @@ main = "src/index.js"
 compatibility_date = "2024-12-01"
 
 # Plain-text vars are OK here. Secrets must be set via:
-#   wrangler secret put SPEECHACE_API_KEY
+#   wrangler secret put AZURE_SPEECH_KEY
 [vars]
 ALLOWED_ORIGIN = "https://ielts.huynhtheanh.com"
+# Pick the region closest to you. Common options:
+#   southeastasia, eastasia, japaneast, koreacentral,
+#   eastus, westus, westeurope, australiaeast
+AZURE_REGION = "southeastasia"

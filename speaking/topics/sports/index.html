@@ -1175,6 +1175,59 @@ async function toggleRecord(btn) {
   if (resultEl) resultEl.innerHTML = '';
 }
 
+// Convert recorded webm/opus blob to WAV PCM 16-bit mono 16kHz (Azure requirement)
+async function blobToWav16k(blob) {
+  const arrayBuf = await blob.arrayBuffer();
+  const ac = new (window.AudioContext || window.webkitAudioContext)();
+  const decoded = await ac.decodeAudioData(arrayBuf);
+  ac.close();
+
+  const targetRate = 16000;
+  const offline = new OfflineAudioContext(1, Math.ceil(decoded.duration * targetRate), targetRate);
+  const src = offline.createBufferSource();
+  // Force mono down-mix
+  if (decoded.numberOfChannels === 1) {
+    src.buffer = decoded;
+  } else {
+    const mono = offline.createBuffer(1, decoded.length, decoded.sampleRate);
+    const out = mono.getChannelData(0);
+    for (let c = 0; c < decoded.numberOfChannels; c++) {
+      const ch = decoded.getChannelData(c);
+      for (let i = 0; i < ch.length; i++) out[i] += ch[i] / decoded.numberOfChannels;
+    }
+    src.buffer = mono;
+  }
+  src.connect(offline.destination);
+  src.start();
+  const rendered = await offline.startRendering();
+
+  const samples = rendered.getChannelData(0);
+  const buffer = new ArrayBuffer(44 + samples.length * 2);
+  const view = new DataView(buffer);
+  // RIFF header
+  const writeStr = (off, s) => { for (let i = 0; i < s.length; i++) view.setUint8(off + i, s.charCodeAt(i)); };
+  writeStr(0, 'RIFF');
+  view.setUint32(4, 36 + samples.length * 2, true);
+  writeStr(8, 'WAVE');
+  writeStr(12, 'fmt ');
+  view.setUint32(16, 16, true);          // PCM chunk size
+  view.setUint16(20, 1, true);           // format = PCM
+  view.setUint16(22, 1, true);           // channels = mono
+  view.setUint32(24, targetRate, true);  // sample rate
+  view.setUint32(28, targetRate * 2, true); // byte rate
+  view.setUint16(32, 2, true);           // block align
+  view.setUint16(34, 16, true);          // bits per sample
+  writeStr(36, 'data');
+  view.setUint32(40, samples.length * 2, true);
+  let off = 44;
+  for (let i = 0; i < samples.length; i++) {
+    const s = Math.max(-1, Math.min(1, samples[i]));
+    view.setInt16(off, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+    off += 2;
+  }
+  return new Blob([buffer], { type: 'audio/wav' });
+}
+
 async function uploadAndScore(blob, refText) {
   const resultEl = document.querySelector('.score-result');
   if (!resultEl) return;
@@ -1182,18 +1235,27 @@ async function uploadAndScore(blob, refText) {
     resultEl.innerHTML = `<div class="score-error">Worker URL chưa được cấu hình. Xem cloudflare-worker/README.md</div>`;
     return;
   }
-  resultEl.innerHTML = `<div class="score-loading">Đang phân tích phát âm…</div>`;
+  resultEl.innerHTML = `<div class="score-loading">Đang chuẩn hoá audio…</div>`;
 
+  let wavBlob;
+  try {
+    wavBlob = await blobToWav16k(blob);
+  } catch (e) {
+    resultEl.innerHTML = `<div class="score-error">Không decode được audio: ${e.message}</div>`;
+    return;
+  }
+
+  resultEl.innerHTML = `<div class="score-loading">Đang phân tích phát âm…</div>`;
   const fd = new FormData();
-  fd.append('audio', blob, 'speech.webm');
+  fd.append('audio', wavBlob, 'speech.wav');
   fd.append('text', refText);
-  fd.append('dialect', 'en-gb');
+  fd.append('language', 'en-GB');
 
   try {
     const r = await fetch(PRONUNCIATION_WORKER_URL, { method: 'POST', body: fd });
     const data = await r.json();
     if (!r.ok || data.error) {
-      resultEl.innerHTML = `<div class="score-error">Lỗi: ${data.error || 'HTTP ' + r.status}</div>`;
+      resultEl.innerHTML = `<div class="score-error">Lỗi: ${data.error || 'HTTP ' + r.status}${data.detail ? ' — ' + data.detail : ''}</div>`;
       return;
     }
     renderScore(resultEl, data, blob);
@@ -1202,37 +1264,51 @@ async function uploadAndScore(blob, refText) {
   }
 }
 
-function bandFromQuality(q) {
-  // Fallback IELTS estimate from overall quality_score (0-100)
-  if (q >= 85) return 8.0;
-  if (q >= 75) return 7.0;
-  if (q >= 65) return 6.0;
-  if (q >= 55) return 5.0;
-  if (q >= 45) return 4.0;
+// Map Azure 0-100 PronScore to IELTS band (rough heuristic — Azure does not output band directly)
+function pronScoreToBand(s) {
+  if (s >= 90) return 8.5;
+  if (s >= 85) return 8.0;
+  if (s >= 80) return 7.5;
+  if (s >= 75) return 7.0;
+  if (s >= 70) return 6.5;
+  if (s >= 65) return 6.0;
+  if (s >= 60) return 5.5;
+  if (s >= 55) return 5.0;
+  if (s >= 50) return 4.5;
+  if (s >= 45) return 4.0;
+  if (s >= 35) return 3.5;
   return 3.0;
 }
 
 function renderScore(container, data, blob) {
-  const ts = data.text_score || data;
-  const ielts = (ts.ielts_score) || (data.ielts_score) || {};
-  const words = ts.word_score_list || [];
-  const overall = ielts.pronunciation || ts.quality_score || 0;
-  const fluency = ielts.fluency || (ts.fluency && ts.fluency.overall_metrics && ts.fluency.overall_metrics.fluency_score) || null;
+  // Azure response shape:
+  // { RecognitionStatus, DisplayText, NBest: [{ Display, PronunciationAssessment, Words: [...] }] }
+  const top = (data.NBest && data.NBest[0]) || {};
+  const pa = top.PronunciationAssessment || {};
+  const words = top.Words || [];
 
-  const band = (typeof overall === 'number' && overall <= 9) ? overall : bandFromQuality(overall);
+  const pron = pa.PronScore != null ? pa.PronScore : (pa.PronunciationScore || 0);
+  const accuracy = pa.AccuracyScore;
+  const fluency = pa.FluencyScore;
+  const completeness = pa.CompletenessScore;
+  const band = pronScoreToBand(pron);
 
   let wordsHtml = '';
   for (const w of words) {
-    const q = (w.quality_score != null ? w.quality_score : (w.word_score && w.word_score.quality_score)) || 0;
-    const cls = q >= 80 ? 'good' : q >= 60 ? 'ok' : 'poor';
-    wordsHtml += `<span class="score-word ${cls}" title="quality ${q}">${w.word}</span> `;
+    const wpa = w.PronunciationAssessment || {};
+    const acc = wpa.AccuracyScore != null ? wpa.AccuracyScore : 0;
+    const errType = wpa.ErrorType || 'None';
+    let cls = acc >= 80 ? 'good' : acc >= 60 ? 'ok' : 'poor';
+    if (errType === 'Omission' || errType === 'Insertion') cls = 'poor';
+    const tip = `${Math.round(acc)}/100${errType !== 'None' ? ' · ' + errType : ''}`;
+    wordsHtml += `<span class="score-word ${cls}" title="${tip}">${w.Word}</span> `;
   }
 
   let subRow = '';
-  if (fluency != null) subRow += `<div class="sub">Fluency<b>${Math.round(fluency)}</b></div>`;
-  if (ts.quality_score != null && typeof overall === 'number' && overall <= 9) {
-    subRow += `<div class="sub">Quality<b>${Math.round(ts.quality_score)}/100</b></div>`;
-  }
+  if (accuracy != null) subRow += `<div class="sub">Accuracy<b>${Math.round(accuracy)}</b></div>`;
+  if (fluency != null)  subRow += `<div class="sub">Fluency<b>${Math.round(fluency)}</b></div>`;
+  if (completeness != null) subRow += `<div class="sub">Completeness<b>${Math.round(completeness)}</b></div>`;
+  if (pron != null) subRow += `<div class="sub">Overall<b>${Math.round(pron)}/100</b></div>`;
 
   const audioUrl = URL.createObjectURL(blob);
 
@@ -1240,10 +1316,10 @@ function renderScore(container, data, blob) {
     <div class="score-card">
       <div class="band-row">
         <div class="band-num">${band.toFixed(1)}</div>
-        <div class="band-label">Pronunciation band</div>
+        <div class="band-label">Pronunciation band <span style="opacity:0.6">(estimate from Azure PronScore)</span></div>
       </div>
       ${subRow ? `<div class="sub-row">${subRow}</div>` : ''}
-      <div class="words-label">Word-level</div>
+      <div class="words-label">Word-level accuracy</div>
       <div class="words">${wordsHtml || '<span style="color:#9ca3af">No word breakdown available.</span>'}</div>
       <div class="replay-row">
         <audio src="${audioUrl}" controls style="height:32px; vertical-align:middle"></audio>
