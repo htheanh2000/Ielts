@@ -38,10 +38,32 @@
   footer { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--rule-soft); font-family: 'Roboto Mono', monospace; font-size: 13px; color: var(--ink-muted); letter-spacing: 0.06em; }
   footer a { color: var(--ink-muted); text-decoration: none; }
   footer a:hover { color: var(--accent); }
+  /* Quick-jump dropdown */
+  .quick-jump {
+    position: sticky; top: 16px; z-index: 50;
+    display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;
+    background: var(--bg); padding: 18px 0;
+    margin: 0 0 56px;
+    border-top: 3px solid var(--accent); border-bottom: 1px solid var(--rule-soft);
+  }
+  .quick-jump .qj-label { font-family: 'Roboto Mono', monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .quick-jump select {
+    font-family: 'Roboto Slab', Georgia, serif; font-size: 18px; font-weight: 500;
+    color: var(--ink); background-color: var(--bg);
+    border: 1px solid var(--rule-soft); border-radius: 0;
+    padding: 12px 44px 12px 16px;
+    width: 100%; cursor: pointer;
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path d='M3 5l4 4 4-4' fill='none' stroke='%23C8202F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat; background-position: right 16px center;
+  }
+  .quick-jump select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .quick-jump select:hover { border-color: var(--accent); }
   @media (max-width: 640px) {
     h1 { font-size: 48px; }
     .lesson { grid-template-columns: 1fr; gap: 6px; }
     .lesson .meta { justify-self: end; }
+    .quick-jump { grid-template-columns: 1fr; gap: 10px; }
   }
 </style>
 </head>
@@ -50,6 +72,40 @@
   <p class="eyebrow">IELTS · One-on-one decks</p>
   <h1>Lesson <em>decks.</em></h1>
   <p class="lede">Slide-deck bài giảng IELTS 1-1. Mỗi buổi học có một deck riêng, dạng slide full-screen — dùng phím <code>← →</code> để điều hướng, <code>Cmd+P</code> để xuất PDF.</p>
+
+  <div class="quick-jump">
+    <span class="qj-label">Jump to lesson</span>
+    <select aria-label="Jump to lesson" onchange="if(this.value){window.location.href=this.value;}">
+      <option value="">— Chọn một bài —</option>
+      <optgroup label="Reading">
+        <option value="/reading/lesson/1/">L01 · Skimming &amp; Scanning — Practice 4 Passages</option>
+        <option value="/reading/lesson/1/no-answers/">L01 · Bản không đáp án P3–P4</option>
+      </optgroup>
+      <optgroup label="Listening">
+        <option value="/listening/lesson/1/">L01 · S1 Form &amp; S2 MCQ/Map — Cambridge 19 Test 1</option>
+      </optgroup>
+      <optgroup label="Speaking">
+        <option value="/speaking/lesson/1/">L01 · Part 1 · Foundations — Warm-up &amp; ARE</option>
+      </optgroup>
+      <optgroup label="Speaking · Topic Cards">
+        <option value="/speaking/topics/hometown/">T01 · Hometown</option>
+        <option value="/speaking/topics/work/">T02 · Work</option>
+        <option value="/speaking/topics/hobbies/">T03 · Hobbies</option>
+        <option value="/speaking/topics/family/">T04 · Family</option>
+        <option value="/speaking/topics/daily-routine/">T05 · Daily Routine</option>
+        <option value="/speaking/topics/food/">T06 · Food</option>
+        <option value="/speaking/topics/music/">T07 · Music</option>
+        <option value="/speaking/topics/weather/">T08 · Weather</option>
+        <option value="/speaking/topics/sports/">T09 · Sports</option>
+        <option value="/speaking/topics/travel/">T10 · Travel</option>
+      </optgroup>
+      <optgroup label="Writing">
+        <option value="/writing/lesson/2/">L02 · Task 1 — Charts &amp; Trends</option>
+        <option value="/writing/lesson/3/">L03 · Task 1 — Maps &amp; Change</option>
+        <option value="/writing/lesson/4/">L04 · Task 1 — Process &amp; Cycle</option>
+      </optgroup>
+    </select>
+  </div>
 
   <div class="group">
     <p class="group-title">Reading</p>
