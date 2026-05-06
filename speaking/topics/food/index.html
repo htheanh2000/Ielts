@@ -131,6 +131,115 @@
   }
   .answer .blank.speaking { background: rgba(59, 130, 246, 0.55); }
 
+  .record-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #c2410c;
+    border: 1.5px solid #c2410c;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .record-btn:hover { background: #c2410c; color: #fff; }
+  .record-btn.recording { background: #c2410c; color: #fff; animation: rec-pulse 1.2s ease-in-out infinite; }
+  @keyframes rec-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(194, 65, 12, 0.4); }
+    50%      { box-shadow: 0 0 0 10px rgba(194, 65, 12, 0); }
+  }
+  .record-btn .rec-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c2410c;
+    display: inline-block;
+  }
+  .record-btn.recording .rec-dot { background: #fff; }
+
+  .score-result { margin-top: 28px; min-height: 0; }
+  .score-loading {
+    color: #6b7280;
+    font-size: 14px;
+    font-style: italic;
+    padding: 12px 0;
+  }
+  .score-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border-left: 3px solid #b91c1c;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .score-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    animation: trans-pop 0.25s ease-out;
+  }
+  .score-card .band-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .score-card .band-num {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .score-card .band-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+    text-transform: uppercase;
+  }
+  .score-card .sub-row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+  .score-card .sub { font-size: 12px; color: #6b7280; }
+  .score-card .sub b { display: block; font-size: 18px; color: #111827; font-weight: 600; }
+  .score-card .words-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .score-card .words { font-size: 17px; line-height: 1.7; }
+  .score-card .score-word {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    margin: 0 1px;
+    font-weight: 500;
+  }
+  .score-card .score-word.good { background: #dcfce7; color: #14532d; }
+  .score-card .score-word.ok   { background: #fef3c7; color: #78350f; }
+  .score-card .score-word.poor { background: #fee2e2; color: #7f1d1d; }
+  .score-card .replay-row { margin-top: 12px; }
+  .score-card .replay-rec {
+    background: transparent;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .score-card .replay-rec:hover { border-color: #1e3a8a; color: #1e3a8a; }
+
   .word, .blank.revealed { cursor: pointer; }
   .word:hover, .blank.revealed:hover {
     background: rgba(59, 130, 246, 0.12);
@@ -436,6 +545,10 @@
 const TOPIC_NUM = 6;
 const TOPIC = "Food";
 
+// Cloudflare Worker URL for pronunciation scoring (Speechace proxy).
+// Set after `wrangler deploy` (see cloudflare-worker/README.md). Empty -> recording UI hidden.
+const PRONUNCIATION_WORKER_URL = "";
+
 const QUESTIONS = [
   {
     "q": "What kind of food do you like?",
@@ -490,6 +603,7 @@ let cursor = 0;
 
 const NBSP_CHAR = ' ';
 function escAttr(s) { return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+function stripMarkup(s) { return s.replace(/~~(.*?)~~/g, '$1').replace(/==(.*?)==/g, '$1'); }
 
 let __wordIdx = 0;
 function emitToken(tok, hideAtLevel, currentLevel) {
@@ -971,6 +1085,12 @@ function render() {
       </div>
     `;
   } else if (slide.level === 4) {
+    const refText = stripMarkup(item.a);
+    const recordHtml = PRONUNCIATION_WORKER_URL ? `
+      <button class="record-btn" onclick="toggleRecord(this)" data-text="${escAttr(refText)}">
+        <span class="rec-dot"></span><span class="rec-text">Record &amp; score</span>
+      </button>
+    ` : '';
     html = `
       <div class="level-indicator">Recall · Level 4</div>
       <span class="label empty">Answer</span>
@@ -978,7 +1098,9 @@ function render() {
       <div class="audio-row">
         ${playBtnHtml(aAudio, 'Play answer')}
         ${speedHtml}
+        ${recordHtml}
       </div>
+      <div class="score-result"></div>
     `;
   } else {
     let labelText = '';
@@ -1009,6 +1131,126 @@ function render() {
 
 function next() { if (cursor < slides.length - 1) { cursor++; render(); } }
 function prev() { if (cursor > 0) { cursor--; render(); } }
+
+// --- Pronunciation scoring (Speechace via Cloudflare Worker) ---
+let __mediaRecorder = null;
+let __recChunks = [];
+let __recBlob = null;
+let __recStream = null;
+
+async function toggleRecord(btn) {
+  if (__mediaRecorder && __mediaRecorder.state === 'recording') {
+    __mediaRecorder.stop();
+    return;
+  }
+  const refText = btn.dataset.text || '';
+  const resultEl = document.querySelector('.score-result');
+
+  try {
+    __recStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch (e) {
+    if (resultEl) resultEl.innerHTML = `<div class="score-error">Cần cấp quyền microphone để chấm điểm.</div>`;
+    return;
+  }
+
+  __recChunks = [];
+  __recBlob = null;
+  let mimeType = 'audio/webm';
+  if (window.MediaRecorder && !MediaRecorder.isTypeSupported('audio/webm')) {
+    if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
+    else mimeType = '';
+  }
+  __mediaRecorder = mimeType ? new MediaRecorder(__recStream, { mimeType }) : new MediaRecorder(__recStream);
+  __mediaRecorder.ondataavailable = (e) => { if (e.data && e.data.size > 0) __recChunks.push(e.data); };
+  __mediaRecorder.onstop = async () => {
+    if (__recStream) { __recStream.getTracks().forEach(t => t.stop()); __recStream = null; }
+    btn.classList.remove('recording');
+    btn.querySelector('.rec-text').textContent = 'Record again';
+    __recBlob = new Blob(__recChunks, { type: __mediaRecorder.mimeType || 'audio/webm' });
+    await uploadAndScore(__recBlob, refText);
+  };
+  __mediaRecorder.start();
+  btn.classList.add('recording');
+  btn.querySelector('.rec-text').textContent = 'Stop recording';
+  if (resultEl) resultEl.innerHTML = '';
+}
+
+async function uploadAndScore(blob, refText) {
+  const resultEl = document.querySelector('.score-result');
+  if (!resultEl) return;
+  if (!PRONUNCIATION_WORKER_URL) {
+    resultEl.innerHTML = `<div class="score-error">Worker URL chưa được cấu hình. Xem cloudflare-worker/README.md</div>`;
+    return;
+  }
+  resultEl.innerHTML = `<div class="score-loading">Đang phân tích phát âm…</div>`;
+
+  const fd = new FormData();
+  fd.append('audio', blob, 'speech.webm');
+  fd.append('text', refText);
+  fd.append('dialect', 'en-gb');
+
+  try {
+    const r = await fetch(PRONUNCIATION_WORKER_URL, { method: 'POST', body: fd });
+    const data = await r.json();
+    if (!r.ok || data.error) {
+      resultEl.innerHTML = `<div class="score-error">Lỗi: ${data.error || 'HTTP ' + r.status}</div>`;
+      return;
+    }
+    renderScore(resultEl, data, blob);
+  } catch (e) {
+    resultEl.innerHTML = `<div class="score-error">Lỗi mạng: ${e.message}</div>`;
+  }
+}
+
+function bandFromQuality(q) {
+  // Fallback IELTS estimate from overall quality_score (0-100)
+  if (q >= 85) return 8.0;
+  if (q >= 75) return 7.0;
+  if (q >= 65) return 6.0;
+  if (q >= 55) return 5.0;
+  if (q >= 45) return 4.0;
+  return 3.0;
+}
+
+function renderScore(container, data, blob) {
+  const ts = data.text_score || data;
+  const ielts = (ts.ielts_score) || (data.ielts_score) || {};
+  const words = ts.word_score_list || [];
+  const overall = ielts.pronunciation || ts.quality_score || 0;
+  const fluency = ielts.fluency || (ts.fluency && ts.fluency.overall_metrics && ts.fluency.overall_metrics.fluency_score) || null;
+
+  const band = (typeof overall === 'number' && overall <= 9) ? overall : bandFromQuality(overall);
+
+  let wordsHtml = '';
+  for (const w of words) {
+    const q = (w.quality_score != null ? w.quality_score : (w.word_score && w.word_score.quality_score)) || 0;
+    const cls = q >= 80 ? 'good' : q >= 60 ? 'ok' : 'poor';
+    wordsHtml += `<span class="score-word ${cls}" title="quality ${q}">${w.word}</span> `;
+  }
+
+  let subRow = '';
+  if (fluency != null) subRow += `<div class="sub">Fluency<b>${Math.round(fluency)}</b></div>`;
+  if (ts.quality_score != null && typeof overall === 'number' && overall <= 9) {
+    subRow += `<div class="sub">Quality<b>${Math.round(ts.quality_score)}/100</b></div>`;
+  }
+
+  const audioUrl = URL.createObjectURL(blob);
+
+  container.innerHTML = `
+    <div class="score-card">
+      <div class="band-row">
+        <div class="band-num">${band.toFixed(1)}</div>
+        <div class="band-label">Pronunciation band</div>
+      </div>
+      ${subRow ? `<div class="sub-row">${subRow}</div>` : ''}
+      <div class="words-label">Word-level</div>
+      <div class="words">${wordsHtml || '<span style="color:#9ca3af">No word breakdown available.</span>'}</div>
+      <div class="replay-row">
+        <audio src="${audioUrl}" controls style="height:32px; vertical-align:middle"></audio>
+      </div>
+    </div>
+  `;
+}
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
