@@ -261,10 +261,11 @@ function wrapBlank(txt) {
     if (/^\s+$/.test(w)) return w;
     if (!w) return w;
     const m = w.match(/^([^\w]*)([\w'-]+)([^\w]*)$/);
+    const NBSP = ' ';
     if (m) {
-      return m[1] + `<span class="blank">${' '.repeat(Math.max(3, m[2].length))}</span>` + m[3];
+      return m[1] + `<span class="blank">${NBSP.repeat(Math.max(3, m[2].length))}</span>` + m[3];
     }
-    return `<span class="blank">${' '.repeat(Math.max(3, w.length))}</span>`;
+    return `<span class="blank">${NBSP.repeat(Math.max(3, w.length))}</span>`;
   }).join('');
 }
 
