@@ -182,6 +182,37 @@ TEMPLATE = r"""<!DOCTYPE html>
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+
+  .play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: all 0.15s;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+  }
+  .play-btn:hover { background: #1e40af; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,58,138,0.25); }
+  .play-btn:active { transform: translateY(0); }
+  .play-btn.playing { background: #c2410c; }
+  .play-btn .icon { font-size: 16px; line-height: 1; }
+  .play-btn kbd {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    border: none;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: inherit;
+  }
 </style>
 </head>
 <body>
@@ -247,26 +278,48 @@ function wrapBlank(txt) {
   }).join('');
 }
 
+let currentAudio = null;
+function playAudio(src) {
+  if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
+  const btn = document.querySelector('.play-btn');
+  if (btn) btn.classList.add('playing');
+  currentAudio = new Audio(src);
+  currentAudio.addEventListener('ended', () => { if (btn) btn.classList.remove('playing'); });
+  currentAudio.addEventListener('error', () => { if (btn) btn.classList.remove('playing'); });
+  currentAudio.play().catch(() => { if (btn) btn.classList.remove('playing'); });
+}
+
 function render() {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   const slide = slides[cursor];
   const item = QUESTIONS[slide.qIndex];
   const card = document.getElementById('card');
   document.getElementById('counter').textContent = `${cursor + 1} / ${slides.length}`;
   document.getElementById('topic-name').textContent = `Topic ${TOPIC_NUM} · ${TOPIC} · Q${slide.qIndex + 1}`;
 
+  const qNum = slide.qIndex + 1;
+  const qAudio = `audio/q${qNum}.mp3`;
+  const aAudio = `audio/a${qNum}.mp3`;
+
   let html = '';
 
   if (slide.level === 0) {
     html = `
       <div class="level-indicator">Question</div>
-      <span class="label q">Question ${slide.qIndex + 1}</span>
+      <span class="label q">Question ${qNum}</span>
       <div class="question">${item.q}</div>
+      <button class="play-btn" onclick="playAudio('${qAudio}')">
+        <span class="icon">▶</span> Play question <kbd>P</kbd>
+      </button>
     `;
   } else if (slide.level === 4) {
     html = `
       <div class="level-indicator">Recall · Level 4</div>
       <span class="label empty">Answer</span>
       <div class="answer hidden-all">— hãy tự nói câu trả lời —</div>
+      <button class="play-btn" onclick="playAudio('${aAudio}')">
+        <span class="icon">▶</span> Play answer <kbd>P</kbd>
+      </button>
     `;
   } else {
     let labelText = '';
@@ -278,6 +331,9 @@ function render() {
       <div class="level-indicator">${levelTxt}</div>
       <span class="label a">${labelText}</span>
       <div class="answer">${renderAnswer(item.a, slide.level)}</div>
+      <button class="play-btn" onclick="playAudio('${aAudio}')">
+        <span class="icon">▶</span> Play answer <kbd>P</kbd>
+      </button>
     `;
   }
 
@@ -295,6 +351,7 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
   else if (e.key === 'Home') { cursor = 0; render(); }
   else if (e.key === 'End') { cursor = slides.length - 1; render(); }
+  else if (e.key === 'p' || e.key === 'P') { e.preventDefault(); const btn = document.querySelector('.play-btn'); if (btn) btn.click(); }
 });
 
 render();
