@@ -325,7 +325,11 @@
   .play-btn:hover { background: #1e40af; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,58,138,0.25); }
   .play-btn:active { transform: translateY(0); }
   .play-btn.playing { background: #c2410c; }
-  .play-btn .icon { font-size: 16px; line-height: 1; }
+  .play-btn.playing:hover { background: #9a3412; }
+  .play-btn.paused { background: #6366f1; }
+  .play-btn.paused:hover { background: #4f46e5; }
+  .play-btn .icon { font-size: 16px; line-height: 1; margin-right: 6px; }
+  .play-btn .play-btn-text { display: inline-block; }
   .play-btn kbd {
     background: rgba(255,255,255,0.18);
     color: #fff;
@@ -334,6 +338,7 @@
     border-radius: 4px;
     font-size: 11px;
     font-family: inherit;
+    margin-left: 8px;
   }
 
   .speed-wrap {
@@ -711,25 +716,59 @@ async function lookupDict(word) {
 }
 
 let __wordAudio = null;
+let __wordBtn = null;
+let __wordMode = null; // 'audio' | 'tts'
+
+function setWordBtnIcon(btn, state) {
+  // state: 'idle' | 'playing' | 'paused'
+  btn.textContent = state === 'playing' ? '⏸' : '▶';
+  btn.classList.toggle('playing', state === 'playing');
+  btn.classList.toggle('paused', state === 'paused');
+}
+
+function stopWordPlay() {
+  if (__wordAudio) { try { __wordAudio.pause(); } catch(e){} __wordAudio = null; }
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  if (__wordBtn) setWordBtnIcon(__wordBtn, 'idle');
+  __wordBtn = null;
+  __wordMode = null;
+}
+
 function playWord(btn) {
+  // Same button clicked while playing/paused → toggle
+  if (__wordBtn === btn) {
+    if (__wordMode === 'audio' && __wordAudio) {
+      if (__wordAudio.paused) { __wordAudio.play(); setWordBtnIcon(btn, 'playing'); }
+      else { __wordAudio.pause(); setWordBtnIcon(btn, 'paused'); }
+      return;
+    }
+    if (__wordMode === 'tts') {
+      if (speechSynthesis.paused) { speechSynthesis.resume(); setWordBtnIcon(btn, 'playing'); }
+      else if (speechSynthesis.speaking) { speechSynthesis.pause(); setWordBtnIcon(btn, 'paused'); }
+      else { stopWordPlay(); playWord(btn); }
+      return;
+    }
+  }
+  // New play (different btn or first time)
+  stopWordPlay();
   const word = btn.dataset.word;
   const audioUrl = btn.dataset.audio;
-  if (__wordAudio) { __wordAudio.pause(); __wordAudio = null; }
-  if (window.speechSynthesis) speechSynthesis.cancel();
-  btn.classList.add('playing');
-  const cleanup = () => btn.classList.remove('playing');
+  __wordBtn = btn;
+  setWordBtnIcon(btn, 'playing');
   if (audioUrl) {
+    __wordMode = 'audio';
     __wordAudio = new Audio(audioUrl);
-    __wordAudio.addEventListener('ended', cleanup);
-    __wordAudio.addEventListener('error', () => { cleanup(); speakWord(word, cleanup); });
-    __wordAudio.play().catch(() => { cleanup(); speakWord(word, cleanup); });
+    __wordAudio.addEventListener('ended', () => { setWordBtnIcon(btn, 'idle'); __wordBtn = null; __wordMode = null; });
+    __wordAudio.addEventListener('error', () => { __wordMode = 'tts'; speakWord(word, btn); });
+    __wordAudio.play().catch(() => { __wordMode = 'tts'; speakWord(word, btn); });
   } else {
-    speakWord(word, cleanup);
+    __wordMode = 'tts';
+    speakWord(word, btn);
   }
 }
 
-function speakWord(word, onDone) {
-  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
+function speakWord(word, btn) {
+  if (!('speechSynthesis' in window)) { setWordBtnIcon(btn, 'idle'); return; }
   const u = new SpeechSynthesisUtterance(word);
   u.lang = 'en-GB';
   u.rate = 0.85;
@@ -737,8 +776,8 @@ function speakWord(word, onDone) {
   const ukVoice = voices.find(v => v.lang && v.lang.startsWith('en-GB')) ||
                   voices.find(v => v.lang && v.lang.startsWith('en'));
   if (ukVoice) u.voice = ukVoice;
-  u.onend = () => onDone && onDone();
-  u.onerror = () => onDone && onDone();
+  u.onend = () => { setWordBtnIcon(btn, 'idle'); __wordBtn = null; __wordMode = null; };
+  u.onerror = () => { setWordBtnIcon(btn, 'idle'); __wordBtn = null; __wordMode = null; };
   speechSynthesis.speak(u);
 }
 
@@ -774,6 +813,7 @@ async function translateWord(word) {
 }
 
 function closeTranslation() {
+  stopWordPlay();
   document.querySelectorAll('.trans-popup').forEach(p => p.remove());
 }
 
@@ -840,17 +880,50 @@ function showTranslation(targetEl) {
   });
 }
 
-function playAudio(src) {
-  clearKaraoke();
-  if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
+let currentSrc = null;
+
+function setPlayBtnState(state) {
   const btn = document.querySelector('.play-btn');
-  if (btn) btn.classList.add('playing');
+  if (!btn) return;
+  const iconEl = btn.querySelector('.icon');
+  const textEl = btn.querySelector('.play-btn-text');
+  const orig = btn.dataset.label || 'Play';
+  btn.classList.toggle('playing', state === 'playing');
+  btn.classList.toggle('paused', state === 'paused');
+  if (state === 'playing') {
+    if (iconEl) iconEl.textContent = '⏸';
+    if (textEl) textEl.textContent = 'Pause';
+  } else if (state === 'paused') {
+    if (iconEl) iconEl.textContent = '▶';
+    if (textEl) textEl.textContent = 'Resume';
+  } else {
+    if (iconEl) iconEl.textContent = '▶';
+    if (textEl) textEl.textContent = orig;
+  }
+}
+
+function playAudio(src) {
+  if (currentAudio && currentSrc === src && !currentAudio.ended) {
+    if (currentAudio.paused) currentAudio.play();
+    else currentAudio.pause();
+    return;
+  }
+  clearKaraoke();
+  if (currentAudio) { try { currentAudio.pause(); } catch(e){} currentAudio = null; }
+  currentSrc = src;
   currentAudio = new Audio(src);
   currentAudio.playbackRate = playbackRate;
   currentAudio.addEventListener('loadedmetadata', startKaraoke);
-  currentAudio.addEventListener('ended', () => { if (btn) btn.classList.remove('playing'); clearKaraoke(); });
-  currentAudio.addEventListener('error', () => { if (btn) btn.classList.remove('playing'); clearKaraoke(); });
-  currentAudio.play().catch(() => { if (btn) btn.classList.remove('playing'); });
+  currentAudio.addEventListener('play', () => { setPlayBtnState('playing'); startKaraoke(); });
+  currentAudio.addEventListener('pause', () => {
+    if (currentAudio && !currentAudio.ended) {
+      setPlayBtnState('paused');
+      if (karaokeRAF) { cancelAnimationFrame(karaokeRAF); karaokeRAF = null; }
+    }
+  });
+  currentAudio.addEventListener('ended', () => { setPlayBtnState('idle'); clearKaraoke(); });
+  currentAudio.addEventListener('error', () => { setPlayBtnState('idle'); clearKaraoke(); });
+  currentAudio.play().catch(() => { setPlayBtnState('idle'); clearKaraoke(); });
 }
 
 function render() {
@@ -881,15 +954,19 @@ function render() {
     </div>
   `;
 
+  function playBtnHtml(src, label) {
+    return `<button class="play-btn" data-label="${label}" onclick="playAudio('${src}')">
+        <span class="icon">▶</span><span class="play-btn-text">${label}</span><kbd>P</kbd>
+      </button>`;
+  }
+
   if (slide.level === 0) {
     html = `
       <div class="level-indicator">Question</div>
       <span class="label q">Question ${qNum}</span>
       <div class="question">${renderQuestion(item.q)}</div>
       <div class="audio-row">
-        <button class="play-btn" onclick="playAudio('${qAudio}')">
-          <span class="icon">▶</span> Play question <kbd>P</kbd>
-        </button>
+        ${playBtnHtml(qAudio, 'Play question')}
         ${speedHtml}
       </div>
     `;
@@ -899,9 +976,7 @@ function render() {
       <span class="label empty">Answer</span>
       <div class="answer hidden-all">— hãy tự nói câu trả lời —</div>
       <div class="audio-row">
-        <button class="play-btn" onclick="playAudio('${aAudio}')">
-          <span class="icon">▶</span> Play answer <kbd>P</kbd>
-        </button>
+        ${playBtnHtml(aAudio, 'Play answer')}
         ${speedHtml}
       </div>
     `;
@@ -916,9 +991,7 @@ function render() {
       <span class="label a">${labelText}</span>
       <div class="answer">${renderAnswer(item.a, slide.level)}</div>
       <div class="audio-row">
-        <button class="play-btn" onclick="playAudio('${aAudio}')">
-          <span class="icon">▶</span> Play answer <kbd>P</kbd>
-        </button>
+        ${playBtnHtml(aAudio, 'Play answer')}
         ${speedHtml}
       </div>
     `;
