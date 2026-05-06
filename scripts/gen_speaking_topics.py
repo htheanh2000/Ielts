@@ -149,6 +149,64 @@ TEMPLATE = r"""<!DOCTYPE html>
     font-weight: 600;
   }
   .answer .blank.speaking { background: rgba(59, 130, 246, 0.55); }
+
+  .word, .blank.revealed { cursor: pointer; }
+  .word:hover, .blank.revealed:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-radius: 3px;
+  }
+  .word.looked-up { text-decoration: underline dotted #1d4ed8; text-underline-offset: 4px; }
+
+  .trans-popup {
+    position: absolute;
+    background: #111827;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    z-index: 100;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    min-width: 180px;
+    max-width: 360px;
+    animation: trans-pop 0.18s ease-out;
+  }
+  @keyframes trans-pop {
+    from { opacity: 0; transform: translateY(-4px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .trans-popup .trans-en {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 6px;
+  }
+  .trans-popup .trans-vi {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .trans-popup .trans-vi.loading { opacity: 0.55; font-style: italic; font-weight: 400; }
+  .trans-popup .trans-vi a { color: #93c5fd; text-decoration: underline; }
+  .trans-popup .trans-meta {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #9ca3af;
+    display: flex;
+    gap: 12px;
+  }
+  .trans-popup .trans-meta a { color: #9ca3af; text-decoration: none; }
+  .trans-popup .trans-meta a:hover { color: #93c5fd; }
+  .trans-popup::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 24px;
+    border: 6px solid transparent;
+    border-bottom-color: #111827;
+    border-top: 0;
+  }
   .answer.hidden-all {
     color: #9ca3af;
     font-style: italic;
@@ -442,8 +500,21 @@ function closeSpeedMenu() {
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.speed-wrap')) closeSpeedMenu();
+
+  // Close translation popup if click outside
+  if (!e.target.closest('.trans-popup, .word, .blank')) closeTranslation();
+
   const blank = e.target.closest('.blank');
-  if (blank && blank.dataset.word && !blank.classList.contains('revealed')) revealBlank(blank);
+  if (blank && blank.dataset.word && !blank.classList.contains('revealed')) {
+    revealBlank(blank);
+    return;
+  }
+
+  // Word click → translate. Also blanks already revealed.
+  const wordEl = e.target.closest('.word, .blank.revealed');
+  if (wordEl && !e.target.closest('.trans-popup')) {
+    showTranslation(wordEl);
+  }
 });
 
 function clearKaraoke() {
@@ -521,6 +592,82 @@ function revealBlank(el) {
   setTimeout(() => el.classList.remove('revealing'), 360);
 }
 
+// --- Translation ---
+const __transCache = JSON.parse(localStorage.getItem('ielts_trans_cache') || '{}');
+
+function getWordText(el) {
+  return (el.dataset.word || el.textContent || '').trim().replace(/[^\w'-]/g, '').toLowerCase();
+}
+
+async function translateWord(word) {
+  if (__transCache[word]) return __transCache[word];
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(word)}`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('http ' + r.status);
+    const data = await r.json();
+    let trans = '';
+    if (Array.isArray(data) && Array.isArray(data[0])) {
+      trans = data[0].map(seg => Array.isArray(seg) ? (seg[0] || '') : '').join('').trim();
+    }
+    if (trans) {
+      __transCache[word] = trans;
+      // cap cache size to ~500 entries
+      const keys = Object.keys(__transCache);
+      if (keys.length > 500) {
+        const drop = keys.slice(0, keys.length - 500);
+        for (const k of drop) delete __transCache[k];
+      }
+      localStorage.setItem('ielts_trans_cache', JSON.stringify(__transCache));
+    }
+    return trans;
+  } catch (e) {
+    return null;
+  }
+}
+
+function closeTranslation() {
+  document.querySelectorAll('.trans-popup').forEach(p => p.remove());
+}
+
+function positionPopup(popup, target) {
+  const r = target.getBoundingClientRect();
+  popup.style.top = `${r.bottom + window.scrollY + 10}px`;
+  popup.style.left = `${Math.max(8, r.left + window.scrollX - 8)}px`;
+  // Clamp inside viewport horizontally
+  const pr = popup.getBoundingClientRect();
+  if (pr.right > window.innerWidth - 8) {
+    popup.style.left = `${window.innerWidth - pr.width - 8}px`;
+  }
+}
+
+function showTranslation(targetEl) {
+  closeTranslation();
+  const word = getWordText(targetEl);
+  if (!word) return;
+  targetEl.classList.add('looked-up');
+
+  const popup = document.createElement('div');
+  popup.className = 'trans-popup';
+  popup.innerHTML = `
+    <div class="trans-en">${word}</div>
+    <div class="trans-vi loading">Đang tra…</div>
+    <div class="trans-meta">
+      <a href="https://translate.google.com/?sl=en&tl=vi&text=${encodeURIComponent(word)}" target="_blank" rel="noopener">Mở Google Translate ↗</a>
+    </div>
+  `;
+  document.body.appendChild(popup);
+  positionPopup(popup, targetEl);
+
+  translateWord(word).then(trans => {
+    const viEl = popup.querySelector('.trans-vi');
+    if (!viEl) return;
+    viEl.classList.remove('loading');
+    if (trans) viEl.textContent = trans;
+    else viEl.innerHTML = `<span style="opacity:0.7">Không tra được — </span><a href="https://translate.google.com/?sl=en&tl=vi&text=${encodeURIComponent(word)}" target="_blank" rel="noopener">tra trên Google ↗</a>`;
+  });
+}
+
 function playAudio(src) {
   clearKaraoke();
   if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
@@ -537,6 +684,7 @@ function playAudio(src) {
 function render() {
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
   clearKaraoke();
+  closeTranslation();
   const slide = slides[cursor];
   const item = QUESTIONS[slide.qIndex];
   const card = document.getElementById('card');
@@ -623,6 +771,7 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'Home') { cursor = 0; render(); }
   else if (e.key === 'End') { cursor = slides.length - 1; render(); }
   else if (e.key === 'p' || e.key === 'P') { e.preventDefault(); const btn = document.querySelector('.play-btn'); if (btn) btn.click(); }
+  else if (e.key === 'Escape') { closeTranslation(); closeSpeedMenu(); }
 });
 
 render();
