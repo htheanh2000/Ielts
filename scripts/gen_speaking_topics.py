@@ -121,7 +121,34 @@ TEMPLATE = r"""<!DOCTYPE html>
     padding: 0 4px;
     margin: 0 1px;
     user-select: none;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, transform 0.05s;
   }
+  .answer .blank:hover { background: #d1d5db; }
+  .answer .blank:active { transform: scale(0.95); }
+  .answer .blank.revealed {
+    background: rgba(217, 119, 6, 0.16);
+    color: #92400e;
+    font-weight: 500;
+    user-select: text;
+    cursor: text;
+  }
+  .answer .blank.revealing { animation: blank-flip 0.36s cubic-bezier(0.4, 0.0, 0.2, 1); }
+  @keyframes blank-flip {
+    0%   { transform: rotateX(0); }
+    50%  { transform: rotateX(90deg); }
+    100% { transform: rotateX(0); }
+  }
+
+  .word { transition: color 0.12s, background 0.12s; border-radius: 3px; }
+  .word.speaking,
+  .question .word.speaking,
+  .answer .blank.revealed.speaking {
+    color: #1d4ed8;
+    background: rgba(59, 130, 246, 0.18);
+    font-weight: 600;
+  }
+  .answer .blank.speaking { background: rgba(59, 130, 246, 0.55); }
   .answer.hidden-all {
     color: #9ca3af;
     font-style: italic;
@@ -222,56 +249,67 @@ TEMPLATE = r"""<!DOCTYPE html>
 
   .speed-wrap {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
   }
   .speed-trigger {
+    width: 38px;
+    height: 38px;
+    padding: 0;
     background: #f3f4f6;
     border: 1px solid #e5e7eb;
-    border-radius: 999px;
-    padding: 8px 14px;
-    font-size: 13px;
-    font-weight: 600;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
     color: #4b5563;
     cursor: pointer;
     font-family: inherit;
     transition: all 0.12s;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    line-height: 1;
+    letter-spacing: -0.3px;
   }
-  .speed-trigger:hover { background: #e5e7eb; color: #1e3a8a; }
-  .speed-trigger .caret { font-size: 9px; opacity: 0.7; }
+  .speed-trigger:hover { background: #e5e7eb; color: #1e3a8a; border-color: #1e3a8a; }
+  .speed-trigger.menu-open { background: #1e3a8a; color: #fff; border-color: #1e3a8a; }
   .speed-menu {
     position: absolute;
     bottom: calc(100% + 8px);
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: #fff;
     border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    padding: 6px;
+    padding: 4px;
     display: none;
-    min-width: 110px;
+    min-width: 130px;
     z-index: 10;
   }
   .speed-menu.open { display: block; }
   .speed-menu .speed-opt {
-    display: block;
+    display: flex;
     width: 100%;
     text-align: left;
     background: transparent;
     border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 13px;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #374151;
     cursor: pointer;
     font-family: inherit;
     transition: all 0.1s;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
   }
   .speed-menu .speed-opt:hover { background: #f3f4f6; }
   .speed-menu .speed-opt.active { background: #1e3a8a; color: #fff; }
+  .speed-menu .speed-opt .rate { font-weight: 700; }
+  .speed-menu .speed-opt .name { font-size: 11px; opacity: 0.7; }
 </style>
 </head>
 <body>
@@ -315,29 +353,63 @@ QUESTIONS.forEach((item, qi) => {
 
 let cursor = 0;
 
+const NBSP_CHAR = ' ';
+function escAttr(s) { return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+
+let __wordIdx = 0;
+function emitToken(tok, hideAtLevel, currentLevel) {
+  if (/^\s+$/.test(tok) || !tok) return tok;
+  const m = tok.match(/^([^\w]*)([\w'-]+)([^\w]*)$/);
+  if (!m) return tok;
+  const [, pre, word, post] = m;
+  const idx = __wordIdx++;
+  const shouldHide = (hideAtLevel === 1 && currentLevel >= 2) ||
+                     (hideAtLevel === 2 && currentLevel >= 3);
+  if (shouldHide) {
+    return pre + `<span class="blank" data-word="${escAttr(word)}" data-idx="${idx}">${NBSP_CHAR.repeat(Math.max(3, word.length))}</span>` + post;
+  }
+  return pre + `<span class="word" data-idx="${idx}">${word}</span>` + post;
+}
+
+function parseSegments(raw) {
+  const segs = [];
+  let pos = 0;
+  const re = /(~~([\s\S]*?)~~|==([\s\S]*?)==)/g;
+  let m;
+  while ((m = re.exec(raw)) !== null) {
+    if (m.index > pos) segs.push({ text: raw.slice(pos, m.index), hide: 0 });
+    if (m[2] !== undefined) segs.push({ text: m[2], hide: 1 });
+    else segs.push({ text: m[3], hide: 2 });
+    pos = m.index + m[0].length;
+  }
+  if (pos < raw.length) segs.push({ text: raw.slice(pos), hide: 0 });
+  return segs;
+}
+
 function renderAnswer(raw, level) {
   if (level === 4) return null;
-  let out = raw;
-  out = out.replace(/~~(.*?)~~/g, (_, txt) => level >= 2 ? wrapBlank(txt) : txt);
-  out = out.replace(/==(.*?)==/g, (_, txt) => level >= 3 ? wrapBlank(txt) : txt);
-  return out;
+  __wordIdx = 0;
+  const segs = parseSegments(raw);
+  let html = '';
+  for (const seg of segs) {
+    const tokens = seg.text.split(/(\s+)/);
+    for (const tok of tokens) html += emitToken(tok, seg.hide, level);
+  }
+  return html;
 }
 
-function wrapBlank(txt) {
-  const words = txt.split(/(\s+)/);
-  return words.map(w => {
-    if (/^\s+$/.test(w)) return w;
-    if (!w) return w;
-    const m = w.match(/^([^\w]*)([\w'-]+)([^\w]*)$/);
-    const NBSP = ' ';
-    if (m) {
-      return m[1] + `<span class="blank">${NBSP.repeat(Math.max(3, m[2].length))}</span>` + m[3];
-    }
-    return `<span class="blank">${NBSP.repeat(Math.max(3, w.length))}</span>`;
-  }).join('');
+function renderQuestion(raw) {
+  __wordIdx = 0;
+  let html = '';
+  const tokens = raw.split(/(\s+)/);
+  for (const tok of tokens) html += emitToken(tok, 0, 0);
+  return html;
 }
+
 
 let currentAudio = null;
+let karaokeRAF = null;
+let karaokeWords = [];
 let playbackRate = parseFloat(localStorage.getItem('ielts_speed') || '1.0');
 
 function setSpeed(rate) {
@@ -347,7 +419,7 @@ function setSpeed(rate) {
   document.querySelectorAll('.speed-opt').forEach(b => {
     b.classList.toggle('active', parseFloat(b.dataset.rate) === rate);
   });
-  document.querySelectorAll('.speed-trigger .label').forEach(l => {
+  document.querySelectorAll('.speed-trigger').forEach(l => {
     l.textContent = `${rate}×`;
   });
   closeSpeedMenu();
@@ -356,31 +428,78 @@ function setSpeed(rate) {
 function toggleSpeedMenu(ev) {
   ev.stopPropagation();
   const menu = document.querySelector('.speed-menu');
+  const trigger = document.querySelector('.speed-trigger');
   if (menu) menu.classList.toggle('open');
+  if (trigger) trigger.classList.toggle('menu-open', menu && menu.classList.contains('open'));
 }
 
 function closeSpeedMenu() {
   const menu = document.querySelector('.speed-menu');
+  const trigger = document.querySelector('.speed-trigger');
   if (menu) menu.classList.remove('open');
+  if (trigger) trigger.classList.remove('menu-open');
 }
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.speed-wrap')) closeSpeedMenu();
+  const blank = e.target.closest('.blank');
+  if (blank && blank.dataset.word && !blank.classList.contains('revealed')) revealBlank(blank);
 });
 
+function clearKaraoke() {
+  document.querySelectorAll('.speaking').forEach(el => el.classList.remove('speaking'));
+  if (karaokeRAF) { cancelAnimationFrame(karaokeRAF); karaokeRAF = null; }
+}
+
+function startKaraoke() {
+  const container = document.querySelector('.answer') || document.querySelector('.question');
+  if (!container) return;
+  karaokeWords = Array.from(container.querySelectorAll('.word, .blank'));
+  if (karaokeWords.length === 0) return;
+  const dur = currentAudio.duration;
+  if (!dur || !isFinite(dur)) return;
+  const per = dur / karaokeWords.length;
+  let lastIdx = -1;
+  function tick() {
+    if (!currentAudio || currentAudio.paused) return;
+    const t = currentAudio.currentTime;
+    const idx = Math.min(karaokeWords.length - 1, Math.floor(t / per));
+    if (idx !== lastIdx) {
+      if (lastIdx >= 0) karaokeWords[lastIdx].classList.remove('speaking');
+      karaokeWords[idx].classList.add('speaking');
+      lastIdx = idx;
+    }
+    karaokeRAF = requestAnimationFrame(tick);
+  }
+  karaokeRAF = requestAnimationFrame(tick);
+}
+
+function revealBlank(el) {
+  if (!el.classList.contains('blank') || !el.dataset.word) return;
+  el.classList.add('revealing');
+  setTimeout(() => {
+    el.textContent = el.dataset.word;
+    el.classList.add('revealed');
+  }, 175);
+  setTimeout(() => el.classList.remove('revealing'), 360);
+}
+
 function playAudio(src) {
+  clearKaraoke();
   if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
   const btn = document.querySelector('.play-btn');
   if (btn) btn.classList.add('playing');
   currentAudio = new Audio(src);
   currentAudio.playbackRate = playbackRate;
-  currentAudio.addEventListener('ended', () => { if (btn) btn.classList.remove('playing'); });
-  currentAudio.addEventListener('error', () => { if (btn) btn.classList.remove('playing'); });
+  currentAudio.addEventListener('loadedmetadata', startKaraoke);
+  currentAudio.addEventListener('ended', () => { if (btn) btn.classList.remove('playing'); clearKaraoke(); });
+  currentAudio.addEventListener('error', () => { if (btn) btn.classList.remove('playing'); clearKaraoke(); });
   currentAudio.play().catch(() => { if (btn) btn.classList.remove('playing'); });
 }
 
 function render() {
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  clearKaraoke();
   const slide = slides[cursor];
   const item = QUESTIONS[slide.qIndex];
   const card = document.getElementById('card');
@@ -395,14 +514,12 @@ function render() {
 
   const speedHtml = `
     <div class="speed-wrap">
-      <button class="speed-trigger" onclick="toggleSpeedMenu(event)">
-        <span class="label">${playbackRate}×</span><span class="caret">▾</span>
-      </button>
+      <button class="speed-trigger" title="Playback speed" onclick="toggleSpeedMenu(event)">${playbackRate}×</button>
       <div class="speed-menu">
-        <button class="speed-opt" data-rate="0.75" onclick="setSpeed(0.75)">0.75× &nbsp;Slow</button>
-        <button class="speed-opt" data-rate="1" onclick="setSpeed(1)">1× &nbsp;Normal</button>
-        <button class="speed-opt" data-rate="1.25" onclick="setSpeed(1.25)">1.25× &nbsp;Faster</button>
-        <button class="speed-opt" data-rate="1.5" onclick="setSpeed(1.5)">1.5× &nbsp;Fast</button>
+        <button class="speed-opt" data-rate="0.75" onclick="setSpeed(0.75)"><span class="rate">0.75×</span><span class="name">Slow</span></button>
+        <button class="speed-opt" data-rate="1" onclick="setSpeed(1)"><span class="rate">1×</span><span class="name">Normal</span></button>
+        <button class="speed-opt" data-rate="1.25" onclick="setSpeed(1.25)"><span class="rate">1.25×</span><span class="name">Faster</span></button>
+        <button class="speed-opt" data-rate="1.5" onclick="setSpeed(1.5)"><span class="rate">1.5×</span><span class="name">Fast</span></button>
       </div>
     </div>
   `;
@@ -411,7 +528,7 @@ function render() {
     html = `
       <div class="level-indicator">Question</div>
       <span class="label q">Question ${qNum}</span>
-      <div class="question">${item.q}</div>
+      <div class="question">${renderQuestion(item.q)}</div>
       <div class="audio-row">
         <button class="play-btn" onclick="playAudio('${qAudio}')">
           <span class="icon">▶</span> Play question <kbd>P</kbd>
