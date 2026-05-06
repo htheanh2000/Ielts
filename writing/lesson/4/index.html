@@ -1,0 +1,1561 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 1 — Academic · Lesson 04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ LESSON-04 ADDITIONS ═════════ */
+
+  /* Diagram frame */
+  .dgm-frame { background: var(--paper); border: 1px solid var(--rule-soft); padding: 28px 32px 22px; }
+  .dgm-frame .dgm-title { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0 0 4px; color: var(--ink); }
+  .dgm-frame .dgm-source { font-family: var(--mono); font-size: 16px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+
+  /* Sample essay (reused from L02/L03) */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
+  .essay p { margin: 0 0 14px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .hl-band { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 20px; color: var(--ink-soft); line-height: 1.4; }
+
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 22px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  .pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; margin-top: 8px; }
+  .pp-grid > div > .mono-label { margin-bottom: 6px; }
+  .pp-grid > div > p { font-family: var(--display); font-size: 26px; line-height: 1.4; margin: 6px 0 0; }
+
+  /* Step ordering table */
+  .step-table { width: 100%; border-collapse: collapse; }
+  .step-table th, .step-table td { padding: 12px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 21px; vertical-align: top; }
+  .step-table thead th { font-family: var(--mono); font-size: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 3px solid var(--accent); }
+  .step-table tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; width: 100px; }
+  .step-table tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); }
+
+  /* Process diagram boxes (SVG class helpers) */
+  .pbox { fill: var(--paper); stroke: #1A1A1A; stroke-width: 1.4; }
+  .pbox-active { fill: rgba(200,32,47,0.12); stroke: var(--accent); stroke-width: 1.8; }
+  .pcircle { fill: #fff; stroke: var(--accent); stroke-width: 2; }
+  .pnum { font-family: 'Roboto Mono', monospace; font-size: 14px; fill: var(--accent); font-weight: 700; text-anchor: middle; }
+  .plbl { font-family: 'Roboto Slab', serif; font-size: 13px; fill: #1A1A1A; font-weight: 600; }
+  .plbl-sm { font-family: 'Roboto Mono', monospace; font-size: 11px; fill: rgba(26,26,26,0.6); }
+  .parrow { stroke: var(--accent); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+
+  /* Sequencer band */
+  .seq-band { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); }
+  .seq-band .cell { padding: 22px 18px; border-right: 1px solid var(--rule-soft); }
+  .seq-band .cell:last-child { border-right: 0; }
+  .seq-band .cell .k { font-family: var(--mono); font-size: 18px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 8px; }
+  .seq-band .cell .v { font-family: var(--display); font-size: 22px; line-height: 1.35; color: var(--ink); font-weight: 600; }
+  .seq-band .cell .d { font-size: 18px; color: var(--ink-soft); margin-top: 6px; line-height: 1.35; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C8202F"/>
+    </marker>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · THEORY (01-10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 1 Academic</div>
+    <h1 class="main">Process<br>&amp; <em>Cycle.</em></h1>
+    <div class="mark">Lesson 04 · Linear &amp; cyclical · Four practices</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.0 → 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>10 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 process diagrams</dd></div>
+      <div><dt>Từ vựng</dt><dd>32 từ · 24 collocations</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Agenda</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Theory.</span><span class="step-body">10 slide · 18 phút. Tổng quan dạng process · linear vs cyclical · sequencers · passive voice · ngôn ngữ vòng tuần hoàn · cấu trúc 4 đoạn · trình tự 20 phút.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Chocolate Production — Linear.</span><span class="step-body">9 slide · 17 phút. 7 bước · present passive · sequencers · bài mẫu 175 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Water Cycle — Cyclical.</span><span class="step-body">9 slide · 17 phút. Vòng khép kín · 4 giai đoạn · ngôn ngữ vòng · bài mẫu 170 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · Cement &amp; Concrete — Linear (two-stage).</span><span class="step-body">9 slide · 17 phút. Hai quy trình song song · so sánh đầu vào · bài mẫu 178 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · Salmon Life Cycle — Cyclical.</span><span class="step-body">9 slide · 17 phút. Vòng đời sinh học · time markers · bài mẫu 172 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Wrap-up &amp; Homework.</span><span class="step-body">4 slide · 4 phút. Pattern chung · vocab tổng hợp · bài về nhà · lịch luyện tuần.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Objectives</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Phân biệt linear vs cyclical process.</span><span class="step-body">Linear: bắt đầu A, kết thúc Z. Cyclical: vòng khép kín, không có "kết thúc". Mở bài khác nhau.</span></div></li>
+    <li><div><span class="step-title">Dùng đúng passive voice cho process.</span><span class="step-body">Present simple passive: <em>is heated / are collected / is then mixed with</em>. 80% câu trong process essay là passive.</span></div></li>
+    <li><div><span class="step-title">Sắp xếp sequencers trải đều bài.</span><span class="step-body">First → Once X-ed → Subsequently → After that → Finally. Không lặp <em>then, then, then</em>.</span></div></li>
+    <li><div><span class="step-title">Viết overview cho process đạt Band 6.</span><span class="step-body">2 câu nêu: (1) số bước, loại process (linear/cyclic) · (2) đầu vào (raw materials) → đầu ra (finished product).</span></div></li>
+    <li><div><span class="step-title">Phân nhóm bước thành Body 1 / Body 2.</span><span class="step-body">Theo giai đoạn (preparation → processing → finishing) hoặc theo địa điểm (above ground / underground).</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TASK OVERVIEW -->
+<section data-label="Task Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan dạng Process</span></div>
+  <p class="eyebrow">Process Tasks · Task 1 Academic</p>
+  <h2 class="h-section">20 phút. <em class="hi">150 từ.</em> Một quy trình.</h2>
+
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Tần suất</div><div class="v">~10%</div><div class="d">Ít gặp hơn line/bar nhưng <em class="hi">điểm cao dễ ăn</em> nếu nắm pattern. Đề thi gần đây: chocolate, brick-making, water cycle.</div></div>
+    <div class="stat"><div class="k">Đặc điểm</div><div class="v">Steps</div><div class="d">Quy trình có <em class="hi">5–10 bước</em> được đánh số. Không có số liệu — toàn bộ là <em>định tính</em> &amp; theo trình tự.</div></div>
+    <div class="stat"><div class="k">Trọng tâm</div><div class="v">Passive</div><div class="d">Người thực hiện <em>không quan trọng</em> → dùng passive impersonal: <em>The beans are roasted</em> (không nói ai roast).</div></div>
+  </div>
+
+  <p class="fine">Process = sơ đồ luồng. Có thể là sản xuất (chocolate, cement, paper) hoặc tự nhiên (water cycle, life cycle, photosynthesis).</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · TWO PROCESS TYPES -->
+<section data-label="Process Types" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Hai loại process</span></div>
+  <p class="eyebrow">Two Process Types · Linear vs Cyclical</p>
+  <h2 class="h-section">Hai dạng — <em class="hi">hai cách mở bài.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Type 01 — Manufacturing</p>
+      <h3 style="font-size: 44px;">Linear</h3>
+      <ul>
+        <li><b>Đặc điểm:</b> bắt đầu input cụ thể → kết thúc output cụ thể</li>
+        <li><b>Ví dụ:</b> chocolate production · brick-making · paper recycling · cement &amp; concrete</li>
+        <li><b>Thì:</b> present simple passive (<em>is heated · are collected</em>)</li>
+        <li><b>Mở bài:</b> "The diagram illustrates how X is produced / manufactured."</li>
+        <li><b>Sequencers:</b> First · Once X-ed · Subsequently · Finally</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Type 02 — Natural / Biological</p>
+      <h3 style="font-size: 44px;">Cyclical</h3>
+      <ul>
+        <li><b>Đặc điểm:</b> vòng khép kín, không có điểm kết — output = input của vòng kế tiếp</li>
+        <li><b>Ví dụ:</b> water cycle · carbon cycle · life cycle of salmon / butterfly / frog</li>
+        <li><b>Thì:</b> present simple (active or passive — biological action)</li>
+        <li><b>Mở bài:</b> "The diagram depicts the cycle of X / the life cycle of X."</li>
+        <li><b>Sequencers:</b> Once X-ed · Subsequently · The cycle then begins again</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Cyclical luôn cần câu cuối: <em class="hi">"the cycle then repeats / begins again"</em> — chốt vòng tuần hoàn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · SEQUENCERS -->
+<section data-label="Sequencers" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Sequencers</span></div>
+  <p class="eyebrow">Sequencers · Five-stage chain</p>
+  <h2 class="h-section">Sequencers — <em class="hi">trải đều, không lặp.</em></h2>
+
+  <div class="seq-band">
+    <div class="cell">
+      <div class="k">01 · Start</div>
+      <div class="v">First / To begin / Initially</div>
+      <div class="d">Mở đầu bài. Không bao giờ dùng "Firstly" và "Secondly" cùng nhau.</div>
+    </div>
+    <div class="cell">
+      <div class="k">02 · Next</div>
+      <div class="v">Once X-ed / Having been X-ed</div>
+      <div class="d">Câu nối ưa thích band 6.5+. <em>Once heated · Having been mixed</em>.</div>
+    </div>
+    <div class="cell">
+      <div class="k">03 · Then</div>
+      <div class="v">Subsequently / Thereafter</div>
+      <div class="d">Thay <em>then</em>. Đặt đầu câu, theo dấu phẩy.</div>
+    </div>
+    <div class="cell">
+      <div class="k">04 · After</div>
+      <div class="v">After this / Following this stage</div>
+      <div class="d">Dùng giữa Body 1 / Body 2. Linking đoạn lớn.</div>
+    </div>
+    <div class="cell">
+      <div class="k">05 · End / Loop</div>
+      <div class="v">Finally / The cycle then repeats</div>
+      <div class="d">Linear: <em>Finally</em>. Cyclical: <em>begins again</em>.</div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 32px;">Quy tắc: trong 1 đoạn không dùng quá 2 lần cùng 1 sequencer. Trải đều 5 nhóm trên → Coherence &amp; Cohesion lên 1 band.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · PASSIVE VOICE -->
+<section data-label="Passive Voice" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Passive voice</span></div>
+  <p class="eyebrow">Passive Voice · Three patterns</p>
+  <h2 class="h-section">Passive — <em class="hi">vì người làm không quan trọng.</em></h2>
+
+  <div class="flow" style="grid-template-columns: repeat(3, 1fr); gap: 48px;">
+    <div class="flow-step">
+      <div class="n">PATTERN 01</div>
+      <div class="t">Present simple passive</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">is/are + V3</em><br><br>
+        <em>The beans <b>are roasted</b> at 120°C.</em><br>
+        <em>The mixture <b>is poured</b> into moulds.</em>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="n">PATTERN 02</div>
+      <div class="t">Once + past participle</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">Once + V3, ...</em><br><br>
+        <em><b>Once roasted,</b> the beans are cracked open.</em><br>
+        <em><b>Once heated,</b> the metal is shaped.</em>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="n">PATTERN 03</div>
+      <div class="t">Having been + V3</div>
+      <div class="d" style="margin-top: 14px;">
+        <em class="hi">Having been V3, ...</em><br><br>
+        <em><b>Having been crushed,</b> the cocoa is mixed with sugar.</em><br>
+        <em><b>Having been filtered,</b> the water flows downward.</em>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine">Đừng lặp <em>is/are V3</em> 8 lần. Luân phiên 3 pattern trên → GRA tăng ngay 1 band.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · CYCLICAL LANGUAGE -->
+<section data-label="Cyclical Language" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ vòng tuần hoàn</span></div>
+  <p class="eyebrow">Cyclical Language · Loop &amp; recurrence</p>
+  <h2 class="h-section">Vòng — <em class="hi">không có start, không có end.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Mở bài cyclical</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Opening verbs</h3>
+      <ul>
+        <li><b>Begins:</b> The cycle <em class="hi">begins</em> with X / commences when …</li>
+        <li><b>Starts:</b> X <em class="hi">marks the beginning</em> of the cycle</li>
+        <li><b>Note:</b> "begin" — không có "the start" tuyệt đối, chỉ là điểm tiện để mô tả</li>
+        <li><b>Vào câu mở:</b> "Although the cycle has no fixed starting point, it is conventional to begin with X."</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Đóng vòng cyclical</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Closing verbs</h3>
+      <ul>
+        <li><b>Repeats:</b> the cycle <em class="hi">then repeats</em> / repeats itself</li>
+        <li><b>Begins again:</b> the cycle <em class="hi">begins again</em> / starts anew</li>
+        <li><b>Returns:</b> the process <em class="hi">returns to</em> the original stage</li>
+        <li><b>Recurs:</b> the cycle <em class="hi">recurs</em> indefinitely / continues</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Câu cuối bài cyclical bắt buộc có verb "lặp lại". Thiếu = bài thiếu kết → trừ Task Achievement.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · STRUCTURE -->
+<section data-label="Structure" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cấu trúc 4 đoạn</span></div>
+  <p class="eyebrow">Four-paragraph structure · Process</p>
+  <h2 class="h-section">Bốn đoạn — <em class="hi">grouping theo giai đoạn.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">~25w</span>
+      <div class="n">PARA 01</div>
+      <div class="t">Introduction</div>
+      <div class="d">Paraphrase câu đề. <em>The diagram illustrates / depicts / shows how X is produced / the cycle of X.</em></div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~40w</span>
+      <div class="n">PARA 02</div>
+      <div class="t">Overview</div>
+      <div class="d">2 câu: (1) <em class="hi">số bước</em> / loại (linear/cyclic) · (2) <em class="hi">input → output</em> hoặc giai đoạn lớn.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">PARA 03</div>
+      <div class="t">Body 1</div>
+      <div class="d">Giai đoạn đầu (preparation / collection / cultivation). 3-4 bước cụ thể, sequencers liền mạch.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">PARA 04</div>
+      <div class="t">Body 2</div>
+      <div class="d">Giai đoạn cuối (processing / packaging / loop). Câu cuối: linear → product. Cyclical → "cycle repeats".</div>
+    </div>
+  </div>
+
+  <p class="fine">Cách chia: <em class="hi">2 nửa đầu/cuối</em> theo trình tự. Đừng chia "câu hỏi" hay "thematic" như map — process là <em>tuyến tính</em> theo thời gian.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 20 phút</span></div>
+  <p class="eyebrow">Exam Sequence · 20-minute budget</p>
+  <h2 class="h-section">20 phút — <em class="hi">5 bước cố định.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Phân tích đề + diagram (3 phút).</span><span class="step-body">Đếm số bước · xác định linear/cyclical · liệt kê input đầu (raw materials) &amp; output cuối (product) · tìm icons / mũi tên đặc biệt.</span></div></li>
+    <li><div><span class="step-title">Lên dàn bài 4 đoạn (2 phút).</span><span class="step-body">Chia số bước thành 2 nhóm: Body 1 = bước 1–3 (preparation), Body 2 = bước 4-cuối (processing/loop). Ghi sequencers ra giấy nháp.</span></div></li>
+    <li><div><span class="step-title">Viết Intro + Overview (4 phút).</span><span class="step-body">~65 từ. Intro 1 câu paraphrase. Overview 2 câu: số bước / loại + input→output. Tuyệt đối không liệt kê chi tiết.</span></div></li>
+    <li><div><span class="step-title">Viết Body 1 + Body 2 (9 phút).</span><span class="step-body">~95 từ. Mỗi câu = 1 bước. Linking: <em>First / Once X-ed / Subsequently / After that / Finally · the cycle repeats</em>.</span></div></li>
+    <li><div><span class="step-title">Check lỗi (2 phút).</span><span class="step-body">Passive đúng V3? · sequencers không lặp? · subject-verb agreement? · đếm từ (≥150). Không viết thêm.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — CHOCOLATE PRODUCTION (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 P01 · Chocolate" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Chocolate Production · Linear</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 01 · Chocolate</p>
+    <h2><em>Chocolate.</em><br>From bean<br>to bar.</h2>
+    <div class="toc">
+      <div class="active">01 · Chocolate Production — linear</div>
+      <div>02 · Water Cycle — cyclical</div>
+      <div>03 · Cement &amp; Concrete — linear (two-stage)</div>
+      <div>04 · Salmon Life Cycle — cyclical</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · TASK + DIAGRAM -->
+<section data-label="12 P01 Task" class="slide">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Đề bài + sơ đồ</span></div>
+  <p class="eyebrow">Task · Linear · Chocolate production</p>
+
+  <div style="display:grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The diagram below shows how chocolate is produced from cocoa beans.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Loại: <em class="hi">linear · 7 bước</em>.</p>
+      <p class="small">Thì: <em class="hi">present simple passive</em>.</p>
+      <p class="small" style="margin-top: 14px;">Đầu vào: <em class="hi">cocoa pods</em> · Đầu ra: <em class="hi">chocolate bars</em>.</p>
+    </div>
+
+    <div class="dgm-frame">
+      <p class="dgm-title">Chocolate Production · 7 stages</p>
+      <p class="dgm-source">Source · Confectionery industry diagram</p>
+      <svg viewBox="0 0 1080 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Row 1: stages 1-4 -->
+        <g>
+          <rect class="pbox" x="20" y="40" width="140" height="90"/>
+          <circle class="pcircle" cx="40" cy="58" r="14"/>
+          <text class="pnum" x="40" y="63">01</text>
+          <text class="plbl" x="90" y="80" text-anchor="middle">HARVEST</text>
+          <text class="plbl-sm" x="90" y="100" text-anchor="middle">cocoa pods</text>
+          <text class="plbl-sm" x="90" y="115" text-anchor="middle">picked from trees</text>
+
+          <rect class="pbox" x="200" y="40" width="140" height="90"/>
+          <circle class="pcircle" cx="220" cy="58" r="14"/>
+          <text class="pnum" x="220" y="63">02</text>
+          <text class="plbl" x="270" y="80" text-anchor="middle">FERMENT</text>
+          <text class="plbl-sm" x="270" y="100" text-anchor="middle">beans fermented</text>
+          <text class="plbl-sm" x="270" y="115" text-anchor="middle">5–7 days</text>
+
+          <rect class="pbox" x="380" y="40" width="140" height="90"/>
+          <circle class="pcircle" cx="400" cy="58" r="14"/>
+          <text class="pnum" x="400" y="63">03</text>
+          <text class="plbl" x="450" y="80" text-anchor="middle">DRY</text>
+          <text class="plbl-sm" x="450" y="100" text-anchor="middle">sun-dried</text>
+          <text class="plbl-sm" x="450" y="115" text-anchor="middle">on mats</text>
+
+          <rect class="pbox" x="560" y="40" width="140" height="90"/>
+          <circle class="pcircle" cx="580" cy="58" r="14"/>
+          <text class="pnum" x="580" y="63">04</text>
+          <text class="plbl" x="630" y="80" text-anchor="middle">ROAST</text>
+          <text class="plbl-sm" x="630" y="100" text-anchor="middle">in ovens</text>
+          <text class="plbl-sm" x="630" y="115" text-anchor="middle">at 120°C</text>
+
+          <!-- Arrows -->
+          <line class="parrow" x1="160" y1="85" x2="200" y2="85"/>
+          <line class="parrow" x1="340" y1="85" x2="380" y2="85"/>
+          <line class="parrow" x1="520" y1="85" x2="560" y2="85"/>
+        </g>
+        <!-- Curve down to row 2 -->
+        <path class="parrow" d="M 700 85 L 760 85 L 760 200 L 700 200" stroke-dasharray="0"/>
+        <!-- Row 2: stages 5-7 (right to left) -->
+        <g>
+          <rect class="pbox" x="560" y="200" width="140" height="90"/>
+          <circle class="pcircle" cx="580" cy="218" r="14"/>
+          <text class="pnum" x="580" y="223">05</text>
+          <text class="plbl" x="630" y="240" text-anchor="middle">CRACK &amp; CRUSH</text>
+          <text class="plbl-sm" x="630" y="260" text-anchor="middle">into nibs</text>
+          <text class="plbl-sm" x="630" y="275" text-anchor="middle">→ cocoa liquor</text>
+
+          <rect class="pbox" x="380" y="200" width="140" height="90"/>
+          <circle class="pcircle" cx="400" cy="218" r="14"/>
+          <text class="pnum" x="400" y="223">06</text>
+          <text class="plbl" x="450" y="240" text-anchor="middle">MIX</text>
+          <text class="plbl-sm" x="450" y="260" text-anchor="middle">+ sugar + milk</text>
+          <text class="plbl-sm" x="450" y="275" text-anchor="middle">+ cocoa butter</text>
+
+          <rect class="pbox-active" x="200" y="200" width="140" height="90"/>
+          <circle class="pcircle" cx="220" cy="218" r="14"/>
+          <text class="pnum" x="220" y="223">07</text>
+          <text class="plbl" x="270" y="240" text-anchor="middle">MOULD &amp; COOL</text>
+          <text class="plbl-sm" x="270" y="260" text-anchor="middle">poured into bars</text>
+          <text class="plbl-sm" x="270" y="275" text-anchor="middle">→ chocolate</text>
+
+          <line class="parrow" x1="560" y1="245" x2="520" y2="245"/>
+          <line class="parrow" x1="380" y1="245" x2="340" y2="245"/>
+        </g>
+        <!-- Final arrow to chocolate icon -->
+        <text class="plbl" x="120" y="245" text-anchor="middle" fill="#C8202F" font-size="16">→ CHOCOLATE BAR</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · STEP 1 ANALYSE -->
+<section data-label="13 P01 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">bốn câu trả lời.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Linear · 7 bước · present simple passive</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Input → Output?</div><div class="s">Cocoa pods (raw) → chocolate bars (finished product)</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Stages chính?</div><div class="s">2 nhóm: <em>cultivation</em> (1-3) · <em>processing</em> (4-7)</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Bước nổi bật?</div><div class="s">Roasting (chuyển đổi hoá học) · mixing (thành phẩm cuối định hình)</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng 7 bước</h2>
+  <table class="step-table">
+    <thead><tr><th>Step</th><th>Action</th><th>Verb (passive)</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td class="feat">Cocoa pods harvested from trees</td><td>are picked / are harvested</td></tr>
+      <tr><td>02</td><td class="feat">Beans fermented for 5–7 days</td><td>are fermented</td></tr>
+      <tr><td>03</td><td class="feat">Dried in the sun on mats</td><td>are dried / are spread out to dry</td></tr>
+      <tr><td>04</td><td class="feat">Roasted in ovens at 120°C</td><td>are roasted</td></tr>
+      <tr><td>05</td><td class="feat">Cracked &amp; crushed into nibs / cocoa liquor</td><td>are cracked open · are ground</td></tr>
+      <tr><td>06</td><td class="feat">Mixed with sugar, milk, cocoa butter</td><td>is mixed with · is combined with</td></tr>
+      <tr><td>07</td><td class="feat">Poured into moulds &amp; cooled → bars</td><td>is poured into · is left to cool</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="14 P01 Step2" class="slide">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Số bước + input/output — <em class="hi">overview gói gọn.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The diagram below <b>shows how chocolate is produced</b> from cocoa beans."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The diagram illustrates the seven main stages involved in the production of chocolate, from the harvesting of cocoa pods to the moulding of the final bar."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · số bước + 2 giai đoạn</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the process is linear, beginning with the cultivation of cocoa beans and ending with the production of finished chocolate bars</span>. <span class="hl-band">The stages can be divided broadly into two phases: an agricultural preparation phase and a manufacturing phase</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Overview process: <em class="hi">không liệt kê 7 bước</em>. Chỉ nêu xu hướng tổng + 2 phase lớn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · STEP 3 BODY -->
+<section data-label="15 P01 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Hai đoạn — <em class="hi">cultivation 1-3 / processing 4-7.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · Cultivation</span>The process <b>begins with</b> the harvesting of cocoa pods, which <b>are picked</b> directly from the trees. <b>Once harvested,</b> the beans inside <b>are fermented</b> for between five and seven days, after which they <b>are spread out on mats and dried</b> in the sun. This first phase is purely agricultural, requiring no industrial equipment.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · Processing</span><b>Subsequently,</b> the dried beans <b>are roasted</b> in ovens at around 120°C, then <b>cracked open</b> and <b>ground</b> into a thick paste known as cocoa liquor. <b>After this stage,</b> the liquor <b>is combined with</b> sugar, milk and cocoa butter to form a smooth mixture. <b>Finally,</b> the mixture <b>is poured into moulds and left to cool</b>, producing the chocolate bars that reach consumers.</p>
+    </div>
+  </div>
+
+  <p class="fine">Sequencers trải đều: <em class="hi">begins with · Once harvested · after which · Subsequently · After this stage · Finally</em> — sáu kết nối khác nhau.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · SAMPLE ESSAY -->
+<section data-label="16 P01 Sample" class="slide">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 175 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The diagram illustrates the seven main stages involved in the production of chocolate, from the harvesting of cocoa pods to the moulding of the final bar.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the process is linear, beginning with the cultivation of cocoa beans and ending with the production of finished chocolate bars. The stages can be divided broadly into two phases: an agricultural preparation phase and a manufacturing phase.</p>
+    <p><span class="para-tag">Body 1</span>The process begins with the harvesting of cocoa pods, which are picked directly from the trees. Once harvested, the beans inside are fermented for between five and seven days, after which they are spread out on mats and dried in the sun. This first phase is purely agricultural, requiring no industrial equipment.</p>
+    <p><span class="para-tag">Body 2</span>Subsequently, the dried beans are roasted in ovens at around 120°C, then cracked open and ground into a thick paste known as cocoa liquor. After this stage, the liquor is combined with sugar, milk and cocoa butter to form a smooth mixture. Finally, the mixture is poured into moulds and left to cool, producing the chocolate bars that reach consumers.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · LANGUAGE ANALYSIS -->
+<section data-label="17 P01 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Linear process</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài chocolate.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Passive variety</span><b>"are picked · are fermented · are spread out and dried · are roasted · are cracked open · is combined with · is poured · is left to cool"</b> — tám passive khác nhau, không lặp.</li>
+    <li><span class="tag">Sequencers</span><b>"begins with · Once harvested · after which · Subsequently · After this stage · Finally"</b> — sáu sequencer khác nhau, trải đều 2 body.</li>
+    <li><span class="tag">Reduced clauses</span><b>"requiring no industrial equipment · producing the chocolate bars · known as cocoa liquor"</b> — participle clauses để gắn lý do/kết quả → GRA.</li>
+    <li><span class="tag">Lexical precision</span><b>"harvested · cultivation · spread out · cocoa liquor · smooth mixture · moulding"</b> — vocabulary chuyên ngành chế biến, không dùng <em>made · put · finished</em>.</li>
+  </ul>
+
+  <p class="fine">"Once harvested" là cấu trúc nâng band: thay <em>after they are harvested</em> bằng 2 từ → câu gọn hơn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · VOCAB -->
+<section data-label="18 P01 Vocab" class="slide">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">linear production.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">harvest <span class="pos">(v.)</span> <span class="ipa">/ˈhɑːvɪst/</span></div><div class="vocab-meaning">thu hoạch — pods are harvested from trees</div></div>
+        <div class="vocab-item"><div class="vocab-word">ferment <span class="pos">(v.)</span> <span class="ipa">/fəˈment/</span></div><div class="vocab-meaning">lên men — beans are fermented</div></div>
+        <div class="vocab-item"><div class="vocab-word">cultivation <span class="pos">(n.)</span> <span class="ipa">/ˌkʌltɪˈveɪʃən/</span></div><div class="vocab-meaning">canh tác, trồng trọt — agricultural cultivation</div></div>
+        <div class="vocab-item"><div class="vocab-word">roast <span class="pos">(v.)</span> <span class="ipa">/rəʊst/</span></div><div class="vocab-meaning">rang (ở nhiệt độ cao)</div></div>
+        <div class="vocab-item"><div class="vocab-word">grind <span class="pos">(v.)</span> <span class="ipa">/ɡraɪnd/</span></div><div class="vocab-meaning">nghiền — past: ground</div></div>
+        <div class="vocab-item"><div class="vocab-word">mould <span class="pos">(v./n.)</span> <span class="ipa">/məʊld/</span></div><div class="vocab-meaning">đổ khuôn — moulding · into moulds</div></div>
+        <div class="vocab-item"><div class="vocab-word">paste <span class="pos">(n.)</span> <span class="ipa">/peɪst/</span></div><div class="vocab-meaning">khối nhão — a thick paste</div></div>
+        <div class="vocab-item"><div class="vocab-word">stage <span class="pos">(n.)</span> <span class="ipa">/steɪdʒ/</span></div><div class="vocab-meaning">giai đoạn — seven main stages</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">be involved in the production of</div><div class="vocab-meaning">được tham gia vào quá trình sản xuất</div></div>
+        <div class="vocab-item"><div class="vocab-word">begin with / end with</div><div class="vocab-meaning">bắt đầu bằng / kết thúc bằng</div></div>
+        <div class="vocab-item"><div class="vocab-word">be combined with</div><div class="vocab-meaning">được trộn / kết hợp với</div></div>
+        <div class="vocab-item"><div class="vocab-word">be poured into moulds</div><div class="vocab-meaning">được đổ vào khuôn</div></div>
+        <div class="vocab-item"><div class="vocab-word">be left to cool</div><div class="vocab-meaning">được để nguội</div></div>
+        <div class="vocab-item"><div class="vocab-word">a smooth / thick mixture</div><div class="vocab-meaning">hỗn hợp mịn / đặc</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · PARAPHRASE PAIRS -->
+<section data-label="19 P01 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Chocolate</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Process · linear</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">verb passive cao cấp.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">how X is made</span><span class="vi">→ how X is produced / manufactured · the stages involved in the production of</span></div>
+    <div class="kp-item"><span class="en">they pick the cocoa pods</span><span class="vi">→ are harvested · are picked from the trees · are gathered</span></div>
+    <div class="kp-item"><span class="en">then they roast them</span><span class="vi">→ Once dried, the beans are roasted · Subsequently, the beans are roasted</span></div>
+    <div class="kp-item"><span class="en">they put sugar in</span><span class="vi">→ is combined with sugar · is mixed with sugar · sugar is added to</span></div>
+    <div class="kp-item"><span class="en">finally chocolate is made</span><span class="vi">→ producing the chocolate bars · resulting in the finished product · yielding the final product</span></div>
+    <div class="kp-item"><span class="en">they let it cool</span><span class="vi">→ is left to cool · is allowed to cool · cools naturally</span></div>
+  </div>
+
+  <p class="fine">"Once dried" / "Once harvested" — học thuộc cấu trúc <em class="hi">Once + V3</em>. Ăn band ngay khi thay được "after they are X-ed".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Chocolate</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — WATER CYCLE (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · SECTION BREAK -->
+<section data-label="20 P02 · Water Cycle" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Water Cycle · Cyclical</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Water Cycle</p>
+    <h2><em>Hydrology.</em><br>Sea →<br>cloud → rain.</h2>
+    <div class="toc">
+      <div>01 · Chocolate Production — linear</div>
+      <div class="active">02 · Water Cycle — cyclical</div>
+      <div>03 · Cement &amp; Concrete — linear (two-stage)</div>
+      <div>04 · Salmon Life Cycle — cyclical</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · TASK + DIAGRAM -->
+<section data-label="21 P02 Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Đề bài + sơ đồ</span></div>
+  <p class="eyebrow">Task · Cyclical · Water cycle</p>
+
+  <div style="display:grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The diagram below shows the water cycle, which is the continuous movement of water on, above and below the surface of the Earth.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Loại: <em class="hi">cyclical · 4 stages chính</em>.</p>
+      <p class="small">Stages: evaporation → condensation → precipitation → collection.</p>
+      <p class="small" style="margin-top: 14px;">Câu cuối: <em class="hi">"the cycle then repeats"</em>.</p>
+    </div>
+
+    <div class="dgm-frame">
+      <p class="dgm-title">The Water Cycle · 4 stages</p>
+      <p class="dgm-source">Source · Hydrological diagram</p>
+      <svg viewBox="0 0 720 400" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky/sun -->
+        <text class="plbl-sm" x="60" y="30" fill="#C8202F" font-weight="700">SUN ☀</text>
+        <!-- Sea (left) -->
+        <path d="M 0 280 L 280 280 L 280 400 L 0 400 Z" fill="rgba(31,58,61,0.10)" stroke="rgba(31,58,61,0.4)" stroke-width="1.2"/>
+        <text class="plbl" x="120" y="350" text-anchor="middle">SEA / OCEAN</text>
+        <!-- Mountain + ground (right) -->
+        <path d="M 380 400 L 480 200 L 580 280 L 720 280 L 720 400 Z" fill="rgba(217,196,156,0.3)" stroke="#1A1A1A" stroke-width="1.2"/>
+        <text class="plbl" x="600" y="360" text-anchor="middle">LAND</text>
+        <!-- Cloud -->
+        <ellipse cx="360" cy="80" rx="100" ry="32" class="pbox-active"/>
+        <text class="plbl" x="360" y="86" text-anchor="middle" fill="#C8202F">CLOUDS</text>
+        <!-- Stage 1: Evaporation -->
+        <path class="parrow" d="M 130 280 Q 180 180 280 110"/>
+        <text class="plbl-sm" x="200" y="190">↑ EVAPORATION</text>
+        <circle class="pcircle" cx="200" cy="218" r="14"/>
+        <text class="pnum" x="200" y="223">01</text>
+        <!-- Stage 2: Condensation (cloud forms) -->
+        <text class="plbl-sm" x="370" y="50" text-anchor="middle" fill="#C8202F">02 · CONDENSATION</text>
+        <circle class="pcircle" cx="430" cy="80" r="14"/>
+        <text class="pnum" x="430" y="85">02</text>
+        <!-- Stage 3: Precipitation -->
+        <line class="parrow" x1="500" y1="105" x2="510" y2="190"/>
+        <line class="parrow" x1="450" y1="105" x2="460" y2="200"/>
+        <line class="parrow" x1="400" y1="105" x2="410" y2="210"/>
+        <text class="plbl-sm" x="430" y="160">03 · PRECIPITATION (rain / snow)</text>
+        <!-- Stage 4: Collection (surface runoff back to sea) -->
+        <path class="parrow" d="M 480 280 Q 380 320 280 320 L 250 320"/>
+        <text class="plbl-sm" x="380" y="338" text-anchor="middle">04 · SURFACE RUNOFF</text>
+        <circle class="pcircle" cx="380" cy="295" r="14"/>
+        <text class="pnum" x="380" y="300">04</text>
+        <!-- Underground -->
+        <path class="parrow" d="M 540 290 Q 520 340 320 360 L 270 360" stroke-dasharray="4 3"/>
+        <text class="plbl-sm" x="430" y="385">→ groundwater (underground)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · STEP 1 ANALYSE -->
+<section data-label="22 P02 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">cyclical-specific.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Cyclical · 4 stages chính · không có start/end tuyệt đối</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Bắt đầu từ đâu?</div><div class="s">Convention: bắt đầu từ <em>evaporation</em> (mặt trời + biển) — lý do: dễ kể nhất</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Stages chính?</div><div class="s">2 nhóm: <em>upward (1-2)</em> evaporation/condensation · <em>downward (3-4)</em> precipitation/collection</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Loop?</div><div class="s">Surface runoff &amp; groundwater chảy về biển → vòng lặp lại</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng 4 stages</h2>
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Action</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td class="feat">Sun heats water in seas / oceans → vapour rises</td><td>evaporates · is heated · rises</td></tr>
+      <tr><td>02</td><td class="feat">Vapour cools at altitude → forms clouds</td><td>condenses · forms · cools</td></tr>
+      <tr><td>03</td><td class="feat">Clouds release water as rain or snow</td><td>falls as · is released as · precipitates</td></tr>
+      <tr><td>04</td><td class="feat">Water flows over surface or seeps underground → returns to sea</td><td>flows · seeps · returns to · feeds back into</td></tr>
+      <tr><td>LOOP</td><td class="feat">Cycle begins again at the sea</td><td>the cycle then repeats / begins anew</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="23 P02 Step2" class="slide">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Cyclical — <em class="hi">overview nhấn "continuous loop".</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The diagram below shows <b>the water cycle</b>, which is <b>the continuous movement of water</b> on, above and below the surface of the Earth."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The diagram depicts the water cycle, the natural and continuous process by which water circulates between the oceans, the atmosphere and the land."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · cyclical loop</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the cycle consists of four key stages — evaporation, condensation, precipitation and collection — driven primarily by the energy of the sun</span>. <span class="hl-band">As the cycle has no fixed beginning or end, water continuously circulates between the sea, the sky and the land</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Câu thứ hai overview đặc trưng cyclical: <em class="hi">"has no fixed beginning or end · continuously circulates"</em>.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · STEP 3 BODY -->
+<section data-label="24 P02 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Hai đoạn — <em class="hi">upward / downward.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · Upward</span>It is conventional to <b>begin with</b> the sea, where solar energy <b>causes water to evaporate</b> from the surface and rise into the atmosphere as vapour. <b>Once it reaches</b> a sufficient altitude, the vapour <b>cools and condenses</b>, forming the dense clouds that gather above both land and sea. This first half of the cycle therefore moves water from the surface upward into the sky.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · Downward · Loop</span><b>Subsequently,</b> the moisture stored in the clouds <b>is released as</b> precipitation in the form of rain or snow, much of which falls onto the land. From there, water either <b>flows over the surface</b> as runoff or <b>seeps underground</b> as groundwater, and in both cases it eventually <b>returns to the sea</b>. <b>At this point, the cycle begins again</b>, repeating indefinitely.</p>
+    </div>
+  </div>
+
+  <p class="fine">Câu cuối Body 2 phải có <em class="hi">"begins again / repeats"</em> — chốt vòng tuần hoàn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · SAMPLE ESSAY -->
+<section data-label="25 P02 Sample" class="slide">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 170 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">cyclical đầy đủ.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The diagram depicts the water cycle, the natural and continuous process by which water circulates between the oceans, the atmosphere and the land.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the cycle consists of four key stages — evaporation, condensation, precipitation and collection — driven primarily by the energy of the sun. As the cycle has no fixed beginning or end, water continuously circulates between the sea, the sky and the land.</p>
+    <p><span class="para-tag">Body 1</span>It is conventional to begin with the sea, where solar energy causes water to evaporate from the surface and rise into the atmosphere as vapour. Once it reaches a sufficient altitude, the vapour cools and condenses, forming the dense clouds that gather above both land and sea. This first half of the cycle therefore moves water from the surface upward into the sky.</p>
+    <p><span class="para-tag">Body 2</span>Subsequently, the moisture stored in the clouds is released as precipitation in the form of rain or snow, much of which falls onto the land. From there, water either flows over the surface as runoff or seeps underground as groundwater, and in both cases it eventually returns to the sea. At this point, the cycle begins again, repeating indefinitely.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · LANGUAGE ANALYSIS -->
+<section data-label="26 P02 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Cyclical process</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Water Cycle.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Cyclical phrases</span><b>"continuously circulates · has no fixed beginning or end · the cycle begins again · repeating indefinitely"</b> — bốn cụm chuyên cho cyclical, không thấy ở linear.</li>
+    <li><span class="tag">Verb variety</span><b>"evaporate · rise · cools and condenses · is released as · flows · seeps · returns"</b> — bảy verb mô tả pha thay đổi vật lý.</li>
+    <li><span class="tag">Reduced clauses</span><b>"forming the dense clouds · much of which falls · stored in the clouds · repeating indefinitely"</b> — relative clauses + participle clauses → câu phức tự nhiên.</li>
+    <li><span class="tag">Either-or structure</span><b>"either flows over the surface as runoff or seeps underground as groundwater"</b> — cấu trúc song song để mô tả 2 nhánh.</li>
+  </ul>
+
+  <p class="fine">"It is conventional to begin with…" — câu mở Body 1 đặc trưng cho cyclical. Học thuộc.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · VOCAB -->
+<section data-label="27 P02 Vocab" class="slide">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">cyclical / hydrology.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">circulate <span class="pos">(v.)</span> <span class="ipa">/ˈsɜːkjəleɪt/</span></div><div class="vocab-meaning">tuần hoàn — water circulates between sea and sky</div></div>
+        <div class="vocab-item"><div class="vocab-word">evaporate <span class="pos">(v.)</span> <span class="ipa">/ɪˈvæpəreɪt/</span></div><div class="vocab-meaning">bay hơi</div></div>
+        <div class="vocab-item"><div class="vocab-word">condense <span class="pos">(v.)</span> <span class="ipa">/kənˈdens/</span></div><div class="vocab-meaning">ngưng tụ</div></div>
+        <div class="vocab-item"><div class="vocab-word">precipitation <span class="pos">(n.)</span> <span class="ipa">/prɪˌsɪpɪˈteɪʃən/</span></div><div class="vocab-meaning">giáng thuỷ (rain / snow / hail)</div></div>
+        <div class="vocab-item"><div class="vocab-word">runoff <span class="pos">(n.)</span> <span class="ipa">/ˈrʌnɒf/</span></div><div class="vocab-meaning">dòng chảy bề mặt</div></div>
+        <div class="vocab-item"><div class="vocab-word">seep <span class="pos">(v.)</span> <span class="ipa">/siːp/</span></div><div class="vocab-meaning">ngấm, thấm — seeps underground</div></div>
+        <div class="vocab-item"><div class="vocab-word">altitude <span class="pos">(n.)</span> <span class="ipa">/ˈæltɪtjuːd/</span></div><div class="vocab-meaning">độ cao — sufficient altitude</div></div>
+        <div class="vocab-item"><div class="vocab-word">vapour <span class="pos">(n.)</span> <span class="ipa">/ˈveɪpə/</span></div><div class="vocab-meaning">hơi (nước) — water vapour</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">a continuous / natural process</div><div class="vocab-meaning">quy trình liên tục / tự nhiên</div></div>
+        <div class="vocab-item"><div class="vocab-word">has no fixed beginning or end</div><div class="vocab-meaning">không có điểm bắt đầu / kết thúc cố định</div></div>
+        <div class="vocab-item"><div class="vocab-word">be released as precipitation</div><div class="vocab-meaning">được giải phóng dưới dạng giáng thuỷ</div></div>
+        <div class="vocab-item"><div class="vocab-word">flow over the surface</div><div class="vocab-meaning">chảy trên bề mặt</div></div>
+        <div class="vocab-item"><div class="vocab-word">return to / feed back into</div><div class="vocab-meaning">trở lại / quay về (nguồn ban đầu)</div></div>
+        <div class="vocab-item"><div class="vocab-word">repeat indefinitely</div><div class="vocab-meaning">lặp lại không ngừng</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · PARAPHRASE PAIRS -->
+<section data-label="28 P02 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Water Cycle</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Cyclical</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">cyclical-specific.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">water moves continuously</span><span class="vi">→ circulates continuously · undergoes a continuous process · is in constant motion</span></div>
+    <div class="kp-item"><span class="en">water turns into vapour</span><span class="vi">→ evaporates · rises as vapour · is converted into vapour</span></div>
+    <div class="kp-item"><span class="en">clouds form</span><span class="vi">→ vapour condenses into clouds · clouds gather · clouds are formed</span></div>
+    <div class="kp-item"><span class="en">it rains</span><span class="vi">→ precipitation falls · water is released as rain · clouds release moisture</span></div>
+    <div class="kp-item"><span class="en">water goes back to the sea</span><span class="vi">→ returns to the sea · feeds back into the ocean · flows back to its source</span></div>
+    <div class="kp-item"><span class="en">the cycle starts over</span><span class="vi">→ the cycle begins again · repeats indefinitely · starts anew</span></div>
+  </div>
+
+  <p class="fine">"Repeats indefinitely" — sang xịn hơn "happens again". Cũng không cần subject mới.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Water Cycle</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — CEMENT & CONCRETE (29–37) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 29 · SECTION BREAK -->
+<section data-label="29 P03 · Cement & Concrete" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">Cement &amp; Concrete · Linear · two-stage</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 03 · Cement &amp; Concrete</p>
+    <h2><em>Cement.</em><br>Limestone →<br>concrete.</h2>
+    <div class="toc">
+      <div>01 · Chocolate Production — linear</div>
+      <div>02 · Water Cycle — cyclical</div>
+      <div class="active">03 · Cement &amp; Concrete — linear (two-stage)</div>
+      <div>04 · Salmon Life Cycle — cyclical</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · TASK + DIAGRAM -->
+<section data-label="30 P03 Task" class="slide">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Đề bài + sơ đồ</span></div>
+  <p class="eyebrow">Task · Linear · two-stage</p>
+
+  <div style="display:grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 30px; margin-bottom: 16px;">The diagrams below show the stages and equipment used in the cement-making process, and how cement is used to produce concrete for building purposes.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Loại: <em class="hi">linear · 2 quy trình song song</em>.</p>
+      <p class="small">Stage A: cement (5 bước) · Stage B: concrete (1 bước trộn).</p>
+      <p class="small" style="margin-top: 14px;">Trọng tâm: <em class="hi">comparing inputs &amp; ratios</em>.</p>
+    </div>
+
+    <div class="dgm-frame">
+      <p class="dgm-title">Cement Production + Concrete Mix · Two-stage</p>
+      <p class="dgm-source">Source · Construction industry diagram</p>
+      <svg viewBox="0 0 1080 400" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stage A: Cement (top row) -->
+        <text class="plbl" x="20" y="30" fill="#C8202F" font-size="14">STAGE A · CEMENT</text>
+        <g transform="translate(0, 40)">
+          <rect class="pbox" x="20" y="0" width="120" height="80"/>
+          <circle class="pcircle" cx="40" cy="18" r="13"/>
+          <text class="pnum" x="40" y="22">01</text>
+          <text class="plbl" x="80" y="40" text-anchor="middle">CRUSH</text>
+          <text class="plbl-sm" x="80" y="58" text-anchor="middle">limestone +</text>
+          <text class="plbl-sm" x="80" y="72" text-anchor="middle">clay</text>
+
+          <rect class="pbox" x="180" y="0" width="120" height="80"/>
+          <circle class="pcircle" cx="200" cy="18" r="13"/>
+          <text class="pnum" x="200" y="22">02</text>
+          <text class="plbl" x="240" y="40" text-anchor="middle">MIX</text>
+          <text class="plbl-sm" x="240" y="58" text-anchor="middle">into a powder</text>
+
+          <rect class="pbox" x="340" y="0" width="120" height="80"/>
+          <circle class="pcircle" cx="360" cy="18" r="13"/>
+          <text class="pnum" x="360" y="22">03</text>
+          <text class="plbl" x="400" y="40" text-anchor="middle">HEAT</text>
+          <text class="plbl-sm" x="400" y="58" text-anchor="middle">in rotating</text>
+          <text class="plbl-sm" x="400" y="72" text-anchor="middle">kiln</text>
+
+          <rect class="pbox" x="500" y="0" width="120" height="80"/>
+          <circle class="pcircle" cx="520" cy="18" r="13"/>
+          <text class="pnum" x="520" y="22">04</text>
+          <text class="plbl" x="560" y="40" text-anchor="middle">GRIND</text>
+          <text class="plbl-sm" x="560" y="58" text-anchor="middle">into fine</text>
+          <text class="plbl-sm" x="560" y="72" text-anchor="middle">powder</text>
+
+          <rect class="pbox-active" x="660" y="0" width="120" height="80"/>
+          <circle class="pcircle" cx="680" cy="18" r="13"/>
+          <text class="pnum" x="680" y="22">05</text>
+          <text class="plbl" x="720" y="40" text-anchor="middle">BAG</text>
+          <text class="plbl-sm" x="720" y="58" text-anchor="middle">→ CEMENT</text>
+
+          <line class="parrow" x1="140" y1="40" x2="180" y2="40"/>
+          <line class="parrow" x1="300" y1="40" x2="340" y2="40"/>
+          <line class="parrow" x1="460" y1="40" x2="500" y2="40"/>
+          <line class="parrow" x1="620" y1="40" x2="660" y2="40"/>
+        </g>
+
+        <!-- Stage B: Concrete (bottom) -->
+        <text class="plbl" x="20" y="200" fill="#C8202F" font-size="14">STAGE B · CONCRETE</text>
+        <!-- Inputs: 4 ingredients into mixer -->
+        <g transform="translate(0, 220)">
+          <rect class="pbox" x="20" y="0" width="120" height="50"/>
+          <text class="plbl" x="80" y="22" text-anchor="middle">CEMENT 15%</text>
+          <text class="plbl-sm" x="80" y="40" text-anchor="middle">from Stage A</text>
+
+          <rect class="pbox" x="20" y="60" width="120" height="50"/>
+          <text class="plbl" x="80" y="82" text-anchor="middle">WATER 10%</text>
+
+          <rect class="pbox" x="160" y="0" width="120" height="50"/>
+          <text class="plbl" x="220" y="22" text-anchor="middle">SAND 25%</text>
+
+          <rect class="pbox" x="160" y="60" width="120" height="50"/>
+          <text class="plbl" x="220" y="82" text-anchor="middle">GRAVEL 50%</text>
+
+          <!-- Concrete mixer -->
+          <rect class="pbox-active" x="380" y="20" width="200" height="80"/>
+          <circle class="pcircle" cx="400" cy="38" r="13"/>
+          <text class="pnum" x="400" y="42">06</text>
+          <text class="plbl" x="480" y="62" text-anchor="middle">CONCRETE MIXER</text>
+          <text class="plbl-sm" x="480" y="82" text-anchor="middle">rotating drum</text>
+
+          <!-- Output -->
+          <rect class="pbox-active" x="640" y="20" width="160" height="80"/>
+          <text class="plbl" x="720" y="62" text-anchor="middle" fill="#C8202F">→ CONCRETE</text>
+          <text class="plbl-sm" x="720" y="82" text-anchor="middle">for building</text>
+
+          <line class="parrow" x1="280" y1="25" x2="380" y2="50"/>
+          <line class="parrow" x1="280" y1="85" x2="380" y2="65"/>
+          <line class="parrow" x1="140" y1="25" x2="380" y2="50"/>
+          <line class="parrow" x1="140" y1="85" x2="380" y2="65"/>
+          <line class="parrow" x1="580" y1="60" x2="640" y2="60"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · STEP 1 ANALYSE -->
+<section data-label="31 P03 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">two-stage diagram.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Linear · 2 sơ đồ song song · Stage A (cement) → Stage B (concrete)</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Liên kết hai stage?</div><div class="s">Cement (output A) là 1 trong 4 nguyên liệu input của B</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Tỉ lệ concrete?</div><div class="s">Gravel 50% · Sand 25% · Cement 15% · Water 10%</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Body chia?</div><div class="s">Body 1 = Stage A (5 bước). Body 2 = Stage B + tỉ lệ + sản phẩm cuối</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng các bước</h2>
+  <table class="step-table">
+    <thead><tr><th>Step</th><th>Action</th><th>Verb (passive)</th></tr></thead>
+    <tbody>
+      <tr><td>A1</td><td class="feat">Limestone &amp; clay crushed</td><td>are crushed · are broken down</td></tr>
+      <tr><td>A2</td><td class="feat">Mixed into a fine powder</td><td>are mixed · are blended</td></tr>
+      <tr><td>A3</td><td class="feat">Heated in a rotating kiln</td><td>is heated · is fired</td></tr>
+      <tr><td>A4 / A5</td><td class="feat">Ground into fine powder &amp; bagged → cement</td><td>is ground · is packed into bags</td></tr>
+      <tr><td>B6</td><td class="feat">Cement (15%) + water (10%) + sand (25%) + gravel (50%) → concrete mixer</td><td>are combined · are mixed in proportions of</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="32 P03 Step2" class="slide">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Two-stage — <em class="hi">overview phân biệt 2 sơ đồ.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The diagrams below <b>show the stages and equipment</b> used in the cement-making process, and <b>how cement is used to produce concrete</b> for building purposes."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The two diagrams illustrate the manufacture of cement and the subsequent use of that cement, together with three other ingredients, to produce concrete for the construction industry."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 sơ đồ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">cement production is a five-step linear process beginning with raw limestone and clay and ending with bagged cement</span>. <span class="hl-band">Concrete, by contrast, is made in a single mixing stage that combines cement with three other materials in fixed proportions</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Two-stage overview: 1 câu mô tả Stage A (số bước, input/output), 1 câu mô tả Stage B (đặc trưng).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · STEP 3 BODY -->
+<section data-label="33 P03 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Body 1 = Stage A. Body 2 = Stage B + ratios.</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · Cement</span>The cement-making process <b>begins with</b> limestone and clay, which <b>are crushed</b> and <b>then mixed</b> into a fine powder. <b>This powder is subsequently heated</b> in a large rotating kiln, where chemical changes occur at high temperatures. <b>Once heated,</b> the resulting material <b>is ground</b> into a finer powder and finally <b>packed into bags</b>, ready for sale or further use.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · Concrete</span>Concrete <b>is produced</b> in a single mixing stage. <b>To obtain</b> the final product, four ingredients <b>are combined</b> in a rotating concrete mixer in the following proportions: 50% gravel, 25% sand, 15% cement and 10% water. <b>The result</b> is a wet mixture that hardens once poured, suitable for a wide range of building purposes.</p>
+    </div>
+  </div>
+
+  <p class="fine">Khi có tỉ lệ — phải nêu đầy đủ trong Body 2. Liệt kê từ lớn nhất xuống nhỏ nhất (gravel 50% → water 10%).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · SAMPLE ESSAY -->
+<section data-label="34 P03 Sample" class="slide">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 178 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">two-stage process.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two diagrams illustrate the manufacture of cement and the subsequent use of that cement, together with three other ingredients, to produce concrete for the construction industry.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that cement production is a five-step linear process beginning with raw limestone and clay and ending with bagged cement. Concrete, by contrast, is made in a single mixing stage that combines cement with three other materials in fixed proportions.</p>
+    <p><span class="para-tag">Body 1</span>The cement-making process begins with limestone and clay, which are crushed and then mixed into a fine powder. This powder is subsequently heated in a large rotating kiln, where chemical changes occur at high temperatures. Once heated, the resulting material is ground into a finer powder and finally packed into bags, ready for sale or further use.</p>
+    <p><span class="para-tag">Body 2</span>Concrete is produced in a single mixing stage. To obtain the final product, four ingredients are combined in a rotating concrete mixer in the following proportions: 50% gravel, 25% sand, 15% cement and 10% water. The result is a wet mixture that hardens once poured, suitable for a wide range of building purposes.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · LANGUAGE ANALYSIS -->
+<section data-label="35 P03 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Two-stage with proportions</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Cement.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Passive variety</span><b>"are crushed · are mixed · is heated · is ground · is packed · is produced · are combined · hardens"</b> — bảy passive + 1 active intransitive (<em>hardens</em>).</li>
+    <li><span class="tag">Sequencers</span><b>"begins with · then · subsequently · Once heated · finally · The result is"</b> — đủ 5 cấp độ sequencer + 1 result-marker.</li>
+    <li><span class="tag">Comparing two stages</span><b>"by contrast · in a single mixing stage · together with three other ingredients"</b> — linking giữa 2 sơ đồ chứ không chỉ trong 1.</li>
+    <li><span class="tag">Proportions</span><b>"in fixed proportions: 50% gravel, 25% sand, 15% cement and 10% water"</b> — liệt kê tỉ lệ từ lớn → nhỏ, dùng colon → mạch lạc.</li>
+  </ul>
+
+  <p class="fine">"In the following proportions: …" là cụm chuẩn cho diagram có tỉ lệ. Học thuộc.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · VOCAB -->
+<section data-label="36 P03 Vocab" class="slide">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">manufacturing.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">manufacture <span class="pos">(v./n.)</span> <span class="ipa">/ˌmænjəˈfæktʃə/</span></div><div class="vocab-meaning">sản xuất công nghiệp — the manufacture of cement</div></div>
+        <div class="vocab-item"><div class="vocab-word">crush <span class="pos">(v.)</span> <span class="ipa">/krʌʃ/</span></div><div class="vocab-meaning">nghiền nát (thô)</div></div>
+        <div class="vocab-item"><div class="vocab-word">kiln <span class="pos">(n.)</span> <span class="ipa">/kɪln/</span></div><div class="vocab-meaning">lò nung (kiềm) — rotating kiln</div></div>
+        <div class="vocab-item"><div class="vocab-word">grind <span class="pos">(v.)</span> <span class="ipa">/ɡraɪnd/</span></div><div class="vocab-meaning">nghiền mịn — past: ground</div></div>
+        <div class="vocab-item"><div class="vocab-word">proportion <span class="pos">(n.)</span> <span class="ipa">/prəˈpɔːʃən/</span></div><div class="vocab-meaning">tỉ lệ — in fixed proportions</div></div>
+        <div class="vocab-item"><div class="vocab-word">harden <span class="pos">(v.)</span> <span class="ipa">/ˈhɑːdən/</span></div><div class="vocab-meaning">đông cứng (tự thân) — concrete hardens once poured</div></div>
+        <div class="vocab-item"><div class="vocab-word">subsequent <span class="pos">(adj.)</span> <span class="ipa">/ˈsʌbsɪkwənt/</span></div><div class="vocab-meaning">tiếp theo — the subsequent use of cement</div></div>
+        <div class="vocab-item"><div class="vocab-word">construction <span class="pos">(n.)</span> <span class="ipa">/kənˈstrʌkʃən/</span></div><div class="vocab-meaning">xây dựng — construction industry</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">a five-step linear process</div><div class="vocab-meaning">quy trình tuyến tính 5 bước</div></div>
+        <div class="vocab-item"><div class="vocab-word">in fixed proportions</div><div class="vocab-meaning">theo tỉ lệ cố định</div></div>
+        <div class="vocab-item"><div class="vocab-word">a single mixing stage</div><div class="vocab-meaning">một giai đoạn trộn duy nhất</div></div>
+        <div class="vocab-item"><div class="vocab-word">be packed into bags</div><div class="vocab-meaning">được đóng vào bao</div></div>
+        <div class="vocab-item"><div class="vocab-word">be combined / blended with</div><div class="vocab-meaning">được kết hợp với</div></div>
+        <div class="vocab-item"><div class="vocab-word">for building / construction purposes</div><div class="vocab-meaning">cho mục đích xây dựng</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · PARAPHRASE PAIRS -->
+<section data-label="37 P03 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Cement &amp; Concrete</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Manufacturing</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">linear two-stage.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">how cement is made</span><span class="vi">→ the manufacture of cement · the cement-making process · how cement is produced</span></div>
+    <div class="kp-item"><span class="en">they break the rocks</span><span class="vi">→ are crushed · are broken down · are pulverised</span></div>
+    <div class="kp-item"><span class="en">they heat it</span><span class="vi">→ is heated · is fired in a kiln · is exposed to high temperatures</span></div>
+    <div class="kp-item"><span class="en">they put X% of each</span><span class="vi">→ are combined in fixed proportions of · in a ratio of · containing X% of</span></div>
+    <div class="kp-item"><span class="en">it becomes hard</span><span class="vi">→ hardens once poured · sets · solidifies</span></div>
+    <div class="kp-item"><span class="en">to use for building</span><span class="vi">→ for construction purposes · for building applications · in the construction industry</span></div>
+  </div>
+
+  <p class="fine">"Hardens once poured" — câu Band 7+ vì gói gọn 2 ý (hardens + once poured) bằng 3 từ.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Cement &amp; Concrete</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — SALMON LIFE CYCLE (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · SECTION BREAK -->
+<section data-label="38 P04 · Salmon" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Salmon Life Cycle · Cyclical</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 04 · Salmon</p>
+    <h2><em>Salmon.</em><br>Egg → fry →<br>adult.</h2>
+    <div class="toc">
+      <div>01 · Chocolate Production — linear</div>
+      <div>02 · Water Cycle — cyclical</div>
+      <div>03 · Cement &amp; Concrete — linear (two-stage)</div>
+      <div class="active">04 · Salmon Life Cycle — cyclical</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · TASK + DIAGRAM -->
+<section data-label="39 P04 Task" class="slide">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Đề bài + sơ đồ</span></div>
+  <p class="eyebrow">Task · Cyclical · Salmon life cycle</p>
+
+  <div style="display:grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The diagram below shows the life cycle of a salmon, from egg to mature adult.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Loại: <em class="hi">cyclical · 5 stages</em>.</p>
+      <p class="small">Time markers: <em>5–6 months · 4 years · returns to spawn</em>.</p>
+      <p class="small" style="margin-top: 14px;">Locations: <em class="hi">river · sea · river</em>.</p>
+    </div>
+
+    <div class="dgm-frame">
+      <p class="dgm-title">Salmon Life Cycle · 5 stages</p>
+      <p class="dgm-source">Source · Marine biology diagram</p>
+      <svg viewBox="0 0 720 420" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <!-- River (left) and sea (right) -->
+        <path d="M 0 280 L 360 280 L 360 420 L 0 420 Z" fill="rgba(31,120,80,0.10)" stroke="rgba(31,120,80,0.4)" stroke-width="1"/>
+        <text class="plbl-sm" x="180" y="380" text-anchor="middle">RIVER (freshwater)</text>
+        <path d="M 360 220 L 720 220 L 720 420 L 360 420 Z" fill="rgba(31,58,61,0.10)" stroke="rgba(31,58,61,0.4)" stroke-width="1"/>
+        <text class="plbl-sm" x="540" y="370" text-anchor="middle">SEA (saltwater)</text>
+
+        <!-- Stage 01: Egg (river bed, top-left) -->
+        <circle class="pcircle" cx="80" cy="80" r="28"/>
+        <text class="pnum" x="80" y="78">01</text>
+        <text class="plbl-sm" x="80" y="93">EGG</text>
+        <text class="plbl-sm" x="80" y="125" text-anchor="middle">in gravel</text>
+        <text class="plbl-sm" x="80" y="140" text-anchor="middle">5–6 months</text>
+
+        <!-- Stage 02: Fry (river) -->
+        <circle class="pcircle" cx="220" cy="80" r="28"/>
+        <text class="pnum" x="220" y="78">02</text>
+        <text class="plbl-sm" x="220" y="93">FRY</text>
+        <text class="plbl-sm" x="220" y="125" text-anchor="middle">small fish</text>
+        <text class="plbl-sm" x="220" y="140" text-anchor="middle">in river</text>
+
+        <!-- Stage 03: Smolt (river → sea, middle) -->
+        <circle class="pcircle" cx="380" cy="80" r="28"/>
+        <text class="pnum" x="380" y="78">03</text>
+        <text class="plbl-sm" x="380" y="93">SMOLT</text>
+        <text class="plbl-sm" x="380" y="125" text-anchor="middle">migrates to sea</text>
+        <text class="plbl-sm" x="380" y="140" text-anchor="middle">~ 2 years old</text>
+
+        <!-- Stage 04: Adult (sea) -->
+        <circle class="pcircle" cx="560" cy="80" r="28"/>
+        <text class="pnum" x="560" y="78">04</text>
+        <text class="plbl-sm" x="560" y="93">ADULT</text>
+        <text class="plbl-sm" x="560" y="125" text-anchor="middle">grows in sea</text>
+        <text class="plbl-sm" x="560" y="140" text-anchor="middle">4 years</text>
+
+        <!-- Stage 05: Spawning return -->
+        <circle class="pcircle" cx="560" cy="240" r="28"/>
+        <text class="pnum" x="560" y="238">05</text>
+        <text class="plbl-sm" x="560" y="253">SPAWN</text>
+        <text class="plbl-sm" x="560" y="290" text-anchor="middle">returns to river</text>
+        <text class="plbl-sm" x="560" y="305" text-anchor="middle">to lay eggs</text>
+
+        <!-- Arrows -->
+        <line class="parrow" x1="108" y1="80" x2="192" y2="80"/>
+        <line class="parrow" x1="248" y1="80" x2="352" y2="80"/>
+        <line class="parrow" x1="408" y1="80" x2="532" y2="80"/>
+        <line class="parrow" x1="560" y1="108" x2="560" y2="212"/>
+        <!-- Loop arrow back to egg -->
+        <path class="parrow" d="M 540 260 Q 320 320 110 110" stroke-dasharray="0"/>
+        <text class="plbl-sm" x="320" y="220" fill="#C8202F" font-weight="700">↺ cycle repeats</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · STEP 1 ANALYSE -->
+<section data-label="40 P04 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">life-cycle thinking.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Cyclical · 5 stages · biological life cycle</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Bắt đầu từ đâu?</div><div class="s">Egg (trứng) — convention, dễ kể</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Body chia?</div><div class="s">Body 1 = freshwater (1-3) · Body 2 = sea + return (4-5)</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Time markers?</div><div class="s">5-6 tháng (egg) · 2 năm (smolt) · 4 năm (adult) — phải đưa vào bài</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng 5 stages</h2>
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Description</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td class="feat">Egg laid in river gravel · hatches after 5–6 months</td><td>are laid · hatch · develop</td></tr>
+      <tr><td>02</td><td class="feat">Fry — small juveniles living in river</td><td>emerge as · grow into</td></tr>
+      <tr><td>03</td><td class="feat">Smolt — migrate downstream to sea (~2 yrs)</td><td>migrate · travel downstream</td></tr>
+      <tr><td>04</td><td class="feat">Adult — mature in sea for ~4 years</td><td>mature · feed · grow</td></tr>
+      <tr><td>05</td><td class="feat">Spawning — return upstream to lay eggs → cycle repeats</td><td>return to · spawn · lay eggs</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="41 P04 Step2" class="slide">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Life cycle — <em class="hi">5 stages, 2 environments.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The diagram below <b>shows the life cycle of a salmon</b>, from <b>egg</b> to <b>mature adult</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The diagram depicts the five-stage life cycle of the salmon, tracing the fish from its emergence as an egg in freshwater to its eventual return as a spawning adult."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 môi trường</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the salmon spends the early stages of its life in freshwater rivers, migrates to the sea to mature, and finally returns to its original river to reproduce</span>. <span class="hl-band">The cycle, which spans roughly six years, then begins again with a new generation of eggs</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Overview life cycle: 1 câu mô tả tổng quỹ đạo · 1 câu nhấn vòng lặp ("begins again").</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · STEP 3 BODY -->
+<section data-label="42 P04 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Body 1 = river · Body 2 = sea + return.</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · Freshwater</span>The cycle <b>begins</b> when eggs <b>are laid</b> in the gravel of a riverbed, where they remain protected for between five and six months before hatching. <b>Once hatched,</b> the young fish, known as fry, <b>grow gradually</b> in the freshwater environment. <b>After about two years,</b> they reach the smolt stage and <b>migrate downstream</b> from the river toward the sea.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · Sea + Return</span><b>In the sea,</b> the smolts <b>develop into</b> mature adult salmon over a period of approximately four years, feeding and growing to full size. <b>Subsequently,</b> the adults <b>return to</b> the very river where they were born in order to spawn, <b>laying</b> their own eggs in the gravel. <b>At this point, the cycle begins again</b> with the next generation.</p>
+    </div>
+  </div>
+
+  <p class="fine">Time markers tích hợp: <em class="hi">"between five and six months · about two years · approximately four years"</em> — luôn dùng adverbs of approximation.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · SAMPLE ESSAY -->
+<section data-label="43 P04 Sample" class="slide">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 172 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">life cycle hoàn chỉnh.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The diagram depicts the five-stage life cycle of the salmon, tracing the fish from its emergence as an egg in freshwater to its eventual return as a spawning adult.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the salmon spends the early stages of its life in freshwater rivers, migrates to the sea to mature, and finally returns to its original river to reproduce. The cycle, which spans roughly six years, then begins again with a new generation of eggs.</p>
+    <p><span class="para-tag">Body 1</span>The cycle begins when eggs are laid in the gravel of a riverbed, where they remain protected for between five and six months before hatching. Once hatched, the young fish, known as fry, grow gradually in the freshwater environment. After about two years, they reach the smolt stage and migrate downstream from the river toward the sea.</p>
+    <p><span class="para-tag">Body 2</span>In the sea, the smolts develop into mature adult salmon over a period of approximately four years, feeding and growing to full size. Subsequently, the adults return to the very river where they were born in order to spawn, laying their own eggs in the gravel. At this point, the cycle begins again with the next generation.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · LANGUAGE ANALYSIS -->
+<section data-label="44 P04 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Life cycle</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Salmon.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Cyclical phrases</span><b>"the cycle begins · then begins again with a new generation · spans roughly six years · the very river where they were born"</b> — bốn cụm vòng tuần hoàn + relative clause.</li>
+    <li><span class="tag">Verb variety</span><b>"are laid · hatching · grow gradually · migrate downstream · develop into · return to · spawn · laying"</b> — tám verb mô tả phát triển sinh học.</li>
+    <li><span class="tag">Time markers</span><b>"for between five and six months · After about two years · over a period of approximately four years"</b> — adverb of approximation cho time → tự nhiên.</li>
+    <li><span class="tag">Reduced clauses</span><b>"feeding and growing to full size · laying their own eggs · known as fry · where they were born"</b> — participle + relative clauses → câu phức.</li>
+  </ul>
+
+  <p class="fine">"The very river where they were born" — câu nhấn (very) + relative clause → ăn band Lexical Resource.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · VOCAB -->
+<section data-label="45 P04 Vocab" class="slide">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">life cycle.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">hatch <span class="pos">(v.)</span> <span class="ipa">/hætʃ/</span></div><div class="vocab-meaning">nở (trứng) — eggs hatch after 6 months</div></div>
+        <div class="vocab-item"><div class="vocab-word">fry <span class="pos">(n.)</span> <span class="ipa">/fraɪ/</span></div><div class="vocab-meaning">cá con (giai đoạn đầu)</div></div>
+        <div class="vocab-item"><div class="vocab-word">smolt <span class="pos">(n.)</span> <span class="ipa">/sməʊlt/</span></div><div class="vocab-meaning">cá hồi giai đoạn di cư</div></div>
+        <div class="vocab-item"><div class="vocab-word">migrate <span class="pos">(v.)</span> <span class="ipa">/maɪˈɡreɪt/</span></div><div class="vocab-meaning">di cư — migrate downstream</div></div>
+        <div class="vocab-item"><div class="vocab-word">spawn <span class="pos">(v.)</span> <span class="ipa">/spɔːn/</span></div><div class="vocab-meaning">đẻ trứng (cá) — return to spawn</div></div>
+        <div class="vocab-item"><div class="vocab-word">mature <span class="pos">(v./adj.)</span> <span class="ipa">/məˈtʃʊə/</span></div><div class="vocab-meaning">trưởng thành — mature adult</div></div>
+        <div class="vocab-item"><div class="vocab-word">downstream <span class="pos">(adv.)</span> <span class="ipa">/ˌdaʊnˈstriːm/</span></div><div class="vocab-meaning">xuôi dòng (về phía hạ nguồn)</div></div>
+        <div class="vocab-item"><div class="vocab-word">gravel <span class="pos">(n.)</span> <span class="ipa">/ˈɡrævəl/</span></div><div class="vocab-meaning">sỏi (đáy sông) — eggs in the gravel</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">the life cycle of</div><div class="vocab-meaning">vòng đời của</div></div>
+        <div class="vocab-item"><div class="vocab-word">spans roughly X years</div><div class="vocab-meaning">kéo dài khoảng X năm</div></div>
+        <div class="vocab-item"><div class="vocab-word">a new generation of</div><div class="vocab-meaning">một thế hệ mới của</div></div>
+        <div class="vocab-item"><div class="vocab-word">return to / migrate to</div><div class="vocab-meaning">quay lại / di cư đến</div></div>
+        <div class="vocab-item"><div class="vocab-word">develop into / grow into</div><div class="vocab-meaning">phát triển thành</div></div>
+        <div class="vocab-item"><div class="vocab-word">in order to spawn / reproduce</div><div class="vocab-meaning">để đẻ trứng / sinh sản</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · PARAPHRASE PAIRS -->
+<section data-label="46 P04 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Salmon</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Life cycle</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">cyclical biology.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">how a salmon lives and grows</span><span class="vi">→ the life cycle of the salmon · the developmental stages of · how the salmon develops</span></div>
+    <div class="kp-item"><span class="en">eggs come out of the egg</span><span class="vi">→ eggs hatch · the young emerge from · fry develop from</span></div>
+    <div class="kp-item"><span class="en">the fish goes to the sea</span><span class="vi">→ migrates to the sea · travels downstream · moves out to open water</span></div>
+    <div class="kp-item"><span class="en">it grows up</span><span class="vi">→ matures · develops into an adult · grows to full size</span></div>
+    <div class="kp-item"><span class="en">it goes back to the river</span><span class="vi">→ returns to its original river · migrates upstream · travels back to the spawning grounds</span></div>
+    <div class="kp-item"><span class="en">it lays eggs again</span><span class="vi">→ spawns · reproduces · produces a new generation of eggs</span></div>
+  </div>
+
+  <p class="fine">"To the very river where they were born" — câu Band 7+ vì <em>very</em> + relative clause.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Salmon</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP-UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERN RECAP -->
+<section data-label="47 Pattern Recap" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Pattern chung</span></div>
+  <p class="eyebrow">Common pattern · Across all 4 essays</p>
+  <h2 class="h-section">Một khung — <em class="hi">bốn bài.</em></h2>
+
+  <div class="take">
+    <div class="item"><div class="k">01 · Intro (1 câu)</div><div class="v">Linear: "The diagram illustrates the X-step process by which Y is produced." · Cyclical: "The diagram depicts the cycle of X / the life cycle of X."</div></div>
+    <div class="item"><div class="k">02 · Overview (2 câu)</div><div class="v">Câu 1: số bước / 2 phase / loại process. Câu 2: input→output (linear) hoặc "no fixed beginning / cycle repeats" (cyclical).</div></div>
+    <div class="item"><div class="k">03 · Body 1 (3-4 câu)</div><div class="v">Nửa đầu của process: cultivation / preparation / freshwater stage. Sequencers: <em>begins with · Once X-ed · after which</em>.</div></div>
+    <div class="item"><div class="k">04 · Body 2 (3-4 câu)</div><div class="v">Nửa sau + chốt: Linear → "Finally, the product is …". Cyclical → "the cycle then begins again".</div></div>
+  </div>
+
+  <p class="fine">Cùng khung 4 đoạn — chỉ thay <em class="hi">cyclical phrases</em> ở overview &amp; câu cuối Body 2 là đủ phân biệt 2 loại.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · VOCAB CONSOLIDATION -->
+<section data-label="48 Vocab Consolidation" class="slide slide--paper">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Vocab tổng hợp</span></div>
+  <p class="eyebrow">Vocabulary consolidation · 24 verbs to memorise</p>
+  <h2 class="h-section" style="font-size: 50px;">Hai mươi bốn verbs — <em class="hi">đủ dùng cho mọi process / cycle.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 56px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Sequencers</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>begins with / starts with</li>
+        <li>Once + V3</li>
+        <li>Having been + V3</li>
+        <li>after which</li>
+        <li>Subsequently</li>
+        <li>After this stage</li>
+        <li>Finally / At this point</li>
+        <li>The cycle then repeats</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Action verbs (passive)</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>are crushed / ground</li>
+        <li>are heated / fired</li>
+        <li>are mixed / combined</li>
+        <li>are packed / bagged</li>
+        <li>is poured / moulded</li>
+        <li>is left to cool</li>
+        <li>are released as</li>
+        <li>are laid / hatched</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Cyclical phrases</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>circulate continuously</li>
+        <li>has no fixed beginning</li>
+        <li>spans roughly X years</li>
+        <li>begins again / repeats</li>
+        <li>a new generation of</li>
+        <li>migrate downstream</li>
+        <li>return to / feed back into</li>
+        <li>the cycle recurs indefinitely</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Học theo cột: cột 1 (sequencers) cho mọi bài · cột 2 (action) cho linear · cột 3 (cyclical) cho life cycle / water cycle.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · HOMEWORK -->
+<section data-label="49 Homework" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Bài về nhà</span></div>
+  <p class="eyebrow">Homework · Practice schedule</p>
+  <h2 class="h-section">Bài về nhà — <em class="hi">3 bài trong 1 tuần.</em></h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Viết lại Practice 02 (Water Cycle) trong 20 phút.</span><span class="step-body">Không nhìn bài mẫu. Mục tiêu: ≥ 4 cyclical phrases (begins · circulates · returns · repeats), ≥ 6 passive đa dạng. So với bài mẫu — gạch chân 3 sequencer khác nhau.</span></div></li>
+    <li><div><span class="step-title">Tìm 1 process diagram Cambridge IELTS 17/18/19, viết trong 20 phút.</span><span class="step-body">Áp dụng quy trình 5 bước. Đếm từ ≥150. Gửi bài cho cô qua Notion để chấm.</span></div></li>
+    <li><div><span class="step-title">Học thuộc 24 phrases ở slide 48 (8 phrases/ngày, 3 ngày).</span><span class="step-body">Cách kiểm tra: tự dịch 1 process bất kỳ trong sách Khoa học (vd: <em>quá trình quang hợp</em>) ra tiếng Anh, dùng đủ 8 phrases mỗi cột.</span></div></li>
+    <li><div><span class="step-title">Đọc 2 sample essay Band 7+ về process trên BC site.</span><span class="step-body">simon.com hoặc ieltsliz.com — chọn 1 linear + 1 cyclical. Highlight passive verbs &amp; sequencers. Note sổ.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · END SLIDE -->
+<section data-label="50 End" class="slide end-slide">
+  <div>
+    <h1>End.</h1>
+    <p class="hint">Lesson 04 · Process &amp; Cycle · 50 slides · Cmd+P để xuất PDF</p>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

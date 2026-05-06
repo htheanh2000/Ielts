@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 1 — Academic · Lesson 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ LESSON-03 ADDITIONS ═════════ */
+
+  /* Map frames */
+  .map-frame { background: var(--paper); border: 1px solid var(--rule-soft); padding: 28px 32px 22px; }
+  .map-frame .map-title { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0 0 4px; color: var(--ink); }
+  .map-frame .map-source { font-family: var(--mono); font-size: 16px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .map-frame.is-then { background: var(--bg-panel); }
+
+  /* Sample essay (reused from L02) */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
+  .essay p { margin: 0 0 14px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .hl-band { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  /* Annotation list */
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+
+  /* Key-phrase grid */
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 20px; color: var(--ink-soft); line-height: 1.4; }
+
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 22px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  /* Band scoring grid */
+  .band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
+  .band-cell { border-top: 3px solid var(--accent); padding-top: 22px; }
+  .band-cell .k { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 10px; }
+  .band-cell .t { font-family: var(--display); font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .band-cell .d { font-size: 22px; line-height: 1.4; color: var(--ink-soft); }
+
+  /* Paraphrase pairs */
+  .pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; margin-top: 8px; }
+  .pp-grid > div > .mono-label { margin-bottom: 6px; }
+  .pp-grid > div > p { font-family: var(--display); font-size: 26px; line-height: 1.4; margin: 6px 0 0; }
+
+  /* Key-figures row */
+  .kf-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 3px solid var(--accent); padding-top: 28px; }
+  .kf-row .kf .k { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; }
+  .kf-row .kf .v { font-family: var(--display); font-size: 64px; font-weight: 800; line-height: 1; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 10px; }
+  .kf-row .kf .d { font-size: 20px; color: var(--ink-soft); line-height: 1.4; max-width: 420px; }
+
+  /* Map SVG building styling */
+  .bld { fill: var(--paper); stroke: #1A1A1A; stroke-width: 1.4; }
+  .bld-new { fill: rgba(200,32,47,0.18); stroke: var(--accent); stroke-width: 1.8; }
+  .bld-kept { fill: var(--bg-panel); stroke: #1A1A1A; stroke-width: 1.4; stroke-dasharray: none; }
+  .bld-gone { fill: none; stroke: rgba(26,26,26,0.4); stroke-width: 1.2; stroke-dasharray: 4 3; }
+  .road { fill: rgba(26,26,26,0.06); }
+  .road-edge { stroke: #1A1A1A; stroke-width: 1; fill: none; }
+  .map-lbl { font-family: 'Roboto Mono', monospace; font-size: 12px; fill: #1A1A1A; }
+  .map-lbl-new { font-family: 'Roboto Mono', monospace; font-size: 12px; fill: var(--accent); font-weight: 600; }
+  .map-lbl-gone { font-family: 'Roboto Mono', monospace; font-size: 11px; fill: rgba(26,26,26,0.5); font-style: italic; }
+  .compass { font-family: 'Roboto Mono', monospace; font-size: 13px; fill: var(--accent); font-weight: 700; }
+  .water { fill: rgba(31,58,61,0.08); stroke: rgba(31,58,61,0.4); stroke-width: 1; }
+  .green { fill: rgba(31,120,80,0.10); stroke: rgba(31,120,80,0.4); stroke-width: 1; }
+
+  /* Change legend */
+  .legend-row { display: flex; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+  .legend-row .lg { display: inline-flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 16px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+  .legend-row .lg .sw { width: 22px; height: 14px; display: inline-block; border: 1px solid #1A1A1A; }
+  .legend-row .lg .sw.kept { background: var(--bg-panel); }
+  .legend-row .lg .sw.new { background: rgba(200,32,47,0.18); border-color: var(--accent); }
+  .legend-row .lg .sw.gone { background: transparent; border-style: dashed; border-color: rgba(26,26,26,0.5); }
+
+  /* Change-table */
+  .ch-table { width: 100%; border-collapse: collapse; }
+  .ch-table th, .ch-table td { padding: 12px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 21px; vertical-align: top; }
+  .ch-table thead th { font-family: var(--mono); font-size: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 3px solid var(--accent); }
+  .ch-table tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ch-table tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · THEORY (01-10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 1 Academic</div>
+    <h1 class="main">Maps<br>&amp; <em>Change.</em></h1>
+    <div class="mark">Lesson 03 · Two map types · Four practices</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.0 → 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>10 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 bản đồ</dd></div>
+      <div><dt>Từ vựng</dt><dd>32 từ · 24 collocations</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Agenda</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Theory.</span><span class="step-body">10 slide · 18 phút. Tổng quan dạng map · 2 loại đề · ngôn ngữ vị trí · ngôn ngữ thay đổi (past + future) · cấu trúc 4 đoạn · trình tự 20 phút.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Town Centre — 1990 vs 2020.</span><span class="step-body">9 slide · 17 phút. Past vs Present · passive past simple · bài mẫu 175 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Coastal Village — Proposed Redevelopment.</span><span class="step-body">9 slide · 17 phút. Present vs Future · passive future · bài mẫu 168 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · University Campus — 2000 vs 2025.</span><span class="step-body">9 slide · 17 phút. Past vs Present · expansion + replacement · bài mẫu 172 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · Industrial Estate — Proposed Regeneration.</span><span class="step-body">9 slide · 17 phút. Present vs Future · large-scale change · bài mẫu 170 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Wrap-up &amp; Homework.</span><span class="step-body">4 slide · 4 phút. Pattern chung · vocab tổng hợp · bài về nhà · lịch luyện tuần.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Objectives</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Nhận biết 2 loại đề map (past↔present, present↔future).</span><span class="step-body">Nhìn caption + năm để chọn đúng thì — sai thì = mất 0.5 band Grammar ngay.</span></div></li>
+    <li><div><span class="step-title">Dùng đúng passive voice cho thay đổi.</span><span class="step-body">Past: <em>was demolished / was replaced by</em>. Future: <em>will be built / is to be constructed</em>.</span></div></li>
+    <li><div><span class="step-title">Mô tả vị trí bằng spatial language.</span><span class="step-body">Compass + relative position: <em>in the north-east corner / opposite / adjacent to / on the outskirts of</em>.</span></div></li>
+    <li><div><span class="step-title">Viết overview cho map đạt Band 6.</span><span class="step-body">2 câu nêu đặc trưng tổng thể: hướng phát triển (urbanisation? commercialisation?) + cái gì giữ nguyên.</span></div></li>
+    <li><div><span class="step-title">Phân nhóm thay đổi để viết Body 1 / Body 2.</span><span class="step-body">Theo khu vực (north vs south) hoặc theo loại (additions vs removals) — chọn 1 cách, không trộn.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TASK OVERVIEW -->
+<section data-label="Task Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan dạng Map</span></div>
+  <p class="eyebrow">Map Tasks · Task 1 Academic</p>
+  <h2 class="h-section">20 phút. <em class="hi">150 từ.</em> Hai bản đồ.</h2>
+
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Tần suất</div><div class="v">~12%</div><div class="d">Chiếm khoảng 1/8 đề thi Task 1. Ít gặp hơn line/bar nhưng <em class="hi">dễ ăn band</em> nếu nắm pattern.</div></div>
+    <div class="stat"><div class="k">Đặc điểm</div><div class="v">2</div><div class="d">Luôn có <em class="hi">2 bản đồ</em>: trước/sau. Nhiệm vụ: liệt kê những gì <em>changed</em> &amp; những gì <em>stayed the same</em>.</div></div>
+    <div class="stat"><div class="k">Trọng tâm</div><div class="v">Passive</div><div class="d">90% câu trong bài map dùng <em class="hi">passive voice</em>. Không cần subject — vì ai làm không quan trọng.</div></div>
+  </div>
+
+  <p class="fine">Map = bản đồ "before / after" của một khu vực. Có thể là thị trấn, khu trường, làng, công viên, sân bay. Đơn vị: không có số liệu — toàn bộ là <em class="hi">định tính</em>.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · TWO MAP TYPES -->
+<section data-label="Map Types" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Hai loại map</span></div>
+  <p class="eyebrow">Two Map Types · Tense decisions</p>
+  <h2 class="h-section">Hai dạng — <em class="hi">hai thì khác nhau.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Type 01 — Most common</p>
+      <h3 style="font-size: 44px;">Past ↔ Present</h3>
+      <ul>
+        <li><b>Tín hiệu:</b> năm cụ thể quá khứ (1990 vs 2020 / in the past vs today)</li>
+        <li><b>Thì:</b> past simple passive — <em>was built / was demolished / was replaced by</em></li>
+        <li><b>Verb:</b> was knocked down · was converted into · was extended · was constructed</li>
+        <li><b>Linking:</b> in the meantime · over this period · by 2020</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Type 02 — Less common</p>
+      <h3 style="font-size: 44px;">Present ↔ Future</h3>
+      <ul>
+        <li><b>Tín hiệu:</b> "proposed plan" / "future development" / "is to be" / "planned changes"</li>
+        <li><b>Thì:</b> future passive — <em>will be built / is going to be / is to be constructed</em></li>
+        <li><b>Verb:</b> will be demolished · is set to · is planned to · will be replaced by</li>
+        <li><b>Linking:</b> in the future · according to the proposal · once completed</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Sai thì = sai cả bài. <em class="hi">Đọc caption trước khi viết một chữ.</em> Tìm năm hoặc từ "proposed".</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · LOCATION LANGUAGE -->
+<section data-label="Location Language" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ vị trí</span></div>
+  <p class="eyebrow">Spatial Language · Where things are</p>
+  <h2 class="h-section">Ba lớp ngôn ngữ — <em class="hi">vị trí, hướng, khoảng cách.</em></h2>
+
+  <div class="kw-grid">
+    <div class="kw-tile">
+      <div class="k">01 · COMPASS</div>
+      <div class="ex">Hướng tuyệt đối</div>
+      <div class="d">in the <em class="hi">north / south / east / west</em> · in the north-east <em class="hi">corner</em> · along the southern edge</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">02 · RELATIVE</div>
+      <div class="ex">So với vật khác</div>
+      <div class="d"><em class="hi">opposite</em> the library · <em class="hi">adjacent to</em> the park · <em class="hi">next to</em> · across from · behind</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">03 · DISTANCE</div>
+      <div class="ex">Gần / xa</div>
+      <div class="d">a short distance from · <em class="hi">on the outskirts of</em> · in the centre of · just outside · within walking distance</div>
+    </div>
+    <div class="kw-tile">
+      <div class="k">04 · INTERNAL</div>
+      <div class="ex">Bên trong khu vực</div>
+      <div class="d"><em class="hi">surrounded by</em> · running through · cuts across · stretches from X to Y · is bordered by</div>
+    </div>
+  </div>
+
+  <p class="fine">Đừng chỉ "near the park" suốt bài. Luân phiên 4 nhóm trên → Lexical Resource lên 1 band.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · CHANGE LANGUAGE — PAST -->
+<section data-label="Change · Past" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ thay đổi · Quá khứ</span></div>
+  <p class="eyebrow">Change Language · Past Simple Passive</p>
+  <h2 class="h-section">Past passive — <em class="hi">was + V3.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Removal · Replacement</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Mất đi / Thay thế</h3>
+      <ul>
+        <li><b>Demolish:</b> was demolished / was knocked down / was pulled down</li>
+        <li><b>Remove:</b> was removed / was cleared / was relocated</li>
+        <li><b>Replace:</b> was replaced by / was converted into / gave way to</li>
+        <li><b>Transform:</b> was turned into / was redeveloped as</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Addition · Extension</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Mới / Mở rộng</h3>
+      <ul>
+        <li><b>Build:</b> was built / was constructed / was erected</li>
+        <li><b>Add:</b> was added / was introduced / was installed</li>
+        <li><b>Extend:</b> was extended / was expanded / was enlarged</li>
+        <li><b>Plant:</b> was planted / was landscaped / was added with greenery</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Công thức: [Subject] <em class="hi">was/were</em> [V3] [by-phrase optional]. Ví dụ: <em class="hi">The old library was replaced by a shopping centre.</em></p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · CHANGE LANGUAGE — FUTURE -->
+<section data-label="Change · Future" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Ngôn ngữ thay đổi · Tương lai</span></div>
+  <p class="eyebrow">Change Language · Future Passive</p>
+  <h2 class="h-section">Future passive — <em class="hi">will be + V3.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Three structures</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Cấu trúc</h3>
+      <ul>
+        <li><b>Will-passive:</b> will be built / will be demolished</li>
+        <li><b>Going-to:</b> is going to be replaced / are going to be relocated</li>
+        <li><b>Be-to:</b> is to be constructed / is to be added (formal — đề proposal)</li>
+        <li><b>Set / planned:</b> is set to · is planned to · is scheduled to</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Adverbs of certainty</p>
+      <h3 style="font-size: 38px; margin-bottom: 20px;">Mức độ chắc chắn</h3>
+      <ul>
+        <li><b>Definite:</b> will definitely · is certain to be</li>
+        <li><b>Likely:</b> is expected to · is likely to · is anticipated to</li>
+        <li><b>Possible:</b> may be · could be · is being considered</li>
+        <li><b>Order:</b> first · subsequently · once completed · finally</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Map proposal thường dùng <em class="hi">"is to be"</em> — formal, ngắn gọn. Ví dụ: <em class="hi">A new marina is to be built on the southern shore.</em></p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · STRUCTURE -->
+<section data-label="Structure" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cấu trúc 4 đoạn</span></div>
+  <p class="eyebrow">Four-paragraph structure · Maps</p>
+  <h2 class="h-section">Bốn đoạn cố định — <em class="hi">grouping mới là chìa khoá.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">~25w</span>
+      <div class="n">PARA 01</div>
+      <div class="t">Introduction</div>
+      <div class="d">Paraphrase câu đề. Đề cập 2 thời điểm + địa điểm. <em>The two maps illustrate / depict / show how X changed between A and B.</em></div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~40w</span>
+      <div class="n">PARA 02</div>
+      <div class="t">Overview</div>
+      <div class="d">2 câu · 2 đặc trưng tổng thể: <em class="hi">hướng phát triển</em> (commercialised / urbanised / modernised) + cái gì <em class="hi">giữ nguyên</em>.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">PARA 03</div>
+      <div class="t">Body 1</div>
+      <div class="d">Nhóm 1 thay đổi: theo khu vực (e.g. <em>changes in the north</em>) hoặc theo loại (e.g. <em>new constructions</em>). 3-4 thay đổi cụ thể.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~45w</span>
+      <div class="n">PARA 04</div>
+      <div class="t">Body 2</div>
+      <div class="d">Nhóm 2 còn lại + cái <em>unchanged</em>. Linking: <em>Meanwhile · As for · The southern half · In contrast.</em></div>
+    </div>
+  </div>
+
+  <p class="fine">Chia nhóm <em class="hi">trước</em> khi viết. Nếu trộn lung tung → mất Coherence &amp; Cohesion. Hai cách: <em>spatial</em> (theo hướng) hoặc <em>thematic</em> (theo loại).</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 20 phút</span></div>
+  <p class="eyebrow">Exam Sequence · 20-minute budget</p>
+  <h2 class="h-section">20 phút — <em class="hi">5 bước cố định.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Phân tích đề + 2 maps (3 phút).</span><span class="step-body">Xác định: 2 thời điểm · loại đề (past↔present hay present↔future) · compass · 4-6 thay đổi chính · cái gì giữ nguyên.</span></div></li>
+    <li><div><span class="step-title">Lên dàn bài 4 đoạn (2 phút).</span><span class="step-body">Quyết định grouping: <em>spatial</em> (north / south) hay <em>thematic</em> (additions / removals). Ghi 3 thay đổi/đoạn.</span></div></li>
+    <li><div><span class="step-title">Viết Intro + Overview (4 phút).</span><span class="step-body">~65 từ. Intro paraphrase. Overview = 2 câu nêu xu thế tổng + cái unchanged. Tuyệt đối <em class="hi">không liệt kê chi tiết</em>.</span></div></li>
+    <li><div><span class="step-title">Viết Body 1 + Body 2 (9 phút).</span><span class="step-body">~95 từ. Mỗi đoạn 3-4 câu, mỗi câu 1 thay đổi. Linking giữa câu: <em>While / In addition / Furthermore / Meanwhile</em>.</span></div></li>
+    <li><div><span class="step-title">Check lỗi (2 phút).</span><span class="step-body">Thì động từ (passive đúng V3?) · số ít/nhiều · spatial preposition · đếm từ (≥150). Không viết thêm.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — TOWN CENTRE 1990 → 2020 (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 P01 · Town Centre" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Town Centre · Past ↔ Present</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 01 · Town Centre</p>
+    <h2><em>Town centre.</em><br>1990 →<br>2020.</h2>
+    <div class="toc">
+      <div class="active">01 · Town Centre — past vs present</div>
+      <div>02 · Coastal Village — proposed redevelopment</div>
+      <div>03 · University Campus — past vs present</div>
+      <div>04 · Industrial Estate — proposed regeneration</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · TASK + 2 MAPS -->
+<section data-label="12 P01 Task" class="slide">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Đề bài + 2 bản đồ</span></div>
+  <p class="eyebrow">Task · Map · Town centre 1990–2020</p>
+
+  <div style="display:grid; grid-template-columns: 0.85fr 1.1fr 1.1fr; gap: 36px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The two maps below show changes that took place in a town centre between 1990 and 2020.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Thời gian: <em class="hi">20 phút · 150+ từ</em>.</p>
+
+      <div class="legend-row" style="margin-top: 22px;">
+        <div class="lg"><span class="sw kept"></span> kept</div>
+        <div class="lg"><span class="sw new"></span> new</div>
+        <div class="lg"><span class="sw gone"></span> demolished</div>
+      </div>
+    </div>
+
+    <div class="map-frame is-then">
+      <p class="map-title">Town Centre · 1990</p>
+      <p class="map-source">Source · Town Council records</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <!-- Main road (horizontal) -->
+        <rect class="road" x="0" y="160" width="520" height="40"/>
+        <line class="road-edge" x1="0" y1="160" x2="520" y2="160"/>
+        <line class="road-edge" x1="0" y1="200" x2="520" y2="200"/>
+        <text class="map-lbl" x="260" y="186" text-anchor="middle">MAIN STREET</text>
+        <!-- North side -->
+        <rect class="bld" x="40" y="40" width="120" height="100"/>
+        <text class="map-lbl" x="100" y="95" text-anchor="middle">PARK</text>
+        <rect class="bld" x="180" y="40" width="100" height="100"/>
+        <text class="map-lbl" x="230" y="95" text-anchor="middle">POST OFFICE</text>
+        <rect class="bld" x="300" y="40" width="80" height="100"/>
+        <text class="map-lbl" x="340" y="95" text-anchor="middle">LIBRARY</text>
+        <rect class="bld" x="400" y="40" width="100" height="100"/>
+        <text class="map-lbl" x="450" y="95" text-anchor="middle">SHOPS</text>
+        <!-- South side -->
+        <rect class="bld" x="40" y="220" width="160" height="120"/>
+        <text class="map-lbl" x="120" y="285" text-anchor="middle">SCHOOL</text>
+        <rect class="bld" x="220" y="220" width="120" height="120"/>
+        <text class="map-lbl" x="280" y="285" text-anchor="middle">HOUSES</text>
+        <rect class="bld" x="360" y="220" width="140" height="120"/>
+        <text class="map-lbl" x="430" y="285" text-anchor="middle">CAR PARK</text>
+        <!-- Compass -->
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+
+    <div class="map-frame">
+      <p class="map-title">Town Centre · 2020</p>
+      <p class="map-source">Source · Town Council records</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <rect class="road" x="0" y="160" width="520" height="40"/>
+        <line class="road-edge" x1="0" y1="160" x2="520" y2="160"/>
+        <line class="road-edge" x1="0" y1="200" x2="520" y2="200"/>
+        <text class="map-lbl" x="260" y="186" text-anchor="middle">MAIN STREET</text>
+        <!-- Park reduced -->
+        <rect class="bld-kept" x="40" y="40" width="70" height="100"/>
+        <text class="map-lbl" x="75" y="95" text-anchor="middle">PARK</text>
+        <!-- New parking where post office was (and part of park) -->
+        <rect class="bld-new" x="120" y="40" width="60" height="100"/>
+        <text class="map-lbl-new" x="150" y="95" text-anchor="middle">PARKING</text>
+        <!-- Library expanded (post office gone) -->
+        <rect class="bld-new" x="190" y="40" width="190" height="100"/>
+        <text class="map-lbl-new" x="285" y="95" text-anchor="middle">LIBRARY (extended)</text>
+        <!-- Shopping centre replaces shops -->
+        <rect class="bld-new" x="390" y="40" width="110" height="100"/>
+        <text class="map-lbl-new" x="445" y="95" text-anchor="middle">SHOPPING CENTRE</text>
+        <!-- South: school → apartments -->
+        <rect class="bld-new" x="40" y="220" width="160" height="120"/>
+        <text class="map-lbl-new" x="120" y="285" text-anchor="middle">APARTMENTS</text>
+        <!-- Houses kept -->
+        <rect class="bld-kept" x="220" y="220" width="120" height="120"/>
+        <text class="map-lbl" x="280" y="285" text-anchor="middle">HOUSES</text>
+        <!-- Car park kept -->
+        <rect class="bld-kept" x="360" y="220" width="140" height="120"/>
+        <text class="map-lbl" x="430" y="285" text-anchor="middle">CAR PARK</text>
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · STEP 1 ANALYSE -->
+<section data-label="13 P01 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">bốn câu trả lời.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Past ↔ Present · 1990 vs 2020 · past simple passive</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Hướng phát triển?</div><div class="s">Commercialisation + densification — thương mại hoá, dân cư hoá cao tầng</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Cái gì giữ nguyên?</div><div class="s">Houses (south-centre) + car park (south-east) + main street layout</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Grouping?</div><div class="s">Spatial: <em>north of Main Street</em> vs <em>south of Main Street</em></div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng thay đổi chính</h2>
+  <table class="ch-table">
+    <thead><tr><th>Code</th><th>1990</th><th>2020</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>N1</td><td class="feat">Park (large)</td><td>Park reduced + parking added</td><td>was reduced / a parking lot was added</td></tr>
+      <tr><td>N2</td><td class="feat">Post office</td><td>Demolished — library extended</td><td>was demolished · was extended</td></tr>
+      <tr><td>N3</td><td class="feat">Shops (row)</td><td>Shopping centre</td><td>were replaced by a shopping centre</td></tr>
+      <tr><td>S1</td><td class="feat">School</td><td>Apartment block</td><td>was converted into apartments</td></tr>
+      <tr><td>S2 / S3</td><td class="feat">Houses + car park</td><td>Unchanged</td><td>remained unchanged</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="14 P01 Step2" class="slide">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Intro: đổi câu đề. Overview: <em class="hi">hướng phát triển + unchanged.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The two maps below <b>show changes</b> that took place in a town centre <b>between 1990 and 2020</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The two maps illustrate how a town centre was redeveloped over a thirty-year period from 1990 to 2020."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the town centre underwent significant commercial and residential development</span> during this period, with several public buildings being replaced by larger commercial complexes. <span class="hl-band">The houses and car park to the south, however, remained unchanged</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Lưu ý: <em class="hi">không</em> liệt kê chi tiết "library was extended, shops became shopping centre…" — đó là Body. Overview chỉ nêu xu hướng tổng.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · STEP 3 BODY -->
+<section data-label="15 P01 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Hai đoạn thân — <em class="hi">grouping spatial: north vs south.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · North</span>The most striking changes occurred to the north of Main Street. The park was reduced in size, and a parking lot <b>was added</b> on its eastern half, occupying the former site of the post office, which <b>was demolished</b>. The library, originally a small building, <b>was significantly extended</b> westward into the post office plot. Furthermore, the row of shops at the eastern end <b>was replaced by</b> a large shopping centre.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · South</span><b>To the south of Main Street,</b> the school <b>was converted into</b> a residential apartment block, marking a clear shift from public to private use. <b>In contrast,</b> the houses in the centre and the car park to the east <b>remained unchanged</b> throughout the period, providing a sense of continuity amidst the broader redevelopment.</p>
+    </div>
+  </div>
+
+  <p class="fine">Body 1 = north (commercial &amp; civic). Body 2 = south (residential, hoà với <em class="hi">unchanged</em>).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · SAMPLE ESSAY -->
+<section data-label="16 P01 Sample" class="slide">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 175 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two maps illustrate how a town centre was redeveloped over a thirty-year period from 1990 to 2020.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the town centre underwent significant commercial and residential development during this period, with several public buildings being replaced by larger commercial complexes. The houses and car park to the south, however, remained unchanged.</p>
+    <p><span class="para-tag">Body 1</span>The most striking changes occurred to the north of Main Street. The park was reduced in size, and a parking lot was added on its eastern half, occupying the former site of the post office, which was demolished. The library, originally a small building, was significantly extended westward into the post office plot. Furthermore, the row of shops at the eastern end was replaced by a large shopping centre.</p>
+    <p><span class="para-tag">Body 2</span>To the south of Main Street, the school was converted into a residential apartment block, marking a clear shift from public to private use. In contrast, the houses in the centre and the car park to the east remained unchanged throughout the period, providing a sense of continuity amidst the broader redevelopment.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · LANGUAGE ANALYSIS -->
+<section data-label="17 P01 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Why this scores Band 6.5</p>
+  <h2 class="h-section">Bốn kỹ thuật ngôn ngữ — <em class="hi">tháo ra từ bài mẫu.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Paraphrase</span><b>"shows changes that took place" → "illustrate how … was redeveloped"</b> — đổi <em>shows</em> thành <em>illustrate</em>, dùng <em>was redeveloped</em> để gói gọn ý "thay đổi".</li>
+    <li><span class="tag">Passive variety</span><b>"was demolished · was extended · was replaced by · was converted into · was added · remained unchanged"</b> — sáu cấu trúc passive khác nhau, không lặp 1 verb 2 lần.</li>
+    <li><span class="tag">Spatial language</span><b>"to the north of Main Street · on its eastern half · westward · at the eastern end · to the south"</b> — đủ 4 lớp: compass + relative + direction + edge.</li>
+    <li><span class="tag">Cohesion</span><b>"Furthermore · In contrast · marking a clear shift · providing a sense of continuity"</b> — linking + participle clauses → cohesion mượt, không lặp <em>and</em>.</li>
+  </ul>
+
+  <p class="fine">Có cả 4 kỹ thuật → Band 6.5 chắc chắn. Thiếu 1 → tụt 0.5 band.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · VOCAB -->
+<section data-label="18 P01 Vocab" class="slide">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">change &amp; location.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">redevelop <span class="pos">(v.)</span> <span class="ipa">/riːdɪˈveləp/</span></div><div class="vocab-meaning">tái thiết, xây mới (dùng cho map)</div></div>
+        <div class="vocab-item"><div class="vocab-word">demolish <span class="pos">(v.)</span> <span class="ipa">/dɪˈmɒlɪʃ/</span></div><div class="vocab-meaning">phá huỷ (toà nhà cũ) — synonym: knock down, tear down</div></div>
+        <div class="vocab-item"><div class="vocab-word">convert <span class="pos">(v.)</span> <span class="ipa">/kənˈvɜːt/</span></div><div class="vocab-meaning">chuyển đổi mục đích sử dụng — convert into</div></div>
+        <div class="vocab-item"><div class="vocab-word">extend <span class="pos">(v.)</span> <span class="ipa">/ɪkˈstend/</span></div><div class="vocab-meaning">mở rộng — was extended westward</div></div>
+        <div class="vocab-item"><div class="vocab-word">undergo <span class="pos">(v.)</span> <span class="ipa">/ˌʌndəˈɡəʊ/</span></div><div class="vocab-meaning">trải qua (sự thay đổi) — underwent significant change</div></div>
+        <div class="vocab-item"><div class="vocab-word">strike <span class="pos">(adj.)</span> <span class="ipa">/straɪk/</span></div><div class="vocab-meaning">striking — nổi bật, dễ thấy nhất</div></div>
+        <div class="vocab-item"><div class="vocab-word">amidst <span class="pos">(prep.)</span> <span class="ipa">/əˈmɪdst/</span></div><div class="vocab-meaning">giữa (formal) — amidst the redevelopment</div></div>
+        <div class="vocab-item"><div class="vocab-word">continuity <span class="pos">(n.)</span> <span class="ipa">/ˌkɒntɪˈnjuːəti/</span></div><div class="vocab-meaning">sự liên tục, không đổi — sense of continuity</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">undergo significant development</div><div class="vocab-meaning">trải qua sự phát triển đáng kể</div></div>
+        <div class="vocab-item"><div class="vocab-word">be replaced by</div><div class="vocab-meaning">được thay thế bằng — passive obligatory</div></div>
+        <div class="vocab-item"><div class="vocab-word">be converted into</div><div class="vocab-meaning">được chuyển đổi thành (mục đích khác)</div></div>
+        <div class="vocab-item"><div class="vocab-word">remain unchanged</div><div class="vocab-meaning">vẫn giữ nguyên — không cần passive</div></div>
+        <div class="vocab-item"><div class="vocab-word">to the north / south of</div><div class="vocab-meaning">phía bắc / nam của — định vị tuyệt đối</div></div>
+        <div class="vocab-item"><div class="vocab-word">a shift from X to Y</div><div class="vocab-meaning">sự dịch chuyển từ X sang Y — public to private</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · PARAPHRASE PAIRS -->
+<section data-label="19 P01 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Town Centre</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Avoid copying</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi tương đương — <em class="hi">dùng cột phải, tránh cột trái.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">show changes</span><span class="vi">→ illustrate how X was redeveloped / depict the transformation of</span></div>
+    <div class="kp-item"><span class="en">between 1990 and 2020</span><span class="vi">→ over a thirty-year period · across three decades · from 1990 to 2020</span></div>
+    <div class="kp-item"><span class="en">a new building was made</span><span class="vi">→ a new building was constructed / erected / put up</span></div>
+    <div class="kp-item"><span class="en">the old building was destroyed</span><span class="vi">→ was demolished · was knocked down · was pulled down</span></div>
+    <div class="kp-item"><span class="en">it stayed the same</span><span class="vi">→ remained unchanged · was preserved · was retained</span></div>
+    <div class="kp-item"><span class="en">it became a shopping centre</span><span class="vi">→ was converted into · was transformed into · gave way to</span></div>
+  </div>
+
+  <p class="fine">Bài Band 6.5 thường dùng <em class="hi">3-4 cặp paraphrase</em> trong 175 từ. Học thuộc 6 cặp này → đủ dùng cho mọi bài map.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Town Centre</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — COASTAL VILLAGE (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · SECTION BREAK -->
+<section data-label="20 P02 · Coastal Village" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Coastal Village · Present ↔ Future</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Coastal Village</p>
+    <h2><em>Sandy Bay.</em><br>Today &amp; the<br>proposed plan.</h2>
+    <div class="toc">
+      <div>01 · Town Centre — past vs present</div>
+      <div class="active">02 · Coastal Village — proposed redevelopment</div>
+      <div>03 · University Campus — past vs present</div>
+      <div>04 · Industrial Estate — proposed regeneration</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · TASK + 2 MAPS -->
+<section data-label="21 P02 Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Đề bài + 2 bản đồ</span></div>
+  <p class="eyebrow">Task · Map · Sandy Bay redevelopment</p>
+
+  <div style="display:grid; grid-template-columns: 0.85fr 1.1fr 1.1fr; gap: 36px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The maps below show the coastal village of Sandy Bay as it is today and how it will look after a proposed redevelopment.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Thì: <em class="hi">future passive</em> — <em>will be / is to be</em>.</p>
+
+      <div class="legend-row" style="margin-top: 22px;">
+        <div class="lg"><span class="sw kept"></span> remain</div>
+        <div class="lg"><span class="sw new"></span> proposed</div>
+        <div class="lg"><span class="sw gone"></span> to be removed</div>
+      </div>
+    </div>
+
+    <div class="map-frame is-then">
+      <p class="map-title">Sandy Bay · Today</p>
+      <p class="map-source">Source · Coastal Council survey</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <!-- Sea (top) -->
+        <rect class="water" x="2" y="2" width="516" height="120"/>
+        <text class="map-lbl" x="260" y="60" text-anchor="middle" style="letter-spacing: 0.3em;">SEA</text>
+        <!-- Beach -->
+        <rect fill="rgba(217,196,156,0.4)" stroke="#1A1A1A" stroke-width="1" x="2" y="122" width="516" height="30"/>
+        <text class="map-lbl" x="260" y="142" text-anchor="middle">BEACH</text>
+        <!-- Pier -->
+        <rect class="bld" x="240" y="40" width="40" height="100"/>
+        <text class="map-lbl" x="260" y="100" text-anchor="middle">FISHING<tspan x="260" dy="14">PIER</tspan></text>
+        <!-- Coastal road -->
+        <rect class="road" x="0" y="160" width="520" height="20"/>
+        <text class="map-lbl" x="260" y="174" text-anchor="middle">COAST ROAD</text>
+        <!-- Inland: village houses -->
+        <rect class="bld" x="60" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="100" y="234" text-anchor="middle">HOUSES</text>
+        <rect class="bld" x="170" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="210" y="234" text-anchor="middle">HOUSES</text>
+        <rect class="bld" x="280" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="320" y="234" text-anchor="middle">SHOP</text>
+        <rect class="bld" x="390" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="430" y="234" text-anchor="middle">CAFÉ</text>
+        <!-- South: fields -->
+        <rect class="green" x="40" y="280" width="200" height="70"/>
+        <text class="map-lbl" x="140" y="320" text-anchor="middle">FIELDS</text>
+        <rect class="green" x="260" y="280" width="220" height="70"/>
+        <text class="map-lbl" x="370" y="320" text-anchor="middle">OPEN LAND</text>
+        <text class="compass" x="500" y="350" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+
+    <div class="map-frame">
+      <p class="map-title">Sandy Bay · Proposed Plan</p>
+      <p class="map-source">Source · Council redevelopment proposal</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <rect class="water" x="2" y="2" width="516" height="120"/>
+        <text class="map-lbl" x="260" y="60" text-anchor="middle" style="letter-spacing: 0.3em;">SEA</text>
+        <rect fill="rgba(217,196,156,0.4)" stroke="#1A1A1A" stroke-width="1" x="2" y="122" width="516" height="30"/>
+        <text class="map-lbl" x="120" y="142" text-anchor="middle">BEACH</text>
+        <!-- Marina (replaces pier, larger) -->
+        <rect class="bld-new" x="200" y="20" width="120" height="120"/>
+        <text class="map-lbl-new" x="260" y="80" text-anchor="middle">MARINA</text>
+        <!-- Coastal road widened -->
+        <rect class="road" x="0" y="156" width="520" height="28"/>
+        <text class="map-lbl" x="260" y="174" text-anchor="middle">COAST ROAD (widened)</text>
+        <!-- Inland: houses kept -->
+        <rect class="bld-kept" x="60" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="100" y="234" text-anchor="middle">HOUSES</text>
+        <rect class="bld-kept" x="170" y="200" width="80" height="60"/>
+        <text class="map-lbl" x="210" y="234" text-anchor="middle">HOUSES</text>
+        <!-- New: restaurants where shop/café were -->
+        <rect class="bld-new" x="280" y="200" width="190" height="60"/>
+        <text class="map-lbl-new" x="375" y="234" text-anchor="middle">RESTAURANTS</text>
+        <!-- South: hotel + parking -->
+        <rect class="bld-new" x="40" y="280" width="200" height="70"/>
+        <text class="map-lbl-new" x="140" y="320" text-anchor="middle">HOTEL</text>
+        <rect class="bld-new" x="260" y="280" width="220" height="70"/>
+        <text class="map-lbl-new" x="370" y="320" text-anchor="middle">CAR PARK</text>
+        <text class="compass" x="500" y="350" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · STEP 1 ANALYSE -->
+<section data-label="22 P02 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">bốn câu trả lời.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Present ↔ Future · "proposed redevelopment" · future passive</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Hướng phát triển?</div><div class="s">Tourism-driven — biến làng chài thành điểm du lịch</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Cái gì giữ nguyên?</div><div class="s">Hai dãy nhà ở phía tây · bãi biển · con đường chạy ngang</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Grouping?</div><div class="s">Thematic: <em>seafront additions</em> (marina, hotel) vs <em>inland changes</em> (restaurants, parking)</div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng thay đổi chính</h2>
+  <table class="ch-table">
+    <thead><tr><th>Code</th><th>Today</th><th>Proposed</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>SEA1</td><td class="feat">Fishing pier</td><td>Marina (much larger)</td><td>will be replaced by · is to be expanded into</td></tr>
+      <tr><td>RD</td><td class="feat">Coast road (narrow)</td><td>Widened</td><td>will be widened</td></tr>
+      <tr><td>IN1</td><td class="feat">Shop + café</td><td>Restaurants</td><td>will be converted into · is to be developed as</td></tr>
+      <tr><td>S1</td><td class="feat">Fields</td><td>Hotel</td><td>will be built / is to be constructed</td></tr>
+      <tr><td>S2</td><td class="feat">Open land</td><td>Car park</td><td>will be turned into</td></tr>
+      <tr><td>HSE</td><td class="feat">Two rows of houses</td><td>Unchanged</td><td>will remain unchanged · will be preserved</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="23 P02 Step2" class="slide">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Future passive — <em class="hi">"will be" + V3.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The maps below <b>show</b> the coastal village of Sandy Bay <b>as it is today</b> and <b>how it will look</b> after a proposed redevelopment."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The two maps depict the coastal village of Sandy Bay in its current state and the layout proposed under a planned redevelopment scheme."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">Sandy Bay will be transformed into a tourist destination</span>, with substantial new facilities such as a marina, a hotel, and restaurants being added. <span class="hl-band">However, the residential houses to the west and the beach itself will remain unchanged</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Mở đầu overview với <em class="hi">"will be transformed into …"</em> — câu chủ đạo của bài future map.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · STEP 3 BODY -->
+<section data-label="24 P02 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Hai đoạn thân — <em class="hi">grouping thematic: seafront vs inland.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · Seafront</span>The most prominent change <b>will take place</b> along the seafront. The existing fishing pier <b>is to be replaced by</b> a much larger marina, occupying the central section of the bay. Furthermore, the narrow coastal road <b>will be widened</b> to accommodate increased traffic. To the south of this road, the open fields <b>are set to give way to</b> a new hotel, while the eastern stretch of land <b>will be converted into</b> a car park.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · Inland</span><b>Further inland,</b> the small shop and café <b>will be redeveloped as</b> a row of restaurants, designed to serve the anticipated tourist arrivals. <b>By contrast,</b> the two rows of residential houses on the western side of the village <b>will be preserved</b>, ensuring that the original residential character is retained alongside the new tourist infrastructure.</p>
+    </div>
+  </div>
+
+  <p class="fine">Pattern thematic: Body 1 = <em>seafront</em> (đập vào mắt). Body 2 = <em>inland</em> + linking với phần unchanged.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · SAMPLE ESSAY -->
+<section data-label="25 P02 Sample" class="slide">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 168 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">future passive throughout.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two maps depict the coastal village of Sandy Bay in its current state and the layout proposed under a planned redevelopment scheme.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that Sandy Bay will be transformed into a tourist destination, with substantial new facilities such as a marina, a hotel, and restaurants being added. However, the residential houses to the west and the beach itself will remain unchanged.</p>
+    <p><span class="para-tag">Body 1</span>The most prominent change will take place along the seafront. The existing fishing pier is to be replaced by a much larger marina, occupying the central section of the bay. Furthermore, the narrow coastal road will be widened to accommodate increased traffic. To the south of this road, the open fields are set to give way to a new hotel, while the eastern stretch of land will be converted into a car park.</p>
+    <p><span class="para-tag">Body 2</span>Further inland, the small shop and café will be redeveloped as a row of restaurants, designed to serve the anticipated tourist arrivals. By contrast, the two rows of residential houses on the western side of the village will be preserved, ensuring that the original residential character is retained alongside the new tourist infrastructure.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · LANGUAGE ANALYSIS -->
+<section data-label="26 P02 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Future passive techniques</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo ra từ bài mẫu.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Future passive variety</span><b>"will be transformed · is to be replaced by · will be widened · are set to give way to · will be converted into · will be redeveloped as · will be preserved"</b> — bảy cấu trúc khác nhau, không lặp <em>will be built</em> 5 lần.</li>
+    <li><span class="tag">Spatial language</span><b>"along the seafront · to the south of this road · further inland · on the western side"</b> — đủ 4 lớp: along + to-the-south-of + further inland + on-the-side.</li>
+    <li><span class="tag">Cohesion</span><b>"The most prominent change · Furthermore · By contrast · ensuring that …"</b> — linking + participle clause cuối câu để gắn ý "preserved → retained character".</li>
+    <li><span class="tag">Lexical precision</span><b>"redeveloped · transformed · accommodate · anticipated tourist arrivals · alongside"</b> — từ vựng C1, không dùng <em>change · build · for · with</em>.</li>
+  </ul>
+
+  <p class="fine">Future map nào cũng cần đủ 4 kỹ thuật trên — đặc biệt <em class="hi">passive variety</em> vì là kỹ thuật bị giám khảo soi đầu tiên.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · VOCAB -->
+<section data-label="27 P02 Vocab" class="slide">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">future development.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">depict <span class="pos">(v.)</span> <span class="ipa">/dɪˈpɪkt/</span></div><div class="vocab-meaning">mô tả, thể hiện (synonym: show, illustrate)</div></div>
+        <div class="vocab-item"><div class="vocab-word">scheme <span class="pos">(n.)</span> <span class="ipa">/skiːm/</span></div><div class="vocab-meaning">kế hoạch, đề án — redevelopment scheme</div></div>
+        <div class="vocab-item"><div class="vocab-word">prominent <span class="pos">(adj.)</span> <span class="ipa">/ˈprɒmɪnənt/</span></div><div class="vocab-meaning">nổi bật — the most prominent change</div></div>
+        <div class="vocab-item"><div class="vocab-word">substantial <span class="pos">(adj.)</span> <span class="ipa">/səbˈstænʃəl/</span></div><div class="vocab-meaning">đáng kể — substantial new facilities</div></div>
+        <div class="vocab-item"><div class="vocab-word">accommodate <span class="pos">(v.)</span> <span class="ipa">/əˈkɒmədeɪt/</span></div><div class="vocab-meaning">đáp ứng (nhu cầu) — accommodate increased traffic</div></div>
+        <div class="vocab-item"><div class="vocab-word">anticipated <span class="pos">(adj.)</span> <span class="ipa">/ænˈtɪsɪpeɪtɪd/</span></div><div class="vocab-meaning">được dự kiến — anticipated arrivals</div></div>
+        <div class="vocab-item"><div class="vocab-word">retain <span class="pos">(v.)</span> <span class="ipa">/rɪˈteɪn/</span></div><div class="vocab-meaning">giữ lại, lưu giữ — retain the character</div></div>
+        <div class="vocab-item"><div class="vocab-word">alongside <span class="pos">(prep.)</span> <span class="ipa">/əˌlɒŋˈsaɪd/</span></div><div class="vocab-meaning">song song với, cùng với — alongside the new infrastructure</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">be transformed into</div><div class="vocab-meaning">được biến thành (sự thay đổi tổng thể)</div></div>
+        <div class="vocab-item"><div class="vocab-word">give way to</div><div class="vocab-meaning">nhường chỗ cho — fields give way to a hotel</div></div>
+        <div class="vocab-item"><div class="vocab-word">is set to / is to be</div><div class="vocab-meaning">dự kiến sẽ — formal future passive</div></div>
+        <div class="vocab-item"><div class="vocab-word">tourist destination / arrivals</div><div class="vocab-meaning">điểm du lịch / lượng khách đến</div></div>
+        <div class="vocab-item"><div class="vocab-word">redevelopment scheme / proposal</div><div class="vocab-meaning">đề án tái thiết</div></div>
+        <div class="vocab-item"><div class="vocab-word">retain the original character</div><div class="vocab-meaning">giữ nét đặc trưng nguyên gốc</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · PARAPHRASE PAIRS -->
+<section data-label="28 P02 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Coastal Village</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Future-tense</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">cho đề proposed.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">how it will look</span><span class="vi">→ the layout proposed under a planned scheme · the future configuration</span></div>
+    <div class="kp-item"><span class="en">a new building will be made</span><span class="vi">→ is to be constructed · will be erected · is set to be built</span></div>
+    <div class="kp-item"><span class="en">it will become</span><span class="vi">→ will be transformed into · will be converted into · is to be redeveloped as</span></div>
+    <div class="kp-item"><span class="en">they will keep it the same</span><span class="vi">→ will be preserved · will remain unchanged · will be retained</span></div>
+    <div class="kp-item"><span class="en">a road will be made bigger</span><span class="vi">→ will be widened · is to be expanded · will be enlarged</span></div>
+    <div class="kp-item"><span class="en">they will replace X with Y</span><span class="vi">→ X will give way to Y · X is to be replaced by Y · Y will replace X</span></div>
+  </div>
+
+  <p class="fine">Lưu ý: <em class="hi">"will give way to"</em> rất ăn điểm — collocation idiomatic, ít người biết.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Coastal Village</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — UNIVERSITY CAMPUS (29–37) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 29 · SECTION BREAK -->
+<section data-label="29 P03 · University Campus" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">University Campus · Past ↔ Present</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 03 · University Campus</p>
+    <h2><em>Hillside Uni.</em><br>2000 →<br>2025.</h2>
+    <div class="toc">
+      <div>01 · Town Centre — past vs present</div>
+      <div>02 · Coastal Village — proposed redevelopment</div>
+      <div class="active">03 · University Campus — past vs present</div>
+      <div>04 · Industrial Estate — proposed regeneration</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · TASK + 2 MAPS -->
+<section data-label="30 P03 Task" class="slide">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Đề bài + 2 bản đồ</span></div>
+  <p class="eyebrow">Task · Map · Hillside University 2000–2025</p>
+
+  <div style="display:grid; grid-template-columns: 0.85fr 1.1fr 1.1fr; gap: 36px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The two maps below show the campus of Hillside University in 2000 and in 2025.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Thì: <em class="hi">past simple passive</em> — <em>was extended / has been built</em>.</p>
+
+      <div class="legend-row" style="margin-top: 22px;">
+        <div class="lg"><span class="sw kept"></span> kept</div>
+        <div class="lg"><span class="sw new"></span> new / extended</div>
+        <div class="lg"><span class="sw gone"></span> demolished</div>
+      </div>
+    </div>
+
+    <div class="map-frame is-then">
+      <p class="map-title">Hillside University · 2000</p>
+      <p class="map-source">Source · University archives</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <!-- Entrance road from south -->
+        <rect class="road" x="240" y="280" width="40" height="80"/>
+        <text class="map-lbl" x="260" y="350" text-anchor="middle">ENTRANCE</text>
+        <!-- Main building (centre) -->
+        <rect class="bld" x="180" y="120" width="160" height="120"/>
+        <text class="map-lbl" x="260" y="180" text-anchor="middle">MAIN<tspan x="260" dy="14">BUILDING</tspan></text>
+        <!-- Library (north-west) -->
+        <rect class="bld" x="40" y="40" width="100" height="80"/>
+        <text class="map-lbl" x="90" y="85" text-anchor="middle">LIBRARY</text>
+        <!-- Dormitory (north-east) -->
+        <rect class="bld" x="380" y="40" width="100" height="80"/>
+        <text class="map-lbl" x="430" y="85" text-anchor="middle">DORMITORY</text>
+        <!-- Sports field (west) -->
+        <rect class="green" x="40" y="160" width="100" height="120"/>
+        <text class="map-lbl" x="90" y="222" text-anchor="middle">SPORTS<tspan x="90" dy="14">FIELD</tspan></text>
+        <!-- Café (east) -->
+        <rect class="bld" x="380" y="160" width="100" height="60"/>
+        <text class="map-lbl" x="430" y="194" text-anchor="middle">CAFÉ</text>
+        <!-- Parking (east of entrance) -->
+        <rect class="bld" x="380" y="240" width="100" height="80"/>
+        <text class="map-lbl" x="430" y="284" text-anchor="middle">PARKING</text>
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+
+    <div class="map-frame">
+      <p class="map-title">Hillside University · 2025</p>
+      <p class="map-source">Source · University archives</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <rect class="road" x="240" y="280" width="40" height="80"/>
+        <text class="map-lbl" x="260" y="350" text-anchor="middle">ENTRANCE</text>
+        <!-- Main building kept -->
+        <rect class="bld-kept" x="180" y="120" width="160" height="120"/>
+        <text class="map-lbl" x="260" y="180" text-anchor="middle">MAIN<tspan x="260" dy="14">BUILDING</tspan></text>
+        <!-- Library extended -->
+        <rect class="bld-new" x="40" y="40" width="140" height="80"/>
+        <text class="map-lbl-new" x="110" y="85" text-anchor="middle">LIBRARY (extended)</text>
+        <!-- New dormitory (larger) -->
+        <rect class="bld-new" x="360" y="40" width="120" height="80"/>
+        <text class="map-lbl-new" x="420" y="85" text-anchor="middle">NEW DORMITORY</text>
+        <!-- Sports field kept -->
+        <rect class="green" x="40" y="160" width="100" height="120"/>
+        <text class="map-lbl" x="90" y="222" text-anchor="middle">SPORTS<tspan x="90" dy="14">FIELD</tspan></text>
+        <!-- Science centre (replaces café) -->
+        <rect class="bld-new" x="360" y="140" width="120" height="80"/>
+        <text class="map-lbl-new" x="420" y="184" text-anchor="middle">SCIENCE<tspan x="420" dy="14">CENTRE</tspan></text>
+        <!-- Multi-level car park -->
+        <rect class="bld-new" x="360" y="240" width="120" height="80"/>
+        <text class="map-lbl-new" x="420" y="278" text-anchor="middle">MULTI-LEVEL</text>
+        <text class="map-lbl-new" x="420" y="294" text-anchor="middle">CAR PARK</text>
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · STEP 1 ANALYSE -->
+<section data-label="31 P03 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">bốn câu trả lời.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Past ↔ Present · 2000 vs 2025 · past simple passive</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Hướng phát triển?</div><div class="s">Modernisation + capacity expansion — học thuật &amp; chỗ ở</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Cái gì giữ nguyên?</div><div class="s">Main building (trung tâm) · sports field (phía tây) · entrance road</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Grouping?</div><div class="s">Spatial: <em>north (academic)</em> vs <em>east (services)</em></div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng thay đổi chính</h2>
+  <table class="ch-table">
+    <thead><tr><th>Code</th><th>2000</th><th>2025</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>NW</td><td class="feat">Library (small)</td><td>Library extended</td><td>was extended eastward</td></tr>
+      <tr><td>NE</td><td class="feat">Old dormitory</td><td>New larger dormitory</td><td>was demolished and rebuilt as</td></tr>
+      <tr><td>E1</td><td class="feat">Café</td><td>Science Centre</td><td>was replaced by · was redeveloped as</td></tr>
+      <tr><td>E2</td><td class="feat">Single-level parking</td><td>Multi-level car park</td><td>was upgraded into · was rebuilt as</td></tr>
+      <tr><td>C / W</td><td class="feat">Main building + sports field</td><td>Unchanged</td><td>remained unchanged · was preserved</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="32 P03 Step2" class="slide">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Hai feature: <em class="hi">expansion + service modernisation.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The two maps below <b>show</b> the campus of Hillside University <b>in 2000 and in 2025</b>."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The two maps illustrate how the campus of Hillside University was transformed over a twenty-five-year period from 2000 to 2025."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the campus underwent considerable expansion and modernisation</span>, particularly along its eastern edge, with several older facilities being replaced or upgraded. <span class="hl-band">The main building at the centre and the sports field to the west remained unchanged</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Pattern hai feature: (1) <em class="hi">phía nào thay đổi</em> + (2) <em class="hi">phía nào giữ nguyên</em>. Áp dụng cho 90% bài map past↔present.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · STEP 3 BODY -->
+<section data-label="33 P03 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Spatial grouping — <em class="hi">north academic / east services.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · North · Academic</span>The most extensive changes took place along the northern edge of the campus. The library, originally a modest building in the north-west, <b>was extended eastward</b>, almost doubling in size. To the north-east, the old dormitory <b>was demolished and rebuilt</b> as a much larger student residence. These developments suggest a deliberate effort to accommodate a growing student population.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · East · Services</span><b>Along the eastern edge,</b> the café <b>was replaced by</b> a new science centre, signalling a shift toward research facilities. <b>Adjacent to it,</b> the single-level parking area <b>was rebuilt as</b> a multi-level car park, increasing capacity without expanding the footprint. <b>By contrast,</b> the central main building and the western sports field <b>were left untouched</b> throughout the period.</p>
+    </div>
+  </div>
+
+  <p class="fine">Bài có 5 changes + 2 unchanged → cần phân nhóm chặt. Spatial north/east dễ viết hơn thematic.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · SAMPLE ESSAY -->
+<section data-label="34 P03 Sample" class="slide">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 172 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two maps illustrate how the campus of Hillside University was transformed over a twenty-five-year period from 2000 to 2025.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the campus underwent considerable expansion and modernisation, particularly along its eastern edge, with several older facilities being replaced or upgraded. The main building at the centre and the sports field to the west remained unchanged.</p>
+    <p><span class="para-tag">Body 1</span>The most extensive changes took place along the northern edge of the campus. The library, originally a modest building in the north-west, was extended eastward, almost doubling in size. To the north-east, the old dormitory was demolished and rebuilt as a much larger student residence. These developments suggest a deliberate effort to accommodate a growing student population.</p>
+    <p><span class="para-tag">Body 2</span>Along the eastern edge, the café was replaced by a new science centre, signalling a shift toward research facilities. Adjacent to it, the single-level parking area was rebuilt as a multi-level car park, increasing capacity without expanding the footprint. By contrast, the central main building and the western sports field were left untouched throughout the period.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · LANGUAGE ANALYSIS -->
+<section data-label="35 P03 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Spatial precision</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Hillside.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Compass + relative</span><b>"in the north-west · to the north-east · along the eastern edge · adjacent to it · to the west · at the centre"</b> — sáu cách định vị khác nhau.</li>
+    <li><span class="tag">Passive variety</span><b>"was transformed · was extended · was demolished and rebuilt · was replaced by · was rebuilt as · were left untouched"</b> — sáu cấu trúc khác nhau.</li>
+    <li><span class="tag">Participle clauses</span><b>"signalling a shift · increasing capacity · accommodate a growing population"</b> — dùng <em>-ing</em> và <em>to-V</em> để gắn lý do/hệ quả → tăng GRA.</li>
+    <li><span class="tag">Lexical variety</span><b>"considerable · modernisation · modest · doubling in size · deliberate effort · footprint"</b> — không lặp <em>big · changed · effort · area</em>.</li>
+  </ul>
+
+  <p class="fine">"Increasing capacity without expanding the footprint" — câu nâng band: gắn <em>kết quả</em> vào <em>phương tiện</em> qua participle.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · VOCAB -->
+<section data-label="36 P03 Vocab" class="slide">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">expansion language.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">considerable <span class="pos">(adj.)</span> <span class="ipa">/kənˈsɪdərəbl/</span></div><div class="vocab-meaning">đáng kể (synonym: substantial, significant)</div></div>
+        <div class="vocab-item"><div class="vocab-word">modest <span class="pos">(adj.)</span> <span class="ipa">/ˈmɒdɪst/</span></div><div class="vocab-meaning">khiêm tốn, nhỏ bé — a modest building</div></div>
+        <div class="vocab-item"><div class="vocab-word">deliberate <span class="pos">(adj.)</span> <span class="ipa">/dɪˈlɪbərət/</span></div><div class="vocab-meaning">có chủ đích — a deliberate effort</div></div>
+        <div class="vocab-item"><div class="vocab-word">accommodate <span class="pos">(v.)</span> <span class="ipa">/əˈkɒmədeɪt/</span></div><div class="vocab-meaning">đáp ứng — accommodate a growing population</div></div>
+        <div class="vocab-item"><div class="vocab-word">signal <span class="pos">(v.)</span> <span class="ipa">/ˈsɪɡnəl/</span></div><div class="vocab-meaning">báo hiệu, chỉ ra — signalling a shift</div></div>
+        <div class="vocab-item"><div class="vocab-word">capacity <span class="pos">(n.)</span> <span class="ipa">/kəˈpæsəti/</span></div><div class="vocab-meaning">sức chứa — increase capacity</div></div>
+        <div class="vocab-item"><div class="vocab-word">footprint <span class="pos">(n.)</span> <span class="ipa">/ˈfʊtprɪnt/</span></div><div class="vocab-meaning">diện tích chiếm đất (kiến trúc)</div></div>
+        <div class="vocab-item"><div class="vocab-word">untouched <span class="pos">(adj.)</span> <span class="ipa">/ʌnˈtʌtʃt/</span></div><div class="vocab-meaning">không thay đổi — were left untouched</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">undergo expansion / modernisation</div><div class="vocab-meaning">trải qua sự mở rộng / hiện đại hoá</div></div>
+        <div class="vocab-item"><div class="vocab-word">double in size</div><div class="vocab-meaning">tăng gấp đôi diện tích</div></div>
+        <div class="vocab-item"><div class="vocab-word">be left untouched / unchanged</div><div class="vocab-meaning">được giữ nguyên</div></div>
+        <div class="vocab-item"><div class="vocab-word">a shift toward X</div><div class="vocab-meaning">sự dịch chuyển sang X — toward research</div></div>
+        <div class="vocab-item"><div class="vocab-word">accommodate a growing population</div><div class="vocab-meaning">đáp ứng dân số tăng</div></div>
+        <div class="vocab-item"><div class="vocab-word">expand the footprint</div><div class="vocab-meaning">mở rộng diện tích chiếm đất</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · PARAPHRASE PAIRS -->
+<section data-label="37 P03 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · University Campus</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Past tense · campus</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">past expansion language.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">it became bigger</span><span class="vi">→ was extended · was expanded · was enlarged · doubled in size</span></div>
+    <div class="kp-item"><span class="en">a new building was made</span><span class="vi">→ was demolished and rebuilt as · was redeveloped as · was constructed in place of</span></div>
+    <div class="kp-item"><span class="en">it changed in some way</span><span class="vi">→ was transformed · underwent modernisation · was upgraded</span></div>
+    <div class="kp-item"><span class="en">they didn't change it</span><span class="vi">→ was left untouched · remained unaffected · was preserved · was retained</span></div>
+    <div class="kp-item"><span class="en">they put more parking spaces</span><span class="vi">→ capacity was increased · the parking was upgraded into multi-level</span></div>
+    <div class="kp-item"><span class="en">to fit more students</span><span class="vi">→ to accommodate a growing student population · to meet rising demand</span></div>
+  </div>
+
+  <p class="fine">"Doubled in size" — collocation rất gọn cho ý <em>extended</em>. Nhớ dùng <em>doubled</em> chứ không <em>was doubled</em>.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · University Campus</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — INDUSTRIAL ESTATE (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · SECTION BREAK -->
+<section data-label="38 P04 · Industrial Estate" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Industrial Estate · Present ↔ Future</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 04 · Industrial Estate</p>
+    <h2><em>Greenfield.</em><br>Today &amp; the<br>future plan.</h2>
+    <div class="toc">
+      <div>01 · Town Centre — past vs present</div>
+      <div>02 · Coastal Village — proposed redevelopment</div>
+      <div>03 · University Campus — past vs present</div>
+      <div class="active">04 · Industrial Estate — proposed regeneration</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · TASK + 2 MAPS -->
+<section data-label="39 P04 Task" class="slide">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Đề bài + 2 bản đồ</span></div>
+  <p class="eyebrow">Task · Map · Greenfield Estate regeneration</p>
+
+  <div style="display:grid; grid-template-columns: 0.85fr 1.1fr 1.1fr; gap: 36px; margin-top: 8px;">
+    <div>
+      <h2 class="h-sub" style="font-size: 32px; margin-bottom: 16px;">The maps below show the Greenfield industrial estate today and a proposed plan to regenerate the area.</h2>
+      <p class="small">Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+      <p class="small" style="margin-top: 18px;">Thì: <em class="hi">future passive</em> · large-scale change.</p>
+
+      <div class="legend-row" style="margin-top: 22px;">
+        <div class="lg"><span class="sw kept"></span> remain</div>
+        <div class="lg"><span class="sw new"></span> proposed</div>
+        <div class="lg"><span class="sw gone"></span> to be removed</div>
+      </div>
+    </div>
+
+    <div class="map-frame is-then">
+      <p class="map-title">Greenfield Estate · Today</p>
+      <p class="map-source">Source · Council planning office</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <!-- Truck access road -->
+        <rect class="road" x="0" y="170" width="520" height="30"/>
+        <text class="map-lbl" x="260" y="190" text-anchor="middle">TRUCK ACCESS ROAD</text>
+        <!-- Factories north -->
+        <rect class="bld" x="40" y="40" width="140" height="120"/>
+        <text class="map-lbl" x="110" y="105" text-anchor="middle">FACTORY A</text>
+        <rect class="bld" x="200" y="40" width="140" height="120"/>
+        <text class="map-lbl" x="270" y="105" text-anchor="middle">FACTORY B</text>
+        <rect class="bld" x="360" y="40" width="120" height="120"/>
+        <text class="map-lbl" x="420" y="105" text-anchor="middle">FACTORY C</text>
+        <!-- Warehouse south-west -->
+        <rect class="bld" x="40" y="210" width="180" height="100"/>
+        <text class="map-lbl" x="130" y="265" text-anchor="middle">WAREHOUSES</text>
+        <!-- Freight yard south-east -->
+        <rect class="bld" x="240" y="210" width="240" height="100"/>
+        <text class="map-lbl" x="360" y="265" text-anchor="middle">FREIGHT YARD</text>
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+
+    <div class="map-frame">
+      <p class="map-title">Greenfield · Proposed Plan</p>
+      <p class="map-source">Source · Regeneration scheme 2030</p>
+      <svg viewBox="0 0 520 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="516" height="356" fill="none" stroke="#1A1A1A" stroke-width="1.4"/>
+        <!-- New pedestrian street -->
+        <rect class="road" x="0" y="170" width="520" height="30"/>
+        <text class="map-lbl" x="260" y="190" text-anchor="middle">PEDESTRIAN STREET</text>
+        <!-- Residential blocks (north-west, north) -->
+        <rect class="bld-new" x="40" y="40" width="140" height="120"/>
+        <text class="map-lbl-new" x="110" y="105" text-anchor="middle">RESIDENTIAL</text>
+        <rect class="bld-new" x="200" y="40" width="140" height="120"/>
+        <text class="map-lbl-new" x="270" y="105" text-anchor="middle">RESIDENTIAL</text>
+        <!-- Primary school (north-east) -->
+        <rect class="bld-new" x="360" y="40" width="120" height="120"/>
+        <text class="map-lbl-new" x="420" y="105" text-anchor="middle">PRIMARY<tspan x="420" dy="14">SCHOOL</tspan></text>
+        <!-- Park (south-west) -->
+        <rect class="green" x="40" y="210" width="180" height="100"/>
+        <text class="map-lbl-new" x="130" y="265" text-anchor="middle">PARK</text>
+        <!-- Light rail station (south-east) -->
+        <rect class="bld-new" x="240" y="210" width="240" height="100"/>
+        <text class="map-lbl-new" x="360" y="260" text-anchor="middle">LIGHT RAIL STATION</text>
+        <text class="map-lbl-new" x="360" y="278" text-anchor="middle">+ PLAZA</text>
+        <text class="compass" x="500" y="20" text-anchor="end">N ↑</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · STEP 1 ANALYSE -->
+<section data-label="40 P04 Step1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Bước 1 · Phân tích</span></div>
+  <p class="eyebrow">Step 1 · Analyse &amp; Plan · 5 phút</p>
+  <h2 class="h-section">Bốn câu hỏi — <em class="hi">large-scale regeneration.</em></h2>
+
+  <div class="qtype-grid" style="gap: 24px 56px;">
+    <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Loại đề?</div><div class="s">Present ↔ Future · "proposed plan to regenerate" · future passive</div></div></div>
+    <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Hướng phát triển?</div><div class="s">Industrial → mixed-use community — toàn bộ chuyển công năng</div></div></div>
+    <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Cái gì giữ nguyên?</div><div class="s">Layout đường ngang chia bắc-nam (vị trí giữ, chức năng đổi từ truck → pedestrian)</div></div></div>
+    <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Grouping?</div><div class="s">Spatial: <em>north of the road (residential + school)</em> vs <em>south (park + station)</em></div></div></div>
+  </div>
+
+  <h2 class="h-sub" style="margin-top: 40px; font-size: 30px;">Bảng thay đổi chính</h2>
+  <table class="ch-table">
+    <thead><tr><th>Code</th><th>Today</th><th>Proposed</th><th>Verb</th></tr></thead>
+    <tbody>
+      <tr><td>N1 / N2</td><td class="feat">Factory A &amp; B</td><td>Residential blocks</td><td>will be demolished and replaced by</td></tr>
+      <tr><td>N3</td><td class="feat">Factory C</td><td>Primary school</td><td>is to be redeveloped as</td></tr>
+      <tr><td>SW</td><td class="feat">Warehouses</td><td>Park</td><td>will be cleared to make way for</td></tr>
+      <tr><td>SE</td><td class="feat">Freight yard</td><td>Light rail station + plaza</td><td>is to be transformed into</td></tr>
+      <tr><td>RD</td><td class="feat">Truck access road</td><td>Pedestrian street</td><td>will be repurposed as</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · STEP 2 INTRO + OVERVIEW -->
+<section data-label="41 P04 Step2" class="slide">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Bước 2 · Intro + Overview</span></div>
+  <p class="eyebrow">Step 2 · Writing Intro &amp; Overview · 4 phút</p>
+  <h2 class="h-section" style="margin-bottom: 32px;">Khi tất cả đều đổi — <em class="hi">overview tóm xu hướng.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"The maps below <b>show</b> the Greenfield industrial estate today and a <b>proposed plan to regenerate</b> the area."</p>
+    </div>
+    <div>
+      <p class="mono-label">Intro paraphrased · Band 6.5</p>
+      <p><b>"The two maps depict the Greenfield industrial estate in its current condition and the proposed regeneration scheme that would transform the entire site."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <p class="mono-label">Overview · 2 câu · 2 feature</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Overview</span>Overall, it is clear that <span class="hl-band">the area will undergo a complete shift in function</span>, moving from heavy industry to a mixed residential, educational and transport hub. <span class="hl-band">The horizontal road that divides the estate will be retained, although its purpose will change from truck access to pedestrian use</span>.</p>
+    </div>
+  </div>
+
+  <p class="fine">Khi <em class="hi">không có gì physically unchanged</em>, hãy nói cái <em class="hi">layout</em> hoặc <em class="hi">hướng đường</em> giữ nguyên — vẫn được tính là feature unchanged.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · STEP 3 BODY -->
+<section data-label="42 P04 Step3" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Bước 3 · Body 1 + Body 2</span></div>
+  <p class="eyebrow">Step 3 · Body paragraphs · 9 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Spatial — <em class="hi">north (community) / south (transport).</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+    <div class="essay">
+      <p><span class="para-tag">Body 1 · North</span>To the north of the central road, the three existing factories <b>are to be demolished</b>. Factory A and Factory B in the western and central blocks <b>will be replaced by</b> two residential developments, while Factory C on the eastern side <b>will be redeveloped as</b> a primary school. This northern half is therefore <b>set to be transformed</b> into a community-oriented zone.</p>
+    </div>
+    <div class="essay">
+      <p><span class="para-tag">Body 2 · South</span><b>Across the road, the southern half</b> will see equally drastic change. The warehouses occupying the south-west <b>will be cleared</b> to make way for a public park, while the freight yard in the south-east <b>is to be converted into</b> a light rail station with an adjoining plaza. <b>Meanwhile,</b> the central road itself <b>will be repurposed</b> from truck access to pedestrian use, complementing the new residential character of the estate.</p>
+    </div>
+  </div>
+
+  <p class="fine">Sample này dùng <em class="hi">5 future passive</em> khác nhau — không cấu trúc nào lặp.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · SAMPLE ESSAY -->
+<section data-label="43 P04 Sample" class="slide">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 170 words</p>
+  <h2 class="h-section" style="font-size: 48px; margin-bottom: 24px;">Bài mẫu — <em class="hi">future passive cao cấp.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>The two maps depict the Greenfield industrial estate in its current condition and the proposed regeneration scheme that would transform the entire site.</p>
+    <p><span class="para-tag">Overview</span>Overall, it is clear that the area will undergo a complete shift in function, moving from heavy industry to a mixed residential, educational and transport hub. The horizontal road that divides the estate will be retained, although its purpose will change from truck access to pedestrian use.</p>
+    <p><span class="para-tag">Body 1</span>To the north of the central road, the three existing factories are to be demolished. Factory A and Factory B in the western and central blocks will be replaced by two residential developments, while Factory C on the eastern side will be redeveloped as a primary school. This northern half is therefore set to be transformed into a community-oriented zone.</p>
+    <p><span class="para-tag">Body 2</span>Across the road, the southern half will see equally drastic change. The warehouses occupying the south-west will be cleared to make way for a public park, while the freight yard in the south-east is to be converted into a light rail station with an adjoining plaza. Meanwhile, the central road itself will be repurposed from truck access to pedestrian use, complementing the new residential character of the estate.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · LANGUAGE ANALYSIS -->
+<section data-label="44 P04 Language" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Large-scale change</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Greenfield.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Future passive variety</span><b>"are to be demolished · will be replaced by · will be redeveloped as · is set to be transformed · will be cleared · is to be converted into · will be repurposed"</b> — bảy cấu trúc, không trùng lặp.</li>
+    <li><span class="tag">Spatial language</span><b>"to the north of · in the western and central blocks · on the eastern side · across the road · in the south-east · meanwhile"</b> — sáu cách định vị.</li>
+    <li><span class="tag">Adverbs of degree</span><b>"complete shift · equally drastic · community-oriented · entire site"</b> — adverb &amp; adjective mạnh để diễn tả đại quy mô.</li>
+    <li><span class="tag">Cohesion</span><b>"This northern half is therefore set to · Across the road, the southern half will see · Meanwhile · complementing"</b> — chuyển ý mượt giữa Body 1 ↔ Body 2 mà không lặp <em>However</em>.</li>
+  </ul>
+
+  <p class="fine">"Set to make way for" là cụm collocation idiomatic — cực kỳ ăn điểm cho đề proposed.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · VOCAB -->
+<section data-label="45 P04 Vocab" class="slide">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Từ vựng</span></div>
+  <p class="eyebrow">Vocabulary &amp; Collocations</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 24px;">Tám từ · sáu collocations — <em class="hi">regeneration vocab.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">regenerate <span class="pos">(v.)</span> <span class="ipa">/rɪˈdʒenəreɪt/</span></div><div class="vocab-meaning">tái sinh khu đất công nghiệp / xuống cấp</div></div>
+        <div class="vocab-item"><div class="vocab-word">repurpose <span class="pos">(v.)</span> <span class="ipa">/riːˈpɜːpəs/</span></div><div class="vocab-meaning">đổi mục đích sử dụng — repurposed as pedestrian street</div></div>
+        <div class="vocab-item"><div class="vocab-word">drastic <span class="pos">(adj.)</span> <span class="ipa">/ˈdræstɪk/</span></div><div class="vocab-meaning">đại quy mô, mạnh mẽ — equally drastic change</div></div>
+        <div class="vocab-item"><div class="vocab-word">hub <span class="pos">(n.)</span> <span class="ipa">/hʌb/</span></div><div class="vocab-meaning">trung tâm — a transport hub</div></div>
+        <div class="vocab-item"><div class="vocab-word">adjoining <span class="pos">(adj.)</span> <span class="ipa">/əˈdʒɔɪnɪŋ/</span></div><div class="vocab-meaning">liền kề — an adjoining plaza</div></div>
+        <div class="vocab-item"><div class="vocab-word">complement <span class="pos">(v.)</span> <span class="ipa">/ˈkɒmplɪment/</span></div><div class="vocab-meaning">bổ sung, hỗ trợ — complementing the residential character</div></div>
+        <div class="vocab-item"><div class="vocab-word">scheme <span class="pos">(n.)</span> <span class="ipa">/skiːm/</span></div><div class="vocab-meaning">đề án — regeneration scheme</div></div>
+        <div class="vocab-item"><div class="vocab-word">condition <span class="pos">(n.)</span> <span class="ipa">/kənˈdɪʃən/</span></div><div class="vocab-meaning">tình trạng hiện tại — current condition</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid var(--accent);">Collocations (6)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">a complete shift in function</div><div class="vocab-meaning">sự thay đổi chức năng hoàn toàn</div></div>
+        <div class="vocab-item"><div class="vocab-word">make way for</div><div class="vocab-meaning">nhường chỗ cho — cleared to make way for a park</div></div>
+        <div class="vocab-item"><div class="vocab-word">a mixed residential / educational hub</div><div class="vocab-meaning">khu hỗn hợp cư dân / giáo dục</div></div>
+        <div class="vocab-item"><div class="vocab-word">community-oriented zone</div><div class="vocab-meaning">khu định hướng cộng đồng</div></div>
+        <div class="vocab-item"><div class="vocab-word">undergo regeneration</div><div class="vocab-meaning">trải qua sự tái sinh</div></div>
+        <div class="vocab-item"><div class="vocab-word">light rail station</div><div class="vocab-meaning">ga đường sắt nhẹ (metro/tram)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · PARAPHRASE PAIRS -->
+<section data-label="46 P04 Paraphrase" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Industrial Estate</span><span class="rule"></span><span>Cặp paraphrase</span></div>
+  <p class="eyebrow">Paraphrase pairs · Future · regeneration</p>
+  <h2 class="h-section" style="font-size: 48px;">Sáu cặp đổi — <em class="hi">đại quy mô / proposed.</em></h2>
+
+  <div class="kp-grid">
+    <div class="kp-item"><span class="en">they will totally change it</span><span class="vi">→ undergo a complete shift in function · be transformed entirely · be redeveloped from scratch</span></div>
+    <div class="kp-item"><span class="en">they will use it for something else</span><span class="vi">→ will be repurposed as · will be converted into · is to give way to</span></div>
+    <div class="kp-item"><span class="en">they will keep the road</span><span class="vi">→ the road will be retained · its purpose will change · the layout will be preserved</span></div>
+    <div class="kp-item"><span class="en">they will tear down the factories</span><span class="vi">→ are to be demolished · will be cleared · will be pulled down</span></div>
+    <div class="kp-item"><span class="en">they will build a station</span><span class="vi">→ will be developed as a station · is to be constructed · is set to host a station</span></div>
+    <div class="kp-item"><span class="en">to make space for X</span><span class="vi">→ to make way for X · to accommodate X · to host X</span></div>
+  </div>
+
+  <p class="fine">"Make way for" là cụm rất "British IELTS". Học xong là không cần nói "to make space for" — band tăng ngay.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Industrial Estate</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP-UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERN RECAP -->
+<section data-label="47 Pattern Recap" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Pattern chung</span></div>
+  <p class="eyebrow">Common pattern · Across all 4 essays</p>
+  <h2 class="h-section">Một khung — <em class="hi">bốn bài.</em></h2>
+
+  <div class="take">
+    <div class="item"><div class="k">01 · Intro (1 câu)</div><div class="v">"The two maps illustrate / depict + how + X + was redeveloped / will be transformed + over [period] / under [scheme]."</div></div>
+    <div class="item"><div class="k">02 · Overview (2 câu)</div><div class="v">Câu 1: hướng phát triển tổng thể (commercialised / urbanised / regenerated). Câu 2: cái <em>unchanged</em>.</div></div>
+    <div class="item"><div class="k">03 · Body 1 (3-4 câu)</div><div class="v">Nhóm spatial 1 hoặc thematic 1 (e.g. <em>north</em> / <em>seafront</em> / <em>academic block</em>) — 3-4 thay đổi, mỗi câu 1 verb passive khác.</div></div>
+    <div class="item"><div class="k">04 · Body 2 (3-4 câu)</div><div class="v">Nhóm còn lại + linking với <em>unchanged</em> ở cuối. <em>Meanwhile · By contrast · Across the road · Further inland</em>.</div></div>
+  </div>
+
+  <p class="fine">Cùng khung 4 đoạn — chỉ thay <em class="hi">verb passive</em> theo thì (past <em>was</em> vs future <em>will be / is to be</em>). Đổi gì thuộc về nội dung; cấu trúc giữ nguyên.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · VOCAB CONSOLIDATION -->
+<section data-label="48 Vocab Consolidation" class="slide slide--paper">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Vocab tổng hợp</span></div>
+  <p class="eyebrow">Vocabulary consolidation · 24 verbs to memorise</p>
+  <h2 class="h-section" style="font-size: 50px;">Hai mươi bốn verbs — <em class="hi">đủ dùng cho mọi đề map.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 56px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Removal · Replacement</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>was demolished</li>
+        <li>was knocked down</li>
+        <li>was pulled down</li>
+        <li>was cleared</li>
+        <li>was replaced by</li>
+        <li>was converted into</li>
+        <li>gave way to</li>
+        <li>was relocated</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Addition · Extension</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>was built / constructed</li>
+        <li>was erected</li>
+        <li>was added</li>
+        <li>was extended / expanded</li>
+        <li>was redeveloped as</li>
+        <li>was transformed into</li>
+        <li>was upgraded</li>
+        <li>was repurposed as</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Future · Unchanged</div>
+      <ul style="font-family: var(--display); font-size: 22px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li>will be built / demolished</li>
+        <li>is to be constructed</li>
+        <li>is set to be</li>
+        <li>will be repurposed</li>
+        <li>remained unchanged</li>
+        <li>was preserved / retained</li>
+        <li>was left untouched</li>
+        <li>will be retained / preserved</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">In ra bảng này, học thuộc 8 verbs theo mỗi cột → mỗi tuần dùng 2 cột → đủ vốn cho Test thi thực tế.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · HOMEWORK -->
+<section data-label="49 Homework" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Bài về nhà</span></div>
+  <p class="eyebrow">Homework · Practice schedule</p>
+  <h2 class="h-section">Bài về nhà — <em class="hi">3 bài trong 1 tuần.</em></h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Viết lại Practice 02 (Coastal Village) trong 20 phút.</span><span class="step-body">Không nhìn bài mẫu. Sau khi xong, so với bài mẫu — gạch chân 4 verb passive đã dùng và 4 spatial preposition. Mục tiêu: ≥ 6 cấu trúc passive khác nhau.</span></div></li>
+    <li><div><span class="step-title">Tìm 1 đề map Cambridge IELTS 17/18/19, viết trong 20 phút.</span><span class="step-body">Áp dụng quy trình 5 bước. Đếm từ. Gửi bài cho cô qua Notion để chấm.</span></div></li>
+    <li><div><span class="step-title">Học thuộc 24 verbs ở slide 48 (8 verbs/ngày, 3 ngày).</span><span class="step-body">Cách kiểm tra: viết 8 câu, mỗi câu 1 verb, áp dụng vào bối cảnh tự bịa (e.g. <em>The old market was demolished and replaced by a metro station</em>).</span></div></li>
+    <li><div><span class="step-title">Đọc 2 sample essay Band 7+ trên BC site.</span><span class="step-body">simon.com hoặc ieltsliz.com — chọn 2 bài map. Highlight các spatial preposition và passive verb. Note vào sổ.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 1 · Academic</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · END SLIDE -->
+<section data-label="50 End" class="slide end-slide">
+  <div>
+    <h1>End.</h1>
+    <p class="hint">Lesson 03 · Maps &amp; Change · 50 slides · Cmd+P để xuất PDF</p>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>
