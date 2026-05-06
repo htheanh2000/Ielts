@@ -155,14 +155,47 @@
     from { opacity: 0; transform: translateY(-4px) scale(0.96); }
     to   { opacity: 1; transform: translateY(0) scale(1); }
   }
+  .trans-popup .trans-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
   .trans-popup .trans-en {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     color: #93c5fd;
-    margin-bottom: 6px;
   }
+  .trans-popup .word-play-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(147, 197, 253, 0.18);
+    color: #93c5fd;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    font-family: inherit;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .trans-popup .word-play-btn:hover { background: rgba(147, 197, 253, 0.32); color: #fff; transform: scale(1.05); }
+  .trans-popup .word-play-btn.playing { background: #c2410c; color: #fff; }
+  .trans-popup .trans-phonetic {
+    font-size: 13px;
+    color: #d1d5db;
+    font-family: 'Charter', 'Cambria', Georgia, serif;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .trans-popup .trans-phonetic:empty { display: none; }
   .trans-popup .trans-vi {
     font-size: 17px;
     line-height: 1.4;
@@ -170,6 +203,23 @@
   }
   .trans-popup .trans-vi.loading { opacity: 0.55; font-style: italic; font-weight: 400; }
   .trans-popup .trans-vi a { color: #93c5fd; text-decoration: underline; }
+  .trans-popup .trans-syn {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+    color: #d1d5db;
+    line-height: 1.5;
+  }
+  .trans-popup .trans-syn:empty { display: none; }
+  .trans-popup .trans-syn-label {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #6b7280;
+    margin-right: 6px;
+  }
   .trans-popup .trans-meta {
     margin-top: 8px;
     font-size: 11px;
@@ -614,8 +664,83 @@ function revealBlank(el) {
   setTimeout(() => el.classList.remove('revealing'), 360);
 }
 
-// --- Translation ---
+// --- Translation + Dictionary lookup ---
 const __transCache = JSON.parse(localStorage.getItem('ielts_trans_cache') || '{}');
+const __dictCache = JSON.parse(localStorage.getItem('ielts_dict_cache') || '{}');
+
+async function lookupDict(word) {
+  if (__dictCache[word]) return __dictCache[word]._miss ? null : __dictCache[word];
+  try {
+    const r = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+    if (!r.ok) {
+      __dictCache[word] = { _miss: true };
+      return null;
+    }
+    const data = await r.json();
+    if (!Array.isArray(data) || !data[0]) return null;
+    const entry = data[0];
+    let phonetic = entry.phonetic || '';
+    let audio = '';
+    for (const p of (entry.phonetics || [])) {
+      if (!phonetic && p.text) phonetic = p.text;
+      if (!audio && p.audio) audio = p.audio;
+    }
+    const synonyms = [];
+    for (const m of (entry.meanings || [])) {
+      for (const s of (m.synonyms || [])) {
+        if (synonyms.length < 6 && !synonyms.includes(s)) synonyms.push(s);
+      }
+      for (const d of (m.definitions || [])) {
+        for (const s of (d.synonyms || [])) {
+          if (synonyms.length < 6 && !synonyms.includes(s)) synonyms.push(s);
+        }
+      }
+    }
+    const result = { phonetic, audio, synonyms };
+    __dictCache[word] = result;
+    const keys = Object.keys(__dictCache);
+    if (keys.length > 500) {
+      const drop = keys.slice(0, keys.length - 500);
+      for (const k of drop) delete __dictCache[k];
+    }
+    localStorage.setItem('ielts_dict_cache', JSON.stringify(__dictCache));
+    return result;
+  } catch (e) {
+    return null;
+  }
+}
+
+let __wordAudio = null;
+function playWord(btn) {
+  const word = btn.dataset.word;
+  const audioUrl = btn.dataset.audio;
+  if (__wordAudio) { __wordAudio.pause(); __wordAudio = null; }
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  btn.classList.add('playing');
+  const cleanup = () => btn.classList.remove('playing');
+  if (audioUrl) {
+    __wordAudio = new Audio(audioUrl);
+    __wordAudio.addEventListener('ended', cleanup);
+    __wordAudio.addEventListener('error', () => { cleanup(); speakWord(word, cleanup); });
+    __wordAudio.play().catch(() => { cleanup(); speakWord(word, cleanup); });
+  } else {
+    speakWord(word, cleanup);
+  }
+}
+
+function speakWord(word, onDone) {
+  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang = 'en-GB';
+  u.rate = 0.85;
+  const voices = speechSynthesis.getVoices();
+  const ukVoice = voices.find(v => v.lang && v.lang.startsWith('en-GB')) ||
+                  voices.find(v => v.lang && v.lang.startsWith('en'));
+  if (ukVoice) u.voice = ukVoice;
+  u.onend = () => onDone && onDone();
+  u.onerror = () => onDone && onDone();
+  speechSynthesis.speak(u);
+}
 
 function getWordText(el) {
   return (el.dataset.word || el.textContent || '').trim().replace(/[^\w'-]/g, '').toLowerCase();
@@ -672,21 +797,46 @@ function showTranslation(targetEl) {
   const popup = document.createElement('div');
   popup.className = 'trans-popup';
   popup.innerHTML = `
-    <div class="trans-en">${word}</div>
+    <div class="trans-header">
+      <div class="trans-en">${word}</div>
+      <button class="word-play-btn" data-word="${word}" data-audio="" onclick="playWord(this)" title="Play pronunciation">▶</button>
+    </div>
+    <div class="trans-phonetic"></div>
     <div class="trans-vi loading">Đang tra…</div>
+    <div class="trans-syn"></div>
     <div class="trans-meta">
-      <a href="https://translate.google.com/?sl=en&tl=vi&text=${encodeURIComponent(word)}" target="_blank" rel="noopener">Mở Google Translate ↗</a>
+      <a href="https://translate.google.com/?sl=en&tl=vi&text=${encodeURIComponent(word)}" target="_blank" rel="noopener">Google Translate ↗</a>
     </div>
   `;
   document.body.appendChild(popup);
   positionPopup(popup, targetEl);
 
+  // Translation (parallel fetch)
   translateWord(word).then(trans => {
     const viEl = popup.querySelector('.trans-vi');
     if (!viEl) return;
     viEl.classList.remove('loading');
     if (trans) viEl.textContent = trans;
     else viEl.innerHTML = `<span style="opacity:0.7">Không tra được — </span><a href="https://translate.google.com/?sl=en&tl=vi&text=${encodeURIComponent(word)}" target="_blank" rel="noopener">tra trên Google ↗</a>`;
+  });
+
+  // Dictionary (parallel fetch)
+  lookupDict(word).then(dict => {
+    if (!dict) return;
+    const phEl = popup.querySelector('.trans-phonetic');
+    if (phEl && dict.phonetic) phEl.textContent = dict.phonetic;
+    if (dict.audio) {
+      const btn = popup.querySelector('.word-play-btn');
+      if (btn) btn.dataset.audio = dict.audio;
+    }
+    if (dict.synonyms && dict.synonyms.length) {
+      const synEl = popup.querySelector('.trans-syn');
+      if (synEl) {
+        synEl.innerHTML = `<span class="trans-syn-label">SYNONYMS</span>${dict.synonyms.slice(0, 5).join(', ')}`;
+      }
+    }
+    // Re-position because content height likely changed
+    positionPopup(popup, targetEl);
   });
 }
 
