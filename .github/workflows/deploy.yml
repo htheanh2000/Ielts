@@ -1,8 +1,12 @@
+# ⚠️  Auto-disabled 2026-05-12: VPS Hostinger 31.97.109.177 shutdown.
+# Service đã chuyển Mac M1 homelab. Deploy = manual rsync + restart trên homelab.
+# Re-enable: uncomment `push:` block + rewrite deploy step cho target mới.
+
 name: Deploy IELTS to VPS
 
 on:
-  push:
-    branches: [main]
+  # push:  # disabled — VPS shutdown 2026-05-12
+  # branches: [main]
   workflow_dispatch:
 
 concurrency:
