@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Speaking · Part 2 Long Turn · Lesson 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 28px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
+  .band-cell { border-top: 3px solid var(--accent); padding-top: 22px; }
+  .band-cell .k { font-family: var(--mono); font-size: 22px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; margin-bottom: 10px; }
+  .band-cell .t { font-family: var(--display); font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .band-cell .d { font-size: 22px; line-height: 1.4; color: var(--ink-soft); }
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 20px; color: var(--ink-soft); line-height: 1.4; }
+
+  /* Cue card slide */
+  .cue-slide { display: flex; flex-direction: column; }
+  .cue-slide .cc-card {
+    background: var(--paper);
+    border-top: 6px solid var(--accent);
+    padding: 44px 56px 50px;
+    max-width: 1280px;
+    margin: 12px auto 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cue-slide .cc-lbl {
+    font-family: var(--mono);
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .cue-slide .cc-q {
+    font-family: var(--display);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+  .cue-slide .cc-intro {
+    font-family: var(--mono);
+    font-size: 20px;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .cue-slide .cc-bullets { list-style: none; padding: 0; margin: 0; }
+  .cue-slide .cc-bullets li {
+    padding: 14px 0 14px 36px;
+    position: relative;
+    font-size: 26px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule-soft);
+  }
+  .cue-slide .cc-bullets li:first-child { border-top: none; }
+  .cue-slide .cc-bullets li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .cue-slide .cc-note { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 24px; }
+
+  /* Long-turn (model answer) slide */
+  .lt-slide .lt-meta {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+  }
+  .lt-slide .lt-meta b { color: var(--accent); font-weight: 700; }
+  .lt-slide .lt-q {
+    font-family: var(--display);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 22px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--rule-soft);
+  }
+  .lt-slide .lt-body { font-size: 24px; line-height: 1.55; color: var(--ink-soft); max-width: 1620px; }
+  .lt-slide .lt-body p { margin: 0 0 14px; }
+  .lt-slide .lt-body strong.cue { color: var(--accent); font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em; margin-right: 8px; text-transform: uppercase; font-weight: 700; }
+  .lt-slide .lex {
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    background: linear-gradient(180deg, transparent 58%, rgba(212, 175, 55, 0.32) 58%);
+    padding: 0 3px;
+  }
+
+  /* Note skeleton */
+  .skeleton {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 60px;
+    margin-top: 8px;
+  }
+  .skeleton .sk-col { background: var(--paper); border-top: 4px solid var(--accent); padding: 24px 28px 28px; }
+  .skeleton .sk-col .k { font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 14px; }
+  .skeleton .sk-col h3 { font-family: var(--display); font-size: 26px; font-weight: 600; margin: 0 0 10px; color: var(--ink); }
+  .skeleton .sk-col ul { padding-left: 22px; margin: 0; }
+  .skeleton .sk-col li { font-size: 22px; line-height: 1.45; color: var(--ink-soft); padding: 4px 0; }
+  .skeleton .sk-col em { color: var(--ink); font-style: italic; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Speaking · Academic &amp; GT</div>
+    <h1 class="main">Part 2<br><em>Long turn.</em></h1>
+    <div class="mark">Lesson 02 · Cue card · 1′ prep · 1–2′ talk · narrative skills</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>~90–100 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 (Part 2 ổn định)</dd></div>
+      <div><dt>Lý thuyết</dt><dd>14 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>5 cue cards · mỗi card 1 đề + 1 đáp mẫu</dd></div>
+      <div><dt>Trọng tâm</dt><dd>Narrative + Lexical + tense palette</dd></div>
+    </dl>
+    <div class="mark">Giảng viên · IELTS Academy</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Lộ trình</span></div>
+  <p class="eyebrow">Agenda · ~90–100 phút</p>
+  <h2 class="h-section">Agenda</h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Lý thuyết · cue card &amp; long turn.</span><span class="step-body">14 slide · ~30 phút. Format · 1 phút prep · note skeleton · khung PEEL · thì kể chuyện · ngôn ngữ miêu tả · linker · cách kéo dài · cách kết.</span></div></li>
+    <li><div><span class="step-title">Thực hành · 5 cue cards Cambridge.</span><span class="step-body">10 slide · ~45 phút. Mỗi chủ đề một slide cue card + một slide đáp mẫu band 6.0, từ vựng nâng band <strong>highlight + gạch chân</strong>.</span></div></li>
+    <li><div><span class="step-title">Sửa lỗi + bài về nhà + tổng kết.</span><span class="step-body">4 slide · ~15 phút. Lỗi hay gặp · lịch luyện 7 ngày · 4 takeaway.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>2 / 30</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Chào mừng</span><span class="rule"></span><span>Mục tiêu</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">After this lesson, you’ll <em class="hi">be able</em> to do five things.</h2>
+  <ol class="num-list">
+    <li><div><span class="step-title">Nói liên tục 1 phút 30 giây – 2 phút từ một cue card lạ.</span><span class="step-body">Không cần đọc, không cần thuộc — dựa vào note skeleton tự tạo.</span></div></li>
+    <li><div><span class="step-title">Tận dụng 1 phút chuẩn bị bằng note skeleton 6 dòng.</span><span class="step-body">Mindmap nhanh: 4 bullet + 2 dòng cảm xúc / lý do.</span></div></li>
+    <li><div><span class="step-title">Dùng dải thì kể chuyện: past simple + past continuous + present perfect.</span><span class="step-body">Đặc biệt cho cue card “a time when…”, “describe an experience”.</span></div></li>
+    <li><div><span class="step-title">Chèn 4–6 từ vựng nâng band một cách tự nhiên.</span><span class="step-body">Tập trung collocation + adjective miêu tả cảm giác.</span></div></li>
+    <li><div><span class="step-title">Kết thúc gọn khi hết ý — không cắt cụt, không lan man.</span><span class="step-body">Một câu “looking back…” là đủ.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>3 / 30</span></div>
+</section>
+
+<!-- 04 · PART 2 FORMAT -->
+<section data-label="Part 2 format" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Format</span></div>
+  <p class="eyebrow">Part 2 · Long turn</p>
+  <h2 class="h-section">One topic. <em class="hi">One minute prep. One to two minutes talk.</em></h2>
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Chuẩn bị</div><div class="v">60″</div><div class="d">Giám khảo đưa cue card + giấy + bút chì. Ghi nhanh skeleton, không viết câu dài.</div></div>
+    <div class="stat"><div class="k">Nói</div><div class="v">1–2′</div><div class="d">Giám khảo bấm giờ. Trung bình ~150–200 từ; thấp hơn 1 phút sẽ bị nhắc.</div></div>
+    <div class="stat"><div class="k">Rounding</div><div class="v">1–2Q</div><div class="d">Hỏi nhanh 1–2 câu tiếp sau — không phải Part 3 chính thức.</div></div>
+  </div>
+  <p class="fine">Quá ngắn → mất điểm Fluency. Quá dài → giám khảo cắt; không cộng thêm điểm.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>4 / 30</span></div>
+</section>
+
+<!-- 05 · WHAT'S DIFFERENT FROM PART 1 -->
+<section data-label="Part 1 vs Part 2" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>So sánh</span></div>
+  <p class="eyebrow">Part 1 → Part 2</p>
+  <h2 class="h-section">Same exam — <em class="hi">different muscle.</em></h2>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-card">
+      <div class="mono-label">Part 1</div>
+      <h3>Hội thoại ngắn</h3>
+      <ul>
+        <li>Câu hỏi nhỏ · trả lời 2–4 câu mỗi lượt.</li>
+        <li>Phản xạ + paraphrase + ARE.</li>
+        <li>Người nói nhiều: cả hai bên.</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <div class="mono-label">Part 2</div>
+      <h3>Độc thoại có cấu trúc</h3>
+      <ul>
+        <li>Một đề lớn · nói liên tục 1–2 phút.</li>
+        <li>Cần kể chuyện + miêu tả + lý giải.</li>
+        <li>Người nói chính: chỉ bạn — examiner im lặng.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">Bài thi giống nhau ở tiêu chí (FC/LR/GRA/P) nhưng Part 2 đánh giá thêm <em>extended discourse</em> — khả năng triển khai dài.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>5 / 30</span></div>
+</section>
+
+<!-- 06 · CUE CARD ANATOMY -->
+<section data-label="Cue card anatomy" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cue card</span></div>
+  <p class="eyebrow">Anatomy of a prompt</p>
+  <h2 class="h-section">Every cue card has <em class="hi">the same four parts.</em></h2>
+  <div class="qtype-grid" style="margin-top: 8px;">
+    <div class="qtype-item"><div class="n">1</div><div><div class="t">Topic line</div><div class="s">Describe + a / an + noun phrase (person, place, object, event…).</div></div></div>
+    <div class="qtype-item"><div class="n">2</div><div><div class="t">Three “you should say”</div><div class="s">Mô tả cụ thể: who · where · when · what.</div></div></div>
+    <div class="qtype-item"><div class="n">3</div><div><div class="t">“And explain why…”</div><div class="s">Câu cuối: lý do / cảm xúc / ý nghĩa — phần ghi điểm cao.</div></div></div>
+  </div>
+  <p class="fine">Bullet thứ tư (explain) thường mang nhiều ý nhất — đừng bỏ qua, đừng nói lướt.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>6 / 30</span></div>
+</section>
+
+<!-- 07 · 1-MINUTE PREP -->
+<section data-label="Prep" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>1′ prep</span></div>
+  <p class="eyebrow">The most valuable 60 seconds</p>
+  <h2 class="h-section">Use the minute. <em class="hi">Don’t waste it thinking.</em></h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">0–10″ · Chọn topic.</span><span class="step-body">Pick the <em>first</em> idea that comes — tránh đắn đo nhân vật / địa điểm “hay nhất”.</span></div></li>
+    <li><div><span class="step-title">10–40″ · Viết skeleton 6 dòng.</span><span class="step-body">4 dòng cho 4 bullet · 1 dòng cảm xúc · 1 dòng câu kết.</span></div></li>
+    <li><div><span class="step-title">40–55″ · Bổ sung 3–4 từ vựng nâng band.</span><span class="step-body">Adjective miêu tả + 1 collocation + 1 thành ngữ ngắn.</span></div></li>
+    <li><div><span class="step-title">55–60″ · Hít sâu, đặt bút.</span><span class="step-body">Bắt đầu bằng paraphrase câu đề — không “OK so…”.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>7 / 30</span></div>
+</section>
+
+<!-- 08 · NOTE SKELETON -->
+<section data-label="Note skeleton" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Note skeleton</span></div>
+  <p class="eyebrow">What your note paper looks like</p>
+  <h2 class="h-section">Six lines — <em class="hi">keywords, not sentences.</em></h2>
+  <div class="skeleton">
+    <div class="sk-col">
+      <div class="k">Format chuẩn</div>
+      <h3>4 bullet + 2 dòng phụ</h3>
+      <ul>
+        <li><em>Who/What:</em> 2–3 từ khóa.</li>
+        <li><em>When/How long:</em> mốc thời gian.</li>
+        <li><em>Where/Detail:</em> địa điểm hoặc đặc điểm.</li>
+        <li><em>Why/Feeling:</em> 1 tính từ + 1 lý do.</li>
+        <li><em>Anecdote:</em> 1 chi tiết cụ thể.</li>
+        <li><em>Wrap:</em> 1 từ kết (still / proud / unforgettable).</li>
+      </ul>
+    </div>
+    <div class="sk-col">
+      <div class="k">Ví dụ thực tế</div>
+      <h3>Topic: an object you’d keep</h3>
+      <ul>
+        <li><em>What:</em> dad’s old watch · brass.</li>
+        <li><em>How long:</em> 12 yrs · since age 14.</li>
+        <li><em>Where:</em> graduation gift.</li>
+        <li><em>Why:</em> sentimental · reminder of him.</li>
+        <li><em>Detail:</em> ticks louder than modern ones.</li>
+        <li><em>Wrap:</em> never sell.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">Tránh viết câu hoàn chỉnh — vừa lãng phí thời gian, vừa cám dỗ đọc lại như thuộc lòng.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>8 / 30</span></div>
+</section>
+
+<!-- 09 · PEEL FRAMEWORK -->
+<section data-label="PEEL" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Khung kể</span></div>
+  <p class="eyebrow">Point · Example · Explain · Link</p>
+  <h2 class="h-section">One framework — <em class="hi">four stages of talk.</em></h2>
+  <div class="flow" style="margin-top: 8px;">
+    <div class="flow-step"><div class="n">P</div><div class="t">Point</div><div class="d">Paraphrase đề + chọn cụ thể (tên người / tên nơi).</div></div>
+    <div class="flow-step"><div class="n">E</div><div class="t">Example</div><div class="d">Một chi tiết riêng: thời gian, hành động, lời nói.</div></div>
+    <div class="flow-step"><div class="n">E</div><div class="t">Explain</div><div class="d">Vì sao quan trọng / ý nghĩa với bạn.</div></div>
+    <div class="flow-step"><div class="n">L</div><div class="t">Link</div><div class="d">Câu kết gọn: nay nghĩ lại / vẫn ảnh hưởng.</div></div>
+  </div>
+  <p class="fine">Có thể lặp vòng P→E→E→L cho từng bullet trên cue card — không cần kể tuyến tính.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>9 / 30</span></div>
+</section>
+
+<!-- 10 · TENSE PALETTE -->
+<section data-label="Tense palette" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Thì kể chuyện</span></div>
+  <p class="eyebrow">Tense palette for narration</p>
+  <h2 class="h-section">Mix three or four tenses — <em class="hi">don’t live in past simple.</em></h2>
+  <div class="band-grid">
+    <div class="band-cell">
+      <div class="k">Past simple</div>
+      <div class="t">Hành động chính</div>
+      <div class="d"><em>I went · she said · we cooked</em> — backbone của câu chuyện.</div>
+    </div>
+    <div class="band-cell">
+      <div class="k">Past continuous</div>
+      <div class="t">Bối cảnh</div>
+      <div class="d"><em>It was raining · we were chatting when…</em> — mô tả nền.</div>
+    </div>
+    <div class="band-cell">
+      <div class="k">Present perfect</div>
+      <div class="t">Kết nối tới nay</div>
+      <div class="d"><em>I’ve known him for ten years · I’ve never forgotten that day.</em></div>
+    </div>
+    <div class="band-cell">
+      <div class="k">Would / used to</div>
+      <div class="t">Thói quen cũ</div>
+      <div class="d"><em>We would meet every Sunday · I used to visit her every summer.</em></div>
+    </div>
+  </div>
+  <p class="fine">Một đoạn nói 2 phút mà chỉ dùng past simple sẽ tự kéo GRA xuống band 5.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>10 / 30</span></div>
+</section>
+
+<!-- 11 · DESCRIPTIVE LANGUAGE -->
+<section data-label="Descriptive" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Miêu tả</span></div>
+  <p class="eyebrow">Five senses + feelings</p>
+  <h2 class="h-section">Show, <em class="hi">don’t just say.</em></h2>
+  <div class="kw-grid" style="margin-top: 8px;">
+    <div class="kw-tile"><div class="k">Sight</div><div class="ex">colour · size · style</div><div class="d"><em>cosy, dimly-lit, bustling, breathtaking</em></div></div>
+    <div class="kw-tile"><div class="k">Sound</div><div class="ex">noisy · silent · musical</div><div class="d"><em>buzzing, peaceful, deafening, hum of traffic</em></div></div>
+    <div class="kw-tile"><div class="k">Smell · Taste</div><div class="ex">đặc biệt cho food</div><div class="d"><em>aromatic, mouth-watering, fragrant, smoky</em></div></div>
+    <div class="kw-tile"><div class="k">Feeling</div><div class="ex">cảm xúc — phần quan trọng</div><div class="d"><em>overwhelmed, nostalgic, exhilarated, grateful</em></div></div>
+  </div>
+  <p class="fine">Mỗi cue card cố chèn ≥ 2 tính từ giác quan và ≥ 1 tính từ cảm xúc.</p>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>11 / 30</span></div>
+</section>
+
+<!-- 12 · LINKERS -->
+<section data-label="Linkers" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Linker</span></div>
+  <p class="eyebrow">Long-turn glue</p>
+  <h2 class="h-section">Connect — <em class="hi">don’t bullet-list out loud.</em></h2>
+  <div class="kp-grid" style="margin-top: 8px;">
+    <div class="kp-item"><span class="en">Mở bài</span><span class="vi">I’d like to talk about… · The one that springs to mind is…</span></div>
+    <div class="kp-item"><span class="en">Sequencing</span><span class="vi">First of all · After that · Eventually · By the end.</span></div>
+    <div class="kp-item"><span class="en">Thêm chi tiết</span><span class="vi">What’s more · On top of that · Another thing worth mentioning.</span></div>
+    <div class="kp-item"><span class="en">Cảm xúc / nhấn</span><span class="vi">Honestly · To be fair · Looking back · Without a doubt.</span></div>
+    <div class="kp-item"><span class="en">Tương phản</span><span class="vi">Although · Even though · That said.</span></div>
+    <div class="kp-item"><span class="en">Câu kết</span><span class="vi">That’s why… · …and that’s the reason I’d pick this one.</span></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>12 / 30</span></div>
+</section>
+
+<!-- 13 · STRETCH TOOLKIT -->
+<section data-label="Stretch" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Kéo dài</span></div>
+  <p class="eyebrow">Running out at 1′10″?</p>
+  <h2 class="h-section">Four moves <em class="hi">to stretch</em> the talk.</h2>
+  <ul class="annot-list" style="margin-top: 8px;">
+    <li><span class="tag">So sánh</span>Đặt nhân vật / nơi đó <b>cạnh một cái khác</b>: <em>Unlike most cafés in the area, this one…</em></li>
+    <li><span class="tag">Giả định</span><b>If I hadn’t met her, I’d probably…</b> — kéo thêm 15–20 giây tự nhiên.</li>
+    <li><span class="tag">Hiện tại</span>Chuyển sang ảnh hưởng đến nay: <b>Even now, whenever I…</b></li>
+    <li><span class="tag">Cảm xúc kép</span>Chia sẻ cảm xúc trái chiều: <b>Part of me was nervous, but another part felt excited.</b></li>
+  </ul>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>13 / 30</span></div>
+</section>
+
+<!-- 14 · GRACEFUL ENDING -->
+<section data-label="Ending" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Kết</span></div>
+  <p class="eyebrow">Don’t fade out</p>
+  <h2 class="h-section">End on a sentence — <em class="hi">not on a comma.</em></h2>
+  <div class="two-col" style="margin-top: 8px;">
+    <div class="col-card">
+      <div class="mono-label">Nên</div>
+      <h3>Câu kết có cảm xúc</h3>
+      <ul>
+        <li><em>So looking back, that’s why this memory still means a lot to me.</em></li>
+        <li><em>All in all, I’d say it shaped the way I see…</em></li>
+        <li><em>That’s the main reason I’d choose this one.</em></li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <div class="mono-label">Tránh</div>
+      <h3>Cách kết yếu</h3>
+      <ul>
+        <li>“… and yeah, that’s it.” — quá thẳng tay.</li>
+        <li>Đứng im 5 giây chờ examiner cắt.</li>
+        <li>Lặp lại nguyên câu đề — không thêm gì.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>14 / 30</span></div>
+</section>
+
+<!-- 15 · TOPIC CATEGORIES -->
+<section data-label="Topic categories" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Chủ đề</span></div>
+  <p class="eyebrow">Cambridge 18/19 · high-frequency</p>
+  <h2 class="h-section">Eight families — <em class="hi">prep stories</em> for each.</h2>
+  <div class="kw-grid" style="margin-top: 8px;">
+    <div class="kw-tile"><div class="k">Person</div><div class="ex">influencer · stranger · teacher</div><div class="d">Quan hệ + đặc điểm + ảnh hưởng.</div></div>
+    <div class="kw-tile"><div class="k">Place</div><div class="ex">quiet · childhood · crowded</div><div class="d">Vị trí + giác quan + cảm xúc.</div></div>
+    <div class="kw-tile"><div class="k">Object</div><div class="ex">keep · borrowed · old</div><div class="d">Mô tả + nguồn gốc + giá trị tinh thần.</div></div>
+    <div class="kw-tile"><div class="k">Experience</div><div class="ex">journey · failure · success</div><div class="d">Bối cảnh + cao trào + bài học.</div></div>
+    <div class="kw-tile"><div class="k">Event</div><div class="ex">celebration · party · ceremony</div><div class="d">Khi nào + ai + chi tiết · cảm xúc.</div></div>
+    <div class="kw-tile"><div class="k">Activity</div><div class="ex">hobby · skill · sport</div><div class="d">Bắt đầu khi nào + tần suất + lý do.</div></div>
+    <div class="kw-tile"><div class="k">Media</div><div class="ex">book · film · advert</div><div class="d">Nội dung + lý do nhớ + thông điệp.</div></div>
+    <div class="kw-tile"><div class="k">Time when…</div><div class="ex">helped · learned · waited</div><div class="d">Narrative điển hình — past tenses + feeling.</div></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>15 / 30</span></div>
+</section>
+
+<!-- 16 · SECTION BREAK -->
+<section data-label="Practice" class="slide section-break">
+  <div class="band">
+    <div class="n">II</div>
+    <div class="lbl">Practice</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Part 2 · 5 cue cards</p>
+    <h2>Practice<br><em>one cue card — one model long turn.</em></h2>
+    <div class="toc">
+      <span class="active">01 · Person who inspired you</span><br>
+      <span>02 · Quiet place you like</span><br>
+      <span>03 · Object you’d keep</span><br>
+      <span>04 · Memorable journey</span><br>
+      <span>05 · Special celebration</span>
+    </div>
+  </div>
+</section>
+
+<!-- 17 · CUE CARD 1 · PERSON -->
+<section data-label="Cue 1 · Person" class="slide cue-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Person</span></div>
+  <p class="eyebrow">Cue card · 01</p>
+  <div class="cc-card">
+    <div class="cc-lbl">Describe</div>
+    <h2 class="cc-q">a person who has had an important influence on your life.</h2>
+    <div class="cc-intro">You should say</div>
+    <ul class="cc-bullets">
+      <li>who this person is</li>
+      <li>how long you have known them</li>
+      <li>what kind of person they are</li>
+      <li>and explain why this person has had an important influence on your life.</li>
+    </ul>
+    <p class="cc-note">1 phút prep · 1–2 phút nói · skeleton 6 dòng trước khi bắt đầu.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>17 / 30</span></div>
+</section>
+
+<!-- 18 · MODEL 1 -->
+<section data-label="Model 1" class="slide slide--paper lt-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Person · model</span></div>
+  <div class="lt-meta"><span>Model answer</span><span><b>~180 words</b></span><span>Target band 6.0</span></div>
+  <h2 class="lt-q">Person who has had an important influence on your life.</h2>
+  <div class="lt-body">
+    <p><strong class="cue">Point</strong>The person who springs to mind is my <span class="lex">aunt Lan</span>, my mum’s younger sister. I’ve known her literally my whole life — so about <span class="lex">twenty-six years</span> now — but I’d say we really got close when I was around twelve.</p>
+    <p><strong class="cue">Detail</strong>She’s a <span class="lex">primary-school teacher</span> in the town where I grew up, and she has this <span class="lex">calm, patient</span> way of explaining things. She never raises her voice, even when I used to be a really stubborn kid. People in our family often describe her as <span class="lex">soft-spoken but firm</span>, and I think that’s a fair description.</p>
+    <p><strong class="cue">Why</strong>The reason she’s influenced me so much is that during high school I almost dropped a maths competition because I was scared of failing. She sat with me one weekend, walked me through the questions, and told me that <span class="lex">losing is fine, not trying isn’t</span>. I ended up entering and didn’t win, but the feeling stuck.</p>
+    <p><strong class="cue">Wrap</strong>Looking back, that line has shaped how I handle <span class="lex">setbacks</span> at university, and that’s why I’d pick her without hesitation.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>18 / 30</span></div>
+</section>
+
+<!-- 19 · CUE CARD 2 · PLACE -->
+<section data-label="Cue 2 · Place" class="slide cue-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Place</span></div>
+  <p class="eyebrow">Cue card · 02</p>
+  <div class="cc-card">
+    <div class="cc-lbl">Describe</div>
+    <h2 class="cc-q">a quiet place you like to go to.</h2>
+    <div class="cc-intro">You should say</div>
+    <ul class="cc-bullets">
+      <li>where it is</li>
+      <li>how often you go there</li>
+      <li>what you do there</li>
+      <li>and explain why you like this place.</li>
+    </ul>
+    <p class="cc-note">Gợi ý: dùng tính từ giác quan (sight + sound) ≥ 2 từ.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>19 / 30</span></div>
+</section>
+
+<!-- 20 · MODEL 2 -->
+<section data-label="Model 2" class="slide slide--paper lt-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Place · model</span></div>
+  <div class="lt-meta"><span>Model answer</span><span><b>~175 words</b></span><span>Target band 6.0</span></div>
+  <h2 class="lt-q">A quiet place you like to go to.</h2>
+  <div class="lt-body">
+    <p><strong class="cue">Point</strong>The place I’d like to talk about is a small <span class="lex">rooftop café</span> in District 3, only about ten minutes from my flat. It’s tucked above a tailor shop, so most people walk past without noticing it.</p>
+    <p><strong class="cue">Detail</strong>I usually pop in once or twice a week, normally on <span class="lex">Sunday mornings</span> before the city wakes up. The owner plays <span class="lex">soft jazz</span> at low volume, and the place is <span class="lex">dimly-lit</span> with old wooden tables and a few potted plants. There’s a corner seat near the window where you can see the rooftops stretching across the district.</p>
+    <p><strong class="cue">What I do</strong>What I do there is fairly simple — I bring a notebook, order a long black, and just read or jot down ideas for about an hour. Sometimes I don’t even open the book; I just <span class="lex">people-watch</span>.</p>
+    <p><strong class="cue">Why</strong>The main reason I love it is that it gives me a real break from the <span class="lex">constant buzz</span> of work chats and notifications. Honestly, that one quiet hour resets my whole week.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>20 / 30</span></div>
+</section>
+
+<!-- 21 · CUE CARD 3 · OBJECT -->
+<section data-label="Cue 3 · Object" class="slide cue-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Object</span></div>
+  <p class="eyebrow">Cue card · 03</p>
+  <div class="cc-card">
+    <div class="cc-lbl">Describe</div>
+    <h2 class="cc-q">an object you would want to keep for a long time.</h2>
+    <div class="cc-intro">You should say</div>
+    <ul class="cc-bullets">
+      <li>what it is</li>
+      <li>how long you have had it</li>
+      <li>where you got it from</li>
+      <li>and explain why you would want to keep it.</li>
+    </ul>
+    <p class="cc-note">Mẹo: chọn vật có câu chuyện thật — kể chi tiết dễ tự nhiên hơn.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>21 / 30</span></div>
+</section>
+
+<!-- 22 · MODEL 3 -->
+<section data-label="Model 3" class="slide slide--paper lt-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Object · model</span></div>
+  <div class="lt-meta"><span>Model answer</span><span><b>~180 words</b></span><span>Target band 6.0</span></div>
+  <h2 class="lt-q">An object you would want to keep for a long time.</h2>
+  <div class="lt-body">
+    <p><strong class="cue">Point</strong>The object I’d like to describe is a <span class="lex">brass wristwatch</span> that used to belong to my father. It’s not particularly expensive — just an old Soviet-era model — but I would never give it away.</p>
+    <p><strong class="cue">Background</strong>I’ve had it for around <span class="lex">twelve years</span>. He passed it down to me on the morning of my fourteenth birthday, right after breakfast, and just said, <em>“It’s your turn now.”</em> Before that he had worn it daily for almost three decades, so it was a bit <span class="lex">scratched up</span> by the time I got it.</p>
+    <p><strong class="cue">Detail</strong>The watch ticks much <span class="lex">louder</span> than any modern one I’ve owned, and you can hear it across a quiet room. I’ve had it serviced twice — once when the strap broke and once for a full clean.</p>
+    <p><strong class="cue">Why</strong>The main reason I want to keep it is <span class="lex">sentimental</span>. Every time I wind it in the morning, it reminds me of him. So even if I ever switched to a smartwatch, I’d still hold on to this one — that’s non-negotiable.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>22 / 30</span></div>
+</section>
+
+<!-- 23 · CUE CARD 4 · JOURNEY -->
+<section data-label="Cue 4 · Journey" class="slide cue-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Experience</span></div>
+  <p class="eyebrow">Cue card · 04</p>
+  <div class="cc-card">
+    <div class="cc-lbl">Describe</div>
+    <h2 class="cc-q">a memorable journey you have taken.</h2>
+    <div class="cc-intro">You should say</div>
+    <ul class="cc-bullets">
+      <li>where you went</li>
+      <li>who you went with</li>
+      <li>what you did there</li>
+      <li>and explain why it was memorable.</li>
+    </ul>
+    <p class="cc-note">Dùng past simple + past continuous; nhớ thêm 1 câu present perfect kết nối tới nay.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>23 / 30</span></div>
+</section>
+
+<!-- 24 · MODEL 4 -->
+<section data-label="Model 4" class="slide slide--paper lt-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Journey · model</span></div>
+  <div class="lt-meta"><span>Model answer</span><span><b>~185 words</b></span><span>Target band 6.0</span></div>
+  <h2 class="lt-q">A memorable journey you have taken.</h2>
+  <div class="lt-body">
+    <p><strong class="cue">Point</strong>The journey I’d like to share is a <span class="lex">motorbike trip</span> from Da Lat down to the coast of Nha Trang, which my two cousins and I took two summers ago.</p>
+    <p><strong class="cue">Setup</strong>We had been planning it for months, mostly through messages, and we finally set off on a <span class="lex">crisp Saturday morning</span>. The road winds through pine forests and tea plantations, so the air smelled really fresh for the first few hours.</p>
+    <p><strong class="cue">What happened</strong>About halfway, my cousin’s bike got a flat tyre in the middle of nowhere. While he was sweating over the repair, the two of us actually <span class="lex">stumbled across</span> a tiny noodle stall run by a local family. The owner refused to let us pay for tea, which I still find quite touching.</p>
+    <p><strong class="cue">Why</strong>The reason it stuck with me is not really the destination — Nha Trang was lovely, but predictable. It was that random <span class="lex">unplanned stop</span> that made the trip <span class="lex">unforgettable</span>. Looking back, I’ve realised that the best parts of travel are often the bits you can’t plan in advance.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>24 / 30</span></div>
+</section>
+
+<!-- 25 · CUE CARD 5 · CELEBRATION -->
+<section data-label="Cue 5 · Celebration" class="slide cue-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Event</span></div>
+  <p class="eyebrow">Cue card · 05</p>
+  <div class="cc-card">
+    <div class="cc-lbl">Describe</div>
+    <h2 class="cc-q">a special celebration that you remember well.</h2>
+    <div class="cc-intro">You should say</div>
+    <ul class="cc-bullets">
+      <li>what the celebration was</li>
+      <li>when and where it took place</li>
+      <li>who was there</li>
+      <li>and explain why you remember it well.</li>
+    </ul>
+    <p class="cc-note">Gợi ý: dùng ≥ 1 tính từ cảm xúc + 1 câu giả định để kéo dài cuối bài.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>25 / 30</span></div>
+</section>
+
+<!-- 26 · MODEL 5 -->
+<section data-label="Model 5" class="slide slide--paper lt-slide">
+  <div class="run-header"><span>Phần II · Thực hành</span><span class="rule"></span><span>Celebration · model</span></div>
+  <div class="lt-meta"><span>Model answer</span><span><b>~185 words</b></span><span>Target band 6.0</span></div>
+  <h2 class="lt-q">A special celebration that you remember well.</h2>
+  <div class="lt-body">
+    <p><strong class="cue">Point</strong>The celebration I remember most clearly is my <span class="lex">grandmother’s eightieth birthday</span>, which my family threw about three years ago in her hometown.</p>
+    <p><strong class="cue">When · Where</strong>It took place on a Sunday in late October, in the courtyard of her old house in the Mekong Delta. The weather was perfect — <span class="lex">breezy</span> and not too humid for once. My uncles had spent the whole morning putting up lanterns and a small stage.</p>
+    <p><strong class="cue">Who · What</strong>Pretty much the entire <span class="lex">extended family</span> turned up — around forty of us, including a few relatives we hadn’t seen in years. My cousins and I had secretly prepared a short video of old photos, and we played it after the meal. My grandma cried a little, which made everyone else cry too.</p>
+    <p><strong class="cue">Why · Wrap</strong>The reason it’s stuck with me is the <span class="lex">sense of togetherness</span>. Honestly, if that day hadn’t happened, I don’t think I would have realised how rare it is for us all to be in the same place. That’s what makes it <span class="lex">unforgettable</span>.</p>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>26 / 30</span></div>
+</section>
+
+<!-- 27 · COMMON MISTAKES -->
+<section data-label="Mistakes" class="slide">
+  <div class="run-header"><span>Phần III · Sửa lỗi</span><span class="rule"></span><span>Tránh</span></div>
+  <p class="eyebrow">Common slips · Part 2</p>
+  <h2 class="h-section">Five common <em class="hi">score-killers.</em></h2>
+  <div class="mistake-grid" style="margin-top: 8px;">
+    <div class="mistake"><div class="x">×</div><div><h4>Đọc lại note như kịch bản</h4><p>Giám khảo nghe ra ngay — tông giọng và mắt không rời giấy.</p></div></div>
+    <div class="mistake"><div class="x">×</div><div><h4>Hết ý sau 45 giây</h4><p>Không xài stretch toolkit (so sánh / giả định / hiện tại).</p></div></div>
+    <div class="mistake"><div class="x">×</div><div><h4>Chỉ một thì duy nhất</h4><p>Toàn past simple → GRA tụt; thiếu range tenses.</p></div></div>
+    <div class="mistake"><div class="x">×</div><div><h4>Lạc đề</h4><p>Mô tả người khác / nơi khác giữa chừng — bỏ bullet “explain why”.</p></div></div>
+    <div class="mistake"><div class="x">×</div><div><h4>Câu kết hụt</h4><p>“Yeah, that’s all.” — mất ấn tượng cuối; nên có câu wrap có cảm xúc.</p></div></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>27 / 30</span></div>
+</section>
+
+<!-- 28 · HOMEWORK -->
+<section data-label="Homework" class="slide slide--paper">
+  <div class="run-header"><span>Phần III · Bài về nhà</span><span class="rule"></span><span>Lịch tuần</span></div>
+  <p class="eyebrow">Homework · 7 days</p>
+  <h2 class="h-section">Five short sessions — <em class="hi">10–12 minutes</em> each.</h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Day 1 · Skeleton drill</span><span class="step-body">Lấy 6 cue card bất kỳ từ Cambridge 18/19 — chỉ ghi skeleton 6 dòng trong 60 giây, không nói.</span></div></li>
+    <li><div><span class="step-title">Day 2 · Talk &amp; record</span><span class="step-body">Chọn 2 trong 6 cue card hôm trước · nói + ghi âm · nghe lại 1 lần, không sửa.</span></div></li>
+    <li><div><span class="step-title">Day 3 · Tense audit</span><span class="step-body">Nghe lại bản ghi Day 2 — đánh dấu mọi past simple. Thay 2 chỗ bằng past continuous + 1 chỗ bằng present perfect.</span></div></li>
+    <li><div><span class="step-title">Day 4 · Lexical upgrade</span><span class="step-body">Viết 15 collocation chủ đề người / nơi / vật · luyện nói thành câu, không đọc.</span></div></li>
+    <li><div><span class="step-title">Day 5 · Mock dưới đồng hồ</span><span class="step-body">3 cue card mới · prep 60 giây · nói tối thiểu 1 phút 45 giây · ghi âm + tự chấm 4 tiêu chí.</span></div></li>
+  </ol>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>28 / 30</span></div>
+</section>
+
+<!-- 29 · TAKEAWAYS -->
+<section data-label="Takeaways" class="slide">
+  <div class="run-header"><span>Phần III · Tổng kết</span><span class="rule"></span><span>Takeaways</span></div>
+  <p class="eyebrow">Remember</p>
+  <h2 class="h-section">Four things <em class="hi">to take away.</em></h2>
+  <div class="take" style="margin-top: 8px;">
+    <div class="item"><div class="k">Prep</div><div class="v">60 giây · skeleton 6 dòng · không câu hoàn chỉnh.</div></div>
+    <div class="item"><div class="k">Frame</div><div class="v">PEEL · lặp vòng cho từng bullet.</div></div>
+    <div class="item"><div class="k">Range</div><div class="v">3–4 thì + 4–6 lexical uplifts.</div></div>
+    <div class="item"><div class="k">Next lesson</div><div class="v">Part 3 · abstract discussion · đào sâu lý lẽ.</div></div>
+  </div>
+  <div class="run-footer"><span class="footer-topic">IELTS Speaking · Lesson 02</span><span>29 / 30</span></div>
+</section>
+
+<!-- 30 · END -->
+<section data-label="End" class="slide end-slide">
+  <div>
+    <h1>One topic.<br>Two minutes.</h1>
+    <div class="hint">Lesson 02 · Speaking Part 2 · IELTS Academy</div>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>
