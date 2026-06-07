@@ -15,6 +15,8 @@
   .dgm-frame { background: var(--paper); border: 1px solid var(--rule-soft); padding: 28px 32px 22px; }
   .dgm-frame .dgm-title { font-family: var(--display); font-size: 24px; font-weight: 600; margin: 0 0 4px; color: var(--ink); }
   .dgm-frame .dgm-source { font-family: var(--mono); font-size: 16px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .dgm-frame .dgm-ref { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 15px; color: var(--accent); text-decoration: none; padding: 6px 12px; border: 1px solid var(--accent); border-radius: 2px; margin-bottom: 14px; letter-spacing: 0.06em; transition: background 0.15s; }
+  .dgm-frame .dgm-ref:hover { background: rgba(200,32,47,0.08); }
 
   /* Sample essay (reused from L02/L03) */
   .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
@@ -73,8 +75,6 @@
 </head>
 <body>
 
-<deck-stage width="1920" height="1080">
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -82,6 +82,8 @@
     </marker>
   </defs>
 </svg>
+
+<deck-stage width="1920" height="1080">
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- PART I · THEORY (01-10) -->
@@ -406,6 +408,7 @@
     <div class="dgm-frame">
       <p class="dgm-title">Chocolate Production · 7 stages</p>
       <p class="dgm-source">Source · Confectionery industry diagram</p>
+      <a class="dgm-ref" href="https://zim.vn/giai-de-ielts-writing-task-1-va-task-2-ngay-09-01-2021" target="_blank" rel="noopener noreferrer">🔗 Xem đề thi gốc (09/01/2021) · zim.vn</a>
       <svg viewBox="0 0 1080 360" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
         <!-- Row 1: stages 1-4 -->
         <g>
@@ -688,42 +691,8 @@
 
     <div class="dgm-frame">
       <p class="dgm-title">The Water Cycle · 4 stages</p>
-      <p class="dgm-source">Source · Hydrological diagram</p>
-      <svg viewBox="0 0 720 400" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sky/sun -->
-        <text class="plbl-sm" x="60" y="30" fill="#C8202F" font-weight="700">SUN ☀</text>
-        <!-- Sea (left) -->
-        <path d="M 0 280 L 280 280 L 280 400 L 0 400 Z" fill="rgba(31,58,61,0.10)" stroke="rgba(31,58,61,0.4)" stroke-width="1.2"/>
-        <text class="plbl" x="120" y="350" text-anchor="middle">SEA / OCEAN</text>
-        <!-- Mountain + ground (right) -->
-        <path d="M 380 400 L 480 200 L 580 280 L 720 280 L 720 400 Z" fill="rgba(217,196,156,0.3)" stroke="#1A1A1A" stroke-width="1.2"/>
-        <text class="plbl" x="600" y="360" text-anchor="middle">LAND</text>
-        <!-- Cloud -->
-        <ellipse cx="360" cy="80" rx="100" ry="32" class="pbox-active"/>
-        <text class="plbl" x="360" y="86" text-anchor="middle" fill="#C8202F">CLOUDS</text>
-        <!-- Stage 1: Evaporation -->
-        <path class="parrow" d="M 130 280 Q 180 180 280 110"/>
-        <text class="plbl-sm" x="200" y="190">↑ EVAPORATION</text>
-        <circle class="pcircle" cx="200" cy="218" r="14"/>
-        <text class="pnum" x="200" y="223">01</text>
-        <!-- Stage 2: Condensation (cloud forms) -->
-        <text class="plbl-sm" x="370" y="50" text-anchor="middle" fill="#C8202F">02 · CONDENSATION</text>
-        <circle class="pcircle" cx="430" cy="80" r="14"/>
-        <text class="pnum" x="430" y="85">02</text>
-        <!-- Stage 3: Precipitation -->
-        <line class="parrow" x1="500" y1="105" x2="510" y2="190"/>
-        <line class="parrow" x1="450" y1="105" x2="460" y2="200"/>
-        <line class="parrow" x1="400" y1="105" x2="410" y2="210"/>
-        <text class="plbl-sm" x="430" y="160">03 · PRECIPITATION (rain / snow)</text>
-        <!-- Stage 4: Collection (surface runoff back to sea) -->
-        <path class="parrow" d="M 480 280 Q 380 320 280 320 L 250 320"/>
-        <text class="plbl-sm" x="380" y="338" text-anchor="middle">04 · SURFACE RUNOFF</text>
-        <circle class="pcircle" cx="380" cy="295" r="14"/>
-        <text class="pnum" x="380" y="300">04</text>
-        <!-- Underground -->
-        <path class="parrow" d="M 540 290 Q 520 340 320 360 L 270 360" stroke-dasharray="4 3"/>
-        <text class="plbl-sm" x="430" y="385">→ groundwater (underground)</text>
-      </svg>
+      <p class="dgm-source">Source · Wikimedia Commons · CC BY-SA 4.0 (Ehudtal)</p>
+      <img src="/assets/images/process/water-cycle.jpg" alt="Diagram of the water cycle showing evaporation, condensation, precipitation, and collection" style="width: 100%; height: auto; display: block;" loading="lazy">
     </div>
   </div>
 
@@ -938,6 +907,7 @@
     <div class="dgm-frame">
       <p class="dgm-title">Cement Production + Concrete Mix · Two-stage</p>
       <p class="dgm-source">Source · Construction industry diagram</p>
+      <a class="dgm-ref" href="https://ieltskaro.com/ielts-diagram-cement-and-concrete-production-9-band-answer/" target="_blank" rel="noopener noreferrer">🔗 Xem đề mẫu & bài giải Band 9 · ieltskaro.com</a>
       <svg viewBox="0 0 1080 400" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
         <!-- Stage A: Cement (top row) -->
         <text class="plbl" x="20" y="30" fill="#C8202F" font-size="14">STAGE A · CEMENT</text>
@@ -1230,58 +1200,8 @@
 
     <div class="dgm-frame">
       <p class="dgm-title">Salmon Life Cycle · 5 stages</p>
-      <p class="dgm-source">Source · Marine biology diagram</p>
-      <svg viewBox="0 0 720 420" style="width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
-        <!-- River (left) and sea (right) -->
-        <path d="M 0 280 L 360 280 L 360 420 L 0 420 Z" fill="rgba(31,120,80,0.10)" stroke="rgba(31,120,80,0.4)" stroke-width="1"/>
-        <text class="plbl-sm" x="180" y="380" text-anchor="middle">RIVER (freshwater)</text>
-        <path d="M 360 220 L 720 220 L 720 420 L 360 420 Z" fill="rgba(31,58,61,0.10)" stroke="rgba(31,58,61,0.4)" stroke-width="1"/>
-        <text class="plbl-sm" x="540" y="370" text-anchor="middle">SEA (saltwater)</text>
-
-        <!-- Stage 01: Egg (river bed, top-left) -->
-        <circle class="pcircle" cx="80" cy="80" r="28"/>
-        <text class="pnum" x="80" y="78">01</text>
-        <text class="plbl-sm" x="80" y="93">EGG</text>
-        <text class="plbl-sm" x="80" y="125" text-anchor="middle">in gravel</text>
-        <text class="plbl-sm" x="80" y="140" text-anchor="middle">5–6 months</text>
-
-        <!-- Stage 02: Fry (river) -->
-        <circle class="pcircle" cx="220" cy="80" r="28"/>
-        <text class="pnum" x="220" y="78">02</text>
-        <text class="plbl-sm" x="220" y="93">FRY</text>
-        <text class="plbl-sm" x="220" y="125" text-anchor="middle">small fish</text>
-        <text class="plbl-sm" x="220" y="140" text-anchor="middle">in river</text>
-
-        <!-- Stage 03: Smolt (river → sea, middle) -->
-        <circle class="pcircle" cx="380" cy="80" r="28"/>
-        <text class="pnum" x="380" y="78">03</text>
-        <text class="plbl-sm" x="380" y="93">SMOLT</text>
-        <text class="plbl-sm" x="380" y="125" text-anchor="middle">migrates to sea</text>
-        <text class="plbl-sm" x="380" y="140" text-anchor="middle">~ 2 years old</text>
-
-        <!-- Stage 04: Adult (sea) -->
-        <circle class="pcircle" cx="560" cy="80" r="28"/>
-        <text class="pnum" x="560" y="78">04</text>
-        <text class="plbl-sm" x="560" y="93">ADULT</text>
-        <text class="plbl-sm" x="560" y="125" text-anchor="middle">grows in sea</text>
-        <text class="plbl-sm" x="560" y="140" text-anchor="middle">4 years</text>
-
-        <!-- Stage 05: Spawning return -->
-        <circle class="pcircle" cx="560" cy="240" r="28"/>
-        <text class="pnum" x="560" y="238">05</text>
-        <text class="plbl-sm" x="560" y="253">SPAWN</text>
-        <text class="plbl-sm" x="560" y="290" text-anchor="middle">returns to river</text>
-        <text class="plbl-sm" x="560" y="305" text-anchor="middle">to lay eggs</text>
-
-        <!-- Arrows -->
-        <line class="parrow" x1="108" y1="80" x2="192" y2="80"/>
-        <line class="parrow" x1="248" y1="80" x2="352" y2="80"/>
-        <line class="parrow" x1="408" y1="80" x2="532" y2="80"/>
-        <line class="parrow" x1="560" y1="108" x2="560" y2="212"/>
-        <!-- Loop arrow back to egg -->
-        <path class="parrow" d="M 540 260 Q 320 320 110 110" stroke-dasharray="0"/>
-        <text class="plbl-sm" x="320" y="220" fill="#C8202F" font-weight="700">↺ cycle repeats</text>
-      </svg>
+      <p class="dgm-source">Source · Wikimedia Commons · Public Domain (Chiswick Chap)</p>
+      <img src="/assets/images/process/salmon-life-cycle.svg" alt="Life cycle of Atlantic salmon: egg, fry, smolt, adult, spawning return" style="width: 100%; height: auto; display: block;" loading="lazy">
     </div>
   </div>
 

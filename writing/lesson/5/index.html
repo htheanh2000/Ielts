@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 2 — Academic · Lesson 05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ LESSON-05 ADDITIONS ═════════ */
+
+  /* Sample essay (reused from L04) */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
+  .essay p { margin: 0 0 14px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .hl-band { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 19px; color: var(--ink-soft); line-height: 1.4; }
+
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 21px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  .pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; margin-top: 8px; }
+  .pp-grid > div > .mono-label { margin-bottom: 6px; }
+  .pp-grid > div > p { font-family: var(--display); font-size: 24px; line-height: 1.4; margin: 6px 0 0; }
+
+  /* Step table */
+  .step-table { width: 100%; border-collapse: collapse; }
+  .step-table th, .step-table td { padding: 12px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 20px; vertical-align: top; }
+  .step-table thead th { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 3px solid var(--accent); }
+  .step-table tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; width: 130px; }
+  .step-table tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); }
+
+  /* Prompt card */
+  .prompt-card { background: var(--paper); border: 1px solid var(--rule-soft); border-left: 6px solid var(--accent); padding: 28px 32px; }
+  .prompt-card .lbl { font-family: var(--mono); font-size: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 12px; }
+  .prompt-card .q { font-family: var(--display); font-size: 26px; line-height: 1.45; color: var(--ink); font-style: italic; margin: 0; }
+  .prompt-card .src { font-family: var(--mono); font-size: 15px; color: var(--ink-muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Spectrum band for thesis patterns */
+  .spectrum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); margin-top: 12px; }
+  .spectrum .cell { padding: 22px 22px; border-right: 1px solid var(--rule-soft); }
+  .spectrum .cell:last-child { border-right: 0; }
+  .spectrum .cell .k { font-family: var(--mono); font-size: 17px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 10px; }
+  .spectrum .cell .v { font-family: var(--display); font-size: 22px; line-height: 1.4; color: var(--ink); font-weight: 600; }
+  .spectrum .cell .d { font-size: 18px; color: var(--ink-soft); margin-top: 8px; line-height: 1.35; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · THEORY (01-10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 2</div>
+    <h1 class="main">Opinion.<br>Agree or <em>disagree.</em></h1>
+    <div class="mark">Lesson 05 · Four-paragraph essay · Four practices</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.0 → 5.5</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>10 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 prompts opinion</dd></div>
+      <div><dt>Từ vựng</dt><dd>32 từ · 24 collocations</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Agenda</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Theory.</span><span class="step-body">10 slide · 18 phút. Tổng quan Task 2 · 4 dạng đề · cấu trúc 4 đoạn opinion · thesis spectrum · topic sentence + PEEL · cohesion + register · trình tự 40 phút.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Education — strong agree.</span><span class="step-body">9 slide · 17 phút. Trẻ học tinh thần trách nhiệm sớm · bài mẫu 270 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Technology — largely agree.</span><span class="step-body">9 slide · 17 phút. Smartphones làm con người ít xã hội · bài mẫu 275 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · Work from home — partial.</span><span class="step-body">9 slide · 17 phút. WFH có năng suất hơn office? · bài mẫu 272 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · Environment — largely disagree.</span><span class="step-body">9 slide · 17 phút. Cá nhân vs chính phủ trong bảo vệ môi trường · bài mẫu 268 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Wrap-up &amp; Homework.</span><span class="step-body">4 slide · 4 phút. Pattern recap · master vocab &amp; phrasebank · pitfalls · bài về nhà · preview L06 Discussion.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Objectives</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Paraphrase prompt thành câu mở bài học thuật.</span><span class="step-body">Đổi nouns + verbs + cấu trúc câu. Tránh chép nguyên đề. Đây là câu đầu tiên giám khảo đọc — quyết định ấn tượng band.</span></div></li>
+    <li><div><span class="step-title">Viết thesis rõ ràng, không mơ hồ.</span><span class="step-body">3 pattern: strong agree / partial / strong disagree. Tránh "I think it's okay" — không có quan điểm = trừ Task Response 1 band.</span></div></li>
+    <li><div><span class="step-title">Cấu trúc 4 đoạn ~260 từ.</span><span class="step-body">Intro 50w · Body 1 85w · Body 2 85w · Conclusion 40w. Mỗi body đoạn = 1 main reason + support example.</span></div></li>
+    <li><div><span class="step-title">Topic sentences + supporting evidence (PEEL).</span><span class="step-body">Point → Evidence/Example → Explain → Link. Mỗi body đoạn theo đúng 4 bước → Coherence &amp; Cohesion lên 1 band.</span></div></li>
+    <li><div><span class="step-title">Paraphrase opinion không lặp "I think".</span><span class="step-body">"I strongly agree" · "I firmly believe" · "It is my conviction that" · "In my view". Tối đa dùng "I" 3 lần / bài.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TASK OVERVIEW -->
+<section data-label="Task Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan Task 2</span></div>
+  <p class="eyebrow">Task 2 · Academic Writing</p>
+  <h2 class="h-section">40 phút. <em class="hi">250+ từ.</em> Trọng số gấp đôi Task 1.</h2>
+
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Thời gian</div><div class="v">40 phút</div><div class="d">Phân bổ: <em class="hi">3 phân tích + 5 lên dàn + 27 viết + 5 check</em>. Đừng viết quá 250 từ — không thêm điểm, mất thời gian.</div></div>
+    <div class="stat"><div class="k">Độ dài</div><div class="v">≥ 250</div><div class="d">Bài an toàn <em class="hi">260–290 từ</em>. Dưới 250 → bị trừ Task Response. Trên 300 → dễ lạc đề.</div></div>
+    <div class="stat"><div class="k">Trọng số</div><div class="v">2 ×</div><div class="d">Task 2 chiếm <em class="hi">2/3 điểm Writing</em>. Một bài Task 2 tốt + Task 1 trung bình vẫn được band Writing cao.</div></div>
+  </div>
+
+  <p class="fine">4 tiêu chí chấm: Task Response (TR) · Coherence &amp; Cohesion (CC) · Lexical Resource (LR) · Grammatical Range &amp; Accuracy (GRA). Mỗi mục 25%.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · FOUR QUESTION TYPES -->
+<section data-label="Four Q Types" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Bốn dạng đề Task 2</span></div>
+  <p class="eyebrow">Four Question Types · Task 2 Academic</p>
+  <h2 class="h-section">Bốn dạng đề — <em class="hi">Opinion là trọng tâm hôm nay.</em></h2>
+
+  <div class="flow" style="grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="flow-step" style="background: rgba(200,32,47,0.06); border-left: 4px solid var(--accent); padding: 18px;">
+      <div class="n">TYPE 01</div>
+      <div class="t">Opinion</div>
+      <div class="d" style="margin-top: 12px;">"To what extent do you agree or disagree?"<br><br><em class="hi">Focus L05 hôm nay.</em> Đưa quan điểm rõ ràng, bảo vệ bằng 2 reason.</div>
+    </div>
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 02</div>
+      <div class="t">Discussion</div>
+      <div class="d" style="margin-top: 12px;">"Discuss both views and give your own opinion."<br><br>Trình bày 2 phía + nêu quan điểm. <em>L06 sẽ học.</em></div>
+    </div>
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 03</div>
+      <div class="t">Problem–Solution</div>
+      <div class="d" style="margin-top: 12px;">"What are the causes and what solutions can be suggested?"<br><br>2 đoạn: causes + solutions. <em>L07.</em></div>
+    </div>
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 04</div>
+      <div class="t">Two-part</div>
+      <div class="d" style="margin-top: 12px;">2 câu hỏi tách rời, ví dụ: "Why is this? Is it positive or negative?"<br><br>Mỗi body trả lời 1 câu. <em>L08.</em></div>
+    </div>
+  </div>
+
+  <p class="fine">Opinion (Type 01) chiếm <em class="hi">~40%</em> đề thi thực tế 2023-2025 — học vững dạng này = an toàn cho mọi bài thi.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · STRUCTURE 4 PARAGRAPHS -->
+<section data-label="Structure" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cấu trúc 4 đoạn</span></div>
+  <p class="eyebrow">Four-paragraph structure · Opinion essay</p>
+  <h2 class="h-section">Bốn đoạn — <em class="hi">260 từ chia gọn.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">~50w</span>
+      <div class="n">PARA 01</div>
+      <div class="t">Introduction</div>
+      <div class="d">Hook/paraphrase (1 câu) + <em class="hi">thesis</em> (1 câu nêu rõ quan điểm). Báo trước 2 main reason.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~85w</span>
+      <div class="n">PARA 02</div>
+      <div class="t">Body 1</div>
+      <div class="d">Topic sentence: lý do <em class="hi">mạnh nhất</em>. PEEL: Point · Evidence · Explain · Link. Có ví dụ cụ thể.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~85w</span>
+      <div class="n">PARA 03</div>
+      <div class="t">Body 2</div>
+      <div class="d">Lý do <em class="hi">thứ hai</em>. PEEL như Body 1. Có thể là counter-argument bị bác bỏ (nếu partial agree).</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~40w</span>
+      <div class="n">PARA 04</div>
+      <div class="t">Conclusion</div>
+      <div class="d">Restate thesis bằng từ khác (không copy) + tóm 2 reason. <em class="hi">Không</em> đưa ý mới.</div>
+    </div>
+  </div>
+
+  <p class="fine">Tỷ lệ vàng: <em class="hi">20% / 32% / 32% / 16%</em>. Intro ngắn — body dài — conclusion gọn. Không viết Body 3.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · THESIS PATTERNS -->
+<section data-label="Thesis" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Thesis statement</span></div>
+  <p class="eyebrow">Thesis spectrum · Three positions</p>
+  <h2 class="h-section">Ba thái độ — <em class="hi">ba pattern thesis.</em></h2>
+
+  <div class="spectrum">
+    <div class="cell">
+      <div class="k">01 · Strong Agree</div>
+      <div class="v">"I strongly agree with this view, and this essay will explain two key reasons."</div>
+      <div class="d">Variants: <em>I firmly believe that · I wholeheartedly endorse the view that · The argument is highly persuasive.</em></div>
+    </div>
+    <div class="cell">
+      <div class="k">02 · Partial / Balanced</div>
+      <div class="v">"While X holds some merit, I believe the benefits are largely outweighed by the drawbacks."</div>
+      <div class="d">Variants: <em>Although there is some truth in X, I largely disagree · I partly agree, but only in the case of Y.</em></div>
+    </div>
+    <div class="cell">
+      <div class="k">03 · Strong Disagree</div>
+      <div class="v">"I firmly disagree with this proposition, for two principal reasons set out below."</div>
+      <div class="d">Variants: <em>I take strong issue with · This view is, in my opinion, flawed · I find the claim unconvincing.</em></div>
+    </div>
+  </div>
+
+  <p class="fine">Quy tắc vàng: <em class="hi">thesis = câu cuối Intro</em>. Phải nêu rõ <em>agree / partly agree / disagree</em> + báo trước 2 reason. Không bao giờ trung lập kiểu "it depends".</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · TOPIC SENTENCE + PEEL -->
+<section data-label="PEEL" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Topic sentence + PEEL</span></div>
+  <p class="eyebrow">Topic Sentence + PEEL · Body paragraph framework</p>
+  <h2 class="h-section">PEEL — <em class="hi">khung 4 bước cho mỗi body đoạn.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Function</th><th>Example phrase</th></tr></thead>
+    <tbody>
+      <tr><td>P · Point</td><td class="feat">Topic sentence — main reason của đoạn</td><td>"The primary reason for this view is that…" / "First and foremost, …"</td></tr>
+      <tr><td>E · Evidence</td><td class="feat">Đưa ví dụ cụ thể, số liệu, nghiên cứu, hoặc tình huống đời sống</td><td>"A recent OECD report indicates that…" / "For instance, in Singapore, …"</td></tr>
+      <tr><td>E · Explain</td><td class="feat">Giải thích vì sao evidence đó ủng hộ point</td><td>"This demonstrates that …" / "Such a finding suggests that …"</td></tr>
+      <tr><td>L · Link</td><td class="feat">Câu chốt — kết nối ngược về thesis hoặc dẫn sang đoạn sau</td><td>"Consequently, …" / "It is therefore unsurprising that …"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Một body đoạn band 6.5 phải có đủ <em class="hi">PEEL</em>. Thiếu Evidence = "listing ý" → Task Response chỉ band 5.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · COHESION + REGISTER -->
+<section data-label="Cohesion" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cohesion + Register</span></div>
+  <p class="eyebrow">Cohesion &amp; Register · Academic discipline</p>
+  <h2 class="h-section">Hai nguyên tắc — <em class="hi">linking + register học thuật.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Linking devices</p>
+      <h3 style="font-size: 38px; margin-bottom: 16px;">Cohesive markers</h3>
+      <ul>
+        <li><b>Adding:</b> <em class="hi">Moreover · Furthermore · In addition · What is more</em></li>
+        <li><b>Exemplifying:</b> <em class="hi">For instance · A case in point · To illustrate</em></li>
+        <li><b>Contrasting:</b> <em class="hi">However · In contrast · Nevertheless · On the other hand</em></li>
+        <li><b>Causal:</b> <em class="hi">Consequently · As a result · Therefore · For this reason</em></li>
+        <li><b>Concluding:</b> <em class="hi">To conclude · In summary · Overall</em></li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Register rules</p>
+      <h3 style="font-size: 38px; margin-bottom: 16px;">Academic tone</h3>
+      <ul>
+        <li><b>No contractions:</b> không <em>don't / can't / it's</em> → viết đủ <em>do not / cannot / it is</em></li>
+        <li><b>No "I think" lặp:</b> dùng <em>I would argue · It is my belief that · arguably</em></li>
+        <li><b>Academic verbs:</b> <em class="hi">argue · contend · maintain · demonstrate · suggest</em></li>
+        <li><b>Hedging:</b> <em class="hi">may · tends to · arguably · it could be said that</em></li>
+        <li><b>No slang / emotional:</b> tránh <em>amazing · super · totally</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Hedging language (<em>may · tends to · arguably</em>) cho thấy bạn nhận thức được giới hạn của lập luận → đánh giá cao ở Task Response.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 40 phút</span></div>
+  <p class="eyebrow">Exam Sequence · 40-minute budget</p>
+  <h2 class="h-section">40 phút — <em class="hi">5 bước cố định.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Phân tích đề (3 phút).</span><span class="step-body">Xác định: <em>topic</em> · <em>keyword</em> · <em>question type</em> · <em>stance options</em>. Gạch chân từ khoá. Đề opinion có "agree or disagree" / "to what extent".</span></div></li>
+    <li><div><span class="step-title">Lên dàn ý — thesis + 2 reason (5 phút).</span><span class="step-body">Chọn stance (strong agree / partial / strong disagree). Brainstorm 2 lý do mạnh nhất. Mỗi lý do gắn 1 ví dụ cụ thể (real-world / hypothetical).</span></div></li>
+    <li><div><span class="step-title">Viết Intro + Body 1 (12 phút).</span><span class="step-body">Intro ~50 từ: 1 câu paraphrase + 1 thesis. Body 1 ~85 từ: PEEL đầy đủ. Đừng quá nắn câu — viết liền mạch.</span></div></li>
+    <li><div><span class="step-title">Viết Body 2 + Conclusion (15 phút).</span><span class="step-body">Body 2 ~85 từ: PEEL. Conclusion ~40 từ: restate bằng từ khác, tóm 2 reason. Không thêm ý mới.</span></div></li>
+    <li><div><span class="step-title">Check (5 phút).</span><span class="step-body">Subject-verb agreement · plural -s · article a/the · linking words không lặp · không có contraction. Đếm từ ≥ 250.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — EDUCATION (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 P01 · Education" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Education · Strong Agree</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 01 · Education</p>
+    <h2><em>Children.</em><br>Responsibility<br>from young.</h2>
+    <div class="toc">
+      <div class="active">01 · Education — strong agree</div>
+      <div>02 · Technology — largely agree</div>
+      <div>03 · Work from home — partial</div>
+      <div>04 · Environment — largely disagree</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · TASK -->
+<section data-label="12 P01 Task" class="slide">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Opinion · Children &amp; responsibility</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people believe that children should be taught how to be responsible from a very young age. To what extent do you agree or disagree?"</p>
+      <p class="src">Source · Common exam topic 2024</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Early childhood education · teaching responsibility · character formation</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Keyword?</div><div class="s"><em class="hi">"from a very young age"</em> — phạm vi rất sớm (3-7 tuổi)</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Question type?</div><div class="s">Opinion · Agree/Disagree · "to what extent"</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Stance options?</div><div class="s"><em class="hi">Strong agree</em> (chọn) · partial · disagree</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Gạch chân: <em class="hi">children · responsible · from a very young age · agree or disagree</em>. 4 từ khoá này phải xuất hiện (paraphrased) trong Intro.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · STEP 1 PLAN -->
+<section data-label="13 P01 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan thesis + 2 reasons · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">thesis + 2 reason + 2 ví dụ.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Idea</th><th>Support / Example</th></tr></thead>
+    <tbody>
+      <tr><td>Intro</td><td class="feat">Strong agree — instilling responsibility early lays a vital foundation for adulthood</td><td>Thesis: 2 reason báo trước → cognitive habit + social functioning</td></tr>
+      <tr><td>Body 1</td><td class="feat">Reason 01 — Formative years shape lifelong habits</td><td>Example: Montessori schools assigning children daily chores → adults more disciplined &amp; accountable</td></tr>
+      <tr><td>Body 2</td><td class="feat">Reason 02 — Responsibility builds empathy &amp; cooperative skills</td><td>Example: Japanese primary schools where pupils clean classrooms together → stronger sense of community</td></tr>
+      <tr><td>Conclusion</td><td class="feat">Restate strong agreement; emphasise both intellectual habit and social skill benefits</td><td>Link forward: hedging — "while parental approach matters, the principle holds"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Mỗi reason phải khác nhau về <em class="hi">góc nhìn</em> (cá nhân vs xã hội). Không phải 2 reason cùng dạng "good for the child".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · STEP 2 INTRO + THESIS -->
+<section data-label="14 P01 Intro" class="slide">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + thesis rõ ràng.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Some people believe that <b>children should be taught how to be responsible</b> from a very young age."</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"It is sometimes argued that young children ought to be educated about the importance of personal accountability from their earliest years."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · Intro + Thesis · 50 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>It is sometimes argued that young children ought to be educated about the importance of personal accountability from their earliest years. <span class="hl-band">I strongly agree with this view, as instilling responsibility during the formative years shapes lifelong habits and cultivates the cooperative skills essential for adult life.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Thesis = câu thứ 2 của Intro, nêu rõ <em class="hi">strongly agree</em> + báo trước 2 reason. Cấu trúc "I strongly agree…, as A and B".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · STEP 3 BODY 1 -->
+<section data-label="15 P01 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Bước 3 · Body 1 · PEEL</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · Reason 01 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">formative years shape habits.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>The primary reason for my view is that the early years of childhood represent a uniquely formative period during which habits become deeply ingrained.</b> Psychological research suggests that behaviours rehearsed before the age of seven tend to persist well into adulthood. <b>For instance, Montessori schools routinely assign children small daily chores — tidying their own workspace, caring for classroom plants — and graduates of such programmes are widely reported to display greater self-discipline at university.</b> This demonstrates that responsibility, once practised early, becomes a default disposition rather than a deliberate effort. <b>Consequently, delaying such training until adolescence arguably wastes the brain's most plastic window.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"The primary reason for my view is that…"</b> — topic sentence mở đoạn, nêu rõ Reason 01.</li>
+    <li><span class="tag">Evidence</span><b>"Montessori schools routinely assign children small daily chores…"</b> — ví dụ cụ thể, có tên hệ phương pháp.</li>
+    <li><span class="tag">Link</span><b>"Consequently, delaying such training until adolescence arguably wastes…"</b> — câu chốt + hedging "arguably".</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · STEP 4 BODY 2 -->
+<section data-label="16 P01 Body2" class="slide">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Bước 4 · Body 2 · PEEL</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · Reason 02 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">empathy &amp; cooperation.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>A second compelling reason is that teaching responsibility from a young age fosters empathy and cooperative skills, which are indispensable for functioning in any society.</b> When children are made accountable for shared tasks, they learn to consider the needs of others rather than focusing solely on themselves. <b>A case in point is the Japanese primary school system, where pupils take turns cleaning classrooms and serving lunch to their peers.</b> Educators in Japan widely credit this practice with producing adults who display strong civic awareness and a deep respect for collective spaces. <b>It is therefore unsurprising that nations which embed such habits early tend to enjoy more harmonious communities.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"A second compelling reason is that…"</b> — topic sentence, đánh số reason rõ ràng.</li>
+    <li><span class="tag">Evidence</span><b>"the Japanese primary school system, where pupils take turns cleaning classrooms…"</b> — ví dụ quốc gia cụ thể.</li>
+    <li><span class="tag">Link</span><b>"It is therefore unsurprising that nations which embed such habits early…"</b> — link mở rộng từ cá nhân → xã hội.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · SAMPLE ESSAY -->
+<section data-label="17 P01 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 272 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>It is sometimes argued that young children ought to be educated about the importance of personal accountability from their earliest years. I strongly agree with this view, as instilling responsibility during the formative years shapes lifelong habits and cultivates the cooperative skills essential for adult life.</p>
+    <p><span class="para-tag">Body 1</span>The primary reason for my view is that the early years of childhood represent a uniquely formative period during which habits become deeply ingrained. Psychological research suggests that behaviours rehearsed before the age of seven tend to persist well into adulthood. For instance, Montessori schools routinely assign children small daily chores — tidying their own workspace, caring for classroom plants — and graduates of such programmes are widely reported to display greater self-discipline at university. This demonstrates that responsibility, once practised early, becomes a default disposition rather than a deliberate effort. Consequently, delaying such training until adolescence arguably wastes the brain's most plastic window.</p>
+    <p><span class="para-tag">Body 2</span>A second compelling reason is that teaching responsibility from a young age fosters empathy and cooperative skills, which are indispensable for functioning in any society. When children are made accountable for shared tasks, they learn to consider the needs of others. A case in point is the Japanese primary school system, where pupils take turns cleaning classrooms and serving lunch. Educators credit this with producing adults who display strong civic awareness. It is therefore unsurprising that nations which embed such habits early enjoy more harmonious communities.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, I firmly endorse early responsibility education, because the formative years embed lasting habits and the practice nurtures the social cooperation that mature society depends on.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · LANGUAGE ANALYSIS -->
+<section data-label="18 P01 Language" class="slide">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Opinion · strong agree</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Education.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Hedging language</span><b>"tend to persist · arguably wastes · widely reported to · it is therefore unsurprising"</b> — hedging cho thấy nhận thức giới hạn của lập luận, nâng Task Response.</li>
+    <li><span class="tag">Topic sentences</span><b>"The primary reason for my view is that… · A second compelling reason is that…"</b> — đánh số reason rõ ràng, dễ theo dõi.</li>
+    <li><span class="tag">Linking devices</span><b>"For instance · This demonstrates that · Consequently · A case in point · It is therefore unsurprising"</b> — 5 linking khác nhau, không lặp.</li>
+    <li><span class="tag">Examples &amp; evidence</span><b>"Montessori schools… · Japanese primary school system… · Psychological research suggests…"</b> — 3 loại evidence: institution, country, research.</li>
+  </ul>
+
+  <p class="fine">Pattern "Once + V3" (<em>once practised early</em>) chuyển từ Task 1 process sang Task 2 — học một lần, dùng nhiều dạng.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · VOCAB + PARAPHRASE -->
+<section data-label="19 P01 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Education</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Education</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">responsibility.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">responsibility <span class="pos">(n.)</span> <span class="ipa">/rɪˌspɒnsəˈbɪləti/</span></div><div class="vocab-meaning">tinh thần trách nhiệm — sense of responsibility</div></div>
+        <div class="vocab-item"><div class="vocab-word">accountable <span class="pos">(adj.)</span> <span class="ipa">/əˈkaʊntəbl/</span></div><div class="vocab-meaning">có thể chịu trách nhiệm — held accountable</div></div>
+        <div class="vocab-item"><div class="vocab-word">instil <span class="pos">(v.)</span> <span class="ipa">/ɪnˈstɪl/</span></div><div class="vocab-meaning">truyền dần (giá trị) — instil values in</div></div>
+        <div class="vocab-item"><div class="vocab-word">formative <span class="pos">(adj.)</span> <span class="ipa">/ˈfɔːmətɪv/</span></div><div class="vocab-meaning">định hình tính cách — formative years</div></div>
+        <div class="vocab-item"><div class="vocab-word">ingrained <span class="pos">(adj.)</span> <span class="ipa">/ɪnˈɡreɪnd/</span></div><div class="vocab-meaning">ăn sâu — deeply ingrained habit</div></div>
+        <div class="vocab-item"><div class="vocab-word">empathy <span class="pos">(n.)</span> <span class="ipa">/ˈempəθi/</span></div><div class="vocab-meaning">sự thấu cảm — foster empathy</div></div>
+        <div class="vocab-item"><div class="vocab-word">cultivate <span class="pos">(v.)</span> <span class="ipa">/ˈkʌltɪveɪt/</span></div><div class="vocab-meaning">nuôi dưỡng — cultivate skills</div></div>
+        <div class="vocab-item"><div class="vocab-word">discipline <span class="pos">(n.)</span> <span class="ipa">/ˈdɪsəplɪn/</span></div><div class="vocab-meaning">tính kỷ luật — self-discipline</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">children should be taught to be responsible</span><span class="vi">→ young children ought to be educated about accountability · responsibility should be instilled in children</span></div>
+        <div class="kp-item"><span class="en">from a very young age</span><span class="vi">→ from their earliest years · during the formative years · in early childhood</span></div>
+        <div class="kp-item"><span class="en">I agree</span><span class="vi">→ I strongly agree · I firmly endorse · I wholeheartedly support</span></div>
+        <div class="kp-item"><span class="en">it is important</span><span class="vi">→ it is indispensable · it plays a vital role · it is essential</span></div>
+        <div class="kp-item"><span class="en">it helps them grow up well</span><span class="vi">→ shapes lifelong habits · cultivates cooperative skills · embeds lasting habits</span></div>
+        <div class="kp-item"><span class="en">they learn to work with others</span><span class="vi">→ they foster empathy · they develop civic awareness · they cooperate effectively</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Education</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — TECHNOLOGY (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · SECTION BREAK -->
+<section data-label="20 P02 · Technology" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Technology · Largely Agree</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Technology</p>
+    <h2><em>Smartphones.</em><br>Less<br>social?</h2>
+    <div class="toc">
+      <div>01 · Education — strong agree</div>
+      <div class="active">02 · Technology — largely agree</div>
+      <div>03 · Work from home — partial</div>
+      <div>04 · Environment — largely disagree</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · TASK -->
+<section data-label="21 P02 Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Opinion · Smartphones &amp; sociability</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some argue that smartphones have made people less social. To what extent do you agree or disagree?"</p>
+      <p class="src">Source · Recurring 2024-2025 topic</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Mobile technology · social behaviour · in-person interaction</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Keyword?</div><div class="s"><em class="hi">"less social"</em> — chú ý: <em>less</em>, không phải <em>not social</em></div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Question type?</div><div class="s">Opinion · Agree/Disagree · "to what extent"</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Stance options?</div><div class="s">Strong agree · <em class="hi">largely agree</em> (chọn) · partial · disagree</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">"Largely agree" = công nhận smartphones <em class="hi">làm giảm chiều sâu</em> tương tác trực tiếp, nhưng thừa nhận chúng cũng tạo kết nối mới (Body 2 sẽ nhắc thoáng).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · STEP 1 PLAN -->
+<section data-label="22 P02 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan thesis + 2 reasons · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">largely agree · 2 reason.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Idea</th><th>Support / Example</th></tr></thead>
+    <tbody>
+      <tr><td>Intro</td><td class="feat">Largely agree — smartphones erode the depth of face-to-face interaction even if they widen connectivity</td><td>Thesis báo trước 2 reason: supplanting in-person time + degrading conversational quality</td></tr>
+      <tr><td>Body 1</td><td class="feat">Reason 01 — Phones supplant face-to-face time</td><td>Example: families at restaurants where everyone scrolls separately; Ofcom UK survey on average daily screen-time</td></tr>
+      <tr><td>Body 2</td><td class="feat">Reason 02 — Even when present, attention is fragmented (phubbing)</td><td>Example: meetings where participants half-listen while replying to messages — research links phubbing to relationship dissatisfaction</td></tr>
+      <tr><td>Conclusion</td><td class="feat">Reaffirm largely agree; concede limited counter-benefit but emphasise net erosion of social depth</td><td>Hedging: "while phones do connect distant friends, the cost to immediate relationships is clear"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">"Largely" cho phép thừa nhận mặt tích cực <em class="hi">ngắn gọn</em> trong Conclusion — tăng tính cân bằng &amp; cogency.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · STEP 2 INTRO -->
+<section data-label="23 P02 Intro" class="slide">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + largely agree.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Some argue that <b>smartphones have made people less social</b>. To what extent do you agree or disagree?"</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"It is increasingly claimed that the ubiquity of smartphones has eroded genuine social interaction among modern users."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · 52 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>It is increasingly claimed that the ubiquity of smartphones has eroded genuine social interaction among modern users. <span class="hl-band">While these devices undeniably keep distant friends in touch, I largely agree with this view, since phones supplant time spent face-to-face and fragment our attention even when we are physically present.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Pattern "While X, I largely agree, since A and B" = thesis của <em class="hi">largely agree</em>. Câu <em>While</em> thừa nhận mặt đối lập gọn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · BODY 1 -->
+<section data-label="24 P02 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Bước 3 · Body 1 · PEEL</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · Reason 01 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">phones supplant face-to-face time.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>The most obvious reason for this view is that smartphones now occupy hours that were once devoted to in-person interaction.</b> Adults in the United Kingdom, according to a recent Ofcom report, spend an average of four hours per day staring at their handsets — time that previously belonged to family meals, neighbourhood gatherings or casual conversation. <b>A familiar illustration is the restaurant table at which every family member is silently scrolling, their food growing cold while no one speaks.</b> Such scenes suggest that the device is not merely a tool but an absorbing alternative to one another's company. <b>As a result, the social fabric that depends on sustained face-to-face contact has visibly thinned in many households.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"The most obvious reason for this view is that…"</b> — topic sentence.</li>
+    <li><span class="tag">Evidence</span><b>"Ofcom report · four hours per day · the restaurant table…"</b> — kết hợp số liệu + ví dụ sinh hoạt.</li>
+    <li><span class="tag">Link</span><b>"the social fabric that depends on sustained face-to-face contact has visibly thinned"</b> — kết nối về thesis.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · BODY 2 -->
+<section data-label="25 P02 Body2" class="slide">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Bước 4 · Body 2 · PEEL</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · Reason 02 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">phubbing fragments attention.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>A further concern is that even when smartphone users are physically present, their attention is habitually fragmented.</b> Psychologists have coined the term <em>phubbing</em> — phone-snubbing — to describe the now-routine act of half-listening to a companion while replying to messages. <b>For instance, a 2022 study published in <em>Computers in Human Behavior</em> found that partners who were frequently phubbed reported significantly lower relationship satisfaction.</b> This indicates that the harm lies not only in absence but in the diluted quality of presence: a conversation conducted while one party glances at a screen offers little of the genuine engagement that bonds people. <b>Consequently, smartphones make users less social in a deeper, more insidious way than mere absence implies.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"A further concern is that even when smartphone users are physically present…"</b> — escalation: từ vắng mặt → vắng mặt tinh thần.</li>
+    <li><span class="tag">Evidence</span><b>"2022 study published in Computers in Human Behavior…"</b> — citation cụ thể, có tên tạp chí.</li>
+    <li><span class="tag">Link</span><b>"…in a deeper, more insidious way than mere absence implies"</b> — link nâng cấp lập luận.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · SAMPLE ESSAY -->
+<section data-label="26 P02 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 275 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">largely agree.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>It is increasingly claimed that the ubiquity of smartphones has eroded genuine social interaction among modern users. While these devices undeniably keep distant friends in touch, I largely agree with this view, since phones supplant time spent face-to-face and fragment our attention even when we are physically present.</p>
+    <p><span class="para-tag">Body 1</span>The most obvious reason for this view is that smartphones now occupy hours that were once devoted to in-person interaction. Adults in the United Kingdom, according to a recent Ofcom report, spend an average of four hours per day staring at their handsets — time that previously belonged to family meals, neighbourhood gatherings or casual conversation. A familiar illustration is the restaurant table at which every family member is silently scrolling, their food growing cold while no one speaks. Such scenes suggest that the device is not merely a tool but an absorbing alternative to one another's company.</p>
+    <p><span class="para-tag">Body 2</span>A further concern is that even when smartphone users are physically present, their attention is habitually fragmented. Psychologists have coined the term phubbing — phone-snubbing — to describe the now-routine act of half-listening to a companion while replying to messages. A 2022 study found that partners who were frequently phubbed reported significantly lower relationship satisfaction. This indicates that the harm lies not only in absence but in the diluted quality of presence: a conversation conducted while one party glances at a screen offers little of the genuine engagement that bonds people.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, although smartphones do connect us with distant contacts, I largely agree that they have made people less social, by displacing in-person time and by fragmenting the attention we give to those still beside us.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · LANGUAGE ANALYSIS -->
+<section data-label="27 P02 Language" class="slide">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Opinion · largely agree</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Technology.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Hedging language</span><b>"largely agree · undeniably · visibly · arguably · habitually · in a deeper, more insidious way"</b> — hedging giúp lập luận đo lường, không quá tuyệt đối.</li>
+    <li><span class="tag">Topic sentences</span><b>"The most obvious reason for this view is that… · A further concern is that even when…"</b> — escalation từ Body 1 (hiển nhiên) → Body 2 (sâu xa hơn).</li>
+    <li><span class="tag">Linking devices</span><b>"While · since · according to · A familiar illustration · As a result · For instance · Consequently"</b> — 7 linking khác nhau, phủ đủ adding/contrasting/causal.</li>
+    <li><span class="tag">Examples &amp; evidence</span><b>"Ofcom report · restaurant table scene · phubbing term · 2022 study in Computers in Human Behavior"</b> — 4 loại evidence: số liệu, scene, terminology, citation.</li>
+  </ul>
+
+  <p class="fine">Pattern "While X, I largely agree, since A and B" — học thuộc cho mọi đề có 1 mặt counter cần thừa nhận.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · VOCAB + PARAPHRASE -->
+<section data-label="28 P02 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Technology</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Technology</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">smartphones &amp; sociability.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">ubiquitous <span class="pos">(adj.)</span> <span class="ipa">/juːˈbɪkwɪtəs/</span></div><div class="vocab-meaning">có mặt khắp nơi — ubiquitous devices</div></div>
+        <div class="vocab-item"><div class="vocab-word">supplant <span class="pos">(v.)</span> <span class="ipa">/səˈplɑːnt/</span></div><div class="vocab-meaning">thay thế — phones supplant conversation</div></div>
+        <div class="vocab-item"><div class="vocab-word">erode <span class="pos">(v.)</span> <span class="ipa">/ɪˈrəʊd/</span></div><div class="vocab-meaning">làm xói mòn — erode social bonds</div></div>
+        <div class="vocab-item"><div class="vocab-word">face-to-face <span class="pos">(adj.)</span> <span class="ipa">/ˌfeɪstəˈfeɪs/</span></div><div class="vocab-meaning">trực tiếp — face-to-face interaction</div></div>
+        <div class="vocab-item"><div class="vocab-word">screen time <span class="pos">(n.)</span> <span class="ipa">/ˈskriːn taɪm/</span></div><div class="vocab-meaning">thời gian nhìn màn hình</div></div>
+        <div class="vocab-item"><div class="vocab-word">phubbing <span class="pos">(n.)</span> <span class="ipa">/ˈfʌbɪŋ/</span></div><div class="vocab-meaning">phớt lờ người đối diện để dùng điện thoại</div></div>
+        <div class="vocab-item"><div class="vocab-word">social fabric <span class="pos">(n.)</span> <span class="ipa">/ˈsəʊʃəl ˈfæbrɪk/</span></div><div class="vocab-meaning">cấu trúc xã hội — social fabric thins</div></div>
+        <div class="vocab-item"><div class="vocab-word">fragmented <span class="pos">(adj.)</span> <span class="ipa">/ˈfræɡməntɪd/</span></div><div class="vocab-meaning">bị phân mảnh — fragmented attention</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">smartphones have made people less social</span><span class="vi">→ smartphones have eroded genuine interaction · phones have thinned the social fabric</span></div>
+        <div class="kp-item"><span class="en">people use phones a lot</span><span class="vi">→ the ubiquity of smartphones · users devote hours to handsets · excessive screen time</span></div>
+        <div class="kp-item"><span class="en">I agree</span><span class="vi">→ I largely agree · I find the claim compelling · the argument carries weight</span></div>
+        <div class="kp-item"><span class="en">they don't talk to family</span><span class="vi">→ they neglect face-to-face interaction · they displace in-person time</span></div>
+        <div class="kp-item"><span class="en">people don't pay attention</span><span class="vi">→ attention is habitually fragmented · users half-listen · presence is diluted</span></div>
+        <div class="kp-item"><span class="en">phones connect people</span><span class="vi">→ phones keep distant friends in touch · devices widen connectivity</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Technology</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — WORK FROM HOME (29–37) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 29 · SECTION BREAK -->
+<section data-label="29 P03 · WFH" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">Work from home · Partial</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 03 · Work from home</p>
+    <h2><em>Remote.</em><br>Productive,<br>partly.</h2>
+    <div class="toc">
+      <div>01 · Education — strong agree</div>
+      <div>02 · Technology — largely agree</div>
+      <div class="active">03 · Work from home — partial</div>
+      <div>04 · Environment — largely disagree</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · TASK -->
+<section data-label="30 P03 Task" class="slide">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Opinion · Remote vs office productivity</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people think that working from home is more productive than working in an office. To what extent do you agree or disagree?"</p>
+      <p class="src">Source · Post-pandemic recurrent topic</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Remote working · productivity · workplace arrangement</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Keyword?</div><div class="s"><em class="hi">"more productive"</em> — so sánh, không phải tốt/xấu</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Question type?</div><div class="s">Opinion · Agree/Disagree · "to what extent"</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Stance options?</div><div class="s">Strong agree · largely agree · <em class="hi">partial</em> (chọn) · disagree</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Partial = chia 2 trường hợp: <em class="hi">focused work</em> (đồng ý productive hơn) vs <em class="hi">collaborative work</em> (không đồng ý). Cấu trúc "I partly agree".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · STEP 1 PLAN -->
+<section data-label="31 P03 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan thesis + 2 reasons · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">partial · chia 2 trường hợp.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Idea</th><th>Support / Example</th></tr></thead>
+    <tbody>
+      <tr><td>Intro</td><td class="feat">Partial agreement — productive for solitary tasks, less so for collaborative work</td><td>Thesis: "I partly agree" — chia 2 case: focused tasks vs collaborative tasks</td></tr>
+      <tr><td>Body 1</td><td class="feat">Reason 01 (PRO) — WFH boosts productivity for focused, solitary tasks</td><td>Example: software engineers / writers — no commute, no office chatter, longer "deep work" blocks; Microsoft 2023 study on coding output</td></tr>
+      <tr><td>Body 2</td><td class="feat">Reason 02 (CON) — WFH hurts productivity for collaborative, idea-driven work</td><td>Example: design teams · marketing brainstorming — informal coffee chats and whiteboard sessions vanish; Stanford Bloom study on innovation decline</td></tr>
+      <tr><td>Conclusion</td><td class="feat">Restate partial position: depends on task type; hybrid is the sensible middle ground</td><td>Hedging: "the answer therefore depends on what one is producing"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Partial thesis phải nêu rõ <em class="hi">điều kiện</em> nào agree, điều kiện nào disagree — không lấp lửng "I'm not sure".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · STEP 2 INTRO -->
+<section data-label="32 P03 Intro" class="slide">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">partial agreement.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Some people think that <b>working from home is more productive</b> than working in an office."</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"It is a popular contemporary view that remote working yields greater productivity than traditional office attendance."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · 54 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>It is a popular contemporary view that remote working yields greater productivity than traditional office attendance. <span class="hl-band">I partly agree with this claim: while working from home is undoubtedly more efficient for focused, solitary tasks, it tends to undermine the kind of spontaneous collaboration on which creative and team-based work depends.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Partial thesis: "I partly agree… while X, it tends to Y". Phải có <em class="hi">while</em> + <em class="hi">it tends to</em> để rõ 2 trường hợp.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · BODY 1 -->
+<section data-label="33 P03 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Bước 3 · Body 1 · PEEL</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · Case PRO · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">focused tasks benefit.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>On the one hand, working from home is genuinely more productive for jobs that require sustained, individual concentration.</b> Removing the daily commute typically returns one to two hours to the working day, and the absence of office chatter allows for the long, uninterrupted blocks of focus that knowledge workers prize. <b>A Microsoft Work Trend Index report, for instance, found that software engineers produced measurably more code per week when working remotely than when attending the office full-time.</b> Such evidence strongly suggests that, for tasks defined by deep thinking and quiet output, the home environment offers fewer distractions and greater autonomy over one's schedule. <b>It is therefore reasonable that many writers, developers and analysts now prefer to work remotely.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"On the one hand, working from home is genuinely more productive for jobs that require sustained, individual concentration."</b> — topic sentence của case PRO.</li>
+    <li><span class="tag">Evidence</span><b>"Microsoft Work Trend Index report · software engineers produced measurably more code…"</b> — citation cụ thể.</li>
+    <li><span class="tag">Link</span><b>"It is therefore reasonable that many writers, developers and analysts now prefer to work remotely."</b> — link sang Body 2 (sẽ phản biện).</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · BODY 2 -->
+<section data-label="34 P03 Body2" class="slide">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Bước 4 · Body 2 · PEEL</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · Case CON · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">collaboration suffers.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>On the other hand, productivity falls sharply for work that depends on spontaneous interaction and creative exchange.</b> Marketing teams, designers and consultants typically generate their best ideas through casual conversations beside the coffee machine or rapid whiteboard sketching — interactions that simply do not happen on a scheduled Zoom call. <b>A widely cited Stanford study by Nicholas Bloom reported that fully remote teams patented thirty percent fewer ideas than their hybrid counterparts, suggesting a measurable decline in innovation.</b> This indicates that when output is judged by originality rather than volume, the office still has an edge. <b>For this reason, blanket claims that home working is universally more productive misrepresent the picture.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"On the other hand, productivity falls sharply for work that depends on spontaneous interaction…"</b> — đối lập rõ với Body 1.</li>
+    <li><span class="tag">Evidence</span><b>"Stanford study by Nicholas Bloom · thirty percent fewer ideas…"</b> — citation học giả cụ thể.</li>
+    <li><span class="tag">Link</span><b>"blanket claims that home working is universally more productive misrepresent the picture"</b> — link bác bỏ extreme view.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · SAMPLE ESSAY -->
+<section data-label="35 P03 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 272 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">partial agreement.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>It is a popular contemporary view that remote working yields greater productivity than traditional office attendance. I partly agree with this claim: while working from home is undoubtedly more efficient for focused, solitary tasks, it tends to undermine the kind of spontaneous collaboration on which creative and team-based work depends.</p>
+    <p><span class="para-tag">Body 1</span>On the one hand, working from home is genuinely more productive for jobs that require sustained, individual concentration. Removing the daily commute typically returns one to two hours to the working day, and the absence of office chatter allows for the long, uninterrupted blocks of focus that knowledge workers prize. A Microsoft Work Trend Index report, for instance, found that software engineers produced measurably more code per week when working remotely than when attending the office full-time. Such evidence strongly suggests that, for tasks defined by deep thinking and quiet output, the home environment offers fewer distractions and greater autonomy over one's schedule.</p>
+    <p><span class="para-tag">Body 2</span>On the other hand, productivity falls sharply for work that depends on spontaneous interaction and creative exchange. Marketing teams, designers and consultants typically generate their best ideas through casual conversations beside the coffee machine or rapid whiteboard sketching — interactions that simply do not happen on a scheduled Zoom call. A widely cited Stanford study reported that fully remote teams patented thirty percent fewer ideas than their hybrid counterparts, suggesting a measurable decline in innovation. This indicates that when output is judged by originality rather than volume, the office still has an edge.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, I partly agree: home working clearly boosts productivity for individual deep work, but it weakens it for collaborative roles, and a hybrid arrangement therefore offers the most sensible balance.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · LANGUAGE ANALYSIS -->
+<section data-label="36 P03 Language" class="slide">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Opinion · partial</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài WFH.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Hedging language</span><b>"partly agree · tends to undermine · undoubtedly · typically · widely cited · suggesting a measurable decline"</b> — hedging tăng cường, vì partial vốn cần tinh tế hơn.</li>
+    <li><span class="tag">Topic sentences</span><b>"On the one hand, working from home is genuinely more productive… · On the other hand, productivity falls sharply…"</b> — đối xứng on the one hand / on the other hand cho partial.</li>
+    <li><span class="tag">Linking devices</span><b>"While · undoubtedly · for instance · such evidence suggests · On the other hand · A widely cited · This indicates that · For this reason"</b> — 8 linking khác nhau.</li>
+    <li><span class="tag">Examples &amp; evidence</span><b>"Microsoft Work Trend Index · software engineers' code · Stanford study by Bloom · 30% fewer patents"</b> — research-heavy evidence phù hợp partial.</li>
+  </ul>
+
+  <p class="fine">"On the one hand / On the other hand" là cấu trúc <em class="hi">duy nhất</em> cho partial — không dùng cho strong agree/disagree.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · VOCAB + PARAPHRASE -->
+<section data-label="37 P03 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · WFH</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Work from home</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">remote working.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">remote working <span class="pos">(n.)</span> <span class="ipa">/rɪˈməʊt ˈwɜːkɪŋ/</span></div><div class="vocab-meaning">làm việc từ xa</div></div>
+        <div class="vocab-item"><div class="vocab-word">commute <span class="pos">(n./v.)</span> <span class="ipa">/kəˈmjuːt/</span></div><div class="vocab-meaning">đi lại tới chỗ làm — daily commute</div></div>
+        <div class="vocab-item"><div class="vocab-word">productivity <span class="pos">(n.)</span> <span class="ipa">/ˌprɒdʌkˈtɪvəti/</span></div><div class="vocab-meaning">năng suất — boost productivity</div></div>
+        <div class="vocab-item"><div class="vocab-word">autonomy <span class="pos">(n.)</span> <span class="ipa">/ɔːˈtɒnəmi/</span></div><div class="vocab-meaning">quyền tự chủ — autonomy over schedule</div></div>
+        <div class="vocab-item"><div class="vocab-word">collaboration <span class="pos">(n.)</span> <span class="ipa">/kəˌlæbəˈreɪʃən/</span></div><div class="vocab-meaning">sự hợp tác — spontaneous collaboration</div></div>
+        <div class="vocab-item"><div class="vocab-word">spontaneous <span class="pos">(adj.)</span> <span class="ipa">/spɒnˈteɪniəs/</span></div><div class="vocab-meaning">tự phát — spontaneous chats</div></div>
+        <div class="vocab-item"><div class="vocab-word">hybrid <span class="pos">(adj./n.)</span> <span class="ipa">/ˈhaɪbrɪd/</span></div><div class="vocab-meaning">kết hợp — hybrid arrangement</div></div>
+        <div class="vocab-item"><div class="vocab-word">deep work <span class="pos">(n.)</span> <span class="ipa">/diːp wɜːk/</span></div><div class="vocab-meaning">làm việc sâu, tập trung cao</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">working from home is more productive</span><span class="vi">→ remote working yields greater productivity · home working boosts output · WFH is more efficient</span></div>
+        <div class="kp-item"><span class="en">I partly agree</span><span class="vi">→ I partly agree with this claim · the truth lies somewhere in between · the answer depends on context</span></div>
+        <div class="kp-item"><span class="en">people work better alone</span><span class="vi">→ focused, solitary tasks benefit · deep work flourishes · individual concentration improves</span></div>
+        <div class="kp-item"><span class="en">going to the office takes time</span><span class="vi">→ the daily commute consumes time · attendance costs travel hours</span></div>
+        <div class="kp-item"><span class="en">teams work better together</span><span class="vi">→ collaboration depends on physical proximity · creative exchange thrives in person</span></div>
+        <div class="kp-item"><span class="en">it depends</span><span class="vi">→ the answer depends on what one is producing · context determines the outcome</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · WFH</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — ENVIRONMENT (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · SECTION BREAK -->
+<section data-label="38 P04 · Environment" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Environment · Largely Disagree</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 04 · Environment</p>
+    <h2><em>Climate.</em><br>Whose<br>job?</h2>
+    <div class="toc">
+      <div>01 · Education — strong agree</div>
+      <div>02 · Technology — largely agree</div>
+      <div>03 · Work from home — partial</div>
+      <div class="active">04 · Environment — largely disagree</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · TASK -->
+<section data-label="39 P04 Task" class="slide">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Opinion · Individuals vs governments</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some say that individuals, rather than governments, are responsible for tackling environmental problems. To what extent do you agree or disagree?"</p>
+      <p class="src">Source · Environment topic 2023-2025</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Environmental responsibility · climate action · stewardship</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">Keyword?</div><div class="s"><em class="hi">"individuals, rather than governments"</em> — phủ định rõ vai trò chính phủ</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">Question type?</div><div class="s">Opinion · Agree/Disagree · "to what extent"</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">Stance options?</div><div class="s">Strong agree · partial · <em class="hi">largely disagree</em> (chọn) · strong disagree</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">"Largely disagree" = chính phủ phải dẫn dắt qua chính sách, cá nhân chỉ hỗ trợ; không phủ nhận 100% vai trò cá nhân.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · STEP 1 PLAN -->
+<section data-label="40 P04 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan thesis + 2 reasons · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">largely disagree · governments lead.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Idea</th><th>Support / Example</th></tr></thead>
+    <tbody>
+      <tr><td>Intro</td><td class="feat">Largely disagree — governments must lead via policy; individual action alone is insufficient</td><td>Thesis báo trước 2 reason: scale of problems requires legislation + only governments can mitigate systemic causes</td></tr>
+      <tr><td>Body 1</td><td class="feat">Reason 01 — Scale of environmental problems demands legislative action</td><td>Example: EU's plastic-bag levy reduced consumption by 90%; voluntary behaviour-change campaigns yielded far smaller drops</td></tr>
+      <tr><td>Body 2</td><td class="feat">Reason 02 — Only governments can regulate the systemic, industrial sources of pollution</td><td>Example: 71% of global emissions traced to 100 companies (Carbon Majors report) — beyond reach of individual choices, only legislation works</td></tr>
+      <tr><td>Conclusion</td><td class="feat">Restate largely disagree; concede individuals matter but stress governments must lead</td><td>Hedging: "individual stewardship complements, but cannot substitute, robust policy"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">"Largely disagree" cho phép thừa nhận vai trò cá nhân ở Conclusion — không phải phủ nhận hoàn toàn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · STEP 2 INTRO -->
+<section data-label="41 P04 Intro" class="slide">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">largely disagree.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Some say that <b>individuals, rather than governments</b>, are responsible for tackling environmental problems."</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"It is occasionally argued that the burden of addressing ecological challenges should rest primarily on ordinary citizens, rather than on the state."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · 56 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>It is occasionally argued that the burden of addressing ecological challenges should rest primarily on ordinary citizens, rather than on the state. <span class="hl-band">I largely disagree with this proposition, because the scale of contemporary environmental problems demands legislative action and because only governments can regulate the industrial sources from which most pollution originates.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">"I largely disagree, because A and because B" — pattern thesis cho largely disagree. <em>because</em> lặp lại 2 lần là chấp nhận được khi báo trước 2 reason.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · BODY 1 -->
+<section data-label="42 P04 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Bước 3 · Body 1 · PEEL</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · Reason 01 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">legislation outperforms voluntary action.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>The principal reason for my position is that the sheer scale of modern environmental problems requires the coordinated power of legislation, something only governments possess.</b> Voluntary behaviour change among individuals, however well-intentioned, tends to produce only modest results when the underlying systems remain unchanged. <b>The European Union's plastic-bag levy is a striking case in point: after a small statutory charge was imposed, consumption of single-use bags fell by approximately ninety percent within a few years.</b> By contrast, decades of awareness campaigns urging shoppers to "bring your own bag" had achieved only marginal reductions. This demonstrates that policy levers can transform behaviour at a scale that grassroots action rarely matches. <b>Consequently, expecting individuals to shoulder the main responsibility appears unrealistic.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"The principal reason for my position is that the sheer scale… requires legislation…"</b> — topic sentence.</li>
+    <li><span class="tag">Evidence</span><b>"The European Union's plastic-bag levy… consumption fell by approximately ninety percent…"</b> — case study + số liệu.</li>
+    <li><span class="tag">Link</span><b>"expecting individuals to shoulder the main responsibility appears unrealistic"</b> — link bác bỏ quan điểm đề.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · BODY 2 -->
+<section data-label="43 P04 Body2" class="slide">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Bước 4 · Body 2 · PEEL</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · Reason 02 · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">industrial sources beyond personal reach.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>A second, equally important reason is that the majority of pollution stems from industrial sources that lie far beyond the reach of any individual consumer.</b> The widely cited Carbon Majors report attributes roughly seventy percent of global greenhouse-gas emissions since 1988 to just one hundred fossil-fuel companies. <b>No realistic amount of recycling at home or switching to reusable cups can offset the carbon footprint of a single coal-fired power station.</b> Only governments, through emission caps, carbon pricing and mandatory clean-energy targets, possess the regulatory authority to compel such corporations to change. <b>It is therefore misleading to frame environmental protection as a personal moral duty when the systemic causes lie elsewhere.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 16px;">
+    <li><span class="tag">Point</span><b>"A second, equally important reason is that the majority of pollution stems from industrial sources…"</b> — topic sentence escalation.</li>
+    <li><span class="tag">Evidence</span><b>"Carbon Majors report · 70% of emissions · 100 fossil-fuel companies"</b> — citation + số liệu mạnh.</li>
+    <li><span class="tag">Link</span><b>"It is therefore misleading to frame environmental protection as a personal moral duty…"</b> — link bác bỏ.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · SAMPLE ESSAY -->
+<section data-label="44 P04 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 268 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">largely disagree.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>It is occasionally argued that the burden of addressing ecological challenges should rest primarily on ordinary citizens, rather than on the state. I largely disagree with this proposition, because the scale of contemporary environmental problems demands legislative action and because only governments can regulate the industrial sources from which most pollution originates.</p>
+    <p><span class="para-tag">Body 1</span>The principal reason for my position is that the sheer scale of modern environmental problems requires the coordinated power of legislation, something only governments possess. Voluntary behaviour change among individuals, however well-intentioned, tends to produce only modest results when the underlying systems remain unchanged. The European Union's plastic-bag levy is a striking case in point: after a small statutory charge was imposed, consumption of single-use bags fell by approximately ninety percent within a few years. By contrast, decades of awareness campaigns urging shoppers to "bring your own bag" had achieved only marginal reductions. This demonstrates that policy levers can transform behaviour at a scale that grassroots action rarely matches.</p>
+    <p><span class="para-tag">Body 2</span>A second, equally important reason is that the majority of pollution stems from industrial sources that lie far beyond the reach of any individual consumer. The widely cited Carbon Majors report attributes roughly seventy percent of global greenhouse-gas emissions since 1988 to just one hundred fossil-fuel companies. No realistic amount of recycling at home can offset the footprint of a single coal-fired power station. Only governments, through emission caps and carbon pricing, possess the regulatory authority to compel such corporations to change.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, while individual stewardship has value, I largely disagree that ordinary citizens bear the principal responsibility: governments alone command the legislative and regulatory tools that meaningful environmental progress requires.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · LANGUAGE ANALYSIS -->
+<section data-label="45 P04 Language" class="slide">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Opinion · largely disagree</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Environment.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Hedging language</span><b>"largely disagree · tends to produce · approximately · widely cited · appears unrealistic · It is therefore misleading"</b> — hedging giúp giọng văn cân nhắc dù stance mạnh.</li>
+    <li><span class="tag">Topic sentences</span><b>"The principal reason for my position is that… · A second, equally important reason is that…"</b> — đánh số reason rõ, đối xứng.</li>
+    <li><span class="tag">Linking devices</span><b>"because · however · case in point · By contrast · This demonstrates that · Consequently · It is therefore misleading"</b> — 7 linking khác nhau.</li>
+    <li><span class="tag">Examples &amp; evidence</span><b>"EU plastic-bag levy (90% drop) · Carbon Majors report · 100 fossil-fuel companies · 70% of emissions"</b> — số liệu chính sách cụ thể.</li>
+  </ul>
+
+  <p class="fine">Pattern "By contrast, … only achieved marginal reductions" — câu so sánh A vs B, mạnh hơn câu khẳng định đơn lẻ.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · VOCAB + PARAPHRASE -->
+<section data-label="46 P04 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Environment</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Environment</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">environmental policy.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">stewardship <span class="pos">(n.)</span> <span class="ipa">/ˈstjuːədʃɪp/</span></div><div class="vocab-meaning">trách nhiệm gìn giữ — individual stewardship</div></div>
+        <div class="vocab-item"><div class="vocab-word">mitigate <span class="pos">(v.)</span> <span class="ipa">/ˈmɪtɪɡeɪt/</span></div><div class="vocab-meaning">giảm thiểu — mitigate emissions</div></div>
+        <div class="vocab-item"><div class="vocab-word">carbon footprint <span class="pos">(n.)</span> <span class="ipa">/ˈkɑːbən ˈfʊtprɪnt/</span></div><div class="vocab-meaning">dấu chân carbon — reduce carbon footprint</div></div>
+        <div class="vocab-item"><div class="vocab-word">legislation <span class="pos">(n.)</span> <span class="ipa">/ˌledʒɪsˈleɪʃən/</span></div><div class="vocab-meaning">luật pháp — environmental legislation</div></div>
+        <div class="vocab-item"><div class="vocab-word">grassroots <span class="pos">(adj.)</span> <span class="ipa">/ˈɡrɑːsruːts/</span></div><div class="vocab-meaning">cấp cơ sở — grassroots action</div></div>
+        <div class="vocab-item"><div class="vocab-word">systemic <span class="pos">(adj.)</span> <span class="ipa">/sɪˈstemɪk/</span></div><div class="vocab-meaning">mang tính hệ thống — systemic causes</div></div>
+        <div class="vocab-item"><div class="vocab-word">emission cap <span class="pos">(n.)</span> <span class="ipa">/ɪˈmɪʃən kæp/</span></div><div class="vocab-meaning">giới hạn phát thải</div></div>
+        <div class="vocab-item"><div class="vocab-word">tackle <span class="pos">(v.)</span> <span class="ipa">/ˈtækl/</span></div><div class="vocab-meaning">giải quyết — tackle climate change</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">individuals should solve environmental problems</span><span class="vi">→ the burden should rest on ordinary citizens · personal stewardship should lead</span></div>
+        <div class="kp-item"><span class="en">I disagree</span><span class="vi">→ I largely disagree · I find the claim unconvincing · It is misleading to frame</span></div>
+        <div class="kp-item"><span class="en">governments should make laws</span><span class="vi">→ governments must enact legislation · the state should impose regulation · policy levers are required</span></div>
+        <div class="kp-item"><span class="en">environmental problems are big</span><span class="vi">→ the scale of ecological challenges · the sheer scale of pollution · systemic environmental damage</span></div>
+        <div class="kp-item"><span class="en">factories pollute a lot</span><span class="vi">→ industrial sources of pollution · fossil-fuel companies contribute most emissions</span></div>
+        <div class="kp-item"><span class="en">recycling is not enough</span><span class="vi">→ voluntary behaviour change yields modest results · individual action cannot offset industrial output</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Environment</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP-UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERN SUMMARY -->
+<section data-label="47 Pattern Summary" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Pattern Summary</span></div>
+  <p class="eyebrow">Pattern summary · 4 practices · 3 thesis positions</p>
+  <h2 class="h-section">Một khung — <em class="hi">bốn stance khác nhau.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Practice</th><th>Topic</th><th>Stance</th><th>Thesis pattern</th><th>Key technique</th></tr></thead>
+    <tbody>
+      <tr><td>P01</td><td class="feat">Education · responsibility</td><td>Strong agree</td><td>"I strongly agree, as A and B."</td><td>Real-world institutions (Montessori, Japanese schools)</td></tr>
+      <tr><td>P02</td><td class="feat">Technology · smartphones</td><td>Largely agree</td><td>"While X, I largely agree, since A and B."</td><td>Concede counter + new vocab (phubbing, social fabric)</td></tr>
+      <tr><td>P03</td><td class="feat">Work from home</td><td>Partial</td><td>"I partly agree: while X, it tends to Y."</td><td>"On the one hand / On the other hand" + research citations</td></tr>
+      <tr><td>P04</td><td class="feat">Environment · responsibility</td><td>Largely disagree</td><td>"I largely disagree, because A and because B."</td><td>Policy case study + statistics (90% drop, 70% emissions)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Cùng khung 4 đoạn · cùng PEEL · chỉ thay <em class="hi">thesis pattern</em> theo stance là phủ được toàn bộ phổ Opinion essay.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · MASTER VOCAB + PHRASEBANK -->
+<section data-label="48 Master Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Master vocab + phrasebank</span></div>
+  <p class="eyebrow">Master vocabulary &amp; phrasebank · Opinion essay</p>
+  <h2 class="h-section" style="font-size: 44px;">16 từ · 12 phrases — <em class="hi">đủ dùng cho mọi opinion essay.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 19px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--accent);">Master vocab (16 — 4 mỗi practice)</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; font-family: var(--display); font-size: 19px; line-height: 1.55; color: var(--ink-soft);">
+        <ul style="list-style: none; padding: 0;">
+          <li><b style="color: var(--accent); font-family: var(--mono); font-size: 14px;">EDU</b> · instil</li>
+          <li>· formative</li>
+          <li>· ingrained</li>
+          <li>· cultivate</li>
+          <li style="margin-top: 8px;"><b style="color: var(--accent); font-family: var(--mono); font-size: 14px;">TECH</b> · ubiquitous</li>
+          <li>· supplant</li>
+          <li>· phubbing</li>
+          <li>· social fabric</li>
+        </ul>
+        <ul style="list-style: none; padding: 0;">
+          <li><b style="color: var(--accent); font-family: var(--mono); font-size: 14px;">WFH</b> · autonomy</li>
+          <li>· commute</li>
+          <li>· deep work</li>
+          <li>· hybrid</li>
+          <li style="margin-top: 8px;"><b style="color: var(--accent); font-family: var(--mono); font-size: 14px;">ENV</b> · stewardship</li>
+          <li>· mitigate</li>
+          <li>· legislation</li>
+          <li>· systemic</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 19px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 3px solid var(--accent);">Phrasebank (12)</div>
+      <ul style="font-family: var(--display); font-size: 19px; line-height: 1.55; color: var(--ink-soft); padding-left: 0; list-style: none;">
+        <li><b style="color: var(--accent); font-family: var(--mono); font-size: 13px;">AGREE</b> · I strongly agree with this view</li>
+        <li>· I firmly endorse · I find the argument compelling</li>
+        <li>· I wholeheartedly support · The view is highly persuasive</li>
+        <li style="margin-top: 6px;"><b style="color: var(--accent); font-family: var(--mono); font-size: 13px;">PARTIAL</b> · I partly agree with this claim</li>
+        <li>· While X holds some merit, … · It depends on context</li>
+        <li>· I agree in some respects, but … · the truth lies in between</li>
+        <li style="margin-top: 6px;"><b style="color: var(--accent); font-family: var(--mono); font-size: 13px;">DISAGREE</b> · I largely disagree with this proposition</li>
+        <li>· I firmly disagree · It is misleading to frame X as …</li>
+        <li>· the claim is unconvincing · this view appears flawed</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Học theo nhóm stance — chọn 1 phrase agree + 1 disagree quen tay, dùng đi dùng lại tránh sai.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · COMMON PITFALLS -->
+<section data-label="49 Pitfalls" class="slide">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Common pitfalls</span></div>
+  <p class="eyebrow">Common pitfalls · Band 5 → Band 6 mistakes</p>
+  <h2 class="h-section">Năm lỗi — <em class="hi">band 5 mắc, band 6 tránh.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Pitfall 01</span><b>Lặp "I think" / "I believe" 5-6 lần.</b> Mỗi bài chỉ nên dùng "I" 2-3 lần. Thay bằng <em>arguably · it could be argued · in my view · the evidence suggests</em>.</li>
+    <li><span class="tag">Pitfall 02</span><b>Không có thesis rõ ràng.</b> Câu cuối Intro phải nêu rõ <em>agree / partly / disagree</em>. Tránh "this essay will discuss both sides" — đó là Discussion, không phải Opinion.</li>
+    <li><span class="tag">Pitfall 03</span><b>Listing ý mà không explain.</b> Body đoạn chỉ liệt kê 3-4 lý do trong 1 câu = "underdeveloped". Phải có PEEL: 1 point + 1 example + 1 explain.</li>
+    <li><span class="tag">Pitfall 04</span><b>Dùng contractions &amp; slang.</b> <em>don't · can't · it's · kids · stuff · a lot of</em> → đổi sang <em>do not · cannot · it is · children · matters · numerous</em>.</li>
+    <li><span class="tag">Pitfall 05</span><b>Conclusion chỉ lặp Intro.</b> Phải paraphrase thesis + tóm 2 reason. "In conclusion, as I said before…" = band 5. "In conclusion, while X has value, I firmly believe Y…" = band 6.5.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · HOMEWORK + PREVIEW L06 -->
+<section data-label="50 Homework" class="slide slide--paper">
+  <div class="run-header"><span>Phần VI · Tổng kết</span><span class="rule"></span><span>Homework + Preview L06</span></div>
+  <p class="eyebrow">Homework · Practice schedule · Next lesson</p>
+  <h2 class="h-section">Bài về nhà — <em class="hi">3 prompts · 1 tuần.</em></h2>
+
+  <div style="display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 56px; margin-top: 8px;">
+    <div>
+      <p class="mono-label">Homework · 3 prompts opinion · 40 phút/bài</p>
+      <ol class="num-list tight" style="margin-top: 12px;">
+        <li><div><span class="step-title">Education prompt (deadline T4).</span><span class="step-body">"Some people believe that university education should be free for all students. To what extent do you agree or disagree?" Áp dụng strong agree pattern từ P01.</span></div></li>
+        <li><div><span class="step-title">Technology prompt (deadline T6).</span><span class="step-body">"Social media has done more harm than good to teenagers. To what extent do you agree or disagree?" Thử pattern largely agree (P02).</span></div></li>
+        <li><div><span class="step-title">Work prompt (deadline CN).</span><span class="step-body">"Older employees should be replaced by younger ones in companies. To what extent do you agree or disagree?" Thử partial pattern (P03) hoặc largely disagree (P04).</span></div></li>
+      </ol>
+      <p class="fine" style="margin-top: 24px;">Gửi qua Notion. Đếm từ ≥ 260. Tự highlight: thesis · 2 topic sentences · 5+ linking devices.</p>
+    </div>
+
+    <div class="col-card" style="background: rgba(200,32,47,0.06); border-left: 4px solid var(--accent);">
+      <p class="mono-label">Preview · Lesson 06</p>
+      <h3 style="font-size: 36px; margin-bottom: 14px;">Discussion essay</h3>
+      <p style="font-size: 21px; color: var(--ink-soft); line-height: 1.5;">"Discuss both views and give your own opinion." Cấu trúc 5 đoạn (Intro · View A · View B · Your opinion · Conclusion). Khác Opinion ở chỗ phải trình bày <em class="hi">cả 2 phía</em> trước khi kết luận.</p>
+      <p style="font-size: 19px; color: var(--ink-soft); line-height: 1.5; margin-top: 16px;">4 practices: education funding · urbanisation · arts vs sciences · ageing population.</p>
+      <p class="fine" style="margin-top: 18px;">Buổi sau cùng giờ. Mang theo bài homework.</p>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic</span><span>50 / 50</span></div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

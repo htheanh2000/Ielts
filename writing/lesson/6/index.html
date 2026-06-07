@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 2 — Academic · Lesson 06 · Discussion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ LESSON-06 ADDITIONS (forked from L05) ═════════ */
+
+  /* Sample essay block */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 22px; line-height: 1.6; color: var(--ink); }
+  .essay p { margin: 0 0 14px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .hl-band { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  .annot-list { list-style: none; padding: 0; margin: 0; }
+  .annot-list li { padding: 16px 0; border-top: 1px solid var(--rule-soft); font-size: 22px; line-height: 1.45; color: var(--ink-soft); }
+  .annot-list li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .annot-list li .tag { display: inline-block; font-family: var(--mono); font-size: 18px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 10px; }
+  .annot-list li b { color: var(--ink); font-weight: 600; }
+
+  .kp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+  .kp-item { padding: 14px 0; border-top: 1px solid var(--rule-soft); }
+  .kp-item .en { display: block; font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ink); font-style: normal; margin-bottom: 4px; }
+  .kp-item .vi { font-size: 19px; color: var(--ink-soft); line-height: 1.4; }
+
+  .fine { font-family: var(--mono); font-size: 22px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 36px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 23px !important; line-height: 1.38 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+  .vocab-grid.compact .vocab-item { padding: 10px 0 !important; }
+  .vocab-grid.compact .vocab-word { font-size: 21px !important; margin-bottom: 2px !important; }
+  .vocab-grid.compact .vocab-meaning { font-size: 18px !important; line-height: 1.3 !important; }
+
+  .pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; margin-top: 8px; }
+  .pp-grid > div > .mono-label { margin-bottom: 6px; }
+  .pp-grid > div > p { font-family: var(--display); font-size: 24px; line-height: 1.4; margin: 6px 0 0; }
+
+  .step-table { width: 100%; border-collapse: collapse; }
+  .step-table th, .step-table td { padding: 12px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 20px; vertical-align: top; }
+  .step-table thead th { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; border-bottom: 3px solid var(--accent); }
+  .step-table tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; width: 130px; }
+  .step-table tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); }
+
+  .prompt-card { background: var(--paper); border: 1px solid var(--rule-soft); border-left: 6px solid var(--accent); padding: 28px 32px; }
+  .prompt-card .lbl { font-family: var(--mono); font-size: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 12px; }
+  .prompt-card .q { font-family: var(--display); font-size: 24px; line-height: 1.45; color: var(--ink); font-style: italic; margin: 0; }
+  .prompt-card .src { font-family: var(--mono); font-size: 15px; color: var(--ink-muted); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Spectrum band for stance patterns (L06 = lean A / balanced / lean B) */
+  .spectrum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); margin-top: 12px; }
+  .spectrum .cell { padding: 22px 22px; border-right: 1px solid var(--rule-soft); }
+  .spectrum .cell:last-child { border-right: 0; }
+  .spectrum .cell .k { font-family: var(--mono); font-size: 17px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 10px; }
+  .spectrum .cell .v { font-family: var(--display); font-size: 22px; line-height: 1.4; color: var(--ink); font-weight: 600; }
+  .spectrum .cell .d { font-size: 18px; color: var(--ink-soft); margin-top: 8px; line-height: 1.35; }
+
+  /* Two-view side-by-side card (Discussion specific) */
+  .views { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .view-card { border-top: 4px solid var(--accent); padding: 22px 26px 26px; background: var(--paper); }
+  .view-card .label { font-family: var(--mono); font-size: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; }
+  .view-card h4 { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--ink); margin: 0 0 14px; line-height: 1.25; }
+  .view-card p { font-size: 20px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 10px; }
+  .view-card .ex { font-family: var(--mono); font-size: 17px; color: var(--ink-muted); letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · THEORY (01-10) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 2</div>
+    <h1 class="main">Discussion.<br>Both views <em>weighed.</em></h1>
+    <div class="mark">Lesson 06 · Discuss both views &amp; give your opinion</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.5 → 6.0</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>Lý thuyết</dt><dd>10 slide</dd></div>
+      <div><dt>Thực hành</dt><dd>4 prompts discussion</dd></div>
+      <div><dt>Từ vựng</dt><dd>32 từ · 24 collocations</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Agenda</span></div>
+  <p class="eyebrow">Agenda · 90 minutes</p>
+  <h2 class="h-section">Agenda</h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Theory.</span><span class="step-body">10 slide · 18 phút. Tổng quan dạng Discussion · cấu trúc 4 đoạn · stance spectrum (lean A / balanced / lean B) · phrasebank both-view · cohesion contrast · trình tự 40 phút.</span></div></li>
+    <li><div><span class="step-title">Practice 01 · Health — lean government.</span><span class="step-body">9 slide · 17 phút. Free healthcare vs paid — bài mẫu 272 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 02 · Crime — lean rehabilitation.</span><span class="step-body">9 slide · 17 phút. Punishment vs rehabilitation cho tội phạm · bài mẫu 275 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 03 · Globalisation — balanced.</span><span class="step-body">9 slide · 17 phút. Cultural exchange &amp; progress vs erosion of local traditions · bài mẫu 270 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Practice 04 · Family — lean extended.</span><span class="step-body">9 slide · 17 phút. Extended vs nuclear family cho trẻ em hiện đại · bài mẫu 268 từ · Band 6.5.</span></div></li>
+    <li><div><span class="step-title">Wrap-up &amp; Homework.</span><span class="step-body">4 slide · 4 phút. Pattern recap · master vocab &amp; phrasebank · pitfalls · bài về nhà · preview L07 Problem-Solution.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>02 / 50</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Objectives</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Nhận diện đề Discussion và tránh nhầm Opinion.</span><span class="step-body">Tín hiệu: <em>"Discuss both views"</em>, <em>"Some people believe X, while others think Y"</em>. KHÔNG chỉ chọn 1 phe — phải trình bày cả 2.</span></div></li>
+    <li><div><span class="step-title">Paraphrase đề + report cả 2 quan điểm trong Intro.</span><span class="step-body">Cấu trúc 3 câu: hook · báo trước 2 view · thesis nêu opinion. Câu thesis có thể "lean" hoặc "balanced".</span></div></li>
+    <li><div><span class="step-title">Viết Body 1 (view A) + Body 2 (view B) cân bằng.</span><span class="step-body">Mỗi body ~85 từ: report view + lý do hậu thuẫn + ví dụ. Body 2 kết bằng câu chốt "wins" your opinion.</span></div></li>
+    <li><div><span class="step-title">Dùng phrasebank reporting both-view không lặp.</span><span class="step-body"><em>"Proponents argue that…"</em> · <em>"On the other hand, critics contend that…"</em> · <em>"A common counter-view is that…"</em>. Mỗi đoạn dùng 1 cụm khác nhau.</span></div></li>
+    <li><div><span class="step-title">Thesis + Conclusion phải nhất quán opinion.</span><span class="step-body">Intro lean A → Conclusion phải tái khẳng định lean A. Lỗi phổ biến: Intro nói "I agree with X", Conclusion lại "It's hard to say". Trừ Task Response 1 band.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>03 / 50</span></div>
+</section>
+
+<!-- 04 · TASK OVERVIEW -->
+<section data-label="Task Overview" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Tổng quan Discussion</span></div>
+  <p class="eyebrow">Discussion · Task 2 Academic</p>
+  <h2 class="h-section">40 phút. <em class="hi">Hai phe.</em> Một quan điểm rõ ràng.</h2>
+
+  <div class="stat-row" style="margin-top: 8px;">
+    <div class="stat"><div class="k">Tần suất đề</div><div class="v">~30%</div><div class="d">Discussion là dạng <em class="hi">phổ biến thứ 2</em> sau Opinion trong đề thi 2023-2025. Học vững dạng này = an toàn cho hơn 70% bài thi.</div></div>
+    <div class="stat"><div class="k">Cấu trúc</div><div class="v">4 đoạn</div><div class="d">Intro <em class="hi">55w</em> · Body 1 view A <em class="hi">85w</em> · Body 2 view B + opinion <em class="hi">90w</em> · Conclusion <em class="hi">40w</em>.</div></div>
+    <div class="stat"><div class="k">Sai phổ biến</div><div class="v">3</div><div class="d">Chỉ trình bày 1 phe · không nêu opinion · viết Body 1+2 quá lệch (90w vs 60w) → giám khảo trừ TR và CC.</div></div>
+  </div>
+
+  <p class="fine">Đề thực tế Cambridge IELTS 17-19: 12/16 đề Task 2 là Opinion hoặc Discussion. Nhựt nắm 2 dạng này = chuẩn bị đủ 75% kỳ thi.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>04 / 50</span></div>
+</section>
+
+<!-- 05 · FOUR QUESTION TYPES (highlight Discussion) -->
+<section data-label="Four Q Types" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Bốn dạng đề Task 2</span></div>
+  <p class="eyebrow">Four Question Types · Task 2 Academic</p>
+  <h2 class="h-section">Bốn dạng đề — <em class="hi">Discussion là trọng tâm hôm nay.</em></h2>
+
+  <div class="flow" style="grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 01</div>
+      <div class="t">Opinion</div>
+      <div class="d" style="margin-top: 12px;">"To what extent do you agree or disagree?"<br><br>Đã học <em>L05</em>. Đưa 1 quan điểm, bảo vệ bằng 2 reason.</div>
+    </div>
+    <div class="flow-step" style="background: rgba(200,32,47,0.06); border-left: 4px solid var(--accent); padding: 18px;">
+      <div class="n">TYPE 02</div>
+      <div class="t">Discussion</div>
+      <div class="d" style="margin-top: 12px;">"Discuss both views and give your own opinion."<br><br><em class="hi">Focus L06 hôm nay.</em> Trình bày cả 2 view + nêu lập trường cá nhân.</div>
+    </div>
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 03</div>
+      <div class="t">Problem–Solution</div>
+      <div class="d" style="margin-top: 12px;">"What are the causes and what solutions can be suggested?"<br><br>2 đoạn: causes + solutions. <em>L07.</em></div>
+    </div>
+    <div class="flow-step" style="padding: 18px;">
+      <div class="n">TYPE 04</div>
+      <div class="t">Two-part</div>
+      <div class="d" style="margin-top: 12px;">2 câu hỏi tách rời, ví dụ: "Why is this? Is it positive or negative?"<br><br>Mỗi body trả lời 1 câu. <em>L08.</em></div>
+    </div>
+  </div>
+
+  <p class="fine">Tín hiệu nhận diện Discussion: <em class="hi">"Some people believe X, while others think Y. Discuss both views"</em> — chữ <em>"both"</em> là khoá. Nếu thiếu chữ "both", có thể là Opinion lite.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>05 / 50</span></div>
+</section>
+
+<!-- 06 · STRUCTURE 4 PARAGRAPHS (Discussion) -->
+<section data-label="Structure" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Cấu trúc 4 đoạn</span></div>
+  <p class="eyebrow">Four-paragraph structure · Discussion essay</p>
+  <h2 class="h-section">Bốn đoạn — <em class="hi">view A · view B · opinion.</em></h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <span class="time">~55w</span>
+      <div class="n">PARA 01</div>
+      <div class="t">Introduction</div>
+      <div class="d">Paraphrase (1 câu) + báo trước 2 view (1 câu) + <em class="hi">thesis</em> nêu opinion (1 câu lean A / balanced / lean B).</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~85w</span>
+      <div class="n">PARA 02</div>
+      <div class="t">Body 1 · View A</div>
+      <div class="d">Topic sentence report view A. <em class="hi">2 lý do</em> hậu thuẫn view A. Có ví dụ cụ thể. Tone trung tính, "they argue", chưa nêu opinion.</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~90w</span>
+      <div class="n">PARA 03</div>
+      <div class="t">Body 2 · View B + opinion</div>
+      <div class="d">Report view B + lý do + ví dụ. Câu cuối <em class="hi">"wins" opinion</em>: "While both arguments have merit, I find view A more convincing because…".</div>
+    </div>
+    <div class="flow-step">
+      <span class="time">~40w</span>
+      <div class="n">PARA 04</div>
+      <div class="t">Conclusion</div>
+      <div class="d">Restate cả 2 view (1 câu) + tái khẳng định opinion (1 câu). <em>Không</em> đưa ý mới, không đổi opinion.</div>
+    </div>
+  </div>
+
+  <p class="fine">Tỷ lệ vàng Discussion: <em class="hi">20% / 31% / 33% / 16%</em>. Body 2 dài hơn Body 1 vì còn chứa opinion. Không viết Body 3.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>06 / 50</span></div>
+</section>
+
+<!-- 07 · STANCE PATTERNS -->
+<section data-label="Stance" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Stance · thesis spectrum</span></div>
+  <p class="eyebrow">Stance spectrum · Three positions</p>
+  <h2 class="h-section">Ba lập trường — <em class="hi">ba pattern thesis.</em></h2>
+
+  <div class="spectrum">
+    <div class="cell">
+      <div class="k">01 · Lean View A</div>
+      <div class="v">"While both perspectives carry weight, this essay will argue that view A is the more compelling."</div>
+      <div class="d">Variants: <em>I find the first argument more persuasive · The case for A ultimately outweighs that of B.</em></div>
+    </div>
+    <div class="cell">
+      <div class="k">02 · Balanced / Conditional</div>
+      <div class="v">"Although each view has clear merit, the strength of either depends largely on context."</div>
+      <div class="d">Variants: <em>Both positions hold validity, yet they apply in different scenarios · Neither view is wholly correct.</em></div>
+    </div>
+    <div class="cell">
+      <div class="k">03 · Lean View B</div>
+      <div class="v">"While the first view has historical appeal, this essay will defend the second as more reflective of modern realities."</div>
+      <div class="d">Variants: <em>The second perspective is, in my view, more pragmatic · I am persuaded by the latter argument.</em></div>
+    </div>
+  </div>
+
+  <p class="fine">Quy tắc vàng Discussion: <em class="hi">thesis = câu cuối Intro</em>. Phải nêu lập trường rõ ràng — KHÔNG "it depends" trống không. Balanced ≠ trung lập; vẫn phải nói "depend on what".</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>07 / 50</span></div>
+</section>
+
+<!-- 08 · TOPIC SENTENCE + PEEL (Discussion-flavoured) -->
+<section data-label="PEEL" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Topic sentence + PEEL</span></div>
+  <p class="eyebrow">Topic Sentence + PEEL · Discussion body framework</p>
+  <h2 class="h-section">PEEL — <em class="hi">khung 4 bước, tone "report" cho Body 1.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Stage</th><th>Function</th><th>Example phrase (Discussion)</th></tr></thead>
+    <tbody>
+      <tr><td>P · Point</td><td class="feat">Topic sentence — report view (Body 1 trung tính, Body 2 + opinion ở cuối)</td><td>Body 1: "Proponents of X argue that…" / Body 2: "On the other hand, supporters of Y contend that…"</td></tr>
+      <tr><td>E · Evidence</td><td class="feat">Ví dụ cụ thể hậu thuẫn view đang trình bày</td><td>"A frequently cited example is the case of…" / "Recent OECD data shows that…"</td></tr>
+      <tr><td>E · Explain</td><td class="feat">Giải thích cơ chế nhân-quả vì sao evidence hậu thuẫn view</td><td>"This demonstrates that …" / "Such a pattern reflects …"</td></tr>
+      <tr><td>L · Link</td><td class="feat">Body 1: link sang Body 2 trung tính. Body 2: link sang opinion câu chốt.</td><td>Body 1: "Despite this, the opposing view also merits attention." / Body 2 (opinion): "On balance, the first argument strikes me as more convincing because…"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Khác Opinion essay: Body 1 KHÔNG nêu opinion. Tone trung tính "they argue / proponents say". Opinion chỉ xuất hiện ở câu cuối Body 2.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>08 / 50</span></div>
+</section>
+
+<!-- 09 · COHESION + REPORTING PHRASEBANK -->
+<section data-label="Cohesion" class="slide slide--paper">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Phrasebank · Reporting + Contrast</span></div>
+  <p class="eyebrow">Reporting Phrasebank · Discussion specific</p>
+  <h2 class="h-section">Hai phrasebank — <em class="hi">reporting + contrast.</em></h2>
+
+  <div class="two-col">
+    <div class="col-card">
+      <p class="mono-label">Reporting view</p>
+      <h3 style="font-size: 38px; margin-bottom: 16px;">"Họ lập luận rằng…"</h3>
+      <ul>
+        <li><b>Body 1 mở:</b> <em class="hi">Proponents of X argue that · Supporters of this view maintain that · Those in favour contend that</em></li>
+        <li><b>Body 2 mở:</b> <em class="hi">Conversely, critics of X believe that · Opponents counter that · A frequently voiced counter-argument is that</em></li>
+        <li><b>Hậu thuẫn evidence:</b> <em class="hi">A case in point is · This is borne out by · Empirical research lends weight to this claim</em></li>
+        <li><b>Đưa opinion (Body 2 cuối):</b> <em class="hi">On balance · Personally, I am persuaded by · The weight of evidence, in my view</em></li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Contrast &amp; balance</p>
+      <h3 style="font-size: 38px; margin-bottom: 16px;">Contrast markers</h3>
+      <ul>
+        <li><b>Trái chiều:</b> <em class="hi">However · On the other hand · By contrast · Conversely · Yet</em></li>
+        <li><b>Nhường bộ:</b> <em class="hi">While X is true, Y · Although there is merit in X, Y · Granted that X, nonetheless Y</em></li>
+        <li><b>Cân bằng:</b> <em class="hi">Both arguments hold merit · Each view has its appeal · Neither position is wholly mistaken</em></li>
+        <li><b>Hedging opinion:</b> <em class="hi">I tend to side with · I find … more compelling · I lean towards the view that</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Tránh "I think" lặp lại 3+ lần. Discussion đặc biệt cần phrasebank này vì có 2 view phải report — 1 từ "argue" lặp 4 lần = giám khảo trừ Lexical Resource.</p>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>09 / 50</span></div>
+</section>
+
+<!-- 10 · EXAM SEQUENCE -->
+<section data-label="Exam Sequence" class="slide">
+  <div class="run-header"><span>Phần I · Lý thuyết</span><span class="rule"></span><span>Trình tự 40 phút</span></div>
+  <p class="eyebrow">Exam Sequence · 40-minute budget</p>
+  <h2 class="h-section">40 phút — <em class="hi">5 bước cố định.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Phân tích đề (3 phút).</span><span class="step-body">Xác định: <em>topic · view A · view B · question type</em>. Đề Discussion luôn có <em>"Some people believe X, while others think Y"</em>. Gạch chân 2 view.</span></div></li>
+    <li><div><span class="step-title">Lên dàn ý — 2 view + opinion (5 phút).</span><span class="step-body">Brainstorm 2 reason + 1 example cho mỗi view. Chọn stance (lean A / balanced / lean B) — chọn phía bạn có nhiều example hơn.</span></div></li>
+    <li><div><span class="step-title">Viết Intro + Body 1 (12 phút).</span><span class="step-body">Intro ~55 từ: paraphrase + báo trước 2 view + thesis. Body 1 ~85 từ: PEEL view A, tone trung tính "proponents argue".</span></div></li>
+    <li><div><span class="step-title">Viết Body 2 + Conclusion (15 phút).</span><span class="step-body">Body 2 ~90 từ: PEEL view B + câu chốt nêu opinion. Conclusion ~40 từ: restate 2 view + tái khẳng định opinion. Không thêm ý mới.</span></div></li>
+    <li><div><span class="step-title">Check (5 phút).</span><span class="step-body">Cả 2 view có cân bằng? · Opinion có nhất quán Intro ↔ Conclusion? · Reporting verbs có lặp không? · ≥ 250 từ.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Academic · Discussion</span><span>10 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · PRACTICE 01 — HEALTH (11–19) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 11 · SECTION BREAK -->
+<section data-label="11 P01 · Health" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 01</div>
+    <div class="n">01</div>
+    <div class="lbl">Health · Lean Government</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 01 · Health</p>
+    <h2><em>Healthcare.</em><br>Free or<br>paid?</h2>
+    <div class="toc">
+      <div class="active">01 · Health — lean government</div>
+      <div>02 · Crime — lean rehabilitation</div>
+      <div>03 · Globalisation — balanced</div>
+      <div>04 · Family — lean extended</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · TASK -->
+<section data-label="12 P01 Task" class="slide">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Discussion · Healthcare funding</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people believe that healthcare should be provided free of charge by the government, while others argue that individuals should be responsible for paying for their own medical treatment. Discuss both views and give your own opinion."</p>
+      <p class="src">Source · Common exam topic 2023-2024</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Public health policy · funding models · social vs individual responsibility</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">View A?</div><div class="s"><em class="hi">Government-funded</em> — universal, free at point of use</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">View B?</div><div class="s"><em class="hi">User-paid</em> — individual financial responsibility</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">My stance?</div><div class="s">Lean A (government) — equity argument mạnh hơn</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Gạch chân: <em class="hi">healthcare · free of charge · government · individuals · responsible · paying</em>. 6 từ khoá phải xuất hiện (paraphrased) trong Intro.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>12 / 50</span></div>
+</section>
+
+<!-- 13 · STEP 1 PLAN -->
+<section data-label="13 P01 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan two views + stance · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">view A · view B · lean A.</em></h2>
+
+  <div class="views">
+    <div class="view-card">
+      <div class="label">View A · Body 1 · Government-funded</div>
+      <h4>Healthcare là quyền cơ bản, nhà nước phải tài trợ</h4>
+      <p><b>Reason:</b> Equity — đảm bảo ai cũng được khám bệnh không phụ thuộc thu nhập.</p>
+      <p class="ex"><b>Example:</b> UK NHS, Canada Medicare — bao phủ toàn dân, life expectancy cao.</p>
+    </div>
+    <div class="view-card">
+      <div class="label">View B · Body 2 · User-paid</div>
+      <h4>Người dùng tự trả → tăng trách nhiệm cá nhân + chất lượng dịch vụ</h4>
+      <p><b>Reason:</b> Free-rider problem — miễn phí dễ lạm dụng; thị trường tạo cạnh tranh.</p>
+      <p class="ex"><b>Example:</b> Singapore co-payment model — cân bằng giữa subsidies và personal stake.</p>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 24px;"><em class="hi">Opinion (cuối Body 2):</em> Lean A — equity argument vượt trội vì healthcare khác hàng hoá thông thường (life-or-death, info asymmetry).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>13 / 50</span></div>
+</section>
+
+<!-- 14 · STEP 2 INTRO + THESIS -->
+<section data-label="14 P01 Intro" class="slide">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + announce 2 views + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + 2 view + lean A.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"<b>Healthcare should be provided free of charge</b> by the government, while others argue that <b>individuals should be responsible for paying</b>…"</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"Whether the state ought to bear the cost of medical care or whether such expenses should rest on the individual is a debate that divides modern societies."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · Hook + 2 views + Thesis · 56 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>Whether the state ought to bear the cost of medical care or whether such expenses should rest on the individual is a debate that divides modern societies. <span class="hl-band">Proponents of universal coverage cite fairness, while supporters of private funding emphasise efficiency. This essay will examine both positions and will argue that government-funded healthcare is, on balance, the more justifiable model.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Cấu trúc 3 câu: hook + 2 view (1 câu) + thesis lean A (1 câu). KHÔNG đẩy thesis sang Body 2 — phải xuất hiện ở Intro.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>14 / 50</span></div>
+</section>
+
+<!-- 15 · STEP 3 BODY 1 (View A) -->
+<section data-label="15 P01 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Bước 3 · Body 1 · View A</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · View A · government-funded · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">view A: equity argument.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>Proponents of state-funded healthcare argue that medical treatment is a fundamental right rather than a commodity, and therefore should be detached from a patient's ability to pay.</b> Under this view, allowing the market to allocate care would leave low-income groups dangerously exposed, since serious illness rarely waits for one's salary to accommodate it. <b>A frequently cited example is the United Kingdom's National Health Service, which provides cradle-to-grave coverage without charging at the point of use.</b> This system, despite recent strain, has helped sustain one of the highest life-expectancy figures in Europe. <b>Such evidence lends weight to the claim that universal access is both ethically defensible and demographically effective.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Proponents of state-funded healthcare argue that…"</b> — reporting verb trung tính, KHÔNG "I think". Mở Body 1 đúng template Discussion.</li>
+    <li><span class="tag">Evidence</span><b>"the United Kingdom's National Health Service, which provides cradle-to-grave coverage…"</b> — ví dụ quốc gia, tên hệ thống cụ thể.</li>
+    <li><span class="tag">Link</span><b>"Such evidence lends weight to the claim that…"</b> — câu chốt link evidence trở lại view, vẫn trung tính, chưa nêu opinion.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>15 / 50</span></div>
+</section>
+
+<!-- 16 · STEP 4 BODY 2 (View B + opinion) -->
+<section data-label="16 P01 Body2" class="slide">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Bước 4 · Body 2 · View B + opinion</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · View B + opinion lean A · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">view B + opinion câu cuối.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>On the other hand, supporters of user-paid systems contend that personal financial responsibility curbs over-use and rewards healthier lifestyles.</b> They point to the so-called free-rider problem: when treatment is free, patients may consult doctors over trivial complaints, lengthening waiting lists for the genuinely sick. <b>Singapore's hybrid co-payment model — where citizens contribute through Medisave accounts while the state subsidises catastrophic costs — is often cited as proof that mixed funding yields both efficiency and discipline.</b> <b>While this argument has practical force, I find the equity case stronger, because illness is rarely a matter of personal choice and an individual's life chances should not be auctioned to the highest bidder.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"On the other hand, supporters of user-paid systems contend that…"</b> — "On the other hand" + reporting verb mới, không lặp "argue".</li>
+    <li><span class="tag">Evidence</span><b>"Singapore's hybrid co-payment model — where citizens contribute through Medisave accounts…"</b> — ví dụ ASEAN, gần với Việt Nam.</li>
+    <li><span class="tag">Opinion (Link)</span><b>"While this argument has practical force, I find the equity case stronger, because…"</b> — câu chốt nêu opinion lean A, dùng concession "While X, Y".</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>16 / 50</span></div>
+</section>
+
+<!-- 17 · SAMPLE ESSAY -->
+<section data-label="17 P01 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 272 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>Whether the state ought to bear the cost of medical care or whether such expenses should rest on the individual is a debate that divides modern societies. Proponents of universal coverage cite fairness, while supporters of private funding emphasise efficiency. This essay will examine both positions and will argue that government-funded healthcare is, on balance, the more justifiable model.</p>
+    <p><span class="para-tag">Body 1</span>Proponents of state-funded healthcare argue that medical treatment is a fundamental right rather than a commodity, and therefore should be detached from a patient's ability to pay. Under this view, allowing the market to allocate care would leave low-income groups dangerously exposed, since serious illness rarely waits for one's salary to accommodate it. A frequently cited example is the United Kingdom's National Health Service, which provides cradle-to-grave coverage without charging at the point of use. This system, despite recent strain, has helped sustain one of the highest life-expectancy figures in Europe. Such evidence lends weight to the claim that universal access is both ethically defensible and demographically effective.</p>
+    <p><span class="para-tag">Body 2</span>On the other hand, supporters of user-paid systems contend that personal financial responsibility curbs over-use and rewards healthier lifestyles. They point to the so-called free-rider problem: when treatment is free, patients may consult doctors over trivial complaints. Singapore's hybrid co-payment model — where citizens contribute through Medisave accounts while the state subsidises catastrophic costs — is often cited as proof that mixed funding yields both efficiency and discipline. While this argument has practical force, I find the equity case stronger, because illness is rarely a matter of personal choice and an individual's life chances should not be auctioned to the highest bidder.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, although the user-paid model carries real efficiency benefits, the moral weight of universal access prevails. Healthcare, in my view, belongs in the category of public goods that no decent society should ration by wallet.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>17 / 50</span></div>
+</section>
+
+<!-- 18 · LANGUAGE ANALYSIS -->
+<section data-label="18 P01 Language" class="slide">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Discussion · lean A</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Health.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Reporting verbs</span><b>"Proponents… argue · supporters… contend · They point to · is often cited as"</b> — 4 cách report view khác nhau, không lặp "say/think".</li>
+    <li><span class="tag">Concession + opinion</span><b>"While this argument has practical force, I find the equity case stronger…"</b> — cấu trúc "While X, Y" nhường bộ trước khi nêu opinion → sophisticated, band 6.5+.</li>
+    <li><span class="tag">Contrast markers</span><b>"On the other hand · despite recent strain · although"</b> — 3 contrast markers khác nhau, không lặp "but/however".</li>
+    <li><span class="tag">Metaphors &amp; emotive</span><b>"cradle-to-grave coverage · auctioned to the highest bidder · life chances · public goods"</b> — vocab giàu hình ảnh, nâng Lexical Resource.</li>
+  </ul>
+
+  <p class="fine">Cấu trúc "<em class="hi">X is a debate that divides modern societies</em>" là template hook mở bài hữu dụng cho mọi đề Discussion — học một lần, dùng nhiều dạng.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>18 / 50</span></div>
+</section>
+
+<!-- 19 · VOCAB + PARAPHRASE -->
+<section data-label="19 P01 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 01 · Health</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Health</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">healthcare.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">universal coverage <span class="pos">(n.)</span> <span class="ipa">/ˌjuːnɪˈvɜːsl ˈkʌvərɪdʒ/</span></div><div class="vocab-meaning">bảo hiểm toàn dân — provide universal coverage</div></div>
+        <div class="vocab-item"><div class="vocab-word">equity <span class="pos">(n.)</span> <span class="ipa">/ˈekwəti/</span></div><div class="vocab-meaning">sự công bằng (về cơ hội) — equity in healthcare</div></div>
+        <div class="vocab-item"><div class="vocab-word">cradle-to-grave <span class="pos">(adj.)</span> <span class="ipa">/ˌkreɪdl tə ˈɡreɪv/</span></div><div class="vocab-meaning">từ lúc sinh đến lúc mất — cradle-to-grave coverage</div></div>
+        <div class="vocab-item"><div class="vocab-word">subsidise <span class="pos">(v.)</span> <span class="ipa">/ˈsʌbsɪdaɪz/</span></div><div class="vocab-meaning">trợ giá — heavily subsidised</div></div>
+        <div class="vocab-item"><div class="vocab-word">free-rider <span class="pos">(n.)</span> <span class="ipa">/friː ˈraɪdə/</span></div><div class="vocab-meaning">người hưởng lợi không trả — free-rider problem</div></div>
+        <div class="vocab-item"><div class="vocab-word">commodity <span class="pos">(n.)</span> <span class="ipa">/kəˈmɒdəti/</span></div><div class="vocab-meaning">hàng hoá thông thường — treat health as a commodity</div></div>
+        <div class="vocab-item"><div class="vocab-word">co-payment <span class="pos">(n.)</span> <span class="ipa">/ˈkəʊˌpeɪmənt/</span></div><div class="vocab-meaning">đồng chi trả — co-payment model</div></div>
+        <div class="vocab-item"><div class="vocab-word">life expectancy <span class="pos">(n.)</span> <span class="ipa">/laɪf ɪkˈspektənsi/</span></div><div class="vocab-meaning">tuổi thọ trung bình — raise life expectancy</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">healthcare should be free</span><span class="vi">→ medical care ought to be state-funded · treatment should be free at the point of use</span></div>
+        <div class="kp-item"><span class="en">provided by the government</span><span class="vi">→ state-funded · publicly funded · borne by the state</span></div>
+        <div class="kp-item"><span class="en">individuals should pay</span><span class="vi">→ patients should bear the cost · personal financial responsibility · user-paid model</span></div>
+        <div class="kp-item"><span class="en">it is a basic right</span><span class="vi">→ a fundamental right · ethically indispensable · a public good</span></div>
+        <div class="kp-item"><span class="en">people who can't afford</span><span class="vi">→ low-income groups · those with limited means · the economically vulnerable</span></div>
+        <div class="kp-item"><span class="en">I agree with view A</span><span class="vi">→ I find the equity case stronger · the moral weight of universal access prevails · I lean towards the first view</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 01 · Health</span><span>19 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · PRACTICE 02 — CRIME (20–28) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 20 · SECTION BREAK -->
+<section data-label="20 P02 · Crime" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 02</div>
+    <div class="n">02</div>
+    <div class="lbl">Crime · Lean Rehabilitation</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 02 · Crime</p>
+    <h2><em>Prisons.</em><br>Punish or<br>reform?</h2>
+    <div class="toc">
+      <div>01 · Health — lean government</div>
+      <div class="active">02 · Crime — lean rehabilitation</div>
+      <div>03 · Globalisation — balanced</div>
+      <div>04 · Family — lean extended</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · TASK -->
+<section data-label="21 P02 Task" class="slide">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Discussion · Prisons &amp; rehabilitation</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people argue that the main aim of prisons should be to punish offenders, while others believe rehabilitation is more effective in reducing future crime. Discuss both views and give your own opinion."</p>
+      <p class="src">Source · Cambridge IELTS 18 · variant</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Criminal justice · prison philosophy · recidivism</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">View A?</div><div class="s"><em class="hi">Punishment</em> — deterrence + retribution</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">View B?</div><div class="s"><em class="hi">Rehabilitation</em> — reduce reoffending, reintegrate</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">My stance?</div><div class="s">Lean B (rehabilitation) — bằng chứng dài hạn mạnh hơn</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Đề có cụm <em class="hi">"more effective in reducing future crime"</em> — gợi ý measurable outcome → cần đem evidence định lượng (recidivism rate) khi report view B.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>21 / 50</span></div>
+</section>
+
+<!-- 22 · STEP 1 PLAN -->
+<section data-label="22 P02 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan two views + stance · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">view A · view B · lean B.</em></h2>
+
+  <div class="views">
+    <div class="view-card">
+      <div class="label">View A · Body 1 · Punishment</div>
+      <h4>Mục tiêu nhà tù là trừng phạt — răn đe + công lý cho nạn nhân</h4>
+      <p><b>Reason:</b> Deterrence — án nặng làm người khác sợ phạm tội; nạn nhân cần thấy công lý được thực thi.</p>
+      <p class="ex"><b>Example:</b> Singapore's strict sentencing → tỷ lệ tội phạm thấp; nạn nhân được "moral closure".</p>
+    </div>
+    <div class="view-card">
+      <div class="label">View B · Body 2 · Rehabilitation</div>
+      <h4>Cải tạo giảm tái phạm — bảo vệ xã hội bền vững hơn</h4>
+      <p><b>Reason:</b> Recidivism — nhà tù trừng phạt thuần tuý tạo "trường đại học tội phạm"; cải tạo phá vòng lặp.</p>
+      <p class="ex"><b>Example:</b> Norway's Halden Prison — recidivism ~20% (so với US 60%), tù nhân học nghề.</p>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 24px;"><em class="hi">Opinion (cuối Body 2):</em> Lean B — measurable outcome (recidivism) rõ ràng hơn argument cảm tính về công lý; xã hội an toàn hơn về dài hạn.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>22 / 50</span></div>
+</section>
+
+<!-- 23 · STEP 2 INTRO -->
+<section data-label="23 P02 Intro" class="slide">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + announce 2 views + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + 2 view + lean B.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Some argue the <b>main aim of prisons should be to punish offenders</b>, while others believe <b>rehabilitation is more effective</b>…"</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"There is a long-standing disagreement over whether the principal purpose of incarceration should be to punish wrongdoers or to reform them so that they may reintegrate into society."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · Hook + 2 views + Thesis · 58 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>There is a long-standing disagreement over whether the principal purpose of incarceration should be to punish wrongdoers or to reform them so that they may reintegrate into society. <span class="hl-band">Advocates of the punitive approach emphasise deterrence and justice, whereas supporters of rehabilitation prioritise long-term crime reduction. This essay will weigh both stances and will argue that rehabilitation, though slower to bear fruit, is ultimately the more pragmatic strategy.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Cụm "<em class="hi">though slower to bear fruit</em>" là <em>concession</em> — thừa nhận yếu điểm view B trước khi defend, tăng tính cogent.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>23 / 50</span></div>
+</section>
+
+<!-- 24 · STEP 3 BODY 1 (View A) -->
+<section data-label="24 P02 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Bước 3 · Body 1 · View A</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · View A · punishment · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">view A: deterrence + justice.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>Advocates of the punitive approach contend that harsh sentences serve two indispensable functions: they deter potential offenders and they deliver justice to victims.</b> Under this view, knowing that serious wrongdoing carries serious consequences discourages people from breaking the law in the first place. <b>Singapore is frequently held up as a case in point: its strict sentencing, including custodial terms for offences considered minor in many Western countries, is widely credited with producing one of the lowest urban crime rates in the world.</b> Furthermore, proponents argue that victims and their families derive a sense of moral closure from seeing offenders adequately punished, an emotional need the justice system arguably ought to recognise.</p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Advocates of the punitive approach contend that…"</b> — reporting verb mới "contend", liệt kê 2 chức năng (deter + justice).</li>
+    <li><span class="tag">Evidence</span><b>"Singapore is frequently held up as a case in point…"</b> — quốc gia + dữ kiện crime rate + nhận định bên ngoài.</li>
+    <li><span class="tag">Link</span><b>"Furthermore, proponents argue that victims… derive a sense of moral closure"</b> — mở rộng lý do thứ 2, hedging "arguably ought to".</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>24 / 50</span></div>
+</section>
+
+<!-- 25 · STEP 4 BODY 2 (View B + opinion) -->
+<section data-label="25 P02 Body2" class="slide">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Bước 4 · Body 2 · View B + opinion</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · View B + opinion lean B · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">view B + opinion câu cuối.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>Supporters of rehabilitation, by contrast, maintain that a justice system built on punishment alone tends to produce repeat offenders, since prison without education or therapy can entrench rather than reverse criminal habits.</b> They contend that genuine public safety is achieved when prisoners leave better equipped to live lawful lives. <b>Norway's Halden Prison illustrates this philosophy: inmates receive vocational training and counselling within a humane environment, and the country's recidivism rate of roughly twenty percent compares strikingly with the sixty-percent figure recorded in much of the United States.</b> <b>On balance, I find this argument more persuasive, because what ultimately protects citizens is not the severity of a sentence but the likelihood that a former prisoner will not strike again.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Supporters of rehabilitation, by contrast, maintain that…"</b> — "by contrast" + reporting verb "maintain", linking sang view B.</li>
+    <li><span class="tag">Evidence</span><b>"Norway's Halden Prison… recidivism rate of roughly twenty percent compares… sixty-percent"</b> — số liệu so sánh 2 nước, định lượng rõ ràng.</li>
+    <li><span class="tag">Opinion (Link)</span><b>"On balance, I find this argument more persuasive, because…"</b> — câu chốt opinion, dùng "On balance" — phrasebank chuẩn Discussion.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>25 / 50</span></div>
+</section>
+
+<!-- 26 · SAMPLE ESSAY -->
+<section data-label="26 P02 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 275 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>There is a long-standing disagreement over whether the principal purpose of incarceration should be to punish wrongdoers or to reform them so that they may reintegrate into society. Advocates of the punitive approach emphasise deterrence and justice, whereas supporters of rehabilitation prioritise long-term crime reduction. This essay will weigh both stances and will argue that rehabilitation, though slower to bear fruit, is ultimately the more pragmatic strategy.</p>
+    <p><span class="para-tag">Body 1</span>Advocates of the punitive approach contend that harsh sentences serve two indispensable functions: they deter potential offenders and they deliver justice to victims. Knowing that serious wrongdoing carries serious consequences discourages people from breaking the law. Singapore is frequently held up as a case in point: its strict sentencing is widely credited with producing one of the lowest urban crime rates in the world. Proponents also argue that victims and their families derive a sense of moral closure from seeing offenders adequately punished.</p>
+    <p><span class="para-tag">Body 2</span>Supporters of rehabilitation, by contrast, maintain that a justice system built on punishment alone tends to produce repeat offenders, since prison without education or therapy can entrench rather than reverse criminal habits. Genuine public safety, they contend, is achieved when prisoners leave better equipped to live lawful lives. Norway's Halden Prison illustrates this: inmates receive vocational training within a humane environment, and the country's recidivism rate of roughly twenty percent compares strikingly with the sixty-percent figure recorded in much of the United States. On balance, I find this argument more persuasive, because what ultimately protects citizens is not the severity of a sentence but the likelihood that a former prisoner will not strike again.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, while punishment satisfies an understandable demand for justice, rehabilitation produces measurably safer societies. The most defensible prison system, in my view, treats reform — not retribution — as its central mission.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>26 / 50</span></div>
+</section>
+
+<!-- 27 · LANGUAGE ANALYSIS -->
+<section data-label="27 P02 Language" class="slide">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Discussion · lean B</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Crime.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Reporting verbs</span><b>"Advocates… contend · proponents argue · Supporters… maintain · they contend"</b> — 4 reporting verbs khác nhau, không lặp "say".</li>
+    <li><span class="tag">Quantitative evidence</span><b>"recidivism rate of roughly twenty percent compares… sixty-percent"</b> — số liệu so sánh trực tiếp nâng evidence từ anecdote → data-driven, tăng Task Response.</li>
+    <li><span class="tag">Idiomatic phrasing</span><b>"frequently held up as a case in point · entrench… criminal habits · slower to bear fruit · strike again"</b> — vocab giàu hình ảnh, idiom band 7+.</li>
+    <li><span class="tag">Antithesis</span><b>"not the severity of a sentence but the likelihood that a former prisoner will not strike again"</b> — "not X but Y" pattern → rhetoric punch cuối câu, tăng Coherence.</li>
+  </ul>
+
+  <p class="fine">Pattern "<em class="hi">though slower to bear fruit, is ultimately the more pragmatic</em>" là <em>concession + assertion</em> — học một lần, dùng cho mọi đề Discussion lean B.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>27 / 50</span></div>
+</section>
+
+<!-- 28 · VOCAB + PARAPHRASE -->
+<section data-label="28 P02 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 02 · Crime</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Crime</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">prisons.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">incarceration <span class="pos">(n.)</span> <span class="ipa">/ɪnˌkɑːsəˈreɪʃn/</span></div><div class="vocab-meaning">việc bỏ tù — long-term incarceration</div></div>
+        <div class="vocab-item"><div class="vocab-word">deterrence <span class="pos">(n.)</span> <span class="ipa">/dɪˈterəns/</span></div><div class="vocab-meaning">sự răn đe — act as a deterrence</div></div>
+        <div class="vocab-item"><div class="vocab-word">rehabilitation <span class="pos">(n.)</span> <span class="ipa">/ˌriːəˌbɪlɪˈteɪʃn/</span></div><div class="vocab-meaning">cải tạo, phục hồi — undergo rehabilitation</div></div>
+        <div class="vocab-item"><div class="vocab-word">recidivism <span class="pos">(n.)</span> <span class="ipa">/rɪˈsɪdɪvɪzəm/</span></div><div class="vocab-meaning">tỷ lệ tái phạm — reduce recidivism</div></div>
+        <div class="vocab-item"><div class="vocab-word">offender <span class="pos">(n.)</span> <span class="ipa">/əˈfendə/</span></div><div class="vocab-meaning">người phạm tội — first-time offender</div></div>
+        <div class="vocab-item"><div class="vocab-word">reintegrate <span class="pos">(v.)</span> <span class="ipa">/ˌriːˈɪntɪɡreɪt/</span></div><div class="vocab-meaning">tái hoà nhập — reintegrate into society</div></div>
+        <div class="vocab-item"><div class="vocab-word">custodial <span class="pos">(adj.)</span> <span class="ipa">/kʌˈstəʊdiəl/</span></div><div class="vocab-meaning">giam giữ — custodial sentence</div></div>
+        <div class="vocab-item"><div class="vocab-word">retribution <span class="pos">(n.)</span> <span class="ipa">/ˌretrɪˈbjuːʃn/</span></div><div class="vocab-meaning">sự trừng phạt (mang nghĩa "đền tội") — seek retribution</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">prisons should punish offenders</span><span class="vi">→ incarceration ought to punish wrongdoers · the punitive approach to imprisonment</span></div>
+        <div class="kp-item"><span class="en">main aim / purpose</span><span class="vi">→ principal purpose · central mission · primary function</span></div>
+        <div class="kp-item"><span class="en">rehabilitation is more effective</span><span class="vi">→ reform produces measurably safer societies · cải tạo yields better long-term outcomes</span></div>
+        <div class="kp-item"><span class="en">reduce future crime</span><span class="vi">→ lower recidivism · curb reoffending · achieve genuine public safety</span></div>
+        <div class="kp-item"><span class="en">harsh sentences</span><span class="vi">→ strict sentencing · punitive measures · custodial terms</span></div>
+        <div class="kp-item"><span class="en">I think view B is better</span><span class="vi">→ I find this argument more persuasive · On balance, rehabilitation prevails · I lean towards the second view</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 02 · Crime</span><span>28 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · PRACTICE 03 — GLOBALISATION (29–37) -->
+<!-- PART V  · PRACTICE 04 — FAMILY (38–46) -->
+<!-- PART VI · WRAP-UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 29 · SECTION BREAK -->
+<section data-label="29 P03 · Globalisation" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 03</div>
+    <div class="n">03</div>
+    <div class="lbl">Globalisation · Balanced</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 03 · Globalisation</p>
+    <h2><em>Globalisation.</em><br>Progress or<br>erosion?</h2>
+    <div class="toc">
+      <div>01 · Health — lean government</div>
+      <div>02 · Crime — lean rehabilitation</div>
+      <div class="active">03 · Globalisation — balanced</div>
+      <div>04 · Family — lean extended</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 · TASK -->
+<section data-label="30 P03 Task" class="slide">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Discussion · Globalisation &amp; culture</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people believe that globalisation has fostered greater cultural exchange and economic progress, while others argue that it has eroded local traditions and identities. Discuss both views and give your own opinion."</p>
+      <p class="src">Source · Recurring 2024-2025 topic</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Cultural globalisation · economic integration · local heritage</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">View A?</div><div class="s"><em class="hi">Progress</em> — exchange + economic gains</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">View B?</div><div class="s"><em class="hi">Erosion</em> — homogenisation, loss of identity</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">My stance?</div><div class="s"><em class="hi">Balanced</em> — cả 2 đều thật, depends on policy</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Đây là đề <em class="hi">balanced</em> hợp lý vì 2 view đều có evidence mạnh — không nên ép "lean" giả tạo. Stance balanced phải nói rõ "depend on what" (chính sách, mức độ).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>30 / 50</span></div>
+</section>
+
+<!-- 31 · STEP 1 PLAN -->
+<section data-label="31 P03 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan two views + balanced stance · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">view A · view B · balanced.</em></h2>
+
+  <div class="views">
+    <div class="view-card">
+      <div class="label">View A · Body 1 · Progress</div>
+      <h4>Trao đổi văn hoá + thu nhập tăng, xoá nghèo cho hàng triệu người</h4>
+      <p><b>Reason:</b> Open trade nâng GDP các nước đang phát triển; người dân tiếp cận đa văn hoá qua internet.</p>
+      <p class="ex"><b>Example:</b> Việt Nam GDP tăng 7-8x từ 1990 sau Đổi mới + WTO 2007; K-pop, anime, Hollywood phổ biến toàn cầu.</p>
+    </div>
+    <div class="view-card">
+      <div class="label">View B · Body 2 · Erosion</div>
+      <h4>Văn hoá địa phương mất đi — McDonald's thay quán phở; tiếng mẹ đẻ giảm</h4>
+      <p><b>Reason:</b> Cultural homogenisation — global brands lấn át; thế hệ trẻ "Anglo-hoá", quên ngôn ngữ và phong tục.</p>
+      <p class="ex"><b>Example:</b> UNESCO ước tính ~40% ngôn ngữ thế giới có nguy cơ tuyệt chủng; high-street toàn cầu giống nhau.</p>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 24px;"><em class="hi">Opinion balanced (cuối Body 2):</em> Cả 2 view đều có cơ sở; kết quả phụ thuộc chính sách văn hoá địa phương — không phải globalisation tự nó tốt hay xấu.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>31 / 50</span></div>
+</section>
+
+<!-- 32 · STEP 2 INTRO -->
+<section data-label="32 P03 Intro" class="slide">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + announce 2 views + balanced thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + 2 view + balanced.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Globalisation has fostered greater <b>cultural exchange and economic progress</b>, while others argue it has <b>eroded local traditions and identities</b>…"</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"Globalisation is widely portrayed as either a force of economic and cultural enrichment or a corrosive influence that flattens local distinctiveness."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · Hook + 2 views + balanced thesis · 60 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>Globalisation is widely portrayed as either a force of economic and cultural enrichment or a corrosive influence that flattens local distinctiveness. <span class="hl-band">Advocates point to rising prosperity and the cross-pollination of ideas, whereas critics warn of vanishing traditions and homogenised lifestyles. This essay will examine both perspectives and will argue that each contains substantial truth, with the net outcome depending heavily on how local communities choose to respond.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Balanced thesis phải <em class="hi">nêu điều kiện</em> ("depending heavily on…") — không được trống không "it depends".</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>32 / 50</span></div>
+</section>
+
+<!-- 33 · STEP 3 BODY 1 (View A) -->
+<section data-label="33 P03 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Bước 3 · Body 1 · View A</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · View A · progress · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">view A: prosperity + exchange.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>Proponents of globalisation argue that the opening of borders has produced unprecedented prosperity and a rich exchange of cultural goods.</b> Liberalised trade has lifted hundreds of millions out of poverty, while digital connectivity allows young people across continents to share music, cinema and ideas almost instantaneously. <b>Vietnam offers a striking illustration: since the Đổi Mới reforms and subsequent WTO accession in 2007, the country's gross domestic product has risen roughly sevenfold, and its cities now host international festivals, foreign cuisines and creative scenes that would have been unimaginable a generation earlier.</b> From this standpoint, globalisation is less a threat than an opportunity, expanding both wallets and horizons.</p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Proponents of globalisation argue that the opening of borders…"</b> — reporting verb "argue", liệt kê 2 lợi ích (prosperity + exchange).</li>
+    <li><span class="tag">Evidence</span><b>"Vietnam offers a striking illustration… GDP has risen roughly sevenfold…"</b> — gắn với context Việt Nam, có số liệu rõ ràng.</li>
+    <li><span class="tag">Link</span><b>"From this standpoint, globalisation is less a threat than an opportunity…"</b> — câu chốt link evidence trở lại view, dùng "less X than Y" pattern.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>33 / 50</span></div>
+</section>
+
+<!-- 34 · STEP 4 BODY 2 (View B + opinion) -->
+<section data-label="34 P03 Body2" class="slide">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Bước 4 · Body 2 · View B + opinion</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · View B + balanced opinion · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">view B + balanced opinion.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>Critics, however, contend that the same forces have flattened cultural diversity and threatened minority languages, customs and craftsmanship.</b> When global brands dominate high streets and English-language entertainment saturates screens, younger generations can grow up more fluent in international pop culture than in their own ancestral traditions. <b>UNESCO estimates that around forty percent of the world's languages are now endangered, a trend that several scholars attribute in part to the dominance of a small number of global tongues.</b> <b>On balance, I find both arguments compelling: globalisation undeniably brings material gains and intellectual exchange, yet it can dilute identity unless local cultures are actively preserved through education, media and policy.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Critics, however, contend that the same forces have flattened cultural diversity…"</b> — "however" + reporting verb "contend", mở Body 2 chuẩn template.</li>
+    <li><span class="tag">Evidence</span><b>"UNESCO estimates that around forty percent of the world's languages are now endangered…"</b> — institution + số liệu định lượng.</li>
+    <li><span class="tag">Opinion (Link)</span><b>"On balance, I find both arguments compelling… yet it can dilute identity unless…"</b> — balanced opinion với điều kiện ("unless…"), không trống không.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>34 / 50</span></div>
+</section>
+
+<!-- 35 · SAMPLE ESSAY -->
+<section data-label="35 P03 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 270 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>Globalisation is widely portrayed as either a force of economic and cultural enrichment or a corrosive influence that flattens local distinctiveness. Advocates point to rising prosperity and the cross-pollination of ideas, whereas critics warn of vanishing traditions and homogenised lifestyles. This essay will examine both perspectives and will argue that each contains substantial truth, with the net outcome depending heavily on how local communities choose to respond.</p>
+    <p><span class="para-tag">Body 1</span>Proponents of globalisation argue that the opening of borders has produced unprecedented prosperity and a rich exchange of cultural goods. Liberalised trade has lifted hundreds of millions out of poverty, while digital connectivity allows young people across continents to share music, cinema and ideas almost instantaneously. Vietnam offers a striking illustration: since the Đổi Mới reforms and subsequent WTO accession in 2007, the country's gross domestic product has risen roughly sevenfold, and its cities now host international festivals, foreign cuisines and creative scenes that would have been unimaginable a generation earlier.</p>
+    <p><span class="para-tag">Body 2</span>Critics, however, contend that the same forces have flattened cultural diversity and threatened minority languages, customs and craftsmanship. When global brands dominate high streets and English-language entertainment saturates screens, younger generations can grow up more fluent in international pop culture than in their own ancestral traditions. UNESCO estimates that around forty percent of the world's languages are now endangered, a trend several scholars attribute partly to the dominance of a small number of global tongues. On balance, I find both arguments compelling: globalisation undeniably brings material gains, yet it can dilute identity unless local cultures are actively preserved through education, media and policy.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, globalisation is neither a uniform blessing nor an unqualified threat. Its impact, in my view, hinges less on the process itself than on whether each society treats its heritage as worth defending alongside the rewards of openness.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>35 / 50</span></div>
+</section>
+
+<!-- 36 · LANGUAGE ANALYSIS -->
+<section data-label="36 P03 Language" class="slide">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Discussion · balanced</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Globalisation.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Balanced thesis</span><b>"each contains substantial truth, with the net outcome depending heavily on how local communities choose to respond"</b> — balanced KHÔNG trống không; có "depending on X" cụ thể.</li>
+    <li><span class="tag">Reporting verbs</span><b>"Proponents… argue · Critics… contend · scholars attribute · UNESCO estimates"</b> — 4 reporting verbs, có cả định chế (UNESCO) làm reporter.</li>
+    <li><span class="tag">Cultural-specific evidence</span><b>"Đổi Mới reforms · WTO accession in 2007 · GDP risen roughly sevenfold"</b> — gắn evidence với Việt Nam → tạo "voice" cá nhân, nâng Task Response.</li>
+    <li><span class="tag">Conditional closing</span><b>"yet it can dilute identity unless local cultures are actively preserved…"</b> — "unless" pattern báo điều kiện rõ → vẫn cân bằng nhưng có lập trường.</li>
+  </ul>
+
+  <p class="fine">Pattern balanced "<em class="hi">neither X nor Y… its impact hinges less on… than on…</em>" — cấu trúc parallel band 7+ cho Conclusion balanced.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>36 / 50</span></div>
+</section>
+
+<!-- 37 · VOCAB + PARAPHRASE -->
+<section data-label="37 P03 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 03 · Globalisation</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Globalisation</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">globalisation.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">homogenisation <span class="pos">(n.)</span> <span class="ipa">/həˌmɒdʒənaɪˈzeɪʃn/</span></div><div class="vocab-meaning">sự đồng nhất hoá — cultural homogenisation</div></div>
+        <div class="vocab-item"><div class="vocab-word">cross-pollination <span class="pos">(n.)</span> <span class="ipa">/krɒs ˌpɒləˈneɪʃn/</span></div><div class="vocab-meaning">giao thoa, trao đổi — cross-pollination of ideas</div></div>
+        <div class="vocab-item"><div class="vocab-word">heritage <span class="pos">(n.)</span> <span class="ipa">/ˈherɪtɪdʒ/</span></div><div class="vocab-meaning">di sản — cultural heritage</div></div>
+        <div class="vocab-item"><div class="vocab-word">distinctiveness <span class="pos">(n.)</span> <span class="ipa">/dɪˈstɪŋktɪvnəs/</span></div><div class="vocab-meaning">nét đặc trưng — local distinctiveness</div></div>
+        <div class="vocab-item"><div class="vocab-word">corrosive <span class="pos">(adj.)</span> <span class="ipa">/kəˈrəʊsɪv/</span></div><div class="vocab-meaning">làm xói mòn — corrosive influence</div></div>
+        <div class="vocab-item"><div class="vocab-word">liberalised <span class="pos">(adj.)</span> <span class="ipa">/ˈlɪbərəlaɪzd/</span></div><div class="vocab-meaning">được tự do hoá — liberalised trade</div></div>
+        <div class="vocab-item"><div class="vocab-word">endangered <span class="pos">(adj.)</span> <span class="ipa">/ɪnˈdeɪndʒəd/</span></div><div class="vocab-meaning">có nguy cơ biến mất — endangered languages</div></div>
+        <div class="vocab-item"><div class="vocab-word">prosperity <span class="pos">(n.)</span> <span class="ipa">/prɒˈsperəti/</span></div><div class="vocab-meaning">sự thịnh vượng — economic prosperity</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">globalisation has brought progress</span><span class="vi">→ liberalised trade has produced unprecedented prosperity · the opening of borders has yielded gains</span></div>
+        <div class="kp-item"><span class="en">cultural exchange</span><span class="vi">→ cross-pollination of ideas · cultural cross-fertilisation · rich exchange of cultural goods</span></div>
+        <div class="kp-item"><span class="en">it has eroded local traditions</span><span class="vi">→ it has flattened cultural diversity · it has diluted identity · it threatens minority customs</span></div>
+        <div class="kp-item"><span class="en">losing identity</span><span class="vi">→ vanishing traditions · loss of distinctiveness · cultural homogenisation</span></div>
+        <div class="kp-item"><span class="en">both views are right</span><span class="vi">→ each contains substantial truth · both arguments are compelling · neither perspective is wholly mistaken</span></div>
+        <div class="kp-item"><span class="en">it depends on the country</span><span class="vi">→ the net outcome depends on how local communities respond · its impact hinges on cultural policy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 03 · Globalisation</span><span>37 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · PRACTICE 04 — FAMILY (38–46) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 38 · SECTION BREAK -->
+<section data-label="38 P04 · Family" class="slide section-break">
+  <div class="band">
+    <div class="lbl">Practice · 04</div>
+    <div class="n">04</div>
+    <div class="lbl">Family · Lean Extended</div>
+  </div>
+  <div class="content">
+    <p class="eyebrow">Practice 04 · Family</p>
+    <h2><em>Family.</em><br>Extended or<br>nuclear?</h2>
+    <div class="toc">
+      <div>01 · Health — lean government</div>
+      <div>02 · Crime — lean rehabilitation</div>
+      <div>03 · Globalisation — balanced</div>
+      <div class="active">04 · Family — lean extended</div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 · TASK -->
+<section data-label="39 P04 Task" class="slide">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Đề bài + phân tích</span></div>
+  <p class="eyebrow">Task · Discussion · Family structure</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 8px;">
+    <div class="prompt-card">
+      <div class="lbl">Prompt · IELTS Task 2</div>
+      <p class="q">"Some people believe that children grow up better in extended families with grandparents and relatives nearby, while others think the nuclear family is more suitable for modern life. Discuss both views and give your own opinion."</p>
+      <p class="src">Source · Common 2024 topic</p>
+    </div>
+
+    <div>
+      <h2 class="h-sub" style="font-size: 28px; margin-bottom: 16px;">Phân tích 4 câu hỏi</h2>
+      <div class="qtype-grid" style="gap: 18px 40px;">
+        <div class="qtype-item"><div class="n">Q1</div><div><div class="t">Topic?</div><div class="s">Family structure · child development · intergenerational support</div></div></div>
+        <div class="qtype-item"><div class="n">Q2</div><div><div class="t">View A?</div><div class="s"><em class="hi">Extended family</em> — grandparents + relatives nearby</div></div></div>
+        <div class="qtype-item"><div class="n">Q3</div><div><div class="t">View B?</div><div class="s"><em class="hi">Nuclear family</em> — parents + children, mobile, modern</div></div></div>
+        <div class="qtype-item"><div class="n">Q4</div><div><div class="t">My stance?</div><div class="s">Lean A (extended) — phù hợp Á Đông, hỗ trợ tinh thần + kinh tế</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 26px;">Đề <em class="hi">"more suitable for modern life"</em> — gợi ý view B (nuclear) gắn với "modern". Lean A phải phản biện được điểm "modern life" này (gợi ý: extended family vẫn flexible nhờ công nghệ).</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>39 / 50</span></div>
+</section>
+
+<!-- 40 · STEP 1 PLAN -->
+<section data-label="40 P04 Plan" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Bước 1 · Lên dàn ý</span></div>
+  <p class="eyebrow">Step 1 · Plan two views + stance · 5 phút</p>
+  <h2 class="h-section">Dàn ý — <em class="hi">view A · view B · lean A.</em></h2>
+
+  <div class="views">
+    <div class="view-card">
+      <div class="label">View A · Body 1 · Extended family</div>
+      <h4>Ông bà + họ hàng = hỗ trợ tinh thần, văn hoá, kinh tế cho trẻ</h4>
+      <p><b>Reason:</b> Truyền thống + chia sẻ chăm sóc — trẻ học từ nhiều thế hệ; cha mẹ đỡ áp lực childcare.</p>
+      <p class="ex"><b>Example:</b> Việt Nam, Ấn Độ, Ý — ông bà chăm cháu trong khi cha mẹ làm việc; cohesion gia đình cao.</p>
+    </div>
+    <div class="view-card">
+      <div class="label">View B · Body 2 · Nuclear family</div>
+      <h4>Gia đình hạt nhân phù hợp đô thị hoá + cơ động nghề nghiệp</h4>
+      <p><b>Reason:</b> Job mobility — cha mẹ phải di chuyển; nuclear cho privacy + ít xung đột thế hệ.</p>
+      <p class="ex"><b>Example:</b> Đô thị Bắc Mỹ + Tây Âu — chuẩn nuclear; làm việc nhiều thành phố.</p>
+    </div>
+  </div>
+
+  <p class="fine" style="margin-top: 24px;"><em class="hi">Opinion (cuối Body 2):</em> Lean A — emotional &amp; cultural benefits của extended outweigh practical convenience của nuclear, đặc biệt trong xã hội Á Đông.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>40 / 50</span></div>
+</section>
+
+<!-- 41 · STEP 2 INTRO -->
+<section data-label="41 P04 Intro" class="slide">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Bước 2 · Intro + Thesis</span></div>
+  <p class="eyebrow">Step 2 · Paraphrase + announce 2 views + thesis · 5 phút</p>
+  <h2 class="h-section" style="margin-bottom: 28px;">Mở bài — <em class="hi">paraphrase + 2 view + lean A.</em></h2>
+
+  <div class="pp-grid">
+    <div>
+      <p class="mono-label">Câu đề gốc</p>
+      <p style="font-style: italic; color: var(--ink-soft);">"Children grow up better in <b>extended families with grandparents and relatives nearby</b>, while others think the <b>nuclear family is more suitable for modern life</b>…"</p>
+    </div>
+    <div>
+      <p class="mono-label">Paraphrased · Band 6.5</p>
+      <p><b>"Whether children flourish more readily in households shared with grandparents and relatives, or within the tighter circle of a nuclear family, has become a familiar debate in rapidly urbanising societies."</b></p>
+    </div>
+  </div>
+
+  <div style="margin-top: 36px;">
+    <p class="mono-label">Intro hoàn chỉnh · Hook + 2 views + Thesis · 56 từ</p>
+    <div class="essay" style="margin-top: 14px;">
+      <p><span class="para-tag">Intro</span>Whether children flourish more readily in households shared with grandparents and relatives, or within the tighter circle of a nuclear family, has become a familiar debate in rapidly urbanising societies. <span class="hl-band">Some praise the rich support network of the extended model, while others prefer the flexibility offered by smaller units. This essay will weigh both views and will argue that, particularly in cultures with strong intergenerational ties, the extended household remains the more nurturing environment.</span></p>
+    </div>
+  </div>
+
+  <p class="fine">Cụm "<em class="hi">particularly in cultures with strong intergenerational ties</em>" là <em>scope qualifier</em> — giúp Nhựt giữ lập trường mà không tuyệt đối hoá, tăng nuance.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>41 / 50</span></div>
+</section>
+
+<!-- 42 · STEP 3 BODY 1 (View A) -->
+<section data-label="42 P04 Body1" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Bước 3 · Body 1 · View A</span></div>
+  <p class="eyebrow">Step 3 · Body 1 · View A · extended family · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 1 — <em class="hi">view A: support + transmission.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 1</span><b>Supporters of the extended family argue that children raised alongside grandparents, aunts and uncles enjoy a deeper sense of belonging and benefit from a wider pool of caregivers.</b> Multiple adults in the same household typically means that childcare burdens are shared, allowing parents to work without resorting to expensive nurseries. <b>This pattern remains common in countries such as Vietnam, India and Italy, where grandparents routinely look after grandchildren during the working day and pass on language, recipes and family stories that might otherwise fade.</b> Such intergenerational contact arguably equips children with both practical life skills and a richer cultural identity, neither of which is easily replicated in smaller households.</p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Supporters of the extended family argue that children raised alongside…"</b> — reporting verb "argue", liệt kê 2 benefits (belonging + caregivers).</li>
+    <li><span class="tag">Evidence</span><b>"common in countries such as Vietnam, India and Italy, where grandparents routinely look after grandchildren…"</b> — 3 quốc gia làm evidence — bao quát Á + Âu.</li>
+    <li><span class="tag">Link</span><b>"Such intergenerational contact arguably equips children with… neither of which is easily replicated…"</b> — câu chốt với "neither of which" pattern — band 7+ structure.</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>42 / 50</span></div>
+</section>
+
+<!-- 43 · STEP 4 BODY 2 (View B + opinion) -->
+<section data-label="43 P04 Body2" class="slide">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Bước 4 · Body 2 · View B + opinion</span></div>
+  <p class="eyebrow">Step 4 · Body 2 · View B + opinion lean A · 6 phút</p>
+  <h2 class="h-section" style="margin-bottom: 24px;">Body 2 — <em class="hi">view B + opinion câu cuối.</em></h2>
+
+  <div class="essay">
+    <p><span class="para-tag">Body 2</span><b>Conversely, advocates of the nuclear family contend that it is better suited to the demands of modern urban life, where parents frequently relocate for work and value the privacy of a smaller household.</b> They suggest that fewer adults under one roof reduces friction between generations and gives parents clearer authority over how their children are raised. <b>In much of North America and Western Europe, the nuclear household has long been the norm, and many families now stay connected to distant relatives through video calls rather than shared living space.</b> <b>While such practical advantages are real, I find the extended model more enriching overall, since the emotional and cultural inheritance that flows from daily contact with older relatives is difficult to recreate through a screen.</b></p>
+  </div>
+
+  <ul class="annot-list" style="margin-top: 20px;">
+    <li><span class="tag">Point</span><b>"Conversely, advocates of the nuclear family contend that…"</b> — "Conversely" + reporting verb "contend", chuyển sang view B.</li>
+    <li><span class="tag">Evidence</span><b>"In much of North America and Western Europe, the nuclear household has long been the norm…"</b> — vùng địa lý + xu hướng công nghệ (video calls).</li>
+    <li><span class="tag">Opinion (Link)</span><b>"While such practical advantages are real, I find the extended model more enriching…"</b> — "While X, Y" concession + opinion lean A, gắn với điểm modern life (screen).</li>
+  </ul>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>43 / 50</span></div>
+</section>
+
+<!-- 44 · SAMPLE ESSAY -->
+<section data-label="44 P04 Sample" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Bài mẫu hoàn chỉnh</span></div>
+  <p class="eyebrow">Sample Essay · Band 6.5 · 268 words</p>
+  <h2 class="h-section" style="font-size: 44px; margin-bottom: 18px;">Bài mẫu — <em class="hi">ghép 4 đoạn.</em></h2>
+
+  <div class="essay" style="font-size: 21px;">
+    <p><span class="para-tag">Intro</span>Whether children flourish more readily in households shared with grandparents and relatives, or within the tighter circle of a nuclear family, has become a familiar debate in rapidly urbanising societies. Some praise the rich support network of the extended model, while others prefer the flexibility offered by smaller units. This essay will weigh both views and will argue that, particularly in cultures with strong intergenerational ties, the extended household remains the more nurturing environment.</p>
+    <p><span class="para-tag">Body 1</span>Supporters of the extended family argue that children raised alongside grandparents, aunts and uncles enjoy a deeper sense of belonging and benefit from a wider pool of caregivers. Multiple adults in the same household typically means that childcare burdens are shared, allowing parents to work without resorting to expensive nurseries. This pattern remains common in countries such as Vietnam, India and Italy, where grandparents routinely look after grandchildren and pass on language, recipes and family stories that might otherwise fade. Such intergenerational contact arguably equips children with both practical life skills and a richer cultural identity.</p>
+    <p><span class="para-tag">Body 2</span>Conversely, advocates of the nuclear family contend that it is better suited to the demands of modern urban life, where parents frequently relocate for work and value the privacy of a smaller household. They suggest that fewer adults under one roof reduces friction between generations. In much of North America and Western Europe, the nuclear household has long been the norm, and many families now stay connected to distant relatives through video calls. While such practical advantages are real, I find the extended model more enriching overall, since the emotional and cultural inheritance that flows from daily contact with older relatives is difficult to recreate through a screen.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, although the nuclear family fits the mobility of modern careers, the extended household offers a depth of support and cultural transmission that, in my view, ultimately serves children's long-term wellbeing more effectively.</p>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>44 / 50</span></div>
+</section>
+
+<!-- 45 · LANGUAGE ANALYSIS -->
+<section data-label="45 P04 Language" class="slide">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Phân tích ngôn ngữ</span></div>
+  <p class="eyebrow">Language analysis · Discussion · lean A</p>
+  <h2 class="h-section">Bốn kỹ thuật — <em class="hi">tháo từ bài Family.</em></h2>
+
+  <ul class="annot-list">
+    <li><span class="tag">Scope qualifier</span><b>"particularly in cultures with strong intergenerational ties"</b> — giới hạn lập trường để tránh tuyệt đối hoá. Hữu dụng cho mọi đề "modern vs traditional".</li>
+    <li><span class="tag">Reporting verbs</span><b>"Supporters… argue · advocates… contend · They suggest · I find"</b> — 4 reporting verbs, có cả tone của bản thân ("I find") ở câu cuối.</li>
+    <li><span class="tag">Concession bridge</span><b>"While such practical advantages are real, I find the extended model more enriching…"</b> — concession trước khi defend, tone tôn trọng đối lập.</li>
+    <li><span class="tag">Cultural anchor</span><b>"Vietnam, India and Italy · North America and Western Europe"</b> — 2 nhóm địa lý cho 2 view → cân bằng, không phiến diện.</li>
+  </ul>
+
+  <p class="fine">Cấu trúc "<em class="hi">A is difficult to recreate through B</em>" là <em>limit comparison</em> — đối lập 2 phương tiện (face-to-face vs screen), band 6.5+ structure.</p>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>45 / 50</span></div>
+</section>
+
+<!-- 46 · VOCAB + PARAPHRASE -->
+<section data-label="46 P04 Vocab" class="slide slide--paper">
+  <div class="run-header"><span>Practice 04 · Family</span><span class="rule"></span><span>Từ vựng + paraphrase</span></div>
+  <p class="eyebrow">Vocabulary &amp; Paraphrase · Family</p>
+  <h2 class="h-section" style="font-size: 40px; margin-bottom: 18px;">Tám từ · sáu paraphrase — <em class="hi">family.</em></h2>
+
+  <div class="vc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px;">
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Vocabulary (8)</div>
+      <div class="vocab-grid compact" style="grid-template-columns: 1fr;">
+        <div class="vocab-item"><div class="vocab-word">extended family <span class="pos">(n.)</span> <span class="ipa">/ɪkˈstendɪd ˈfæməli/</span></div><div class="vocab-meaning">gia đình mở rộng — live in an extended family</div></div>
+        <div class="vocab-item"><div class="vocab-word">nuclear family <span class="pos">(n.)</span> <span class="ipa">/ˈnjuːkliə ˈfæməli/</span></div><div class="vocab-meaning">gia đình hạt nhân — the nuclear household</div></div>
+        <div class="vocab-item"><div class="vocab-word">intergenerational <span class="pos">(adj.)</span> <span class="ipa">/ˌɪntəˌdʒenəˈreɪʃənl/</span></div><div class="vocab-meaning">liên thế hệ — intergenerational ties</div></div>
+        <div class="vocab-item"><div class="vocab-word">belonging <span class="pos">(n.)</span> <span class="ipa">/bɪˈlɒŋɪŋ/</span></div><div class="vocab-meaning">sự thuộc về — a deep sense of belonging</div></div>
+        <div class="vocab-item"><div class="vocab-word">caregiver <span class="pos">(n.)</span> <span class="ipa">/ˈkeəɡɪvə/</span></div><div class="vocab-meaning">người chăm sóc — primary caregiver</div></div>
+        <div class="vocab-item"><div class="vocab-word">relocate <span class="pos">(v.)</span> <span class="ipa">/ˌriːləʊˈkeɪt/</span></div><div class="vocab-meaning">tái định cư — relocate for work</div></div>
+        <div class="vocab-item"><div class="vocab-word">friction <span class="pos">(n.)</span> <span class="ipa">/ˈfrɪkʃn/</span></div><div class="vocab-meaning">va chạm, xung đột — reduce friction between generations</div></div>
+        <div class="vocab-item"><div class="vocab-word">inheritance <span class="pos">(n.)</span> <span class="ipa">/ɪnˈherɪtəns/</span></div><div class="vocab-meaning">sự kế thừa — cultural inheritance</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-title" style="font-family: var(--mono); font-size: 20px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--accent);">Paraphrase pairs (6)</div>
+      <div class="kp-grid" style="grid-template-columns: 1fr;">
+        <div class="kp-item"><span class="en">children grow up better</span><span class="vi">→ children flourish more readily · enjoy a deeper sense of belonging · long-term wellbeing</span></div>
+        <div class="kp-item"><span class="en">extended families</span><span class="vi">→ households shared with grandparents and relatives · multigenerational households</span></div>
+        <div class="kp-item"><span class="en">nuclear family</span><span class="vi">→ tighter circle of a nuclear family · smaller households · the nuclear unit</span></div>
+        <div class="kp-item"><span class="en">grandparents help take care</span><span class="vi">→ a wider pool of caregivers · childcare burdens are shared · grandparents routinely look after grandchildren</span></div>
+        <div class="kp-item"><span class="en">it is better for modern life</span><span class="vi">→ better suited to the demands of modern urban life · matches job mobility</span></div>
+        <div class="kp-item"><span class="en">I prefer extended family</span><span class="vi">→ I find the extended model more enriching · the extended household remains the more nurturing environment</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Practice 04 · Family</span><span>46 / 50</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · WRAP-UP (47–50) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 47 · PATTERN RECAP -->
+<section data-label="47 Pattern Recap" class="slide">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Pattern recap</span></div>
+  <p class="eyebrow">Pattern Recap · 4 stances + 1 structure</p>
+  <h2 class="h-section">Bốn bài — <em class="hi">một khung, ba lập trường.</em></h2>
+
+  <table class="step-table">
+    <thead><tr><th>Practice</th><th>Topic</th><th>Stance</th><th>Key opinion phrase</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td class="feat">Health — free vs paid</td><td>Lean A · government</td><td>"I find the equity case stronger, because…"</td></tr>
+      <tr><td>02</td><td class="feat">Crime — punish vs rehab</td><td>Lean B · rehabilitation</td><td>"On balance, I find this argument more persuasive…"</td></tr>
+      <tr><td>03</td><td class="feat">Globalisation — progress vs erosion</td><td>Balanced · conditional</td><td>"I find both arguments compelling… unless local cultures are preserved"</td></tr>
+      <tr><td>04</td><td class="feat">Family — extended vs nuclear</td><td>Lean A · extended</td><td>"While such practical advantages are real, I find the extended model more enriching…"</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine" style="margin-top: 24px;">Khung 4 đoạn <em class="hi">không thay đổi</em> giữa 4 bài — chỉ thay topic + stance + evidence. Học pattern một lần, áp dụng cho mọi đề Discussion.</p>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · Discussion</span><span>47 / 50</span></div>
+</section>
+
+<!-- 48 · MASTER PHRASEBANK -->
+<section data-label="48 Master Phrasebank" class="slide slide--paper">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Master phrasebank</span></div>
+  <p class="eyebrow">Master Phrasebank · Discussion essay</p>
+  <h2 class="h-section" style="font-size: 44px;">Phrasebank — <em class="hi">học thuộc 4 cụm cho mỗi giai đoạn.</em></h2>
+
+  <div class="two-col" style="gap: 60px;">
+    <div class="col-card">
+      <p class="mono-label">Intro · 2 views + thesis</p>
+      <h3 style="font-size: 30px; margin-bottom: 14px;">Mở bài</h3>
+      <ul>
+        <li>"X is a debate that divides modern societies."</li>
+        <li>"There is a long-standing disagreement over whether…"</li>
+        <li>"X is widely portrayed as either A or B."</li>
+        <li>"Whether children flourish in A, or within B, has become a familiar debate."</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Body 1 · report view A</p>
+      <h3 style="font-size: 30px; margin-bottom: 14px;">Mở Body 1</h3>
+      <ul>
+        <li>"Proponents of X argue that…"</li>
+        <li>"Supporters of this view contend that…"</li>
+        <li>"Advocates of A maintain that…"</li>
+        <li>"Those in favour of X point to…"</li>
+      </ul>
+    </div>
+    <div class="col-card" style="margin-top: 24px;">
+      <p class="mono-label">Body 2 · report view B + opinion</p>
+      <h3 style="font-size: 30px; margin-bottom: 14px;">Mở Body 2 + chốt opinion</h3>
+      <ul>
+        <li>"On the other hand, supporters of B contend that…"</li>
+        <li>"Conversely, advocates of B maintain that…"</li>
+        <li>"Critics, however, argue that…"</li>
+        <li>Opinion: "On balance, I find… more persuasive because…"</li>
+      </ul>
+    </div>
+    <div class="col-card" style="margin-top: 24px;">
+      <p class="mono-label">Conclusion · restate + reaffirm</p>
+      <h3 style="font-size: 30px; margin-bottom: 14px;">Kết bài</h3>
+      <ul>
+        <li>"In conclusion, while A carries real benefits, B prevails because…"</li>
+        <li>"In conclusion, X is neither a uniform blessing nor an unqualified threat."</li>
+        <li>"The most defensible position, in my view, treats Y — not Z — as central."</li>
+        <li>"Its impact, in my view, hinges less on X than on Y."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · Discussion</span><span>48 / 50</span></div>
+</section>
+
+<!-- 49 · PITFALLS -->
+<section data-label="49 Pitfalls" class="slide">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Pitfalls · sai phổ biến</span></div>
+  <p class="eyebrow">Pitfalls · Top 4 mistakes</p>
+  <h2 class="h-section">Bốn lỗi — <em class="hi">tránh là lên 1 band.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Chỉ trình bày 1 phe</h4>
+        <p>Đề có 2 view nhưng chỉ viết 1 = trừ Task Response 1 band. Body 1 view A, Body 2 view B — cân bằng độ dài.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Không nêu opinion rõ ràng</h4>
+        <p>Discussion <em>luôn</em> yêu cầu "give your own opinion". Opinion phải xuất hiện ở Intro thesis + câu cuối Body 2 + Conclusion. Trống = trừ TR.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Opinion mâu thuẫn Intro ↔ Conclusion</h4>
+        <p>Intro lean A nhưng Conclusion nói "both are equally good". Trừ CC (Coherence). Quy tắc: nhất quán suốt 4 đoạn.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>Lặp "say / argue / think" 5+ lần</h4>
+        <p>Reporting verb không đa dạng → trừ Lexical Resource. Dùng phrasebank: <em>argue · contend · maintain · suggest · point to · cite</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · Discussion</span><span>49 / 50</span></div>
+</section>
+
+<!-- 50 · HOMEWORK + END -->
+<section data-label="50 Homework" class="slide slide--accent">
+  <div class="run-header" style="color: rgba(255,255,255,0.7);"><span>Wrap-up</span><span class="rule" style="background: rgba(255,255,255,0.3);"></span><span>Homework</span></div>
+  <p class="eyebrow" style="color: rgba(255,255,255,0.9);">Homework &amp; preview L07</p>
+  <h2 class="h-section" style="color: #fff;">Bài về nhà — <em style="color: rgba(255,255,255,0.85); font-style: italic; font-weight: 400;">hai đề Discussion.</em></h2>
+
+  <div class="take" style="margin-top: 8px;">
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">HW 01 · Education</div>
+      <div class="v" style="color: #fff;">"Some believe university education should focus on academic subjects, while others think vocational training is more useful. Discuss both views and give your own opinion." — 270w, Band 6.5 target, nộp trước buổi sau.</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">HW 02 · Environment</div>
+      <div class="v" style="color: #fff;">"Some argue individuals are responsible for protecting the environment, while others believe governments should lead. Discuss both views and give your own opinion." — dùng phrasebank L06.</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">Self-check</div>
+      <div class="v" style="color: #fff;">Đếm reporting verbs — có ≥ 4 khác nhau? Intro &amp; Conclusion có cùng opinion? Body 1 ≈ Body 2 độ dài?</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">Preview L07</div>
+      <div class="v" style="color: #fff;">Problem–Solution essay. 4 prompts: traffic, pollution, obesity, youth unemployment. Cấu trúc 2 đoạn: causes + solutions.</div>
+    </div>
+  </div>
+
+  <p class="fine" style="color: rgba(255,255,255,0.65); margin-top: 36px;">Nộp bài qua Drive folder <em>[IELTS 1-1]-Trang-Hoang-Nhut / Lesson 6</em>. Feedback trong 48h.</p>
+
+  <div class="run-footer" style="color: rgba(255,255,255,0.7);"><span class="footer-topic">Discussion · Lesson 06</span><span>50 / 50</span></div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Chữa bài Writing · Nhựt — Family: Childcare vs Grandparents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ CHỮA BÀI — FEEDBACK DECK additions ═════════ */
+
+  /* Prompt card + anatomy (re-used from Topic Family) */
+  .prompt-card { background: var(--paper); border: 1px solid var(--rule-soft); border-left: 6px solid var(--accent); padding: 26px 30px; }
+  .prompt-card .lbl { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 10px; }
+  .prompt-card .q { font-family: var(--display); font-size: 25px; line-height: 1.45; color: var(--ink); font-style: italic; margin: 0; }
+  .prompt-card .src { font-family: var(--mono); font-size: 15px; color: var(--ink-muted); margin-top: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .anatomy { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .anatomy th, .anatomy td { padding: 16px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 22px; vertical-align: top; }
+  .anatomy thead th { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; border-bottom: 3px solid var(--accent); }
+  .anatomy tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; width: 240px; }
+  .anatomy tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); }
+  .anatomy tbody td em.k { background: rgba(200,32,47,0.14); padding: 1px 6px; font-style: normal; font-weight: 600; }
+
+  /* Essay block — original + corrected */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 28px 36px; font-family: var(--display); font-size: 23px; line-height: 1.6; color: var(--ink); }
+  .essay.small { font-size: 21px; line-height: 1.5; }
+  .essay p { margin: 0 0 14px; }
+  .essay p:last-child { margin-bottom: 0; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .err { text-decoration: underline wavy var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; background: rgba(200,32,47,0.06); padding: 0 2px; }
+  .essay .errno { color: var(--accent); font-weight: 700; font-family: var(--mono); font-size: 0.62em; vertical-align: super; margin: 0 2px; }
+  .essay .good { background: rgba(200,32,47,0.12); padding: 1px 3px; font-weight: 600; }
+
+  /* Band score table */
+  .band { display: grid; grid-template-columns: 1fr 150px 2.4fr; border-top: 3px solid var(--accent); margin-top: 10px; }
+  .band > div { padding: 20px 22px; border-bottom: 1px solid var(--rule-soft); }
+  .band .h { font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 14px; }
+  .band .crit { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--ink); }
+  .band .crit span { display: block; font-family: var(--mono); font-size: 14px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; margin-top: 4px; }
+  .band .score { font-family: var(--display); font-size: 40px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .band .why { font-size: 21px; line-height: 1.45; color: var(--ink-soft); }
+  .band .overall { background: var(--accent); color: #fff; }
+  .band .overall .crit, .band .overall .score, .band .overall .why { color: #fff; }
+  .band .overall .crit span { color: rgba(255,255,255,0.75); }
+
+  /* Before / After compare */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 14px; }
+  .compare .col { background: var(--paper); padding: 22px 26px; border-left: 4px solid var(--rule-soft); }
+  .compare .col.after { border-left-color: var(--accent); }
+  .compare .col .badge { font-family: var(--mono); font-size: 14px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; }
+  .compare .col.after .badge { color: var(--accent); }
+  .compare .col p { font-family: var(--display); font-size: 22px; line-height: 1.5; color: var(--ink); margin: 0; }
+  .compare .col .swap { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+  .compare .col .gone { background: rgba(150,150,150,0.18); text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.4); }
+  .compare .why { grid-column: 1 / -1; font-family: var(--sans); font-size: 20px; color: var(--ink-soft); line-height: 1.45; padding-top: 6px; }
+  .compare .why b { color: var(--accent); font-weight: 600; }
+
+  /* Error stack — one row per fix */
+  .errstack { display: grid; gap: 22px; margin-top: 8px; }
+  .errow { display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding-top: 20px; border-top: 1px solid var(--rule-soft); }
+  .errow .no { font-family: var(--display); font-size: 44px; color: var(--accent); font-weight: 800; line-height: 0.9; }
+  .errow .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .errow .ba .badge { font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--ink-muted); margin-bottom: 6px; }
+  .errow .ba.after .badge { color: var(--accent); }
+  .errow .ba p { font-family: var(--display); font-size: 21px; line-height: 1.45; margin: 0; color: var(--ink); }
+  .errow .ba .gone { background: rgba(150,150,150,0.18); text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.4); }
+  .errow .ba .swap { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+  .errow .tag { font-family: var(--mono); font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-top: 8px; }
+
+  /* Vocab ladder Band 5 → 6 → 7 */
+  .ladder { display: grid; grid-template-columns: 230px 1fr 1fr 1.1fr; gap: 0; margin-top: 12px; border-top: 3px solid var(--accent); }
+  .ladder .h { font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; padding: 16px 18px; border-bottom: 3px solid var(--accent); border-right: 1px solid var(--rule-soft); }
+  .ladder .h:last-child { border-right: 0; }
+  .ladder .h.lbl { color: var(--ink-muted); }
+  .ladder .h.b5 { color: var(--ink-muted); }
+  .ladder .h.b6 { color: var(--ink); }
+  .ladder .h.b7 { color: var(--accent); }
+  .ladder .concept { font-family: var(--display); font-size: 21px; font-weight: 600; color: var(--ink); padding: 18px 18px 18px 0; border-bottom: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); }
+  .ladder .concept .vi { display: block; font-size: 15px; color: var(--ink-muted); font-style: italic; font-weight: 400; margin-top: 4px; }
+  .ladder .cell { padding: 18px; border-bottom: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); font-size: 20px; line-height: 1.4; }
+  .ladder .cell:last-child { border-right: 0; }
+  .ladder .cell.b5 { color: var(--ink-muted); font-family: var(--display); }
+  .ladder .cell.b6 { color: var(--ink-soft); font-family: var(--display); }
+  .ladder .cell.b7 { color: var(--ink); font-weight: 600; font-family: var(--display); }
+
+  /* Vocab upgrade table — phrases pulled straight from the essay */
+  .upg { display: grid; grid-template-columns: 1fr 36px 1.25fr 110px; align-items: center; border-top: 3px solid var(--accent); margin-top: 12px; }
+  .upg > div { padding: 16px 16px; border-bottom: 1px solid var(--rule-soft); }
+  .upg .h { font-family: var(--mono); font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent); border-bottom: 3px solid var(--accent); padding-top: 4px; padding-bottom: 14px; }
+  .upg .h.score { text-align: right; }
+  .upg .cur { font-family: var(--display); font-size: 23px; color: var(--ink-muted); text-decoration: line-through; text-decoration-color: rgba(150,150,150,0.55); }
+  .upg .arr { font-family: var(--mono); color: var(--accent); font-weight: 700; font-size: 22px; text-align: center; padding-left: 0; padding-right: 0; }
+  .upg .bet { font-family: var(--display); font-size: 24px; font-weight: 600; color: var(--ink); }
+  .upg .bnd { font-family: var(--display); font-size: 26px; font-weight: 800; color: var(--accent); text-align: right; }
+
+  /* Phrasebank tiles */
+  .pbank { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 8px; }
+  .pbank .tile { background: var(--paper); border-top: 4px solid var(--accent); padding: 22px 26px 26px; }
+  .pbank .tile .k { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+  .pbank .tile ul { list-style: none; padding: 0; margin: 0; }
+  .pbank .tile li { font-family: var(--display); font-size: 22px; line-height: 1.4; padding: 9px 0 9px 24px; position: relative; color: var(--ink); border-top: 1px dashed var(--rule-soft); }
+  .pbank .tile li:first-child { border-top: 0; }
+  .pbank .tile li::before { content: "“"; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-family: var(--display); }
+
+  /* Sharpening moves */
+  .moves { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 10px; }
+  .move { border-top: 4px solid var(--accent); padding: 20px 24px 24px; background: var(--paper); }
+  .move .n { font-family: var(--mono); font-size: 15px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; }
+  .move h4 { font-family: var(--display); font-size: 27px; margin: 8px 0 12px; line-height: 1.2; }
+  .move p { font-size: 19px; color: var(--ink-soft); line-height: 1.45; margin: 0 0 12px; }
+  .move .ex { font-family: var(--mono); font-size: 16px; color: var(--ink-muted); padding-top: 10px; border-top: 1px dashed var(--rule-soft); margin-top: 10px; line-height: 1.4; }
+
+  .fine { font-family: var(--mono); font-size: 20px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 28px; }
+  .lead-note { font-size: 26px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 28px; max-width: 1400px; }
+  .num-list.tight li { padding: 16px 0 !important; }
+  .num-list.tight .step-title { font-size: 28px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 22px !important; line-height: 1.4 !important; }
+  .num-list.tight li::before { font-size: 24px !important; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 01 · TITLE -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 2 · Chữa bài</div>
+    <h1 class="main">Chữa bài.<br><em>Family — Childcare vs Grandparents.</em></h1>
+    <div class="mark">Học viên: Trang Hoàng Nhựt · Discuss both views + opinion</div>
+  </div>
+  <div class="right">
+    <div class="mark">Tổng quan buổi chữa</div>
+    <dl class="meta-grid">
+      <div><dt>Dạng đề</dt><dd>Discuss both views</dd></div>
+      <div><dt>Bài hiện tại</dt><dd>~180 từ · Band ~5.0</dd></div>
+      <div><dt>Mục tiêu</dt><dd>250+ từ · Band 6.0</dd></div>
+      <div><dt>Trọng tâm</dt><dd>Độ dài · Cấu trúc · Câu cụt</dd></div>
+      <div><dt>Kết quả</dt><dd>Bài sửa hoàn chỉnh + nâng cấp</dd></div>
+      <div><dt>Lỗi lặp</dt><dd>Hoà hợp chủ–vị · gerund</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 02 · ĐỀ BÀI & PHÂN TÍCH DẠNG -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="02 Đề bài" class="slide">
+  <p class="eyebrow">Đề bài · Đọc kỹ trước khi chấm</p>
+  <h2 class="h-section">Đề yêu cầu <em class="hi">ba</em> nhiệm vụ, không phải hai.</h2>
+  <div class="prompt-card">
+    <div class="lbl">IELTS Writing Task 2 · Topic Family</div>
+    <p class="q">"Some people think that childcare centres provide the best services for children of preschool age. Other working parents think that family members such as grandparents will be better carers for their kids. <em>Discuss both views and give your opinion.</em>"</p>
+    <div class="src">⚠ Đề trong ảnh PREP (“spend time away from family”) là đề KHÁC — bài làm trả lời đúng đề này.</div>
+  </div>
+  <table class="anatomy">
+    <thead><tr><th>Thành phần</th><th>Yêu cầu thực sự</th></tr></thead>
+    <tbody>
+      <tr><td>Dạng câu hỏi</td><td class="feat"><em class="k">Discuss both views</em> + <em class="k">give your opinion</em> — KHÁC với Agree/Disagree.</td></tr>
+      <tr><td>Nhiệm vụ 1</td><td class="feat">View A: vì sao <em class="k">childcare centres</em> tốt nhất.</td></tr>
+      <tr><td>Nhiệm vụ 2</td><td class="feat">View B: vì sao <em class="k">grandparents</em> là người chăm tốt hơn.</td></tr>
+      <tr><td>Nhiệm vụ 3</td><td class="feat">Opinion của người viết — phải <em class="k">nêu rõ + phát triển</em>, không chỉ nhắc 1 câu.</td></tr>
+      <tr><td>Định mức</td><td class="feat">Tối thiểu <em class="k">250 từ</em> · ~40 phút.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 03 · BÀI GỐC CỦA NHỰT -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="03 Bài gốc" class="slide slide--paper">
+  <p class="eyebrow">Bài làm của Nhựt · ~180 từ · 5 lỗi được đánh dấu</p>
+  <div class="essay small">
+    <p><span class="para-tag">Mở bài</span>While childcare centers provide educational and social benefits, grandparents offer emotional support and family values. I believe children benefit most when both forms of care are combined.</p>
+    <p><span class="para-tag">Thân 1</span>Childcare centers can contribute significantly to children's overall development. <span class="err">Since it provide children with the structured learning environment.<span class="errno">①</span></span> Trained caregivers can help young children develop language and thinking skills. Moreover, children have opportunities to interact with peers from an early age, which improves their communication abilities.</p>
+    <p><span class="para-tag">Thân 2</span>On the other hand, grandparents can offer emotional support that childcare centers may lack. <span class="err">Especially,<span class="errno">②</span></span> grandparents give children love, care and attention. <span class="err">That make children understand about feel safer<span class="errno">③</span></span> and more comfortable at home. Additionally, grandparents tend to share life experiences <span class="err">by spend time telling stories.<span class="errno">④</span></span> <span class="err">As well as teaching children how to respect others.<span class="errno">⑤</span></span></p>
+    <p><span class="para-tag">Kết bài</span>Children can gain educational benefits from childcare centers and emotional support from grandparents, so combining both forms of care is ideal</p>
+  </div>
+  <p class="fine">Nhận xét nhanh: ý tưởng tốt và đúng đề — vấn đề nằm ở độ dài, cấu trúc và độ chính xác của câu, không phải nội dung.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 04 · ĐÁNH GIÁ BAND -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="04 Đánh giá band" class="slide">
+  <p class="eyebrow">Đánh giá theo 4 tiêu chí</p>
+  <h2 class="h-section" style="margin-bottom:24px;">Band tổng <em class="hi">~5.0</em> — vì sao?</h2>
+  <div class="band">
+    <div class="h">Tiêu chí</div><div class="h">Band</div><div class="h">Vì sao</div>
+
+    <div class="crit">Task Response<span>Trả lời đề</span></div>
+    <div class="score">5.0</div>
+    <div class="why">Đúng đề nhưng <b>dưới 250 từ</b> → bị trừ tự động. Opinion “kết hợp cả hai” chưa thành một đoạn; ví dụ/chi tiết còn mỏng.</div>
+
+    <div class="crit">Coherence &amp; Cohesion<span>Mạch &amp; liên kết</span></div>
+    <div class="score">5.0</div>
+    <div class="why">Bố cục 4 đoạn rõ ràng — điểm tốt. Nhưng nhiều <b>câu cụt (fragment)</b> làm đứt mạch; liên từ cơ bản và “Especially” dùng sai.</div>
+
+    <div class="crit">Lexical Resource<span>Từ vựng</span></div>
+    <div class="score">5–6</div>
+    <div class="why">Cụm chủ đề ổn (<i>structured learning environment, emotional support, life experiences</i>) nhưng phạm vi hẹp, lặp “children/childcare centers”.</div>
+
+    <div class="crit">Grammar<span>Ngữ pháp</span></div>
+    <div class="score">5.0</div>
+    <div class="why">Lỗi cơ bản lặp lại: hoà hợp chủ–vị (<i>it provide, That make</i>), gerund (<i>by spend</i>), mạo từ, câu cụt.</div>
+
+    <div class="crit overall" style="grid-column:1;">Overall</div>
+    <div class="score overall" style="grid-column:2;">5.0</div>
+    <div class="why overall" style="grid-column:3;">Sửa 2 việc lớn (độ dài + câu cụt) là lên được <b>6.0</b> ngay — nội dung đã sẵn.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 05 · VẤN ĐỀ #1 — ĐỘ DÀI -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="05 Vấn đề 1 · Độ dài" class="slide">
+  <p class="eyebrow">Vấn đề lớn #1 · Quan trọng nhất</p>
+  <h2 class="h-section">Bài chỉ <em class="hi">~180 / 250</em> từ.</h2>
+  <div class="big-fig" style="margin-bottom:48px;">
+    <div class="num">180</div>
+    <div class="lbl">từ — thiếu <b style="color:var(--accent)">~70 từ</b> so với mức tối thiểu. Giám khảo trừ điểm Task Response <b>ngay lập tức</b>, dù tiếng Anh có hay đến đâu.</div>
+  </div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="mono-label">Vì sao thiếu</div>
+      <ul>
+        <li>Thân bài chỉ 4–5 câu, mỗi ý nêu ra rồi dừng, chưa giải thích “nên sao”.</li>
+        <li>Không có ví dụ cụ thể (for example / for instance).</li>
+        <li>Opinion “kết hợp cả hai” chưa được bàn — đáng lẽ là một phần riêng.</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <div class="mono-label">Cách bù đủ từ</div>
+      <ul>
+        <li>Mỗi thân bài theo <b>PEE</b>: Point → Explain → Example.</li>
+        <li>Thêm 1 câu “kết quả/hệ quả” sau mỗi ý: <i>which means…, so that…</i></li>
+        <li>Thêm 1 ví dụ thật cho mỗi đoạn → +25–30 từ/đoạn.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 06 · VẤN ĐỀ #2 — CẤU TRÚC -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="06 Vấn đề 2 · Cấu trúc" class="slide slide--paper">
+  <p class="eyebrow">Vấn đề lớn #2 · Cấu trúc Discuss-both-views</p>
+  <h2 class="h-section" style="margin-bottom:24px;">Opinion phải <em class="hi">được phát triển</em>, không chỉ nhắc.</h2>
+  <p class="lead-note">Bài đã có bố cục 4 đoạn rất đúng. Chỉ cần làm rõ: opinion (“kết hợp cả hai”) hiện chỉ xuất hiện ở mở &amp; kết. Hãy gài nó vào <b>kết bài</b> như một lựa chọn có lý do, để giám khảo thấy quan điểm được bảo vệ.</p>
+  <div class="compare">
+    <div class="col">
+      <div class="badge">Cấu trúc hiện tại</div>
+      <p>Mở bài (có thesis) → Thân 1 childcare → Thân 2 grandparents → Kết: <span class="gone">nhắc lại “combine both” 1 câu</span>.</p>
+    </div>
+    <div class="col after">
+      <div class="badge">Cấu trúc nên có</div>
+      <p>Mở bài (paraphrase + thesis rõ) → Thân 1 View A <span class="swap">+ ví dụ</span> → Thân 2 View B <span class="swap">+ ví dụ</span> → Kết: tóm 2 view <span class="swap">+ nêu &amp; lý giải opinion “kết hợp”</span>.</p>
+    </div>
+    <div class="why"><b>Mẹo:</b> với “discuss both views + give your opinion”, giữ mỗi view một đoạn, rồi để opinion dẫn dắt phần kết — đây là cách an toàn nhất cho Band 6.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 07 · LỖI CÂU 1–3 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="07 Lỗi câu 1–3" class="slide">
+  <p class="eyebrow">Sửa câu · Lỗi ① ② ③</p>
+  <h2 class="h-section" style="margin-bottom:18px;">Câu cụt &amp; hoà hợp chủ–vị</h2>
+  <div class="errstack">
+    <div class="errow">
+      <div class="no">①</div>
+      <div class="pair">
+        <div class="ba before"><div class="badge">Bài gốc</div><p>Childcare centers can contribute… development. <span class="gone">Since it provide children with the structured learning environment.</span></p></div>
+        <div class="ba after"><div class="badge">Sửa</div><p>Childcare centres can contribute… development <span class="swap">because they provide a structured learning environment.</span></p></div>
+        <div class="tag" style="grid-column:1/-1;">Câu cụt → nối bằng “because” · it → they · the → a</div>
+      </div>
+    </div>
+    <div class="errow">
+      <div class="no">②</div>
+      <div class="pair">
+        <div class="ba before"><div class="badge">Bài gốc</div><p><span class="gone">Especially,</span> grandparents give children love, care and attention.</p></div>
+        <div class="ba after"><div class="badge">Sửa</div><p><span class="swap">In particular,</span> grandparents give children the love, care and attention they need.</p></div>
+        <div class="tag" style="grid-column:1/-1;">“Especially” không mở đầu câu kiểu này → dùng “In particular”</div>
+      </div>
+    </div>
+    <div class="errow">
+      <div class="no">③</div>
+      <div class="pair">
+        <div class="ba before"><div class="badge">Bài gốc</div><p><span class="gone">That make children understand about feel safer</span> and more comfortable at home.</p></div>
+        <div class="ba after"><div class="badge">Sửa</div><p><span class="swap">This makes children feel safer</span> and more comfortable at home.</p></div>
+        <div class="tag" style="grid-column:1/-1;">That → This · make → makes · bỏ “understand about” thừa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 08 · LỖI CÂU 4–5 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="08 Lỗi câu 4–5" class="slide">
+  <p class="eyebrow">Sửa câu · Lỗi ④ ⑤</p>
+  <h2 class="h-section" style="margin-bottom:18px;">Gerund sau giới từ &amp; câu cụt nối</h2>
+  <div class="errstack">
+    <div class="errow">
+      <div class="no">④</div>
+      <div class="pair">
+        <div class="ba before"><div class="badge">Bài gốc</div><p>grandparents tend to share life experiences <span class="gone">by spend time</span> telling stories.</p></div>
+        <div class="ba after"><div class="badge">Sửa</div><p>grandparents share life experiences <span class="swap">by spending time</span> telling stories.</p></div>
+        <div class="tag" style="grid-column:1/-1;">Sau giới từ “by” → động từ phải ở dạng <b>-ing</b>: spend → spending</div>
+      </div>
+    </div>
+    <div class="errow">
+      <div class="no">⑤</div>
+      <div class="pair">
+        <div class="ba before"><div class="badge">Bài gốc</div><p>…by spend time telling stories. <span class="gone">As well as teaching children how to respect others.</span></p></div>
+        <div class="ba after"><div class="badge">Sửa</div><p>…by spending time telling stories <span class="swap">and teaching them to respect others.</span></p></div>
+        <div class="tag" style="grid-column:1/-1;">“As well as…” đứng riêng = câu cụt → nối vào câu trước bằng “and”</div>
+      </div>
+    </div>
+  </div>
+  <p class="fine">Quy tắc nhớ: một câu hoàn chỉnh phải có <b>chủ ngữ + động từ chính</b>. “Since…”, “As well as…”, “Because…” đứng một mình → luôn là câu cụt.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 09 · BÀI ĐÃ SỬA -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="09 Bài đã sửa" class="slide slide--paper">
+  <p class="eyebrow">Bài đã sửa hoàn chỉnh · 261 từ · Band ~6.0</p>
+  <div class="essay small">
+    <p><span class="para-tag">Mở bài</span>It is sometimes argued that childcare centres provide the best care for children of preschool age, while others believe that family members such as grandparents make better carers. In my view, although both options have clear benefits, combining the two serves young children best.</p>
+    <p><span class="para-tag">Thân 1 · View A</span>On the one hand, childcare centres can contribute significantly to a child's overall development because they provide a structured learning environment. Trained caregivers know how to help young children develop their language and thinking skills through carefully planned activities. In addition, attending a centre allows children to interact with peers from an early age, which improves their communication and social abilities. A child who plays and shares with classmates every day, for instance, usually finds it easier to settle in when starting primary school.</p>
+    <p><span class="para-tag">Thân 2 · View B</span>On the other hand, grandparents can offer the emotional support that a busy centre sometimes lacks. Because they love their grandchildren deeply, they give them the patient, one-to-one attention that makes children feel safe and comfortable at home. Moreover, grandparents often pass on valuable life experiences by spending time telling stories and teaching them to respect others, which strengthens family values across generations. A grandmother who cooks with her grandchild, for example, is quietly teaching both a useful skill and a sense of belonging.</p>
+    <p><span class="para-tag">Kết bài</span>In conclusion, while childcare centres clearly develop a child's academic and social skills and grandparents provide love and moral guidance, I believe the ideal approach is to combine both forms of care, so that children can enjoy the educational advantages of one and the emotional warmth of the other.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 10 · NÂNG CẤP TỪ VỰNG · Phần 1 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="10 Nâng cấp từ vựng 1" class="slide">
+  <p class="eyebrow">Nâng cấp từ vựng · Lấy thẳng từ bài Nhựt · 1/2</p>
+  <h2 class="h-section" style="margin-bottom:8px;">Mở bài &amp; Thân 1 — Childcare</h2>
+  <div class="upg">
+    <div class="h">Hiện tại</div><div class="h"></div><div class="h">Tốt hơn</div><div class="h score">Band</div>
+
+    <div class="cur">educational and social benefits</div><div class="arr">→</div><div class="bet">academic and social development benefits</div><div class="bnd">6.5</div>
+    <div class="cur">overall development</div><div class="arr">→</div><div class="bet">holistic development</div><div class="bnd">7.0</div>
+    <div class="cur">language and thinking skills</div><div class="arr">→</div><div class="bet">linguistic and cognitive skills</div><div class="bnd">7.0</div>
+    <div class="cur">interact with peers</div><div class="arr">→</div><div class="bet">engage with peers</div><div class="bnd">6.5</div>
+    <div class="cur">communication abilities</div><div class="arr">→</div><div class="bet">interpersonal and communication skills</div><div class="bnd">7.0</div>
+    <div class="cur">emotional support</div><div class="arr">→</div><div class="bet">emotional security</div><div class="bnd">7.0</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 10b · NÂNG CẤP TỪ VỰNG · Phần 2 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="10b Nâng cấp từ vựng 2" class="slide slide--paper">
+  <p class="eyebrow">Nâng cấp từ vựng · Lấy thẳng từ bài Nhựt · 2/2</p>
+  <h2 class="h-section" style="margin-bottom:8px;">Thân 2 &amp; Kết bài — Grandparents</h2>
+  <div class="upg">
+    <div class="h">Hiện tại</div><div class="h"></div><div class="h">Tốt hơn</div><div class="h score">Band</div>
+
+    <div class="cur">love, care and attention</div><div class="arr">→</div><div class="bet">affection, guidance and emotional support</div><div class="bnd">7.0</div>
+    <div class="cur">feel safer and more comfortable</div><div class="arr">→</div><div class="bet">feel secure and emotionally supported</div><div class="bnd">7.0</div>
+    <div class="cur">share life experiences</div><div class="arr">→</div><div class="bet">pass down their wisdom and life experiences</div><div class="bnd">7.0</div>
+    <div class="cur">telling stories</div><div class="arr">→</div><div class="bet">sharing family stories and personal experiences</div><div class="bnd">6.5</div>
+    <div class="cur">respect others</div><div class="arr">→</div><div class="bet">develop respect for others</div><div class="bnd">6.5</div>
+    <div class="cur">combining both forms of care is ideal</div><div class="arr">→</div><div class="bet">a combination of both caregiving approaches is the most beneficial option</div><div class="bnd">7.0</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 11 · PHRASEBANK -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="11 Phrasebank" class="slide slide--paper">
+  <p class="eyebrow">Phrasebank · Discuss both views + opinion</p>
+  <h2 class="h-section" style="margin-bottom:8px;">Cụm dựng khung sẵn để dùng lại</h2>
+  <div class="pbank">
+    <div class="tile">
+      <div class="k">Mở bài — paraphrase + thesis</div>
+      <ul>
+        <li>It is sometimes argued that… while others believe that…</li>
+        <li>In my view, although both have merit, …</li>
+      </ul>
+    </div>
+    <div class="tile">
+      <div class="k">Vào View A / View B</div>
+      <ul>
+        <li>On the one hand, … · On the other hand, …</li>
+        <li>Those in favour of … argue that …</li>
+      </ul>
+    </div>
+    <div class="tile">
+      <div class="k">Thêm ý &amp; ví dụ (bù từ)</div>
+      <ul>
+        <li>In addition, … · Moreover, … · Furthermore, …</li>
+        <li>For instance, … · A clear example of this is …</li>
+      </ul>
+    </div>
+    <div class="tile">
+      <div class="k">Nêu &amp; bảo vệ opinion ở kết</div>
+      <ul>
+        <li>In conclusion, while … I believe the ideal approach is …</li>
+        <li>… so that children can enjoy the advantages of each.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 12 · NÂNG CẤP BAND 6.5 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="12 Nâng cấp 6.5" class="slide">
+  <p class="eyebrow">Từ 6.0 → 6.5 · Ba nước đi</p>
+  <h2 class="h-section" style="margin-bottom:8px;">Làm sắc bài đã sửa</h2>
+  <div class="moves">
+    <div class="move">
+      <div class="n">Move 1</div>
+      <h4>Câu phức có mệnh đề quan hệ</h4>
+      <p>Ghép 2 câu ngắn bằng <i>which / who</i> để tăng độ phức tạp ngữ pháp.</p>
+      <div class="ex">…peers from an early age, <b>which</b> improves their communication.</div>
+    </div>
+    <div class="move">
+      <div class="n">Move 2</div>
+      <h4>Ví dụ cụ thể, có hình ảnh</h4>
+      <p>Một ví dụ thật đáng giá hơn ba câu chung chung — vừa bù từ vừa nâng Task Response.</p>
+      <div class="ex">A child who shares toys daily <b>finds it easier to settle in</b> at school.</div>
+    </div>
+    <div class="move">
+      <div class="n">Move 3</div>
+      <h4>Opinion có lý do, không chung chung</h4>
+      <p>Đừng chỉ nói “combine both is ideal”. Nói <i>vì sao</i> kết hợp lại tốt.</p>
+      <div class="ex">…combine both <b>so that children enjoy the advantages of each</b>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- 13 · ĐIỂM BÀI (END) -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section data-label="Điểm bài" class="slide end-slide">
+  <div>
+    <h1>5.0</h1>
+    <div class="hint">Band bài hiện tại · đúng đề &amp; ý tốt · đủ 250 từ &amp; câu chắc hơn là lên 6.0</div>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

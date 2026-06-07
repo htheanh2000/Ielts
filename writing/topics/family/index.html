@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Writing Task 2 — Topic Family · Deep dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  /* ═════════ TOPIC FAMILY DEEP-DIVE — additions ═════════ */
+
+  /* Prompt card (re-used from L06) */
+  .prompt-card { background: var(--paper); border: 1px solid var(--rule-soft); border-left: 6px solid var(--accent); padding: 26px 30px; }
+  .prompt-card .lbl { font-family: var(--mono); font-size: 15px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 10px; }
+  .prompt-card .q { font-family: var(--display); font-size: 23px; line-height: 1.45; color: var(--ink); font-style: italic; margin: 0; }
+  .prompt-card .src { font-family: var(--mono); font-size: 14px; color: var(--ink-muted); margin-top: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Anatomy table — for parsing prompts */
+  .anatomy { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .anatomy th, .anatomy td { padding: 14px 18px; border-bottom: 1px solid var(--rule-soft); text-align: left; font-size: 19px; vertical-align: top; }
+  .anatomy thead th { font-family: var(--mono); font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; border-bottom: 3px solid var(--accent); }
+  .anatomy tbody td:first-child { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; width: 200px; }
+  .anatomy tbody td.feat { font-family: var(--display); font-weight: 600; color: var(--ink); font-size: 20px; }
+  .anatomy tbody td em.k { background: rgba(200,32,47,0.14); padding: 1px 6px; font-style: normal; font-weight: 600; }
+
+  /* Vocab ladder — Band 5 → 6 → 7 */
+  .ladder { display: grid; grid-template-columns: 200px 1fr 1fr 1.1fr; gap: 0; margin-top: 12px; border-top: 3px solid var(--accent); }
+  .ladder .h { font-family: var(--mono); font-size: 15px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; padding: 14px 18px; border-bottom: 3px solid var(--accent); border-right: 1px solid var(--rule-soft); }
+  .ladder .h:last-child { border-right: 0; }
+  .ladder .h.lbl { color: var(--ink-muted); }
+  .ladder .h.b5 { color: var(--ink-muted); }
+  .ladder .h.b6 { color: var(--ink); }
+  .ladder .h.b7 { color: var(--accent); }
+  .ladder .h .tag { display: inline-block; font-size: 12px; font-weight: 500; opacity: 0.7; margin-left: 6px; }
+  .ladder .concept { font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--ink); padding: 16px 18px 16px 0; border-bottom: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); }
+  .ladder .concept .vi { display: block; font-size: 14px; color: var(--ink-muted); font-style: italic; font-weight: 400; margin-top: 4px; }
+  .ladder .cell { padding: 16px 18px; border-bottom: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); font-size: 18px; line-height: 1.4; }
+  .ladder .cell:last-child { border-right: 0; }
+  .ladder .cell.b5 { color: var(--ink-muted); font-family: var(--display); }
+  .ladder .cell.b6 { color: var(--ink-soft); font-family: var(--display); }
+  .ladder .cell.b7 { color: var(--ink); font-weight: 600; font-family: var(--display); }
+  .ladder .cell em { font-style: italic; opacity: 0.75; font-size: 15px; display: block; margin-top: 3px; font-weight: 400; }
+
+  /* Brainstorm mind-map style */
+  .bstorm { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+  .bstorm .branch { border-top: 4px solid var(--accent); padding: 18px 22px 22px; background: var(--paper); }
+  .bstorm .branch .lbl { font-family: var(--mono); font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 12px; }
+  .bstorm .branch h4 { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--ink); margin: 0 0 12px; line-height: 1.25; }
+  .bstorm .branch ul { list-style: none; padding: 0; margin: 0; }
+  .bstorm .branch li { padding: 8px 0 8px 22px; position: relative; font-size: 18px; line-height: 1.4; color: var(--ink-soft); border-top: 1px dashed var(--rule-soft); }
+  .bstorm .branch li:first-child { border-top: 0; }
+  .bstorm .branch li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .bstorm .branch li b { color: var(--ink); font-weight: 600; }
+
+  /* Essay block (re-used) */
+  .essay { background: var(--paper); border-left: 6px solid var(--accent); padding: 26px 32px; font-family: var(--display); font-size: 20px; line-height: 1.55; color: var(--ink); }
+  .essay p { margin: 0 0 12px; }
+  .essay .para-tag { display: inline-block; font-family: var(--mono); font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; margin-right: 10px; vertical-align: 2px; }
+  .essay .weak { background: rgba(150,150,150,0.18); padding: 1px 3px; text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.4); }
+  .essay .strong { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+
+  /* Before/After compare */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 10px; }
+  .compare .col { background: var(--paper); padding: 20px 24px; border-left: 4px solid var(--rule-soft); }
+  .compare .col.after { border-left-color: var(--accent); }
+  .compare .col .badge { font-family: var(--mono); font-size: 13px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 10px; }
+  .compare .col.after .badge { color: var(--accent); }
+  .compare .col p { font-family: var(--display); font-size: 19px; line-height: 1.5; color: var(--ink); margin: 0; }
+  .compare .col .swap { background: rgba(200,32,47,0.14); padding: 1px 3px; font-weight: 600; }
+  .compare .col .gone { background: rgba(150,150,150,0.18); text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.4); }
+
+  /* Stage marker — for the 5-stage workflow */
+  .stage-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); margin-top: 12px; }
+  .stage-strip .cell { padding: 18px 18px; border-right: 1px solid var(--rule-soft); }
+  .stage-strip .cell:last-child { border-right: 0; }
+  .stage-strip .cell.now { background: rgba(200,32,47,0.06); }
+  .stage-strip .cell .n { font-family: var(--mono); font-size: 14px; color: var(--accent); letter-spacing: 0.12em; font-weight: 700; text-transform: uppercase; }
+  .stage-strip .cell .t { font-family: var(--display); font-size: 20px; color: var(--ink); font-weight: 700; margin-top: 6px; line-height: 1.25; }
+  .stage-strip .cell .d { font-size: 14px; color: var(--ink-muted); margin-top: 6px; line-height: 1.35; }
+
+  /* Sharpening moves */
+  .moves { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  .move { border-top: 4px solid var(--accent); padding: 18px 22px 22px; background: var(--paper); }
+  .move .n { font-family: var(--mono); font-size: 14px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; }
+  .move h4 { font-family: var(--display); font-size: 24px; margin: 6px 0 10px; line-height: 1.25; }
+  .move p { font-size: 17px; color: var(--ink-soft); line-height: 1.45; margin: 0 0 10px; }
+  .move .ex { font-family: var(--mono); font-size: 14px; color: var(--ink-muted); padding-top: 8px; border-top: 1px dashed var(--rule-soft); margin-top: 8px; }
+
+  .fine { font-family: var(--mono); font-size: 20px; color: var(--ink-muted); letter-spacing: 0.06em; margin-top: 32px; }
+  .num-list.tight li { padding: 14px 0 !important; }
+  .num-list.tight .step-title { font-size: 26px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 21px !important; line-height: 1.4 !important; }
+  .num-list.tight li::before { font-size: 22px !important; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART I · OPENING (01–03) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Writing · Task 2 · Topic deep dive</div>
+    <h1 class="main">Family.<br>Từ đề bài <em>đến bài viết sắc.</em></h1>
+    <div class="mark">Topic 01 · 5 giai đoạn · từ phân tích đến nâng cấp</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Thời lượng</dt><dd>90 phút</dd></div>
+      <div><dt>Trình độ hiện tại</dt><dd>Band 5.5 → 6.0</dd></div>
+      <div><dt>Mục tiêu</dt><dd>Band 6.0 → 6.5</dd></div>
+      <div><dt>5 giai đoạn</dt><dd>Phân tích → Tư duy → Viết cơ bản → Nâng cấp → Sắc ý</dd></div>
+      <div><dt>Đề thực hành</dt><dd>3 prompts · 3 task types</dd></div>
+      <div><dt>Vocab ladder</dt><dd>Band 5 → 6 → 7 · 20 cụm</dd></div>
+    </dl>
+    <div class="mark">Học viên · Trang Hoàng Nhựt</div>
+  </div>
+</section>
+
+<!-- 02 · AGENDA — 5 stages -->
+<section data-label="Agenda" class="slide">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Agenda</span></div>
+  <p class="eyebrow">Agenda · 90 minutes · 5 stages</p>
+  <h2 class="h-section">Năm giai đoạn — <em class="hi">một workflow.</em></h2>
+
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Stage 1 · Phân tích đề.</span><span class="step-body">15 phút · 5 slide. Mổ xẻ 3 đề Family thuộc 3 task type khác nhau: Positive/Negative Trend · Discussion · Causes &amp; Impacts. Học cách <em>đọc đề</em> trước khi viết.</span></div></li>
+    <li><div><span class="step-title">Stage 2 · Hướng tư duy &amp; brainstorm.</span><span class="step-body">15 phút · 4 slide. Frameworks sinh ý: <em>cause-chain</em>, <em>stakeholder lens</em>, <em>then-vs-now</em>. Brainstorm 3 đề trên 3 mindmap.</span></div></li>
+    <li><div><span class="step-title">Stage 3 · Viết bài đơn giản (Band 5.5).</span><span class="step-body">15 phút · 3 slide. Viết Q1 ở mức "đủ ý — sai ít". Bài mẫu cố tình giữ vocab cơ bản để Stage 4 có chỗ upgrade.</span></div></li>
+    <li><div><span class="step-title">Stage 4 · Nâng cấp từ vựng (Band 5 → 6 → 7).</span><span class="step-body">25 phút · 5 slide. <em>Trọng tâm</em>. Ladder từ vựng theo 4 trục: family structures · relationships · care · time &amp; change. Mỗi khái niệm 3 mức.</span></div></li>
+    <li><div><span class="step-title">Stage 5 · Làm sắc ý + Wrap-up.</span><span class="step-body">20 phút · 7 slide. 3 sharpening moves (cụ thể hoá · cause-chain · counter-frame). Before/After Q1. Phrasebank. Pitfalls. Homework Q2+Q3.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Topic Family</span><span>02 / 29</span></div>
+</section>
+
+<!-- 03 · OBJECTIVES -->
+<section data-label="Objectives" class="slide slide--paper">
+  <div class="run-header"><span>Welcome</span><span class="rule"></span><span>Objectives</span></div>
+  <p class="eyebrow">Learning Objectives</p>
+  <h2 class="h-section">Sau 90 phút, bạn <em class="hi">làm được</em> năm việc.</h2>
+
+  <ol class="num-list">
+    <li><div><span class="step-title">Phân tích bất kỳ đề Family nào theo 4 trục.</span><span class="step-body">Task type · keywords · stance signal · scope. Không viết khi chưa "mổ xong" đề — 60 giây tiết kiệm 20 phút sai hướng.</span></div></li>
+    <li><div><span class="step-title">Sinh ý đủ cho Body 1 + Body 2 trong 5 phút.</span><span class="step-body">Dùng 1 trong 3 frameworks tuỳ task type. Mỗi body cần 1 reason + 1 example — không cần nhiều.</span></div></li>
+    <li><div><span class="step-title">Viết bài Band 5.5 "đúng nhưng phẳng" trước, rồi upgrade.</span><span class="step-body">Quy trình 2 lượt: <em>draft</em> rồi <em>polish</em>. Đừng tìm từ Band 7 lúc đang nghĩ ý — sẽ kẹt.</span></div></li>
+    <li><div><span class="step-title">Swap 6 cụm cơ bản → 6 cụm Band 6/7 family-specific.</span><span class="step-body"><em>"big family" → multigenerational household</em> · <em>"love each other" → foster deep emotional bonds</em>. Học theo cặp, không học rời.</span></div></li>
+    <li><div><span class="step-title">Áp dụng 3 sharpening moves để biến câu mờ thành câu sắc.</span><span class="step-body">Cụ thể hoá (thêm con số/đối tượng) · nối chuỗi nhân quả · đảo khung (counter-frame). Đây là chỗ tách bài 5.5 khỏi bài 6.5.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Writing Task 2 · Topic Family</span><span>03 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART II · STAGE 1 · PHÂN TÍCH ĐỀ (04–08) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 04 · STAGE 1 INTRO — anatomy framework -->
+<section data-label="04 Stage 1 anatomy" class="slide">
+  <div class="run-header"><span>Stage 1 · Phân tích đề</span><span class="rule"></span><span>Anatomy framework</span></div>
+  <p class="eyebrow">Stage 1 · Phân tích đề · 15 phút</p>
+  <h2 class="h-section" style="font-size: 60px;">Đọc đề <em class="hi">4 trục</em> trước khi viết chữ nào.</h2>
+
+  <div class="stage-strip">
+    <div class="cell now">
+      <div class="n">Stage 1</div>
+      <div class="t">Phân tích đề</div>
+      <div class="d">Topic · task type · keywords · scope</div>
+    </div>
+    <div class="cell">
+      <div class="n">Stage 2</div>
+      <div class="t">Tư duy</div>
+      <div class="d">Brainstorm theo framework</div>
+    </div>
+    <div class="cell">
+      <div class="n">Stage 3</div>
+      <div class="t">Viết đơn giản</div>
+      <div class="d">Band 5.5 draft</div>
+    </div>
+    <div class="cell">
+      <div class="n">Stage 4</div>
+      <div class="t">Nâng cấp vocab</div>
+      <div class="d">Band 5 → 6 → 7</div>
+    </div>
+    <div class="cell">
+      <div class="n">Stage 5</div>
+      <div class="t">Làm sắc ý</div>
+      <div class="d">3 sharpening moves</div>
+    </div>
+  </div>
+
+  <p class="fine">3 đề Family hôm nay — <em class="hi">cùng 1 chủ đề, 3 task type khác nhau.</em> Học cách "đọc" task type để chọn đúng cấu trúc bài viết.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 1 · Phân tích đề</span><span>04 / 29</span></div>
+</section>
+
+<!-- 05 · Q1 — Positive/Negative Trend -->
+<section data-label="05 Q1 analyze" class="slide">
+  <div class="run-header"><span>Stage 1 · Phân tích đề</span><span class="rule"></span><span>Q1 · Positive/Negative Trend</span></div>
+  <p class="eyebrow">Đề Q1 · Phân tích theo 4 trục</p>
+  <h2 class="h-section" style="font-size: 38px;">Q1 — <em class="hi">xu hướng sống một mình hay nhóm nhỏ.</em></h2>
+
+  <div class="prompt-card" style="margin-bottom: 18px;">
+    <div class="lbl">Prompt · Cambridge style</div>
+    <p class="q">"In many countries today, people in cities either live alone or in small family units, rather than in large, extended family groups. Is this a <em>positive</em> or <em>negative</em> trend?"</p>
+    <p class="src">Source · zim.vn · Cambridge-style prompt</p>
+  </div>
+
+  <table class="anatomy">
+    <thead><tr><th>Trục</th><th>Phân tích</th></tr></thead>
+    <tbody>
+      <tr><td>Topic</td><td class="feat">Family structure trong đô thị hiện đại — <em class="k">alone / small unit</em> vs <em class="k">extended family</em>.</td></tr>
+      <tr><td>Task type</td><td class="feat">Positive/Negative Trend — <em>không phải</em> Discussion. Chỉ trả lời "tốt hay xấu", nêu lập trường rõ.</td></tr>
+      <tr><td>Keywords</td><td>cities · live alone · small family units · large, extended family groups · trend (đang diễn ra, không phải tương lai).</td></tr>
+      <tr><td>Scope</td><td>Chỉ trong đô thị (cities) — không nói nông thôn. "Many countries" — toàn cầu, không bó hẹp 1 nước.</td></tr>
+      <tr><td>Stance signal</td><td class="feat">Phải chọn <em class="k">1 phía</em>: positive · negative · hoặc both (cân nhắc). Khuyến nghị: <em>both, lean negative</em> — dễ tìm ý hơn.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Stage 1 · Q1 · Positive/Negative Trend</span><span>05 / 29</span></div>
+</section>
+
+<!-- 06 · Q2 — Discussion -->
+<section data-label="06 Q2 analyze" class="slide slide--paper">
+  <div class="run-header"><span>Stage 1 · Phân tích đề</span><span class="rule"></span><span>Q2 · Discussion</span></div>
+  <p class="eyebrow">Đề Q2 · Phân tích theo 4 trục</p>
+  <h2 class="h-section" style="font-size: 38px;">Q2 — <em class="hi">nhà trẻ hay ông bà chăm con tốt hơn.</em></h2>
+
+  <div class="prompt-card" style="margin-bottom: 18px;">
+    <div class="lbl">Prompt · Cambridge style</div>
+    <p class="q">"Some people think that childcare centers provide the best services for children of preschool age. Other working parents think that family members such as grandparents will be better carers for their kids. <em>Discuss both views</em> and give your opinion."</p>
+    <p class="src">Source · zim.vn · Cambridge-style prompt</p>
+  </div>
+
+  <table class="anatomy">
+    <thead><tr><th>Trục</th><th>Phân tích</th></tr></thead>
+    <tbody>
+      <tr><td>Topic</td><td class="feat">Childcare cho trẻ mầm non — <em class="k">childcare centers</em> vs <em class="k">family/grandparents</em>.</td></tr>
+      <tr><td>Task type</td><td class="feat">Discussion (Both views + opinion) — <em>bắt buộc</em> trình bày cả 2 phe + chốt 1 lập trường.</td></tr>
+      <tr><td>Keywords</td><td>childcare centers · preschool age · working parents · family members · grandparents · carers.</td></tr>
+      <tr><td>Scope</td><td>Trẻ <em>preschool age</em> (3-6 tuổi) — không bàn trẻ sơ sinh hay trẻ tiểu học. Bối cảnh: <em>working parents</em>.</td></tr>
+      <tr><td>Stance signal</td><td class="feat">Phải nêu opinion <em class="k">rõ</em> trong Intro thesis + tái khẳng định ở Conclusion. Khuyến nghị: lean <em>childcare centers</em> — argument đa dạng hơn.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Stage 1 · Q2 · Discussion</span><span>06 / 29</span></div>
+</section>
+
+<!-- 07 · Q3 — Causes & Impacts -->
+<section data-label="07 Q3 analyze" class="slide">
+  <div class="run-header"><span>Stage 1 · Phân tích đề</span><span class="rule"></span><span>Q3 · Causes &amp; Impacts</span></div>
+  <p class="eyebrow">Đề Q3 · Phân tích theo 4 trục</p>
+  <h2 class="h-section" style="font-size: 38px;">Q3 — <em class="hi">bữa cơm gia đình đang biến mất.</em></h2>
+
+  <div class="prompt-card" style="margin-bottom: 18px;">
+    <div class="lbl">Prompt · Cambridge style</div>
+    <p class="q">"The tradition of families getting together to eat meals is disappearing. <em>What are the reasons? What are the impacts?</em>"</p>
+    <p class="src">Source · zim.vn · Cambridge-style prompt</p>
+  </div>
+
+  <table class="anatomy">
+    <thead><tr><th>Trục</th><th>Phân tích</th></tr></thead>
+    <tbody>
+      <tr><td>Topic</td><td class="feat">Bữa ăn gia đình truyền thống đang mất dần — <em class="k">disappearing</em> = hiện tượng đã &amp; đang xảy ra.</td></tr>
+      <tr><td>Task type</td><td class="feat">Two-part (Causes + Impacts) — <em>không phải</em> Problem/Solution. KHÔNG đề xuất giải pháp.</td></tr>
+      <tr><td>Keywords</td><td>tradition · families · getting together · eat meals · disappearing · reasons · impacts.</td></tr>
+      <tr><td>Scope</td><td>Hành vi <em>ăn cùng nhau</em> — không bàn việc nấu cơm. Đối tượng: <em>gia đình</em>, không phải bạn bè.</td></tr>
+      <tr><td>Stance signal</td><td class="feat">KHÔNG cần opinion. Body 1 = nguyên nhân · Body 2 = hậu quả. Mỗi body chọn <em class="k">2 ý sâu</em> hơn 4 ý nông.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="run-footer"><span class="footer-topic">Stage 1 · Q3 · Causes &amp; Impacts</span><span>07 / 29</span></div>
+</section>
+
+<!-- 08 · 1 topic · 3 task types recap -->
+<section data-label="08 Recap" class="slide slide--paper">
+  <div class="run-header"><span>Stage 1 · Phân tích đề</span><span class="rule"></span><span>Recap · 1 topic, 3 task types</span></div>
+  <p class="eyebrow">Stage 1 recap · Same topic, different structures</p>
+  <h2 class="h-section">Một chủ đề — <em class="hi">ba cấu trúc bài viết khác nhau.</em></h2>
+
+  <table class="anatomy">
+    <thead><tr><th>Đề</th><th>Task type</th><th>Cấu trúc bài</th><th>Có opinion?</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td class="feat">Positive/Negative Trend</td><td>Intro · Body 1 (positive sides) · Body 2 (negative sides) · Conclusion (chốt phe)</td><td>Có — chọn 1 phía</td></tr>
+      <tr><td>Q2</td><td class="feat">Discussion (both views)</td><td>Intro · Body 1 (view A) · Body 2 (view B + opinion) · Conclusion</td><td>Có — chốt rõ</td></tr>
+      <tr><td>Q3</td><td class="feat">Causes &amp; Impacts</td><td>Intro · Body 1 (2 causes) · Body 2 (2 impacts) · Conclusion (summary)</td><td>KHÔNG — chỉ phân tích</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Bài học: <em class="hi">đừng nhìn topic mà đoán cấu trúc.</em> Family có thể là Trend, Discussion, hoặc Causes — đọc kỹ <em>câu hỏi cuối đề</em> mới biết viết gì.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 1 · Recap</span><span>08 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART III · STAGE 2 · HƯỚNG TƯ DUY (09–12) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 09 · STAGE 2 INTRO — frameworks -->
+<section data-label="09 Stage 2 frameworks" class="slide slide--paper">
+  <div class="run-header"><span>Stage 2 · Tư duy</span><span class="rule"></span><span>3 frameworks</span></div>
+  <p class="eyebrow">Stage 2 · Hướng tư duy · 15 phút</p>
+  <h2 class="h-section" style="font-size: 60px;">Ba frameworks — <em class="hi">tuỳ task type.</em></h2>
+
+  <div class="moves">
+    <div class="move">
+      <div class="n">Framework 01</div>
+      <h4>Then-vs-Now</h4>
+      <p>Dùng cho Trend / Causes &amp; Impacts. So sánh cũ - mới để lộ ra <em>nguyên nhân</em> và <em>hậu quả</em>.</p>
+      <p class="ex">VD: "30 năm trước, 3 thế hệ sống chung — nay đô thị hoá tách họ ra. Trẻ mất câu chuyện ông bà, lễ hội phai dần."</p>
+    </div>
+    <div class="move">
+      <div class="n">Framework 02</div>
+      <h4>Stakeholder lens</h4>
+      <p>Dùng cho Discussion. Liệt kê <em>các bên hưởng/chịu</em> tác động. Mỗi bên = 1 view.</p>
+      <p class="ex">VD: Childcare → 4 bên: phụ huynh · trẻ · ông bà · trung tâm. Mỗi bên 1 lập luận riêng.</p>
+    </div>
+    <div class="move">
+      <div class="n">Framework 03</div>
+      <h4>Cause-chain (3 bước)</h4>
+      <p>Cause → Mechanism → Impact. Không dừng ở "vì… nên…" — đào sâu cơ chế ở giữa.</p>
+      <p class="ex">VD: Bố mẹ bận → ăn ngoài / lệch giờ → ít tương tác → con thiếu vốn từ &amp; emotional skills.</p>
+    </div>
+  </div>
+
+  <p class="fine">Chọn 1 framework <em class="hi">trước khi brainstorm.</em> Không đổi giữa chừng — sẽ rối ý.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 2 · Frameworks</span><span>09 / 29</span></div>
+</section>
+
+<!-- 10 · Q1 BRAINSTORM -->
+<section data-label="10 Q1 brainstorm" class="slide">
+  <div class="run-header"><span>Stage 2 · Tư duy</span><span class="rule"></span><span>Q1 brainstorm · Then-vs-Now</span></div>
+  <p class="eyebrow">Brainstorm Q1 · Live alone vs extended family</p>
+  <h2 class="h-section" style="font-size: 38px;">Q1 — <em class="hi">positive sides vs negative sides.</em></h2>
+
+  <div class="bstorm">
+    <div class="branch">
+      <div class="lbl">Body 1 · Positive sides của xu hướng nhỏ</div>
+      <h4>Tốt cho cá nhân &amp; kinh tế</h4>
+      <ul>
+        <li><b>Privacy &amp; autonomy</b> — không bị áp lực từ thế hệ trên, tự quyết định lối sống.</li>
+        <li><b>Job mobility</b> — gia đình nhỏ dễ di chuyển theo công việc, đặc biệt trong đô thị.</li>
+        <li><b>Reduced friction</b> — ít xung đột thế hệ về cách nuôi con, tiền bạc, tôn giáo.</li>
+        <li><b>Modern housing fit</b> — căn hộ thành phố thiết kế cho 2-4 người, không cho 3 thế hệ.</li>
+      </ul>
+    </div>
+    <div class="branch">
+      <div class="lbl">Body 2 · Negative sides — nghiêng phía này</div>
+      <h4>Hại cho gắn kết &amp; chi phí xã hội</h4>
+      <ul>
+        <li><b>Loneliness epidemic</b> — sống một mình → tăng nguy cơ trầm cảm, đặc biệt ở người trẻ &amp; người già.</li>
+        <li><b>Loss of intergenerational ties</b> — trẻ không học từ ông bà, mất "ngân hàng" kinh nghiệm &amp; văn hoá.</li>
+        <li><b>Childcare cost shifts to society</b> — không có ông bà trông, phụ huynh phải thuê nhà trẻ tốn kém.</li>
+        <li><b>Elderly isolation</b> — người già sống riêng → chi phí y tế &amp; chăm sóc xã hội tăng.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Stance đề xuất: <em class="hi">"Mostly negative, despite some practical benefits."</em> — admit phía positive trước rồi chốt negative ở Body 2.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 2 · Q1 brainstorm</span><span>10 / 29</span></div>
+</section>
+
+<!-- 11 · Q2 BRAINSTORM -->
+<section data-label="11 Q2 brainstorm" class="slide slide--paper">
+  <div class="run-header"><span>Stage 2 · Tư duy</span><span class="rule"></span><span>Q2 brainstorm · Stakeholder lens</span></div>
+  <p class="eyebrow">Brainstorm Q2 · Childcare centers vs grandparents</p>
+  <h2 class="h-section" style="font-size: 38px;">Q2 — <em class="hi">view A vs view B.</em></h2>
+
+  <div class="bstorm">
+    <div class="branch">
+      <div class="lbl">Body 1 · View A — Grandparents tốt hơn</div>
+      <h4>Tình thân · cá nhân hoá · tin cậy</h4>
+      <ul>
+        <li><b>Undivided attention</b> — 1 ông bà trông 1-2 cháu, vs 1 giáo viên trông 15-20 trẻ.</li>
+        <li><b>Emotional safety</b> — trẻ cảm thấy được yêu thương vô điều kiện, nền tảng cho self-esteem.</li>
+        <li><b>Cultural transmission</b> — ông bà truyền lại truyện kể, lễ hội, tiếng địa phương.</li>
+        <li><b>Trust factor</b> — phụ huynh yên tâm, không lo abuse hay tai nạn không báo.</li>
+      </ul>
+    </div>
+    <div class="branch">
+      <div class="lbl">Body 2 · View B + Opinion — Childcare centers</div>
+      <h4>Chuyên nghiệp · môi trường · kỹ năng xã hội</h4>
+      <ul>
+        <li><b>Trained staff</b> — giáo viên có chuyên môn về phát triển trẻ, ông bà thường thiếu kiến thức cập nhật.</li>
+        <li><b>Peer socialisation</b> — trẻ học chia sẻ, đàm phán, giải quyết xung đột với bạn cùng tuổi.</li>
+        <li><b>Structured curriculum</b> — hoạt động học có thiết kế, không chỉ "trông cho không khóc".</li>
+        <li><b>Reduces burden on grandparents</b> — ông bà tuổi cao, sức yếu — không nên thành caregiver chính.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Stance đề xuất: <em class="hi">lean childcare centers</em> — argument đa dạng hơn (curriculum, peer, staff training), dễ viết 90w.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 2 · Q2 brainstorm</span><span>11 / 29</span></div>
+</section>
+
+<!-- 12 · Q3 BRAINSTORM -->
+<section data-label="12 Q3 brainstorm" class="slide">
+  <div class="run-header"><span>Stage 2 · Tư duy</span><span class="rule"></span><span>Q3 brainstorm · Cause-chain</span></div>
+  <p class="eyebrow">Brainstorm Q3 · Family meals disappearing</p>
+  <h2 class="h-section" style="font-size: 38px;">Q3 — <em class="hi">2 nguyên nhân · 2 hậu quả.</em></h2>
+
+  <div class="bstorm">
+    <div class="branch">
+      <div class="lbl">Body 1 · 2 nguyên nhân (mỗi cause-chain 3 bước)</div>
+      <h4>Lịch bận &amp; thiết bị màn hình</h4>
+      <ul>
+        <li><b>Cause 1 · Work demands.</b> Bố mẹ tăng ca, con học thêm → giờ về nhà lệch nhau → ăn riêng/ngoài đường.</li>
+        <li><b>Cause 2 · Screen culture.</b> Smartphone &amp; streaming → mỗi người 1 màn hình → bữa ăn thành "ăn song song", không "ăn cùng".</li>
+        <li>Có thể thêm: <em>delivery food cheap &amp; fast</em> · <em>open-plan kitchens nhưng bàn ăn nhỏ</em>.</li>
+      </ul>
+    </div>
+    <div class="branch">
+      <div class="lbl">Body 2 · 2 hậu quả (mỗi impact 1 mechanism)</div>
+      <h4>Gắn kết yếu &amp; sức khoẻ kém</h4>
+      <ul>
+        <li><b>Impact 1 · Weaker bonds.</b> Bữa ăn vốn là <em>safe space</em> trẻ kể chuyện trường lớp → mất → bố mẹ không phát hiện vấn đề sớm (bắt nạt, áp lực).</li>
+        <li><b>Impact 2 · Poorer nutrition.</b> Ăn ngoài/giao hàng → nhiều dầu mỡ, đường → tăng béo phì &amp; tiểu đường ở trẻ.</li>
+        <li>Có thể thêm: <em>loss of cultural recipes</em> · <em>weakened table manners</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="fine">Cause-chain rule: <em class="hi">đừng dừng ở "vì… nên…".</em> Mỗi cause cần 1 bước cơ chế ở giữa — đó là chỗ Examiner nhận ra "thinking depth".</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 2 · Q3 brainstorm</span><span>12 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART IV · STAGE 3 · VIẾT BÀI ĐƠN GIẢN (13–15) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 13 · STAGE 3 INTRO — draft first -->
+<section data-label="13 Stage 3 intro" class="slide">
+  <div class="run-header"><span>Stage 3 · Viết đơn giản</span><span class="rule"></span><span>Draft trước, polish sau</span></div>
+  <p class="eyebrow">Stage 3 · Viết bài Band 5.5 · 15 phút</p>
+  <h2 class="h-section" style="font-size: 56px;">Viết bài <em class="hi">"đúng nhưng phẳng"</em> trước.</h2>
+
+  <ol class="num-list tight" style="margin-top: 16px;">
+    <li><div><span class="step-title">Quy tắc 2 lượt.</span><span class="step-body">Lượt 1: <em>draft</em> — dùng vocab quen, đúng grammar, đủ 4 đoạn. Lượt 2: <em>polish</em> — swap vocab, thêm sharpening. Đừng cố "đẹp" ngay từ đầu.</span></div></li>
+    <li><div><span class="step-title">Mục tiêu draft: Band 5.5.</span><span class="step-body">Cấu trúc đủ 4 đoạn · ý rõ ràng · ít sai grammar · dùng linking cơ bản (firstly · however · in conclusion). KHÔNG ép dùng từ "kêu" mình chưa quen.</span></div></li>
+    <li><div><span class="step-title">Vì sao không viết Band 6.5 luôn?</span><span class="step-body">Vì khi não đang nghĩ <em>ý</em>, ép tìm <em>từ khó</em> sẽ làm cạn ý hoặc dùng sai collocation. Tách 2 việc → bài tốt hơn cả 2 mặt.</span></div></li>
+  </ol>
+
+  <div class="run-footer"><span class="footer-topic">Stage 3 · Viết đơn giản</span><span>13 / 29</span></div>
+</section>
+
+<!-- 14 · Q1 OUTLINE -->
+<section data-label="14 Q1 outline" class="slide slide--paper">
+  <div class="run-header"><span>Stage 3 · Viết đơn giản</span><span class="rule"></span><span>Q1 outline</span></div>
+  <p class="eyebrow">Outline Q1 · Live alone vs extended family · Negative trend</p>
+  <h2 class="h-section" style="font-size: 38px;">Outline 4 đoạn — <em class="hi">trước khi viết câu nào.</em></h2>
+
+  <table class="anatomy">
+    <thead><tr><th>Đoạn</th><th>Nội dung · 1 dòng</th></tr></thead>
+    <tbody>
+      <tr><td>Intro · 50w</td><td class="feat">Paraphrase đề + thesis: "Despite practical benefits, I see this trend as mostly negative."</td></tr>
+      <tr><td>Body 1 · 80w</td><td class="feat">Acknowledge positive: privacy + job mobility. 1 reason + 1 example.</td></tr>
+      <tr><td>Body 2 · 95w</td><td class="feat">Main argument — negatives: loneliness + lost intergenerational ties. 2 reasons + 1 example.</td></tr>
+      <tr><td>Conclusion · 35w</td><td class="feat">Restate: trend hiểu được nhưng hại nhiều hơn lợi cho long-term wellbeing.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine">Tổng ~260 từ. <em class="hi">Body 2 dài hơn Body 1</em> vì đó là phía mình chốt — Examiner nhìn vào đoạn này để đánh Task Response.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 3 · Q1 outline</span><span>14 / 29</span></div>
+</section>
+
+<!-- 15 · Q1 BAND 5.5 DRAFT — basic essay -->
+<section data-label="15 Q1 draft 5.5" class="slide">
+  <div class="run-header"><span>Stage 3 · Viết đơn giản</span><span class="rule"></span><span>Q1 draft · Band 5.5</span></div>
+  <p class="eyebrow">Sample essay Q1 · Band 5.5 draft · chỗ "phẳng" được mark</p>
+  <h2 class="h-section" style="font-size: 34px;">Bài mẫu Band 5.5 — <em class="hi">đúng nhưng phẳng.</em></h2>
+
+  <div class="essay" style="font-size: 18px; line-height: 1.55;">
+    <p><span class="para-tag">Intro</span>Nowadays, many people in cities live alone or in <span class="weak">small families</span>, not in <span class="weak">big families</span> with many generations. I think this trend is mostly bad, even though it has some good points.</p>
+    <p><span class="para-tag">Body 1</span>On one hand, living in a small family has some benefits. People can have more privacy and they can <span class="weak">do what they want</span>. Also, it is easier to move to another city for a new job when the family is small. For example, many young workers in Vietnam move to Ho Chi Minh City alone because their parents stay in the countryside.</p>
+    <p><span class="para-tag">Body 2</span>On the other hand, this trend causes many <span class="weak">bad things</span>. Firstly, people who live alone often <span class="weak">feel lonely</span>, and this can make them sad or even sick. Secondly, children who do not live with grandparents lose a chance to <span class="weak">learn from old people</span> about traditions and stories. As a result, <span class="weak">family love</span> becomes weaker and culture is forgotten over time.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, although small families are easier for work and privacy, I think the trend is <span class="weak">not good</span> because it makes people <span class="weak">feel alone</span> and breaks family connections.</p>
+  </div>
+
+  <p class="fine">8 cụm <span class="weak" style="background: rgba(150,150,150,0.18);">đánh dấu xám</span> = nơi Stage 4 sẽ upgrade. Bài này ~210 từ, ý đủ, grammar an toàn — đặt nền cho polish lượt 2.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 3 · Q1 Band 5.5 draft</span><span>15 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART V · STAGE 4 · NÂNG CẤP TỪ VỰNG (16–20) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 16 · STAGE 4 INTRO — ladder rule -->
+<section data-label="16 Stage 4 ladder rule" class="slide slide--paper">
+  <div class="run-header"><span>Stage 4 · Nâng cấp vocab</span><span class="rule"></span><span>Band 5 → 6 → 7</span></div>
+  <p class="eyebrow">Stage 4 · Nâng cấp từ vựng · 25 phút · trọng tâm</p>
+  <h2 class="h-section" style="font-size: 52px;">Vocab ladder — <em class="hi">Band 5 → 6 → 7.</em></h2>
+
+  <ol class="num-list tight" style="margin-top: 14px;">
+    <li><div><span class="step-title">Band 5 — common &amp; correct.</span><span class="step-body">Từ ai cũng biết: <em>family · parents · love · talk · big · small</em>. Dùng đúng, không sai — nhưng <em>không có ấn tượng</em>.</span></div></li>
+    <li><div><span class="step-title">Band 6 — academic &amp; precise.</span><span class="step-body">Từ chính xác hơn, có sắc thái: <em>extended family · caregivers · emotional bond · communicate · multigenerational</em>. Đây là <em>trần</em> mà phần đông học viên Band 6.0-6.5 chạm tới.</span></div></li>
+    <li><div><span class="step-title">Band 7 — sophisticated &amp; collocational.</span><span class="step-body">Từ + cụm cố định mang sắc thái idiomatic: <em>foster deep emotional bonds · sustain intergenerational dialogue · time-pressed households · communal dinner table</em>. Khó nhớ rời — phải học <em>theo cụm</em>.</span></div></li>
+    <li><div><span class="step-title">Quy tắc dùng: <em class="hi">2 Band 7 mỗi đoạn là đủ.</em></span><span class="step-body">Không cần "vung" từ khó. 1 Body có 2 cụm Band 7 đúng chỗ + nền Band 6 = đủ chứng minh Lexical Resource cao.</span></div></li>
+  </ol>
+
+  <p class="fine">4 ladder slides tiếp theo theo 4 trục: <em class="hi">structures · relationships · care · time &amp; change.</em></p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 4 · Ladder rule</span><span>16 / 29</span></div>
+</section>
+
+<!-- 17 · LADDER 1 — Family structures -->
+<section data-label="17 Ladder structures" class="slide">
+  <div class="run-header"><span>Stage 4 · Nâng cấp vocab</span><span class="rule"></span><span>Ladder 1/4 · Family structures</span></div>
+  <p class="eyebrow">Vocab ladder · Family structures · 5 concepts</p>
+  <h2 class="h-section" style="font-size: 36px;">Ladder 1 — <em class="hi">cấu trúc gia đình.</em></h2>
+
+  <div class="ladder">
+    <div class="h lbl">Khái niệm</div>
+    <div class="h b5">Band 5 · basic</div>
+    <div class="h b6">Band 6 · academic</div>
+    <div class="h b7">Band 7 · sophisticated</div>
+
+    <div class="concept">gia đình lớn<span class="vi">"big family"</span></div>
+    <div class="cell b5">big family</div>
+    <div class="cell b6">extended family</div>
+    <div class="cell b7">multigenerational household <em>(3+ thế hệ chung mái nhà)</em></div>
+
+    <div class="concept">gia đình nhỏ<span class="vi">"small family"</span></div>
+    <div class="cell b5">small family</div>
+    <div class="cell b6">nuclear family</div>
+    <div class="cell b7">a tightly-knit nuclear unit <em>(nhỏ &amp; gắn chặt)</em></div>
+
+    <div class="concept">bố mẹ<span class="vi">"parents"</span></div>
+    <div class="cell b5">parents</div>
+    <div class="cell b6">caregivers / guardians</div>
+    <div class="cell b7">primary caregivers <em>(người chăm chính trong nhà)</em></div>
+
+    <div class="concept">con cái<span class="vi">"children"</span></div>
+    <div class="cell b5">children / kids</div>
+    <div class="cell b6">offspring / minors</div>
+    <div class="cell b7">dependants / one's progeny <em>(formal, dùng trong context xã hội học)</em></div>
+
+    <div class="concept">họ hàng<span class="vi">"relatives"</span></div>
+    <div class="cell b5">relatives</div>
+    <div class="cell b6">extended kin</div>
+    <div class="cell b7">a wider kinship network <em>(mạng họ hàng mở rộng)</em></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Stage 4 · Ladder 1 · Structures</span><span>17 / 29</span></div>
+</section>
+
+<!-- 18 · LADDER 2 — Relationships & dynamics -->
+<section data-label="18 Ladder relationships" class="slide slide--paper">
+  <div class="run-header"><span>Stage 4 · Nâng cấp vocab</span><span class="rule"></span><span>Ladder 2/4 · Relationships</span></div>
+  <p class="eyebrow">Vocab ladder · Relationships &amp; dynamics · 5 concepts</p>
+  <h2 class="h-section" style="font-size: 36px;">Ladder 2 — <em class="hi">quan hệ &amp; tương tác.</em></h2>
+
+  <div class="ladder">
+    <div class="h lbl">Khái niệm</div>
+    <div class="h b5">Band 5 · basic</div>
+    <div class="h b6">Band 6 · academic</div>
+    <div class="h b7">Band 7 · sophisticated</div>
+
+    <div class="concept">yêu thương nhau<span class="vi">"love each other"</span></div>
+    <div class="cell b5">love each other</div>
+    <div class="cell b6">have strong bonds</div>
+    <div class="cell b7">foster deep emotional bonds <em>(gây dựng gắn kết cảm xúc sâu)</em></div>
+
+    <div class="concept">trò chuyện<span class="vi">"talk together"</span></div>
+    <div class="cell b5">talk to each other</div>
+    <div class="cell b6">communicate openly</div>
+    <div class="cell b7">sustain intergenerational dialogue <em>(duy trì đối thoại liên thế hệ)</em></div>
+
+    <div class="concept">cãi nhau · xung đột<span class="vi">"fight / argue"</span></div>
+    <div class="cell b5">fight · argue</div>
+    <div class="cell b6">have conflicts · disagree</div>
+    <div class="cell b7">experience friction · clash over values <em>(va chạm về giá trị)</em></div>
+
+    <div class="concept">gần gũi · thân thiết<span class="vi">"close to each other"</span></div>
+    <div class="cell b5">very close</div>
+    <div class="cell b6">closely bonded</div>
+    <div class="cell b7">forge close ties · be deeply attached <em>(gắn bó sâu sắc)</em></div>
+
+    <div class="concept">cảm giác thuộc về<span class="vi">"feel like home"</span></div>
+    <div class="cell b5">feel like a family · feel happy</div>
+    <div class="cell b6">a sense of belonging</div>
+    <div class="cell b7">a deep sense of belonging · rootedness <em>(cảm giác gắn rễ)</em></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Stage 4 · Ladder 2 · Relationships</span><span>18 / 29</span></div>
+</section>
+
+<!-- 19 · LADDER 3 — Care & upbringing -->
+<section data-label="19 Ladder care" class="slide">
+  <div class="run-header"><span>Stage 4 · Nâng cấp vocab</span><span class="rule"></span><span>Ladder 3/4 · Care &amp; upbringing</span></div>
+  <p class="eyebrow">Vocab ladder · Care &amp; upbringing · 5 concepts</p>
+  <h2 class="h-section" style="font-size: 36px;">Ladder 3 — <em class="hi">nuôi nấng &amp; chăm sóc.</em></h2>
+
+  <div class="ladder">
+    <div class="h lbl">Khái niệm</div>
+    <div class="h b5">Band 5 · basic</div>
+    <div class="h b6">Band 6 · academic</div>
+    <div class="h b7">Band 7 · sophisticated</div>
+
+    <div class="concept">chăm con<span class="vi">"look after kids"</span></div>
+    <div class="cell b5">look after children</div>
+    <div class="cell b6">take care of · raise children</div>
+    <div class="cell b7">nurture · bring up · rear children <em>("rear" = formal, hay dùng academic)</em></div>
+
+    <div class="concept">dạy con<span class="vi">"teach children"</span></div>
+    <div class="cell b5">teach kids · tell children</div>
+    <div class="cell b6">pass on values · educate</div>
+    <div class="cell b7">instil values · transmit cultural inheritance <em>(truyền lại di sản văn hoá)</em></div>
+
+    <div class="concept">cách nuôi dạy<span class="vi">"the way to raise kids"</span></div>
+    <div class="cell b5">the way parents raise children</div>
+    <div class="cell b6">parenting style · childrearing</div>
+    <div class="cell b7">parenting practices · child-rearing philosophy <em>(triết lý nuôi dạy con)</em></div>
+
+    <div class="concept">ông bà trông cháu<span class="vi">"grandparents help"</span></div>
+    <div class="cell b5">grandparents help take care</div>
+    <div class="cell b6">grandparents act as caregivers</div>
+    <div class="cell b7">grandparents shoulder caregiving duties · a wider pool of caregivers <em>(gánh nhiệm vụ chăm sóc)</em></div>
+
+    <div class="concept">an toàn cảm xúc<span class="vi">"feel safe"</span></div>
+    <div class="cell b5">feel safe · feel loved</div>
+    <div class="cell b6">emotional security</div>
+    <div class="cell b7">unconditional emotional safety · a secure attachment base <em>(nền tảng gắn bó an toàn — psych term)</em></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Stage 4 · Ladder 3 · Care</span><span>19 / 29</span></div>
+</section>
+
+<!-- 20 · LADDER 4 — Time, change & modern life -->
+<section data-label="20 Ladder time-change" class="slide slide--paper">
+  <div class="run-header"><span>Stage 4 · Nâng cấp vocab</span><span class="rule"></span><span>Ladder 4/4 · Time &amp; change</span></div>
+  <p class="eyebrow">Vocab ladder · Time, change &amp; modern life · 5 concepts</p>
+  <h2 class="h-section" style="font-size: 36px;">Ladder 4 — <em class="hi">thời gian &amp; thay đổi.</em></h2>
+
+  <div class="ladder">
+    <div class="h lbl">Khái niệm</div>
+    <div class="h b5">Band 5 · basic</div>
+    <div class="h b6">Band 6 · academic</div>
+    <div class="h b7">Band 7 · sophisticated</div>
+
+    <div class="concept">bận<span class="vi">"busy with work"</span></div>
+    <div class="cell b5">very busy · work a lot</div>
+    <div class="cell b6">have demanding schedules</div>
+    <div class="cell b7">tied up with relentless work commitments · time-pressed households <em>(hộ thiếu thời gian)</em></div>
+
+    <div class="concept">ăn cùng nhau<span class="vi">"eat together"</span></div>
+    <div class="cell b5">eat together · have meals</div>
+    <div class="cell b6">share meals · dine together</div>
+    <div class="cell b7">gather around the dinner table · commune over meals <em>(quây quần · "commune" mang sắc thái thiêng)</em></div>
+
+    <div class="concept">đang mất dần<span class="vi">"disappearing"</span></div>
+    <div class="cell b5">disappearing · less common</div>
+    <div class="cell b6">declining · in decline</div>
+    <div class="cell b7">eroding · fading from everyday life · on the wane <em>(đang phai · "on the wane" idiomatic)</em></div>
+
+    <div class="concept">xu hướng hiện đại<span class="vi">"modern trend"</span></div>
+    <div class="cell b5">modern trend · today people</div>
+    <div class="cell b6">a contemporary shift</div>
+    <div class="cell b7">a marked sociocultural shift · a generational realignment <em>(thay đổi mang tính thế hệ)</em></div>
+
+    <div class="concept">đô thị hoá tách gia đình<span class="vi">"cities split families"</span></div>
+    <div class="cell b5">cities make families small</div>
+    <div class="cell b6">urbanisation breaks up extended families</div>
+    <div class="cell b7">urban migration fragments traditional kinship structures <em>(phân mảnh cấu trúc họ hàng truyền thống)</em></div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Stage 4 · Ladder 4 · Time</span><span>20 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VI · STAGE 5 · LÀM SẮC Ý (21–24) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 21 · STAGE 5 INTRO — 3 sharpening moves -->
+<section data-label="21 Stage 5 moves" class="slide">
+  <div class="run-header"><span>Stage 5 · Làm sắc ý</span><span class="rule"></span><span>3 sharpening moves</span></div>
+  <p class="eyebrow">Stage 5 · Làm sắc ý · 20 phút</p>
+  <h2 class="h-section" style="font-size: 56px;">Ba moves — <em class="hi">biến câu mờ thành câu sắc.</em></h2>
+
+  <div class="moves">
+    <div class="move">
+      <div class="n">Move 01</div>
+      <h4>Cụ thể hoá</h4>
+      <p>Thay danh từ chung bằng <em>danh từ cụ thể</em> · thay tính từ "rất" bằng <em>con số/đối tượng</em>.</p>
+      <p class="ex">"feel lonely" → <em>battle quiet bouts of loneliness, particularly in their evenings</em></p>
+    </div>
+    <div class="move">
+      <div class="n">Move 02</div>
+      <h4>Nối chuỗi nhân quả</h4>
+      <p>Đừng chỉ nêu hậu quả — chỉ ra <em>cơ chế</em> trung gian (mechanism).</p>
+      <p class="ex">"children lose culture" → <em>without grandparents' bedtime stories, the smaller channels through which language and ritual pass quietly close</em></p>
+    </div>
+    <div class="move">
+      <div class="n">Move 03</div>
+      <h4>Đảo khung (counter-frame)</h4>
+      <p>Thừa nhận phía đối lập bằng 1 mệnh đề phụ — thesis của mình mạnh hơn vì <em>"đã cân nhắc"</em>.</p>
+      <p class="ex">"It is bad" → <em>While such practical benefits are real, the long-term cost to emotional wellbeing is harder to defend</em></p>
+    </div>
+  </div>
+
+  <p class="fine"><em class="hi">Áp 1 move cho mỗi đoạn body</em> là đủ tạo khác biệt rõ rệt. Không cần áp cả 3 moves vào 1 câu — sẽ rối.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 5 · 3 moves</span><span>21 / 29</span></div>
+</section>
+
+<!-- 22 · BEFORE/AFTER — Body 1 -->
+<section data-label="22 Before/After Body1" class="slide">
+  <div class="run-header"><span>Stage 5 · Làm sắc ý</span><span class="rule"></span><span>Before / After · Body 1</span></div>
+  <p class="eyebrow">Before / After · Q1 Body 1 · counter-frame + cụ thể hoá</p>
+  <h2 class="h-section" style="font-size: 34px;">Body 1 — <em class="hi">acknowledge positives.</em></h2>
+
+  <div class="compare">
+    <div class="col">
+      <div class="badge">Before · Band 5.5</div>
+      <p>On one hand, living in a <span class="gone">small family</span> has some benefits. People can have more privacy and they can <span class="gone">do what they want</span>. Also, it is easier to move to another city for a new job when the family is small. For example, many young workers in Vietnam move to Ho Chi Minh City alone because their parents stay in the countryside.</p>
+    </div>
+    <div class="col after">
+      <div class="badge">After · Band 6.5</div>
+      <p>On the practical front, <span class="swap">a tightly-knit nuclear unit</span> offers obvious advantages. Residents enjoy greater privacy and <span class="swap">the autonomy to shape their own lifestyle without intergenerational friction</span>. Smaller households also <span class="swap">match the demands of modern urban life</span>: when a job opens up in another city, relocating with two suitcases is far easier than uprooting three generations — a reality faced by countless young professionals migrating to Ho Chi Minh City each year.</p>
+    </div>
+  </div>
+
+  <p class="fine">Moves used: <em class="hi">counter-frame</em> ("On the practical front…") · <em class="hi">cụ thể hoá</em> ("two suitcases vs three generations" · "countless young professionals").</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 5 · Q1 Body 1 upgrade</span><span>22 / 29</span></div>
+</section>
+
+<!-- 23 · BEFORE/AFTER — Body 2 -->
+<section data-label="23 Before/After Body2" class="slide slide--paper">
+  <div class="run-header"><span>Stage 5 · Làm sắc ý</span><span class="rule"></span><span>Before / After · Body 2</span></div>
+  <p class="eyebrow">Before / After · Q1 Body 2 · cause-chain + cụ thể hoá</p>
+  <h2 class="h-section" style="font-size: 34px;">Body 2 — <em class="hi">main argument.</em></h2>
+
+  <div class="compare">
+    <div class="col">
+      <div class="badge">Before · Band 5.5</div>
+      <p>On the other hand, this trend causes many <span class="gone">bad things</span>. Firstly, people who live alone often <span class="gone">feel lonely</span>, and this can make them sad or even sick. Secondly, children who do not live with grandparents lose a chance to <span class="gone">learn from old people</span> about traditions and stories. As a result, <span class="gone">family love</span> becomes weaker and culture is forgotten over time.</p>
+    </div>
+    <div class="col after">
+      <div class="badge">After · Band 6.5</div>
+      <p>The longer-term costs, however, are harder to ignore. Adults who live alone in dense urban settings frequently <span class="swap">battle quiet bouts of loneliness</span>, a state now linked by public-health bodies to higher rates of depression and even cardiovascular disease. Children, in turn, lose the <span class="swap">wider kinship network</span> that an extended household provides: without grandparents' bedtime stories and weekend rituals, <span class="swap">the smaller channels through which language, recipes and customs pass</span> quietly close — a slow <span class="swap">erosion of cultural inheritance</span> that no school curriculum can fully replace.</p>
+    </div>
+  </div>
+
+  <p class="fine">Moves used: <em class="hi">cause-chain 3 bước</em> (live alone → bouts of loneliness → depression/cardio) · <em class="hi">cụ thể hoá</em> ("bedtime stories · weekend rituals · recipes" thay cho "traditions").</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 5 · Q1 Body 2 upgrade</span><span>23 / 29</span></div>
+</section>
+
+<!-- 24 · Q1 FINAL BAND 6.5 ESSAY -->
+<section data-label="24 Q1 final 6.5" class="slide">
+  <div class="run-header"><span>Stage 5 · Làm sắc ý</span><span class="rule"></span><span>Q1 final · Band 6.5</span></div>
+  <p class="eyebrow">Final sample · Q1 · Band 6.5 · ~265 words</p>
+  <h2 class="h-section" style="font-size: 32px;">Bài Q1 hoàn chỉnh — <em class="hi">sau Stage 4 + 5.</em></h2>
+
+  <div class="essay" style="font-size: 17px; line-height: 1.55;">
+    <p><span class="para-tag">Intro</span>Across many metropolitan areas today, urban dwellers increasingly inhabit <span class="strong">tightly-knit nuclear units</span> or live by themselves, rather than within the <span class="strong">multigenerational households</span> common a generation ago. While such an arrangement carries genuine practical benefits, I view this <span class="strong">marked sociocultural shift</span> as, on balance, a negative one.</p>
+    <p><span class="para-tag">Body 1</span>On the practical front, smaller households offer clear advantages. Residents enjoy greater privacy and the autonomy to shape their lifestyle without <span class="strong">intergenerational friction</span>. Compact families are also better suited to the demands of modern urban life: relocating with two suitcases for a new job is far easier than uprooting three generations — a reality faced by countless young professionals migrating to cities like Ho Chi Minh each year.</p>
+    <p><span class="para-tag">Body 2</span>The longer-term costs, however, are harder to ignore. Adults who live alone in dense urban settings frequently <span class="strong">battle quiet bouts of loneliness</span>, a state now linked by public-health bodies to higher rates of depression and even cardiovascular disease. Children, in turn, lose the <span class="strong">wider kinship network</span> that an extended household provides: without grandparents' bedtime stories and weekend rituals, the smaller channels through which language, recipes and customs pass quietly close — a slow <span class="strong">erosion of cultural inheritance</span> that no school curriculum can fully replace.</p>
+    <p><span class="para-tag">Conclusion</span>In conclusion, although the rise of small urban households is understandable given today's job mobility, its hidden toll on emotional wellbeing and <span class="strong">intergenerational continuity</span> makes it, in my view, a predominantly negative trend.</p>
+  </div>
+
+  <p class="fine">~265 từ · 8 cụm Band 7 (đậm đỏ) trải đều 4 đoạn · 2 cause-chain · 1 counter-frame.</p>
+
+  <div class="run-footer"><span class="footer-topic">Stage 5 · Q1 final 6.5</span><span>24 / 29</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART VII · WRAP-UP (25–29) -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<!-- 25 · PATTERN RECAP — 5-stage workflow -->
+<section data-label="25 Pattern recap" class="slide slide--paper">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>5-stage workflow recap</span></div>
+  <p class="eyebrow">Pattern recap · 5-stage workflow</p>
+  <h2 class="h-section">Năm giai đoạn — <em class="hi">một bộ kit cho mọi topic.</em></h2>
+
+  <table class="anatomy">
+    <thead><tr><th>Stage</th><th>Output</th><th>Thời gian khuyến nghị</th></tr></thead>
+    <tbody>
+      <tr><td>1 · Phân tích đề</td><td class="feat">Topic · task type · keywords · stance signal</td><td>2 phút</td></tr>
+      <tr><td>2 · Tư duy</td><td class="feat">Mindmap 2 nhánh (Body 1 + Body 2), mỗi nhánh 3-4 bullet</td><td>5 phút</td></tr>
+      <tr><td>3 · Viết đơn giản</td><td class="feat">Draft Band 5.5 · ~240 từ · vocab quen, grammar an toàn</td><td>20 phút</td></tr>
+      <tr><td>4 · Nâng cấp vocab</td><td class="feat">Swap 6-8 cụm sang Band 6/7 dùng ladder family</td><td>8 phút</td></tr>
+      <tr><td>5 · Làm sắc ý</td><td class="feat">Áp 1 sharpening move cho mỗi body · final ~260 từ Band 6.5</td><td>5 phút</td></tr>
+    </tbody>
+  </table>
+
+  <p class="fine" style="margin-top: 22px;">Tổng 40 phút — vừa với thời gian Task 2 thi thật. Workflow này áp dụng <em class="hi">cho mọi topic</em>, không chỉ family.</p>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · 5 stages</span><span>25 / 29</span></div>
+</section>
+
+<!-- 26 · MASTER PHRASEBANK — family-aware -->
+<section data-label="26 Phrasebank" class="slide">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Master phrasebank · Family</span></div>
+  <p class="eyebrow">Master phrasebank · Family-aware · 16 cụm</p>
+  <h2 class="h-section" style="font-size: 40px;">Phrasebank — <em class="hi">học thuộc 4 cụm cho mỗi vai trò.</em></h2>
+
+  <div class="two-col" style="gap: 60px;">
+    <div class="col-card">
+      <p class="mono-label">Mở bài · paraphrase trend / debate</p>
+      <h3 style="font-size: 26px; margin-bottom: 12px;">Intro</h3>
+      <ul>
+        <li>"Across many metropolitan areas today, urban dwellers increasingly…"</li>
+        <li>"The way families organise themselves has shifted markedly in recent decades."</li>
+        <li>"Whether children flourish in A, or within B, has become a familiar debate."</li>
+        <li>"A long-standing tradition of … now appears to be on the wane."</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <p class="mono-label">Body · acknowledge + main argument</p>
+      <h3 style="font-size: 26px; margin-bottom: 12px;">Body</h3>
+      <ul>
+        <li>"On the practical front, smaller households offer clear advantages…"</li>
+        <li>"While such practical benefits are real, the longer-term costs are harder to ignore."</li>
+        <li>"Proponents of … argue that …; critics, however, contend that…"</li>
+        <li>"Without …, the smaller channels through which … pass quietly close."</li>
+      </ul>
+    </div>
+    <div class="col-card" style="margin-top: 20px;">
+      <p class="mono-label">Family-specific verbs &amp; collocations</p>
+      <h3 style="font-size: 26px; margin-bottom: 12px;">Verb + family bank</h3>
+      <ul>
+        <li>foster · nurture · forge close ties · shoulder caregiving duties</li>
+        <li>transmit cultural inheritance · instil values · sustain dialogue</li>
+        <li>erode · fragment · fade from everyday life · on the wane</li>
+        <li>relocate · uproot · be tied up with · commune over meals</li>
+      </ul>
+    </div>
+    <div class="col-card" style="margin-top: 20px;">
+      <p class="mono-label">Kết bài · restate stance</p>
+      <h3 style="font-size: 26px; margin-bottom: 12px;">Conclusion</h3>
+      <ul>
+        <li>"…its hidden toll on emotional wellbeing makes it, in my view, a predominantly negative trend."</li>
+        <li>"On balance, I find the … model more enriching, despite its inconveniences."</li>
+        <li>"In conclusion, this shift is neither a uniform blessing nor an unqualified threat — but tilts negative when …"</li>
+        <li>"The most defensible position treats intergenerational continuity, not convenience, as central."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · Phrasebank</span><span>26 / 29</span></div>
+</section>
+
+<!-- 27 · PITFALLS -->
+<section data-label="27 Pitfalls" class="slide slide--paper">
+  <div class="run-header"><span>Wrap-up</span><span class="rule"></span><span>Pitfalls · topic Family</span></div>
+  <p class="eyebrow">Pitfalls · top 4 mistakes khi viết topic family</p>
+  <h2 class="h-section">Bốn lỗi — <em class="hi">hay gặp riêng ở topic family.</em></h2>
+
+  <div class="mistake-grid">
+    <div class="mistake">
+      <div class="x">01</div>
+      <div>
+        <h4>Lặp "family" 8-10 lần / bài</h4>
+        <p>Không paraphrase → trừ Lexical Resource. Dùng: <em>household · kin · the nuclear unit · loved ones · relatives · domestic life.</em></p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">02</div>
+      <div>
+        <h4>Đoán cấu trúc theo topic, không theo task type</h4>
+        <p>Thấy "family" tưởng phải Discussion — đề thực có thể là Trend / Causes. <em>Luôn đọc câu hỏi cuối đề</em> trước khi outline.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">03</div>
+      <div>
+        <h4>Ý cảm tính: "family is the most important thing in life"</h4>
+        <p>Câu khẳng định chung chung, không support được. Phải có <em>cause-chain + ví dụ cụ thể</em> (bữa ăn, kể chuyện, ngày Tết…).</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="x">04</div>
+      <div>
+        <h4>Vung từ Band 7 sai collocation</h4>
+        <p><em>"nurture" </em>đi với người/giá trị, không đi với "money". <em>"instil"</em> đi với <em>values · habits</em>, không đi với <em>knowledge</em>. Học theo cụm, không học rời.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="run-footer"><span class="footer-topic">Wrap-up · Pitfalls</span><span>27 / 29</span></div>
+</section>
+
+<!-- 28 · HOMEWORK -->
+<section data-label="28 Homework" class="slide slide--accent">
+  <div class="run-header" style="color: rgba(255,255,255,0.7);"><span>Wrap-up</span><span class="rule" style="background: rgba(255,255,255,0.3);"></span><span>Homework</span></div>
+  <p class="eyebrow" style="color: rgba(255,255,255,0.9);">Homework · 2 bài viết về nhà</p>
+  <h2 class="h-section" style="color: #fff;">Bài về nhà — <em style="color: rgba(255,255,255,0.85); font-style: italic; font-weight: 400;">áp dụng 5-stage workflow.</em></h2>
+
+  <div class="take" style="margin-top: 8px;">
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">HW 01 · Q2 Discussion</div>
+      <div class="v" style="color: #fff;">"Childcare centers vs grandparents — discuss both views &amp; give your opinion." 260-270w, Band 6.5 target. Bắt buộc dùng tối thiểu <em>6 cụm Band 6/7</em> từ 4 ladder hôm nay.</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">HW 02 · Q3 Causes &amp; Impacts</div>
+      <div class="v" style="color: #fff;">"Family meals are disappearing — reasons &amp; impacts." 260-270w. KHÔNG đề xuất giải pháp. Mỗi body 2 ý sâu (cause-chain 3 bước), không 4 ý nông.</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">Self-check trước khi nộp</div>
+      <div class="v" style="color: #fff;">(1) Có ≥ 6 cụm từ ladder Band 6/7? (2) "family" lặp ≤ 4 lần? (3) Có ≥ 1 cause-chain 3 bước? (4) Intro thesis &amp; Conclusion stance khớp nhau?</div>
+    </div>
+    <div class="item" style="border-top-color: #fff;">
+      <div class="k" style="color: #fff;">Next topic deep-dive</div>
+      <div class="v" style="color: #fff;">Topic 02 · <em>Education</em>. Áp lại 5-stage workflow trên 3 đề Education (university subjects · online vs traditional · early specialisation).</div>
+    </div>
+  </div>
+
+  <p class="fine" style="color: rgba(255,255,255,0.65); margin-top: 32px;">Nộp bài qua Drive folder <em>[IELTS 1-1]-Trang-Hoang-Nhut / Topic Family</em>. Feedback trong 48h.</p>
+
+  <div class="run-footer" style="color: rgba(255,255,255,0.7);"><span class="footer-topic">Topic Family · Wrap-up</span><span>28 / 29</span></div>
+</section>
+
+<!-- 29 · END -->
+<section data-label="29 End" class="slide">
+  <div class="run-header"><span>End</span><span class="rule"></span><span>Topic Family · complete</span></div>
+  <p class="eyebrow">End · Topic 01 complete</p>
+  <h2 class="h-section" style="font-size: 64px;">Cảm ơn Nhựt.<br><em class="hi">Hẹn Topic 02 — Education.</em></h2>
+
+  <p style="font-family: var(--display); font-size: 24px; color: var(--ink-soft); margin-top: 32px; max-width: 1100px;">5 giai đoạn — <em>phân tích → tư duy → viết đơn giản → nâng cấp vocab → làm sắc ý</em> — là khung áp dụng được cho bất kỳ topic nào. Family hôm nay là <em>case study</em>; workflow là <em>kit</em>.</p>
+
+  <p class="fine" style="margin-top: 40px;">Recap nhanh trước khi đi: <em class="hi">đọc câu cuối đề trước khi outline</em> · <em class="hi">draft Band 5.5 trước, polish lượt 2</em> · <em class="hi">2 cụm Band 7 / đoạn là đủ</em> · <em class="hi">1 sharpening move / body</em>.</p>
+
+  <div class="run-footer"><span class="footer-topic">Topic Family · End</span><span>29 / 29</span></div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

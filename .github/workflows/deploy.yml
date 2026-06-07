@@ -1,72 +1,41 @@
-# ⚠️  Auto-disabled 2026-05-12: VPS Hostinger 31.97.109.177 shutdown.
-# Service đã chuyển Mac M1 homelab. Deploy = manual rsync + restart trên homelab.
-# Re-enable: uncomment `push:` block + rewrite deploy step cho target mới.
-
-name: Deploy IELTS to VPS
+name: Deploy IELTS to Cloudflare Pages
 
 on:
-  # push:  # disabled — VPS shutdown 2026-05-12
-  # branches: [main]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
   group: ielts-deploy
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: SSH + pull + restart on VPS
-        uses: appleboy/ssh-action@v1.0.3
+      - uses: actions/checkout@v4
+
+      - name: Build static dist/
+        run: bash scripts/build-static.sh
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script_stop: true
-          script: |
-            # No pipefail: dash/embedded shells and ssh-action can mishandle pipelines with set -e.
-            set -eu
-            cd /srv/ielts
-            # Empty hooksPath disables server-side hooks that can make fetch/reset exit non-zero after a successful tree update.
-            _gh="$(mktemp -d)"
-            git -c core.hooksPath="$_gh" fetch --all
-            git -c core.hooksPath="$_gh" reset --hard origin/main
-            # hooksPath dir may not be empty (Git can leave files); rmdir fails under set -e even with || on some runners
-            rm -rf "$_gh" || true
-
-            # Traefik: never fail deploy on mkdir/cp (perms on /srv/traefik are common). Site updates via bind mount.
-            set +e
-            mkdir -p /srv/traefik/data/dynamic
-            cp -f deploy/traefik-ielts.yml /srv/traefik/data/dynamic/ielts.yml
-            set -e
-
-            # Stack: bind-mounted HTML updates on reset; compose brings service up if it was down.
-            # Avoid HEAD@{1} in YAML/SSH layers — some parsers treat @{ as special.
-            set +e
-            docker network inspect proxy >/dev/null 2>&1 || docker network create proxy
-            set -e
-            docker compose up -d
-
-            docker compose ps
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=ielts --branch=main --commit-dirty=true
 
       - name: Smoke test
         run: |
           sleep 8
-          STATUS=$(curl -sk -o /dev/null -w "%{http_code}" https://ielts.huynhtheanh.com/)
-          echo "Landing: HTTP $STATUS"
-          [ "$STATUS" = "200" ] || exit 1
-
-          STATUS=$(curl -sk -o /dev/null -w "%{http_code}" https://ielts.huynhtheanh.com/reading/lesson/1/)
-          echo "Reading L1: HTTP $STATUS"
-          [ "$STATUS" = "200" ] || exit 1
-
-          STATUS=$(curl -sk -o /dev/null -w "%{http_code}" https://ielts.huynhtheanh.com/writing/lesson/2/)
-          echo "Writing L2: HTTP $STATUS"
-          [ "$STATUS" = "200" ] || exit 1
-
-          STATUS=$(curl -sk -o /dev/null -w "%{http_code}" https://ielts.huynhtheanh.com/listening/lesson/1/)
-          echo "Listening L1: HTTP $STATUS"
-          [ "$STATUS" = "200" ] || exit 1
-
-          echo "Deploy verified"
+          for url in \
+            https://ielts.huynhtheanh.com/ \
+            https://ielts.huynhtheanh.com/reading/lesson/1/ \
+            https://ielts.huynhtheanh.com/writing/lesson/2/ \
+            https://ielts.huynhtheanh.com/listening/lesson/1/
+          do
+            STATUS=$(curl -sk -o /dev/null -w "%{http_code}" "$url")
+            echo "$url → HTTP $STATUS"
+            [ "$STATUS" = "200" ] || exit 1
+          done
+          echo "✓ Deploy verified"
