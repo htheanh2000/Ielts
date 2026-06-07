@@ -7,3 +7,5 @@ __pycache__/
 *.pyc
 dist/
 .wrangler/
+# Cambridge audio: deploy-only, không commit lên repo public (bản quyền)
+listening/lesson/3/audio/

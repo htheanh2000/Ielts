@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>IELTS Reading · Cam 19 Test 2 · Passage 1 — Industrial Revolution (Warm-up + Practice)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="/assets/deck-stage.js"></script>
+<link rel="stylesheet" href="/assets/deck-styles.css">
+<style>
+  .lead-note { font-size: 26px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 28px; max-width: 1440px; }
+  .vlist { display: grid; grid-template-columns: 1fr 1fr; gap: 0 64px; margin-top: 10px; }
+  .vlist .v { padding: 15px 0; border-top: 1px solid var(--rule-soft); display: grid; gap: 3px; }
+  .vlist .w { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--ink); }
+  .vlist .w .pos { font-family: var(--sans); font-style: italic; font-size: 18px; color: var(--accent); margin-left: 8px; font-weight: 400; }
+  .vlist .m { font-size: 21px; color: var(--ink-soft); line-height: 1.35; }
+  .vlist .m b { color: var(--ink); font-weight: 600; }
+
+  .gbox { background: var(--paper); border-left: 6px solid var(--accent); padding: 22px 28px; }
+  .gbox .rule { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+  .gbox .form { font-family: var(--mono); font-size: 19px; color: var(--accent); letter-spacing: 0.04em; margin-bottom: 14px; }
+  .gbox ul { list-style: none; margin: 0; padding: 0; }
+  .gbox li { font-family: var(--display); font-size: 22px; line-height: 1.5; color: var(--ink); padding: 7px 0 7px 26px; position: relative; }
+  .gbox li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .gbox li em { font-style: normal; background: rgba(200,32,47,0.13); padding: 0 4px; font-weight: 600; }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 12px; }
+
+  .akey { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; margin-top: 16px; }
+  .akey .cell { background: var(--paper); border-top: 3px solid var(--accent); padding: 16px 12px; text-align: center; }
+  .akey .q { font-family: var(--mono); font-size: 18px; color: var(--ink-muted); font-weight: 600; }
+  .akey .a { font-family: var(--display); font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1.1; margin-top: 6px; }
+  .akey .a.tf { font-size: 22px; }
+
+  /* Detailed explanation rows */
+  .expl { display: grid; gap: 0; margin-top: 14px; border-top: 3px solid var(--accent); }
+  .expl .row { display: grid; grid-template-columns: 58px 1fr 156px; gap: 22px; padding: 16px 8px; border-bottom: 1px solid var(--rule-soft); align-items: start; }
+  .expl .qn { font-family: var(--mono); font-size: 24px; color: var(--accent); font-weight: 700; }
+  .expl .rz { font-size: 21px; line-height: 1.45; color: var(--ink-soft); }
+  .expl .rz .sig { font-family: var(--display); font-style: italic; color: var(--ink); background: rgba(200,32,47,0.10); padding: 0 5px; }
+  .expl .rz b { color: var(--ink); font-weight: 600; }
+  .expl .ans { font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--accent); text-align: right; }
+  .expl .ans small { display: block; font-family: var(--mono); font-size: 13px; color: var(--ink-muted); font-weight: 500; letter-spacing: 0.06em; margin-top: 4px; }
+
+  .pmap { display: grid; grid-template-columns: 58px 1.1fr 40px 1fr; align-items: center; border-top: 3px solid var(--accent); margin-top: 12px; }
+  .pmap > div { padding: 14px 14px; border-bottom: 1px solid var(--rule-soft); }
+  .pmap .h { font-family: var(--mono); font-size: 15px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--accent); border-bottom: 3px solid var(--accent); }
+  .pmap .qn { font-family: var(--mono); font-size: 20px; color: var(--ink-muted); font-weight: 600; }
+  .pmap .src { font-family: var(--display); font-size: 20px; color: var(--ink-soft); font-style: italic; }
+  .pmap .arr { font-family: var(--mono); color: var(--accent); font-weight: 700; text-align: center; }
+  .pmap .ans { font-family: var(--display); font-size: 22px; color: var(--ink); font-weight: 700; }
+
+  .fine { font-family: var(--mono); font-size: 20px; color: var(--ink-muted); letter-spacing: 0.05em; margin-top: 22px; }
+  .num-list.tight li { padding: 15px 0 !important; }
+  .num-list.tight .step-title { font-size: 27px !important; margin-bottom: 2px !important; }
+  .num-list.tight .step-body { font-size: 22px !important; line-height: 1.4 !important; }
+  .num-list.tight li::before { font-size: 23px !important; }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+<!-- 01 · TITLE -->
+<section data-label="Title" class="slide title-slide">
+  <div class="left">
+    <div class="mark">IELTS Reading · Lesson 03 · Cambridge 19</div>
+    <h1 class="main">Industrial<br><em>Revolution.</em></h1>
+    <div class="mark">Warm-up từ vựng &amp; ngữ pháp → rồi mới vào đề · Test 2 · Passage 1</div>
+  </div>
+  <div class="right">
+    <div class="mark">Thông tin buổi học</div>
+    <dl class="meta-grid">
+      <div><dt>Nguồn</dt><dd>Cambridge 19 · Test 2</dd></div>
+      <div><dt>Phần</dt><dd>Reading Passage 1</dd></div>
+      <div><dt>Chủ đề</dt><dd>Cách mạng công nghiệp Anh</dd></div>
+      <div><dt>Dạng câu</dt><dd>Note completion · T/F/NG</dd></div>
+      <div><dt>Warm-up</dt><dd>Từ vựng + 2 điểm ngữ pháp</dd></div>
+      <div><dt>Band mục tiêu</dt><dd>5.5 → 6.5</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 02 · AGENDA -->
+<section data-label="02 Agenda" class="slide">
+  <p class="eyebrow">Trình tự buổi học</p>
+  <h2 class="h-section">Warm-up trước, <em class="hi">làm đề sau.</em></h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Warm-up từ vựng theo chủ đề.</span><span class="step-body">2 slide · công nghiệp/máy móc + dệt may/luyện sắt/xã hội.</span></div></li>
+    <li><div><span class="step-title">Warm-up ngữ pháp.</span><span class="step-body">2 slide · câu bị động + so sánh/quá khứ — dày đặc trong bài lịch sử.</span></div></li>
+    <li><div><span class="step-title">Vào đề.</span><span class="step-body">Đọc Passage 1 trong sách Cam 19 (Test 2, tr.40–41) · ~20 phút.</span></div></li>
+    <li><div><span class="step-title">Chiến lược 2 dạng câu.</span><span class="step-body">Note completion ONE WORD ONLY (Q1–7) → T/F/NG (Q8–13).</span></div></li>
+    <li><div><span class="step-title">Chữa chi tiết.</span><span class="step-body">Giải thích từng câu — đặc biệt 4 câu NG/FALSE dễ nhầm.</span></div></li>
+  </ol>
+</section>
+
+<!-- 03 · SECTION BREAK · WARM-UP -->
+<section data-label="03 Warm-up break" class="slide section-break">
+  <div class="band"><div class="n">A</div><div class="lbl">Warm-up</div></div>
+  <div class="content">
+    <p class="eyebrow">Phần A · Khởi động</p>
+    <h2>Từ vựng <em>&amp;</em> ngữ pháp</h2>
+    <div class="toc">
+      <div class="active">A1 · Từ vựng — công nghiệp &amp; máy móc</div>
+      <div class="active">A2 · Từ vựng — dệt may, luyện sắt &amp; xã hội</div>
+      <div class="active">A3 · Ngữ pháp — câu bị động</div>
+      <div class="active">A4 · Ngữ pháp — so sánh &amp; quá khứ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · VOCAB 1 -->
+<section data-label="04 Vocab · industry" class="slide slide--paper">
+  <p class="eyebrow">A1 · Từ vựng chủ đề · Công nghiệp &amp; máy móc</p>
+  <h2 class="h-section" style="margin-bottom:10px;">Thời đại hơi nước</h2>
+  <div class="vlist">
+    <div class="v"><div class="w">Industrial Revolution <span class="pos">n</span></div><div class="m">cuộc cách mạng công nghiệp</div></div>
+    <div class="v"><div class="w">steam engine <span class="pos">n</span></div><div class="m">động cơ hơi nước</div></div>
+    <div class="v"><div class="w">piston <span class="pos">n</span></div><div class="m">pít-tông — chuyển động tịnh tiến trong xy-lanh</div></div>
+    <div class="v"><div class="w">rotary motion <span class="pos">n</span></div><div class="m">chuyển động quay (nhờ bánh răng)</div></div>
+    <div class="v"><div class="w">coal · mine <span class="pos">n</span></div><div class="m">than đá · mỏ than (nguồn nhiên liệu)</div></div>
+    <div class="v"><div class="w">locomotive <span class="pos">n</span></div><div class="m">đầu máy xe lửa chạy hơi nước</div></div>
+    <div class="v"><div class="w">factory · mass production <span class="pos">n</span></div><div class="m">nhà máy · sản xuất hàng loạt</div></div>
+    <div class="v"><div class="w">mechanised <span class="pos">adj</span></div><div class="m">được cơ giới hóa (thay sức người bằng máy)</div></div>
+  </div>
+</section>
+
+<!-- 05 · VOCAB 2 -->
+<section data-label="05 Vocab · textile-society" class="slide">
+  <p class="eyebrow">A2 · Từ vựng chủ đề · Dệt may, luyện sắt &amp; xã hội</p>
+  <h2 class="h-section" style="margin-bottom:10px;">Từ nhà xưởng tới đô thị</h2>
+  <div class="vlist">
+    <div class="v"><div class="w">textile · cottage industry <span class="pos">n</span></div><div class="m">ngành dệt · nghề thủ công tại nhà</div></div>
+    <div class="v"><div class="w">spinning jenny · power loom <span class="pos">n</span></div><div class="m">máy kéo sợi · máy dệt chạy máy</div></div>
+    <div class="v"><div class="w">labour <span class="pos">n</span></div><div class="m">lao động, nhân công (Anh-Anh: <b>labour</b>)</div></div>
+    <div class="v"><div class="w">smelting · coke <span class="pos">n</span></div><div class="m">luyện (quặng) · than cốc thay than củi</div></div>
+    <div class="v"><div class="w">railway · canal <span class="pos">n</span></div><div class="m">đường sắt · kênh đào (vận chuyển)</div></div>
+    <div class="v"><div class="w">urbanisation <span class="pos">n</span></div><div class="m">đô thị hóa</div></div>
+    <div class="v"><div class="w">sanitation <span class="pos">n</span></div><div class="m">điều kiện vệ sinh / hệ thống thoát nước</div></div>
+    <div class="v"><div class="w">the Luddites <span class="pos">n</span></div><div class="m">nhóm thợ phá máy phản đối cơ giới hóa</div></div>
+  </div>
+  <p class="fine">7/13 đáp án nằm đúng vùng từ vựng này — học trước thì "nghe quen" khi gặp trong bài.</p>
+</section>
+
+<!-- 06 · GRAMMAR 1 — PASSIVE -->
+<section data-label="06 Grammar · passive" class="slide slide--paper">
+  <p class="eyebrow">A3 · Ngữ pháp xuất hiện · Câu bị động</p>
+  <h2 class="h-section" style="margin-bottom:6px;">Bị động — kể chuyện quy trình &amp; lịch sử</h2>
+  <p class="lead-note">Bài lịch sử công nghiệp đầy bị động: ai làm không quan trọng bằng <b>việc gì xảy ra</b>. Nhận diện giúp đọc nhanh và điền Note completion đúng.</p>
+  <div class="gbox">
+    <div class="rule">be + V<span style="font-size:0.7em">past participle</span> (+ by ...)</div>
+    <div class="form">CHỦ THỂ chịu tác động đứng đầu · "by + người làm" thường lược</div>
+    <ul>
+      <li>Goods <em>were transported</em> between Manchester and Liverpool.</li>
+      <li>Iron ore <em>is smelted</em> with coke.</li>
+      <li>Machine-breaking <em>was made</em> punishable by death.</li>
+      <li>Ned Ludd <em>was rumoured</em> to have wrecked a machine.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 · GRAMMAR 2 — COMPARATIVE + PAST -->
+<section data-label="07 Grammar · compare+past" class="slide">
+  <p class="eyebrow">A4 · Ngữ pháp xuất hiện · So sánh &amp; quá khứ</p>
+  <h2 class="h-section" style="margin-bottom:10px;">Hai cấu trúc còn lại</h2>
+  <div class="g2">
+    <div class="gbox">
+      <div class="rule">So sánh hơn / nhất</div>
+      <div class="form">-er / more · the -est · far more …</div>
+      <ul>
+        <li>a <em>cheaper</em> energy source</li>
+        <li>metals of a <em>higher</em> quality</li>
+        <li>made it <em>far more</em> efficient</li>
+        <li>relatively <em>little</em> labour was required</li>
+      </ul>
+    </div>
+    <div class="gbox">
+      <div class="rule">Quá khứ kể lịch sử</div>
+      <div class="form">V2 + mốc thời gian · began in · grew rapidly</div>
+      <ul>
+        <li>the Revolution <em>began</em> in the mid-1700s</li>
+        <li>demand for coal <em>grew</em> rapidly</li>
+        <li>Watt <em>started</em> to adapt the engine</li>
+        <li>the resistance <em>had vanished</em> by 1813</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">Năm tháng + bị động là "khung xương" của mọi bài đọc lịch sử — gặp lại y hệt ở Listening &amp; Writing.</p>
+</section>
+
+<!-- 08 · SECTION BREAK · PRACTICE -->
+<section data-label="08 Practice break" class="slide section-break">
+  <div class="band"><div class="n">B</div><div class="lbl">Practice</div></div>
+  <div class="content">
+    <p class="eyebrow">Phần B · Vào đề</p>
+    <h2>Reading <em>Passage 1</em></h2>
+    <div class="toc">
+      <div class="active">Đọc trong sách: Cam 19 · Test 2 · tr.40–41</div>
+      <div>Q1–7 · Note completion · ONE WORD ONLY</div>
+      <div>Q8–13 · True / False / Not Given</div>
+      <div>20 phút · 13 câu</div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 · PASSAGE OVERVIEW -->
+<section data-label="09 Passage overview" class="slide">
+  <p class="eyebrow">Đề · Tổng quan passage</p>
+  <h2 class="h-section" style="margin-bottom:18px;">"The Industrial Revolution in Britain"</h2>
+  <p class="lead-note">Mở sách <b>Cambridge 19 · Test 2 · Passage 1 (tr.40–41)</b>. Bài đi theo từng ngành: <b>hơi nước</b> (Newcomen → Watt → piston) → <b>than &amp; giao thông</b> (locomotive, kênh đào) → <b>dệt may</b> (cottage industry → spinning jenny) → <b>luyện sắt</b> (coke) → <b>truyền thông</b> (telegraphy) → <b>đô thị hóa</b> &amp; <b>Luddites</b>.</p>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="mono-label">Tên &amp; mốc cần lưu</div>
+      <ul>
+        <li>Newcomen · Watt · Boulton · Trevithick</li>
+        <li>Cooke &amp; Wheatstone · Morse · Ned Ludd</li>
+        <li>1700s · 1830s · 1779 · 1811 · 1813</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <div class="mono-label">Cách đọc cho dạng này</div>
+      <ul>
+        <li>Note theo từng <b>tiểu mục</b> (Steam / Textile / Iron…)</li>
+        <li>Note đi đúng thứ tự bài — định vị nhanh</li>
+        <li>Gạch chân tên riêng + số + năm</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · STRATEGY NOTE COMPLETION -->
+<section data-label="10 Strategy notes" class="slide slide--paper">
+  <p class="eyebrow">Q1–7 · Chiến lược Note completion</p>
+  <h2 class="h-section" style="margin-bottom:10px;">ONE WORD ONLY — bốn bước</h2>
+  <ol class="num-list tight">
+    <li><div><span class="step-title">Đoán loại từ trước khi đọc.</span><span class="step-body">Mỗi chỗ trống là danh từ / số? Nhìn từ đứng quanh chỗ trống và tiểu mục.</span></div></li>
+    <li><div><span class="step-title">Bám tiểu mục để định vị.</span><span class="step-body">Steam power → Textile → Iron → Communications → Urbanisation, đúng thứ tự bài.</span></div></li>
+    <li><div><span class="step-title">Lấy đúng MỘT từ trong bài.</span><span class="step-body">Chép nguyên dạng từ trong passage, không đổi, không thêm.</span></div></li>
+    <li><div><span class="step-title">Soát chính tả.</span><span class="step-body"><i>sanitation</i>, <i>labour</i> (Anh-Anh) dễ viết nhầm. Cả "labour/labor" đều được chấp nhận.</span></div></li>
+  </ol>
+</section>
+
+<!-- 11 · STRATEGY TFNG -->
+<section data-label="11 Strategy TFNG" class="slide">
+  <p class="eyebrow">Q8–13 · Chiến lược True / False / Not Given</p>
+  <h2 class="h-section" style="margin-bottom:6px;">Ba quy tắc vàng</h2>
+  <div class="g2" style="grid-template-columns:repeat(3,1fr);">
+    <div class="gbox"><div class="rule" style="color:var(--accent);">TRUE</div><ul><li>bài <em>xác nhận</em> ý này (dù diễn đạt khác)</li><li>tìm được câu khớp <b>nghĩa</b></li></ul></div>
+    <div class="gbox"><div class="rule" style="color:var(--accent);">FALSE</div><ul><li>bài nói <em>ngược lại</em></li><li>có câu <b>mâu thuẫn</b> trực tiếp</li></ul></div>
+    <div class="gbox"><div class="rule" style="color:var(--accent);">NOT GIVEN</div><ul><li>bài <em>im lặng</em> về ý này</li><li>không xác nhận, không phủ nhận</li></ul></div>
+  </div>
+  <p class="fine" style="margin-top:24px;">Mẹo phân biệt: hỏi "bài có câu nào NÓI NGƯỢC không?" → có = FALSE, không = NOT GIVEN. Đừng suy diễn ngoài bài.</p>
+</section>
+
+<!-- 12 · ANSWER KEY Q1-7 -->
+<section data-label="12 Key Q1-7" class="slide slide--paper">
+  <p class="eyebrow">Đáp án · Q1–7 · Note completion + paraphrase</p>
+  <h2 class="h-section" style="margin-bottom:6px;">Chữa Q1–7 — nối bài ↔ chỗ trống</h2>
+  <div class="pmap">
+    <div class="h">Câu</div><div class="h">Trong bài (paraphrase)</div><div class="h"></div><div class="h">Đáp án</div>
+    <div class="qn">1</div><div class="src">"strokes of the <b>piston</b> … gear mechanism → rotary"</div><div class="arr">→</div><div class="ans">piston</div>
+    <div class="qn">2</div><div class="src">"demand for <b>coal</b> … to run the factories"</div><div class="arr">→</div><div class="ans">coal</div>
+    <div class="qn">3</div><div class="src">"small <b>workshops</b> or even homes"</div><div class="arr">→</div><div class="ans">workshops</div>
+    <div class="qn">4</div><div class="src">"relatively little <b>labour</b> was required"</div><div class="arr">→</div><div class="ans">labour</div>
+    <div class="qn">5</div><div class="src">"metals … of a higher <b>quality</b>"</div><div class="arr">→</div><div class="ans">quality</div>
+    <div class="qn">6</div><div class="src">"expansion of the <b>railways</b> from the 1830s"</div><div class="arr">→</div><div class="ans">railway(s)</div>
+    <div class="qn">7</div><div class="src">"inadequate <b>sanitation</b>"</div><div class="arr">→</div><div class="ans">sanitation</div>
+  </div>
+  <p class="fine">Câu hỏi diễn đạt khác bài ("better ___" = of a higher quality) nhưng đáp án phải là <b>từ nguyên trong bài</b>.</p>
+</section>
+
+<!-- 13 · ANSWER KEY Q8-13 DETAILED -->
+<section data-label="13 Key Q8-13" class="slide">
+  <p class="eyebrow">Đáp án · Q8–13 · giải thích chi tiết</p>
+  <h2 class="h-section" style="margin-bottom:2px;">Chữa Q8–13 — vì sao?</h2>
+  <div class="expl">
+    <div class="row"><div class="qn">8</div><div class="rz">Bài nói tàu hơi nước chở hàng dọc kênh đào, nhưng <b>không</b> nói mạng lưới kênh "mở rộng nhanh để chở nhiều hơn". Không có thông tin so sánh.</div><div class="ans">NOT GIVEN<small>bài im lặng</small></div></div>
+    <div class="row"><div class="qn">9</div><div class="rz">Câu hỏi: chi phí ngành sắt <b>tăng</b> khi dùng coke. Bài nói phương pháp coke <span class="sig">cheaper</span> (rẻ hơn) → <b>ngược lại</b>.</div><div class="ans">FALSE<small>bài nói ngược</small></div></div>
+    <div class="row"><div class="qn">10</div><div class="rz">Câu hỏi so sánh hệ thống Morse "đáng tin hơn" Cooke &amp; Wheatstone. Bài <b>không</b> so sánh độ tin cậy giữa hai hệ thống.</div><div class="ans">NOT GIVEN<small>không so sánh</small></div></div>
+    <div class="row"><div class="qn">11</div><div class="rz">Bài: công nghiệp hóa cải thiện đời sống tầng lớp trung-thượng lưu, nhưng <span class="sig">many poor people continued to struggle</span> → lợi ích giới hạn ở một số nhóm.</div><div class="ans">TRUE</div></div>
+    <div class="row"><div class="qn">12</div><div class="rz">Luddites (thợ dệt lành nghề) <span class="sig">feared … robbing them of their livelihood</span> → tin rằng máy mới gây mất việc.</div><div class="ans">TRUE</div></div>
+    <div class="row"><div class="qn">13</div><div class="rz">Bài kể Luddites bị bắt/treo cổ gần Huddersfield, nhưng <b>không</b> nói dân địa phương có thông cảm với họ.</div><div class="ans">NOT GIVEN<small>bài im lặng</small></div></div>
+  </div>
+</section>
+
+<!-- 14 · FALSE vs NG FOCUS -->
+<section data-label="14 FALSE vs NG" class="slide slide--panel">
+  <p class="eyebrow">Điểm khó · FALSE hay NOT GIVEN?</p>
+  <h2 class="h-section" style="margin-bottom:10px;">Bài này có 1 FALSE &amp; 3 NOT GIVEN</h2>
+  <p class="lead-note">Đa số học viên mất điểm vì chọn FALSE khi đáp án là NOT GIVEN. Bí quyết: chỉ chọn <b>FALSE</b> khi tìm được <b>câu mâu thuẫn trực tiếp</b> trong bài.</p>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="mono-label">Q9 = FALSE (tìm được câu ngược)</div>
+      <ul>
+        <li>Hỏi: chi phí <b>tăng</b></li>
+        <li>Bài: coke <b>"cheaper"</b> = rẻ hơn</li>
+        <li>Có mâu thuẫn rõ → FALSE</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <div class="mono-label">Q8/Q10/Q13 = NOT GIVEN (bài im lặng)</div>
+      <ul>
+        <li>Q8: không nói kênh "mở rộng nhanh"</li>
+        <li>Q10: không so sánh độ tin cậy 2 hệ thống</li>
+        <li>Q13: không nói dân thông cảm Luddites</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 15 · TAKEAWAYS -->
+<section data-label="15 Takeaways" class="slide">
+  <p class="eyebrow">Chốt buổi học</p>
+  <h2 class="h-section">Mang về ba điều</h2>
+  <div class="take">
+    <div class="item"><div class="k">Từ vựng</div><div class="v">Học bộ từ công nghiệp trước → định vị đáp án Note completion nhanh.</div></div>
+    <div class="item"><div class="k">Ngữ pháp</div><div class="v">Bị động + năm tháng = khung của bài lịch sử; theo dõi "việc gì xảy ra".</div></div>
+    <div class="item"><div class="k">FALSE vs NG</div><div class="v">FALSE chỉ khi có câu MÂU THUẪN; bài im lặng = NOT GIVEN.</div></div>
+    <div class="item"><div class="k">Note completion</div><div class="v">ONE WORD ONLY · chép nguyên từ trong bài · soát chính tả.</div></div>
+  </div>
+</section>
+
+<!-- 16 · END -->
+<section data-label="End" class="slide end-slide">
+  <div>
+    <h1>13 câu.</h1>
+    <div class="hint">Warm-up xong · mở sách Cam 19 Test 2 tr.40 &amp; bấm giờ 20 phút</div>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>
