@@ -13,9 +13,7 @@ rsync -a \
   --exclude='dist' \
   --exclude='node_modules' \
   --exclude='cloudflare-worker' \
-  --exclude='deploy' \
   --exclude='scripts' \
-  --exclude='docker-compose.yml' \
   --exclude='README.md' \
   --exclude='.gitignore' \
   --exclude='.DS_Store' \
